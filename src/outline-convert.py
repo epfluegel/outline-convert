@@ -1,6 +1,6 @@
 # text_to_opml.py
 """Utility to convert an indented plain-text outline into OPML,
-with support for notes, optional subtree extraction, case sensitivity, and output directory."""
+with support for notes, optional subtree extraction, case sensitivity, output directory, stdin, and stdout output."""
 
 import sys
 import os
@@ -122,23 +122,26 @@ def sanitize_filename(s: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Convert plain-text outline to OPML (notes + subtree + case sensitivity + output directory).'
+        description='Convert plain-text outline to OPML (notes + subtree + case sensitivity + directories + stdio).'
     )
-    parser.add_argument('input', help='Input text file')
-    parser.add_argument('-o', '--output', help='Output OPML filename')
+    parser.add_argument('input', nargs='?', help='Input text file (omit to read stdin)')
+    parser.add_argument('-o', '--output', help='Specify output filename (without directory)')
     parser.add_argument('-d', '--dir', default='./result', help='Output directory')
     parser.add_argument('-e', '--email', help='Owner email for OPML head')
     parser.add_argument('-s', '--start', help='Prefix of node title to extract subtree from')
-    parser.add_argument('--case-insensitive', action='store_true',
-                        dest='case_insensitive', default=False,
+    parser.add_argument('--case-insensitive', action='store_true', dest='case_insensitive', default=False,
                         help='Match start prefix case-insensitively')
+    parser.add_argument('--stdout', action='store_true', dest='to_stdout', default=False,
+                        help='Write OPML to stdout instead of file')
     args = parser.parse_args()
 
-    # Ensure output directory exists
-    os.makedirs(args.dir, exist_ok=True)
-
-    with open(args.input, encoding='utf-8') as f:
-        lines = [l.rstrip('\n') for l in f]
+    # Read input from file or stdin
+    if args.input:
+        with open(args.input, encoding='utf-8') as f:
+            lines = [l.rstrip('\n') for l in f]
+    else:
+        print("Please paste your outline below. When finished, press Ctrl-D (Unix) or Ctrl-Z (Windows) then Enter:")
+        lines = [l.rstrip('\n') for l in sys.stdin]
 
     full_root = parse_outline(lines)
     case_sensitive = not args.case_insensitive
@@ -153,16 +156,22 @@ def main():
     else:
         root = full_root
 
-    if args.output:
-        filename = args.output
-    else:
-        title = root.children[0].title if root.children else 'output'
-        filename = sanitize_filename(title) + '.opml'
-
-    out_path = os.path.join(args.dir, filename)
     tree = build_opml(root, args.email)
-    tree.write(out_path, encoding='utf-8', xml_declaration=True)
-    print(f"OPML saved to {out_path}")
+
+    # Output logic: stdout or file
+    if args.to_stdout:
+        tree.write(sys.stdout.buffer, encoding='utf-8', xml_declaration=True)
+    else:
+        # determine filename
+        if args.output:
+            filename = args.output
+        else:
+            title = root.children[0].title if root.children else 'output'
+            filename = sanitize_filename(title) + '.opml'
+        os.makedirs(args.dir, exist_ok=True)
+        out_path = os.path.join(args.dir, filename)
+        tree.write(out_path, encoding='utf-8', xml_declaration=True)
+        print(f"OPML saved to {out_path}")
 
 if __name__ == '__main__':
     main()
