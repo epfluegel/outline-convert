@@ -1,8 +1,9 @@
 # text_to_opml.py
 """Utility to convert an indented plain-text outline into OPML,
-with support for notes, optional subtree extraction, and case sensitivity control."""
+with support for notes, optional subtree extraction, case sensitivity, and output directory."""
 
 import sys
+import os
 import re
 import argparse
 import xml.etree.ElementTree as ET
@@ -121,10 +122,11 @@ def sanitize_filename(s: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Convert plain-text outline to OPML (notes + subtree + case sensitivity).'
+        description='Convert plain-text outline to OPML (notes + subtree + case sensitivity + output directory).'
     )
     parser.add_argument('input', help='Input text file')
     parser.add_argument('-o', '--output', help='Output OPML filename')
+    parser.add_argument('-d', '--dir', default='./result', help='Output directory')
     parser.add_argument('-e', '--email', help='Owner email for OPML head')
     parser.add_argument('-s', '--start', help='Prefix of node title to extract subtree from')
     parser.add_argument('--case-insensitive', action='store_true',
@@ -132,12 +134,13 @@ def main():
                         help='Match start prefix case-insensitively')
     args = parser.parse_args()
 
+    # Ensure output directory exists
+    os.makedirs(args.dir, exist_ok=True)
+
     with open(args.input, encoding='utf-8') as f:
         lines = [l.rstrip('\n') for l in f]
 
     full_root = parse_outline(lines)
-
-    # Determine case sensitivity (True unless case_insensitive flag is set)
     case_sensitive = not args.case_insensitive
 
     if args.start:
@@ -151,14 +154,15 @@ def main():
         root = full_root
 
     if args.output:
-        out_file = args.output
+        filename = args.output
     else:
         title = root.children[0].title if root.children else 'output'
-        out_file = sanitize_filename(title) + '.opml'
+        filename = sanitize_filename(title) + '.opml'
 
+    out_path = os.path.join(args.dir, filename)
     tree = build_opml(root, args.email)
-    tree.write(out_file, encoding='utf-8', xml_declaration=True)
-    print(f"OPML saved to {out_file}")
+    tree.write(out_path, encoding='utf-8', xml_declaration=True)
+    print(f"OPML saved to {out_path}")
 
 if __name__ == '__main__':
     main()
