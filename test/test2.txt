@@ -1,0 +1,73 @@
+- Shared #wfe
+	  "#todo "
+		- Projects
+			- Academic Paper Language Translation
+				- Executive Summary
+					- This project aimed to translate a PDF document of a Czech mathematical paper into English, so it can be used for research. What we did was first gathering the text in Czech without taking into account mathematical formulae because they can be understood independently of any language. To do so, we used OCR libraries available in Python 3 to gather the text and then we used ChatGPT to both translate and format the result. Along this project we succeeded in translating the text accurately and also, beyond our expectations, we also managed to convert the entire document to LaTeX, even though the mathematical formulae are not always accurate. In the end the main goal is fulfilled and the Latex version could be slightly improved so that we surpass the main goal.
+				- Aim and Objectives
+					- The aim of the project was to investigate how to convert scientific paper written in a foreign language to English using AI tools, and also how to convert between pdf and other scientific markup languages. The following objectives were accomplished: 
+					- To convert a bad quality scanned scientific article written in Czech to a text file in order to translate it in English so it becomes usable for research. #todo 
+				- Tools and Technologies
+					- Python 3 as the core programming language.
+					- Tesseract OCR for recognizing regular text and equations (with language models like eng, ces, equ).
+					- OpenCV for image pre-processing (thresholding, contour detection).
+					- pdf2image to convert PDF pages into images.
+					- PIL (Pillow) for image manipulation.
+					- tqdm for progress display during processing.
+					- Multiprocessing (concurrent.futures) for parallel math OCR to speed up processing
+				- Methodology
+					- 1. PDF Conversion:
+					- We converted each page of the PDF into a high-resolution PNG image (using pdf2image).
+					- 2. Image Preprocessing:
+					- Each page was converted to grayscale, binarized (thresholding), and contours were detected (OpenCV) to find blocks of text and equations.
+					- 3. Region Classification:
+					- Small-height blocks were assumed to be text.
+					- 4. OCR (Optical Character Recognition):
+					- Text blocks were passed through Tesseract with the selected language model (e.g., Czech ces, English eng).
+					- Robust error handling was added to handle OCR failures and keep the process running (e.g when a block was too small).
+					- 5. Parallelization:
+					- We used a multiprocessing pool to speed up math OCR by handling multiple blocks in parallel.
+					- 6. Output Generation:
+					- The recognized content was structured into a simple text file
+					- 7. Translation in english and into Latex:
+					- The text file was given to chat gpt and he was able to translate it in english and to recognize maths formulas that have just been translated in simple text. It then gave me a Latex file.
+				- Conclusion
+					- Challenges Overcome:
+						- Handling extremely small contours that could cause Pix2Tex or PIL resizing errors.
+						- Ensuring the program continues robustly despite OCR errors, using try/except mechanisms.
+						- The strategy was changed along the way because trying to do the ocr for both text and maths formulas and at the same time make it a Latex file was too much. It needed too much time and computing power. Luckily AI was able make it real which surpassed the original goal that was just tintrandlate the text.
+					- Further work
+						- It could be great to also recognize maths formulas with ocr but the main goal is to translate the text because the formulas are already readable.
+			- ISOLDE
+				- Executive Summary
+				- Aim and Objectives
+					- The aim of this project was to create digital versions of legacy code only available in the form of a printout.
+					- The objective was to reintroduce a program in Maple where the only remaining source code was on paper.
+				- Tools and Technologies
+					- Maple using Maple Software as the core programming language.
+					- Tesseract OCR for recognizing regular text
+					- OpenCV for image pre-processing (thresholding, contour detection).
+					- pdf2image to convert PDF pages into images.
+					- PIL (Pillow) for image manipulation.
+					- tqdm for progress display during processing.
+				- Methodology
+					- 1. PDF Conversion:
+						- We converted each page of the PDF into a high-resolution PNG image (using pdf2image).
+					- 2. Image Preprocessing:
+						- Each page was converted to grayscale, binarized (thresholding), and contours were detected (OpenCV) to find blocks of text.
+					- 3. OCR (Optical Character Recognition):
+						- Text blocks were passed through Tesseract with the selected language model (here English eng).
+						- Robust error handling was added to handle OCR failures and keep the process running (e.g when a block was too small).
+					- 4. Output Generation:
+						- The recognized content was structured into a simple text file
+					- 5. ChatGPT processing:
+						- We divided the text files in many blocs so that ChatGPT could analyse and clean the ocr result and also format the code in a Maple style (e.g indents rules)
+					- 6. Debugging
+						- Then we pasted the ChatGPT corrected blocs in Maple Software to debug it.
+					- 7. ChatGPT enhancing
+						- From the debugging phase, some errors were recurrent so we refined the prompts in order to make its processing better.
+				- Conclusion
+					- Challenges Overcome:
+					- Handling extremely small contours that could cause Pix2Tex or PIL resizing errors.
+					- Ensuring the program continues robustly despite OCR errors, using try/except mechanisms.
+					- 
