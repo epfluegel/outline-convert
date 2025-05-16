@@ -1,5 +1,6 @@
 # text_to_opml.py
-"""Utility to convert an indented plain-text outline into OPML, with support for notes and dynamic output filename."""
+"""Utility to convert an indented plain-text outline into OPML,
+with support for notes and optional subtree extraction."""
 
 import sys
 import re
@@ -16,6 +17,9 @@ class Node:
 
 
 def detect_indent(lines: List[str]) -> int:
+    """
+    Determine the smallest common indent (in spaces) used in the lines.
+    """
     counts = [len(l) - len(l.lstrip(' ')) for l in lines if l.startswith(' ')]
     if not counts:
         return 1
@@ -26,6 +30,9 @@ def detect_indent(lines: List[str]) -> int:
 
 
 def parse_outline(lines: List[str]) -> Node:
+    """
+    Parse a list of lines into a tree of Node objects according to indentation and bullets.
+    """
     root = Node('root')
     stack: List[tuple[int, Node]] = [(-1, root)]
     indent_size = detect_indent(lines)
@@ -35,22 +42,24 @@ def parse_outline(lines: List[str]) -> Node:
         stripped = raw.strip()
         if not stripped:
             continue
-        if stripped.startswith('"') and stripped.endswith('"'):
-            if last_node:
-                last_node.note = stripped.strip('"')
+        # Note line: standalone in double quotes
+        if stripped.startswith('"') and stripped.endswith('"') and last_node:
+            last_node.note = stripped.strip('"')
             continue
 
+        # Normalize tabs
         leading = raw.expandtabs(indent_size)
+        # Count leading spaces
         space_count = len(leading) - len(leading.lstrip(' '))
-        if leading.lstrip().startswith('-'):
-            effective_indent = space_count + indent_size
-        else:
-            effective_indent = space_count
-        level = effective_indent // indent_size
+        # Determine level: one extra indent for bullets ('-')
+        extra = indent_size if leading.lstrip().startswith('-') else 0
+        level = (space_count + extra) // indent_size
 
+        # Strip leading bullets and whitespace
         title = re.sub(r'^-+\s*', '', leading.strip())
         node = Node(title)
 
+        # Find parent by popping until stack top level < current level
         while stack and stack[-1][0] >= level:
             stack.pop()
         stack[-1][1].children.append(node)
@@ -60,7 +69,23 @@ def parse_outline(lines: List[str]) -> Node:
     return root
 
 
+def find_node(node: Node, prefix: str) -> Optional[Node]:
+    """
+    Return the first node in the tree whose title starts with prefix.
+    """
+    if node.title.startswith(prefix):
+        return node
+    for child in node.children:
+        found = find_node(child, prefix)
+        if found:
+            return found
+    return None
+
+
 def node_to_outline_elem(node: Node) -> ET.Element:
+    """
+    Convert a Node (and its children) into an XML <outline> element.
+    """
     elem = ET.Element('outline')
     elem.set('text', node.title)
     if node.note:
@@ -71,37 +96,44 @@ def node_to_outline_elem(node: Node) -> ET.Element:
 
 
 def build_opml(root: Node, owner_email: Optional[str] = None) -> ET.ElementTree:
+    """
+    Build the full OPML document (ElementTree) from a Node tree.
+    """
     opml = ET.Element('opml', version="2.0")
     head = ET.SubElement(opml, 'head')
     if owner_email:
         email_elem = ET.SubElement(head, 'ownerEmail')
-        email_elem.text = "\n    " + owner_email + "\n  "
+        email_elem.text = f"\n    {owner_email}\n  "
     body = ET.SubElement(opml, 'body')
     for child in root.children:
         body.append(node_to_outline_elem(child))
+
     tree = ET.ElementTree(opml)
     try:
-        ET.indent(tree, space="  ")
+        ET.indent(tree, space="  ")  # Python 3.9+
     except AttributeError:
         indent(opml)
     return tree
 
 
 def indent(elem: ET.Element, level: int = 0):
-    i = "\n" + level * "  "
-    if len(elem):
+    """
+    Recursively add whitespace to make the XML output pretty-printed.
+    """
+    pad = "\n" + level * "  "
+    if elem:
         if not elem.text or not elem.text.strip():
-            elem.text = i + "  "
+            elem.text = pad + "  "
         for child in elem:
             indent(child, level + 1)
         if not elem[-1].tail or not elem[-1].tail.strip():
-            elem[-1].tail = i
+            elem[-1].tail = pad
     if level and (not elem.tail or not elem.tail.strip()):
-        elem.tail = i
+        elem.tail = pad
 
 
 def sanitize_filename(s: str) -> str:
-    # Replace spaces with underscores and remove illegal chars
+    """Sanitize a string to be a safe filename."""
     name = re.sub(r"\s+", "_", s.strip())
     name = re.sub(r"[^\w\-]", "", name)
     return name or 'output'
@@ -109,28 +141,43 @@ def sanitize_filename(s: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Convert indented plain-text outline to OPML (with notes).'
+        description='Convert plain-text outline to OPML (notes + subtree).'
     )
     parser.add_argument('input', help='Input text file')
-    parser.add_argument('-o', '--output', help='Output OPML file (defaults to first bullet).')
+    parser.add_argument('-o', '--output', help='Output OPML filename')
     parser.add_argument('-e', '--email', help='Owner email for OPML head')
+    parser.add_argument('-s', '--start', help='Prefix of node title to extract subtree from')
     args = parser.parse_args()
 
+    # Read all lines
     with open(args.input, encoding='utf-8') as f:
         lines = [l.rstrip('\n') for l in f]
-    root = parse_outline(lines)
+
+    # Parse the full outline once
+    full_root = parse_outline(lines)
+
+    # If subtree requested, find and wrap that node
+    if args.start:
+        start_node = find_node(full_root, args.start)
+        if not start_node:
+            print(f"Error: start node prefix '{args.start}' not found.", file=sys.stderr)
+            sys.exit(1)
+        root = Node('root')
+        root.children = [start_node]
+    else:
+        root = full_root
 
     # Determine output filename
     if args.output:
         out_file = args.output
     else:
-        first = root.children[0].title if root.children else 'output'
-        out_file = sanitize_filename(first) + '.opml'
+        title = root.children[0].title if root.children else 'output'
+        out_file = sanitize_filename(title) + '.opml'
 
+    # Build and write OPML
     tree = build_opml(root, args.email)
     tree.write(out_file, encoding='utf-8', xml_declaration=True)
     print(f"OPML saved to {out_file}")
-
 
 if __name__ == '__main__':
     main()
