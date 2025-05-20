@@ -155,7 +155,7 @@ def main():
     p.add_argument('--input-type', choices=['txt','opml'],
                    help='Force input type (default by extension or txt)')
     p.add_argument('-o','--output', help='Output filename (omit for auto)')
-    p.add_argument('-d','--dir', default='./result', help='Output directory')
+    p.add_argument('-d','--dir', default='.', help='Output directory')
     p.add_argument('--output-format', choices=['opml','txt'], default='opml',
                    help='Output format')
     p.add_argument('-e','--email', help='Owner email for OPML head')
