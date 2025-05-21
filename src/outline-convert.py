@@ -1,12 +1,15 @@
-# text_to_opml.py
-"""Utility to convert between indented plain-text outlines and OPML,
+#!/usr/bin/env python3
+"""
+Utility to convert between indented plain-text outlines and OPML,
 with support for notes, optional subtree extraction, case sensitivity,
-stdin/stdout, and flexible input/output formats."""
+stdin/stdout, flexible input/output formats, and --date auto-selection.
+"""
 
 import sys
 import os
 import re
 import argparse
+import datetime
 import xml.etree.ElementTree as ET
 from math import gcd
 from typing import List, Optional
@@ -26,7 +29,6 @@ def detect_indent(lines: List[str]) -> int:
     for c in counts[1:]:
         indent = gcd(indent, c)
     return indent or 1
-
 
 def parse_text(lines: List[str]) -> Node:
     root = Node('root')
@@ -59,7 +61,6 @@ def parse_text(lines: List[str]) -> Node:
 
 # -- OPML PARSING -----------------------------------------------------------
 def parse_opml(root_elem: ET.Element) -> Node:
-    # find <body>
     body = root_elem.find('body')
     top = Node('root')
     if body is None:
@@ -112,7 +113,6 @@ def node_to_outline_elem(node: Node) -> ET.Element:
         elem.append(node_to_outline_elem(c))
     return elem
 
-
 def build_opml(root: Node, owner_email: Optional[str] = None) -> ET.ElementTree:
     opml = ET.Element('opml', version='2.0')
     head = ET.SubElement(opml, 'head')
@@ -163,11 +163,35 @@ def main():
     p.add_argument('--case-insensitive', action='store_true', dest='ci', default=False,
                    help='Case-insensitive subtree match')
     p.add_argument('--stdout', action='store_true', help='Write to stdout')
+    p.add_argument('--date', metavar='DIR',
+                   help='Scan DIR for files modified today and pick the latest as input')
     args = p.parse_args()
+
+    # -- handle --date auto-selection ---------------------------------------
+    if args.date:
+        date_dir = args.date
+        if not os.path.isdir(date_dir):
+            sys.exit(f"Error: '{date_dir}' is not a directory.")
+        today = datetime.date.today() - datetime.timedelta(days=1)
+
+        candidates = []
+        for name in os.listdir(date_dir):
+            path = os.path.join(date_dir, name)
+            if os.path.isfile(path):
+                mdate = datetime.date.fromtimestamp(os.path.getmtime(path))
+                if mdate == today:
+                    candidates.append(path)
+        if not candidates:
+            sys.exit(f"No files in '{date_dir}' modified on {today}.")
+        chosen = max(candidates, key=lambda p: os.path.getmtime(p))
+        print(f"Using latest file for {today}: {os.path.basename(chosen)}", file=sys.stderr)
+        args.input = chosen
+    # -----------------------------------------------------------------------
 
     # read lines or xml
     raw: List[str]
     root_node: Node
+
     # decide input type
     itype = args.input_type
     if not itype:
@@ -175,8 +199,8 @@ def main():
             itype = 'opml'
         else:
             itype = 'txt'
-    if itype=='txt':
-        # read text
+
+    if itype == 'txt':
         if args.input:
             with open(args.input, encoding='utf-8') as f:
                 raw = [l.rstrip('\n') for l in f]
@@ -185,9 +209,10 @@ def main():
             raw = [l.rstrip('\n') for l in sys.stdin]
         root_node = parse_text(raw)
     else:
-        # read opml
-        src = args.input or None
-        tree = ET.parse(args.input) if args.input else ET.parse(sys.stdin)
+        if args.input:
+            tree = ET.parse(args.input)
+        else:
+            tree = ET.parse(sys.stdin)
         xml_root = tree.getroot()
         root_node = parse_opml(xml_root)
 
@@ -197,12 +222,13 @@ def main():
         n = find_node(root_node, args.start, cs)
         if not n:
             sys.exit(f"Prefix '{args.start}' not found")
-        root_node = Node('root'); root_node.children=[n]
+        root_node = Node('root')
+        root_node.children = [n]
 
     # build output
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
-    if args.output_format=='txt':
+    if args.output_format == 'txt':
         out_lines = render_text(root_node)
     else:
         out_tree = build_opml(root_node, args.email)
@@ -215,20 +241,19 @@ def main():
             out_tree.write(sys.stdout.buffer, encoding='utf-8', xml_declaration=True)
     else:
         os.makedirs(args.dir, exist_ok=True)
-        # filename
         if args.output:
             fname = args.output
         else:
             first = root_node.children[0].title if root_node.children else 'output'
-            ext = 'opml' if out_tree else 'txt'
+            ext = 'txt' if out_lines is not None else 'opml'
             fname = sanitize_filename(first) + f'.{ext}'
         path = os.path.join(args.dir, fname)
         if out_lines is not None:
-            with open(path,'w',encoding='utf-8') as f:
+            with open(path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(out_lines))
         else:
             out_tree.write(path, encoding='utf-8', xml_declaration=True)
         print(f"Wrote {path}")
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()
