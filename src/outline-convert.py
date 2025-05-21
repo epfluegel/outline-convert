@@ -164,7 +164,7 @@ def main():
                    help='Case-insensitive subtree match')
     p.add_argument('--stdout', action='store_true', help='Write to stdout')
     p.add_argument('--date', metavar='DIR',
-                   help='Scan DIR for files modified today and pick the latest as input')
+                   help='Scan DIR and pick the most recently modified file as input')
     args = p.parse_args()
 
     # -- handle --date auto-selection ---------------------------------------
@@ -172,19 +172,17 @@ def main():
         date_dir = args.date
         if not os.path.isdir(date_dir):
             sys.exit(f"Error: '{date_dir}' is not a directory.")
-        today = datetime.date.today() - datetime.timedelta(days=1)
-
-        candidates = []
-        for name in os.listdir(date_dir):
-            path = os.path.join(date_dir, name)
-            if os.path.isfile(path):
-                mdate = datetime.date.fromtimestamp(os.path.getmtime(path))
-                if mdate == today:
-                    candidates.append(path)
+        # gather all regular files
+        candidates = [
+            os.path.join(date_dir, name)
+            for name in os.listdir(date_dir)
+            if os.path.isfile(os.path.join(date_dir, name))
+        ]
         if not candidates:
-            sys.exit(f"No files in '{date_dir}' modified on {today}.")
+            sys.exit(f"No files found in '{date_dir}'.")
+        # pick the newest by modification time
         chosen = max(candidates, key=lambda p: os.path.getmtime(p))
-        print(f"Using latest file for {today}: {os.path.basename(chosen)}", file=sys.stderr)
+        print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
     # -----------------------------------------------------------------------
 
