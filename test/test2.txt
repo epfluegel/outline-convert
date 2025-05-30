@@ -1,7 +1,7 @@
 - Shared #wfe
 	  "#todo "
 		- Projects
-			- Academic Paper Language Translation
+			- Academic < Paper & Language Translation
 				- Executive Summary
 					- This project aimed to translate a PDF document of a Czech mathematical paper into English, so it can be used for research. What we did was first gathering the text in Czech without taking into account mathematical formulae because they can be understood independently of any language. To do so, we used OCR libraries available in Python 3 to gather the text and then we used ChatGPT to both translate and format the result. Along this project we succeeded in translating the text accurately and also, beyond our expectations, we also managed to convert the entire document to LaTeX, even though the mathematical formulae are not always accurate. In the end the main goal is fulfilled and the Latex version could be slightly improved so that we surpass the main goal.
 				- Aim and Objectives
