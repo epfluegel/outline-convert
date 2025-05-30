@@ -14,23 +14,22 @@ from .utils import find_node, sanitize_filename
 
 # -- MAIN ------------------------------------------------------------------
 def main():
-    p = argparse.ArgumentParser(description='Convert between text outline and OPML')
-    p.add_argument('-i','--input', nargs='?', help='Input file (omit for stdin)')
-    p.add_argument('--input-type', choices=['txt','opml'],
-                   help='Force input type (default by extension or txt)')
-    p.add_argument('-o','--output', help='Output filename (omit for auto)')
-    p.add_argument('-d','--dir', default='.', help='Output directory')
-    p.add_argument('--output-format', choices=['opml','txt','latex'], default='opml',
-                   help='Output format')
-    p.add_argument('-e','--email', help='Owner email for OPML head')
-    p.add_argument('-s','--start', help='Prefix to extract subtree')
+    p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
+
+    p.add_argument('input', nargs='?', help='Input file (omit for stdin or use --date)')
+    p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex-a', 'latex-b'], default='opml',
+                   help='Output format: txt, opml, latex-a (article), latex-b (beamer)')
+    p.add_argument('-o', '--output', help='Output filename (omit for auto)')
+    p.add_argument('-d', '--dir', default='.', help='Output directory')
+    p.add_argument('-e', '--email', help='Owner email for OPML head')
+    p.add_argument('-s', '--start', help='Prefix to extract subtree')
     p.add_argument('--case-insensitive', action='store_true', dest='ci', default=False,
                    help='Case-insensitive subtree match')
     p.add_argument('--stdout', action='store_true', help='Write to stdout')
     p.add_argument('--date', metavar='DIR',
                    help='Scan DIR and pick the most recently modified file as input')
-    p.add_argument('--beamer_tags', action='store_true', help='Use Beamer format and interprete tags when outputting LaTeX')
-    p.add_argument('--beamer', action='store_true', help='Use Beamer format when outputting LaTeX')
+    p.add_argument('--expert-mode', action='store_true',
+                   help='(latex-b only) Interpret tags when outputting LaTeX Beamer')
 
     args = p.parse_args()
 
@@ -50,56 +49,50 @@ def main():
         print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
-    # read lines or xml
-    raw: List[str]
+    # -- determine input type -----------------------------------------------
     root_node: Node
-
-    itype = args.input_type
-    if not itype:
-        if args.input and args.input.lower().endswith(('.opml','.xml')):
-            itype = 'opml'
-        else:
-            itype = 'txt'
-
-    if itype == 'txt':
-        if args.input:
-            with open(args.input, encoding='utf-8') as f:
-                raw = [l.rstrip('\n') for l in f]
-        else:
-            print('Paste outline, finish with EOF:')
-            raw = [l.rstrip('\n') for l in sys.stdin]
-        root_node = parse_text(raw)
+    if args.input and args.input.lower().endswith(('.opml', '.xml')):
+        # Parse OPML
+        with open(args.input, 'r', encoding='utf-8') as f:
+            tree = ET.parse(f)
+            xml_root = tree.getroot()
+            root_node = parse_opml(xml_root)
     else:
+        # Parse plain text
         if args.input:
-            tree = ET.parse(args.input)
+            with open(args.input, 'r', encoding='utf-8') as f:
+                raw = [line.rstrip('\n') for line in f]
         else:
-            tree = ET.parse(sys.stdin)
-        xml_root = tree.getroot()
-        root_node = parse_opml(xml_root)
+            print('Paste outline below. Finish with Ctrl+D (EOF):')
+            raw = [line.rstrip('\n') for line in sys.stdin]
+        root_node = parse_text(raw)
 
+    # -- optional subtree extraction ----------------------------------------
     cs = not args.ci
     if args.start:
-        n = find_node(root_node, args.start, cs)
-        if not n:
+        node = find_node(root_node, args.start, cs)
+        if not node:
             sys.exit(f"Prefix '{args.start}' not found")
         root_node = Node('root')
-        root_node.children = [n]
+        root_node.children = [node]
 
+    # -- render based on format ---------------------------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
-    if args.output_format == 'txt':
-        out_lines = render_text(root_node)
-    elif args.output_format == 'latex':
-        if args.beamer_tags:
-            out_lines = render_latex_beamer_with_tags(root_node)
-        elif args.beamer:
-            out_lines = render_latex_beamer(root_node)
-        else:
-            out_lines = render_latex(root_node)
 
-    else:
+    if args.format == 'txt':
+        out_lines = render_text(root_node)
+    elif args.format == 'latex-a':
+        out_lines = render_latex(root_node)
+    elif args.format == 'latex-b':
+        if args.expert_mode:
+            out_lines = render_latex_beamer_with_tags(root_node)
+        else:
+            out_lines = render_latex_beamer(root_node)
+    else:  # opml
         out_tree = build_opml(root_node, args.email)
 
+    # -- output result ------------------------------------------------------
     if args.stdout:
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines))
@@ -111,10 +104,14 @@ def main():
             fname = args.output
         else:
             first = root_node.children[0].title if root_node.children else 'output'
-            ext = 'txt' if out_lines is not None else 'opml'
-            if args.output_format == 'latex':
-                ext = 'tex'
+            ext = {
+                'txt': 'txt',
+                'latex-a': 'tex',
+                'latex-b': 'tex',
+                'opml': 'opml'
+            }.get(args.format, 'out')
             fname = sanitize_filename(first) + f'.{ext}'
+
         path = os.path.join(args.dir, fname)
         if out_lines is not None:
             with open(path, 'w', encoding='utf-8') as f:
