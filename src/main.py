@@ -30,6 +30,7 @@ def main():
                    help='Scan DIR and pick the most recently modified file as input')
     p.add_argument('--expert-mode', action='store_true',
                    help='(latex-b only) Interpret tags when outputting LaTeX Beamer')
+    p.add_argument('-s', '--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
 
     args = p.parse_args()
 
