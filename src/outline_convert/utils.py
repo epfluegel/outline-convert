@@ -1,0 +1,59 @@
+from math import gcd
+from typing import List, Optional
+
+from .models import Node
+import xml.etree.ElementTree as ET
+import re
+
+
+def detect_indent(lines: List[str]) -> int:
+    counts = [len(l) - len(l.lstrip(' ')) for l in lines if l.startswith(' ')]
+    if not counts:
+        return 1
+    indent = counts[0]
+    for c in counts[1:]:
+        indent = gcd(indent, c)
+    return indent or 1
+
+
+# -- TREE UTILITIES ---------------------------------------------------------
+def find_node(node: Node, prefix: str, case_sensitive: bool) -> Optional[Node]:
+    text = node.title
+    if case_sensitive:
+        ok = text.startswith(prefix)
+    else:
+        ok = text.lower().startswith(prefix.lower())
+    if ok:
+        return node
+    for c in node.children:
+        res = find_node(c, prefix, case_sensitive)
+        if res:
+            return res
+    return None
+
+
+
+# -- PRETTY INDENT ----------------------------------------------------------
+def indent(elem: ET.Element, level: int = 0):
+    pad = '\n' + level * '  '
+    if elem:
+        if not elem.text or not elem.text.strip():
+            elem.text = pad + '  '
+        for c in elem:
+            indent(c, level+1)
+        if not elem[-1].tail or not elem[-1].tail.strip():
+            elem[-1].tail = pad
+    if level and (not elem.tail or not elem.tail.strip()):
+        elem.tail = pad
+
+# -- FILENAME SANITIZE -----------------------------------------------------
+def sanitize_filename(s: str) -> str:
+    name = re.sub(r"\s+", '_', s.strip())
+    name = re.sub(r"[^\w\-]", '', name)
+    return name or 'output'
+
+def escape_latex(s: str) -> str:
+    return s.replace('\\', r'\textbackslash{}').replace('&', r"\&").replace('%', r'\%').replace('$', r'\$')\
+            .replace('#', r'\#').replace('_', r'\_').replace('{', r'\{')\
+            .replace('}', r'\}').replace('~', r'\textasciitilde{}')\
+            .replace('^', r'\textasciicircum{}')
