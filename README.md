@@ -23,3 +23,7 @@ options:
   --case-insensitive    Match start prefix case-insensitively
   --stdout              Write OPML to stdout instead of file
 ```
+
+```
+The .bat or .sh files must stay where they are, is you want to move them then create a shortcut
+```

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<opml version="2.0">
+  <head />
+  <body>
+    <outline text="Academic Paper Language Translation">
+      <outline text="Executive Summary">
+        <outline text="This project aimed to translate a PDF document of a Czech mathematical paper into English, so it can be used for research. What we did was first gathering the text in Czech without taking into account mathematical formulae because they can be understood independently of any language. To do so, we used OCR libraries available in Python 3 to gather the text and then we used ChatGPT to both translate and format the result. &lt;span class=&quot;colored bc-yellow&quot;&gt;Along this project we succeeded in translating the text accurately and also, beyond our expectations, we also managed to convert the entire document to LaTeX, even though the mathematical formulae are not always accurate. In the end the main goal is fulfilled and the Latex version could be slightly improved so that we surpass the main goal.#todo&lt;/span&gt;" />
+      </outline>
+      <outline text="Aim and Objectives">
+        <outline text="The aim of the project was to investigate how to convert scientific paper written in a foreign language to English using AI tools, and also how to convert between pdf and other scientific markup languages. The following objectives were accomplished: " />
+        <outline text="To convert a bad quality scanned scientific article written in Czech to a text file " />
+        <outline text="To translate it in English so it becomes usable for research." />
+      </outline>
+      <outline text="Tools and Technologies">
+        <outline text="Python 3 as the core programming language." />
+        <outline text="Tesseract OCR for recognizing regular text and equations (with language models like eng, ces, equ)." />
+        <outline text="OpenCV for image pre-processing (thresholding, contour detection)." />
+        <outline text="pdf2image to convert PDF pages into images." />
+        <outline text="PIL (Pillow) for image manipulation." />
+        <outline text="tqdm for progress display during processing." />
+        <outline text="Multiprocessing (concurrent.futures) for parallel math OCR to speed up processing" />
+      </outline>
+      <outline text="Methodology">
+        <outline text="1. PDF Conversion:" />
+        <outline text="We converted each page of the PDF into a high-resolution PNG image (using pdf2image)." />
+        <outline text="2. Image Preprocessing:" />
+        <outline text="Each page was converted to grayscale, binarized (thresholding), and contours were detected (OpenCV) to find blocks of text and equations." />
+        <outline text="3. Region Classification:" />
+        <outline text="Small-height blocks were assumed to be text." />
+        <outline text="4. OCR (Optical Character Recognition):" />
+        <outline text="Text blocks were passed through Tesseract with the selected language model (e.g., Czech ces, English eng)." />
+        <outline text="Robust error handling was added to handle OCR failures and keep the process running (e.g when a block was too small)." />
+        <outline text="5. Parallelization:" />
+        <outline text="We used a multiprocessing pool to speed up math OCR by handling multiple blocks in parallel." />
+        <outline text="6. Output Generation:" />
+        <outline text="The recognized content was structured into a simple text file" />
+        <outline text="7. Translation in English and into Latex:" />
+        <outline text="The text file was given to ChatGPT and he was able to translate it in English and to recognize maths formulas that have just been translated in simple text. It then gave me a Latex file." />
+      </outline>
+      <outline text="Conclusion">
+        <outline text="Challenges Overcome:">
+          <outline text="Handling extremely small contours that could cause Pix2Tex or PIL resizing errors." />
+          <outline text="Ensuring the program continues robustly despite OCR errors, using try/except mechanisms." />
+          <outline text="The strategy was changed along the way because trying to do the OCR for both text and maths formulas and at the same time make it a Latex file was too much. It needed too much time and computing power. Luckily AI was able make it real which surpassed the original goal that was just to translate the text." />
+        </outline>
+        <outline text="Further work">
+          <outline text="To directly recognize mathematical formulae with OCR." />
+          <outline text="To try different translation models" />
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

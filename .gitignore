@@ -2,3 +2,5 @@
 .idea/
 result/
 todo
+/src/outline_convert.egg-info/
+/src/UNKNOWN.egg-info/

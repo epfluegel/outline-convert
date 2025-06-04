@@ -21,13 +21,17 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
         title = child.title.strip()
         if strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
+        title = escape_latex(title)
+
         indent = '  ' * level
         lines.append(fr"{indent}\item {title}")
         if child.note:
-            lines.append(fr"{indent}\begin{{quote}}{child.note}\end{{quote}}")
+            lines.append(fr"{indent}\begin{{quote}}")
+            lines.append(fr"{indent}{child.note}")
+            lines.append(fr"{indent}\end{{quote}}")
         if child.children:
             lines.append(fr"{indent}\begin{{tree}}")
-            lines.extend(render_latex(child, level + 1), strip_tags=strip_tags)
+            lines.extend(render_latex(child, level + 1, strip_tags=strip_tags))
             lines.append(fr"{indent}\end{{tree}}")
     if level == 0:
         lines.append(r"\end{tree}")
@@ -68,10 +72,7 @@ def render_latex_beamer(node: Node, level: int = 0, strip_tags: bool = False) ->
         title = child.title.strip()
         if strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        if '&' in title:
-            print(f"DEBUG: Title before escaping: {title}")
             title = escape_latex(title)
-            print(f"DEBUG: Title after escaping: {title}")
 
         if level == 0:
             lines.append(fr"\begin{{frame}}{title}")
@@ -91,7 +92,9 @@ def render_latex_beamer(node: Node, level: int = 0, strip_tags: bool = False) ->
             indent = '  ' * level
             lines.append(fr"{indent}\item {title}")
             if child.note:
-                lines.append(fr"{indent}\begin{{quote}}{child.note}\end{{quote}}")
+                lines.append(fr"{indent}\begin{{quote}}")
+                lines.append(fr"{indent}{child.note}")
+                lines.append(fr"{indent}\end{{quote}}")
             if child.children:
                 lines.append(fr"{indent}\begin{{itemize}}")
                 lines.extend(render_latex_beamer(child, level + 1, strip_tags=strip_tags))
@@ -149,7 +152,9 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0) -> List[str]:
             indent = '  ' * level
             lines.append(fr"{indent}\item {clean_title}")
             if child.note:
-                lines.append(fr"{indent}\begin{{quote}}{child.note}\end{{quote}}")
+                lines.append(fr"{indent}\begin{{quote}}")
+                lines.append(fr"{indent}{child.note}")
+                lines.append(fr"{indent}\end{{quote}}")
             if child.children:
                 lines.append(fr"{indent}\begin{{itemize}}")
                 lines.extend(render_latex_beamer_with_tags(child, level + 1))

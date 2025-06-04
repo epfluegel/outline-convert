@@ -1,0 +1,6 @@
+[project]
+name = "outline-convert"
+version = "0.1.0"
+
+[project.scripts]
+outline-convert = "src.main:main"

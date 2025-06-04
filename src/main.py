@@ -8,7 +8,7 @@ from typing import Optional, List
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer_with_tags, render_latex_beamer, render_latex
-from .renderer_text import render_text, build_opml
+from .renderer_text import render_text, build_opml, node_to_outline_elem
 from .utils import find_node, sanitize_filename
 
 
@@ -30,7 +30,7 @@ def main():
                    help='Scan DIR and pick the most recently modified file as input')
     p.add_argument('--expert-mode', action='store_true',
                    help='(latex-b only) Interpret tags when outputting LaTeX Beamer')
-    p.add_argument('-s', '--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
+    p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
 
     args = p.parse_args()
 
@@ -82,38 +82,29 @@ def main():
     out_tree: Optional[ET.ElementTree] = None
 
     if args.format == 'txt':
-        out_lines = render_text(root_node)
+        out_lines = render_text(root_node, strip_tags=args.strip_tags)
     elif args.format == 'latex-a':
-        out_lines = render_latex(root_node)
+        out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'latex-b':
         if args.expert_mode:
             out_lines = render_latex_beamer_with_tags(root_node)
         else:
-            out_lines = render_latex_beamer(root_node)
+            out_lines = render_latex_beamer(root_node,  strip_tags=args.strip_tags)
     else:  # opml
-        out_tree = build_opml(root_node, args.email)
+        out_tree = ET.ElementTree(node_to_outline_elem(root_node, strip_tags=args.strip_tags))
+
 
     # -- output result ------------------------------------------------------
-    if args.stdout:
+    should_write_to_stdout = args.stdout or not args.output
+
+    if should_write_to_stdout:
         if out_lines is not None:
-            sys.stdout.write('\n'.join(out_lines))
+            sys.stdout.write('\n'.join(out_lines) + '\n')
         else:
             out_tree.write(sys.stdout.buffer, encoding='utf-8', xml_declaration=True)
     else:
         os.makedirs(args.dir, exist_ok=True)
-        if args.output:
-            fname = args.output
-        else:
-            first = root_node.children[0].title if root_node.children else 'output'
-            ext = {
-                'txt': 'txt',
-                'latex-a': 'tex',
-                'latex-b': 'tex',
-                'opml': 'opml'
-            }.get(args.format, 'out')
-            fname = sanitize_filename(first) + f'.{ext}'
-
-        path = os.path.join(args.dir, fname)
+        path = os.path.join(args.dir, args.output)
         if out_lines is not None:
             with open(path, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(out_lines))
