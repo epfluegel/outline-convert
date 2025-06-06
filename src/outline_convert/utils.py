@@ -52,8 +52,42 @@ def sanitize_filename(s: str) -> str:
     name = re.sub(r"[^\w\-]", '', name)
     return name or 'output'
 
+#def escape_latex(s: str) -> str:
+#    return s.replace('\\', r'\textbackslash{}').replace('&', r"\&").replace('%', r'\%').replace('$', r'\$')\
+#            .replace('#', r'\#').replace('_', r'\_').replace('{', r'\{')\
+#            .replace('}', r'\}').replace('~', r'\textasciitilde{}')\
+#            .replace('^', r'\textasciicircum{}')
+import re
+
 def escape_latex(s: str) -> str:
-    return s.replace('\\', r'\textbackslash{}').replace('&', r"\&").replace('%', r'\%').replace('$', r'\$')\
-            .replace('#', r'\#').replace('_', r'\_').replace('{', r'\{')\
-            .replace('}', r'\}').replace('~', r'\textasciitilde{}')\
-            .replace('^', r'\textasciicircum{}')
+    # Normalize $$...$$ to $...$
+    s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', s, flags=re.DOTALL)
+
+    # Pattern to match inline math segments ($...$)
+    math_pattern = re.compile(r'(\$.*?\$)')
+
+    def escape_outside_math(text: str) -> str:
+        return text.replace('\\', r'\textbackslash{}')\
+                   .replace('&', r'\&')\
+                   .replace('%', r'\%')\
+                   .replace('$', r'\$')\
+                   .replace('#', r'\#')\
+                   .replace('_', r'\_')\
+                   .replace('{', r'\{')\
+                   .replace('}', r'\}')\
+                   .replace('~', r'\textasciitilde{}')\
+                   .replace('^', r'\textasciicircum{}')\
+
+    # Split string into math and non-math parts
+    parts = math_pattern.split(s)
+
+    # Escape only non-math parts
+    escaped_parts = [
+        part if math_pattern.fullmatch(part)
+        else escape_outside_math(part)
+        for part in parts
+    ]
+
+    return ''.join(escaped_parts)
+
+

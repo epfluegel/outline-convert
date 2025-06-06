@@ -91,7 +91,7 @@ def main():
         else:
             out_lines = render_latex_beamer(root_node,  strip_tags=args.strip_tags)
     else:  # opml
-        out_tree = ET.ElementTree(node_to_outline_elem(root_node, strip_tags=args.strip_tags))
+        out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 
 
     # -- output result ------------------------------------------------------
