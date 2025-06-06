@@ -33,15 +33,16 @@ def node_to_outline_elem(node: Node, strip_tags: bool = False) -> ET.Element:
         elem.append(node_to_outline_elem(c, strip_tags=strip_tags))
     return elem
 
-def build_opml(root: Node, owner_email: Optional[str] = None) -> ET.ElementTree:
+def build_opml(root: Node, owner_email: Optional[str] = None, strip_tags: bool = False) -> ET.ElementTree:
     opml = ET.Element('opml', version='2.0')
     head = ET.SubElement(opml, 'head')
     if owner_email:
         em = ET.SubElement(head, 'ownerEmail')
-        em.text = f"\n    {owner_email}\n  "
+        em.text = f"\n      {owner_email}\n    "
     body = ET.SubElement(opml, 'body')
     for c in root.children:
-        body.append(node_to_outline_elem(c))
+        # pass strip_tags down into node_to_outline_elem
+        body.append(node_to_outline_elem(c, strip_tags=strip_tags))
     tree = ET.ElementTree(opml)
     try:
         ET.indent(tree, space='  ')
