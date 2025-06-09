@@ -63,7 +63,8 @@ def render_latex_beamer(node: Node, level: int = 0, strip_tags: bool = False) ->
         return sublines
 
     if level == 0:
-        document_title = escape_latex(node.children[0].title.strip()) if node.children else "Untitled"
+        document_title = "TOTO"
+        #document_title = escape_latex(node.children[0].title.strip()) if node.children else "Untitled"
         lines.extend([
             r"\documentclass{beamer}",
             r"\usepackage[T1]{fontenc}",
@@ -140,8 +141,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0) -> List[str]:
         title = child.title.strip()
         tags = [part for part in title.split() if part.startswith('#')]
         clean_title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        if "#wfe-ignore-outline" in title:
-            continue
+
         if "#slide" in tags:
             clean_title = escape_latex(clean_title)
             lines.append(fr"\begin{{frame}}{{{clean_title}}}")

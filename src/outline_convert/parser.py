@@ -6,7 +6,7 @@ import re
 from .utils import detect_indent
 
 
-def parse_text(lines: List[str]) -> Node:
+def parse_text(lines: List[str], expert_mode: bool = False) -> Node:
     root = Node('root')
     stack = [(-1, root)]
     indent_size = detect_indent(lines)
@@ -16,39 +16,55 @@ def parse_text(lines: List[str]) -> Node:
         stripped = raw.strip()
         if not stripped:
             continue
-        # note lines
         if stripped.startswith('"') and stripped.endswith('"') and last_node:
             last_node.note = stripped.strip('"')
             continue
-        # compute level
+
         leading = raw.expandtabs(indent_size)
         space_count = len(leading) - len(leading.lstrip(' '))
         extra = indent_size if leading.lstrip().startswith('-') else 0
         level = (space_count + extra) // indent_size
         title = re.sub(r'^-+\s*', '', leading.strip())
+
         node = Node(title)
-        # attach
+
         while stack and stack[-1][0] >= level:
             stack.pop()
-        stack[-1][1].children.append(node)
+        parent = stack[-1][1]
+
+        if expert_mode and "#wfe-ignore-item" in title:
+            last_node = None
+            continue
+
+        parent.children.append(node)
         stack.append((level, node))
         last_node = node
+
     return root
 
-# -- OPML PARSING -----------------------------------------------------------
-def parse_opml(root_elem: ET.Element) -> Node:
+
+def parse_opml(root_elem: ET.Element, expert_mode: bool = False) -> Node:
     body = root_elem.find('body')
     top = Node('root')
     if body is None:
         return top
-    def recurse(elem: ET.Element) -> Node:
-        node = Node(elem.get('text',''))
+
+    def recurse(elem: ET.Element, parent: Node):
+        title = elem.get('text', '')
+        node = Node(title)
         note = elem.get('_note')
         if note:
             node.note = note
-        for child in elem.findall('outline'):
-            node.children.append(recurse(child))
-        return node
+
+        if expert_mode and "#wfe-ignore-item" in title:
+            for child_elem in elem.findall('outline'):
+                recurse(child_elem, parent)
+        else:
+            parent.children.append(node)
+            for child_elem in elem.findall('outline'):
+                recurse(child_elem, node)
+
     for outline in body.findall('outline'):
-        top.children.append(recurse(outline))
+        recurse(outline, top)
+
     return top
