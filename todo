@@ -1,0 +1,38 @@
+[DONE] Consider tags or not : --expert-mode
+tabs : -t none space tab
+[DONE] output format : -f opml txt latex-a(article) latex-b(beamer)
+strip tags : -s By default keep every tags
+[DONE] output name : -o  Default name?
+[DONE] If no -o --> stdout
+clipboard copy and paste
+
+default argument file name. Do not look at the extension name but analyse the content
+
+Default execution : whatever file into opml
+
+
+
+
+if no -o given, write everything in stdout --> stdout option is now useless
+
+
+The escaping issue can come from the opml treatment maybe there will be another escape function. Indeed the opml to latex is not working well
+
+Txt to Txt OK
+Txt to opml FIXED
+Txt to Latex-a IMPROVED with the package for <> etc
+Txt to Latex-b OK warning: underfull vbox badness
+Txt to Latex-b expert 80% FIXED the escaping after converting the tags but no specific tags tested. When there is no tag for a title
+it should create its own slide but it is not the case now
+
+Opml to Txt OK
+Opml to Opml OK
+Opml to Latex-a
+
+Need to see how the sub sub section work because for now it is deleted but we may want a titla or so
+Are section just to organise the slides and the parts of the presentation?
+
+
+Input recognition
+stdout lasting option
+
