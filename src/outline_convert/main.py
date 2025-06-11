@@ -2,14 +2,13 @@ import argparse
 import os
 import sys
 import xml.etree.ElementTree as ET
-
 from typing import Optional, List
 
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer_with_tags, render_latex_beamer, render_latex
-from .renderer_text import render_text, build_opml, node_to_outline_elem
-from .utils import find_node, sanitize_filename
+from .renderer_text import render_text, build_opml
+from .utils import find_node
 
 
 # -- MAIN ------------------------------------------------------------------
@@ -57,7 +56,7 @@ def main():
         with open(args.input, 'r', encoding='utf-8') as f:
             tree = ET.parse(f)
             xml_root = tree.getroot()
-            root_node = parse_opml(xml_root)
+            root_node = parse_opml(xml_root, expert_mode = args.expert_mode)
     else:
         # Parse plain text
         if args.input:
@@ -66,7 +65,7 @@ def main():
         else:
             print('Paste outline below. Finish with Ctrl+D (EOF):')
             raw = [line.rstrip('\n') for line in sys.stdin]
-        root_node = parse_text(raw)
+        root_node = parse_text(raw, expert_mode = args.expert_mode)
 
     # -- optional subtree extraction ----------------------------------------
     cs = not args.ci
