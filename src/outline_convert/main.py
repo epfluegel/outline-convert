@@ -27,8 +27,11 @@ def main():
     p.add_argument('--stdout', action='store_true', help='Write to stdout')
     p.add_argument('--date', metavar='DIR',
                    help='Scan DIR and pick the most recently modified file as input')
+
     p.add_argument('--expert-mode', action='store_true',
-                   help='(latex-b only) Interpret tags when outputting LaTeX Beamer')
+                   help='(parse only) Skip any nodes tagged #wfe-ignore-outline')
+    p.add_argument('--beamer-tags', action='store_true',
+                   help = '(latex-b only) Interpret #slide/#h when rendering Beamer')
     p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
 
     args = p.parse_args()
