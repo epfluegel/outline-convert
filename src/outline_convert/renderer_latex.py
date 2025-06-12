@@ -39,8 +39,6 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
         lines.append(r"\end{document}")
     return lines
 
-def render_latex_beamer(node: Node, level: int = 0, strip_tags: bool = False) -> List[str]:
-    lines: List[str] = []
 
     def process_children(children: List[Node], level: int) -> List[str]:
         sublines: List[str] = []
