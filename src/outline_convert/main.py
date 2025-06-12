@@ -6,7 +6,7 @@ from typing import Optional, List
 
 from .models import Node
 from .parser import parse_text, parse_opml
-from .renderer_latex import render_latex_beamer_with_tags, render_latex_beamer, render_latex
+from .renderer_latex import render_latex_beamer_with_tags, render_latex
 from .renderer_text import render_text, build_opml
 from .utils import find_node
 
@@ -88,10 +88,8 @@ def main():
     elif args.format == 'latex-a':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'latex-b':
-        if args.expert_mode:
-            out_lines = render_latex_beamer_with_tags(root_node)
-        else:
-            out_lines = render_latex_beamer(root_node,  strip_tags=args.strip_tags)
+        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags )
+
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 
