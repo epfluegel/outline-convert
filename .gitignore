@@ -5,3 +5,4 @@ todo
 /src/outline_convert.egg-info/
 /src/UNKNOWN.egg-info/
 test
+src/outline_convert/__pycache__/
