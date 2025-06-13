@@ -105,7 +105,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 
 
 
-def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False) -> List[str]:
+def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False) -> List[str]:
     lines: List[str] = []
 
     def clean_text(title: str) -> str:
@@ -116,27 +116,28 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
 
     # --- Preamble & title page frame ---
     if level == 0:
-        doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
-        lines.extend([
-            r"\documentclass{beamer}",
-            r"\usepackage[T1]{fontenc}",
-            r"\usetheme{Goettingen}",
-            r"\definecolor{links}{HTML}{2A1B81}",
-            r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
-            fr"\title{{{doc_title}}}",
-            r"\date{\today}",
-            r"\AtBeginSection[]",
-            r"{",
-            r"  \begin{frame}<beamer>{Outline}",
-            r"      \tableofcontents[currentsection, currentsubsection]",
-            r"  \end{frame}",
-            r"}",
-            r"\begin{document}",
-            r"\begin{frame}",
-            r"  \titlepage",
-            r"\end{frame}",
-            ""
-        ])
+        if not fragment:
+            doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
+            lines.extend([
+                r"\documentclass{beamer}",
+                r"\usepackage[T1]{fontenc}",
+                r"\usetheme{Goettingen}",
+                r"\definecolor{links}{HTML}{2A1B81}",
+                r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
+                fr"\title{{{doc_title}}}",
+                r"\date{\today}",
+                r"\AtBeginSection[]",
+                r"{",
+                r"  \begin{frame}<beamer>{Outline}",
+                r"      \tableofcontents[currentsection, currentsubsection]",
+                r"  \end{frame}",
+                r"}",
+                r"\begin{document}",
+                r"\begin{frame}",
+                r"  \titlepage",
+                r"\end{frame}",
+                ""
+            ])
 
     # --- Find only #slide nodes ---
     def find_slides(n: Node) -> List[Node]:
@@ -222,6 +223,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
 
     # --- Close document ---
     if level == 0:
-        lines.append(r"\end{document}")
+        if not fragment:
+            lines.append(r"\end{document}")
 
     return lines

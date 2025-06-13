@@ -32,6 +32,7 @@ def main():
                    help='Skip any nodes tagged #wfe-ignore-outline and process #slide and #h')
 
     p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
+    p.add_argument('--fragment', action='store_true',help='Convert as a fragment')
 
     args = p.parse_args()
 
@@ -87,7 +88,7 @@ def main():
     elif args.format == 'latex-a':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'latex-b':
-        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags )
+        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
 
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
