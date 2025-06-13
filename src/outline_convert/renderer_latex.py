@@ -1,4 +1,5 @@
 from typing import List
+import re
 
 from .models import Node
 from .utils import escape_latex
@@ -71,13 +72,6 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
             r"\definecolor{links}{HTML}{2A1B81}",
             r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
             fr"\title{{{document_title}}}",
-            r"\subtitle{}",
-            r"\author{author\inst{1}}",
-            r"\institute[Universities of Somewhere and Elsewhere]{",
-            r"  \inst{1}%",
-            r"  School of Computer Science and Mathematics",
-            r"  Kingston University",
-            r"}",
             r"\date{\today}",
             r"\AtBeginSection[]",
             r"{",
@@ -104,6 +98,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
     return lines
 
 
+IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 
 def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False) -> List[str]:
     lines: List[str] = []
@@ -121,6 +116,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",
+                r"\usepackage{graphicx}",
                 r"\usetheme{Goettingen}",
                 r"\definecolor{links}{HTML}{2A1B81}",
                 r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
@@ -167,13 +163,29 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
     def collect_items(n: Node, lvl: int = 0) -> List[str]:
         result: List[str] = []
         for c in n.children:
-            tags = {p for p in c.title.split() if p.startswith('#')}
-            # in expert_mode skip slide/header markers
+            raw = c.title.strip()
+            tags = {p for p in raw.split() if p.startswith('#')}
+
+            # 1) IMAGE?
+            m = IMAGE_RE.match(raw)
+            if m:
+                filename = m.group(1)            # e.g. "assets.png"
+                result.extend([
+                    r"\begin{figure}[t]",
+                    fr"\includegraphics[width=.75\textwidth]{{assets/{filename}}}",
+                    r"\centering",
+                    r"\end{figure}",
+                ])
+                # skip all the normal \item logic
+                continue
+
+            # 2) HEADER/SLIDE tags (expert_mode) get skipped here
             if expert_mode and ('#slide' in tags or '#h' in tags):
                 result.extend(collect_items(c, lvl))
                 continue
 
-            text = clean_text(c.title)
+            # 3) otherwise, a normal item
+            text = clean_text(raw)
             indent = '  ' * lvl
             result.append(fr"{indent}\item {text}")
 
@@ -185,7 +197,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                     fr"{indent}  \end{{quote}}",
                 ])
 
-            # nested items
+            # 4) recurse for sub-items
             sub = collect_items(c, lvl + 1)
             if sub:
                 result.append(fr"{indent}  \begin{{itemize}}")
