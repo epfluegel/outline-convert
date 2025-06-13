@@ -93,7 +93,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 
         for child in node.children:
             frame_title = escape_latex(child.title.strip())
-            lines.append(fr"\begin{{frame}}[allowframebreaks]{{{frame_title}}}")
+            lines.append(fr"\begin{{frame}}{{{frame_title}}}")
             lines.append(r"\begin{itemize}")
             lines.extend(process_children(child.children, level=1))
             lines.append(r"\end{itemize}")
@@ -124,13 +124,6 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
             r"\definecolor{links}{HTML}{2A1B81}",
             r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
             fr"\title{{{doc_title}}}",
-            r"\subtitle{}",
-            r"\author{author\inst{1}}",
-            r"\institute[Universities of Somewhere and Elsewhere]{",
-            r"  \inst{1}%",
-            r"  School of Computer Science and Mathematics",
-            r"  Kingston University",
-            r"}",
             r"\date{\today}",
             r"\AtBeginSection[]",
             r"{",
@@ -214,7 +207,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
 
         title = clean_text(slide.title)
         if not expert_mode:
-            lines.append(fr"\begin{{frame}}[allowframebreaks]{{{title}}}")
+            lines.append(fr"\begin{{frame}}{{{title}}}")
         else:
             lines.append(fr"\begin{{frame}}{{{title}}}")
 
