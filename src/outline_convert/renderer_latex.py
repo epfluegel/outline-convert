@@ -172,7 +172,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                 filename = m.group(1)            # e.g. "assets.png"
                 result.extend([
                     r"\begin{figure}[t]",
-                    fr"\includegraphics[width=.75\textwidth]{{assets/{filename}}}",
+                    fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
                     r"\centering",
                     r"\end{figure}",
                 ])
