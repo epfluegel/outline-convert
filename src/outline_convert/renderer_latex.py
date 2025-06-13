@@ -108,7 +108,6 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False) -> List[str]:
     lines: List[str] = []
 
-    # helper to clean text, optionally stripping tags
     def clean_text(title: str) -> str:
         parts = title.strip().split()
         if strip_tags:
@@ -146,7 +145,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
             ""
         ])
 
-    # --- Find slide nodes ---
+    # --- Find only #slide nodes ---
     def find_slides(n: Node) -> List[Node]:
         slides: List[Node] = []
         if expert_mode:
@@ -157,7 +156,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
             slides.extend(find_slides(c))
         return slides
 
-    # --- Emit section/subsection before frames ---
+    # --- Emit \section / \subsection before frames ---
     def emit_sections(n: Node, depth: int):
         if not expert_mode:
             return
@@ -170,18 +169,20 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                 lines.append(fr"\subsection{{{clean}}}")
             emit_sections(c, depth + 1)
 
-    # --- Collect \item lines ---
+    # --- Collect all \item… lines under a slide ---
     def collect_items(n: Node, lvl: int = 0) -> List[str]:
         result: List[str] = []
         for c in n.children:
             tags = {p for p in c.title.split() if p.startswith('#')}
-            # skip slide/header markers in items
+            # in expert_mode skip slide/header markers
             if expert_mode and ('#slide' in tags or '#h' in tags):
                 result.extend(collect_items(c, lvl))
                 continue
+
             text = clean_text(c.title)
             indent = '  ' * lvl
             result.append(fr"{indent}\item {text}")
+
             if c.note:
                 note = escape_latex(c.note)
                 result.extend([
@@ -189,35 +190,45 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                     fr"{indent}  {note}",
                     fr"{indent}  \end{{quote}}",
                 ])
+
+            # nested items
             sub = collect_items(c, lvl + 1)
             if sub:
                 result.append(fr"{indent}  \begin{{itemize}}")
                 result.extend(sub)
                 result.append(fr"{indent}  \end{{itemize}}")
+
         return result
 
-    # --- Determine frames ---
-    slides = find_slides(node) if expert_mode else [node]
+    # --- Determine which nodes become frames ---
+    if expert_mode:
+        # only #slide-tagged nodes
+        slides = find_slides(node)
+    else:
+        # every top-level child is its own frame
+        slides = list(node.children[0].children)
+
+    # --- Render each frame ---
     for slide in slides:
-        # sections (tag-driven)
         emit_sections(slide, depth=1)
-        # frame begin
+
         title = clean_text(slide.title)
-        # allow automatic frame breaks in non-expert mode
         if not expert_mode:
             lines.append(fr"\begin{{frame}}[allowframebreaks]{{{title}}}")
         else:
             lines.append(fr"\begin{{frame}}{{{title}}}")
-        # items
+
         items = collect_items(slide)
         if items:
             lines.append(r"\begin{itemize}")
             lines.extend(items)
             lines.append(r"\end{itemize}")
+
         lines.append(r"\end{frame}")
         lines.append("")
 
-    # --- Document end ---
+    # --- Close document ---
     if level == 0:
         lines.append(r"\end{document}")
+
     return lines
