@@ -99,6 +99,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 
 
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
+LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
 def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False) -> List[str]:
     lines: List[str] = []
@@ -178,6 +179,20 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                 ])
                 # skip all the normal \item logic
                 continue
+
+            # 2) LINK?
+            #    replace “[text](url)” → “\href{url}{text}”
+            def link_sub(m: re.Match) -> str:
+                text, url, description = m.group(1), m.group(2), m.group(3)
+                return fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
+
+            l = LINK_RE.match(raw)
+            if l:
+                res = link_sub(l)
+                result.append(res)
+                continue
+
+
 
             # 2) HEADER/SLIDE tags (expert_mode) get skipped here
             if expert_mode and ('#slide' in tags or '#h' in tags):
