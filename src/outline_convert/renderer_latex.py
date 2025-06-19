@@ -102,16 +102,13 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
-def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, header_level: int = 0) -> List[str]:
+def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, header_level: int = 0) -> List[str]:
     lines: List[str] = []
 
-    if level == 0:
+    if level == -1:
         if not fragment:
-            doc_title = "Untitled"
-            if node.children:
-                doc_title = clean_text(node.children[0].title.strip(), strip_tags)
-            doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
-
+            doc_title = clean_text(node.title, strip_tags=strip_tags) if node.children else "Untitled"
+            print(doc_title)
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",
@@ -133,10 +130,12 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                 r"\end{frame}",
                 ""
             ])
+            level = level + 1
 
     for child in node.children:
         title = child.title.strip()
         tags = [part for part in title.split() if part.startswith('#')]
+        print(child.title, level)
         if expert_mode:
             if "#h" in tags:
                 clean_title = clean_text(title, strip_tags)
@@ -153,7 +152,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
 
 # There should not be any #h inside a slide node
 
-            elif "#slide" in tags or level == 1 :
+            elif "#slide" in tags or level == 0 :
                 clean_title = clean_text(title, strip_tags)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
@@ -193,8 +192,8 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                     lines.append(fr"{indent}\begin{{itemize}}")
                     lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
-
-    if level == 0:
+    level = level - 1
+    if level == -1:
         if not fragment:
             lines.append(r"\end{document}")
 
