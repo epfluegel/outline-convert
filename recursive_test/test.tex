@@ -1,0 +1,31 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usetheme{Goettingen}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\title{section 1 \#h}
+\date{\today}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+      \tableofcontents[currentsection, currentsubsection]
+  \end{frame}
+}
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{section 1 \#h}
+\begin{frame}{slide 1 \#slide}
+\end{frame}
+\begin{frame}{slide 2 \#slide}
+\end{frame}
+\section{section 2 \#h}
+\subsection{subsection 1 \#h}
+\begin{frame}{node}
+\end{frame}
+\subsection{subsection 2 \#h}
+\item slide 3 missing slide
+\end{document}
