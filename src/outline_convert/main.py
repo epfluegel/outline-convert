@@ -31,7 +31,6 @@ def main():
     p.add_argument('--expert-mode', action='store_true',
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
-<<<<<<< Updated upstream
     p.add_argument('--strip-tags', action='store_true', help='Strip tags from input')
     p.add_argument('--fragment', action='store_true',help='Only keep body of document for latex beamer and opml')
     p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
@@ -39,10 +38,8 @@ def main():
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
     p.add_argument('-t', '--tab-char', choices=['space', 'none', 'tab'], default = 'space', help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
-=======
     p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
     p.add_argument('--fragment', action='store_true',help='Convert as a fragment')
->>>>>>> Stashed changes
 
     args = p.parse_args()
 
@@ -110,13 +107,8 @@ def main():
 
     elif args.format == 'latex':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
-<<<<<<< Updated upstream
     elif args.format == 'beamer':
-=======
-    elif args.format == 'latex-b':
->>>>>>> Stashed changes
         out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
-
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 

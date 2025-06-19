@@ -102,20 +102,14 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
-<<<<<<< Updated upstream
 def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, header_level: int = 0) -> List[str]:
-=======
-def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False) -> List[str]:
->>>>>>> Stashed changes
     lines: List[str] = []
 
     if level == 0:
         if not fragment:
-<<<<<<< Updated upstream
             doc_title = "Untitled"
             if node.children:
                 doc_title = clean_text(node.children[0].title.strip(), strip_tags)
-=======
             doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
             lines.extend([
                 r"\documentclass{beamer}",
