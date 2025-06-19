@@ -111,27 +111,6 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
             if node.children:
                 doc_title = clean_text(node.children[0].title.strip(), strip_tags)
             doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
-            lines.extend([
-                r"\documentclass{beamer}",
-                r"\usepackage[T1]{fontenc}",
-                r"\usetheme{Goettingen}",
-                r"\definecolor{links}{HTML}{2A1B81}",
-                r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
-                fr"\title{{{doc_title}}}",
-                r"\date{\today}",
-                r"\AtBeginSection[]",
-                r"{",
-                r"  \begin{frame}<beamer>{Outline}",
-                r"      \tableofcontents[currentsection, currentsubsection]",
-                r"  \end{frame}",
-                r"}",
-                r"\begin{document}",
-                r"\begin{frame}",
-                r"  \titlepage",
-                r"\end{frame}",
-                ""
-            ])
->>>>>>> Stashed changes
 
             lines.extend([
                 r"\documentclass{beamer}",
@@ -216,13 +195,9 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                     lines.append(fr"{indent}\end{{itemize}}")
 
     if level == 0:
-<<<<<<< Updated upstream
-        lines.append(r"\end{document}")
-=======
         if not fragment:
             lines.append(r"\end{document}")
 
->>>>>>> Stashed changes
     return lines
 
 
