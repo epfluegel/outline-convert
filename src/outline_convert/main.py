@@ -38,8 +38,6 @@ def main():
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
     p.add_argument('-t', '--tab-char', choices=['space', 'none', 'tab'], default = 'space', help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
-    p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
-    p.add_argument('--fragment', action='store_true',help='Convert as a fragment')
 
     args = p.parse_args()
 

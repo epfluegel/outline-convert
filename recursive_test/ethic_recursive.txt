@@ -1,0 +1,280 @@
+Ethical and Legal Aspects of Security #e #ethics #eyo-style:Section
+
+- Learning Objectives -- Legal and Ethical Issues #slide #CI7130_Rev #legal
+  - Know the definition of cyber crime and discuss the main challenges around this type of crime
+  - Understand legal frameworks for protecting against the theft of computer assets
+  - Know typical threats to privacy, and outline suitable controls to these
+  - Discuss ethical issues in computer/cyber security
+    - Know the definition of a code of ethics
+    - Discuss the scenario and dilemmas involved in a range of scenarios
+- Motivation #slide #legal #CI7130
+  - The term "ethical hacker" suggests already: there are many ethical and legal issues in the field of computer security.
+  - In your opinion, what might be the most critical issues?
+  - We will discuss:
+    - Computer/Cybercrime
+    - Legal Aspects of Computer Security
+    - Ethical Issues in Computer Security
+- Legal Aspects in Computer Security #h #legal #CI7130 #eyo-style:Subsection
+  - Computer and Cybercrime #h #legal #CI7130 #eyo-style:Subsection
+    - Computer Crime is a Separate Category #slide #legal #CI7130
+      - Traditional legislation sometimes difficult to apply
+        - Legislation is out of pace -- creating and changing laws are slow processes, people involved don't understand fast progressing technology (computers, Internet, Web technologies..)
+        - Difficult to define the ownership of data/software -- in some cases: courts failed to acknowledge theft
+    - Challenges for Fighting Computer Crime #slide #legal #CI7130
+      - Difficult to provide evidence
+        - Lack of physical evidence -- there are no fingerprints!
+        - Example: how to prove that system has been accessed by a particular individual?
+        - Digital Forensics is emerging new field
+      - Hard to prosecute
+        - Computer crimes could be committed by juveniles
+        - International dimensions due to networked communications
+      - Complexity of case -- difficult to understand what exactly happened
+    - Definition of Computer Crime #slide #legal #CI7130
+      - [Computer Misuse Act](https://en.wikipedia.org/wiki/Computer_Misuse_Act_1990)  (UK, 1990) -- controversial and ahead of its time
+      - May 2007: European Commission noted that there was not even an agreed definition of cybercrime
+      - It proposed a threefold definition:
+        - Traditional forms of crime such as fraud or forgery, though committed over electronic communication networks and information systems;
+        - The publication of illegal content over electronic media, e.g.
+          - child abuse material
+          - incitement to racial hatred
+        - Crimes unique to electronic networks, e.g., attacks against information systems, denial of service and hacking.
+    - Mini-Exercise #slide
+      - Briefly researching the Internet, can you find a recent story on cyber crime in the news?
+      - Which category/type of computer/cyber crime was involved?
+  - Legal Computer Security Controls #h #legal #CI7130 #eyo-style:Subsection
+    - [COMPLETE] Threats to Critical Assets #slide #legal #CI7130
+      - Let us investigate where the law can be used as a computer security control
+      - We will first study threats that might involve assets being stolen or leaked to competitors:
+        - Hardware
+          - Computer hardware design is an important IP
+        - Software
+          - Source code is vital for making profit from an application
+          - Object/binary code needs to be protected, too
+        - Data/Information
+          - Traditionally, sold items were "things" or "services"
+          - Information doesn’t fit easily into these categories (is not a thing but can be replicated)
+          - Difficult to use traditional legislation (see previous topic)
+    - [COMPLETE] Threats to Critical Assets (cont.) #slide #legal #CI7130
+      - Another asset is the People category
+      - Main threat considered here is violation of privacy
+        - This is confidentiality of sensitive data about user (personal information)
+        - Might be exploited by businesses, government or malicious individuals
+      - Used to be only magazine subscriptions, loyalty cards, credit card transactions, phone calls, CCTV recordings
+      - Threats to Privacy are now on completely new scale
+        - Cloud computing (Dropbox, Box, OneDrive, Google Drive, iCloud)
+        - Social networking (Facebook, TikTok, Instagram, LinkedIn, X formerly known as Twitter, BlueSky)
+        - Instant messaging (WhatsApp, Telegram, Signal, Viber, Threema)
+        - AI Interfaces (ChatGPT, Gemini, Copilot, DeepSeek)
+    - [COMPLETE] Applying Traditional Legal Protection to Computer Assets #slide #legal #CI7130
+      - Legal security controls establish enforceable obligations, restrictions, and expectations that protect digital assets, proprietary information, and service reliability.
+      - Overview of legal controls:
+        - Contracts
+          - Legal protections include non-disclosure agreements (NDAs)
+          - Service Level Agreement (SLA)
+        - Trade Secrets
+        - Trademarks
+        - Copyrights
+        - Software Licensing
+        - Patents
+      - They have various degrees of effectiveness
+    - [COMPLETE] Trade Secrets #slide #legal #CI7130
+      - A trade secret is confidential information that is of economic benefit on its owner
+      - E.g. business information that provides a competitive advantage, such as proprietary algorithms, formulas (like the Coca-Cola recipe), or customer lists.
+      - Protection relies on keeping the information secret through legal agreements (e.g., NDAs) and other security measures.
+      - Violation of the agreement generally carries the possibility of heavy financial penalties 
+      - Can protect:
+        - Data
+        - Software
+    - [COMPLETE] Trademarks #slide #legal #CI7130
+      - A recognisable symbol, word, phrase, or logo that distinguishes a brand’s products or services from others (e.g., the Nike swoosh or the word "Google").
+      - Trademarks are legally protected through registration with government agencies
+      - They give the owner exclusive rights to use the mark in commerce.
+      - Protection lasts as long as the trademark is actively used and renewed.
+    - [COMPLETE] Trade Secrets and Trademarks #slide
+      - The main difference between a trade secret and a trademark lies in their purpose and how they are protected:
+      - In short, trade secrets protect secret information, while trademarks protect brand identity in the marketplace.
+    - [COMPLETE] Mini-Exercise -- Which Legal Control Example? #slide
+      - A cybersecurity software company would like to protect its logo and brand name to prevent others from creating counterfeit or malicious software that could be mistaken for their legitimate product, protecting users from security risks.
+      - A company hires a third-party IT firm to manage its cybersecurity and includes clauses that require the firm to implement encryption, access controls, and regular security audits. If the firm fails to meet these terms, the company has legal grounds to seek damages.
+      - A cloud service provider agrees to maintain 99.9% uptime and implement strong security measures, such as data encryption and incident response protocols. If they fail to meet these commitments, customers may be entitled to compensation or contract termination.
+    - [COMPLETE] Copyrights #slide #legal #CI7130
+      - Different countries have different copyright concepts and legislations.
+      - Traditional purpose:
+        - Applies to creative work
+        - Example: music, art, writing
+      - Computer assets:
+        - Data
+        - Source code of program
+      - Can be enforced through technology (Digital Rights Management).
+    - [COMPLETE] Software Licensing #slide #legal #CI7130
+      - A license is a form of copyright protection
+      - Proprietary software uses this to protect:
+        - Source code
+        - Object code
+      - Problems:
+        - legal enforcement
+        - hackers may obtain source code anyway through reverse engineering
+    - [COMPLETE] Open Source Licenses #slide #legal #CI7130
+      - Open Source software is released with source code
+      - Distributed via servers such as GitHub
+      - Very successful model, with many advantages
+      - For OS, alternative license models exist:
+        - GPL
+          - "Copyleft" -- Notion invented by Stallman (Free Software Foundation)
+          - Anyone may copy/modify, provided source code remains free
+        - Creative Commons
+        - Many others..
+    - [COMPLETE] Patents #slide #legal #CI7130
+      - Traditional purpose:
+        - Protects device or process for carrying out an idea
+        - Not the idea itself
+      - Computer assets:
+        - Hardware can be patented
+        - For a long time, algorithms were seen as fact of nature
+        - In some cases now, computer programs can be subject to patents
+        - Example: RSA Algorithm -- US patent expired in 2000
+    - [COMPLETE] Controls Protecting Privacy #slide #privacy #CI7130
+      - Legal
+        - General Data Protection Regulation (EU/UK) (GDPR)
+        - Data Protection Act (UK) 2018
+      - Behavioural
+        - Be aware of social engineering threats
+        - Moderate your active content on social media
+        - Always shred your bills and receipts
+      - Technical
+        - Achieve Anonymity (Tor, VPNs, Signal)
+    - [COMPLETE] Mini-Exercise: Open Source Code #slide #CI7130
+      - Briefly researching the Internet, can you find any other open source licensing schemes?
+      - What are the main differences?
+      - If you are a software developer, writing a Google Chrome extension, which type of licence will you use?
+      - Debate: does the Open Source model make software more secure?
+      - DEBATE #wfe-ignore-outline
+        - "Yes":
+          - Inspecting the code may help finding flaws
+          - Flaws can be fixed promptly
+          - We can compile ourselves hence ruling out any trapdoors
+        - "No":
+          - it is very difficult to analyse someone else's code, so the likelihood that flaws will be found is small
+          - malicious hackers may deliberately introduce a program flaw
+          - this makes it easy for hackers to exploit the vulnerability
+- Ethical Issues in Computer Security #h #ethics #CI7130 #eyo-style:Subsection #new
+  - Definition of Ethical System #slide #ethics #CI7130
+    - Ethical System
+      - Tells us what might be acceptable behaviour in a society
+      - Is different to a law
+      - Is not simply right or wrong
+      - Might differ between different groups/individuals
+      - Ethical positions often come into conflict ("dilemmas")
+    - We can identify some example dilemma scenarios:
+      - Is grey hat hacking ethical?
+      - Should information on security vulnerabilities be published?
+      - Should organisations or individuals be allowed to create encryption that the government cannot break?
+  - VULNERABILITY DISCLOSURE #wfe-ignore-item
+    - Vulnerability Disclosure Dilemma #slide #ethics #CI7130
+      - Suppose an individual has found a security vulnerability in an application.
+      - What should he/she do, and what might be ethical implications?
+      - What are the dilemmas?
+    - Discussion of Dilemma #slide #ethics #CI7130
+      - Publish the information openly:
+        - This forces the writers of the application to provide patches
+        - It is important that users are alerted and can protect themselves
+        - It helps to keep security in the headlines
+        - Dilemma: this might encourage (zero-day) security attacks
+      - Contact the authors/vendors of the software directly
+        - Bounties are available!
+        - Dilemma: company might not listen.
+      - Recent trend:
+        - Hackers sell information to criminals who carry out zero-day attacks
+        - Or they assist government agencies (FBI)
+    - Mini-Exercise: Vulnerability Disclosure Dilemma #slide #ethics #CI7130 #wfe-ignore-outline
+    - Further Reading #slide #legal #ethics #CI7130 #wfe-ignore-outline
+  - ENCRYPTION #wfe-ignore-item #wfe-ignore-outline
+    - The Ethics of Encryption  #slide #ethics #CI7130
+      - We can differentiate between several types of encryption:
+        - Link encryption: The web is moving to default link encryption in HTTP 2, phasing out plaintext traffic.
+        - End-to-end encryption: Modern instant messaging applications such as iMessage already provide end-to-end encryption.
+        - Device encryption: Both Apple and Google are increasingly using device encryption in their operating systems.
+      - Strong encryption is important, but can it be too strong?
+      - Key dilemma: should organisations or individuals be allowed to create encryption that cannot be broken by the government?
+      - [Very topical in the UK](https://www.theregister.com/2023/02/25/signal_uk_online_safety_bill/)
+    - Discussion of Dilemma #slide #ethics #CI7130
+      - Government agencies and lawyers would answer that there should not be unbreakable encryption.
+        - In order to prevent or detect crimes, governments need access to otherwise protected data.
+        - The information required for security investigations is difficult or impossible to access if end-to-end encryption is used.
+      - Advocates of free software and human rights might say that strong encryption is "a human right".
+        - Individual privacy and security on the Internet should be seen as a fundamental right.
+        - Granting access to encrypted information is tantamount to creating a vulnerability in a system -- this creates risk.
+        - It will also create a dilemma due to the incompatibility of international laws.
+        - Prevention of crime such as terror attacks should be prevented by more thoroughly analysing all the data that is actually available.
+    - Mini-Exercise: Ethics of Encryption #slide #ethics #CI7130
+      - Review the previous topic of ethical aspects of encryption and define your view on .
+      - An extended version of this discussion can be found in the original [online resource](https://www.scu.edu/ethics/focus-areas/business-ethics/resources/the-ethics-of-encryption/).
+      - What might followers of the AntiSec movement might argue?
+    - Further Reading #slide #legal #ethics #CI7130
+      - [1](http://cs.stanford.edu/people/eroberts/courses/cs181/projects/public-key-encryption/ee.html)
+      - [2](https://www.emc.com/collateral/software/white-papers/h11013-rsa-dcp-0812-wp.pdf)
+    - #new
+      - European Court of Human Rights Rejects
+      - Encryption Backdoors
+      - [2024.02.19]
+      - The European Court of Human Rights has ruled
+      - that breaking end-to-end encryption by adding backdoors violates
+      - human rights:
+      - Seemingly most critically, the [Russian] government told the ECHR that any intrusion on private lives resulting from decrypting messages was “necessary” to combat terrorism in a democratic society. To back up this claim, the government pointed to a 2017 terrorist attack that was “coordinated from abroad through secret chats via Telegram.” The government claimed that a second terrorist attack that year was prevented after the government discovered it was being coordinated through Telegram chats.
+      - However, privacy advocates backed up Telegram’s claims that the messaging services couldn’t technically build a backdoor for governments without impacting all its users. They also argued that the threat of mass surveillance could be enough to infringe on human rights. The European Information Society Institute (EISI) and Privacy International told the ECHR that even if governments never used required disclosures to mass surveil citizens, it could have a chilling effect on users’ speech or prompt service providers to issue radical software updates weakening encryption for all users.
+      - In the end, the ECHR concluded that the Telegram user’s rights had been violated, partly due to privacy advocates and international reports that corroborated Telegram’s position that complying with the FSB’s disclosure order would force changes impacting all its users.
+      - The “confidentiality of communications is an essential element of the right to respect for private life and correspondence,” the ECHR’s ruling said. Thus, requiring messages to be decrypted by law enforcement “cannot be regarded as necessary in a democratic society.”
+  - Example: Electronic Publishing #slide #legal #CI7130 #wfe-ignore-outline
+    - Scientific papers are published in journals
+    - Author transfers copyright to journal
+    - Journals are sold to libraries, institutes etc
+    - Modern option: electronic publishing
+    - How safe/genuine is data?
+    - Easy to make a copy and send to a friend
+    - Articles might be available (illegally?) on the web
+  - GREY HAT HACKING #wfe-ignore-item
+    - Cyber Threat Actors (Attackers) #slide #CI7130_Intro #new #wfe-ignore-outline
+      - White Hat (Ethical) Hackers -- non-malicious attackers employed to find vulnerabilities in an organisation to improve security.
+      - Black Hat Hackers (Computer Criminals) -- malicious attackers who want to profit financially.
+      - Grey Hat Hackers -- somewhere between White Hat and Black Hat. For example, they might carry out ethical hacking activities without consent.
+      - Script Kiddies -- non-malicious but thoughtless and haphazard (teenage) users. Find and run scripted security attacks to be entertained or thrilled.
+      - Researchers (Cryptanalysts) -- non-malicious attackers who focus on finding security loopholes offline.
+      - Other terms often used: #wfe-ignore-outline
+        - Hacktivists: Attack for political or social causes.
+        - Cybercriminals: Attack for financial gain.
+        - Nation-states: Attack for political, military or economic espionage purposes.
+        - Insiders: Attack for revenge, financial gain, or ideology.
+        - Script kiddies: Attack for fun or to impress others.
+        - Terrorists: Attack for ideological or political reasons.
+        - Competitors: Attack for business advantage.
+        - Hackers, crackers, malicious insiders, industrial spies, cybercriminals, hacktivists, and cyber-terrorists.
+    - Grey-Hat Hacking #slide #ethics #CI7130
+      -
+      - Definition of Gray Hat Hacker
+        - White Hat (Ethical) Hackers -- non-malicious attackers employed to find vulnerabilities in an organisation to improve security.
+        - Grey Hat Hackers -- somewhere between White Hat and Black Hat. For example, they might carry out ethical hacking activities without consent.
+        - Black Hat Hackers (Computer Criminals) -- malicious attackers who want to profit financially.
+    - The Ethics of Grey-Hat Hacking #slide #ethics #CI7130
+      - Controversy on the act of unsolicited ethical computer hacking
+      - What is your opinion:
+        - Does this raise ethical issues?
+        - Should we condemn this "profession"?
+        - What are the dilemmas?
+      - To better understand this, we need to study possible motivations behind attacks.
+    - GT #wfe-ignore-item
+      - Strategic Security Games #slide
+      - Interacting with a Grey-Hat Hacker #slide
+      - The Bimatrix Grey-Hat Hacker Game #slide
+      - Grey-Hat Hacker Game: Strategic Normal Form #slide
+    - Dilemma Discussion #slide #ethics #CI7130
+      - Some Grey Hat attackers claim:
+        - We don’t intend to cause harm
+        - We help making systems more secure
+        - We do research
+      - On the other hand:
+        - Can we really trust them?
+        - There are grey hat hackers turning to malicious hackers/computer criminals
+        - A lot of these activities might never be detected and might not improve security
+        - Is an unlawful action after all
+    - Mini-Exercise: The Ethics of Hacking #slide #ethics #CI7130 #wfe-ignore-outline
+    - Further Reading #slide #legal #ethics #CI7130 #wfe-ignore-outline

@@ -39,8 +39,7 @@ stdout lasting option
 Unicode
 [COMPLETE]
 
-the auto frame if not in expert mode considers that level1 nodes should be frame
+Expert mode, note are only considered for basic node
+I added a #h in the ethic lecture else it could not work
 
-put the heading level inside the data structure ?
-
-Latex-a becomes Latex and other one Beamer
+What to do with h3+ section ignore? print an error message in terminal ? one in the latex ?
