@@ -1,8 +1,9 @@
+from inspect import cleandoc
 from typing import List
 import re
 
 from .models import Node
-from .utils import escape_latex
+from .utils import escape_latex, clean_text
 
 
 def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[str]:
@@ -101,19 +102,16 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
-def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False) -> List[str]:
+def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, header_level: int = 0) -> List[str]:
     lines: List[str] = []
 
-    def clean_text(title: str) -> str:
-        parts = title.strip().split()
-        if strip_tags:
-            parts = [p for p in parts if not p.startswith('#')]
-        return escape_latex(' '.join(parts))
-
-    # --- Preamble & title page frame ---
     if level == 0:
         if not fragment:
+            doc_title = "Untitled"
+            if node.children:
+                doc_title = clean_text(node.children[0].title.strip(), strip_tags)
             doc_title = clean_text(node.children[0].title) if node.children else "Untitled"
+
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",
@@ -136,121 +134,82 @@ def render_latex_beamer_with_tags(node: Node, level: int = 0, expert_mode: bool 
                 ""
             ])
 
-    # --- Find only #slide nodes ---
-    def find_slides(n: Node) -> List[Node]:
-        slides: List[Node] = []
+    for child in node.children:
+        title = child.title.strip()
+        tags = [part for part in title.split() if part.startswith('#')]
         if expert_mode:
-            tags = {p for p in n.title.split() if p.startswith('#')}
-            if '#slide' in tags:
-                slides.append(n)
-        for c in n.children:
-            slides.extend(find_slides(c))
-        return slides
+            if "#h" in tags:
+                clean_title = clean_text(title, strip_tags)
+                if header_level == 0:
+                    lines.append(fr"\section{{{clean_title}}}")
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
 
-    # --- Emit \section / \subsection before frames ---
-    def emit_sections(n: Node, depth: int):
-        if not expert_mode:
-            return
-        for c in n.children:
-            tags = {p for p in c.title.split() if p.startswith('#')}
-            clean = clean_text(c.title)
-            if '#h' in tags and depth == 1:
-                lines.append(fr"\section{{{clean}}}")
-            elif '#h' in tags and depth == 2:
-                lines.append(fr"\subsection{{{clean}}}")
-            emit_sections(c, depth + 1)
+                elif header_level == 1:
+                    lines.append(fr"\subsection{{{clean_title}}}")
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
+                else:
+                    lines.append(fr"\subsection{{{clean_title}}}")
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
 
-    # --- Collect all \item… lines under a slide ---
-    def collect_items(n: Node, lvl: int = 0) -> List[str]:
-        result: List[str] = []
-        for c in n.children:
-            raw = c.title.strip()
-            tags = {p for p in raw.split() if p.startswith('#')}
+# There should not be any #h inside a slide node
 
-            # 1) IMAGE?
-            m = IMAGE_RE.match(raw)
-            if m:
-                filename = m.group(1)            # e.g. "assets.png"
-                result.extend([
-                    r"\begin{figure}[t]",
-                    fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
-                    r"\centering",
-                    r"\end{figure}",
-                ])
-                # skip all the normal \item logic
-                continue
+            elif "#slide" in tags or level == 1 :
+                clean_title = clean_text(title, strip_tags)
+                lines.append(fr"\begin{{frame}}{{{clean_title}}}")
+                if child.children:
+                    lines.append(r"\begin{itemize}")
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
+                    lines.append(r"\end{itemize}")
+                lines.append(r"\end{frame}")
 
-            # 2) LINK?
-            #    replace “[text](url)” → “\href{url}{text}”
-            def link_sub(m: re.Match) -> str:
-                text, url, description = m.group(1), m.group(2), m.group(3)
-                return fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
+            else:
 
-            l = LINK_RE.match(raw)
-            if l:
-                res = link_sub(l)
-                result.append(res)
-                continue
+                i = IMAGE_RE.match(title)
+                if i:
+                    filename = i.group(1)
+                    lines.extend([
+                        r"\begin{figure}[t]",
+                        fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
+                        r"\centering",
+                        r"\end{figure}",
+                    ])
 
+                l = LINK_RE.match(title)
+                if l:
+                    text, url, description = l.group(1), l.group(2), l.group(3)
+                    res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
+                    lines.append(res)
 
+                indent = '  ' * level
+                clean_title = clean_text(title, strip_tags)
+                lines.append(fr"{indent}\item {clean_title}")
 
-            # 2) HEADER/SLIDE tags (expert_mode) get skipped here
-            if expert_mode and ('#slide' in tags or '#h' in tags):
-                result.extend(collect_items(c, lvl))
-                continue
+                if child.note:
+                    note = clean_text(child.note, strip_tags)
+                    lines.append(fr"{indent}\begin{{quote}}")
+                    lines.append(fr"{indent}{note}")
+                    lines.append(fr"{indent}\end{{quote}}")
+                if child.children:
+                    lines.append(fr"{indent}\begin{{itemize}}")
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
+                    lines.append(fr"{indent}\end{{itemize}}")
 
-            # 3) otherwise, a normal item
-            text = clean_text(raw)
-            indent = '  ' * lvl
-            result.append(fr"{indent}\item {text}")
-
-            if c.note:
-                note = escape_latex(c.note)
-                result.extend([
-                    fr"{indent}  \begin{{quote}}",
-                    fr"{indent}  {note}",
-                    fr"{indent}  \end{{quote}}",
-                ])
-
-            # 4) recurse for sub-items
-            sub = collect_items(c, lvl + 1)
-            if sub:
-                result.append(fr"{indent}  \begin{{itemize}}")
-                result.extend(sub)
-                result.append(fr"{indent}  \end{{itemize}}")
-
-        return result
-
-    # --- Determine which nodes become frames ---
-    if expert_mode:
-        # only #slide-tagged nodes
-        slides = find_slides(node)
-    else:
-        # every top-level child is its own frame
-        slides = list(node.children[0].children)
-
-    # --- Render each frame ---
-    for slide in slides:
-        emit_sections(slide, depth=1)
-
-        title = clean_text(slide.title)
-        if not expert_mode:
-            lines.append(fr"\begin{{frame}}{{{title}}}")
-        else:
-            lines.append(fr"\begin{{frame}}{{{title}}}")
-
-        items = collect_items(slide)
-        if items:
-            lines.append(r"\begin{itemize}")
-            lines.extend(items)
-            lines.append(r"\end{itemize}")
-
-        lines.append(r"\end{frame}")
-        lines.append("")
-
-    # --- Close document ---
     if level == 0:
         if not fragment:
             lines.append(r"\end{document}")
 
     return lines
+
+
+
+
+
+
+
+
+
+
+
+
+
+

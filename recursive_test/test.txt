@@ -1,0 +1,12 @@
+Recursive refactor
+
+- section 1 #h
+  "here is note"
+- slide 1 #slide 
+- slide 2 #slide 
+- section 2 #h 
+  - subsection 1 #h 
+  - node
+    "here an other note"
+  - subsection 2 #h
+- slide 3 missing slide

@@ -16,21 +16,28 @@ def main():
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
 
     p.add_argument('input', nargs='?', help='Input file (omit for stdin or use --date)')
-    p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex-a', 'latex-b'], default='opml',
-                   help='Output format: txt, opml, latex-a (article), latex-b (beamer)')
     p.add_argument('-o', '--output', help='Output filename (omit for auto)')
     p.add_argument('-d', '--dir', default='.', help='Output directory')
-    p.add_argument('-e', '--email', help='Owner email for OPML head')
-    p.add_argument('-s', '--start', help='Prefix to extract subtree')
-    p.add_argument('--case-insensitive', action='store_true', dest='ci', default=False,
-                   help='Case-insensitive subtree match')
-    p.add_argument('--stdout', action='store_true', help='Write to stdout')
-    p.add_argument('--date', metavar='DIR',
-                   help='Scan DIR and pick the most recently modified file as input')
-
+    p.add_argument('-e', '--email', help='Author email information')
+    p.add_argument('-a', '--author', help='Author information')
+    p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf'], default='opml',
+                   help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
+    p.add_argument('-s', '--start', help='Start item for conversion')
+    #p.add_argument('--case-insensitive', action='store_true', dest='ci', default=False,
+    #              help='Case-insensitive subtree match')
+    #p.add_argument('--stdout', action='store_true', help='Write to stdout')
+    p.add_argument('-m', '--date', metavar='DIR',
+                   help='Choose most recently modified file in directory DIR as input')
     p.add_argument('--expert-mode', action='store_true',
-                   help='Skip any nodes tagged #wfe-ignore-outline and process #slide and #h')
+                   help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
+    p.add_argument('--strip-tags', action='store_true', help='Strip tags from input')
+    p.add_argument('--fragment', action='store_true',help='Only keep body of document for latex beamer and opml')
+    p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
+    p.add_argument('--debug', action='store_true',help='Gives debug information')
+    p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
+    p.add_argument('-t', '--tab-char', choices=['space', 'none', 'tab'], default = 'space', help='Identation tab character used in output')
+    p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
     p.add_argument('--strip-tags', action='store_true', help='Strip tags like #slide from output titles')
     p.add_argument('--fragment', action='store_true',help='Convert as a fragment')
 
@@ -66,10 +73,11 @@ def main():
             with open(args.input, 'r', encoding='utf-8') as f:
                 raw = [line.rstrip('\n') for line in f]
         else:
-            print('Paste outline below. Finish with Ctrl+D (EOF):')
+            print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
             raw = [line.rstrip('\n') for line in sys.stdin]
         root_node = parse_text(raw, expert_mode = args.expert_mode)
 
+    """
     # -- optional subtree extraction ----------------------------------------
     cs = not args.ci
     if args.start:
@@ -78,24 +86,35 @@ def main():
             sys.exit(f"Prefix '{args.start}' not found")
         root_node = Node('root')
         root_node.children = [node]
-
+    """
     # -- render based on format ---------------------------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
 
     if args.format == 'txt':
-        out_lines = render_text(root_node, strip_tags=args.strip_tags)
-    elif args.format == 'latex-a':
-        out_lines = render_latex(root_node, strip_tags=args.strip_tags)
-    elif args.format == 'latex-b':
-        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
+        if args.tab_char == 'space':
+            indent_char = " "
+            indent_size = 4
+        elif args.tab_char == 'none':
+            indent_char = ""
+            indent_size = 1
+        elif args.tab_char == 'tab':
+            indent_char = "\t"
+            indent_size = 1
 
+        out_lines = render_text(root_node, indent_char=indent_char, indent_size=indent_size, strip_tags=args.strip_tags)
+
+
+    elif args.format == 'latex':
+        out_lines = render_latex(root_node, strip_tags=args.strip_tags)
+    elif args.format == 'beamer':
+        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 
 
     # -- output result ------------------------------------------------------
-    should_write_to_stdout = args.stdout or not args.output
+    should_write_to_stdout = not args.output
 
     if should_write_to_stdout:
         if out_lines is not None:
@@ -111,6 +130,13 @@ def main():
         else:
             out_tree.write(path, encoding='utf-8', xml_declaration=True)
         print(f"Wrote {path}")
+    if args.wait:
+        print("\nPress Ctrl+C to exit...")
+        try:
+            while True:
+                input()
+        except KeyboardInterrupt:
+            print("\nExiting...")
 
 
 if __name__ == '__main__':
