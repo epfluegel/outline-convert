@@ -23,8 +23,7 @@ def main():
     p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf'], default='opml',
                    help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
     p.add_argument('-s', '--start', help='Start item for conversion')
-    #p.add_argument('--case-insensitive', action='store_true', dest='ci', default=False,
-    #              help='Case-insensitive subtree match')
+
     #p.add_argument('--stdout', action='store_true', help='Write to stdout')
     p.add_argument('-m', '--date', metavar='DIR',
                    help='Choose most recently modified file in directory DIR as input')
@@ -75,16 +74,16 @@ def main():
             raw = [line.rstrip('\n') for line in sys.stdin]
         root_node = parse_text(raw, expert_mode = args.expert_mode)
 
-    """
+
     # -- optional subtree extraction ----------------------------------------
-    cs = not args.ci
+
     if args.start:
-        node = find_node(root_node, args.start, cs)
+        node = find_node(root_node, args.start)
         if not node:
             sys.exit(f"Prefix '{args.start}' not found")
-        root_node = Node('root')
-        root_node.children = [node]
-    """
+        root_node = node
+
+
     # -- render based on format ---------------------------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
