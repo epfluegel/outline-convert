@@ -17,16 +17,13 @@ def detect_indent(lines: List[str]) -> int:
 
 
 # -- TREE UTILITIES ---------------------------------------------------------
-def find_node(node: Node, prefix: str, case_sensitive: bool) -> Optional[Node]:
+def find_node(node: Node, prefix: str) -> Optional[Node]:
     text = node.title
-    if case_sensitive:
-        ok = text.startswith(prefix)
-    else:
-        ok = text.lower().startswith(prefix.lower())
+    ok = text.startswith(prefix)
     if ok:
         return node
     for c in node.children:
-        res = find_node(c, prefix, case_sensitive)
+        res = find_node(c, prefix)
         if res:
             return res
     return None
