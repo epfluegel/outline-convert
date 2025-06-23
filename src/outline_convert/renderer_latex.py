@@ -147,7 +147,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                     lines.append(fr"\subsection{{{clean_title}}}")
                     lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
                 else:
-                    lines.append(fr"\subsection{{{clean_title}}}")
+                    lines.append(fr"\subsubsection{{{clean_title}}}")
                     lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
 
 # There should not be any #h inside a slide node
@@ -192,6 +192,51 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                     lines.append(fr"{indent}\begin{{itemize}}")
                     lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
+        else:
+            if level == 0:
+                clean_title = clean_text(title, strip_tags)
+                lines.append(fr"\begin{{frame}}{{{clean_title}}}")
+                if child.children:
+                    lines.append(r"\begin{itemize}")
+                    lines.extend(
+                        render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
+                                                      fragment=fragment, header_level=header_level))
+                    lines.append(r"\end{itemize}")
+                lines.append(r"\end{frame}")
+            else:
+                i = IMAGE_RE.match(title)
+                if i:
+                    filename = i.group(1)
+                    lines.extend([
+                        r"\begin{figure}[t]",
+                        fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
+                        r"\centering",
+                        r"\end{figure}",
+                    ])
+
+                l = LINK_RE.match(title)
+                if l:
+                    text, url, description = l.group(1), l.group(2), l.group(3)
+                    res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
+                    lines.append(res)
+
+                indent = '  ' * level
+                clean_title = clean_text(title, strip_tags)
+                lines.append(fr"{indent}\item {clean_title}")
+
+                if child.note:
+                    note = clean_text(child.note, strip_tags)
+                    lines.append(fr"{indent}\begin{{quote}}")
+                    lines.append(fr"{indent}{note}")
+                    lines.append(fr"{indent}\end{{quote}}")
+                if child.children:
+                    lines.append(fr"{indent}\begin{{itemize}}")
+                    lines.extend(
+                        render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
+                                                      fragment=fragment, header_level=header_level))
+                    lines.append(fr"{indent}\end{{itemize}}")
+
+
     level = level - 1
     if level == -1:
         if not fragment:
