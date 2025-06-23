@@ -5,21 +5,21 @@ import xml.etree.ElementTree as ET
 from .utils import indent
 
 
-def render_text(node: Node, indent_char: str, indent_size: int, level: int = 0, strip_tags: bool = False) -> List[str]:
+def render_text(node: Node, indent_char: str , bullet_symbol: str, level: int = 0, strip_tags: bool = False) -> List[str]:
     lines: List[str] = []
+    print(indent_char)
     if level == 0:
         lines.append(node.title)
     for child in node.children:
         title = child.title
         if strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        prefix = indent_char * (level * indent_size) + '- ' + title
+        prefix = indent_char * level + bullet_symbol + ' ' + title
 
         lines.append(prefix)
         if child.note:
-            lines.append(' ' * (level * indent_size) + f'"{child.note}"')
-        lines.extend(render_text(child, indent_char=indent_char, indent_size=indent_size, level=level + 1,
-                                 strip_tags=strip_tags))
+            lines.append(' ' * level + f'"{child.note}"')
+        lines.extend(render_text(child, indent_char=indent_char, bullet_symbol=bullet_symbol, level=level + 1, strip_tags=strip_tags))
     return lines
 
 
