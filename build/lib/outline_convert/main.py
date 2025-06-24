@@ -62,21 +62,26 @@ def main():
         print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
-    # -- Set up lines as input string -----------------------------------------------
+    # -- Set up f as input stream -----------------------------------------------
 
     if args.input:
-        with open(args.input, 'r', encoding='utf-8') as file:
-            lines = file.read().splitlines()
+        f = open(args.input, 'r', encoding='utf-8')
     elif args.clipboard:
-        lines = pyperclip.paste().splitlines()
+        if pyperclip.paste():
+            f = pyperclip.paste().splitlines()
+        else:
+            f = " "
+
     else:
         print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
-        lines = sys.stdin.read().splitlines()
+        f = sys.stdin
+
 
     # -- parse f -----------------------------------------------
 
     root_node: Node
 
+    lines = [line.rstrip('\n') for line in f]
     root_node = parse_text(lines, expert_mode=args.expert_mode)
     """
     if args.input and args.input.lower().endswith(('.opml', '.xml')):
@@ -120,16 +125,9 @@ def main():
 
 
     # -- output result ------------------------------------------------------
+    should_write_to_stdout = not args.output
 
-    if args.clipboard:
-        if out_lines is not None:
-            pyperclip.copy('\n'.join(out_lines))
-        else:
-            xml_string = ET.tostring(out_tree, encoding='unicode')
-            pyperclip.copy(xml_string)
-        print("Copied to clipboard")
-
-    elif not args.output:
+    if should_write_to_stdout:
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines) + '\n')
         else:
