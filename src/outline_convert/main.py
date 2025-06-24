@@ -14,14 +14,18 @@ from .renderer_text import render_text, build_opml
 from .utils import find_node
 
 
-# -- MAIN ------------------------------------------------------------------
+# -- MAIN PROGRAM -----------------------------------------------------
 def main():
+    # -- Argument parser configuration -------------------------------
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
 
+    # Input/Output arguments
     p.add_argument('input', nargs='?', help='Input file (omit for stdin or use --date)')
     p.add_argument('-c', '--clipboard', action='store_true', help='Read from clipboard')
     p.add_argument('-o', '--output', help='Output filename (omit for auto)')
     p.add_argument('-d', '--dir', default='.', help='Output directory')
+
+    # Metadata arguments
     p.add_argument('-e', '--email', help='Author email information')
     p.add_argument('-a', '--author', help='Author information')
     p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf'], default='txt',
@@ -34,6 +38,7 @@ def main():
     p.add_argument('--expert-mode', action='store_true',
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
+    # Output formatting arguments
     p.add_argument('--strip-tags', action='store_true', help='Strip tags from input')
     p.add_argument('--fragment', action='store_true',help='Only keep body of document for latex beamer and opml')
     p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
@@ -41,12 +46,11 @@ def main():
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
     p.add_argument('-t', '--tab-string', help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
-
     p.add_argument('-b', '--bullet')
 
     args = p.parse_args()
 
-    # -- handle --date auto-selection ---------------------------------------
+    # -- Handle automatic date-based selection ----------------------
     if args.date:
         date_dir = args.date
         if not os.path.isdir(date_dir):
@@ -62,8 +66,7 @@ def main():
         print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
-    # -- Set up lines as input string -----------------------------------------------
-
+    # -- Read input data ------------------------------------------
     if args.input:
         with open(args.input, 'r', encoding='utf-8') as file:
             lines = file.read().splitlines()
@@ -73,10 +76,8 @@ def main():
         print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
         lines = sys.stdin.read().splitlines()
 
-    # -- parse f -----------------------------------------------
-
+    # -- Parse content --------------------------------------------
     root_node: Node
-
     root_node = parse_text(lines, expert_mode=args.expert_mode)
     """
     if args.input and args.input.lower().endswith(('.opml', '.xml')):
@@ -96,16 +97,14 @@ def main():
         root_node = parse_text(raw, expert_mode = args.expert_mode)
     """
 
-    # -- optional subtree extraction ----------------------------------------
-
+    # -- Optional subtree extraction ------------------------------
     if args.start:
         node = find_node(root_node, args.start)
         if not node:
             sys.exit(f"Prefix '{args.start}' not found")
         root_node = node
 
-
-    # -- render based on format ---------------------------------------------
+    # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
 
@@ -118,9 +117,7 @@ def main():
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 
-
-    # -- output result ------------------------------------------------------
-
+    # -- Handle output -------------------------------------------
     if args.clipboard:
         if out_lines is not None:
             pyperclip.copy('\n'.join(out_lines))
@@ -129,12 +126,12 @@ def main():
             pyperclip.copy(xml_string)
         print("Copied to clipboard")
 
-    elif not args.output:
+    elif not args.output:  # Output to stdout
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines) + '\n')
         else:
             out_tree.write(sys.stdout.buffer, encoding='utf-8', xml_declaration=True)
-    else:
+    else:  # Output to file
         os.makedirs(args.dir, exist_ok=True)
         path = os.path.join(args.dir, args.output)
         if out_lines is not None:
@@ -143,6 +140,8 @@ def main():
         else:
             out_tree.write(path, encoding='utf-8', xml_declaration=True)
         print(f"Wrote {path}")
+
+    # -- Handle final wait --------------------------------------
     if args.wait:
         print("\nPress Ctrl+C to exit...")
         try:
