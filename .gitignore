@@ -6,4 +6,5 @@ todo
 /src/UNKNOWN.egg-info/
 test
 src/outline_convert/__pycache__/
-recursive_test
+./recursive_test
+./build
