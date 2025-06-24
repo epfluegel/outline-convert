@@ -93,12 +93,10 @@ def main():
 
     if args.format == 'txt':
         out_lines = render_text(root_node, indent_char=args.tab_char if args.tab_char else "", bullet_symbol=args.bullet if args.bullet else "-", strip_tags=args.strip_tags)
-
-
     elif args.format == 'latex':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'beamer':
-        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
+        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment, note=args.notes_include)
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 

@@ -102,7 +102,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
-def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, header_level: int = 0) -> List[str]:
+def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, note: bool = True, header_level: int = 0) -> List[str]:
     lines: List[str] = []
 
     if level == -1:
@@ -141,14 +141,14 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                 clean_title = clean_text(title, strip_tags)
                 if header_level == 0:
                     lines.append(fr"\section{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note,header_level = header_level + 1))
 
                 elif header_level == 1:
                     lines.append(fr"\subsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level + 1))
                 else:
                     lines.append(fr"\subsubsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level + 1))
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level + 1))
 
 # There should not be any #h inside a slide node
 
@@ -157,7 +157,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{itemize}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
 
@@ -182,15 +182,15 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                 indent = '  ' * level
                 clean_title = clean_text(title, strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-
-                if child.note:
-                    note = clean_text(child.note, strip_tags)
-                    lines.append(fr"{indent}\begin{{quote}}")
-                    lines.append(fr"{indent}{note}")
-                    lines.append(fr"{indent}\end{{quote}}")
+                if note:
+                    if child.note:
+                        note = clean_text(child.note, strip_tags)
+                        lines.append(fr"{indent}\begin{{quote}}")
+                        lines.append(fr"{indent}{note}")
+                        lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, header_level = header_level))
+                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
         else:
             if level == 0:
@@ -200,7 +200,7 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                     lines.append(r"\begin{itemize}")
                     lines.extend(
                         render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
-                                                      fragment=fragment, header_level=header_level))
+                                                      fragment=fragment, note=note, header_level=header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
             else:
@@ -223,17 +223,17 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                 indent = '  ' * level
                 clean_title = clean_text(title, strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-
-                if child.note:
-                    note = clean_text(child.note, strip_tags)
-                    lines.append(fr"{indent}\begin{{quote}}")
-                    lines.append(fr"{indent}{note}")
-                    lines.append(fr"{indent}\end{{quote}}")
+                if note:
+                    if child.note:
+                        note = clean_text(child.note, strip_tags)
+                        lines.append(fr"{indent}\begin{{quote}}")
+                        lines.append(fr"{indent}{note}")
+                        lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
                     lines.extend(
                         render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
-                                                      fragment=fragment, header_level=header_level))
+                                                      fragment=fragment, note=note, header_level=header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
 
 
