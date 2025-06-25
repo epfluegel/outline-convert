@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 import xml.etree.ElementTree as ET
+from contextlib import nullcontext
 from typing import Optional, List
 
 from .models import Node
@@ -35,8 +36,10 @@ def main():
     p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
     p.add_argument('--debug', action='store_true',help='Gives debug information')
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
-    p.add_argument('-t', '--tab-char', choices=['space', 'none', 'tab'], default = 'space', help='Identation tab character used in output')
+    p.add_argument('-t', '--tab-char', help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
+
+    p.add_argument('-b', '--bullet')
 
     args = p.parse_args()
 
@@ -89,23 +92,11 @@ def main():
     out_tree: Optional[ET.ElementTree] = None
 
     if args.format == 'txt':
-        if args.tab_char == 'space':
-            indent_char = " "
-            indent_size = 4
-        elif args.tab_char == 'none':
-            indent_char = ""
-            indent_size = 1
-        elif args.tab_char == 'tab':
-            indent_char = "\t"
-            indent_size = 1
-
-        out_lines = render_text(root_node, indent_char=indent_char, indent_size=indent_size, strip_tags=args.strip_tags)
-
-
+        out_lines = render_text(root_node, indent_char=args.tab_char if args.tab_char else "", bullet_symbol=args.bullet if args.bullet else "-", strip_tags=args.strip_tags)
     elif args.format == 'latex':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'beamer':
-        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment)
+        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment, note=args.notes_include)
     else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
 
