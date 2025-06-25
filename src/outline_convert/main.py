@@ -3,6 +3,7 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 from contextlib import nullcontext
+from doctest import debug
 from typing import Optional, List
 
 import pyperclip
@@ -12,7 +13,6 @@ from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer_with_tags, render_latex
 from .renderer_text import render_text, build_opml
 from .utils import find_node
-
 
 # -- MAIN PROGRAM -----------------------------------------------------
 def main():
@@ -44,9 +44,9 @@ def main():
     p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
     p.add_argument('--debug', action='store_true',help='Gives debug information')
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
-    p.add_argument('-t', '--tab-string', help='Identation tab character used in output')
+    p.add_argument('-t', '--tab-string', default="    ", help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
-    p.add_argument('-b', '--bullet')
+    p.add_argument('-b', '--bullet', default="", help="Symbol used for bullet points")
 
     args = p.parse_args()
 
@@ -78,7 +78,15 @@ def main():
 
     # -- Parse content --------------------------------------------
     root_node: Node
-    root_node = parse_text(lines, expert_mode=args.expert_mode)
+    try:
+        tree = ET.fromstringlist(lines)
+        root_node = parse_opml(tree, expert_mode=args.expert_mode)
+    except:
+        if args.debug:
+            print("ompl not parsed correctly")
+        root_node = parse_text(lines, expert_mode=args.expert_mode)
+
+
     """
     if args.input and args.input.lower().endswith(('.opml', '.xml')):
         # Parse OPML
@@ -107,15 +115,21 @@ def main():
     # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
-
     if args.format == 'txt':
-        out_lines = render_text(root_node, indent_char=args.tab_string if args.tab_string else "  ", bullet_symbol=args.bullet if args.bullet else "-", strip_tags=args.strip_tags)
+        tab=args.tab_string
+        if tab == "\\t":
+            tab = '\t'
+        out_lines = render_text(root_node, indent_char=tab, bullet_symbol=args.bullet, strip_tags=args.strip_tags)
     elif args.format == 'latex':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'beamer':
         out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment, note=args.notes_include)
-    else:  # opml
+    elif args.format == 'opml':  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
+    elif args.format == 'ppt':
+        out_lines = render_ppt(root_node, args)
+    elif args.format == 'rtf':
+        out_lines = render_rtf(root_node, args)
 
     # -- Handle output -------------------------------------------
     if args.clipboard:
