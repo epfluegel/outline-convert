@@ -3,7 +3,6 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 from contextlib import nullcontext
-from doctest import debug
 from typing import Optional, List
 
 import pyperclip
@@ -14,18 +13,15 @@ from .renderer_latex import render_latex_beamer_with_tags, render_latex
 from .renderer_text import render_text, build_opml
 from .utils import find_node
 
-# -- MAIN PROGRAM -----------------------------------------------------
+
+# -- MAIN ------------------------------------------------------------------
 def main():
-    # -- Argument parser configuration -------------------------------
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
 
-    # Input/Output arguments
     p.add_argument('input', nargs='?', help='Input file (omit for stdin or use --date)')
     p.add_argument('-c', '--clipboard', action='store_true', help='Read from clipboard')
     p.add_argument('-o', '--output', help='Output filename (omit for auto)')
     p.add_argument('-d', '--dir', default='.', help='Output directory')
-
-    # Metadata arguments
     p.add_argument('-e', '--email', help='Author email information')
     p.add_argument('-a', '--author', help='Author information')
     p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf'], default='txt',
@@ -38,19 +34,19 @@ def main():
     p.add_argument('--expert-mode', action='store_true',
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
-    # Output formatting arguments
     p.add_argument('--strip-tags', action='store_true', help='Strip tags from input')
     p.add_argument('--fragment', action='store_true',help='Only keep body of document for latex beamer and opml')
     p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
     p.add_argument('--debug', action='store_true',help='Gives debug information')
     p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
-    p.add_argument('-t', '--tab-string', default="    ", help='Identation tab character used in output')
+    p.add_argument('-t', '--tab-string', help='Identation tab character used in output')
     p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
-    p.add_argument('-b', '--bullet', default="", help="Symbol used for bullet points")
+
+    p.add_argument('-b', '--bullet')
 
     args = p.parse_args()
 
-    # -- Handle automatic date-based selection ----------------------
+    # -- handle --date auto-selection ---------------------------------------
     if args.date:
         date_dir = args.date
         if not os.path.isdir(date_dir):
@@ -66,27 +62,27 @@ def main():
         print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
-    # -- Read input data ------------------------------------------
+    # -- Set up f as input stream -----------------------------------------------
+
     if args.input:
-        with open(args.input, 'r', encoding='utf-8') as file:
-            lines = file.read().splitlines()
+        f = open(args.input, 'r', encoding='utf-8')
     elif args.clipboard:
-        lines = pyperclip.paste().splitlines()
+        if pyperclip.paste():
+            f = pyperclip.paste().splitlines()
+        else:
+            f = " "
+
     else:
         print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
-        lines = sys.stdin.read().splitlines()
+        f = sys.stdin
 
-    # -- Parse content --------------------------------------------
+
+    # -- parse f -----------------------------------------------
+
     root_node: Node
-    try:
-        tree = ET.fromstringlist(lines)
-        root_node = parse_opml(tree, expert_mode=args.expert_mode)
-    except:
-        if args.debug:
-            print("ompl not parsed correctly")
-        root_node = parse_text(lines, expert_mode=args.expert_mode)
 
-
+    lines = [line.rstrip('\n') for line in f]
+    root_node = parse_text(lines, expert_mode=args.expert_mode)
     """
     if args.input and args.input.lower().endswith(('.opml', '.xml')):
         # Parse OPML
@@ -105,47 +101,38 @@ def main():
         root_node = parse_text(raw, expert_mode = args.expert_mode)
     """
 
-    # -- Optional subtree extraction ------------------------------
+    # -- optional subtree extraction ----------------------------------------
+
     if args.start:
         node = find_node(root_node, args.start)
         if not node:
             sys.exit(f"Prefix '{args.start}' not found")
         root_node = node
 
-    # -- Render based on chosen format ---------------------------
+
+    # -- render based on format ---------------------------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
+
     if args.format == 'txt':
-        tab=args.tab_string
-        if tab == "\\t":
-            tab = '\t'
-        out_lines = render_text(root_node, indent_char=tab, bullet_symbol=args.bullet, strip_tags=args.strip_tags)
+        out_lines = render_text(root_node, indent_char=args.tab_string if args.tab_string else "  ", bullet_symbol=args.bullet if args.bullet else "-", strip_tags=args.strip_tags)
     elif args.format == 'latex':
         out_lines = render_latex(root_node, strip_tags=args.strip_tags)
     elif args.format == 'beamer':
         out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment, note=args.notes_include)
-    elif args.format == 'opml':  # opml
+    else:  # opml
         out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
-    elif args.format == 'ppt':
-        out_lines = render_ppt(root_node, args)
-    elif args.format == 'rtf':
-        out_lines = render_rtf(root_node, args)
 
-    # -- Handle output -------------------------------------------
-    if args.clipboard:
-        if out_lines is not None:
-            pyperclip.copy('\n'.join(out_lines))
-        else:
-            xml_string = ET.tostring(out_tree, encoding='unicode')
-            pyperclip.copy(xml_string)
-        print("Copied to clipboard")
 
-    elif not args.output:  # Output to stdout
+    # -- output result ------------------------------------------------------
+    should_write_to_stdout = not args.output
+
+    if should_write_to_stdout:
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines) + '\n')
         else:
             out_tree.write(sys.stdout.buffer, encoding='utf-8', xml_declaration=True)
-    else:  # Output to file
+    else:
         os.makedirs(args.dir, exist_ok=True)
         path = os.path.join(args.dir, args.output)
         if out_lines is not None:
@@ -154,8 +141,6 @@ def main():
         else:
             out_tree.write(path, encoding='utf-8', xml_declaration=True)
         print(f"Wrote {path}")
-
-    # -- Handle final wait --------------------------------------
     if args.wait:
         print("\nPress Ctrl+C to exit...")
         try:

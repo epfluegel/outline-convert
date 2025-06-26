@@ -13,7 +13,7 @@ def render_text(node: Node, indent_char: str , bullet_symbol: str, level: int = 
         title = child.title
         if strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        prefix = indent_char * level + bullet_symbol + ' ' * len(bullet_symbol) + title
+        prefix = indent_char * level + bullet_symbol + ' ' + title
 
         lines.append(prefix)
         if child.note:
