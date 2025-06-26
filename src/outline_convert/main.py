@@ -47,8 +47,10 @@ def main():
     p.add_argument('--debug', action='store_true', default=False, help='Gives debug information')
     p.add_argument('--add-new-line', action='store_true', default=False, help='Insert additional new line between items in output')
     p.add_argument('-t', '--indent-string', default="    ", help='Identation indent string used in output')
-    p.add_argument('-n', '--notes-include', action='store_true', default=False, help='Include notes in ouput')
-    p.add_argument('-b', '--bullet', default="", help="Symbol used for bullet points")
+    p.add_argument('-n', '--include-notes', action='store_true', default=False, help='Include notes in ouput')
+    p.add_argument('-b', '--bullet-symbol', default="", help="Symbol used for bullet points")
+    p.add_argument( '--hide-completed',action='store_true', default=False, help="Hide completed items")
+    p.add_argument( '--completed-only',action='store_true', default=False, help="Only includes completed items")
 
     args = p.parse_args()
 
@@ -82,17 +84,18 @@ def main():
     root_node: Node
     try:
         tree = ET.fromstringlist(lines)
-        root_node = parse_opml(tree, "REFACTOR", expert_mode=args.expert_mode)
+        root_node = parse_opml(tree, args=args)
     except:
         if args.debug:
             print("ompl not parsed correctly")
-        root_node = parse_text(lines, args, expert_mode=args.expert_mode)
+        root_node = parse_text(lines, args)
 
     # -- Optional subtree extraction ------------------------------
     if args.start:
         node = find_node(root_node, args.start)
         if not node:
-            sys.exit(f"Prefix '{args.start}' not found")
+            if args.debug:
+                print("Prefix not found")
         root_node = node
 
     # -- Render based on chosen format ---------------------------
@@ -102,14 +105,13 @@ def main():
         tab=args.indent_string
         if tab == "\\t":
             tab = '\t'
-        out_lines = render_text(root_node, args, indent_char=tab, bullet_symbol=args.bullet,
-                                strip_tags=args.strip_tags)
+        out_lines = render_text(root_node, args)
     elif args.format == 'latex':
         out_lines = render_latex(root_node, args)
     elif args.format == 'beamer':
         out_lines = render_latex_beamer(root_node, args)
     elif args.format == 'opml':  # opml
-        out_tree = build_opml(root_node, args, owner_email=args.email, strip_tags=args.strip_tags)
+        out_tree = build_opml(root_node, args, owner_email=args.email)
     elif args.format == 'ppt':
         out_lines = render_ppt(root_node, args)
     elif args.format == 'rtf':
@@ -141,30 +143,7 @@ def main():
 
     # -- Handle final wait --------------------------------------
     if args.wait:
-        print("\nPress Ctrl+C to exit...")
-        try:
-            while True:
-                input()
-        except KeyboardInterrupt:
-            print("\nExiting...")
-
-"""
-    if args.input and args.input.lower().endswith(('.opml', '.xml')):
-        # Parse OPML
-        with open(args.input, 'r', encoding='utf-8') as f:
-            tree = ET.parse(f)
-            xml_root = tree.getroot()
-            root_node = parse_opml(xml_root, expert_mode = args.expert_mode)
-    else:
-        # Parse plain text
-        if args.input:
-            with open(args.input, 'r', encoding='utf-8') as f:
-                raw = [line.rstrip('\n') for line in f]
-        else:
-            print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
-            raw = [line.rstrip('\n') for line in sys.stdin]
-        root_node = parse_text(raw, expert_mode = args.expert_mode)
-    """
+        input("Press any key to exit\n")
 
 if __name__ == '__main__':
     main()
