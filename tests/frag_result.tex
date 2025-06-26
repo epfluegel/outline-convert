@@ -1,0 +1,607 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usetheme{Goettingen}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\title{Security Concepts and Basic Methodology}
+\date{\today}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+      \tableofcontents[currentsection, currentsubsection]
+  \end{frame}
+}
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Learning Objectives -- Basic Security Terminology}
+\begin{itemize}
+  \item Realise the need for computer security through awareness of current case studies of security incidents
+  \item Be familiar with the basic terminology and methodology in computer security
+  \item Relate basic security terminology to current case studies
+  \item Know and understand the main goals of computer security
+  \item Understand the concept of threat, attack, vulnerability, risk and control
+  \item Differentiate between different categories of vulnerabilities
+  \item Know typical properties and attributes of threats and attacks
+  \item Realise the importance and effectiveness of controls, and distinguish the different types of controls
+\end{itemize}
+\end{frame}
+\begin{frame}{Motivation}
+\begin{itemize}
+  \item Stories in the press have, once again, raised the public profile of security and privacy on the internet:
+  \begin{itemize}
+    \item !theRegister-spectre.png
+    \begin{itemize}
+      \item 
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Motivation}
+\begin{itemize}
+  \item We are all concerned, but we don't always understand the threats, how possible solutions are designed -- and how we can use them to protect ourselves.
+  \item Who of you has been affected by computer security incidents?
+  \item Discussion:
+  \begin{itemize}
+    \item What are typical threats in computer security?
+    \item What is computer security? What are the different fields in the security domain?
+    \item What are recurrent challenges, and how can you contribute?
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Computer Security -- Typical Threats}
+\begin{itemize}
+  \item Computer Viruses
+  \item Hacking into web sites, databases, systems
+  \item Stealing or cracking passwords
+  \item Denial-of-Service (DoS) Attacks
+  \item Identity theft
+  \item Leakage of confidential information
+\end{itemize}
+\end{frame}
+\begin{frame}{Computer Security -- Preliminary Definition}
+\begin{itemize}
+  \item We try to prevent unauthorised parties to access, damage or modify our computer related data
+  \item Security Disciplines (bold = covered in this course):
+  \begin{itemize}
+    \item Cryptography
+    \item Operating System Security
+    \item Database Security
+    \item Application Security
+    \item Network Security
+    \item Internet Security
+    \item Mobile Security
+    \item Information Security/Assurance
+  \end{itemize}
+  \item Cyber Security? In the UK: CyBOK
+\end{itemize}
+\end{frame}
+\begin{frame}{Current Security Challenges}
+\begin{itemize}
+  \item Scale of the problem is widely underestimated
+  \item Nature of the threats often unknown, even to IT professionals
+  \item Security policies are not sufficiently well-developed
+  \item There are no standards regulating Internet trading
+  \item There is no international legislation
+  \item Common misconceptions about security:
+  \begin{itemize}
+    \item Myth 1: We need better/stronger encryption algorithms
+    \item Myth 2: Security is all about encryption
+    \item Myth 3: Technology is enough to protect our systems
+    \item Myth 4: Your information on the internet will remain confidential as long as it is encrypted
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{How Can You Contribute?}
+\begin{itemize}
+  \item Attend this course 😊
+  \item Traditional things
+  \begin{itemize}
+    \item Always create backups
+    \item Don’t write down your passwords
+    \item Install anti-virus
+    \item Use a firewall
+    \item [...]
+  \end{itemize}
+  \item Next Generation Challenge: reduce your personal attack surface
+  \begin{itemize}
+    \item Reduce digital footprint
+    \item Use social networks responsibly
+    \item Minimise personal attack vectors into mobile phones
+    \item Awareness of surveillance
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{The Goals of Computer Security}
+\begin{itemize}
+  \item We will define as the main goals (or requirements) of Computer Security (“CIA”):
+  \begin{itemize}
+    \item Confidentiality
+    \item Integrity
+    \item Availability
+  \end{itemize}
+  \item This terminology is adopted by academia and industry
+  \item Note: cannot “guarantee” absolute security
+\end{itemize}
+\end{frame}
+\begin{frame}{Threats, Vulnerabilities and Controls}
+\begin{itemize}
+  \item Threat: set of circumstances with potential to exploit vulnerability and create a risk of harm
+  \item Vulnerability: potentially exploitable weakness of an asset
+  \item Attack: realisation of a threat ("threat event")
+  \item Risk: occurs if “matching” threat and vulnerability exist
+  \item Control: a mitigation technique, either eliminate the threat and/or close the vulnerability
+\end{itemize}
+\end{frame}
+\begin{frame}{Basic Security Methodology}
+\begin{itemize}
+  \item The basic methodology in computer security is:
+  \begin{itemize}
+    \item We detect uncovered vulnerabilities in our system
+    \item We think about potential threats to our system
+    \item Finally, we consider available controls (countermeasures)
+  \end{itemize}
+  \item Impossible to guarantee security, can only minimise risk
+  \item Need for periodic review
+\end{itemize}
+\end{frame}
+\section{Basic section}
+\subsection{sub section}
+\begin{frame}{Assets}
+\begin{itemize}
+  \item In order to better understand security attacks, we have to define what we want to protect
+  \item This is called an asset
+  \item We categorise assets in the following way:
+  \begin{itemize}
+    \item System (logical)
+    \item Hardware
+    \item Software
+    \item Data
+    \item People
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Assets}
+\begin{itemize}
+  \item !assets.png
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Assets}
+\begin{itemize}
+  \item Look around you. There are many assets of the Kingston University system present. List some asset items, with at least one in each category.
+  \item Which of them do you consider being critical assets -- these would be assets of particular value or importance for your student experience.
+\end{itemize}
+\end{frame}
+\begin{frame}{The Goals of Computer Security}
+\begin{itemize}
+  \item We will define as the main goals (or requirements) of Computer Security (“CIA”):
+  \begin{itemize}
+    \item Confidentiality
+    \item Integrity
+    \item Availability
+  \end{itemize}
+  \item This terminology is adopted by academia and industry
+  \item Note: cannot “guarantee” absolute security
+\end{itemize}
+\end{frame}
+\begin{frame}{Confidentiality}
+\begin{itemize}
+  \item Definition: computer related assets must be accessed only by authorised parties
+  \item Synonyms: secrecy, privacy
+  \item Example: you need to prevent hackers from accessing personal data in your social network account
+  \item There may be different levels of confidentiality for different users
+\end{itemize}
+\end{frame}
+\begin{frame}{Integrity}
+\begin{itemize}
+  \item Data Integrity:
+  \begin{itemize}
+    \item Data has not been modified by unauthorised parties
+    \item Example: file transfer, email, computer viruses
+  \end{itemize}
+  \item Origin Integrity (Authentication):
+  \begin{itemize}
+    \item We have proof about origin of a message
+    \item Example: IP address of the machine the e-mail was sent from
+  \end{itemize}
+  \item Non-repudiation:
+  \begin{itemize}
+    \item Sender (or recipient) of a message cannot deny having been involved in message transfer
+    \item This is more complex (usually involves 3 parties)
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Availability}
+\begin{itemize}
+  \item Definition: assets are accessible to authorised parties at appropriate times
+  \item In other words: legitimate access should always be possible
+  \item Example: a website should be available 24/7.
+  \item Different availability levels
+\end{itemize}
+\end{frame}
+\begin{frame}{Confidentiality, Integrity and Availability}
+\begin{itemize}
+  \item !CIA.png
+\end{itemize}
+\end{frame}
+\begin{frame}{Threats, Vulnerabilities, Attacks and Risks}
+\begin{itemize}
+  \item Threat: set of circumstances with potential to exploit vulnerability and create a risk of harm
+  \item Vulnerability: potentially exploitable weakness of an asset
+  \item Attack: realisation of a threat ("threat event")
+  \item Risk: occurs if “matching” threat and vulnerability exist
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls}
+\begin{itemize}
+  \item A control is used for protection.
+  \item It could be for example an
+  \begin{itemize}
+    \item action,
+    \item procedure,
+    \item device,
+    \item technique.
+  \end{itemize}
+  \item It either eliminates the threat and/or closes the vulnerability.
+  \item Controls need to be effective.
+\end{itemize}
+\end{frame}
+\begin{frame}{Basic Security Methodology}
+\begin{itemize}
+  \item The basic methodology in computer security is:
+  \begin{itemize}
+    \item We detect uncovered vulnerabilities in our system
+    \item We think about potential threats to our system
+    \item Finally, we consider available controls (countermeasures)
+  \end{itemize}
+  \item Impossible to guarantee security, can only minimise risk
+  \item Need for periodic review
+\end{itemize}
+\end{frame}
+\begin{frame}{Generic Security Methodology}
+\begin{itemize}
+  \item For each critical asset do:
+  \begin{itemize}
+    \item Identify potential threats
+    \item Detect uncovered vulnerabilities
+    \item Assess potential risks
+    \item Design controls (countermeasures)
+  \end{itemize}
+  \item Constant re-evaluation is necessary
+  \begin{itemize}
+    \item Anticipate potential new threats (for example: http://www.cert.org)
+    \item Identifies areas where more work is needed
+    \item Review existing controls
+    \item Monitor technological progress
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Security Goals}
+\begin{itemize}
+  \item Read the story about the recent security incident at The Register.
+  \item Analyse the story more in-depth (you may have to research older, related articles) and identify which of the main security goals were violated, and of which (critical) assets.
+\end{itemize}
+\end{frame}
+\section{Advanced section}
+\begin{frame}{More About Vulnerabilities}
+\begin{itemize}
+  \item Depending on the vulnerable asset type, we can identify:
+  \begin{itemize}
+    \item Hardware Vulnerabilities
+    \item Data Vulnerabilities
+    \item Software Vulnerabilities
+    \item People Vulnerabilities
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Hardware Vulnerabilities}
+\begin{itemize}
+  \item Physical Vulnerabilities
+  \begin{itemize}
+    \item Hardware is composed of physical objects -- it is simple to add, change, destroy or remove parts.
+    \item This means that computer devices might be prone to a physical attack.
+    \item Computers have been stolen, kicked, punched, burnt, frozen, shot at.. the https://youtu.be/algWjS2yiyE) !
+    \item Before the University tightened its physical controls, every semester at least one projector used to be stolen!
+  \end{itemize}
+  \item Microprocessor Design Flaws
+  \begin{itemize}
+    \item Recent huge issue: flaws in Intel/ARM chip design ("Meltdown" and "Spectre")
+    \item This is actually a combination of hardware and software vulnerabilities
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Data Vulnerabilities}
+\begin{itemize}
+  \item Enormous amounts of data around (big data), connected and exposed to the Internet, and stored on corporate clouds.
+  \item Data can be human-readable (text) or in binary format.
+  \item Need to think of data at rest, and in transit (computation/memory, hard disk, network, brain).
+  \item Data attacks are more widespread than software attacks.
+  \begin{itemize}
+    \item Unprotected data is "easy" to read and intrinsically vulnerable to all threat outcomes (interception, interruption, modification).
+    \item Furthermore, it can be easily duplicated.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Software Vulnerabilities}
+\begin{itemize}
+  \item Software is also data, so all data vulnerabilities apply
+  \item Weaknesses can appear during different stages of software development and deployment life cycle:
+  \begin{itemize}
+    \item Source Code
+    \begin{itemize}
+      \item Coding Flaws: mistakes in the design of source code, weak cryptographic implementations (ignoring standards).
+    \end{itemize}
+    \item Compiled (Binary) Code
+    \begin{itemize}
+      \item Inherently vulnerable to malicious exploits (buffer overflow, SQL injection).
+      \item Expanded attack surface due to frequent use of common libraries.
+    \end{itemize}
+    \item Deployed Application
+    \begin{itemize}
+      \item Misconfiguration: weaknesses such as security patches out of date, weak security settings (e.g., default passwords).
+    \end{itemize}
+  \end{itemize}
+  \item Software vulnerabilities are indexed in the CVE catalogue on cve.org.
+\end{itemize}
+\end{frame}
+\begin{frame}{People Vulnerabilities}
+\begin{itemize}
+  \item People are often the weakest link.
+  \item Typical exploit: phishing/spam emails.
+  \item Effectiveness is often underestimated.
+  \item This is particularly problematic if the targeted people are key individuals within an IT system, such as system administrators or lecturers.
+  \item Vulnerabilities:
+  \begin{itemize}
+    \item Lack of security awareness -- people tend to use computers irresponsibly.
+    \item Lack of skills, training, and expertise -- not having the technical know-how in security.
+    \item Personality Weaknesses
+    \begin{itemize}
+      \item Laziness and forgetfulness -- writing down or reusing passwords, forgetting to make backups, etc.
+      \item Naivety -- if this persists despite training, people are an ideal target for social engineering.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Vulnerabilities}
+\begin{itemize}
+  \item Revisit again the story about the security incident and identify the main vulnerabilities that were threatened/attacked. To which critical assets do they belong?
+\end{itemize}
+\end{frame}
+\begin{frame}{More About Threats}
+\begin{itemize}
+  \item Threat versus Attack
+  \begin{itemize}
+    \item An attack is the implementation of a event (= threat event)
+  \end{itemize}
+  \item Threat Actors
+  \begin{itemize}
+    \item Ultimately, security attacks are carried out by real people
+    \item They have a motive
+  \end{itemize}
+  \item Threat Landscape
+  \item Threat Profiling
+\end{itemize}
+\end{frame}
+\begin{frame}{Threat Outcomes}
+\begin{itemize}
+  \item There are four outcomes, threatening CIA triad:
+  \begin{itemize}
+    \item Interception (synonyms: disclosure, evesdropping, snooping) -- unauthorised access to asset
+    \item Interruption -- an asset becomes unavailable
+    \item Modification -- tampering with an asset
+    \item Fabrication -- creation of new objects in a computer system
+  \end{itemize}
+  \item Examples:
+  \begin{itemize}
+    \item copying data, stealing a password
+    \item destroying hardware device, corrupting a file
+    \item changing values in a database
+    \item adding records to a database, creating a trap door
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Threats to Data}
+\begin{itemize}
+  \item Disclosure (Leaking):
+  \begin{itemize}
+    \item Doxing -- Stealing data and dumping it on the Internet, such as on PasteBin
+    \item Credential Stuffing -- get hold of login information, and try it on different accounts
+  \end{itemize}
+  \item Malicious Modification:
+  \begin{itemize}
+    \item Deletion -- accidental or deliberate
+    \item Salami attack -- modify only small amounts of data at a time, but then do this very often, examples:
+    \begin{itemize}
+      \item Credit card theft
+      \item Transferring rounding errors in bank transactions to own account (see movie "Office Space")
+    \end{itemize}
+    \item Ransomware -- encrypt the victim's data, or threaten to publish it, unless a ransom is paid
+  \end{itemize}
+  \item Loss of Ownership
+\end{itemize}
+\end{frame}
+\begin{frame}{Threats and Software}
+\begin{itemize}
+  \item Threats to Software
+  \begin{itemize}
+    \item Source Code Disclosure: source code can leak, be stolen or reverse engineered
+    \item Exposure to Virus Infection: executable (binary) code can be modified by a virus
+  \end{itemize}
+  \item Software as Threat
+  \begin{itemize}
+    \item Malware: Software that may itself have hidden or open malicious or undesirable side effects, or contain back doors
+    \item Terminology: Zero-day exploit -- the first attack of a newly found vulnerability (see: Google Project 0)
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Threats -- Dark Web}
+\begin{itemize}
+  \item !dark-web.jpg
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Threats}
+\begin{itemize}
+  \item Still for the security incident that you have examined earlier, what were/are the main threats that could be relevant?
+\end{itemize}
+\end{frame}
+\begin{frame}{Risk}
+\begin{itemize}
+  \item Risk occurs if both a threat and a matching vulnerability exist.
+  \item Risk arises if there is a probability of damage to our assets, arising from an attack
+  \item Realistic purpose of computer security: minimise risks (rather than achieving complete security)
+  \item Risk can be modelled, using appropriate risk analysis frameworks, as a function of:
+  \begin{itemize}
+    \item (i) the adverse impacts that would arise if the circumstance or event occurs;
+    \item (ii) the likelihood of occurrence.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Risk}
+\begin{itemize}
+  \item Revisit the news item about the recent security incident. We had identified critical assets and their relevant threats and vulnerabilities. In your opinion, how big is the risk that an attack might happen in the near future? Justify your answer.
+\end{itemize}
+\end{frame}
+\begin{frame}{More About Controls}
+\begin{itemize}
+  \item A control is an action, procedure, device or a technique used for protection.
+  \item We can discuss controls by considering the following aspects:
+  \begin{itemize}
+    \item Design principle -- principle of the mitigation technique
+    \item Implementation -- how the control is realised
+    \item Strength -- how successful they might protect against attacks
+    \item Effectiveness -- to what extent they reach their full potential strength
+    \item Strategy -- how they are strategically designed, in a hostile environment
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Design principle}
+\begin{itemize}
+  \item Preventative or proactive control:
+  \begin{itemize}
+    \item Preempt -- by blocking the attack, neutralising the threat, closing the vulnerability, or all of it
+    \item Deter -- by making the attack harder
+    \item Deflect -- by making another target more attractive
+  \end{itemize}
+  \item Detective control:
+  \begin{itemize}
+    \item Detect the attack -- either as it happens or sometime afterwards
+  \end{itemize}
+  \item Reactive control:
+  \begin{itemize}
+    \item Corrective or retrospective control: recover from the effect of an attack
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Implementation}
+\begin{itemize}
+  \item Physical (Traditional) Controls -- e.g. guards, locks, backup copies
+  \item Hardware Controls -- e.g. certain types of firewalls, smartcards, hardware authenticators
+  \item Software Controls -- e.g. encryption, protection in operating systems, protocols, virus scanners, security patches
+  \item Administrative Controls -- e.g. security policies or security assessment frameworks used in an organisation, training, nudging
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Strength}
+\begin{itemize}
+  \item Principle of Overlapping Control (Layered Defense)
+  \begin{itemize}
+    \item Controls can be strengthened by using overlapping controls
+    \item Example: in a computer lab, use swipe cards and locks attached to projectors
+  \end{itemize}
+  \item Principle of Adequate Protection
+  \begin{itemize}
+    \item Assets relate to cost -- strenght of protection should be consistent with the asset value
+    \item They might lose their value after some time -- only protect until loss of value
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Effectiveness}
+\begin{itemize}
+  \item Principle of Effectiveness
+  \begin{itemize}
+    \item No control is 100\% safe -- quality of control will have impact on losses due to attacks
+    \item Controls are only effective, if they are used
+    \item Many users are unaware of need for security/unwilling to cooperate
+    \item Notion of "security theatre"
+  \end{itemize}
+  \item Examples
+  \begin{itemize}
+    \item Detection rate of IDS
+    \item Comprehensiveness of firewall rules
+    \item Quality of software update policy
+    \item Who ever changes his/her passwords?
+    \item Are the swipe cards for our computer labs effective?
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Strategy}
+\begin{itemize}
+  \item Principle of Weakest Link
+  \begin{itemize}
+    \item A control can be no stronger than its weakest component
+    \item Example: we set up an elaborate firewall for the network, but forget to protect a wireless access point
+  \end{itemize}
+  \item Principle of Easiest Attack
+  \begin{itemize}
+    \item The attacker will find the for him easiest loophole, not necessarily the most obvious one!
+    \item Example: spear-phishing
+  \end{itemize}
+  \item Principle of Periodic Review
+  \begin{itemize}
+    \item Periodic review and re-evaluation is necessary to ensure the sustained effectiveness of a control
+    \item Example: re-imaging lab computers during term break
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Should A Control Be A Worry-Eater?}
+\begin{itemize}
+  \item ![worry-eater.jpg
+  \item It should not! Actions:
+  \begin{itemize}
+    \item Monitor technological progress and anticipate potential new threats, for example of the CERT Website
+    \item Identifies areas where more work is needed on the system
+    \item Example: technicians revisit the computer labs at the end of the semester
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Recent Controls}
+\begin{itemize}
+  \item Companies routinely use DDos attack mitigation services (Akami) to form a "Smokescreen"
+  \item Initiatives for financial sector: CBEST
+  \item In the UK, the Digital Economy Act, passed in April 2017, bans citizens' access to perfectly legal websites that don't meet its requirements.
+\end{itemize}
+\end{frame}
+\begin{frame}{Personal Controls: Be Cyber-wise!}
+\begin{itemize}
+  \item Clear Dropbox device history
+  \item Close not needed online accounts
+  \item Setup scheme for passwords
+  \item Establish manual backup policy
+\end{itemize}
+\end{frame}
+\begin{frame}{Controls -- Reflection}
+\begin{itemize}
+  \item How not to do it
+  \begin{itemize}
+    \item UK relied on secrecy through obscurity by using Red Pike
+    \item Chinese government wants to control data storage and tech companies
+  \end{itemize}
+  \item Way forward
+  \begin{itemize}
+    \item Open standards
+    \item Trust
+  \end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Mini-Exercise: Controls}
+\begin{itemize}
+  \item Revisit the security incident article one last time.
+  \item Which are the controls, that either would have prevented the attack, or that are necessary to be put in place? How effective might they be?
+  \item Can you identify which of the principles regarding the strength, effectiveness and strategic use of your controls might be most relevant or applicable?
+\end{itemize}
+\end{frame}
+\begin{frame}{Schneier's Law}
+\end{frame}
+\end{document}

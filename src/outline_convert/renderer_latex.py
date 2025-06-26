@@ -182,7 +182,7 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
                 indent = '  ' * level
                 clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-                if args.notes_include:
+                if args.include_notes:
                     if child.note:
                         note = clean_text(child.note, args.strip_tags)
                         lines.append(fr"{indent}\begin{{quote}}")
@@ -224,7 +224,7 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
                 indent = '  ' * level
                 clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-                if args.notes_include:
+                if args.include_notes:
                     if child.note:
                         note = clean_text(child.note, args.strip_tags)
                         lines.append(fr"{indent}\begin{{quote}}")

@@ -7,7 +7,7 @@ import re
 from .utils import detect_indent
 
 
-def parse_text(lines: List[str], args: argparse.Namespace, expert_mode: bool = False) -> Node:
+def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
     # start with an “empty” root
     root = Node(lines[0].strip())
     stack = [(-1, root)]
@@ -41,7 +41,7 @@ def parse_text(lines: List[str], args: argparse.Namespace, expert_mode: bool = F
 
         title = re.sub(r'^-+\s*', '', leading.strip())
 
-        if expert_mode and "#wfe-ignore-outline" in title:
+        if args.expert_mode and "#wfe-ignore-outline" in title:
             skip_until_level = level
             last_node = None
             continue
@@ -62,7 +62,7 @@ def parse_text(lines: List[str], args: argparse.Namespace, expert_mode: bool = F
             stack.pop()
         parent = stack[-1][1]
 
-        if expert_mode and "#wfe-ignore-item" in title:
+        if args.expert_mode and "#wfe-ignore-item" in title:
             last_node = None
             continue  # skip this node but keep its children attached to parent
 
@@ -73,7 +73,7 @@ def parse_text(lines: List[str], args: argparse.Namespace, expert_mode: bool = F
     return root
 
 
-def parse_text_former(lines: List[str], expert_mode: bool = False) -> Node:
+def parse_text_former(lines: List[str], args:argparse.Namespace) -> Node:
     root = Node('root')
     stack = [(-1, root)]
     indent_size = detect_indent(lines)
@@ -101,7 +101,7 @@ def parse_text_former(lines: List[str], expert_mode: bool = False) -> Node:
 
         title = re.sub(r'^-+\s*', '', leading.strip())
 
-        if expert_mode and "#wfe-ignore-outline" in title:
+        if args.expert_mode and "#wfe-ignore-outline" in title:
             skip_until_level = level
             last_node = None
             continue  # Skip this node and its entire subtree
@@ -112,7 +112,7 @@ def parse_text_former(lines: List[str], expert_mode: bool = False) -> Node:
             stack.pop()
         parent = stack[-1][1]
 
-        if expert_mode and "#wfe-ignore-item" in title:
+        if args.expert_mode and "#wfe-ignore-item" in title:
             last_node = None
             continue  # Skip node, but children will still attach to parent
 
@@ -124,7 +124,7 @@ def parse_text_former(lines: List[str], expert_mode: bool = False) -> Node:
 
 
 
-def parse_opml(root_elem: ET.Element, args: argparse.Namespace, expert_mode: bool = False) -> Node:
+def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
     body = root_elem.find('body')
     top = Node('root')
     if body is None:
@@ -133,7 +133,7 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace, expert_mode: boo
     def recurse(elem: ET.Element, parent: Node):
         title = elem.get('text', '')
 
-        if expert_mode and "#wfe-ignore-outline" in title:
+        if args.expert_mode and "#wfe-ignore-outline" in title:
             return  # Skip entire subtree
 
         node = Node(title)
@@ -141,7 +141,7 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace, expert_mode: boo
         if note:
             node.note = note
 
-        if expert_mode and "#wfe-ignore-item" in title:
+        if args.expert_mode and "#wfe-ignore-item" in title:
             for child_elem in elem.findall('outline'):
                 recurse(child_elem, parent)
         else:
