@@ -1,3 +1,4 @@
+import argparse
 from inspect import cleandoc
 from typing import List
 import re
@@ -6,7 +7,7 @@ from .models import Node
 from .utils import escape_latex, clean_text
 
 
-def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[str]:
+def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[str]:
     lines: List[str] = []
     if level == 0:
         lines.extend([
@@ -22,7 +23,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
     for child in node.children:
 
         title = child.title.strip()
-        if strip_tags:
+        if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
         title = escape_latex(title)
 
@@ -34,7 +35,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
             lines.append(fr"{indent}\end{{quote}}")
         if child.children:
             lines.append(fr"{indent}\begin{{tree}}")
-            lines.extend(render_latex(child, level + 1, strip_tags=strip_tags))
+            lines.extend(render_latex(child, args = args))
             lines.append(fr"{indent}\end{{tree}}")
     if level == 0:
         lines.append(r"\end{tree}")
@@ -47,7 +48,7 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
         indent = '  ' * level
         for child in children:
             title = child.title.strip()
-            if strip_tags:
+            if args.strip_tags:
                 title = ' '.join(part for part in title.split() if not part.startswith('#'))
             title = escape_latex(title)
 
@@ -102,13 +103,11 @@ def render_latex(node: Node, level: int = 0, strip_tags: bool = False) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
 
-def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool = False, strip_tags: bool = False, fragment: bool = False, note: bool = True, header_level: int = 0) -> List[str]:
+def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, header_level: int = 0) -> List[str]:
     lines: List[str] = []
-
     if level == -1:
-        if not fragment:
-            doc_title = clean_text(node.title, strip_tags=strip_tags) if node.children else "Untitled"
-            print(doc_title)
+        if not args.fragment:
+            doc_title = clean_text(node.title, strip_tags=args.strip_tags) if node.children else "Untitled"
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",
@@ -130,34 +129,33 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                 r"\end{frame}",
                 ""
             ])
-            level = level + 1
+        level = level + 1
 
     for child in node.children:
         title = child.title.strip()
         tags = [part for part in title.split() if part.startswith('#')]
-        print(child.title, level)
-        if expert_mode:
+        if args.expert_mode:
             if "#h" in tags:
-                clean_title = clean_text(title, strip_tags)
+                clean_title = clean_text(title, args.strip_tags)
                 if header_level == 0:
                     lines.append(fr"\section{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note,header_level = header_level + 1))
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
 
                 elif header_level == 1:
                     lines.append(fr"\subsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level + 1))
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1,header_level=header_level + 1))
                 else:
                     lines.append(fr"\subsubsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level + 1))
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
 
 # There should not be any #h inside a slide node
 
             elif "#slide" in tags or level == 0 :
-                clean_title = clean_text(title, strip_tags)
+                clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{itemize}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level))
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
 
@@ -172,35 +170,36 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                         r"\centering",
                         r"\end{figure}",
                     ])
+                    continue
 
                 l = LINK_RE.match(title)
                 if l:
                     text, url, description = l.group(1), l.group(2), l.group(3)
                     res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
                     lines.append(res)
+                    continue
 
                 indent = '  ' * level
-                clean_title = clean_text(title, strip_tags)
+                clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-                if note:
+                if args.notes_include:
                     if child.note:
-                        note = clean_text(child.note, strip_tags)
+                        note = clean_text(child.note, args.strip_tags)
                         lines.append(fr"{indent}\begin{{quote}}")
                         lines.append(fr"{indent}{note}")
                         lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
-                    lines.extend(render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,fragment=fragment, note=note, header_level = header_level))
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
         else:
             if level == 0:
-                clean_title = clean_text(title, strip_tags)
+                clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{itemize}")
                     lines.extend(
-                        render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
-                                                      fragment=fragment, note=note, header_level=header_level))
+                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
             else:
@@ -213,33 +212,34 @@ def render_latex_beamer_with_tags(node: Node, level: int = -1, expert_mode: bool
                         r"\centering",
                         r"\end{figure}",
                     ])
+                    continue
 
                 l = LINK_RE.match(title)
                 if l:
                     text, url, description = l.group(1), l.group(2), l.group(3)
                     res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
                     lines.append(res)
+                    continue
 
                 indent = '  ' * level
-                clean_title = clean_text(title, strip_tags)
+                clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"{indent}\item {clean_title}")
-                if note:
+                if args.notes_include:
                     if child.note:
-                        note = clean_text(child.note, strip_tags)
+                        note = clean_text(child.note, args.strip_tags)
                         lines.append(fr"{indent}\begin{{quote}}")
                         lines.append(fr"{indent}{note}")
                         lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
                     lines.extend(
-                        render_latex_beamer_with_tags(child, level + 1, expert_mode=expert_mode, strip_tags=strip_tags,
-                                                      fragment=fragment, note=note, header_level=header_level))
+                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
 
 
     level = level - 1
     if level == -1:
-        if not fragment:
+        if not args.fragment:
             lines.append(r"\end{document}")
 
     return lines

@@ -1,3 +1,4 @@
+import argparse
 from typing import List, Optional
 
 from .models import Node
@@ -6,7 +7,7 @@ import re
 from .utils import detect_indent
 
 
-def parse_text(lines: List[str], expert_mode: bool = False) -> Node:
+def parse_text(lines: List[str], args: argparse.Namespace, expert_mode: bool = False) -> Node:
     # start with an “empty” root
     root = Node(lines[0].strip())
     stack = [(-1, root)]
@@ -123,7 +124,7 @@ def parse_text_former(lines: List[str], expert_mode: bool = False) -> Node:
 
 
 
-def parse_opml(root_elem: ET.Element, expert_mode: bool = False) -> Node:
+def parse_opml(root_elem: ET.Element, args: argparse.Namespace, expert_mode: bool = False) -> Node:
     body = root_elem.find('body')
     top = Node('root')
     if body is None:
