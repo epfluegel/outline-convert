@@ -10,9 +10,11 @@ import pyperclip
 
 from .models import Node
 from .parser import parse_text, parse_opml
-from .renderer_latex import render_latex_beamer_with_tags, render_latex
+from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, build_opml
 from .utils import find_node
+from .renderer_ppt import render_ppt
+from .renderer_rtf import render_rtf
 
 # -- MAIN PROGRAM -----------------------------------------------------
 def main():
@@ -39,13 +41,13 @@ def main():
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
     # Output formatting arguments
-    p.add_argument('--strip-tags', action='store_true', help='Strip tags from input')
-    p.add_argument('--fragment', action='store_true',help='Only keep body of document for latex beamer and opml')
-    p.add_argument('-w','--wait', action='store_true',help='Wait for key press after execution')
-    p.add_argument('--debug', action='store_true',help='Gives debug information')
-    p.add_argument('--add-new-line', action='store_true',help='Insert additional new line between items in output')
-    p.add_argument('-t', '--tab-string', default="    ", help='Identation tab character used in output')
-    p.add_argument('-n', '--notes-include', action='store_true',help='Include notes in ouput')
+    p.add_argument('--strip-tags', action='store_true', default=False, help='Strip tags from input')
+    p.add_argument('--fragment', action='store_true', default=False, help='Only keep body of document for latex beamer and opml')
+    p.add_argument('-w','--wait', action='store_true', default=False, help='Wait for key press after execution')
+    p.add_argument('--debug', action='store_true', default=False, help='Gives debug information')
+    p.add_argument('--add-new-line', action='store_true', default=False, help='Insert additional new line between items in output')
+    p.add_argument('-t', '--indent-string', default="    ", help='Identation indent string used in output')
+    p.add_argument('-n', '--notes-include', action='store_true', default=False, help='Include notes in ouput')
     p.add_argument('-b', '--bullet', default="", help="Symbol used for bullet points")
 
     args = p.parse_args()
@@ -80,30 +82,11 @@ def main():
     root_node: Node
     try:
         tree = ET.fromstringlist(lines)
-        root_node = parse_opml(tree, expert_mode=args.expert_mode)
+        root_node = parse_opml(tree, "REFACTOR", expert_mode=args.expert_mode)
     except:
         if args.debug:
             print("ompl not parsed correctly")
-        root_node = parse_text(lines, expert_mode=args.expert_mode)
-
-
-    """
-    if args.input and args.input.lower().endswith(('.opml', '.xml')):
-        # Parse OPML
-        with open(args.input, 'r', encoding='utf-8') as f:
-            tree = ET.parse(f)
-            xml_root = tree.getroot()
-            root_node = parse_opml(xml_root, expert_mode = args.expert_mode)
-    else:
-        # Parse plain text
-        if args.input:
-            with open(args.input, 'r', encoding='utf-8') as f:
-                raw = [line.rstrip('\n') for line in f]
-        else:
-            print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
-            raw = [line.rstrip('\n') for line in sys.stdin]
-        root_node = parse_text(raw, expert_mode = args.expert_mode)
-    """
+        root_node = parse_text(lines, args, expert_mode=args.expert_mode)
 
     # -- Optional subtree extraction ------------------------------
     if args.start:
@@ -116,16 +99,17 @@ def main():
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
     if args.format == 'txt':
-        tab=args.tab_string
+        tab=args.indent_string
         if tab == "\\t":
             tab = '\t'
-        out_lines = render_text(root_node, indent_char=tab, bullet_symbol=args.bullet, strip_tags=args.strip_tags)
+        out_lines = render_text(root_node, args, indent_char=tab, bullet_symbol=args.bullet,
+                                strip_tags=args.strip_tags)
     elif args.format == 'latex':
-        out_lines = render_latex(root_node, strip_tags=args.strip_tags)
+        out_lines = render_latex(root_node, args)
     elif args.format == 'beamer':
-        out_lines = render_latex_beamer_with_tags(root_node, expert_mode=args.expert_mode, strip_tags=args.strip_tags, fragment=args.fragment, note=args.notes_include)
+        out_lines = render_latex_beamer(root_node, args)
     elif args.format == 'opml':  # opml
-        out_tree = build_opml(root_node, owner_email=args.email, strip_tags=args.strip_tags)
+        out_tree = build_opml(root_node, args, owner_email=args.email, strip_tags=args.strip_tags)
     elif args.format == 'ppt':
         out_lines = render_ppt(root_node, args)
     elif args.format == 'rtf':
@@ -164,6 +148,23 @@ def main():
         except KeyboardInterrupt:
             print("\nExiting...")
 
+"""
+    if args.input and args.input.lower().endswith(('.opml', '.xml')):
+        # Parse OPML
+        with open(args.input, 'r', encoding='utf-8') as f:
+            tree = ET.parse(f)
+            xml_root = tree.getroot()
+            root_node = parse_opml(xml_root, expert_mode = args.expert_mode)
+    else:
+        # Parse plain text
+        if args.input:
+            with open(args.input, 'r', encoding='utf-8') as f:
+                raw = [line.rstrip('\n') for line in f]
+        else:
+            print('Paste outline below. Finish with Ctrl+D (linux) or Ctrl+Z + Enter(Windows):')
+            raw = [line.rstrip('\n') for line in sys.stdin]
+        root_node = parse_text(raw, expert_mode = args.expert_mode)
+    """
 
 if __name__ == '__main__':
     main()
