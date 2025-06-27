@@ -10,6 +10,8 @@ def render_text(node: Node, args: argparse.Namespace, level: int = 0, ) -> List[
     lines: List[str] = []
     if level == 0:
         lines.append(node.title)
+        if args.include_notes:
+            lines.append(f'"{node.note}"')
     for child in node.children:
         title = child.title
         if args.strip_tags:
@@ -26,6 +28,7 @@ def render_text(node: Node, args: argparse.Namespace, level: int = 0, ) -> List[
 
 # -- RENDER OPML ------------------------------------------------------------
 def node_to_outline_elem(node: Node, args: argparse.Namespace) -> ET.Element:
+    print(node.title, node.note)
     elem = ET.Element('outline')
     title = node.title
     if args.strip_tags:
