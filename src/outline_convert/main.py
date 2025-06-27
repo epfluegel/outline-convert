@@ -85,6 +85,8 @@ def main():
     try:
         tree = ET.fromstringlist(lines)
         root_node = parse_opml(tree, args=args)
+        print("opml arsing")
+        print(root_node.title, root_node.note)
     except:
         if args.debug:
             print("ompl not parsed correctly")
@@ -94,8 +96,7 @@ def main():
     if args.start:
         node = find_node(root_node, args.start)
         if not node:
-            if args.debug:
-                print("Prefix not found")
+            sys.exit(f"Error: Start prefix '{args.start}' not found")
         root_node = node
 
     # -- Render based on chosen format ---------------------------
