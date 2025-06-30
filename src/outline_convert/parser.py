@@ -8,32 +8,38 @@ from .utils import detect_indent
 
 
 def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
-    # start with an “empty” root
+    # Create root with the first line as its title
     root = Node(lines[0].strip())
     stack = [(-1, root)]
     indent_size = detect_indent(lines)
     last_node: Optional[Node] = None
     skip_until_level: Optional[int] = None
 
-    #first_title_set = False
-
     for line in lines[1:]:
         stripped = line.strip()
+
+        # 1) skip blank lines
         if not stripped:
             continue
 
-        # notes attached to the last node
-        if stripped.startswith('"') and stripped.endswith('"') and last_node:
-            last_node.note = stripped.strip('"')
+        # 2) if it's a quoted line, treat as a note
+        if stripped.startswith('"') and stripped.endswith('"'):
+            note_text = stripped.strip('"')
+            if last_node:
+                # attach to the most recently created node
+                last_node.note = note_text
+            else:
+                # no node yet → this is the root's note
+                root.note = note_text
             continue
 
-        # compute nesting level
+        # 3) otherwise it's an outline item — compute its level
         leading = line.expandtabs(indent_size)
         space_count = len(leading) - len(leading.lstrip(' '))
         extra = indent_size if leading.lstrip().startswith('-') else 0
         level = (space_count + extra) // indent_size
 
-        # handle #wfe-ignore-outline
+        # 4) handle #wfe-ignore-outline
         if skip_until_level is not None and level > skip_until_level:
             continue
         else:
@@ -45,84 +51,24 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
             skip_until_level = level
             last_node = None
             continue
-        """
-        # --- NEW: use first real line as root.title ---
-        if not first_title_set:
-            root.title = title
-            first_title_set = True
-            last_node = root
-            # DON'T create a new Node here; consume this line
-            continue
-        """
-        # now build the rest of the tree as before
+
+        # 5) create the node
         node = Node(title)
 
-        # pop back up until we find our parent
+        # find its parent by popping until we reach the correct level
         while stack and stack[-1][0] >= level:
             stack.pop()
         parent = stack[-1][1]
 
         if args.expert_mode and "#wfe-ignore-item" in title:
             last_node = None
-            continue  # skip this node but keep its children attached to parent
+            continue  # skip this node but keep stacking its children
 
         parent.children.append(node)
         stack.append((level, node))
         last_node = node
 
     return root
-
-
-def parse_text_former(lines: List[str], args:argparse.Namespace) -> Node:
-    root = Node('root')
-    stack = [(-1, root)]
-    indent_size = detect_indent(lines)
-    last_node: Optional[Node] = None
-    skip_until_level: Optional[int] = None  # Used to skip subtrees
-
-    for raw in lines:
-        stripped = raw.strip()
-        if not stripped:
-            continue
-
-        if stripped.startswith('"') and stripped.endswith('"') and last_node:
-            last_node.note = stripped.strip('"')
-            continue
-
-        leading = raw.expandtabs(indent_size)
-        space_count = len(leading) - len(leading.lstrip(' '))
-        extra = indent_size if leading.lstrip().startswith('-') else 0
-        level = (space_count + extra) // indent_size
-
-        if skip_until_level is not None and level > skip_until_level:
-            continue  # Skip children of #wfe-ignore-outline node
-        else:
-            skip_until_level = None  # Reset if level is no longer deeper
-
-        title = re.sub(r'^-+\s*', '', leading.strip())
-
-        if args.expert_mode and "#wfe-ignore-outline" in title:
-            skip_until_level = level
-            last_node = None
-            continue  # Skip this node and its entire subtree
-
-        node = Node(title)
-
-        while stack and stack[-1][0] >= level:
-            stack.pop()
-        parent = stack[-1][1]
-
-        if args.expert_mode and "#wfe-ignore-item" in title:
-            last_node = None
-            continue  # Skip node, but children will still attach to parent
-
-        parent.children.append(node)
-        stack.append((level, node))
-        last_node = node
-
-    return root
-
-
 
 def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
     body = root_elem.find('body')
