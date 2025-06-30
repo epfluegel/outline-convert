@@ -4,7 +4,7 @@ from typing import List
 import re
 
 from .models import Node
-from .utils import escape_latex, clean_text
+from .utils import escape_latex, clean_text, link_replacer
 
 
 def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[str]:
@@ -101,7 +101,7 @@ def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[s
 
 
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
-LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)\s*(.*)')
+LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
 def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, header_level: int = 0) -> List[str]:
     lines: List[str] = []
@@ -172,11 +172,10 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
                     ])
                     continue
 
-                l = LINK_RE.match(title)
-                if l:
-                    text, url, description = l.group(1), l.group(2), l.group(3)
-                    res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
-                    lines.append(res)
+                res = LINK_RE.sub(link_replacer, title)
+                print(res)
+                if res != title:
+                    lines.append(fr'\item {res}')
                     continue
 
                 indent = '  ' * level
