@@ -8,21 +8,23 @@ import argparse
 
 def render_text(node: Node, args: argparse.Namespace, level: int = 0, ) -> List[str]:
     lines: List[str] = []
-    if level == 0:
-        lines.append(node.title)
-        if args.include_notes:
-            lines.append(f'"{node.note}"')
-    for child in node.children:
-        title = child.title
-        if args.strip_tags:
-            title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        prefix = args.indent_string * level + args.bullet_symbol + ' ' * len(args.bullet_symbol) + title
 
-        lines.append(prefix)
-        if child.note:
-            lines.append(args.indent_string * level + f'"{child.note}"')
-        lines.extend(
-            render_text(child, args, level=level + 1))
+    title = node.title
+    if args.strip_tags:
+        title = ' '.join(part for part in title.split() if not part.startswith('#'))
+    indent = args.indent_string * level
+    if level == 0:
+        lines.append(title)
+    else:
+        bullet_prefix = args.bullet_symbol + ' ' * len(args.bullet_symbol)
+        lines.append(indent + bullet_prefix + title)
+
+    if node.note and args.include_notes:
+        lines.append(indent + f'"{node.note}"')
+
+    for child in node.children:
+        lines.extend(render_text(child, args, level + 1))
+
     return lines
 
 

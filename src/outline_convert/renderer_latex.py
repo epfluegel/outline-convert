@@ -212,11 +212,9 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
                     ])
                     continue
 
-                l = LINK_RE.match(title)
-                if l:
-                    text, url, description = l.group(1), l.group(2), l.group(3)
-                    res = fr"\item \href{{{url}}}{{{escape_latex(text)}}} {escape_latex(description)}"
-                    lines.append(res)
+                res = LINK_RE.sub(link_replacer, title)
+                if res != title:
+                    lines.append(fr'\item {res}')
                     continue
 
                 indent = '  ' * level
