@@ -8,3 +8,4 @@ test
 src/outline_convert/__pycache__/
 ./recursive_test
 ./build
+/bin

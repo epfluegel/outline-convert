@@ -91,6 +91,5 @@ def clean_text(title: str, strip_tags: bool) -> str:
 
 def link_replacer(match):
     text, url = match.group(1), match.group(2)
-    print("inside the link replacer")
     return fr"\href{{{url}}}{{{escape_latex(text)}}}"
 

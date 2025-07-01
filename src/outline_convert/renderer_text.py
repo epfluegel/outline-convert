@@ -28,7 +28,6 @@ def render_text(node: Node, args: argparse.Namespace, level: int = 0, ) -> List[
 
 # -- RENDER OPML ------------------------------------------------------------
 def node_to_outline_elem(node: Node, args: argparse.Namespace) -> ET.Element:
-    print(node.title, node.note)
     elem = ET.Element('outline')
     title = node.title
     if args.strip_tags:
