@@ -173,7 +173,6 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
                     continue
 
                 res = LINK_RE.sub(link_replacer, title)
-                print(res)
                 if res != title:
                     lines.append(fr'\item {res}')
                     continue
