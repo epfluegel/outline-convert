@@ -11,7 +11,7 @@ import pyperclip
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
-from .renderer_text import render_text, build_opml, render_opml
+from .renderer_text import render_text, render_opml
 from .utils import find_node
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
