@@ -85,7 +85,6 @@ def main():
     try:
         tree = ET.fromstringlist(lines)
         root_node = parse_opml(tree, args=args)
-        print("opml arsing")
     except:
         if args.debug:
             print("ompl not parsed correctly")
