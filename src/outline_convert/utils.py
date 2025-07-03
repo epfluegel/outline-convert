@@ -1,3 +1,4 @@
+import argparse
 from math import gcd
 from typing import List, Optional
 
@@ -93,3 +94,13 @@ def link_replacer(match):
     text, url = match.group(1), match.group(2)
     return fr"\href{{{url}}}{{{escape_latex(text)}}}"
 
+def node_to_outline_elem(node: Node, args: argparse.Namespace) -> ET.Element:
+    """Convert a single node to an outline element (no children processing)"""
+    elem = ET.Element('outline')
+    title = node.title
+    if args.strip_tags:
+        title = ' '.join(part for part in title.split() if not part.startswith('#'))
+    elem.set('text', title)
+    if args.include_notes and node.note:
+        elem.set('_note', node.note)
+    return elem
