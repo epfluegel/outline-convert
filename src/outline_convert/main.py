@@ -11,7 +11,7 @@ import pyperclip
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
-from .renderer_text import render_text, build_opml
+from .renderer_text import render_text, render_opml
 from .utils import find_node
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
@@ -85,7 +85,6 @@ def main():
     try:
         tree = ET.fromstringlist(lines)
         root_node = parse_opml(tree, args=args)
-        print("opml arsing")
     except:
         if args.debug:
             print("ompl not parsed correctly")
@@ -111,7 +110,7 @@ def main():
     elif args.format == 'beamer':
         out_lines = render_latex_beamer(root_node, args)
     elif args.format == 'opml':  # opml
-        out_tree = build_opml(root_node, args, owner_email=args.email)
+        out_tree = render_opml(root_node, args)
     elif args.format == 'ppt':
         out_lines = render_ppt(root_node, args)
     elif args.format == 'rtf':
