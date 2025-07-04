@@ -21,6 +21,15 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
         # 1) skip blank lines
         if not stripped:
             continue
+        # Check if item is complete
+        is_complete = title.startswith('[COMPLETE]')
+
+        # Apply filtering based on args
+        if args.hide_completed and is_complete:
+            continue  # Skip this item
+
+        if args.completed_only and not is_complete:
+            continue  # Skip this item
 
         # 2) if it's a quoted line, treat as a note
         if stripped.startswith('"') and stripped.endswith('"'):
