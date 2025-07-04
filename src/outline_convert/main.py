@@ -142,7 +142,7 @@ def main():
 
     # -- Handle final wait --------------------------------------
     if args.wait:
-        input("Press any key to exit\n")
+        input("Press any Enter to exit\n")
 
 if __name__ == '__main__':
     main()
