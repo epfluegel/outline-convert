@@ -107,7 +107,7 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
     lines: List[str] = []
     if level == -1:
         if not args.fragment:
-            doc_title = clean_text(node.title, strip_tags=args.strip_tags) if node.children else "Untitled"
+            doc_title = clean_text(node.title, strip_tags=args.strip_tags)
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",

@@ -24,7 +24,7 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
         if not stripped:
             continue
         # Check if item is complete
-        is_complete = title.startswith('[COMPLETE]')
+        is_complete = line.startswith('[COMPLETE]')
 
         # Apply filtering based on args
         if args.hide_completed and is_complete:
