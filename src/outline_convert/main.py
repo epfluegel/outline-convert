@@ -93,9 +93,10 @@ def main():
     # -- Optional subtree extraction ------------------------------
     if args.start:
         node = find_node(root_node, args.start)
-        if not node:
-            sys.exit(f"Error: Start prefix '{args.start}' not found")
         root_node = node
+        if not root_node:
+            root_node = Node(f"Start prefix '{args.start}' not found")
+
 
     # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
@@ -142,7 +143,7 @@ def main():
 
     # -- Handle final wait --------------------------------------
     if args.wait:
-        input("Press any key to exit\n")
+        input("Press any Enter to exit\n")
 
 if __name__ == '__main__':
     main()

@@ -100,14 +100,14 @@ def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[s
     return lines
 
 
-IMAGE_RE = re.compile(r'!\[([^\]]+)\]\([^\)]+\)')
+IMAGE_RE = re.compile(r'!\[([^\]]+)\]\(([^\)]+)\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
 def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, header_level: int = 0) -> List[str]:
     lines: List[str] = []
     if level == -1:
         if not args.fragment:
-            doc_title = clean_text(node.title, strip_tags=args.strip_tags) if node.children else "Untitled"
+            doc_title = clean_text(node.title, strip_tags=args.strip_tags)
             lines.extend([
                 r"\documentclass{beamer}",
                 r"\usepackage[T1]{fontenc}",
@@ -163,10 +163,10 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
 
                 i = IMAGE_RE.match(title)
                 if i:
-                    filename = i.group(1)
+                    file_location = i.group(2)
                     lines.extend([
                         r"\begin{figure}[t]",
-                        fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
+                        fr"\includegraphics[width=.75\textwidth]{{{file_location}}}",
                         r"\centering",
                         r"\end{figure}",
                     ])
@@ -203,10 +203,10 @@ def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, h
             else:
                 i = IMAGE_RE.match(title)
                 if i:
-                    filename = i.group(1)
+                    file_location = i.group(2)
                     lines.extend([
                         r"\begin{figure}[t]",
-                        fr"\includegraphics[width=.75\textwidth]{{{filename}}}",
+                        fr"\includegraphics[width=.75\textwidth]{{{file_location}}}",
                         r"\centering",
                         r"\end{figure}",
                     ])

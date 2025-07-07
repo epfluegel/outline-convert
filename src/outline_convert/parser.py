@@ -6,6 +6,8 @@ import xml.etree.ElementTree as ET
 import re
 from .utils import detect_indent
 
+IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
+IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 
 def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
     # Create root with the first line as its title
@@ -21,6 +23,15 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
         # 1) skip blank lines
         if not stripped:
             continue
+        # Check if item is complete
+        is_complete = line.startswith('[COMPLETE]')
+
+        # Apply filtering based on args
+        if args.hide_completed and is_complete:
+            continue  # Skip this item
+
+        if args.completed_only and not is_complete:
+            continue  # Skip this item
 
         # 2) if it's a quoted line, treat as a note
         if stripped.startswith('"') and stripped.endswith('"'):
@@ -47,7 +58,7 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
 
         title = re.sub(r'^-+\s*', '', leading.strip())
 
-        if args.expert_mode and "#wfe-ignore-outline" in title:
+        if args.expert_mode and any(tag in title for tag in IGNORE_OUTLINE_TAGS):
             skip_until_level = level
             last_node = None
             continue
@@ -60,7 +71,8 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
             stack.pop()
         parent = stack[-1][1]
 
-        if args.expert_mode and "#wfe-ignore-item" in title:
+        if args.expert_mode and any(tag in title for tag in IGNORE_ITEM_TAGS):
+
             last_node = None
             continue  # skip this node but keep stacking its children
 
