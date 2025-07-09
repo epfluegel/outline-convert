@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 import xml.etree.ElementTree as ET
+import zipfile
 from contextlib import nullcontext
 from doctest import debug
 from typing import Optional, List
@@ -34,9 +35,10 @@ def main():
                    help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
     p.add_argument('-s', '--start', help='Start item for conversion')
 
-    #p.add_argument('--stdout', action='store_true', help='Write to stdout')
     p.add_argument('-m', '--date', metavar='DIR',
                    help='Choose most recently modified file in directory DIR as input')
+    p.add_argument('-z', nargs=2, metavar=('ZIP_DIRECTORY', 'PATH_TO_FILE_FROM_ZIP_FOLDER'),
+                   help='Choose the selected file in the most recent zip backup')
     p.add_argument('--expert-mode', action='store_true',
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
 
@@ -70,8 +72,32 @@ def main():
         print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
+    if args.z:
+        zip_dir = args.z[0]
+        file = args.z[1]
+        if not os.path.isdir(zip_dir):
+            sys.exit(f"Error: '{zip_dir}' is not a directory.")
+        chosen = None
+        latest_time = 0
+
+        for name in os.listdir(zip_dir):
+            full_path = os.path.join(zip_dir, name)
+            if zipfile.is_zipfile(full_path) and 'opml' in name:
+                mtime = os.path.getmtime(full_path)
+                if mtime > latest_time:
+                    latest_time = mtime
+                    chosen = full_path
+
+        if not chosen:
+            sys.exit(f"No correct zip files found in '{zip_dir}'.")
+
+        print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
+        with zipfile.ZipFile(chosen, 'r') as zip_ref:
+            with zip_ref.open(file) as f:
+                lines = f.read().decode('utf-8').splitlines()
+
     # -- Read input data ------------------------------------------
-    if args.input:
+    elif args.input:
         with open(args.input, 'r', encoding='utf-8') as file:
             lines = file.read().splitlines()
     elif args.clipboard:
