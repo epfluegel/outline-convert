@@ -28,6 +28,19 @@ def find_node(node: Node, prefix: str) -> Optional[Node]:
         if res:
             return res
     return None
+    
+def find_node_bis(node: Node, prefix: str) -> Optional[Node]:
+    text = node.title 
+    print("Find:", prefix, "in", text)
+    if prefix in text:
+        print("found:", prefix, "in", text)
+        return node
+    for c in node.children:
+        #print("Searching through child:", c.title)
+        res = find_node_bis(c, prefix)
+        if res:
+            return res
+    return None
 
 
 
