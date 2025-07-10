@@ -18,32 +18,24 @@ def detect_indent(lines: List[str]) -> int:
 
 
 # -- TREE UTILITIES ---------------------------------------------------------
-def find_node(node: Node, prefix: str) -> Optional[Node]:
-    text = node.title
-    if text.startswith(prefix):
-        print("find node", text, prefix)
+
+def find_node(forest: List[Node], prefix: str) -> Optional[Node]:
+    for tree in forest:
+        result = find_node_tree(tree, prefix)
+        if result is not None:
+            return result
+    return None
+
+def find_node_tree(node: Node, prefix: str) -> Optional[Node]:
+    if node.title.startswith(prefix):
         return node
-    for c in node.children:
-        res = find_node(c, prefix)
-        if res:
-            return res
+    for child in node.children:
+        result = find_node_tree(child, prefix)
+        if result is not None:
+            return result
+
     return None
     
-def find_node_bis(node: Node, prefix: str) -> Optional[Node]:
-    text = node.title 
-    print("Find:", prefix, "in", text)
-    if prefix in text:
-        print("found:", prefix, "in", text)
-        return node
-    for c in node.children:
-        #print("Searching through child:", c.title)
-        res = find_node_bis(c, prefix)
-        if res:
-            return res
-    return None
-
-
-
 # -- PRETTY INDENT ----------------------------------------------------------
 def indent(elem: ET.Element, level: int = 0):
     pad = '\n' + level * '  '

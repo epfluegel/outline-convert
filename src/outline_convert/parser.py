@@ -82,7 +82,7 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
 
     return [root,root]
 
-def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
+def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     body = root_elem.find('body')
     if body is None:
         return Node('Empty OPML')
@@ -117,4 +117,4 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
 
     recurse(first_outline, root)
     
-    return root
+    return [root, root]
