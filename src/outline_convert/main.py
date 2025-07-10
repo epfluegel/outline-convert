@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node
+from .utils import find_node, find_node_bis
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -121,7 +121,7 @@ def main():
 
     # -- Optional subtree extraction ------------------------------
     if args.start:
-        node = find_node(root_node, args.start)
+        node = find_node_bis(root_node, args.start)
         root_node = node
         if not root_node:
             root_node = Node(f"Start prefix '{args.start}' not found")

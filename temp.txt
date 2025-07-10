@@ -1,0 +1,213 @@
+Entering the main
+Projects/Knowledge.opml
+Find: Von Neumann Growth Model in By My Novelty
+Find: Von Neumann Growth Model in BY TAG
+Find: Von Neumann Growth Model in #AI #productivity #VNM
+Find: Von Neumann Growth Model in NOVELTY
+Find: Von Neumann Growth Model in DIGITAL PRODUCTIVITY -- KNOWLEDGE WORK + VNM
+Find: Von Neumann Growth Model in AI + DIGITAL PRODUCTIVITY -- KNOWLEDGE WORK + VNM
+Find: Von Neumann Growth Model in #econ #security #VNM
+Find: Von Neumann Growth Model in BACKGROUND
+Find: Von Neumann Growth Model in Mathematical Economics
+Find: Von Neumann Growth Model in Security Economics
+Find: Von Neumann Growth Model in Von Neumann Economic Model
+Find: Von Neumann Growth Model in NOVELTY
+Find: Von Neumann Growth Model in MROI AND MROMI
+Find: Von Neumann Growth Model in #LA
+Find: Von Neumann Growth Model in #RA 
+Find: Von Neumann Growth Model in MAEVA #slide 
+Find: Von Neumann Growth Model in __Motive__: the underlying reason for attacking the victim. 
+Find: Von Neumann Growth Model in This could be for the purposes of financial gains, revenge, personal satisfaction or thrill, or simply with the intention of creating damage. From a psychological point of view, the attacker's motive might affect the perceived gain, as well as the appreciation of the effort required.
+Find: Von Neumann Growth Model in __Ability__: the capability of the attacker to invest in resources for implementing the attack, as well as the technical knowledge available for breaching cyber security controls. 
+Find: Von Neumann Growth Model in A strong ability will make it easier to spend effort on the attack, and subjectively reducing the perceived value of $e$.
+Find: Von Neumann Growth Model in __Exploitability__: the ease by which the system can be penetrated, through exploiting a vulnerability. 
+Find: Von Neumann Growth Model in It would be reasonable to expect exploitability and effort to be inversely related in a proportional manner. This category could be explored similarly as in the CVSS exploitability score, taking into account possible attack vectors and attack complexities, as well as the required privileges and interaction with users, however, the discussion should not be restricted to software vulnerabilities alone.
+Find: Von Neumann Growth Model in __Visibility of target__: how prominent is the target, for example, does it have a popular website or brand name, does it have a large user base? 
+Find: Von Neumann Growth Model in Great visibility might promise a big gain, in the eyes of the attacker.
+Find: Von Neumann Growth Model in __Attractiveness of target__: from the point of view of the attacker, how attractive is the target? 
+Find: Von Neumann Growth Model in This is linked to how much gain the attacker would estimate from achieving through the attack, and will strongly depend on the specific motive, as discussed in the first category.
+Find: Von Neumann Growth Model in #simplex #VNM 
+Find: Von Neumann Growth Model in Background
+Find: Von Neumann Growth Model in Simplex+Dual+MC2
+Find: Von Neumann Growth Model in Background and Context #slide 
+Find: Von Neumann Growth Model in The Dual Simplex Method 
+Find: Von Neumann Growth Model in MC2 Linear Programs
+Find: Von Neumann Growth Model in MC2 Linear Program Formulation #slide 
+Find: Von Neumann Growth Model in MC2 LP:
+Find: Von Neumann Growth Model in Consider
+Find: Von Neumann Growth Model in "$$\max C^\top y+d$$" subject to "$$Ay\le B$$" and $$y\ge 0$$ ($$d>0$$). 
+Find: Von Neumann Growth Model in This means
+Find: Von Neumann Growth Model in $$\exist\, x,y^0\ge 0:\; z=x(C^\top y + d)$$ maximal s.t. $$Ay \le By^o,\; y\ge 0$$.
+Find: Von Neumann Growth Model in Here:
+Find: Von Neumann Growth Model in Multiple objectives: $$C$$
+Find: Von Neumann Growth Model in Multiple constraints: $$B$$
+Find: Von Neumann Growth Model in Necessary Conditions: Augmented Form #slide 
+Find: Von Neumann Growth Model in We view the linear system of inequalities used in the MC2 LP as a system of linear matrix equations.
+Find: Von Neumann Growth Model in This can be written using non-basic and basic variables as
+Find: Von Neumann Growth Model in $$Ay+\hat{y}=By^o$$
+Find: Von Neumann Growth Model in $$x^o(C^\top y+d)=v$$
+Find: Von Neumann Growth Model in where $$y\ge 0,\hat{y}\ge 0,y^o\ge 0$$.
+Find: Von Neumann Growth Model in Constructing A Basic Solution #slide 
+Find: Von Neumann Growth Model in We can construct a basic solution that may be infeasible, or not even real, given as follows:
+Find: Von Neumann Growth Model in Let $$\lambda\neq 0$$ be an eigenvalue of $$D$$ with corresponding eigenvectors $$\hat{x}^\top, \hat{y}$$ and define $$\hat{v}=1/\lambda$$. 
+Find: Von Neumann Growth Model in Subject to the substitution $$A\leftarrow A+aD$$ for a suitable positive real number $$a$$ we can assume $$\Re(\hat{v})>0$$. 
+Find: Von Neumann Growth Model in Then $$(\hat{v},\hat{x}^\top, \hat{y})$$ is a generalised eigensystem of $$I-\lambda{D}$$. 
+Find: Von Neumann Growth Model in Set $$x^o=\hat{x}B$$, $$y=0$$, $$v=x^od$$ and $$y^o=C^\top \hat{y}$$.
+Find: Von Neumann Growth Model in Sufficient Conditions for Feasible Basic Solution #slide 
+Find: Von Neumann Growth Model in Tableau Notation #slide 
+Find: Von Neumann Growth Model in The classical compact tableau notation is expanded as follows:
+Find: Von Neumann Growth Model in $$\begin{array}{|c|c|c|} \hline A & I & B\\ \hline C^\top & 0 & V\\ \hline \end{array}$$
+Find: Von Neumann Growth Model in The dual tableau is:
+Find: Von Neumann Growth Model in $$\begin{array}{|c|c|} \hline A  & B\\ \hline I  & 0 \\ \hline C^\top  & V\\ \hline \end{array}$$
+Find: Von Neumann Growth Model in Pivot Step #slide 
+Find: Von Neumann Growth Model in Simplex+Params
+Find: Von Neumann Growth Model in Simplex+Pencils
+Find: Von Neumann Growth Model in A novel multi-criteria dual simplex method based on matrix pencils. #MPS #h #slide #novel:algorithm #novel:slow
+Find: Von Neumann Growth Model in The Method #h 
+Find: Von Neumann Growth Model in Background and Context #slide 
+Find: Von Neumann Growth Model in The Dual Simplex Method 
+Find: Von Neumann Growth Model in Intro #slide 
+Find: Von Neumann Growth Model in The algorithm views the linear system of equations used in the dual simplex method as a bilinear linear matrix pencil equation. 
+Find: Von Neumann Growth Model in This can be written using non-basic and basic variables as
+Find: Von Neumann Growth Model in $$x^\top(A-vD)y+\hat{x}\hat{y}=0$$
+Find: Von Neumann Growth Model in where $$x\ge 0,\hat{x}\ge 0,y\ge 0,\hat{y}\ge 0$$.
+Find: Von Neumann Growth Model in View as Linear Matrix Pencil Equation #slide 
+Find: Von Neumann Growth Model in Setting #simplex:augmented 
+Find: Von Neumann Growth Model in Canonical form can be written as
+Find: Von Neumann Growth Model in $$x^\top(A-vbc^\top)y+\hat{x}^\top(\alpha I-{\beta}{bc^\top})\hat{y}=0$$
+Find: Von Neumann Growth Model in where $$x\ge 0,\hat{x}\ge 0,\hat{y}\ge 0$$.
+Find: Von Neumann Growth Model in Assumptions
+Find: Von Neumann Growth Model in The matrix pencil $$A-\lambda {bc^\top}$$ is regular.
+Find: Von Neumann Growth Model in The unique finite eigenvalue of this regular matrix pencil is positive. 
+Find: Von Neumann Growth Model in Note: this excludes the case where $$bc^\top$$ is nilpotent.
+Find: Von Neumann Growth Model in Relationships and Assumptions #slide 
+Find: Von Neumann Growth Model in $$A$$ is invertible
+Find: Von Neumann Growth Model in $$D=BC^\top$$ rank-factorisation
+Find: Von Neumann Growth Model in $$A-\lambda D$$ is a regular matrix pencil
+Find: Von Neumann Growth Model in Assumption: $$D$$ is not nilpotent 
+Find: Von Neumann Growth Model in $$V=C^\top A^{-1}B$$
+Find: Von Neumann Growth Model in Tableau Notation #slide 
+Find: Von Neumann Growth Model in We extend the classical compact tableau notation as follows:
+Find: Von Neumann Growth Model in $$\begin{array}{|c|c|} \hline A & B\\ \hline C^\top & V\\ \hline \end{array}$$
+Find: Von Neumann Growth Model in The expanded tableau is:
+Find: Von Neumann Growth Model in $$\begin{array}{|c|c|c|} \hline A & I & B\\ \hline I & 0 & 0 \\ \hline C^\top & 0 & V\\ \hline \end{array}$$
+Find: Von Neumann Growth Model in Initialisation #slide #simplex:init 
+Find: Von Neumann Growth Model in We start with $$x=y=0$$, $$v=0$$ and a basic solution that may be infeasible, given as follows:
+Find: Von Neumann Growth Model in Let $$\lambda\neq 0$$ be an eigenvalue of $$D$$ with corresponding eigenvectors $$\hat{x}^\top, \hat{y}$$ and define $$\hat{v}=1/\lambda$$. 
+Find: Von Neumann Growth Model in Then $$(\hat{v},\hat{x}^\top, \hat{y})$$ is a generalised eigensystem of $$I-\lambda{D}$$. 
+Find: Von Neumann Growth Model in Subject to the substitution $$A\leftarrow A+aD$$ for a suitable real number $$a$$ we can assume $$\hat{v}>0$$. 
+Find: Von Neumann Growth Model in Reduction Step (I) #slide #simplex:pivot 
+Find: Von Neumann Growth Model in We partition the matrix $$A$$ into $$rs$$ blocks ($$1\le r \le m$$, $$1\le s \le n$$), with matching row and column dimensions:
+Find: Von Neumann Growth Model in $$A=\begin{pmatrix} A_{11} & \cdots & A_{1j} & \cdots & A_{1s} \\ \vdots &  & \vdots &  & \vdots \\ A_{i1} & \cdots & A_{ij} & \cdots & A_{is} \\ \vdots &  & \vdots &  & \vdots \\A_{r1} & \cdots & A_{rj} & \cdots & A_{rs} \\ \end{pmatrix}$$
+Find: Von Neumann Growth Model in Let $$B$$ and $$C^\top$$ be partitioned accordingly
+Find: Von Neumann Growth Model in We can pick a block-index pair $$(i,j)$$ as block-pivot, if $$A_{ij}$$ is square and $$A_{ij}-\lambda B_{ij}C_{ij}^\top$$ is a regular matrix pencil with at least one real, positive eigenvalue $$\mu$$ and corresponding eigenvectors $$x^\top_\mu, y_\mu$$ that are not both nonnegative
+Find: Von Neumann Growth Model in Reduction Step (II) #slide #simplex:pivot 
+Find: Von Neumann Growth Model in Primal (Row/Left-Multiplication)
+Find: Von Neumann Growth Model in The new matrices $$\tilde{A}$$ and $$\tilde{B}$$ are obtained through left-multiplication of a suitable matrix $$P$$ and swapping basic and non-basic variables
+Find: Von Neumann Growth Model in Dual (Column/Row-Multiplication)
+Find: Von Neumann Growth Model in The new matrices $$\tilde{A}$$ and $$\tilde{C}$$ are obtained through right-multiplication of a suitable matrix $$Q$$ and swapping basic and non-basic variables
+Find: Von Neumann Growth Model in Reduction Step (III) #slide #simplex:pivot 
+Find: Von Neumann Growth Model in One has
+Find: Von Neumann Growth Model in $$\tilde{A}_{ij}=$$
+Find: Von Neumann Growth Model in $$\tilde{R}_i=$$
+Find: Von Neumann Growth Model in $$\tilde{C}^\top_j=$$
+Find: Von Neumann Growth Model in $$\tilde{V}=V-Q^\top A^{-1}P$$
+Find: Von Neumann Growth Model in Normalisation Step #slide 
+Find: Von Neumann Growth Model in 
+Find: Von Neumann Growth Model in Termination #slide 
+Find: Von Neumann Growth Model in $$D=LR^\top$$, $$L,R^\top\ge 0, A^{-1}L\ge 0, R^\top A^{-1}\ge 0 \Rightarrow A-vD$$ has a nonnegative eigenvalue and semipositive eigenvector. 
+Find: Von Neumann Growth Model in Theorem.
+Find: Von Neumann Growth Model in The following statements are equivalent:
+Find: Von Neumann Growth Model in $$A_{11}-\lambda B_{11}$$ is an active / Thompson-Weil sub-pencil
+Find: Von Neumann Growth Model in algebraic formulation
+Find: Von Neumann Growth Model in The block-pivot
+Find: Von Neumann Growth Model in The Algorithm #h 
+Find: Von Neumann Growth Model in Evaluation and Applications #h 
+Find: Von Neumann Growth Model in Matrix Games #h 
+Find: Von Neumann Growth Model in Use of regular matrix pencils is latent but not mentioned in algorithmic context
+Find: Von Neumann Growth Model in Use of sub matrices 
+Find: Von Neumann Growth Model in The problem of computing the maximal growth order of a rank-$$r$$ linear matrix pencil is equivalent to solving a dual rank-$$r$$ multiple-criteria multiple-constraints (MC$$^2$$) linear program. 
+Find: Von Neumann Growth Model in The problem of computing the maximal slope of a rank-1 linear matrix pencil is equivalent to solving a dual linear program. 
+Find: Von Neumann Growth Model in #m-mat #VNM
+Find: Von Neumann Growth Model in #VNM 
+Find: Von Neumann Growth Model in A Complete Analysis of 2x2 Strategic VNM Model Solutions #h #novel 
+Find: Von Neumann Growth Model in $$(P,A)$$
+Find: Von Neumann Growth Model in $$A-\lambda P$$
+Find: Von Neumann Growth Model in CASE SINGULAR PENCIL
+Find: Von Neumann Growth Model in For $$P=E$$ this is the trivial case as referred to on Moulin
+Find: Von Neumann Growth Model in CASE REGULAR PENCIL
+Find: Von Neumann Growth Model in CASE DET P = 1
+Find: Von Neumann Growth Model in CASE DET P = 2
+Find: Von Neumann Growth Model in NOVEL APPLICATIONS
+Find: Von Neumann Growth Model in CA
+Find: Von Neumann Growth Model in GT+Grey
+Find: Von Neumann Growth Model in GT+Stochastic
+Find: Von Neumann Growth Model in Markov+Bilinear+Security
+Find: Von Neumann Growth Model in State Transitions #slide 
+Find: Von Neumann Growth Model in ![Pasted image](https://dynalist.io/u/L7qeIgCxFCJEAsajwBc3QSsf) 
+Find: Von Neumann Growth Model in Transition Matrices #slide 
+Find: Von Neumann Growth Model in These are
+Find: Von Neumann Growth Model in $$D=\begin{pmatrix}  d_{11}&d_{12} \\ d_{21} &d_{22}  \\  \end{pmatrix}$$
+Find: Von Neumann Growth Model in $$A=\begin{pmatrix}  a_{11}&a_{12} \\ a_{21} &a_{22}  \\  \end{pmatrix}$$
+Find: Von Neumann Growth Model in Written as linear matrix pencil: $$D-\lambda A$$.
+Find: Von Neumann Growth Model in Risk+ROI
+Find: Von Neumann Growth Model in Background
+Find: Von Neumann Growth Model in INBOX
+Find: Von Neumann Growth Model in Incomplete Algorithm #slide 
+Find: Von Neumann Growth Model in **algorithm** matrix_game_solve_incomplete$$(A)$$
+Find: Von Neumann Growth Model in **if** $$({e^T{\rm adj}( A)e}\neq 0)$$ **then**
+Find: Von Neumann Growth Model in $$v := \frac{\det(A)} {e^T{\rm adj}( A)e}$$;
+Find: Von Neumann Growth Model in **if** $$\neg (e^T{\rm adj}( A)= 0 \wedge {{\rm adj}( A)e}=0)$$ **then**  
+Find: Von Neumann Growth Model in $$x:=\frac{e^T{\rm adj}(A)} {e^T{\rm adj}( A)e}$$
+Find: Von Neumann Growth Model in $$y:=\frac{{\rm adj}(A)e} {e^T{\rm adj}( A)e}$$
+Find: Von Neumann Growth Model in **if** $$x\ge 0$$ **and** $$y\ge 0$$ **then** **return**($$v$$, $$x$$, $$y$$);
+Find: Von Neumann Growth Model in **fi**; 
+Find: Von Neumann Growth Model in **fi**; 
+Find: Von Neumann Growth Model in **return**(FAIL);
+Find: Von Neumann Growth Model in **end**;
+Find: Von Neumann Growth Model in After studying the different definitions the author decided to focus on a geometric meaning that is easy to illustrate 
+Find: Von Neumann Growth Model in VON NEUMANN MODEL
+Find: Von Neumann Growth Model in #signpost
+Find: Von Neumann Growth Model in Yet another Matrix Determinant Lemma #novel:theorem 
+Find: Von Neumann Growth Model in It holds
+Find: Von Neumann Growth Model in $$(\det(A))^{r-1}\det(A+a LR^\top)=\det( \det(A)I_r+ aR^\top\text{adj}(A)L)$$ 
+Find: Von Neumann Growth Model in $$R^\top \;\text{adj}(A+a LR^\top)=R^\top\;\text{adj}(A)$$ 
+Find: Von Neumann Growth Model in $$\text{adj}(A+a LR^\top)L=\text{adj}(A)L$$ 
+Find: Von Neumann Growth Model in Even if $$L\;\text{adj}(A)R^\top= 0$$!
+Find: Von Neumann Growth Model in GAME THEORY
+Find: Von Neumann Growth Model in #signpost
+Find: Von Neumann Growth Model in #theorem If $$e\;\text{adj}(A)e^\top\neq  0$$, the following identities hold:
+Find: Von Neumann Growth Model in $$\det(A+a )=\det(A)+ ae^\top\text{adj}(A)e$$ #novel 
+Find: Von Neumann Growth Model in $$e^\top \;\text{adj}(A+a )=e^\top\;\text{adj}(A)$$ #novel 
+Find: Von Neumann Growth Model in $$\text{adj}(A+a )e=\text{adj}(A)e$$ #novel 
+Find: Von Neumann Growth Model in BY TITLE
+Find: Von Neumann Growth Model in A novel von Neumann model reduction algorithm based on linear matrix pencils. #MPS #h #slide #novel:algorithm #novel #novel:slow #VNM #simplex
+Find: Von Neumann Growth Model in Pencil Perturbation Approach #slide 
+Find: Von Neumann Growth Model in Instead of submatrices, we can consider perturbations of the given matrix pencil
+Find: Von Neumann Growth Model in Reduction Algorithm #h
+Find: Von Neumann Growth Model in 
+Find: Von Neumann Growth Model in On the equivalence of rank-$$k$$ VN Models and MC2 optimisation. #h 
+Find: Von Neumann Growth Model in STATUS
+Find: Von Neumann Growth Model in Background
+Find: Von Neumann Growth Model in https://dynalist.io/d/gcskC8EanDTKsGE-U8yP7HPC#z=NtPJeQOOEbhDA2xgUzbz8UVK
+Find: Von Neumann Growth Model in LP Equivalence Theorem #slide 
+Find: Von Neumann Growth Model in Consider the model VNM($$D,A$$) where $$D=BC^\top \geqq 0$$.
+Find: Von Neumann Growth Model in We refer to this as a rank-1 VN model.
+Find: Von Neumann Growth Model in It is known in the literature \cite{Bidard2000-jr}, that such a model is equivalent to a linear program.
+Find: Von Neumann Growth Model in Theorem: the rank-one model VNM($$uv^\top,A$$) with maximal growth factor $$\lambda>0$$ is equivalent to the linear program LP($$v^\top, A, u$$) with optimal value $$\lambda^{-1}$$. #theorem 
+Find: Von Neumann Growth Model in Proof #slide 
+Find: Von Neumann Growth Model in $$\Longrightarrow$$" 
+Find: Von Neumann Growth Model in Let $$A=UV^\top$$ with $$U, V\in\R^{n\times k}$$ having full rank ($$k\le n$$).
+Find: Von Neumann Growth Model in We start with $$\lambda$$ maximal such that $$\exists x,y\in \R^{n}: x^\top(A-\lambda UV^\top)\geqq 0$$.
+Find: Von Neumann Growth Model in Define $$\tilde{X} := \lambda^{-1} {(X^\top U)}^{-1}X^\top$$.
+Find: Von Neumann Growth Model in Then $$\tilde{X}u=\frac{X^\top U}{\lambda X^\top U}=\lambda^{-1}$$ is minimal, such that $$\tilde{X}^\top(A-\lambda UV^\top)=\tilde{X}^\top A-V^\top \geqq 0$$.
+Find: Von Neumann Growth Model in This means that the multi-linear multi-criteria program MLC($$U, A, V^\top$$) is solved by $$\tilde{X}^\top$$ with value $$\lambda^{-1}$$.
+Find: Von Neumann Growth Model in "$$\Longleftarrow$$" 
+Find: Von Neumann Growth Model in Assume $${X}^\top$$ is a solution of the multi-linear multi-criteria program MLC($$U, A, V^\top$$) with value $$\mu^{}$$.
+Find: Von Neumann Growth Model in This means $$\mu := X^\top u$$ is minimal such that $$X^\top A-V^\top\geqq 0$$.
+Find: Von Neumann Growth Model in One has $$V^\top=(X^\top U)^{-1}X^\top UV^\top = \mu^{-1}X^\top UV^\top \geqq 0$$. 
+Find: Von Neumann Growth Model in Hence $$X^\top(A-\mu^{-1} UV^\top)\geqq 0$$ and $$\lambda:=\mu^{-1}$$ is a maximal growth factor for VNM($$UV^\top,A$$).
+Find: Von Neumann Growth Model in SIMPLEX
+Find: Von Neumann Growth Model in Novel Equilibrium Level Estimates for an Extended Von Neumann Growth Model #h #VNM 
+found: Von Neumann Growth Model in Novel Equilibrium Level Estimates for an Extended Von Neumann Growth Model #h #VNM 
+Wrote C:\Users\epflu\Dropbox\Apps\ShareLaTeX\Slow Research\VNM\VNM Growth Model.tex
