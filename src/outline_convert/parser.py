@@ -9,7 +9,7 @@ from .utils import detect_indent
 IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
 IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 
-def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
+def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
     # Create root with the first line as its title
     root = Node(lines[0].strip())
     stack = [(-1, root)]
@@ -80,7 +80,7 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> Node:
         stack.append((level, node))
         last_node = node
 
-    return root
+    return [root,root]
 
 def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
     body = root_elem.find('body')
