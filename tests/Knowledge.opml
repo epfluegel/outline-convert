@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Knowledge</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+     <opml version="2.0">
+  <body>
+    <outline text="Von Neumann Growth Model #h unique" _note="#slide #h #hh #novel ">
+      <outline text="MODEL #hh ">
+        <outline text="INTRO #hh ">
+          <outline text="INBOX">
+            <outline text="The **von Neumann growth model** is an economic model that describes long-term economic expansion based on productive processes and resource allocation. It connects closely to the general economic terminology we discussed:"/>
+            <outline text="**Economy** – The von Neumann model represents an economy as a system of interdependent industries where production processes determine economic expansion. The model focuses on achieving a balanced growth rate for the entire economy.">
+              <outline text="**Industry** – The model assumes multiple industries that produce different goods using various production techniques. Each industry contributes to overall economic growth through efficient resource utilization."/>
+              <outline text="**Sector** – Different economic sectors interact in the von Neumann model, with some sectors producing raw materials, others manufacturing capital goods, and others providing consumer products. Their interdependence drives economic expansion.">
+                <outline text="**Goods** – Goods in this model include both consumer and capital goods, which industries produce using available resources. Capital goods (such as machines and tools) are particularly important, as they enable further production."/>
+                <outline text="**Production** – A key aspect of the von Neumann model is that production relies on inputs (resources and capital) to generate outputs. The model assumes that production functions exhibit constant returns to scale, meaning that output increases proportionally with input."/>
+                <outline text="**Cost** – The model incorporates the idea of efficiency, where industries must minimize costs by optimizing input use. It assumes that resources flow to the most productive sectors, ensuring maximum economic growth."/>
+              </outline>
+            </outline>
+            <outline text="In summary, the von Neumann growth model uses mathematical principles to explain how industries, goods, production, and costs interact to drive long-term economic growth. It highlights the importance of efficient resource allocation and technological progress in sustaining economic expansion."/>
+          </outline>
+          <outline text="Background and Motivation of the von Neumann Growth Model #h ">
+            <outline text="The **von Neumann economic growth model** explains how economies optimize resource allocation and technological progress to achieve sustainable expansion, ensuring efficient use and potential **reuse** of goods in a cyclical economic system."/>
+            <outline text="Origins #slide #teaching #research ">
+              <outline text="Introduced by John von Neumann in 1937 \cite{}."/>
+              <outline text="Initially presented as a mathematical theory of economic growth."/>
+              <outline text="Published formally in &quot;A Model of General Economic Equilibrium&quot; in 1945-46 \cite{}."/>
+              <outline text="Inspired by early studies on balanced economic expansion and Walrasian general equilibrium theory \cite{}."/>
+            </outline>
+            <outline text="Basic Economics Terminology #slide ">
+              <outline text="Societies consume resources and capital to produce, distribute, and reuse goods. "/>
+              <outline text="Here's how they relate to each other:  ">
+                <outline text="economy,"/>
+                <outline text="sector, "/>
+                <outline text="industry, "/>
+                <outline text="goods, "/>
+                <outline text="production,"/>
+                <outline text="cost,"/>
+                <outline text="resources,"/>
+                <outline text="capital."/>
+              </outline>
+              <outline text="Societies operate within an **economy**, where different **sectors** (such as agriculture, manufacturing, and technology) consist of various **industries** that produce and distribute **goods**. "/>
+              <outline text="These industries rely on **resources** (such as raw materials, labor, and energy) and **capital** (such as machinery, infrastructure, and investments) to drive **production**. "/>
+              <outline text="The **cost** of production, including labor and materials, influences pricing and market dynamics. "/>
+            </outline>
+            <outline text="Economy, Sectors and Industries #slide ">
+              <outline text="Economy is the broader system that encompasses all industries, businesses, and activities related to the production, distribution, and consumption of goods and services. "/>
+              <outline text="It includes everything from agriculture and manufacturing to technology and finance.  "/>
+              <outline text="Sector refers to a broad division of the economy that groups related industries together, such as the agriculture sector, manufacturing sector, or service sector, each contributing to overall economic activity in different ways."/>
+              <outline text="Industry refers to a specific sector of the economy that produces goods or services. For example, the automobile industry produces cars, while the textile industry makes clothing.  "/>
+            </outline>
+            <outline text="Goods, Production and Cost #slide ">
+              <outline text="Goods are physical products that industries produce for consumption or further use. These can range from consumer goods (like clothing and electronics) to capital goods (like machinery used in production).  "/>
+              <outline text="Production is the process of creating goods and services. It involves using resources such as labour, raw materials, and technology to transform inputs into finished products. The efficiency and scale of production influence the overall performance of industries and the economy.  "/>
+              <outline text="Cost represents the expenses incurred during production, including raw materials, labour, machinery, and overhead. The cost of production affects pricing, profitability, and competitiveness within an industry and the economy as a whole.  "/>
+            </outline>
+            <outline text="Motivation #slide #teaching #research ">
+              <outline text="Goal: to maximise the growth levels of production, while minimising associated costs.">
+                <outline text="Understanding the dynamics of economic growth:">
+                  <outline text="How can economies achieve sustained growth under resource constraints?"/>
+                </outline>
+                <outline text="Capturing production interdependencies:">
+                  <outline text="Focuses on the relationships between sectors and goods in an economy."/>
+                </outline>
+              </outline>
+              <outline text="Providing an idealized framework:">
+                <outline text="Assumes perfectly efficient allocation of resources and production."/>
+                <outline text="Serves as a foundation for more complex, real-world models."/>
+              </outline>
+              <outline text="Applications ">
+                <outline text="Economics"/>
+                <outline text="Game Theory"/>
+                <outline text="ECONOMICS">
+                  <outline text="iNTEREST RATE"/>
+                  <outline text="eXPANSION RATE"/>
+                </outline>
+              </outline>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="MODEL STRUCTURE #hh ">
+          <outline text="Economy Introductory Example #slide #teaching ">
+            <outline text="Economy modeled as $$n$$ sectors and $$m$$ goods:">
+              <outline text="Sectors: represent industries, production processes or activities."/>
+              <outline text="Goods: they are outputs of sectors and also used as inputs."/>
+            </outline>
+            <outline text="Input-Output Relationships:">
+              <outline text="Input $$m\times n$$ matrix $$ A $$: Specifies how much of each good is consumed by each sector."/>
+              <outline text="Output $$m\times n$$ matrix $$ B $$: Specifies how much of each good is produced by each sector."/>
+            </outline>
+            <outline text="Assumptions:">
+              <outline text="No good can be produced out nothing: $$\\text{col}_j(A)>0$$."/>
+              <outline text="No activity produces nothing: $$\\text{row}_i(B)>0$$."/>
+            </outline>
+          </outline>
+          <outline text="Types of Economies #slide ">
+            <outline text="Open: $$m > n$$ "/>
+            <outline text="Closed: $$m \\le n$$ "/>
+            <outline text="Circular: $$m = n$$ "/>
+          </outline>
+          <outline text="Growth Rate  #slide #teaching ">
+            <outline text="Inequality:">
+              <outline text="$$(1 + g) A x \\leq B x$$"/>
+              <outline text="where:">
+                <outline text="$$ g $$: Growth rate of the economy."/>
+                <outline text="$$ x $$: Vector of production levels for each sector."/>
+              </outline>
+            </outline>
+            <outline text="Interpretation:">
+              <outline text="Sectors produce outputs that must meet or exceed their inputs scaled by growth."/>
+              <outline text="The goal is to find the maximum $$ g $$ that satisfies the inequality."/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="EQUILIBRIUM SOLUTION CONCEPT #hh ">
+          <outline text="Background #slide "/>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

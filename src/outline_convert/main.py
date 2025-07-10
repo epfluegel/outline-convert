@@ -118,10 +118,11 @@ def main():
 
     # -- Optional subtree extraction ------------------------------
     if args.start:
-        node = find_node(root_node, args.start)
+        title = args.start.rstrip()
+        node = find_node(root_node, title)
         root_node = node
         if not root_node:
-            root_node = Node(f"Start prefix '{args.start}' not found")
+            root_node = Node(f"Start prefix '{title}' not found")
 
 
     # -- Render based on chosen format ---------------------------

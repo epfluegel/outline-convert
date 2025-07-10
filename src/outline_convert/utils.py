@@ -20,8 +20,8 @@ def detect_indent(lines: List[str]) -> int:
 # -- TREE UTILITIES ---------------------------------------------------------
 def find_node(node: Node, prefix: str) -> Optional[Node]:
     text = node.title
-    ok = text.startswith(prefix)
-    if ok:
+    if text.startswith(prefix):
+        print("find node", text, prefix)
         return node
     for c in node.children:
         res = find_node(c, prefix)
