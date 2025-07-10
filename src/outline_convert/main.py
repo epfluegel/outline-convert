@@ -19,6 +19,7 @@ from .renderer_rtf import render_rtf
 
 # -- MAIN PROGRAM -----------------------------------------------------
 def main():
+    print("Entering the main")
     # -- Argument parser configuration -------------------------------
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
 
@@ -75,6 +76,7 @@ def main():
     if args.z:
         zip_dir = args.z[0]
         file = args.z[1]
+              
         if not os.path.isdir(zip_dir):
             sys.exit(f"Error: '{zip_dir}' is not a directory.")
         chosen = None
@@ -91,7 +93,8 @@ def main():
         if not chosen:
             sys.exit(f"No correct zip files found in '{zip_dir}'.")
 
-        print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
+        print(f"Using latest zip file: {os.path.basename(chosen)}", file=sys.stderr)
+        print(file)
         with zipfile.ZipFile(chosen, 'r') as zip_ref:
             with zip_ref.open(file) as f:
                 lines = f.read().decode('utf-8').splitlines()
