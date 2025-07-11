@@ -1,0 +1,1533 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+  <head>
+    <ownerEmail>
+      timeo.savary@ecole.ensicaen.fr
+    </ownerEmail>
+  </head>
+  <body>
+    <outline text="Security Concepts and Basic Methodology TEST #s" _note="#new #slide ">
+      <outline text="GTD #wfe-ignore-outline ">
+        <outline text="% &lt;a href=&quot;https://www.sharelatex.com/project/59f1d1c45cd281015b4d389a&quot;&gt;https://www.sharelatex.com/project/59f1d1c45cd281015b4d389a&lt;/a&gt;" />
+        <outline text="% #CI7130_Intro  #CI7160_D1  #security #slide" />
+      </outline>
+      <outline text="Learning Objectives -- Basic Security Terminology #slide #CI7100 #CI7130_Intro #CI7130_Rev #security #LObj #basic ">
+        <outline text="Realise the need for computer security through awareness of current case studies of security incidents #CI7130_Intro #basic " />
+        <outline text="Be familiar with the basic terminology and methodology in computer security #CI7110 #CI7100 #CI7130_Intro " />
+        <outline text="Relate basic security terminology to current case studies #CI7160_D1 #CI7130_Intro  #basic " />
+        <outline text="Know and understand the main goals of computer security #CI7130_Intro  #basic " />
+        <outline text="Understand the concept of threat, attack, vulnerability, risk and control #CI7130_Intro  #basic " />
+        <outline text="Differentiate between different categories of vulnerabilities #CI7130_Intro " />
+        <outline text="Know typical properties and attributes of threats and attacks #CI7130_Intro " />
+        <outline text="Realise the importance and effectiveness of controls, and distinguish the different types of controls #CI7130_Intro " />
+      </outline>
+      <outline text="MOTIVATION #wfe-ignore-item ">
+        <outline text="Motivation #CI7130_Intro #CI6240_proto1 #slide #CI7160-intro #basic #CI7110 ">
+          <outline text="&lt;a href=&quot;&lt;a href=&quot;https://www.theregister.com/2022/01/28/intel_spectre_lawsuit/&quot;&gt;https://www.theregister.com/2022/01/28/intel_spectre_lawsuit/&lt;/a&gt;&quot;&gt;Stories in the press&lt;/a&gt; have, once again, raised the public profile of security and privacy on the internet:">
+            <outline text="!&lt;a href=&quot;theRegister&quot;&gt;theRegister-spectre.png&lt;/a&gt; #eyo-style:Normal ">
+              <outline text="" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="Motivation #CI7130_Intro #CI6240_proto1 #slide #CI7160-intro #basic #CI7110 ">
+          <outline text="We are all concerned, but we don't always understand the threats, how possible solutions are designed -- and how we can use them to protect ourselves." />
+          <outline text="Who of you has been affected by computer security incidents? " />
+          <outline text="Discussion:">
+            <outline text="What are typical threats in computer security?" />
+            <outline text="What is computer security? What are the different fields in the security domain?" />
+            <outline text="What are recurrent challenges, and how can you contribute?" />
+          </outline>
+        </outline>
+        <outline text="Computer Security -- Typical Threats  #slide #CI7130_Intro ">
+          <outline text="Computer Viruses" />
+          <outline text="Hacking into web sites, databases, systems" />
+          <outline text="Stealing or cracking passwords" />
+          <outline text="Denial-of-Service (DoS) Attacks" />
+          <outline text="Identity theft" />
+          <outline text="Leakage of confidential information" />
+        </outline>
+        <outline text="Computer Security -- Preliminary Definition #slide #CI7130_Intro ">
+          <outline text="We try to prevent unauthorised parties to access, damage or modify our computer related data" />
+          <outline text="Security Disciplines (bold = covered in this course):">
+            <outline text="&lt;b&gt;Cryptography&lt;/b&gt;" />
+            <outline text="Operating System Security" />
+            <outline text="Database Security" />
+            <outline text="Application Security" />
+            <outline text="&lt;b&gt;Network Security&lt;/b&gt;" />
+            <outline text="Internet Security" />
+            <outline text="&lt;b&gt;Mobile Security&lt;/b&gt;" />
+            <outline text="&lt;b&gt;Information Security/Assurance&lt;/b&gt;" />
+          </outline>
+          <outline text="Cyber Security? In the UK: &lt;a href=&quot;&lt;a href=&quot;https://www.dropbox.com/s/uifaycu02ebe9h9/cybok.png?dl=1&quot;&gt;https://www.dropbox.com/s/uifaycu02ebe9h9/cybok.png?dl=1&lt;/a&gt;&quot;&gt;CyBOK&lt;/a&gt;" />
+        </outline>
+        <outline text="Current Security Challenges #slide #CI7130_Intro  #basic">
+          <outline text="Scale of the problem is widely underestimated" />
+          <outline text="Nature of the threats often unknown, even to IT professionals" />
+          <outline text="Security policies are not sufficiently well-developed" />
+          <outline text="There are no standards regulating Internet trading" />
+          <outline text="There is no international legislation" />
+          <outline text="Common misconceptions about security:">
+            <outline text="Myth 1: We need better/stronger encryption algorithms" />
+            <outline text="Myth 2: Security is all about encryption" />
+            <outline text="Myth 3: Technology is enough to protect our systems" />
+            <outline text="Myth 4: Your information on the internet will remain confidential as long as it is encrypted" />
+          </outline>
+        </outline>
+        <outline text="How Can You Contribute? #slide #CI7130_Intro  #basic ">
+          <outline text="Attend this course" />
+          <outline text="Traditional things">
+            <outline text="Always create backups" />
+            <outline text="Don’t write down your passwords" />
+            <outline text="Install anti-virus" />
+            <outline text="Use a firewall" />
+            <outline text="[...]" />
+          </outline>
+          <outline text="Next Generation Challenge: reduce your personal attack surface">
+            <outline text="Reduce digital footprint" />
+            <outline text="Use social networks responsibly" />
+            <outline text="Minimise personal attack vectors into mobile phones" />
+            <outline text="Awareness of surveillance" />
+          </outline>
+        </outline>
+        <outline text="ARCHIVE #wfe-ignore-outline ">
+          <outline text="Famous Recent Attacks #slide">
+            <outline text="https://www.techrepublic.com/article/the-10-most-important-cyberattacks-of-the-decade/?ftag=TRE684d531&amp;bhid=28406805273935397610229978106261" />
+            <outline text="2017">
+              <outline text="WannaCry" />
+            </outline>
+            <outline text="2016">
+              <outline text="Dyn" />
+            </outline>
+            <outline text="2015">
+              <outline text="Ashley Madison" />
+              <outline text="TalkTalk" />
+              <outline text="ESA" />
+            </outline>
+            <outline text="2014">
+              <outline text="Sony Picture" />
+              <outline text="iCloud" />
+            </outline>
+          </outline>
+          <outline text="Motivation #slide #CI6240_proto1 #CI7130_Intro #CI7100 " />
+          <outline text="https://www.dropbox.com/s/hzoej0spi5bgutf/register-wallpaper-stripping%20shenanigans.png?dl=1 " />
+          <outline text="![](https://www.dropbox.com/s/hzoej0spi5bgutf/register-wallpaper-stripping%20shenanigans.png?dl=1)" />
+          <outline text="&lt;a href=&quot;&lt;a href=&quot;https://www.theregister.co.uk/2018/02/07/beware_the_coming_chrome_certificate_apocalypse/&quot;&gt;https://www.theregister.co.uk/2018/02/07/beware_the_coming_chrome_certificate_apocalypse/&lt;/a&gt;&quot;&gt;Beware the looming Google Chrome HTTPS certificate apocalypse!&lt;/a&gt;">
+            <outline text="Well, melee. Dust-up? Minor inconvenience? But it's coming!!" />
+            <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/jdz0mxbg6iisxcc/apocalypse.png?dl=1&quot;&gt;apocalypse.png&lt;/a&gt; #wfe-ignore-item " />
+          </outline>
+          <outline text="&lt;a href=&quot;&lt;a href=&quot;https://www.theregister.co.uk/2018/02/08/google_chrome_http_shame/&quot;&gt;https://www.theregister.co.uk/2018/02/08/google_chrome_http_shame/&lt;/a&gt;&quot;&gt;From July, Chrome will name and shame insecure HTTP websites&lt;/a&gt;">
+            <outline text="Shame! Shame! says carrot-dangling Google " />
+            <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/fe96lkv4skgkz8t/creepy_lord_of_the_rings.png?dl=1&quot;&gt;creepy_lord_of_the_rings.png&lt;/a&gt; #wfe-ignore-item " />
+          </outline>
+          <outline text="![](&lt;a href=&quot;https://www.dropbox.com/s/3yr9gica6h99lw9/Screenshot%202018-01-05%2011.37.03.png?dl=1&quot;&gt;https://www.dropbox.com/s/3yr9gica6h99lw9/Screenshot%202018-01-05%2011.37.03.png?dl=1&lt;/a&gt;)" />
+          <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/ii1v6y47kqmkp0i/register-stuff-cookies.png?dl=1&quot;&gt;register-stuff-cookies.png&lt;/a&gt; #eyo-style:Normal " />
+        </outline>
+      </outline>
+      <outline text="BITE-SIZE #wfe-ignore-item ">
+        <outline text="The Goals of Computer Security #slide #CI7100 #CI7160-intro #CI7130_Intro #basic #CI6280 ">
+          <outline text="We will define as the main goals (or requirements) of Computer Security (“CIA”):">
+            <outline text="Confidentiality" />
+            <outline text="Integrity" />
+            <outline text="Availability" />
+          </outline>
+          <outline text="This terminology is adopted by academia and industry" />
+          <outline text="Note: cannot “guarantee” absolute security" />
+        </outline>
+        <outline text="Threats, Vulnerabilities and Controls #slide #CI7100 #CI7160-intro #CI7130_Intro #basic #CI6280 ">
+          <outline text="&lt;i&gt;Threat&lt;/i&gt;: set of circumstances with potential to exploit vulnerability and create a risk of harm" />
+          <outline text="&lt;i&gt;Vulnerability&lt;/i&gt;: potentially exploitable weakness of an asset" />
+          <outline text="&lt;i&gt;Attack&lt;/i&gt;: realisation of a threat (&quot;threat event&quot;)" />
+          <outline text="&lt;i&gt;Risk&lt;/i&gt;: occurs if “matching” threat and vulnerability exist" />
+          <outline text="&lt;i&gt;Control&lt;/i&gt;: a mitigation technique, either eliminate the threat and/or close the vulnerability" />
+        </outline>
+        <outline text="Basic Security Methodology #slide #CI6240_SM-1 #CI7100 #CI7160_D1 #CI7130_Intro #basic #CI6280 ">
+          <outline text="The basic methodology in computer security is:">
+            <outline text="We detect uncovered vulnerabilities in our system" />
+            <outline text="We think about potential threats to our system" />
+            <outline text="Finally, we consider available controls (countermeasures)" />
+          </outline>
+          <outline text="Impossible to guarantee security, can only minimise risk" />
+          <outline text="Need for periodic review" />
+        </outline>
+      </outline>
+      <outline text="Basic section #h ">
+        <outline text="sub section #h " />
+      </outline>
+      <outline text="BASIC #linear #basic #wfe-ignore-item ">
+        <outline text="Assets #CI7100 #CI7130_Intro #slide #CI7160-intro #basic ">
+          <outline text="In order to better understand security attacks, we have to define what we want to protect" />
+          <outline text="This is called an asset" />
+          <outline text="We categorise assets in the following way:">
+            <outline text="System (logical)" />
+            <outline text="Hardware" />
+            <outline text="Software" />
+            <outline text="Data" />
+            <outline text="People" />
+          </outline>
+        </outline>
+        <outline text="Assets #slide #CI7100 #CI7130_Intro #CI6240_SM-1 #basic ">
+          <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/wy569h036gsfa0v/assets.png?dl=1&quot;&gt;assets.png&lt;/a&gt; #wfe-style:normal " />
+        </outline>
+        <outline text="Mini-Exercise: Assets #slide #CI7100 #CI7130_Intro #basic ">
+          <outline text="Look around you. There are many assets of the Kingston University system present. List some asset items, with at least one in each category. " />
+          <outline text="Which of them do you consider being critical assets -- these would be assets of particular value or importance for your student experience." />
+        </outline>
+        <outline text="The Goals of Computer Security #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="We will define as the main goals (or requirements) of Computer Security (“CIA”):">
+            <outline text="Confidentiality" />
+            <outline text="Integrity" />
+            <outline text="Availability" />
+          </outline>
+          <outline text="This terminology is adopted by academia and industry" />
+          <outline text="Note: cannot “guarantee” absolute security" />
+        </outline>
+        <outline text="Confidentiality #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="Definition: computer related assets must be accessed only by authorised parties" />
+          <outline text="Synonyms: secrecy, privacy" />
+          <outline text="Example: you need to prevent hackers from accessing personal data in your social network account" />
+          <outline text="There may be different levels of confidentiality for different users" />
+        </outline>
+        <outline text="Integrity #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="Data Integrity:">
+            <outline text="Data has not been modified by unauthorised parties" />
+            <outline text="Example: file transfer, email, computer viruses" />
+          </outline>
+          <outline text="Origin Integrity (Authentication):">
+            <outline text="We have proof about origin of a message" />
+            <outline text="Example: IP address of the machine the e-mail was sent from" />
+          </outline>
+          <outline text="Non-repudiation:">
+            <outline text="Sender (or recipient) of a message cannot deny having been involved in message transfer" />
+            <outline text="This is more complex (usually involves 3 parties)" />
+          </outline>
+        </outline>
+        <outline text="Availability #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="Definition: assets are accessible to authorised parties at appropriate times" />
+          <outline text="In other words: legitimate access should always be possible" />
+          <outline text="Example: a website should be available 24/7." />
+          <outline text="Different availability levels" />
+        </outline>
+        <outline text="Confidentiality, Integrity and Availability #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/i12op0g3xmcby27/CIA.png?dl=1&quot;&gt;CIA.png&lt;/a&gt; #eyo-style:Normal " />
+        </outline>
+        <outline text="Threats, Vulnerabilities, Attacks and Risks #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="&lt;i&gt;Threat&lt;/i&gt;: set of circumstances with potential to exploit vulnerability and create a risk of harm" />
+          <outline text="&lt;i&gt;Vulnerability&lt;/i&gt;: potentially exploitable weakness of an asset" />
+          <outline text="&lt;i&gt;Attack&lt;/i&gt;: realisation of a threat (&quot;threat event&quot;)" />
+          <outline text="&lt;i&gt;Risk&lt;/i&gt;: occurs if “matching” threat and vulnerability exist" />
+        </outline>
+        <outline text="Controls #slide #CI7100 #CI7160-intro #CI7130_Intro #basic ">
+          <outline text="A control is used for protection." />
+          <outline text="It could be for example an">
+            <outline text="action," />
+            <outline text="procedure," />
+            <outline text="device," />
+            <outline text="technique." />
+          </outline>
+          <outline text="It either eliminates the threat and/or closes the vulnerability." />
+          <outline text="Controls need to be effective." />
+        </outline>
+        <outline text="#todo Basic Security Methodology #slide #CI6240_SM-1 #CI7100 #CI7160_D1 #CI7130_Intro #basic ">
+          <outline text="The basic methodology in computer security is:">
+            <outline text="We detect uncovered vulnerabilities in our system" />
+            <outline text="We think about potential threats to our system" />
+            <outline text="Finally, we consider available controls (countermeasures)" />
+          </outline>
+          <outline text="Impossible to guarantee security, can only minimise risk" />
+          <outline text="Need for periodic review" />
+        </outline>
+        <outline text="Generic Security Methodology #slide #CI7160-intro ">
+          <outline text="For each critical asset do:">
+            <outline text="Identify potential threats" />
+            <outline text="Detect uncovered vulnerabilities" />
+            <outline text="Assess potential risks" />
+            <outline text="Design controls (countermeasures)" />
+          </outline>
+          <outline text="Constant re-evaluation is necessary">
+            <outline text="Anticipate potential new threats (for example: http://www.cert.org)" />
+            <outline text="Identifies areas where more work is needed" />
+            <outline text="Review existing controls" />
+            <outline text="Monitor technological progress" />
+          </outline>
+        </outline>
+        <outline text="Mini-Exercise: Security Goals #slide:mini #CI7100 #CI7130_Intro #basic ">
+          <outline text="Read the story about the recent security incident at &lt;a href=&quot;https://www.theregister.co.uk/security/&quot;&gt;The Register&lt;/a&gt;." />
+          <outline text="Analyse the story more in-depth (you may have to research older, related articles) and identify which of the main security goals were violated, and of which (critical) assets." />
+        </outline>
+      </outline>
+      <outline text="Advanced section #h " />
+      <outline text="ADVANCED #wfe-ignore-item ">
+        <outline text="VULNERABILITIES&lt;b&gt; &lt;/b&gt;#wfe-ignore-item ">
+          <outline text="More About Vulnerabilities #slide #CI7130_Intro #basic ">
+            <outline text="Depending on the vulnerable asset type, we can identify:">
+              <outline text="Hardware Vulnerabilities" />
+              <outline text="Data Vulnerabilities" />
+              <outline text="Software Vulnerabilities" />
+              <outline text="People Vulnerabilities" />
+            </outline>
+          </outline>
+          <outline text="Hardware Vulnerabilities #slide #CI7130_Intro ">
+            <outline text="Physical Vulnerabilities">
+              <outline text="Hardware is composed of physical objects -- it is simple to add, change, destroy or remove parts. " />
+              <outline text="This means that computer devices might be prone to a physical attack. " />
+              <outline text="Computers have been stolen, kicked, punched, burnt, frozen, shot at.. the &lt;a href=&quot;&lt;a href=&quot;https://youtu.be/algWjS2yiyE&quot;&gt;proof&lt;/a&gt;!&quot;&gt;https://youtu.be/algWjS2yiyE) !&lt;/a&gt;" />
+              <outline text="Before the University tightened its physical controls, every semester at least one projector used to be stolen!" />
+            </outline>
+            <outline text="Microprocessor Design Flaws">
+              <outline text="Recent huge issue: flaws in Intel/ARM chip design (&quot;Meltdown&quot; and &quot;Spectre&quot;)" />
+              <outline text="This is actually a combination of hardware and software vulnerabilities " />
+            </outline>
+          </outline>
+          <outline text="Data Vulnerabilities #slide #CI7130_Intro ">
+            <outline text="Enormous amounts of data around (big data), connected and exposed to the Internet, and stored on corporate clouds. " />
+            <outline text="Data can be human-readable (text) or in binary format. " />
+            <outline text="Need to think of data at rest, and in transit (computation/memory, hard disk, network, brain). " />
+            <outline text="Data attacks are more widespread than software attacks. ">
+              <outline text="Unprotected data is &quot;easy&quot; to read and intrinsically vulnerable to all threat outcomes (interception, interruption, modification)." />
+              <outline text="Furthermore, it can be easily duplicated. " />
+            </outline>
+          </outline>
+          <outline text="Software Vulnerabilities #slide #CI7130_Intro ">
+            <outline text="Software is also data, so all data vulnerabilities apply" />
+            <outline text="Weaknesses can appear during different stages of software development and deployment life cycle:">
+              <outline text="Source Code">
+                <outline text="Coding Flaws: mistakes in the design of source code, weak cryptographic implementations (ignoring standards)." />
+              </outline>
+              <outline text="Compiled (Binary) Code">
+                <outline text="Inherently vulnerable to malicious exploits (buffer overflow, SQL injection). " />
+                <outline text="Expanded attack surface due to frequent use of common libraries. " />
+              </outline>
+              <outline text="Deployed Application">
+                <outline text="Misconfiguration: weaknesses such as security patches out of date, weak security settings (e.g., default passwords). " />
+              </outline>
+            </outline>
+            <outline text="Software vulnerabilities are indexed in the CVE catalogue on &lt;a href=&quot;http://cve.org&quot;&gt;cve.org&lt;/a&gt;. " />
+          </outline>
+          <outline text="People Vulnerabilities #slide #CI7130_Intro ">
+            <outline text="People are often the weakest link." />
+            <outline text="Typical exploit: phishing/spam emails." />
+            <outline text="Effectiveness is often underestimated." />
+            <outline text="This is particularly problematic if the targeted people are key individuals within an IT system, such as system administrators or lecturers." />
+            <outline text="Vulnerabilities:">
+              <outline text="Lack of security awareness -- people tend to use computers irresponsibly." />
+              <outline text="Lack of skills, training, and expertise -- not having the technical know-how in security." />
+              <outline text="Personality Weaknesses">
+                <outline text="Laziness and forgetfulness -- writing down or reusing passwords, forgetting to make backups, etc." />
+                <outline text="Naivety -- if this persists despite training, people are an ideal target for social engineering." />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="OLD #wfe-ignore-outline ">
+            <outline text="Software Vulnerabilities #slide #CI7130_Intro ">
+              <outline text="Weaknesses can appear during different stages of software development and deployment life cycle:">
+                <outline text="Source Code">
+                  <outline text="&lt;i&gt;Coding Flaws&lt;/i&gt;: mistakes in the design of source code, weak cryptographic implementations (ignoring standards)" />
+                </outline>
+                <outline text="Compiled (Binary) Code">
+                  <outline text="Inherently vulnerable to malicious exploits (buffer overflow, SQL injection) " />
+                  <outline text="Frequent use of common libraries amplifies the problem" />
+                </outline>
+                <outline text="Deployed Application">
+                  <outline text="&lt;i&gt;Misconfiguration&lt;/i&gt;: weakness of deployed application, such as security patches out of date, weak security settings (e.g. default passwords)" />
+                </outline>
+              </outline>
+              <outline text="Software is also data, so all the data vulnerabilities apply" />
+              <outline text="Software vulnerabilities are indexed in the CVE catalogue on &lt;a href=&quot;http://cve.org&quot;&gt;cve.org&lt;/a&gt; " />
+            </outline>
+            <outline text="Data Vulnerabilities #slide #CI7130_Intro ">
+              <outline text="Data can be human-readable (text) or binary" />
+              <outline text="Enormous amounts  of data around (big data), connected and exposed to the Internet, and stored on corporate clouds" />
+              <outline text="Need to think of data at rest, and in transit (computation/memory, harddisk, network, brain). " />
+              <outline text="Data attacks are more widespread than software attacks">
+                <outline text="Unprotected data is &quot;easy&quot; to read and intrinsically vulnerable to all threat outcomes (interception, interruption, modification)." />
+                <outline text="Furthermore, it can be easily duplicated." />
+              </outline>
+            </outline>
+            <outline text="People Vulnerabilities #slide #CI7130_Intro ">
+              <outline text="Lack of security awareness -- people tend to use computers irresponsibly" />
+              <outline text="Lack of Skills, Training and Expertise -- not having the technical know-how in security " />
+              <outline text="Personality Weaknesses">
+                <outline text="Laziness and forgetfulness -- Write down or re-use passwords, forget to make backups etc." />
+                <outline text="Naivety -- if this persists despite training, people are an ideal target for social engineering" />
+              </outline>
+              <outline text="Typical exploit: phishing/spam emails" />
+              <outline text="This is particularly problematic if targeted people are key people within an IT system, e.g. system administrators, lecturers.." />
+              <outline text="Effectiveness is often underestimated" />
+            </outline>
+          </outline>
+          <outline text="Mini-Exercise: Vulnerabilities #slide-mini #CI7130_Intro #basic #slide ">
+            <outline text="Revisit again the story about the security incident and identify the main vulnerabilities that were threatened/attacked. To which critical assets do they belong?" />
+          </outline>
+        </outline>
+        <outline text="THREATS AND ATTACKS #wfe-ignore-item ">
+          <outline text="More About Threats #slide #CI7130_Intro ">
+            <outline text="Threat versus Attack">
+              <outline text="An attack is the implementation of a event (= threat event)" />
+            </outline>
+            <outline text="Threat Actors">
+              <outline text="Ultimately, security attacks are carried out by real people" />
+              <outline text="They have a motive " />
+            </outline>
+            <outline text="Threat Landscape" />
+            <outline text="Threat Profiling" />
+          </outline>
+          <outline text="Threat Outcomes #slide #CI7130_Intro ">
+            <outline text="There are four outcomes, threatening CIA triad:">
+              <outline text="&lt;i&gt;Interception &lt;/i&gt;(synonyms: &lt;i&gt;disclosure, evesdropping, snooping&lt;/i&gt;) -- unauthorised access to asset" />
+              <outline text="&lt;i&gt;Interruption -- &lt;/i&gt;an asset becomes unavailable" />
+              <outline text="&lt;i&gt;Modification -- &lt;/i&gt;tampering with an asset" />
+              <outline text="&lt;i&gt;Fabrication -- &lt;/i&gt;creation of new objects in a computer system" />
+            </outline>
+            <outline text="Examples:">
+              <outline text="copying data, stealing a password" />
+              <outline text="destroying hardware device, corrupting a file" />
+              <outline text="changing values in a database" />
+              <outline text="adding records to a database, creating a trap door" />
+            </outline>
+          </outline>
+          <outline text="Threats to Data  #slide #CI7130_Intro ">
+            <outline text="Disclosure (Leaking):">
+              <outline text="Doxing -- Stealing data and dumping it on the Internet, such as on &lt;a href=&quot;&lt;a href=&quot;https://pastebin.com/&quot;&gt;https://pastebin.com/&lt;/a&gt;&quot;&gt;PasteBin&lt;/a&gt;" />
+              <outline text="Credential Stuffing -- get hold of login information, and try it on different accounts" />
+            </outline>
+            <outline text="Malicious Modification:">
+              <outline text="Deletion -- accidental or deliberate" />
+              <outline text="Salami attack -- modify only small amounts of data at a time, but then do this very often, examples:">
+                <outline text="Credit card theft" />
+                <outline text="Transferring rounding errors in bank transactions to own account (see movie &quot;Office Space&quot;)" />
+              </outline>
+              <outline text="Ransomware -- encrypt the victim's data, or threaten to publish it, unless a ransom is paid" />
+            </outline>
+            <outline text="Loss of Ownership" />
+          </outline>
+          <outline text="Threats and Software #slide #CI7130_Intro ">
+            <outline text="Threats to Software ">
+              <outline text="&lt;i&gt;Source Code Disclosure&lt;/i&gt;: source code can leak, be stolen or reverse engineered" />
+              <outline text="&lt;i&gt;Exposure to Virus Infection&lt;/i&gt;: executable (binary) code can be modified by a virus" />
+            </outline>
+            <outline text="Software as Threat">
+              <outline text="&lt;i&gt;Malware&lt;/i&gt;: Software that may itself have hidden or open malicious or undesirable side effects, or contain back doors " />
+              <outline text="Terminology&lt;i&gt;: Zero-day exploit -- &lt;/i&gt;the first attack of a newly found vulnerability (see: Google Project 0)" />
+            </outline>
+          </outline>
+          <outline text="Cyber Threat Actors (Attackers) #slide #CI7130_Intro #new #wfe-ignore-outline ">
+            <outline text="White Hat (Ethical) Hackers -- non-malicious attackers employed to find vulnerabilities in an organisation to improve security." />
+            <outline text="Black Hat Hackers (Computer Criminals) -- malicious attackers who want to profit financially." />
+            <outline text="Grey Hat Hackers -- somewhere between White Hat and Black Hat. For example, they might carry out ethical hacking activities without consent." />
+            <outline text="Script Kiddies -- non-malicious but thoughtless and haphazard (teenage) users. Find and run scripted security attacks to be entertained or thrilled." />
+            <outline text="Researchers (Cryptanalysts) -- non-malicious attackers who focus on finding security loopholes offline." />
+            <outline text="Other terms often used: #wfe-ignore-outline ">
+              <outline text="Hacktivists: Attack for political or social causes." />
+              <outline text="Cybercriminals: Attack for financial gain." />
+              <outline text="Nation-states: Attack for political, military or economic espionage purposes." />
+              <outline text="Insiders: Attack for revenge, financial gain, or ideology." />
+              <outline text="Script kiddies: Attack for fun or to impress others." />
+              <outline text="Terrorists: Attack for ideological or political reasons." />
+              <outline text="Competitors: Attack for business advantage." />
+              <outline text="Hackers, crackers, malicious insiders, industrial spies, cybercriminals, hacktivists, and cyber-terrorists." />
+            </outline>
+          </outline>
+          <outline text="Threats -- Dark Web #slide">
+            <outline text="!&lt;a href=&quot;https://www.dropbox.com/s/ztrte81mh02xcq6/dark-web.jpg?dl=1&quot;&gt;dark-web.jpg&lt;/a&gt; #eyo-style:Normal " />
+          </outline>
+          <outline text="Mini-Exercise: Threats #slide-mini #CI7130_Intro #basic #slide ">
+            <outline text="Still for the security incident that you have examined earlier, what were/are the main threats that could be relevant?" />
+          </outline>
+        </outline>
+        <outline text="RISK #wfe-ignore-item ">
+          <outline text="Risk #slide #CI7130_Intro">
+            <outline text="&lt;i&gt;Risk &lt;/i&gt;occurs if both a threat and a matching vulnerability exist." />
+            <outline text="Risk arises if there is a probability of damage to our assets, arising from an attack" />
+            <outline text="Realistic purpose of computer security: minimise risks (rather than achieving complete security)" />
+            <outline text="Risk can be modelled, using appropriate risk analysis frameworks, as a function of:">
+              <outline text="(i) the adverse impacts that would arise if the circumstance or event occurs;" />
+              <outline text="(ii) the likelihood of occurrence. " />
+            </outline>
+          </outline>
+          <outline text="Risk #slide #CI7130_Intro #CI6240_SM-1 #wfe-ignore-outline ">
+            <outline text="!&lt;a href=&quot;&lt;a href=&quot;https://www.dropbox.com/s/ent3e9n6xuixx11/risk.png?dl=1&quot;&gt;https://www.dropbox.com/s/ent3e9n6xuixx11/risk.png?dl=1&lt;/a&gt;&quot;&gt;risk.png&lt;/a&gt; #wfe-ignore-item " />
+          </outline>
+          <outline text="Mini-Exercise: Risk #slide-mini #CI7130_Intro #CI6240_SM-1 #basic #slide ">
+            <outline text="Revisit the news item about the recent security incident. We had identified critical assets and their relevant threats and vulnerabilities. In your opinion, how big is the risk that an attack might happen in the near future? Justify your answer." />
+          </outline>
+        </outline>
+        <outline text="CONTROLS #wfe-ignore-item ">
+          <outline text="More About Controls #slide #CI7130_Intro #basic ">
+            <outline text="A&lt;i&gt; &lt;/i&gt;control is an action, procedure, device or a technique used for protection. #control" />
+            <outline text="We can discuss controls by considering the following aspects:">
+              <outline text="&lt;i&gt;Design principle &lt;/i&gt;-- principle of the mitigation technique" />
+              <outline text="&lt;i&gt;Implementation&lt;/i&gt; -- how the control is realised " />
+              <outline text="&lt;i&gt;Strength&lt;/i&gt; -- how successful they might protect against attacks" />
+              <outline text="&lt;i&gt;Effectiveness&lt;/i&gt; -- to what extent they reach their full potential strength" />
+              <outline text="&lt;i&gt;Strategy &lt;/i&gt;-- how they are strategically designed, in a hostile environment" />
+            </outline>
+          </outline>
+          <outline text="Controls -- Design principle #slide #CI7130_Intro #basic ">
+            <outline text="&lt;i&gt;Preventative&lt;/i&gt; or &lt;i&gt;proactive&lt;/i&gt; control:">
+              <outline text="&lt;i&gt;Preempt -- &lt;/i&gt;by blocking the attack, neutralising the threat, closing the vulnerability, or all of it" />
+              <outline text="&lt;i&gt;Deter -- &lt;/i&gt;by making the attack harder" />
+              <outline text="&lt;i&gt;Deflect -- &lt;/i&gt;by making another target more attractive" />
+            </outline>
+            <outline text="&lt;i&gt;Detective&lt;/i&gt; control: ">
+              <outline text="Detect the attack -- either as it happens or sometime afterwards" />
+            </outline>
+            <outline text="&lt;i&gt;Reactive &lt;/i&gt;control:">
+              <outline text="&lt;i&gt;Corrective&lt;/i&gt; or &lt;i&gt;retrospective&lt;/i&gt; control: recover from the effect of an attack" />
+            </outline>
+          </outline>
+          <outline text="Controls -- Implementation #slide #CI7130_Intro">
+            <outline text="&lt;i&gt;Physical &lt;/i&gt;(Traditional) Controls -- e.g. guards, locks, backup copies" />
+            <outline text="&lt;i&gt;Hardware &lt;/i&gt;Controls -- e.g. certain types of firewalls, smartcards, hardware authenticators" />
+            <outline text="&lt;i&gt;Software &lt;/i&gt;Controls -- e.g. encryption, protection in operating systems, protocols, virus scanners, security patches " />
+            <outline text="&lt;i&gt;Administrative &lt;/i&gt;Controls -- e.g. security policies or security assessment frameworks used in an organisation, training, nudging" />
+          </outline>
+          <outline text="Controls -- Strength #slide #CI7130_Intro">
+            <outline text="Principle of Overlapping Control (Layered Defense)">
+              <outline text="Controls can be strengthened by using overlapping controls" />
+              <outline text="Example: in a computer lab, use swipe cards and locks attached to projectors" />
+            </outline>
+            <outline text="Principle of Adequate Protection">
+              <outline text="Assets relate to cost -- strenght of protection should be consistent with the asset value" />
+              <outline text="They might lose their value after some time -- only protect until loss of value" />
+            </outline>
+          </outline>
+          <outline text="Controls -- Effectiveness #slide #CI7130_Intro">
+            <outline text="Principle of Effectiveness">
+              <outline text="No control is 100% safe -- quality of control will have impact on losses due to attacks" />
+              <outline text="Controls are only effective, if they are used" />
+              <outline text="Many users are unaware of need for security/unwilling to cooperate" />
+              <outline text="Notion of &quot;security theatre&quot;" />
+            </outline>
+            <outline text="Examples">
+              <outline text="Detection rate of IDS" />
+              <outline text="Comprehensiveness of firewall rules" />
+              <outline text="Quality of software update policy" />
+              <outline text="Who ever changes his/her passwords? " />
+              <outline text="Are the swipe cards for our computer labs effective?" />
+            </outline>
+          </outline>
+          <outline text="Controls -- Strategy #slide #CI7130_Intro">
+            <outline text="Principle of Weakest Link">
+              <outline text="A control can be no stronger than its weakest component" />
+              <outline text="Example: we set up an elaborate firewall for the network, but forget to protect a wireless access point" />
+            </outline>
+            <outline text="Principle of Easiest Attack">
+              <outline text="The attacker will find the for him easiest loophole, not necessarily the most obvious one!" />
+              <outline text="Example: spear-phishing" />
+            </outline>
+            <outline text="Principle of Periodic Review">
+              <outline text="Periodic review and re-evaluation is necessary to ensure the sustained effectiveness of a control" />
+              <outline text="Example: re-imaging lab computers during term break" />
+            </outline>
+          </outline>
+          <outline text="Should A Control Be A Worry-Eater? #slide #CI7130_Intro">
+            <outline text="!&lt;a href=&quot;&lt;a href=&quot;https://www.dropbox.com/s/5xwonv6qeufgpnc/worry-eater.jpg?dl=1&quot;&gt;https://www.dropbox.com/s/5xwonv6qeufgpnc/worry-eater.jpg?dl=1&lt;/a&gt;&quot;&gt;[worry-eater.jpg&lt;/a&gt; #fix " />
+            <outline text="It should not! Actions:">
+              <outline text="Monitor technological progress and anticipate potential new threats, for example of the &lt;a href=&quot;http://www.cert.org&quot;&gt;CERT Website&lt;/a&gt;" />
+              <outline text="Identifies areas where more work is needed on the system" />
+              <outline text="Example: technicians revisit the computer labs at the end of the semester" />
+            </outline>
+          </outline>
+          <outline text="Recent Controls #slide">
+            <outline text="Companies routinely use DDos attack mitigation services (Akami) to form a &quot;Smokescreen&quot;" />
+            <outline text="Initiatives for financial sector: &lt;a href=&quot;http://www.bankofengland.co.uk/financialstability/fsc/Pages/cbest.aspx&quot;&gt;CBEST&lt;/a&gt;" />
+            <outline text="In the UK, the Digital Economy Act, passed in April 2017, bans citizens' access to perfectly legal websites that don't meet its requirements." />
+          </outline>
+          <outline text="Personal Controls: Be Cyber-wise! #slide">
+            <outline text="Clear Dropbox device history" />
+            <outline text="Close not needed online accounts" />
+            <outline text="Setup scheme for passwords" />
+            <outline text="Establish manual backup policy " />
+          </outline>
+          <outline text="Controls -- Reflection #slide">
+            <outline text="How not to do it">
+              <outline text="UK relied on secrecy through obscurity by using Red Pike" />
+              <outline text="Chinese government wants to control data storage and tech companies " />
+            </outline>
+            <outline text="Way forward">
+              <outline text="Open standards" />
+              <outline text="Trust" />
+            </outline>
+          </outline>
+          <outline text="Mini-Exercise: Controls #slide-mini #CI7130_Intro #basic #slide ">
+            <outline text="Revisit the security incident article one last time." />
+            <outline text="Which are the controls, that either would have prevented the attack, or that are necessary to be put in place? How effective might they be?" />
+            <outline text="Can you identify which of the principles regarding the strength, effectiveness and strategic use of your controls might be most relevant or applicable?" />
+          </outline>
+          <outline text="Schneier's Law #todo " />
+        </outline>
+      </outline>
+      <outline text="TREE #tree #basic #wfe-ignore-outline">
+        <outline text="V1 #tree ">
+          <outline text="The basic methodology in computer security is to first think about potential &lt;i&gt;&lt;i&gt;weaknesses&lt;/i&gt;&lt;/i&gt; in a given &lt;i&gt;&lt;i&gt;system&lt;/i&gt;&lt;/i&gt;. ">
+            <outline _complete="true" text="In order to better understand these security weaknesses, we have to define what we want to protect -- this is called an &lt;i&gt;&lt;i&gt;asset&lt;/i&gt;. &lt;/i&gt;">
+              <outline _complete="true" text="We can categorise assets based on their technical nature, but we also include the human factor. ">
+                <outline text="System (logical) assets" />
+                <outline text="Hardware assets" />
+                <outline text="Software assets" />
+                <outline text="Data assets" />
+                <outline text="People assets" />
+              </outline>
+              <outline _complete="true" text="Another distinction can be made between tangible and intangible assets.  ">
+                <outline text="Intangible assets include">
+                  <outline text="patents" />
+                  <outline text="copyrights" />
+                  <outline text="franchises" />
+                  <outline text="goodwill" />
+                  <outline text="trademarks" />
+                  <outline text="trade names" />
+                  <outline text="reputation" />
+                </outline>
+              </outline>
+              <outline _complete="true" text="Assets that are crucial for our system (or its users) are referred to as &lt;i&gt;critical&lt;/i&gt; assets. " />
+              <outline _complete="true" text="A &lt;i&gt;target&lt;/i&gt; is an asset under attack. " />
+              <outline _complete="true" text="Mini-Exercise: Assets #CI7130_Intro">
+                <outline text="Look around you. There are many assets of the Kingston University system present. List at least 15 asset items, with 3 of each category. " />
+                <outline text="Which of them do you consider being critical&lt;i&gt; &lt;/i&gt;assets – these would be assets of particular value or importance for &lt;i&gt;&lt;i&gt;your&lt;/i&gt;&lt;/i&gt; student experience." />
+              </outline>
+            </outline>
+            <outline text="Assets have fundamental &lt;i&gt;&lt;i&gt;security requirements&lt;/i&gt;&lt;/i&gt;. ">
+              <outline text="We will introduce the main goals (or requirements) of Computer Security (“CIA triad”) as the de facto standard. ">
+                <outline text="&lt;i&gt;Confidentiality&lt;/i&gt; -- only authorised parties have access to our assets">
+                  <outline text="Confidentiality: the requirement of keeping an asset inaccessible to unauthorized parties" />
+                  <outline text="Definition: computer related assets must be accessed only by authorised parties" />
+                  <outline text="Synonyms: secrecy, privacy" />
+                  <outline text="Example: you need to prevent hackers from accessing personal data in your social network account" />
+                </outline>
+                <outline text="&lt;i&gt;Integrity&lt;/i&gt; -- assets have not been modified by unauthorised parties">
+                  <outline text="&lt;i&gt;Data Integrity&lt;/i&gt;" />
+                  <outline text="&lt;i&gt;Origin Integrity&lt;/i&gt; (&lt;i&gt;Authentication&lt;/i&gt;)" />
+                  <outline text="&lt;i&gt;Non-Repudiation&lt;/i&gt;" />
+                  <outline text="Integrity&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                    <outline text="Data Integrity:">
+                      <outline text="Data has not been modified by unauthorised parties" />
+                      <outline text="Example: file transfer, email, computer viruses" />
+                    </outline>
+                    <outline text="Origin Integrity (Authentication):">
+                      <outline text="We have proof about origin of a message" />
+                      <outline text="Example: IP address of the machine the e-mail was sent from" />
+                    </outline>
+                    <outline text="Non-repudiation:">
+                      <outline text="Sender cannot deny having sent a message." />
+                      <outline text="Example: email, logging on to a system" />
+                    </outline>
+                  </outline>
+                  <outline text="Integrity: the authenticity, accuracy, and completeness of an asset">
+                    <outline text="Data Integrity" />
+                    <outline text="Origin Integrity (Authentication)" />
+                    <outline text="Non-repudiation" />
+                  </outline>
+                </outline>
+                <outline text="&lt;i&gt;Availability&lt;/i&gt; -- assets are available to authorised parties at appropriate times">
+                  <outline text="Availability&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                    <outline text="Definition: assets are accessible to authorised parties at appropriate times" />
+                    <outline text="In other words: legitimate access should always be possible" />
+                    <outline text="Example: a website should be available 24/d, 7/w. And so should be the universities e-mail system" />
+                    <outline text="Lack of availability can be desirable, too." />
+                    <outline text="Anonymity is withhelding identifying information" />
+                    <outline text="Is increasingly becoming an important goal" />
+                  </outline>
+                  <outline text="Availability: assets are accessible and usable on demand by authorised parties" />
+                </outline>
+                <outline text="Illustration" />
+              </outline>
+              <outline text="Implementing these security goals is a non-trivial task. ">
+                <outline text="Many people can have access to the system. " />
+                <outline text="There may be different levels of security">
+                  <outline text="Different availability levels: object or service is available if it is usable, making clear progress or the service completes in an acceptable period of time" />
+                </outline>
+                <outline text="We need to be able to do ">
+                  <outline text="User authentication" />
+                  <outline text="Access control" />
+                  <outline text="Data protection/encryption" />
+                </outline>
+              </outline>
+              <outline text="Refinements are possible for more specific circumstances and scenarios. ">
+                <outline text="For many scenarios, we can also find additional security goals" />
+                <outline text="They are effectively refinements of the main CIA goals" />
+                <outline text="Examples:">
+                  <outline text="&lt;i&gt;Anonymity &lt;/i&gt;-- information relating to the sender of a message must not be available to non-authorised parties" />
+                  <outline text="&lt;i&gt;Invisibility&lt;/i&gt;/&lt;i&gt;Undetectability &lt;/i&gt;-- confidential information contained in a message must not be detectable or raise suspicion (steganography) #stego" />
+                  <outline text="Fair Use" />
+                </outline>
+              </outline>
+              <outline text="Let's do the following Mini-Exercise: CIA">
+                <outline text="Revisit the story about the security incident. " />
+                <outline text="Analyse the story more in detail and identify which of the main security goals were violated, and of which (critical) assets. Justify your answers." />
+                <outline text="Write down 12 assets that you can identify around you, 3 for each asset type. Whenever possible, try to find the CPE classes. " _note="http://csrc.nist.gov/publications/PubsNISTIRs.html" />
+              </outline>
+            </outline>
+            <outline text="A &lt;i&gt;&lt;i&gt;vulnerability&lt;/i&gt;&lt;/i&gt; is a potentially exploitable weakness (&quot;loophole&quot;) of an asset. ">
+              <outline text="When preparing to specify, design, code or test a secure system, we need to be aware of its differential potential vulnerabilities">
+                <outline text="Hardware Vulnerabilities">
+                  <outline text="Hardware is composed of physical objects" />
+                  <outline text="It is simple to add, change or remove devices" />
+                  <outline text="This means that computer device might be prone to a physical attack" />
+                  <outline text="Computers have been kicked, punched, burnt, frozen, shot at.." />
+                  <outline text="The proof: https://youtu.be/algWjS2yiyE" />
+                  <outline text="Before the University tightened its physical controls, every semester at least one projector used to be stolen!" />
+                </outline>
+                <outline text="Software Vulnerabilities">
+                  <outline text="Software weaknesses are in two types of software:">
+                    <outline text="Source code">
+                      <outline text="Source code can be stolen/reverse engineered" />
+                      <outline text="Coding Flaws/Bugs, potentially leading to malicious exploits" />
+                      <outline text="Frequent use of common libraries amplifies the problem" />
+                      <outline text="Flaws are indexed in the CVE catalog " />
+                    </outline>
+                    <outline text="Executable (object) code">
+                      <outline text="Code can be modified by a virus" />
+                      <outline text="Illegally downloading files from the Internet is theft, too" />
+                      <outline text="Back doors " />
+                    </outline>
+                  </outline>
+                  <outline text="Another important examples is misconfiguration, e.g. patches are out of date. " />
+                </outline>
+                <outline text="Data Vulnerabilities">
+                  <outline text="Very similar problems as with software, but data attacks are more widespread than software attacks as data “easier” to read, and enormous amounts  of data around (big data)" />
+                  <outline text="Need to think of data at rest, and in transit (computation, network..)" />
+                </outline>
+                <outline text="People Vulnerabilities">
+                  <outline text="Lack of security awareness -- people tend to forget things, make mistakes and use computers irresponsibly">
+                    <outline text="Write down passwords, forget to make backups etc." />
+                  </outline>
+                  <outline text="Naïvity of many computer users makes an ideal target for &lt;i&gt;social engineering&lt;/i&gt;">
+                    <outline text="This is particularly problematic if targeted people are key people within an IT system, e.g. system administrators, lecturers.." />
+                    <outline text="Typical exploit: phishing/spam emails" />
+                    <outline text="Effectiveness is often underestimated" />
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="Vulnerability Chaining" />
+              <outline text="Mini-Exercise: Vulnerabilities">
+                <outline text="Revisit again the story about the security incident and identify the main vulnerabilities that were threatened/attacked." />
+              </outline>
+            </outline>
+            <outline text="The analysis of vulnerabilities alone does not give us any indications about ipossible exploitation by an attack. " />
+            <outline text="A&lt;i&gt; &lt;i&gt;threat&lt;/i&gt; &lt;/i&gt;is a set of circumstances with potential to exploit a vulnerability and create harm to assets. ">
+              <outline text="Threats #CI7130_Intro" />
+              <outline text="This could be a violation of security, or otherwise unwanted incident, which may result in harm to a system/organisation/user" />
+              <outline text="Can be further characterised by additional attributes (see OCTAVE security assessment framework)" />
+              <outline text="Threat Landscape: typical, currently relevant threats" />
+              <outline text="Threat Modelling: identification and profiling of relevant threats" />
+              <outline text="Mini-Exercise: Threats #CI7130_Intro">
+                <outline text="Still for the security incident that you have examined earlier, what were/are the main threats that could be relevant?" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="This is followed by the design of suitable &lt;i&gt;&lt;i&gt;controls&lt;/i&gt;&lt;/i&gt; (countermeasures) in order to mitigate &lt;i&gt;&lt;i&gt;attacks&lt;/i&gt;&lt;/i&gt;. ">
+            <outline text="An attack is the implementation of a threat. ">
+              <outline text="&lt;b&gt;ATTACKS #concept #attack&lt;/b&gt;">
+                <outline text="Attack -- Terminology #CI7130_Intro">
+                  <outline text="An &lt;i&gt;attack&lt;/i&gt; implements a threat to an asset (target), carried out by an &lt;i&gt;attacker&lt;/i&gt; with a certain (malicious) &lt;i&gt;motive&lt;/i&gt;" />
+                  <outline text="This needs to have a matching vulnerability" />
+                  <outline text="An &lt;i&gt;attack vector&lt;/i&gt; is the access path to the asset under threat" />
+                  <outline text="The &lt;i&gt;attack surface&lt;/i&gt; of a system or software is exposed to attacks" />
+                  <outline text="A &lt;i&gt;zero-day attack&lt;/i&gt; (or &lt;i&gt;exploit&lt;/i&gt;) is the first attack on a new vulnerability" />
+                  <outline text="Attacker have multiple types and motives" />
+                </outline>
+                <outline text="Examples of Typical Attacks #attack #CI7130_Intro">
+                  <outline text="Denial of Service (DoS) Attack" />
+                  <outline text="Spoofing Attack, Man-in-the-Middle Attack" />
+                  <outline text="Social Engineering Attack, Phishing Attack" />
+                  <outline text="Credential Stealing" />
+                  <outline text="Buffer Overflow Attack, SQL Injection Attack, XSS Attack" />
+                  <outline text="Infection with Computer Virus, Running Malware" />
+                  <outline text="Disclosure of Personal Information" />
+                </outline>
+                <outline text="&lt;b&gt;CRYPTANALYSIS&lt;/b&gt; #attack #CI7100">
+                  <outline text="Cryptography vs Cryptanalysis">
+                    <outline text="Cryptography - the science of encryption" />
+                    <outline text="Cryptanalysis - break an encryption scheme. Several strategies:">
+                      <outline text="Recognise patterns in encrypted messages" />
+                      <outline text="Deduce the key" />
+                      <outline text="Infer some meaning without even breaking the encryption" />
+                    </outline>
+                    <outline text="Breakable encryption - analyst can determine the algorithm (given enough time and data)" />
+                    <outline text="Cryptology is cryptography and cryptanalysis" />
+                  </outline>
+                  <outline text="Ciphertext Attacks #attack">
+                    <outline text="Ciphertext only – attacker has only copy of the ciphertext" />
+                    <outline text="Known plaintext – attacker has copy of ciphertext and corresponding plaintext" />
+                    <outline text="Chosen plaintext – encryption algorithm is accessible, but key not available" />
+                    <outline text="Chosen ciphertext – access to decryption algorithm, trying to deduce the key" />
+                  </outline>
+                  <outline text="Cryptography - Security">
+                    <outline text="In descending order of importance:">
+                      <outline text="Protocol" />
+                      <outline text="Encryption method" />
+                      <outline text="Key length" />
+                    </outline>
+                    <outline text="More security normally means slower and more resource hungry" />
+                    <outline text="Depends on random numbers" />
+                    <outline text="Public-key algorithms inherently need bigger key sizes than (symmetric) block ciphers" />
+                  </outline>
+                  <outline text="Algorithms - Security">
+                    <outline text="Level of security only need be as much as is required" />
+                    <outline text="Worth of information - not worth spending £1000 to get £5 of information" />
+                  </outline>
+                  <outline text="Differential and Integral Cryptanalysis " />
+                </outline>
+                <outline text="Network Attacks #attack #CI7130">
+                  <outline text="They can target network links, nodes and protocols" />
+                  <outline text="Active/passive" />
+                  <outline text="External/internal" />
+                  <outline text="Mobile/stationary " />
+                  <outline text="Outsider/insider" />
+                  <outline text="External Attack #slide" />
+                  <outline text="Internal Attack #slides" />
+                </outline>
+                <outline text="&lt;b&gt;OUTCOMES #concept&lt;/b&gt;">
+                  <outline text="Outcomes of an Attack on an Asset&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                    <outline text="Many things can go wrong: attempt to destroy, expose, alter, disable, steal or gain unauthorised access to or make unauthorised use of an asset" />
+                    <outline text="Outcomes Classification:">
+                      <outline text="&lt;i&gt;Interception &lt;/i&gt;(synonym: &lt;i&gt;disclosure&lt;/i&gt;) – unauthorised access to asset" />
+                      <outline text="&lt;i&gt;Interruption&lt;/i&gt; – an asset becomes unavailable" />
+                      <outline text="&lt;i&gt;Modification&lt;/i&gt; – tampering with an asset" />
+                      <outline text="&lt;i&gt;Fabrication&lt;/i&gt; – creation of new objects in a computer system" />
+                    </outline>
+                    <outline text="Examples:">
+                      <outline text="copying data, stealing a password" />
+                      <outline text="destroying hardware device, corrupting a file" />
+                      <outline text="changing values in a database" />
+                      <outline text="adding records to a database, creating a trap door" />
+                    </outline>
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="Data Attacks #attack">
+                <outline text="Deletion">
+                  <outline text="Can be accidental or deliberate" />
+                  <outline text="The former probably happened to all of us at least once in our careers" />
+                </outline>
+                <outline text="Modification">
+                  <outline text="Can be done more easily than for software" />
+                  <outline text="Example: salami attack #GT">
+                    <outline text="Idea: modify only small amounts of data at a time, but then do this very often" />
+                    <outline text="E.g. transferring rounding errors in bank transactions to own account (see movie “Office Space”)" />
+                    <outline text="Or: credit card scams" />
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="&lt;b&gt;MOBILE ATTACKS &lt;/b&gt;#attack #CI7160 #proto #slide">
+                <outline text="Mobile Attackers">
+                  <outline text="In the context of (wireless) networks" />
+                  <outline text="Attacker can move from node to node" />
+                </outline>
+                <outline text="Byzantine Attackers">
+                  <outline text="Most destructive type of attack" />
+                  <outline text="Attacker can completely take over a node/host" />
+                </outline>
+                <outline text="Packet drop attack">
+                  <outline text="Black hole" />
+                  <outline text="Grey hole" />
+                </outline>
+                <outline text="Attacks on MANETs" />
+              </outline>
+              <outline text="Quantum Channel Attacks #attack #quantum #CI6240_quantum #slide">
+                <outline text="Eavesdropping (passive) -- detectable" />
+                <outline text="" />
+                <outline text="Quantum Denial of Service (QDoS) -- might become a major problem!" />
+              </outline>
+              <outline text="Impossibility of Passive Eavesdropping #attack #quantum #CI6240_quantum">
+                <outline text="Illustration" _note="![](https://www.dropbox.com/s/9nf8hsee4uxj5y9/Screenshot%202016-02-12%2011.41.58.png?dl=1)" />
+              </outline>
+              <outline text="&lt;b&gt;ATTACKERS/ACTORS #concept&lt;/b&gt;">
+                <outline text="Classification by IT Skills">
+                  <outline text="Amateurs " />
+                  <outline text="Computer Users" />
+                  <outline text="IT Students " />
+                  <outline text="IT Professionals" />
+                </outline>
+                <outline text="By motivation">
+                  <outline text="Script Kiddies" />
+                  <outline text="Geeks" />
+                  <outline text="Researchers (Cryptanalysts)" />
+                  <outline text="White Hat (Ethical) Hackers" />
+                  <outline text="Grey Hat Hackers" />
+                  <outline text="Black Hat Hackers (Computer Criminals)" />
+                  <outline text="" />
+                  <outline text="hackers, crackers, malicious insiders," />
+                  <outline text="industrial spy, cybercriminals, hacktivist, and cyber terrorist." />
+                </outline>
+                <outline text="Formal Definition">
+                  <outline text="Adversaries ">
+                    <outline text="Honest-but-curious" />
+                  </outline>
+                </outline>
+                <outline text="OCTAVE Classification" />
+              </outline>
+            </outline>
+            <outline text="A&lt;i&gt; &lt;/i&gt;control is an action, procedure, device or a technique used for protection. #control">
+              <outline text="Controls -- Types @NIST2010">
+                <outline text="Depends on the organisation's enterprise architecture and information security architecture">
+                  <outline text="System-specified controls -- controls that provides security capability for a particular information system only" />
+                  <outline text="Common controls -- controls that provides security capability for multiple information system" />
+                  <outline text="Hybrid controls -- combination of both previous types" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Overview #CI7130_Intro ">
+                <outline text="We can discuss controls by considering the following aspects:">
+                  <outline text="&lt;i&gt;Technique&lt;/i&gt; -- principle of the mitigation technique" />
+                  <outline text="&lt;i&gt;Implementation&lt;/i&gt; -- how the control is realised " />
+                  <outline text="&lt;i&gt;Strength&lt;/i&gt; -- how successful they protect against attacks" />
+                  <outline text="&lt;i&gt;Effectiveness&lt;/i&gt; -- to what extent they reach their full potential strength" />
+                  <outline text="&lt;i&gt;Strategy &lt;/i&gt;-- how they are strategically designed, in a hostile environment" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Technique&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                <outline text="Controls try to protect the system by neutralising the threat, closing the vulnerability, or both" />
+                <outline text="&lt;i&gt;Preventative&lt;/i&gt; or &lt;i&gt;proactive&lt;/i&gt; control:">
+                  <outline text="&lt;i&gt;Preempt&lt;/i&gt; – by blocking the attack or closing the vulnerability" />
+                  <outline text="&lt;i&gt;Deter&lt;/i&gt; – by making the attack harder" />
+                  <outline text="&lt;i&gt;Deflect&lt;/i&gt; – by making another target more attractive" />
+                </outline>
+                <outline text="&lt;i&gt;Detective&lt;/i&gt; control: detect attack – either as it happens or sometime after the attack" />
+                <outline text="&lt;i&gt;Corrective&lt;/i&gt; or &lt;i&gt;retrospective&lt;/i&gt; control: recover from the effect of an attack" />
+              </outline>
+              <outline text="Controls -- Implementation&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                <outline text="Physical (Traditional) Controls -- e.g. guards, locks, backup copies" />
+                <outline text="Hardware Controls -- e.g. certain types of firewalls, smartcards" />
+                <outline text="Software Controls -- e.g. encryption, protection in operating systems, virus scanners" />
+                <outline text="Administrative Controls -- e.g. security policies or security assessment frameworks used in an organisation, nudging" />
+              </outline>
+              <outline text="Strength/Effectiveness of a Control">
+                <outline text="Motivation">
+                  <outline text="No control is 100% safe" />
+                  <outline text="Quality of control will have impact on losses due to attacks" />
+                </outline>
+                <outline text="We define the strength of a control \(\gamma\) as the quotient of the recovered server value \(R_i\) and the damage level \(L_i\): \[ l(\gamma)_i = R_i / L_i \in [0,1], \]" />
+                <outline text="Examples">
+                  <outline text="Detection rate of IDS" />
+                  <outline text="Comprehensiveness of firewall rules" />
+                  <outline text="Quality of software update policy" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Strength #CI7130_Intro">
+                <outline text="Principle of Overlapping Control (Layered Defense)">
+                  <outline text="Controls can be strengthened by using overlapping controls" />
+                  <outline text="Example: in a computer lab, use swipe cards and locks attached to projectors" />
+                </outline>
+                <outline text="Principle of Adequate Protection">
+                  <outline text="Assets relate to cost -- strenght of protection should be consistent with the asset value" />
+                  <outline text="They might lose their value after some time -- only protect until loss of value" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Effectiveness #CI7130_Intro">
+                <outline text="Principle of Effectiveness">
+                  <outline text="Controls are only effective, if they are used" />
+                  <outline text="Many users are unaware of need for security/unwilling to cooperate" />
+                  <outline text="Examples: Who ever changes his/her passwords? Are the swipe cards for our computer labs effective?" />
+                  <outline text="&lt;i&gt;Effectiveness&lt;/i&gt; of a control $c$: #GT #hide">
+                    <outline text="\[">
+                      <outline text="\epsilon_i(c) = R_i(a) / L_i(a) \in [0,1]," />
+                    </outline>
+                    <outline text="\]" />
+                  </outline>
+                </outline>
+                <outline text="Should a control be a worry-eater?" _note="&#10;![](https://www.dropbox.com/s/5xwonv6qeufgpnc/worry-eater.jpg?dl=1)" />
+                <outline text="Principle of Sustainability (Periodic Review)&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                  <outline text="Periodic review and re-evaluation is necessary to ensure the sustained effectiveness of a control" />
+                  <outline text="Monitor technological progress and anticipate potential new threats, for example: http://www.cert.org" />
+                  <outline text="Identifies areas where more work is needed on the system" />
+                  <outline text="Example: technicians revisit the computer labs at the end of the semester" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Strategy #GT #CI7130_Intro">
+                <outline text="Principle of Weakest Link">
+                  <outline text="A control can be no stronger than its weakest component" />
+                  <outline text="Example: we set up an elaborate firewall for the network, but forget to protect a wireless access point" />
+                </outline>
+                <outline text="Principle of Easiest Attack">
+                  <outline text="The attacker will find the for him easiest loophole, not necessarily the most obvious one!" />
+                </outline>
+              </outline>
+              <outline text="Mini-Exercise: Controls #CI7130_Intro">
+                <outline text="Revisit the security incident article one last time." />
+                <outline text="Can you devise appropriate controls? " />
+                <outline text="Can you identify which of the principles regarding the strength, effectiveness and strategic use of your controls might be most relevant or applicable?" />
+              </outline>
+              <outline text="&lt;b&gt;VULNERABILITY SCANNING&lt;/b&gt;">
+                <outline text="Run tool" />
+                <outline text="Identify vulnerabilities in catalogue (ie CVE) " />
+                <outline text="Look up CVSS scores and rank " />
+                <outline text="Protect agains most severe ones" />
+              </outline>
+            </outline>
+          </outline>
+          <outline text="It is important to note however that it is impossible to guarantee absolute security -- we can only hope to reduce &lt;i&gt;&lt;i&gt;risk&lt;/i&gt;&lt;/i&gt;. ">
+            <outline text="&lt;i&gt;&lt;i&gt;Risk&lt;/i&gt; &lt;/i&gt;occurs if both a threat and a matching vulnerability exist. " _note="#concept">
+              <outline text="Risk #CI7130_Intro">
+                <outline text="Risk arises if there is a probability of damage to our assets, arising from an attack" />
+                <outline text="The attack will target our vulnerabilities" />
+                <outline text="Realistic purpose of computer security: minimise risks (rather than achieving complete security)" />
+                <outline text="Risk can be modelled, using appropriate risk analysis frameworks" />
+              </outline>
+            </outline>
+            <outline text="&lt;b&gt;EXAMPLE&lt;/b&gt; " _note="#CI7130_Intro">
+              <outline text="Consider a web site, running on a Web server which is running an old software version" />
+              <outline text="Vulnerabilities:">
+                <outline text="Security holes in the Web server software" />
+                <outline text="The fact that security patches have not been applied" />
+              </outline>
+              <outline text="Threats:">
+                <outline text="Scripts (malware) which could exploit security holes" />
+                <outline text="Hackers who are eager to compromise systems" />
+              </outline>
+              <outline text="Risks:">
+                <outline text="Loss of data" />
+                <outline text="Bad publicity" />
+                <outline text="Downtime" />
+                <outline text="Costs (money)" />
+              </outline>
+              <outline text="Controls:">
+                <outline text="Update server software" />
+                <outline text="Monitor the system" />
+                <outline text="Install a firewall" />
+              </outline>
+            </outline>
+            <outline text="Mini-Exercise: Security Terminology #CI7160_D1 #slide ">
+              <outline text="Refer back to the news item about a recent security breach. Analyse the story more in depth (you may have to research older, related articles) and identify which of the main security goals were violated, and of which (critical) assets." />
+              <outline text="For one critical asset of your choice, list the vulnerabilities that were affected during this incident." />
+              <outline text="Could you think of suitable controls, that would have prevented the attack?" />
+            </outline>
+          </outline>
+        </outline>
+        <outline text="V2 (for SFHEA -- #YouTube) #h #hh #hhh #tree ">
+          <outline text="The basic methodology in computer security is to first think about potential &lt;i&gt;weaknesses&lt;/i&gt; in a given &lt;i&gt;system&lt;/i&gt;. #youtube #h ">
+            <outline _complete="true" text="In order to better understand these security weaknesses, we have to define what we want to protect -- this is called an &lt;i&gt;&lt;i&gt;asset&lt;/i&gt;. &lt;/i&gt;#youtube #hh ">
+              <outline _complete="true" text="We can categorise assets based on their technical nature, but we also include the human factor. ">
+                <outline text="System (logical) assets" />
+                <outline text="Hardware assets" />
+                <outline text="Software assets" />
+                <outline text="Data assets" />
+                <outline text="People assets" />
+              </outline>
+              <outline _complete="true" text="Another distinction can be made between tangible and intangible assets.  ">
+                <outline text="Intangible assets include">
+                  <outline text="patents" />
+                  <outline text="copyrights" />
+                  <outline text="franchises" />
+                  <outline text="goodwill" />
+                  <outline text="trademarks" />
+                  <outline text="trade names" />
+                  <outline text="reputation" />
+                </outline>
+              </outline>
+              <outline _complete="true" text="Assets that are crucial for our system (or its users) are referred to as &lt;i&gt;critical&lt;/i&gt; assets. " />
+              <outline _complete="true" text="A &lt;i&gt;target&lt;/i&gt; is an asset under attack. " />
+              <outline _complete="true" text="Mini-Exercise: Assets #CI7130_Intro">
+                <outline text="Look around you. There are many assets of the Kingston University system present. List at least 15 asset items, with 3 of each category. " />
+                <outline text="Which of them do you consider being critical&lt;i&gt; &lt;/i&gt;assets – these would be assets of particular value or importance for &lt;i&gt;&lt;i&gt;your&lt;/i&gt;&lt;/i&gt; student experience." />
+              </outline>
+            </outline>
+            <outline text="Assets have fundamental &lt;i&gt;&lt;i&gt;security requirements&lt;/i&gt;&lt;/i&gt;. #youtube #hh ">
+              <outline text="We will introduce the main goals (or requirements) of Computer Security (“CIA triad”) as the de facto standard. " />
+              <outline _complete="true" text="&lt;i&gt;Confidentiality&lt;/i&gt; -- only authorised parties have access to our assets. #youtube #hhh ">
+                <outline text="Confidentiality: the requirement of keeping an asset inaccessible to unauthorized parties" />
+                <outline text="Definition: computer related assets must be accessed only by authorised parties" />
+                <outline text="Synonyms: secrecy, privacy" />
+                <outline text="Example: you need to prevent hackers from accessing personal data in your social network account" />
+              </outline>
+              <outline _complete="true" text="&lt;i&gt;Integrity&lt;/i&gt; -- assets have not been modified by unauthorised parties. #youtube #hhh ">
+                <outline text="&lt;i&gt;Data Integrity&lt;/i&gt;" />
+                <outline text="&lt;i&gt;Origin Integrity&lt;/i&gt; (&lt;i&gt;Authentication&lt;/i&gt;)" />
+                <outline text="&lt;i&gt;Non-Repudiation&lt;/i&gt;" />
+                <outline text="Integrity&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                  <outline text="Data Integrity:">
+                    <outline text="Data has not been modified by unauthorised parties" />
+                    <outline text="Example: file transfer, email, computer viruses" />
+                  </outline>
+                  <outline text="Origin Integrity (Authentication):">
+                    <outline text="We have proof about origin of a message" />
+                    <outline text="Example: IP address of the machine the e-mail was sent from" />
+                  </outline>
+                  <outline text="Non-repudiation:">
+                    <outline text="Sender cannot deny having sent a message." />
+                    <outline text="Example: email, logging on to a system" />
+                  </outline>
+                </outline>
+                <outline text="Integrity: the authenticity, accuracy, and completeness of an asset">
+                  <outline text="Data Integrity" />
+                  <outline text="Origin Integrity (Authentication)" />
+                  <outline text="Non-repudiation" />
+                </outline>
+              </outline>
+              <outline _complete="true" text="&lt;i&gt;Availability&lt;/i&gt; -- assets are available to authorised parties at appropriate times. #youtube #hhh ">
+                <outline text="Availability&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                  <outline text="Definition: assets are accessible to authorised parties at appropriate times" />
+                  <outline text="In other words: legitimate access should always be possible" />
+                  <outline text="Example: a website should be available 24/d, 7/w. And so should be the universities e-mail system" />
+                  <outline text="Lack of availability can be desirable, too." />
+                  <outline text="Anonymity is withhelding identifying information" />
+                  <outline text="Is increasingly becoming an important goal" />
+                </outline>
+                <outline text="Availability: assets are accessible and usable on demand by authorised parties" />
+              </outline>
+              <outline text="Illustration: security is CIA #youtube #hhh " />
+              <outline text="Implementing these security goals is a non-trivial task. ">
+                <outline text="Many people can have access to the system. " />
+                <outline text="There may be different levels of security">
+                  <outline text="Different availability levels: object or service is available if it is usable, making clear progress or the service completes in an acceptable period of time" />
+                </outline>
+                <outline text="We need to be able to do ">
+                  <outline text="User authentication" />
+                  <outline text="Access control" />
+                  <outline text="Data protection/encryption" />
+                </outline>
+              </outline>
+              <outline text="Refinements are possible for more specific circumstances and scenarios. ">
+                <outline text="For many scenarios, we can also find additional security goals" />
+                <outline text="They are effectively refinements of the main CIA goals" />
+                <outline text="Examples:">
+                  <outline text="&lt;i&gt;Anonymity &lt;/i&gt;-- information relating to the sender of a message must not be available to non-authorised parties" />
+                  <outline text="&lt;i&gt;Invisibility&lt;/i&gt;/&lt;i&gt;Undetectability &lt;/i&gt;-- confidential information contained in a message must not be detectable or raise suspicion (steganography) #stego" />
+                  <outline text="Fair Use" />
+                </outline>
+              </outline>
+              <outline text="Let's do the following Mini-Exercise: CIA">
+                <outline text="Revisit the story about the security incident. " />
+                <outline text="Analyse the story more in detail and identify which of the main security goals were violated, and of which (critical) assets. Justify your answers." />
+                <outline text="Write down 12 assets that you can identify around you, 3 for each asset type. Whenever possible, try to find the CPE classes. " _note="http://csrc.nist.gov/publications/PubsNISTIRs.html" />
+              </outline>
+            </outline>
+            <outline _complete="true" text="A &lt;i&gt;&lt;i&gt;vulnerability&lt;/i&gt;&lt;/i&gt; is a potentially exploitable weakness (&quot;loophole&quot;) of an asset. #youtube #hh ">
+              <outline text="When preparing to specify, design, code or test a secure system, we need to be aware of its differential potential vulnerabilities">
+                <outline text="Hardware Vulnerabilities">
+                  <outline text="Hardware is composed of physical objects" />
+                  <outline text="It is simple to add, change or remove devices" />
+                  <outline text="This means that computer device might be prone to a physical attack" />
+                  <outline text="Computers have been kicked, punched, burnt, frozen, shot at.." />
+                  <outline text="The proof: https://youtu.be/algWjS2yiyE" />
+                  <outline text="Before the University tightened its physical controls, every semester at least one projector used to be stolen!" />
+                </outline>
+                <outline text="Software Vulnerabilities">
+                  <outline text="Software weaknesses are in two types of software:">
+                    <outline text="Source code">
+                      <outline text="Source code can be stolen/reverse engineered" />
+                      <outline text="Coding Flaws/Bugs, potentially leading to malicious exploits" />
+                      <outline text="Frequent use of common libraries amplifies the problem" />
+                      <outline text="Flaws are indexed in the CVE catalog " />
+                    </outline>
+                    <outline text="Executable (object) code">
+                      <outline text="Code can be modified by a virus" />
+                      <outline text="Illegally downloading files from the Internet is theft, too" />
+                      <outline text="Back doors " />
+                    </outline>
+                  </outline>
+                  <outline text="Another important examples is misconfiguration, e.g. patches are out of date. " />
+                </outline>
+                <outline text="Data Vulnerabilities">
+                  <outline text="Very similar problems as with software, but data attacks are more widespread than software attacks as data “easier” to read, and enormous amounts  of data around (big data)" />
+                  <outline text="Need to think of data at rest, and in transit (computation, network..)" />
+                </outline>
+                <outline text="People Vulnerabilities">
+                  <outline text="Lack of security awareness -- people tend to forget things, make mistakes and use computers irresponsibly">
+                    <outline text="Write down passwords, forget to make backups etc." />
+                  </outline>
+                  <outline text="Naïvity of many computer users makes an ideal target for &lt;i&gt;social engineering&lt;/i&gt;">
+                    <outline text="This is particularly problematic if targeted people are key people within an IT system, e.g. system administrators, lecturers.." />
+                    <outline text="Typical exploit: phishing/spam emails" />
+                    <outline text="Effectiveness is often underestimated" />
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="Vulnerability Chaining" />
+              <outline text="Mini-Exercise: Vulnerabilities">
+                <outline text="Revisit again the story about the security incident and identify the main vulnerabilities that were threatened/attacked." />
+              </outline>
+            </outline>
+            <outline text="The analysis of vulnerabilities alone does not give us any indications about possible exploitation by an attack. " />
+            <outline _complete="true" text="A&lt;i&gt; &lt;i&gt;threat&lt;/i&gt; &lt;/i&gt;is a set of circumstances with potential to exploit a vulnerability and create harm to assets. #youtube #hh ">
+              <outline text="Threats #CI7130_Intro" />
+              <outline text="This could be a violation of security, or otherwise unwanted incident, which may result in harm to a system/organisation/user" />
+              <outline text="Can be further characterised by additional attributes (see OCTAVE security assessment framework)" />
+              <outline text="Threat Landscape: typical, currently relevant threats" />
+              <outline text="Threat Modelling: identification and profiling of relevant threats" />
+              <outline text="Mini-Exercise: Threats #CI7130_Intro">
+                <outline text="Still for the security incident that you have examined earlier, what were/are the main threats that could be relevant?" />
+              </outline>
+            </outline>
+          </outline>
+          <outline _complete="true" text="This is followed by the design of suitable &lt;i&gt;&lt;i&gt;controls&lt;/i&gt;&lt;/i&gt; (countermeasures) in order to mitigate &lt;i&gt;&lt;i&gt;attacks&lt;/i&gt;&lt;/i&gt;. #youtube #h ">
+            <outline _complete="true" text="An attack is the implementation of a threat. #youtube #hh ">
+              <outline text="&lt;b&gt;ATTACKS #concept #attack&lt;/b&gt;">
+                <outline text="Attack -- Terminology #CI7130_Intro">
+                  <outline text="An &lt;i&gt;attack&lt;/i&gt; implements a threat to an asset (target), carried out by an &lt;i&gt;attacker&lt;/i&gt; with a certain (malicious) &lt;i&gt;motive&lt;/i&gt;" />
+                  <outline text="This needs to have a matching vulnerability" />
+                  <outline text="An &lt;i&gt;attack vector&lt;/i&gt; is the access path to the asset under threat" />
+                  <outline text="The &lt;i&gt;attack surface&lt;/i&gt; of a system or software is exposed to attacks" />
+                  <outline text="A &lt;i&gt;zero-day attack&lt;/i&gt; (or &lt;i&gt;exploit&lt;/i&gt;) is the first attack on a new vulnerability" />
+                  <outline text="Attacker have multiple types and motives" />
+                </outline>
+                <outline text="Examples of Typical Attacks #attack #CI7130_Intro">
+                  <outline text="Denial of Service (DoS) Attack" />
+                  <outline text="Spoofing Attack, Man-in-the-Middle Attack" />
+                  <outline text="Social Engineering Attack, Phishing Attack" />
+                  <outline text="Credential Stealing" />
+                  <outline text="Buffer Overflow Attack, SQL Injection Attack, XSS Attack" />
+                  <outline text="Infection with Computer Virus, Running Malware" />
+                  <outline text="Disclosure of Personal Information" />
+                </outline>
+                <outline text="&lt;b&gt;CRYPTANALYSIS&lt;/b&gt; #attack #CI7100">
+                  <outline text="Cryptography vs Cryptanalysis">
+                    <outline text="Cryptography - the science of encryption" />
+                    <outline text="Cryptanalysis - break an encryption scheme. Several strategies:">
+                      <outline text="Recognise patterns in encrypted messages" />
+                      <outline text="Deduce the key" />
+                      <outline text="Infer some meaning without even breaking the encryption" />
+                    </outline>
+                    <outline text="Breakable encryption - analyst can determine the algorithm (given enough time and data)" />
+                    <outline text="Cryptology is cryptography and cryptanalysis" />
+                  </outline>
+                  <outline text="Ciphertext Attacks #attack">
+                    <outline text="Ciphertext only – attacker has only copy of the ciphertext" />
+                    <outline text="Known plaintext – attacker has copy of ciphertext and corresponding plaintext" />
+                    <outline text="Chosen plaintext – encryption algorithm is accessible, but key not available" />
+                    <outline text="Chosen ciphertext – access to decryption algorithm, trying to deduce the key" />
+                  </outline>
+                  <outline text="Cryptography - Security">
+                    <outline text="In descending order of importance:">
+                      <outline text="Protocol" />
+                      <outline text="Encryption method" />
+                      <outline text="Key length" />
+                    </outline>
+                    <outline text="More security normally means slower and more resource hungry" />
+                    <outline text="Depends on random numbers" />
+                    <outline text="Public-key algorithms inherently need bigger key sizes than (symmetric) block ciphers" />
+                  </outline>
+                  <outline text="Algorithms - Security">
+                    <outline text="Level of security only need be as much as is required" />
+                    <outline text="Worth of information - not worth spending £1000 to get £5 of information" />
+                    <outline text="INBOX #new ">
+                      <outline text="Types of Attacks on Encryption Schemes">
+                        <outline text="Ciphertext-only Attack (COA)">
+                          <outline text="Adversary only has access to ciphertexts." />
+                          <outline text="Goal: Infer plaintext or key from ciphertext." />
+                        </outline>
+                        <outline text="Known Plaintext Attack (KPA)">
+                          <outline text="Adversary has some pairs of plaintext and corresponding ciphertext." />
+                          <outline text="Leverages known mappings to find the key or decrypt other ciphertexts." />
+                        </outline>
+                        <outline text="Chosen Plaintext Attack (CPA)">
+                          <outline text="Adversary can choose plaintexts and obtain corresponding ciphertexts." />
+                          <outline text="Used to learn about the encryption algorithm or key." />
+                        </outline>
+                        <outline text="Chosen Ciphertext Attack (CCA)">
+                          <outline text="Adversary can choose ciphertexts and see corresponding plaintexts." />
+                          <outline text="Helps in learning weaknesses in decryption to retrieve the key." />
+                        </outline>
+                      </outline>
+                      <outline text="Advanced Attacks on Encryption Schemes">
+                        <outline text="Adaptive Chosen Plaintext Attack (Adaptive CPA)">
+                          <outline text="Adversary chooses new plaintexts based on prior responses." />
+                          <outline text="Aims to adaptively refine knowledge of the key or encryption method." />
+                        </outline>
+                        <outline text="Adaptive Chosen Ciphertext Attack (Adaptive CCA)">
+                          <outline text="Adversary chooses ciphertexts adaptively based on previous decrypted responses." />
+                          <outline text="Commonly used to exploit decryption oracle weaknesses." />
+                        </outline>
+                        <outline text="Side-Channel Attack">
+                          <outline text="Exploits physical information like timing or power consumption." />
+                          <outline text="Often bypasses mathematical defenses by targeting hardware." />
+                        </outline>
+                        <outline text="Brute Force Attack">
+                          <outline text="Tries all possible keys until the correct one is found." />
+                          <outline text="Generally impractical for strong encryption due to high computational cost." />
+                        </outline>
+                      </outline>
+                    </outline>
+                  </outline>
+                </outline>
+                <outline text="&lt;b&gt;ATTACKS ON HASHES&lt;/b&gt; #attack #CI7100">
+                  <outline text="Cryptanalysis of Hashes">
+                    <outline text="Preimage attack:">
+                      <outline text="Given x’, find x such that h(x) = x’" />
+                      <outline text="Can only be done using brute force search (2L attempts)" />
+                    </outline>
+                    <outline text="Second preimage attack">
+                      <outline text="Given x, find y such that h(x) = h(y)" />
+                    </outline>
+                    <outline text="Collision attack:">
+                      <outline text="Find x,y with x ≠ y such that h(x)=h(y)" />
+                      <outline text="Brute-force search requires on average “only” 2L/2 attempts" />
+                    </outline>
+                  </outline>
+                  <outline text="Birthday Paradox " />
+                  <outline text="MD5 Vulnerabilities">
+                    <outline text="Several flaws were found (1996, 2004, 2007)" />
+                    <outline text="2007: systematic construction of collision shown:  for any given string of characters X, two colliding files can be found with both begin with X" />
+                    <outline text="“Rainbow Tables” are accessible online, can be used to reverse MD5 hashes">
+                      <outline text="Prevention: use “salt”" />
+                    </outline>
+                    <outline text="Googling can be used as (limited) tool for reverse lookup" />
+                    <outline text="However, preimage attacks are still difficult to carry out" />
+                  </outline>
+                  <outline text="Mini-Exercise ">
+                    <outline text="Consider a situation where an eavesdropper Eve might intercept the data sent by Alice during the authentication process as in the previous example." />
+                    <outline text="What are possible attacks that Eve could carry out to compromise the authentication mechanism?" />
+                  </outline>
+                </outline>
+                <outline text="Network Attacks #attack #CI7130">
+                  <outline text="They can target network links, nodes and protocols" />
+                  <outline text="Active/passive" />
+                  <outline text="External/internal" />
+                  <outline text="Mobile/stationary " />
+                  <outline text="Outsider/insider" />
+                  <outline text="External Attack #slide" />
+                  <outline text="Internal Attack #slides" />
+                </outline>
+                <outline text="&lt;b&gt;OUTCOMES #concept&lt;/b&gt;">
+                  <outline text="Outcomes of an Attack on an Asset&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                    <outline text="Many things can go wrong: attempt to destroy, expose, alter, disable, steal or gain unauthorised access to or make unauthorised use of an asset" />
+                    <outline text="Outcomes Classification:">
+                      <outline text="&lt;i&gt;Interception &lt;/i&gt;(synonym: &lt;i&gt;disclosure&lt;/i&gt;) – unauthorised access to asset" />
+                      <outline text="&lt;i&gt;Interruption&lt;/i&gt; – an asset becomes unavailable" />
+                      <outline text="&lt;i&gt;Modification&lt;/i&gt; – tampering with an asset" />
+                      <outline text="&lt;i&gt;Fabrication&lt;/i&gt; – creation of new objects in a computer system" />
+                    </outline>
+                    <outline text="Examples:">
+                      <outline text="copying data, stealing a password" />
+                      <outline text="destroying hardware device, corrupting a file" />
+                      <outline text="changing values in a database" />
+                      <outline text="adding records to a database, creating a trap door" />
+                    </outline>
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="Data Attacks #attack">
+                <outline text="Deletion">
+                  <outline text="Can be accidental or deliberate" />
+                  <outline text="The former probably happened to all of us at least once in our careers" />
+                </outline>
+                <outline text="Modification">
+                  <outline text="Can be done more easily than for software" />
+                  <outline text="Example: salami attack #GT">
+                    <outline text="Idea: modify only small amounts of data at a time, but then do this very often" />
+                    <outline text="E.g. transferring rounding errors in bank transactions to own account (see movie “Office Space”)" />
+                    <outline text="Or: credit card scams" />
+                  </outline>
+                </outline>
+              </outline>
+              <outline text="&lt;b&gt;MOBILE ATTACKS &lt;/b&gt;#attack #CI7160 #proto #slide">
+                <outline text="Mobile Attackers">
+                  <outline text="In the context of (wireless) networks" />
+                  <outline text="Attacker can move from node to node" />
+                </outline>
+                <outline text="Byzantine Attackers">
+                  <outline text="Most destructive type of attack" />
+                  <outline text="Attacker can completely take over a node/host" />
+                </outline>
+                <outline text="Packet drop attack">
+                  <outline text="Black hole" />
+                  <outline text="Grey hole" />
+                </outline>
+                <outline text="Attacks on MANETs" />
+              </outline>
+              <outline text="Quantum Channel Attacks #attack #quantum #CI6240_quantum #slide">
+                <outline text="Eavesdropping (passive) -- detectable" />
+                <outline text="" />
+                <outline text="Quantum Denial of Service (QDoS) -- might become a major problem!" />
+              </outline>
+              <outline text="Impossibility of Passive Eavesdropping #attack #quantum #CI6240_quantum">
+                <outline text="Illustration" _note="![](https://www.dropbox.com/s/9nf8hsee4uxj5y9/Screenshot%202016-02-12%2011.41.58.png?dl=1)" />
+              </outline>
+              <outline text="&lt;b&gt;ATTACKERS/ACTORS #concept&lt;/b&gt;">
+                <outline text="Classification by IT Skills">
+                  <outline text="Amateurs " />
+                  <outline text="Computer Users" />
+                  <outline text="IT Students " />
+                  <outline text="IT Professionals" />
+                </outline>
+                <outline text="By motivation">
+                  <outline text="Script Kiddies" />
+                  <outline text="Geeks" />
+                  <outline text="Researchers (Cryptanalysts)" />
+                  <outline text="White Hat (Ethical) Hackers" />
+                  <outline text="Grey Hat Hackers" />
+                  <outline text="Black Hat Hackers (Computer Criminals)" />
+                  <outline text="" />
+                  <outline text="hackers, crackers, malicious insiders," />
+                  <outline text="industrial spy, cybercriminals, hacktivist, and cyber terrorist." />
+                </outline>
+                <outline text="Formal Definition">
+                  <outline text="Adversaries ">
+                    <outline text="Honest-but-curious" />
+                  </outline>
+                </outline>
+                <outline text="OCTAVE Classification" />
+              </outline>
+            </outline>
+            <outline _complete="true" text="A&lt;i&gt; &lt;/i&gt;control is an action, procedure, device or a technique used for protection. #youtube #hh ">
+              <outline text="Controls -- Types @NIST2010">
+                <outline text="Depends on the organisation's enterprise architecture and information security architecture">
+                  <outline text="System-specified controls -- controls that provides security capability for a particular information system only" />
+                  <outline text="Common controls -- controls that provides security capability for multiple information system" />
+                  <outline text="Hybrid controls -- combination of both previous types" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Overview #CI7130_Intro ">
+                <outline text="We can discuss controls by considering the following aspects:">
+                  <outline text="&lt;i&gt;Technique&lt;/i&gt; -- principle of the mitigation technique" />
+                  <outline text="&lt;i&gt;Implementation&lt;/i&gt; -- how the control is realised " />
+                  <outline text="&lt;i&gt;Strength&lt;/i&gt; -- how successful they protect against attacks" />
+                  <outline text="&lt;i&gt;Effectiveness&lt;/i&gt; -- to what extent they reach their full potential strength" />
+                  <outline text="&lt;i&gt;Strategy &lt;/i&gt;-- how they are strategically designed, in a hostile environment" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Technique&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                <outline text="Controls try to protect the system by neutralising the threat, closing the vulnerability, or both" />
+                <outline text="&lt;i&gt;Preventative&lt;/i&gt; or &lt;i&gt;proactive&lt;/i&gt; control:">
+                  <outline text="&lt;i&gt;Preempt&lt;/i&gt; – by blocking the attack or closing the vulnerability" />
+                  <outline text="&lt;i&gt;Deter&lt;/i&gt; – by making the attack harder" />
+                  <outline text="&lt;i&gt;Deflect&lt;/i&gt; – by making another target more attractive" />
+                </outline>
+                <outline text="&lt;i&gt;Detective&lt;/i&gt; control: detect attack – either as it happens or sometime after the attack" />
+                <outline text="&lt;i&gt;Corrective&lt;/i&gt; control: recover from the effect of an attack" />
+              </outline>
+              <outline text="Controls -- Implementation&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                <outline text="Physical (Traditional) Controls -- e.g. guards, locks, backup copies" />
+                <outline text="Hardware Controls -- e.g. certain types of firewalls, smartcards" />
+                <outline text="Software Controls -- e.g. encryption, protection in operating systems, virus scanners" />
+                <outline text="Administrative Controls -- e.g. security policies or security assessment frameworks used in an organisation, nudging" />
+              </outline>
+              <outline text="Strength/Effectiveness of a Control">
+                <outline text="Motivation">
+                  <outline text="No control is 100% safe" />
+                  <outline text="Quality of control will have impact on losses due to attacks" />
+                </outline>
+                <outline text="We define the strength of a control \(\gamma\) as the quotient of the recovered server value \(R_i\) and the damage level \(L_i\): \[ l(\gamma)_i = R_i / L_i \in [0,1], \]" />
+                <outline text="Examples">
+                  <outline text="Detection rate of IDS" />
+                  <outline text="Comprehensiveness of firewall rules" />
+                  <outline text="Quality of software update policy" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Strenght #CI7130_Intro">
+                <outline text="Principle of Overlapping Control (Layered Defense)">
+                  <outline text="Controls can be strengthened by using overlapping controls" />
+                  <outline text="Example: in a computer lab, use swipe cards and locks attached to projectors" />
+                </outline>
+                <outline text="Principle of Adequate Protection">
+                  <outline text="Assets relate to cost -- strenght of protection should be consistent with the asset value" />
+                  <outline text="They might lose their value after some time -- only protect until loss of value" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Effectiveness #CI7130_Intro">
+                <outline text="Principle of Effectiveness">
+                  <outline text="Controls are only effective, if they are used" />
+                  <outline text="Many users are unaware of need for security/unwilling to cooperate" />
+                  <outline text="Examples: Who ever changes his/her passwords? Are the swipe cards for our computer labs effective?" />
+                  <outline text="&lt;i&gt;Effectiveness&lt;/i&gt; of a control $c$: #GT #hide">
+                    <outline text="\[">
+                      <outline text="\epsilon_i(c) = R_i(a) / L_i(a) \in [0,1]," />
+                    </outline>
+                    <outline text="\]" />
+                  </outline>
+                </outline>
+                <outline text="Should a control be a worry-eater?" _note="&#10;![](https://www.dropbox.com/s/5xwonv6qeufgpnc/worry-eater.jpg?dl=1)" />
+                <outline text="Principle of Sustainability (Periodic Review)&lt;b&gt; &lt;/b&gt;#CI7130_Intro">
+                  <outline text="Periodic review and re-evaluation is necessary to ensure the sustained effectiveness of a control" />
+                  <outline text="Monitor technological progress and anticipate potential new threats, for example: http://www.cert.org" />
+                  <outline text="Identifies areas where more work is needed on the system" />
+                  <outline text="Example: technicians revisit the computer labs at the end of the semester" />
+                </outline>
+              </outline>
+              <outline text="Controls -- Strategy #GT #CI7130_Intro">
+                <outline text="Principle of Weakest Link">
+                  <outline text="A control can be no stronger than its weakest component" />
+                  <outline text="Example: we set up an elaborate firewall for the network, but forget to protect a wireless access point" />
+                </outline>
+                <outline text="Principle of Easiest Attack">
+                  <outline text="The attacker will find the for him easiest loophole, not necessarily the most obvious one!" />
+                </outline>
+              </outline>
+              <outline text="Mini-Exercise: Controls #CI7130_Intro">
+                <outline text="Revisit the security incident article one last time." />
+                <outline text="Can you devise appropriate controls? " />
+                <outline text="Can you identify which of the principles regarding the strength, effectiveness and strategic use of your controls might be most relevant or applicable?" />
+              </outline>
+              <outline text="&lt;b&gt;VULNERABILITY SCANNING&lt;/b&gt;">
+                <outline text="Run tool" />
+                <outline text="Identify vulnerabilities in catalogue (ie CVE) " />
+                <outline text="Look up CVSS scores and rank " />
+                <outline text="Protect agains most severe ones" />
+              </outline>
+            </outline>
+          </outline>
+          <outline _complete="true" text="It is important to note however that it is impossible to guarantee absolute security -- we can only hope to reduce &lt;i&gt;&lt;i&gt;risk&lt;/i&gt;&lt;/i&gt;. #youtube #h">
+            <outline text="&lt;i&gt;&lt;i&gt;Risk&lt;/i&gt; &lt;/i&gt;occurs if both a threat and a matching vulnerability exist. " _note="#concept">
+              <outline text="Risk #CI7130_Intro">
+                <outline text="Risk arises if there is a probability of damage to our assets, arising from an attack" />
+                <outline text="The attack will target our vulnerabilities" />
+                <outline text="Realistic purpose of computer security: minimise risks (rather than achieving complete security)" />
+                <outline text="Risk can be modelled, using appropriate risk analysis frameworks" />
+              </outline>
+            </outline>
+            <outline text="&lt;b&gt;EXAMPLE&lt;/b&gt; " _note="#CI7130_Intro">
+              <outline text="Consider a web site, running on a Web server which is running an old software version" />
+              <outline text="Vulnerabilities:">
+                <outline text="Security holes in the Web server software" />
+                <outline text="The fact that security patches have not been applied" />
+              </outline>
+              <outline text="Threats:">
+                <outline text="Scripts (malware) which could exploit security holes" />
+                <outline text="Hackers who are eager to compromise systems" />
+              </outline>
+              <outline text="Risks:">
+                <outline text="Loss of data" />
+                <outline text="Bad publicity" />
+                <outline text="Downtime" />
+                <outline text="Costs (money)" />
+              </outline>
+              <outline text="Controls:">
+                <outline text="Update server software" />
+                <outline text="Monitor the system" />
+                <outline text="Install a firewall" />
+              </outline>
+            </outline>
+            <outline text="Mini-Exercise: Security Terminology #CI7160_D1 #slide ">
+              <outline text="Refer back to the news item about a recent security breach. Analyse the story more in depth (you may have to research older, related articles) and identify which of the main security goals were violated, and of which (critical) assets." />
+              <outline text="For one critical asset of your choice, list the vulnerabilities that were affected during this incident." />
+              <outline text="Could you think of suitable controls, that would have prevented the attack?" />
+            </outline>
+          </outline>
+          <outline text="Illustration" />
+          <outline text="#note">
+            <outline text="CS is such a broad topic - huge advances - but how does it work in principle? This is more or less always the same approach. " />
+          </outline>
+        </outline>
+        <outline text="V3 - YouTube final #tree ">
+          <outline text="The basic methodology in computer security is to first think about potential weaknesses in a given &lt;i&gt;&lt;i&gt;system&lt;/i&gt;&lt;/i&gt;. ">
+            <outline text="In order to better understand these security weaknesses, we have to define what we want to protect -- this is called an &lt;i&gt;&lt;i&gt;asset&lt;/i&gt;&lt;/i&gt;. " />
+            <outline text="Assets have fundamental &lt;i&gt;&lt;i&gt;security requirements&lt;/i&gt;&lt;/i&gt;. ">
+              <outline text="Confidentiality -- only authorised parties have access to our assets. " />
+              <outline text="Integrity -- assets have not been modified by unauthorised parties. " />
+              <outline text="Availability -- assets are available to authorised parties at appropriate times. " />
+              <outline text="Illustration: security is CIA">
+                <outline text="![](https://www.dropbox.com/s/i12op0g3xmcby27/CIA.png?dl=1) " />
+              </outline>
+            </outline>
+            <outline text="A &lt;i&gt;&lt;i&gt;vulnerability&lt;/i&gt;&lt;/i&gt; is a potentially exploitable weakness (&quot;loophole&quot;) of an asset. " />
+            <outline text="A &lt;i&gt;&lt;i&gt;threat&lt;/i&gt;&lt;/i&gt; is a set of circumstances with potential to exploit a vulnerability and create harm to assets. " />
+          </outline>
+          <outline text="This is followed by the design of suitable &lt;i&gt;&lt;i&gt;controls&lt;/i&gt;&lt;/i&gt; (countermeasures) in order to mitigate &lt;i&gt;&lt;i&gt;attacks&lt;/i&gt;&lt;/i&gt;. ">
+            <outline text="An attack is the implementation of a threat. " />
+            <outline text="A control is an action, procedure, device or a technique used for protection. " />
+          </outline>
+          <outline text="It is important to note however that it is impossible to guarantee absolute security -- we can only hope to reduce &lt;i&gt;&lt;i&gt;risk&lt;/i&gt;&lt;/i&gt;." />
+        </outline>
+        <outline text="V4 - CI7130 Jan 2018" />
+      </outline>
+      <outline text="INBOX #wfe-ignore-outline">
+        <outline text="Controls -- Types @NIST2010">
+          <outline text="Depends on the organisation's enterprise architecture and information security architecture">
+            <outline text="System-specified controls -- controls that provides security capability for a particular information system only" />
+            <outline text="Common controls -- controls that provides security capability for multiple information system" />
+            <outline text="Hybrid controls -- combination of both previous types" />
+          </outline>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

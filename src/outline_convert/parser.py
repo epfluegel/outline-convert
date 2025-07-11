@@ -4,12 +4,41 @@ from typing import List, Optional
 from .models import Node
 import xml.etree.ElementTree as ET
 import re
-from .utils import detect_indent
+from .utils import detect_indent, compute_level
 
 IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
 IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 
 def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
+    trees: List[Node] = []
+    indent_size = detect_indent(lines)
+    chunk: List[str] = []
+
+    # Walk every line, detect when a new root node begins (level == 0)
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            if chunk:
+                chunk.append(line)
+            continue
+
+        level = compute_level(line, indent_size)
+        if level == 0:
+            if chunk:
+                trees.append(parse_text_tree(chunk, args))
+                chunk.clear()
+            chunk.append(line)
+        else:
+            chunk.append(line)
+
+    if chunk:
+        trees.append(parse_text_tree(chunk, args))
+
+    return trees
+
+
+
+def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
     # Create root with the first line as its title
     root = Node(lines[0].strip())
     stack = [(-1, root)]
@@ -46,10 +75,7 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
 
         # 3) otherwise it's an outline item — compute its level
         leading = line.expandtabs(indent_size)
-        space_count = len(leading) - len(leading.lstrip(' '))
-        extra = indent_size if leading.lstrip().startswith('-') else 0
-        level = (space_count + extra) // indent_size
-
+        level = compute_level(line, indent_size)
         # 4) handle #wfe-ignore-outline
         if skip_until_level is not None and level > skip_until_level:
             continue
@@ -80,9 +106,9 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
         stack.append((level, node))
         last_node = node
 
-    return [root,root]
+    return root
 
-def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
+def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     body = root_elem.find('body')
     if body is None:
         return Node('Empty OPML')
@@ -115,6 +141,6 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> Node:
                 parent.children.append(node)
                 recurse(child_elem, node)
 
-    recurse(first_outline, root)
+    recurse(body, root)
     
-    return root
+    return [root]

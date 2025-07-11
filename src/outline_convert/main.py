@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node, find_node_bis
+from .utils import find_node
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -113,17 +113,17 @@ def main():
     root_node: Node
     try:
         tree = ET.fromstringlist(lines)
-        root_node = parse_opml(tree, args=args)
+        forest = parse_opml(tree, args=args)
     except:
         if args.debug:
             print("ompl not parsed correctly")
-        root_node = parse_text(lines, args)
+        forest = parse_text(lines, args)
 
     # -- Optional subtree extraction ------------------------------
     if args.start:
-        node = find_node_bis(root_node, args.start)
-        root_node = node
-        if not root_node:
+        f = find_node(forest, args.start)
+        forest = f
+        if not forest:
             root_node = Node(f"Start prefix '{args.start}' not found")
 
 
@@ -134,17 +134,17 @@ def main():
         tab=args.indent_string
         if tab == "\\t":
             tab = '\t'
-        out_lines = render_text(root_node, args)
+        out_lines = render_text(forest, args)
     elif args.format == 'latex':
-        out_lines = render_latex(root_node, args)
+        out_lines = render_latex(forest, args)
     elif args.format == 'beamer':
-        out_lines = render_latex_beamer(root_node, args)
+        out_lines = render_latex_beamer(forest, args)
     elif args.format == 'opml':  # opml
-        out_tree = render_opml(root_node, args)
+        out_tree = render_opml(forest, args)
     elif args.format == 'ppt':
-        out_lines = render_ppt(root_node, args)
+        out_lines = render_ppt(forest, args)
     elif args.format == 'rtf':
-        out_lines = render_rtf(root_node, args)
+        out_lines = render_rtf(forest, args)
 
     # -- Handle output -------------------------------------------
     if args.clipboard:
