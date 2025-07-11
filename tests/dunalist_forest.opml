@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="2.0">
+  <head>
+    <title>test</title>
+    <flavor>dynalist</flavor>
+    <source>https://dynalist.io</source>
+    <ownerName>Savary</ownerName>
+    <ownerEmail>timeo.savary@ecole.ensicaen.fr</ownerEmail>
+  </head>
+  <body>
+      <outline text="Eckhard"/>
+      <outline text="rgr"/>
+      <outline text="$$latex$$"/>
+      <outline text="$$\frac{a}{b}$$"/>
+      <outline text="Test complete" complete="true"/>
+  </body>
+</opml>

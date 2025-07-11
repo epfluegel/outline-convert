@@ -16,6 +16,12 @@ def detect_indent(lines: List[str]) -> int:
         indent = gcd(indent, c)
     return indent or 1
 
+def compute_level(line: str, indent_size: int) -> int:
+    leading = line.expandtabs(indent_size)
+    space_count = len(leading) - len(leading.lstrip(' '))
+    extra = indent_size if leading.lstrip().startswith('-') else 0
+    level = (space_count + extra) // indent_size
+    return level
 
 # -- TREE UTILITIES ---------------------------------------------------------
 
