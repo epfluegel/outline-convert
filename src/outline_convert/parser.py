@@ -39,7 +39,6 @@ def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
 
 
 def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
-    # Create root with the first line as its title
     root = Node(lines[0].strip())
     stack = [(-1, root)]
     indent_size = detect_indent(lines)
@@ -52,15 +51,6 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
         # 1) skip blank lines
         if not stripped:
             continue
-        # Check if item is complete
-        is_complete = line.startswith('[COMPLETE]')
-
-        # Apply filtering based on args
-        if args.hide_completed and is_complete:
-            continue  # Skip this item
-
-        if args.completed_only and not is_complete:
-            continue  # Skip this item
 
         # 2) if it's a quoted line, treat as a note
         if stripped.startswith('"') and stripped.endswith('"'):
@@ -76,18 +66,8 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
         # 3) otherwise it's an outline item — compute its level
         leading = line.expandtabs(indent_size)
         level = compute_level(line, indent_size)
-        # 4) handle #wfe-ignore-outline
-        if skip_until_level is not None and level > skip_until_level:
-            continue
-        else:
-            skip_until_level = None
 
         title = re.sub(r'^-+\s*', '', leading.strip())
-
-        if args.expert_mode and any(tag in title for tag in IGNORE_OUTLINE_TAGS):
-            skip_until_level = level
-            last_node = None
-            continue
 
         # 5) create the node
         node = Node(title)
@@ -97,11 +77,6 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
             stack.pop()
         parent = stack[-1][1]
 
-        if args.expert_mode and any(tag in title for tag in IGNORE_ITEM_TAGS):
-
-            last_node = None
-            continue  # skip this node but keep stacking its children
-
         parent.children.append(node)
         stack.append((level, node))
         last_node = node
@@ -109,6 +84,14 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
     return root
 
 def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
+    head = root_elem.find('head')
+    title = 'Untitled'
+    if head is not None:
+        print("In head")
+        root_title = head.find('title')
+        title = root_title.text
+        print("Root title", title)
+    root = Node(title)
     body = root_elem.find('body')
     if body is None:
         return Node('Empty OPML')
@@ -117,8 +100,8 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     if first_outline is None:
         return Node('Empty OPML')
     
-    root_title = first_outline.get('text', 'Untitled')
-    root = Node(root_title)
+    #root_title = first_outline.get('text', 'Untitled')
+    #root = Node(root_title)
     note = first_outline.get('_note')
     if note:
         root.note = note
@@ -139,8 +122,9 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
                 recurse(child_elem, parent)
             else:
                 parent.children.append(node)
+                node.parent = parent
                 recurse(child_elem, node)
 
     recurse(body, root)
-    
+
     return [root]

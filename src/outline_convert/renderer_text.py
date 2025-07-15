@@ -16,7 +16,8 @@ def render_text(forest: List[Node], args: argparse.Namespace) -> List[str]:
 
 def render_text_tree(node: Node, args: argparse.Namespace, level: int = 0)-> List[str]:
     lines: List[str] = []
-
+    if not node:
+        return lines
     title = node.title
     if args.strip_tags:
         title = ' '.join(part for part in title.split() if not part.startswith('#'))
