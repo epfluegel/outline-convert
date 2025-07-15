@@ -122,7 +122,6 @@ IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 def ignore_tree(node: Node, args: argparse.Namespace):
     is_complete = node.title.startswith('[COMPLETE]')
     has_children = bool(node.children)
-    has_parent = bool(node.parent)
     if has_children:
         children_copy = list(node.children)
 
@@ -133,11 +132,14 @@ def ignore_tree(node: Node, args: argparse.Namespace):
     if ignore_item:
         if node.parent:
             parent = node.parent
+            index = parent.children.index(node)
             if has_children:
-                parent.children.extend(node.children)
+                parent.children[index:index + 1] = children_copy
                 for child in node.children:
                     child.parent = parent
-            parent.children.remove(node)
+            for child in children_copy:
+                ignore_tree(child, args)
+            return
 
     if args.expert_mode and any(tag in node.title for tag in IGNORE_OUTLINE_TAGS):
         if node.parent:
@@ -149,10 +151,15 @@ def ignore_tree(node: Node, args: argparse.Namespace):
             ignore_tree(child, args)
 
 
-def ignore_forest(forest: List[Node], args: argparse.Namespace):
+def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
     for tree in forest:
         ignore_tree(tree, args)
+    return forest
 
+def link_parent(parent: Node):
+    for child in parent.children:
+        child.parent = parent
+        link_parent(child)
 
 def print_tree(node: Node, level: int = 0):
     if node.parent:

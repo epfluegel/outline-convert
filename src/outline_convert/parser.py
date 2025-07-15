@@ -4,38 +4,33 @@ from typing import List, Optional
 from .models import Node
 import xml.etree.ElementTree as ET
 import re
-from .utils import detect_indent, compute_level
+from .utils import detect_indent, compute_level, link_parent, print_tree
 
 IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
 IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 
-def parse_text(lines: List[str], args: argparse.Namespace) -> List[Node]:
-    trees: List[Node] = []
+def parse_text(lines, args):
+    trees = []
     indent_size = detect_indent(lines)
-    chunk: List[str] = []
+    chunk = []
 
-    # Walk every line, detect when a new root node begins (level == 0)
     for line in lines:
         stripped = line.strip()
         if not stripped:
-            if chunk:
-                chunk.append(line)
-            continue
+            continue   # drop blank lines
 
         level = compute_level(line, indent_size)
-        if level == 0:
+        # only start a new chunk if it's a non-bullet level-0 line
+        if level == 0 and not stripped.startswith('-'):
             if chunk:
                 trees.append(parse_text_tree(chunk, args))
-                chunk.clear()
-            chunk.append(line)
+            chunk = [line]
         else:
             chunk.append(line)
 
     if chunk:
         trees.append(parse_text_tree(chunk, args))
-
     return trees
-
 
 
 def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
@@ -80,17 +75,15 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
         parent.children.append(node)
         stack.append((level, node))
         last_node = node
-
+    link_parent(root)
     return root
 
 def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     head = root_elem.find('head')
     title = 'Untitled'
     if head is not None:
-        print("In head")
         root_title = head.find('title')
         title = root_title.text
-        print("Root title", title)
     root = Node(title)
     body = root_elem.find('body')
     if body is None:
@@ -99,9 +92,7 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     first_outline = body.find('outline')
     if first_outline is None:
         return Node('Empty OPML')
-    
-    #root_title = first_outline.get('text', 'Untitled')
-    #root = Node(root_title)
+
     note = first_outline.get('_note')
     if note:
         root.note = note

@@ -10,7 +10,6 @@ def render_text(forest: List[Node], args: argparse.Namespace) -> List[str]:
     lines: List[str] = []
     for tree in forest:
         lines += (render_text_tree(tree, args))
-    print(lines)
     return lines
 
 

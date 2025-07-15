@@ -125,6 +125,7 @@ def main():
             print("ompl not parsed correctly")
         forest = ignore_forest(parse_text(lines, args), args)
 
+
     # -- Optional subtree extraction ------------------------------
     if args.start:
         f = find_node(forest, args.start)
