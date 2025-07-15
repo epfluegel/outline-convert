@@ -9,9 +9,10 @@
   </head>
   <body>
       <outline text="Eckhard"/>
-      <outline text="rgr"/>
-      <outline text="$$latex$$"/>
-      <outline text="$$\frac{a}{b}$$"/>
-      <outline text="Test complete" complete="true"/>
+      <outline text="rgr">
+          <outline text="$$latex$$"/>
+          <outline text="$$\frac{a}{b}$$"/>
+          <outline text="Test complete" complete="true"/>
+      <outline/>
   </body>
 </opml>

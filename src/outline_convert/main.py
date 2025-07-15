@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node
+from .utils import find_node, print_tree, ignore_forest
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -113,11 +113,18 @@ def main():
     root_node: Node
     try:
         tree = ET.fromstringlist(lines)
-        forest = parse_opml(tree, args=args)
+        forest = ignore_forest(parse_opml(tree, args=args), args)
+
+        print("######################################")
+        root = forest[0]
+        #print_tree(root)
+        print("######################################")
+
     except:
         if args.debug:
             print("ompl not parsed correctly")
-        forest = parse_text(lines, args)
+        forest = ignore_forest(parse_text(lines, args), args)
+
 
     # -- Optional subtree extraction ------------------------------
     if args.start:

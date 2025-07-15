@@ -1,0 +1,30 @@
+A
+
+- a
+- b #ignore-item
+  - c
+  - d
+  - e #ignore-item
+    - f
+  - g
+- h #ignore-outline
+  - i
+  - j
+  - k
+- l
+
+
+B
+
+- a
+- b #ignore-item
+  - c
+  - d
+  - e #ignore-item
+    - f
+  - g
+- h #ignore-outline
+  - i
+  - j
+  - k
+- l
