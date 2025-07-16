@@ -122,9 +122,7 @@ IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 def ignore_tree(node: Node, args: argparse.Namespace):
     is_complete = node.title.startswith('[COMPLETE]')
     has_children = bool(node.children)
-    if has_children:
-        children_copy = list(node.children)
-
+    children_copy = list(node.children) if has_children else []
     ignore_item = (args.hide_completed and is_complete) or \
         (args.completed_only and not is_complete) or \
         (args.expert_mode and any(tag in node.title for tag in IGNORE_ITEM_TAGS))
