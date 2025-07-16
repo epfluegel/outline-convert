@@ -126,7 +126,7 @@ def main():
         f = find_node(forest, args.start)
         forest = f
         if not forest:
-            root_node = Node(f"Start prefix '{args.start}' not found")
+            forest = [Node(f"Start prefix '{args.start}' not found")]
 
 
     # -- Render based on chosen format ---------------------------
