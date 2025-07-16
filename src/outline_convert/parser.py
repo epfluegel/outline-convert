@@ -100,17 +100,10 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     def recurse(elem: ET.Element, parent: Node):
         for child_elem in elem.findall('outline'):
             title = child_elem.get('text', '')
-
-            if args.expert_mode and "#wfe-ignore-outline" in title:
-                continue  # Skip entire subtree
-
             node = Node(title)
             note = child_elem.get('_note')
             if note:
                 node.note = note
-
-            if args.expert_mode and "#wfe-ignore-item" in title:
-                recurse(child_elem, parent)
             else:
                 parent.children.append(node)
                 node.parent = parent
