@@ -25,12 +25,12 @@ def compute_level(line: str, indent_size: int) -> int:
 
 # -- TREE UTILITIES ---------------------------------------------------------
 
-def find_node(forest: List[Node], prefix: str) -> Optional[Node]:
+def find_node(forest: List[Node], prefix: str) -> List[Node]:
     for tree in forest:
         result = find_node_tree(tree, prefix)
         if result is not None:
-            return result
-    return None
+            return [result]
+    return []
 
 def find_node_tree(node: Node, prefix: str) -> Optional[Node]:
     if node.title.startswith(prefix):
