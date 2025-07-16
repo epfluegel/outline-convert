@@ -130,7 +130,7 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
         ])
 
     for tree in forest:
-        lines.append(render_latex_beamer_tree(tree, args))
+        lines.extend(render_latex_beamer_tree(tree, args))
 
     if not args.fragment:
         lines.append(r"\end{document}")
