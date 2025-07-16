@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>TalkMaths</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Testing">
+            <outline text="$$ \mathcal{G}+a+b\sqrt{p^3/27}\frac{u}{v}-\frac{p}{2}$$">
+                <outline text="$$\sqrt{} \sqrt $$">
+                    <outline text=""/>
+                </outline>
+                <outline text="$$a+b^{2+\sqrt{x}}\alpha\frac{x}{y}$$">
+                    <outline text="$$a+b^{2+\sqrt{x}}\alpha$$"/>
+                </outline>
+                <outline text=""/>
+            </outline>
+        </outline>
+    </body>
+</opml>

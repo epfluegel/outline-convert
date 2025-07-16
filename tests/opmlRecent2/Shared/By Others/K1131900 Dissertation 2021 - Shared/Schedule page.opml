@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Schedule page</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Project registration form                                                                ">
+            <outline text=" 1st March 2021"/>
+        </outline>
+        <outline text="Individual project definition and research proposal       ">
+            <outline text="31st May 2021"/>
+        </outline>
+        <outline text="Formative Viva/Presentations                                                     ">
+            <outline text="22nd June 2021"/>
+        </outline>
+        <outline text="Dissertation                                                                                             ">
+            <outline text="14th Sep 2021"/>
+        </outline>
+        <outline text="Demonstration/Presentation">
+            <outline text="Between 14th to 28th Sep  2021"/>
+        </outline>
+    </body>
+</opml>

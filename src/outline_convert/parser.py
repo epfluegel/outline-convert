@@ -97,18 +97,20 @@ def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
     if note:
         root.note = note
     
-    def recurse(elem: ET.Element, parent: Node):
-        for child_elem in elem.findall('outline'):
-            title = child_elem.get('text', '')
-            node = Node(title)
-            note = child_elem.get('_note')
-            if note:
-                node.note = note
-            else:
-                parent.children.append(node)
-                node.parent = parent
-                recurse(child_elem, node)
+
 
     recurse(body, root)
 
     return [root]
+
+def recurse(elem: ET.Element, parent: Node):
+    for child_elem in elem.findall('outline'):
+        title = child_elem.get('text', '')
+        node = Node(title)
+        note = child_elem.get('_note')
+        if note:
+            node.note = note
+
+        parent.children.append(node)
+        node.parent = parent
+        recurse(child_elem, node)

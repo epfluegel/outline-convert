@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>OCTAVE Security Assessment (PBL)</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="**Scenario**">
+            <outline text="Agouti Software has acquired the right to develop an app, the idea of which was conceived by a programmer who spent a year at Agouti on a university placement, and will now head the team producing the app, in a newly created business unit of Agouti."/>
+            <outline text="**The Product**">
+                <outline text="The YouAre mobile app employs deep learning algorithms to help the user recognise acquaintances such as business contacts and colleagues, whose names they may not remember."/>
+                <outline text="Ideally, YouAre will be used with AR glasses with eye tracking technology. When running, it will display the name of the owner of the face that the user is looking at. It could also be used with a smartphone, in which case the user will need to position the camera so that the subject's face is in the centre of the frame."/>
+                <outline text="All AI functionality is performed on the remote server; the data required to recognise the target's face is sent from the device to the server, and the server responds with the name. This is then displayed to the user."/>
+                <outline text="For face recognition, salient facial features plus the identity of the individual (as provided by the user) are recorded and stored in a central networked database."/>
+                <outline text="Although the app was conceived as an aid to people whose memory fails to reliably recall names of (potentially many) other people, it may prove to be an attractive addition to Agouti Software's customer relationship management (CRM) suite. As such, a premium version, with a larger capacity personal contact list and integration with the CRM software, will be offered in the future."/>
+            </outline>
+            <outline text="**The Development Team**">
+                <outline text="In addition to the team leader, three developers and one systems administrator will work on the initial project."/>
+                <outline text="They will rent an office designed for small businesses and tech startups, and access the Agouti server remotely. "/>
+            </outline>
+        </outline>
+        <outline text="**Task**">
+            <outline text="Because of the nature of the data stored and transmitted for this application, Agouti Software management require a security assessment to be carried out for all systems connected with the YouAre app."/>
+            <outline text="You are in charge of leading the security assessment activity for the organisation, based on using the `OCTAVE` approach. Note while normally, for small organisations, you would use `OCTAVE-S`, for this activity you can still use standard `OCTAVE`."/>
+            <outline text="Rather than writing a full report, it is sufficient to create notes, in the form of short sentences or paragraphs, and outlines (bulleted lists)."/>
+        </outline>
+        <outline text="**Solution**">
+            <outline text="Phase 1: Build asset-based threat profiles ">
+                <outline text="Process 1: Determine critical assets and how they are currently protected ">
+                    <outline text="Asset categories: logical, hardware, software, people. Data assets have also container assets."/>
+                    <outline text="Sample assets in the scenario:">
+                        <outline text="Data">
+                            <outline text="Facial owner data (container: database) ">
+<outline text="Participant's Live face recognition data (containers: network/protocol if in-transit, device and server if at rest) "/>
+<outline text="Personal data (name, relationship, job, title, last met)"/>
+                            </outline>
+                        </outline>
+                        <outline text="Software">
+                            <outline text="YouAre Mobile app software">
+<outline text="Recognition Engine"/>
+<outline text="Networking Protocol"/>
+<outline text="Glasses Software"/>
+                            </outline>
+                            <outline text="Mobile OS"/>
+                            <outline text="Server Logic"/>
+                        </outline>
+                        <outline text="Hardware">
+                            <outline text="AR Glasses"/>
+                            <outline text="Server hardware"/>
+                            <outline text="Mobile Device"/>
+                        </outline>
+                        <outline text="Office equipment">
+                            <outline text="Printers, PCs, laptops, test mobile devices"/>
+                            <outline text="Staff account (developers, group leader, system administrator)"/>
+                        </outline>
+                    </outline>
+                    <outline text="Critical assets: assets that we focus on, as they are crucial for our business/organisational functioning."/>
+                </outline>
+                <outline text="Process 2: Identify security requirements for each critical asset. ">
+                    <outline text="Data">
+                        <outline text="There are potentially three actors here: company, user (wearing the glasses), the aquaintance. We are assuming that the actor is the company."/>
+                        <outline text=""/>
+                        <outline text="Participant's Live face recognition data (containers: network/protocol if in-transit, device and server if at rest) -- C, I, A"/>
+                        <outline text="Personal data (name, relationship, job, title, last met) -- [possibly C, certainly I and A -- depending on the architecture]"/>
+                        <outline text="Combined data: face data and personal info of owner data (container: database) [CIA]"/>
+                    </outline>
+                    <outline text="Software">
+                        <outline text="YouAre Mobile app software">
+                            <outline text="Recognition Engine"/>
+                            <outline text="Networking Protocol"/>
+                            <outline text="Glasses Software"/>
+                        </outline>
+                        <outline text="Mobile OS"/>
+                        <outline text="Server Logic"/>
+                    </outline>
+                    <outline text="Hardware">
+                        <outline text="AR Glasses"/>
+                        <outline text="Server hardware"/>
+                        <outline text="Mobile Device"/>
+                    </outline>
+                    <outline text="Office equipment">
+                        <outline text="Printers, PCs, laptops, test mobile devices"/>
+                        <outline text="Staff account (developers, group leader, system administrator)"/>
+                    </outline>
+                </outline>
+                <outline text="Process 3: Identify organisational vulnerabilities within existing practices "/>
+                <outline text="Process 4: Create a Threat Profile for each critical asset">
+                    <outline text="Threat 1: Ransomware attack on the asset A1">
+                        <outline text="Asset (what is at risk) ">
+                            <outline text="A1: Combined personal (name etc) and biometric (facial features) data (container: database) [CIA]"/>
+                        </outline>
+                        <outline text="Actor (origin of the threat)">
+                            <outline text="human"/>
+                        </outline>
+                        <outline text="Motive (reason for the attack) ">
+                            <outline text="Financial gain"/>
+                        </outline>
+                        <outline text="Access (how the asset is reached)">
+                            <outline text="Network"/>
+                        </outline>
+                        <outline text="Outcome (damage likely to be caused) #slide:1 ">
+                            <outline text="Data loss"/>
+                            <outline text="Loss of business"/>
+                            <outline text="Cost od recovery"/>
+                        </outline>
+                    </outline>
+                    <outline text="Threat 2: Modification attack on the asset A1 ">
+                        <outline text="Asset:">
+                            <outline text=""/>
+                        </outline>
+                        <outline text="Access:">
+                            <outline text=""/>
+                        </outline>
+                        <outline text="Actor:">
+                            <outline text=""/>
+                        </outline>
+                        <outline text="Motive (accidental, deliberate):">
+                            <outline text=""/>
+                        </outline>
+                        <outline text="Outcome (disclosure, modification, loss/destruction, interruption, or other):">
+                            <outline text=""/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Phase 2: Identify infrastructure vulnerabilities ">
+                <outline text="Process 5: Identify network access paths and IT components related to critical assets ">
+                    <outline text="The facial feature data is sent through the network, using the app's bespoke protocol."/>
+                </outline>
+                <outline text="Process 6: Evaluate identified IT components ">
+                    <outline text="While testing, the test database is available on the network."/>
+                </outline>
+            </outline>
+            <outline text="Phase 3: Develop security strategy and mitigation plans ">
+                <outline text="Process 7: Conduct risk analysis ">
+                    <outline text="Risk Analysis #slide ">
+                        <outline text="Goal: to identify and evaluate the impact of threats to critical assets "/>
+                        <outline text="OCTAVE forms a risk profile by expanding the threat profile by two additional attributes:">
+                            <outline text="Impact description -- &quot;The disclosure of the sensitive documents mean that our competitors know our trade secrets and might be able to come out with a competitive new product.&quot;"/>
+                            <outline text="Impact value -- usually chosen from {low, medium, high}, looking at impact areas such as:">
+<outline text="Reputation/customer confidence"/>
+<outline text="Life/health of customer"/>
+<outline text="Fines/Legal penalties"/>
+<outline text="Financial"/>
+<outline text="etc"/>
+                            </outline>
+                        </outline>
+                        <outline text="Criticism: this approach is quite rudimentary and does not fully implement a risk analysis as we have introduced earlier. "/>
+                    </outline>
+                    <outline text="Mini-Exercises: Risk Profile #slide ">
+                        <outline text="Consider the threat profile from the previous exercise and complete it to a risk profile. ">
+                            <outline text="Impact description:">
+<outline text=""/>
+                            </outline>
+                            <outline text="Impact value:">
+<outline text=""/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Process 8: Develop protection strategy and mitigation plan #slide ">
+                    <outline text="Information generated by Phases 1 and 2 are analysed to:">
+                        <outline text="Identify risks to critical assets - prioritise"/>
+                        <outline text="Develop protection strategies"/>
+                        <outline text="Develop mitigation plans"/>
+                        <outline text="Propose next steps"/>
+                    </outline>
+                    <outline text="Will need Senior Management approval"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Mastaneh - Eckhard</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Literature">
+            <outline text="Relevant Research Strands: Incomplete information game theoretic approaches for modelling the security of wireless sensor networks, IDS and client-server architecture scenarios. "/>
+        </outline>
+        <outline text="References:">
+            <outline text="Shigen Shen et al, Signaling game based strategy of intrusion detection in wireless sensor networks, __Computers &amp; Mathematics with Applications__, Volume 62, Issue 6, 2011, Pages 2404-2416, [cited: 53]"/>
+            <outline text="M. Estiri and A. Khademzadeh, &quot;A theoretical signaling game model for intrusion detection in wireless sensor networks,&quot; 2010 14th International Telecommunications Network Strategy and Planning Symposium [cited: 15]"/>
+            <outline text="Mohebbi Moghaddam M., Manshaei M.H., Zhu Q. (2015) To Trust or Not: A Security Signaling Game Between Service Provider and Client. In: Panaousis E. et al ed., Decision and Game Theory for Security. GameSec 2015. [cited: 6]"/>
+        </outline>
+    </body>
+</opml>
