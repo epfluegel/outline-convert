@@ -148,14 +148,14 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 clean_title = clean_text(title, args.strip_tags)
                 if header_level == 0:
                     lines.append(fr"\section{{{clean_title}}}")
-                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level + 1))
 
                 elif header_level == 1:
                     lines.append(fr"\subsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer(child, args=args, level=level+1,header_level=header_level + 1))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1,header_level=header_level + 1))
                 else:
                     lines.append(fr"\subsubsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level + 1))
 
 # There should not be any #h inside a slide node
 
@@ -164,7 +164,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{itemize}")
-                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
 
@@ -197,7 +197,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                         lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
-                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
         else:
             if level == 0:
@@ -206,7 +206,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 if child.children:
                     lines.append(r"\begin{itemize}")
                     lines.extend(
-                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                        render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
                     lines.append(r"\end{itemize}")
                 lines.append(r"\end{frame}")
             else:
@@ -238,7 +238,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 if child.children:
                     lines.append(fr"{indent}\begin{{itemize}}")
                     lines.extend(
-                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                        render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
                     lines.append(fr"{indent}\end{{itemize}}")
 
     return lines
