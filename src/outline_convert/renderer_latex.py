@@ -103,7 +103,151 @@ def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[s
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\(([^\)]+)\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
-def render_latex_beamer(node: Node, args: argparse.Namespace, level: int = -1, header_level: int = 0) -> List[str]:
+def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[str]:
+    lines: List[str] = []
+    if not args.fragment:
+        doc_title = clean_text(forest[0].title, strip_tags=args.strip_tags)
+        lines.extend([
+            r"\documentclass{beamer}",
+            r"\usepackage[T1]{fontenc}",
+            r"\usepackage{graphicx}",
+            r"\usetheme{Goettingen}",
+            r"\definecolor{links}{HTML}{2A1B81}",
+            r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
+            fr"\title{{{doc_title}}}",
+            r"\date{\today}",
+            r"\AtBeginSection[]",
+            r"{",
+            r"  \begin{frame}<beamer>{Outline}",
+            r"      \tableofcontents[currentsection, currentsubsection]",
+            r"  \end{frame}",
+            r"}",
+            r"\begin{document}",
+            r"\begin{frame}",
+            r"  \titlepage",
+            r"\end{frame}",
+            ""
+        ])
+
+    for tree in forest:
+        lines.append(render_latex_beamer_tree(tree, args))
+
+    if not args.fragment:
+        lines.append(r"\end{document}")
+
+    return lines
+
+def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 0, header_level: int = 0) -> List[str]:
+    lines: List[str] = []
+
+    for child in node.children:
+        title = child.title.strip()
+        tags = [part for part in title.split() if part.startswith('#')]
+        if args.expert_mode:
+            if "#h" in tags:
+                clean_title = clean_text(title, args.strip_tags)
+                if header_level == 0:
+                    lines.append(fr"\section{{{clean_title}}}")
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
+
+                elif header_level == 1:
+                    lines.append(fr"\subsection{{{clean_title}}}")
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1,header_level=header_level + 1))
+                else:
+                    lines.append(fr"\subsubsection{{{clean_title}}}")
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level + 1))
+
+# There should not be any #h inside a slide node
+
+            elif "#slide" in tags or level == 0 :
+                clean_title = clean_text(title, args.strip_tags)
+                lines.append(fr"\begin{{frame}}{{{clean_title}}}")
+                if child.children:
+                    lines.append(r"\begin{itemize}")
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.append(r"\end{itemize}")
+                lines.append(r"\end{frame}")
+
+            else:
+
+                i = IMAGE_RE.match(title)
+                if i:
+                    file_location = i.group(2)
+                    lines.extend([
+                        r"\begin{figure}[t]",
+                        fr"\includegraphics[width=.75\textwidth]{{{file_location}}}",
+                        r"\centering",
+                        r"\end{figure}",
+                    ])
+                    continue
+
+                res = LINK_RE.sub(link_replacer, title)
+                if res != title:
+                    lines.append(fr'\item {res}')
+                    continue
+
+                indent = '  ' * level
+                clean_title = clean_text(title, args.strip_tags)
+                lines.append(fr"{indent}\item {clean_title}")
+                if args.include_notes:
+                    if child.note:
+                        note = clean_text(child.note, args.strip_tags)
+                        lines.append(fr"{indent}\begin{{quote}}")
+                        lines.append(fr"{indent}{note}")
+                        lines.append(fr"{indent}\end{{quote}}")
+                if child.children:
+                    lines.append(fr"{indent}\begin{{itemize}}")
+                    lines.extend(render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.append(fr"{indent}\end{{itemize}}")
+        else:
+            if level == 0:
+                clean_title = clean_text(title, args.strip_tags)
+                lines.append(fr"\begin{{frame}}{{{clean_title}}}")
+                if child.children:
+                    lines.append(r"\begin{itemize}")
+                    lines.extend(
+                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.append(r"\end{itemize}")
+                lines.append(r"\end{frame}")
+            else:
+                i = IMAGE_RE.match(title)
+                if i:
+                    file_location = i.group(2)
+                    lines.extend([
+                        r"\begin{figure}[t]",
+                        fr"\includegraphics[width=.75\textwidth]{{{file_location}}}",
+                        r"\centering",
+                        r"\end{figure}",
+                    ])
+                    continue
+
+                res = LINK_RE.sub(link_replacer, title)
+                if res != title:
+                    lines.append(fr'\item {res}')
+                    continue
+
+                indent = '  ' * level
+                clean_title = clean_text(title, args.strip_tags)
+                lines.append(fr"{indent}\item {clean_title}")
+                if args.include_notes:
+                    if child.note:
+                        note = clean_text(child.note, args.strip_tags)
+                        lines.append(fr"{indent}\begin{{quote}}")
+                        lines.append(fr"{indent}{note}")
+                        lines.append(fr"{indent}\end{{quote}}")
+                if child.children:
+                    lines.append(fr"{indent}\begin{{itemize}}")
+                    lines.extend(
+                        render_latex_beamer(child, args=args, level=level+1, header_level=header_level))
+                    lines.append(fr"{indent}\end{{itemize}}")
+
+    return lines
+
+
+
+
+
+def render_latex_beamer_tree2(node: Node, args: argparse.Namespace, level: int = -1, header_level: int = 0) -> List[str]:
     lines: List[str] = []
     if level == -1:
         if not args.fragment:
