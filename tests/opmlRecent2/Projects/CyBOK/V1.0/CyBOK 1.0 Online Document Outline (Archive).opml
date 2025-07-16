@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>CyBOK 1.0 Online Document Outline (Archive)</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="0. CyBOK">
+            <outline text="1. Introduction " _note="[PDF](https://www.cybok.org/media/downloads/Introduction_to_CyBOK.pdf)">
+                <outline text="1.1 Cyber Security Definition"/>
+                <outline text="1.2 CyBOK Knowledge Areas"/>
+                <outline text="1.3 Deploying CyBOK knowledge to address security issues">
+                    <outline text="1.3.1 Means and objectives of cyber security"/>
+                    <outline text="1.3.2 Failures and Incidents"/>
+                    <outline text="1.3.3 Risk"/>
+                </outline>
+                <outline text="1.4 Principles">
+                    <outline text="1.4.1 Saltzer and Schroeder Principles"/>
+                    <outline text="1.4.2 NIST Principles"/>
+                    <outline text="1.4.3 Latent Design Conditions"/>
+                    <outline text="1.4.4 The Precautionary Principle"/>
+                </outline>
+                <outline text="1.5 Crosscutting Themes">
+                    <outline text="1.5.1 Security Economics"/>
+                    <outline text="1.5.2 Verification and Formal Methods"/>
+                    <outline text="1.5.3 Security Architecture and Lifecycle"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="I. Human Organisational and Regulatory Aspects" colorLabel="2">
+            <outline text="2. Risk Management and Governance " _note="[PDF](https://www.cybok.org/media/downloads/Risk-Management--Governance-issue-1.0.pdf)">
+                <outline text="2.1 Introduction"/>
+                <outline text="2.2 What is risk?"/>
+                <outline text="2.3 Why is risk assessment and management important?"/>
+                <outline text="2.4 What is cyber risk assessment and management?"/>
+                <outline text="2.5 Risk governance">
+                    <outline text="2.5.1 What is risk governance and why is it essential?"/>
+                    <outline text="2.5.2 The human factor and risk communication"/>
+                    <outline text="2.5.3 Security culture and awareness"/>
+                    <outline text="2.5.4 Enacting Security Policy"/>
+                </outline>
+                <outline text="2.6 Risk assessment and management principles">
+                    <outline text="2.6.1 Component vs. Systems Perspectives"/>
+                    <outline text="2.6.2 Elements of Risk"/>
+                    <outline text="2.6.3 Risk assessment and management methods"/>
+                    <outline text="2.6.4 Risk assessment and management in cyber-physical systems and operational technology"/>
+                    <outline text="2.6.5 Security Metrics"/>
+                </outline>
+                <outline text="2.7 Business continuity: incident response and recovery planning"/>
+                <outline text="2.8 Conclusion"/>
+            </outline>
+            <outline text="3. Law and Regulation " _note="[PDF](https://www.cybok.org/media/downloads/Law__Regulation_issue_1.0.pdf)">
+                <outline text="3.0 Introduction"/>
+                <outline text="3.1 Introductory principles of law and legal research">
+                    <outline text="3.1.1 The nature of law and legal analysis"/>
+                    <outline text="3.1.2 Applying law to cyberspace and information technologies"/>
+                    <outline text="3.1.3 Distinguishing criminal and civil law">
+                        <outline text="3.1.3.1 Criminal law"/>
+                        <outline text="3.1.3.2 Civil (non-criminal) law"/>
+                        <outline text="3.1.3.3 One act: two types of liability and two courts"/>
+                    </outline>
+                    <outline text="3.1.4 The nature of evidence and proof"/>
+                    <outline text="3.1.5 A more holistic approach to legal risk analysis"/>
+                </outline>
+                <outline text="3.2 Jurisdiction">
+                    <outline text="3.2.1 Territorial jurisdiction"/>
+                    <outline text="3.2.2 Prescriptive jurisdiction">
+                        <outline text="3.2.2.1 Prescriptive jurisdiction over online content"/>
+                        <outline text="3.2.2.2 Prescriptive jurisdiction over computer crime"/>
+                        <outline text="3.2.2.3 Prescriptive jurisdiction and data protection (GDPR)"/>
+                    </outline>
+                    <outline text="3.2.3 Enforcement jurisdiction">
+                        <outline text="3.2.3.1 Asset seizure and forfeiture generally"/>
+                        <outline text="3.2.3.2 Seizure and forfeiture of servers, domain names, and registries"/>
+                        <outline text="3.2.3.3 Territorial location of the right to demand repayment of bank deposits 63"/>
+                        <outline text="3.2.3.4 Foreign recognition and enforcement of civil judgments"/>
+                        <outline text="3.2.3.5 The arrest of natural persons in state territory"/>
+                        <outline text="3.2.3.6 Extradition of natural persons"/>
+                        <outline text="3.2.3.7 Technological content filtering"/>
+                        <outline text="3.2.3.8 Orders to in-state persons directing production of data under their control whether held on domestic or foreign IT systems"/>
+                        <outline text="3.2.3.9 International legal assistance"/>
+                    </outline>
+                    <outline text="3.2.4 The problem of data sovereignty"/>
+                </outline>
+                <outline text="3.3 Privacy laws in general and electronic interception">
+                    <outline text="3.3.1 International norms: foundations from international human rights law"/>
+                    <outline text="3.3.2 Interception by a state"/>
+                    <outline text="3.3.3 Interception by persons other than states"/>
+                    <outline text="3.3.4 Enforcement of privacy laws – penalties for violation"/>
+                </outline>
+                <outline text="3.4 Data protection">
+                    <outline text="3.4.1 Subject matter and regulatory focus">
+                        <outline text="3.4.1.1 Data subject, personal data (and PII)"/>
+                        <outline text="3.4.1.2 Processing"/>
+                        <outline text="3.4.1.3 Controller and processor"/>
+                    </outline>
+                    <outline text="3.4.2 Core regulatory principles"/>
+                    <outline text="3.4.3 Investigation and prevention of crime, and similar activities"/>
+                    <outline text="3.4.4 Appropriate security measures"/>
+                    <outline text="3.4.5 Assessment and design of processing systems"/>
+                    <outline text="3.4.6 International data transfer">
+                        <outline text="3.4.6.1 Adequacy determinations and Privacy Shield"/>
+                        <outline text="3.4.6.2 Transfers subject to safeguards"/>
+                        <outline text="3.4.6.3 Transfers pursuant to international mutual legal assistance treaty"/>
+                        <outline text="3.4.6.4 Derogations allowing transfers"/>
+                    </outline>
+                    <outline text="3.4.7 Personal data breach notification"/>
+                    <outline text="3.4.8 Enforcement and penalties"/>
+                </outline>
+                <outline text="3.5 Computer Crime">
+                    <outline text="3.5.1 Crimes against information systems">
+                        <outline text="3.5.1.1 Improper access to a system"/>
+                        <outline text="3.5.1.2 Improper interference with data"/>
+                        <outline text="3.5.1.3 Improper interference with systems"/>
+                        <outline text="3.5.1.4 Improper interception of communication"/>
+                        <outline text="3.5.1.5 Producing hacking tools with improper intentions"/>
+                    </outline>
+                    <outline text="3.5.2 De minimis exceptions to crimes against information systems"/>
+                    <outline text="3.5.3 The enforcement of and penalties for crimes against information systems"/>
+                    <outline text="3.5.4 Warranted state activity"/>
+                    <outline text="3.5.5 Research and development activities conducted by non-state persons"/>
+                    <outline text="3.5.6 Self-help disfavoured: software locks and hack-back">
+                        <outline text="3.5.6.1 Undisclosed software locks"/>
+                        <outline text="3.5.6.2 Hack-back"/>
+                    </outline>
+                </outline>
+                <outline text="3.6 Contract">
+                    <outline text="3.6.1 Online contracts: time of contract and receipt of contractual communication"/>
+                    <outline text="3.6.2 Encouraging security standards via contract">
+                        <outline text="3.6.2.1 Supply chain"/>
+                        <outline text="3.6.2.2 Closed trading and payment systems"/>
+                        <outline text="3.6.2.3 Freedom of contract and its limitations"/>
+                    </outline>
+                    <outline text="3.6.3 Warranties and their exclusion"/>
+                    <outline text="3.6.4 Limitations of liability and exclusions of liability"/>
+                    <outline text="3.6.5 Breach of contract and remedies"/>
+                    <outline text="3.6.6 Effect of contract on non-contracting parties"/>
+                    <outline text="3.6.7 Conflict of law – contracts"/>
+                </outline>
+                <outline text="3.7 Tort">
+                    <outline text="3.7.1 Negligence">
+                        <outline text="3.7.1.1 Duty of care: how far does it extend"/>
+                        <outline text="3.7.1.2 Breach of duty: measuring reasonableness"/>
+                        <outline text="3.7.1.3 The interpretation of ’fault’ differs by place and changes over time"/>
+                    </outline>
+                    <outline text="3.7.2 Strict liability for defective products"/>
+                    <outline text="3.7.3 Limiting the scope of liability: legal causation"/>
+                    <outline text="3.7.4 Quantum of liability"/>
+                    <outline text="3.7.5 Attributing, apportioning and reducing tort liability">
+                        <outline text="3.7.5.1 Vicarious liability"/>
+                        <outline text="3.7.5.2 Joint and several liability"/>
+                        <outline text="3.7.5.3 Affirmative defences"/>
+                    </outline>
+                    <outline text="3.7.6 Conflict of law – torts"/>
+                </outline>
+                <outline text="3.8 Intellectual property">
+                    <outline text="3.8.1 Understanding intellectual property"/>
+                    <outline text="3.8.2 Catalogue of intellectual property rights">
+                        <outline text="3.8.2.1 Copyright"/>
+                        <outline text="3.8.2.2 Patents"/>
+                        <outline text="3.8.2.3 Trademarks"/>
+                        <outline text="3.8.2.4 Trade secrets"/>
+                    </outline>
+                    <outline text="3.8.3 Enforcement – remedies">
+                        <outline text="3.8.3.1 Criminal liability"/>
+                        <outline text="3.8.3.2 Civil liability"/>
+                    </outline>
+                    <outline text="3.8.4 Reverse engineering">
+                        <outline text="3.8.4.1 Circumventing copyright technological protection measures"/>
+                        <outline text="3.8.4.2 Testing a proprietary cryptographic algorithm"/>
+                    </outline>
+                    <outline text="3.8.5 International treatment and conflict of law"/>
+                </outline>
+                <outline text="3.9 Internet intermediaries - shields from liability and take-down procedures"/>
+                <outline text="3.10 Dematerialisation of documents and electronic trust services">
+                    <outline text="3.10.1 Admission into evidence of electronic documents"/>
+                    <outline text="3.10.2 Requirements of form and the threat of unenforceability"/>
+                    <outline text="3.10.3 Electronic signatures and identity trust services"/>
+                    <outline text="3.10.4 Conflict of law – electronic signatures and trust services"/>
+                </outline>
+                <outline text="3.11 Other regulatory matters">
+                    <outline text="3.11.1 Industry-specific regulations and NIS Directive"/>
+                    <outline text="3.11.2 Encouraging increased cyber security for products and services"/>
+                    <outline text="3.11.3 Restrictions on exporting security technologies"/>
+                    <outline text="3.11.4 Matters classified as secret by a state"/>
+                </outline>
+                <outline text="3.12 Public international law">
+                    <outline text="3.12.1 Attributing action to a state under international law"/>
+                    <outline text="3.12.2 State cyber operations in general"/>
+                    <outline text="3.12.3 Cyber espionage in peacetime"/>
+                    <outline text="3.12.4 Cross-border criminal investigation"/>
+                    <outline text="3.12.5 The law of armed conflict"/>
+                </outline>
+                <outline text="3.13 Ethics">
+                    <outline text="3.13.1 Obligations owed to a client"/>
+                    <outline text="3.13.2 Codes of conduct"/>
+                    <outline text="3.13.3 Vulnerability testing and disclosure">
+                        <outline text="3.13.3.1 Testing for vulnerabilities"/>
+                        <outline text="3.13.3.2 Disclosure of vulnerabilities"/>
+                        <outline text="3.13.3.3 Facilitating and acting on vulnerability disclosures"/>
+                    </outline>
+                </outline>
+                <outline text="3.14 Conclusion: Legal Risk Management"/>
+            </outline>
+            <outline text="4. Human Factors " _note="[PDF](https://www.cybok.org/media/downloads/Human_Factors_issue_1.0.pdf)">
+                <outline text="4.1 Introduction: Understanding human behaviour in security"/>
+                <outline text="4.2 Usable security – the basics">
+                    <outline text="4.2.1 Fitting the task to the human">
+                        <outline text="4.2.1.1 General human capabilities and limitations"/>
+                        <outline text="4.2.1.2 Goals and tasks"/>
+                        <outline text="4.2.1.3 Interaction Context"/>
+                        <outline text="4.2.1.4 Capabilities and limitations of the device"/>
+                    </outline>
+                </outline>
+                <outline text="4.3 Human Error"/>
+                <outline text="4.4 Cyber security awareness and education">
+                    <outline text="4.4.1 New approaches to support security awareness and behaviour change"/>
+                    <outline text="4.4.2 Mental models of cyber risks and defences"/>
+                </outline>
+                <outline text="4.5 Positive Security"/>
+                <outline text="4.6 Stakeholder Engagement">
+                    <outline text="4.6.1 Employees"/>
+                    <outline text="4.6.2 Software developers and usable security"/>
+                </outline>
+                <outline text="4.7 Conclusion"/>
+            </outline>
+            <outline text="5. Privacy and Online Rights " _note="[PDF](https://www.cybok.org/media/downloads/Privacy__Online_Rights_issue_1.0_FNULPeI.pdf)">
+                <outline text="5.1 Privacy as Confidentiality">
+                    <outline text="5.1.1 Data Confidentiality">
+                        <outline text="5.1.1.1 Cryptography-based access control"/>
+                        <outline text="5.1.1.2 Obfuscation-based inference control"/>
+                    </outline>
+                    <outline text="5.1.2 Metadata Confidentiality"/>
+                </outline>
+                <outline text="5.2 Privacy as Control">
+                    <outline text="5.2.1 Support for privacy settings configuration"/>
+                    <outline text="5.2.2 Support for privacy policy negotiation"/>
+                    <outline text="5.2.3 Support for privacy policy interpretability"/>
+                </outline>
+                <outline text="5.3 Privacy as Transparency">
+                    <outline text="5.3.1 Feedback-based transparency"/>
+                    <outline text="5.3.2 Audit-based transparency"/>
+                </outline>
+                <outline text="5.4 Privacy Technologies and Democratic Values">
+                    <outline text="5.4.1 Privacy technologies as support for democratic political systems"/>
+                    <outline text="5.4.2 Censorship resistance and freedom of speech"/>
+                </outline>
+                <outline text="5.5 Privacy Engineering"/>
+                <outline text="5.6 Conclusions"/>
+            </outline>
+        </outline>
+        <outline text="II. Attacks and Defences" colorLabel="3">
+            <outline text="6. Malware and Attack Technologies " _note="[PDF](https://www.cybok.org/media/downloads/Malware__Attack_Technology_issue_1.0.pdf)">
+                <outline text="6.1 A taxonomy of Malware">
+                    <outline text="6.1.1 Potentially Unwanted Programs (PUPs)"/>
+                </outline>
+                <outline text="6.2 Malicious Activities by Malware">
+                    <outline text="6.2.1 The Underground Eco-System"/>
+                </outline>
+                <outline text="6.3 Malware Analysis">
+                    <outline text="6.3.1 Analysis Techniques">
+                        <outline text="6.3.1.1 Static Analysis"/>
+                        <outline text="6.3.1.2 Dynamic analysis"/>
+                        <outline text="6.3.1.3 Fuzzing"/>
+                        <outline text="6.3.1.4 Symbolic Execution"/>
+                        <outline text="6.3.1.5 Concolic Execution"/>
+                    </outline>
+                    <outline text="6.3.2 Analysis Environments">
+                        <outline text="6.3.2.1 Safety and Live-Environment Requirements"/>
+                        <outline text="6.3.2.2 Virtualised Network Environments"/>
+                    </outline>
+                    <outline text="6.3.3 Anti-Analysis and Evasion Techniques">
+                        <outline text="6.3.3.1 Evading the Analysis Methods"/>
+                        <outline text="6.3.3.2 Identifying the Analysis Environments"/>
+                    </outline>
+                </outline>
+                <outline text="6.4 Malware Detection">
+                    <outline text="6.4.1 Identifying the Presence of Malware">
+                        <outline text="6.4.1.1 Finding Malware in a Haystack"/>
+                    </outline>
+                    <outline text="6.4.2 Detection of Malware Attacks">
+                        <outline text="6.4.2.1 Host-based and Network-Based Monitoring"/>
+                        <outline text="6.4.2.2 Machine Learning-Based Security Analytics"/>
+                        <outline text="6.4.2.3 Evasion, Countermeasures, and Limitations"/>
+                    </outline>
+                </outline>
+                <outline text="6.5 Malware Response">
+                    <outline text="6.5.1 Disruption of Malware Operations">
+                        <outline text="6.5.1.1 Evasion and Countermeasures"/>
+                    </outline>
+                    <outline text="6.5.2 Attribution">
+                        <outline text="6.5.2.1 Evasion and Countermeasures"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="7. Adversarial Behaviour " _note="[PDF](https://www.cybok.org/media/downloads/Adversarial_Behaviours_issue_1.0.pdf)">
+                <outline text="7.1 A Characterisation of Adversaries"/>
+                <outline text="7.2 The Elements of a Malicious Operation"/>
+                <outline text="7.3 Models to Understand Malicious Operations"/>
+            </outline>
+            <outline text="8. Security Operations and Incident Management " _note="[PDF](https://www.cybok.org/media/downloads/Security_Operations__Incident_Management_issue_1.0.pdf)">
+                <outline text="8.1 Fundamental concepts">
+                    <outline text="8.1.1 Workflows and vocabulary"/>
+                    <outline text="8.1.2 Architectural principles"/>
+                </outline>
+                <outline text="8.2 Monitor: data sources">
+                    <outline text="8.2.1 Network traffic"/>
+                    <outline text="8.2.2 Network aggregates: Netflow"/>
+                    <outline text="8.2.3 Network infrastructure information">
+                        <outline text="8.2.3.1 Naming"/>
+                        <outline text="8.2.3.2 Routing"/>
+                    </outline>
+                    <outline text="8.2.4 Application logs: web server logs and files">
+                        <outline text="8.2.4.1 Web server logs"/>
+                        <outline text="8.2.4.2 Files and documents"/>
+                    </outline>
+                    <outline text="8.2.5 System and kernel logs"/>
+                    <outline text="8.2.6 Syslog"/>
+                </outline>
+                <outline text="8.3 Analyse: analysis methods">
+                    <outline text="8.3.1 Misuse detection"/>
+                    <outline text="8.3.2 Anomaly detection">
+                        <outline text="8.3.2.1 Models"/>
+                        <outline text="8.3.2.2 Specification versus learning"/>
+                        <outline text="8.3.2.3 Adherence to use cases"/>
+                    </outline>
+                    <outline text="8.3.3 Blended misuse and anomaly detection"/>
+                    <outline text="8.3.4 Machine learning"/>
+                    <outline text="8.3.5 Testing and validating Intrusion Detection Systems"/>
+                    <outline text="8.3.6 The base-rate fallacy"/>
+                    <outline text="8.3.7 Contribution of SIEM to analysis and detection"/>
+                </outline>
+                <outline text="8.4 Plan: Security Information and Event Management">
+                    <outline text="8.4.1 Data collection"/>
+                    <outline text="8.4.2 Alert correlation"/>
+                    <outline text="8.4.3 Security operations and benchmarking"/>
+                </outline>
+                <outline text="8.5 Execute: Mitigation and countermeasures">
+                    <outline text="8.5.1 Intrusion Prevention Systems"/>
+                    <outline text="8.5.2 Denial-of-service"/>
+                    <outline text="8.5.3 SIEM platforms and countermeasures"/>
+                    <outline text="8.5.4 SOAR: Impact and risk assessment"/>
+                    <outline text="8.5.5 Site reliability engineering"/>
+                </outline>
+                <outline text="8.6 Knowledge: Intelligence and analytics">
+                    <outline text="8.6.1 Cybersecurity knowledge management"/>
+                    <outline text="8.6.2 Honeypots and honeynets"/>
+                    <outline text="8.6.3 Cyber-threat intelligence"/>
+                    <outline text="8.6.4 Situational awareness"/>
+                </outline>
+                <outline text="8.7 Human factors: Incident management">
+                    <outline text="8.7.1 Prepare: Incident management planning"/>
+                    <outline text="8.7.2 Handle: Actual incident response"/>
+                    <outline text="8.7.3 Follow-up: post-incident activities"/>
+                </outline>
+                <outline text="8.8 Conclusion"/>
+            </outline>
+            <outline text="9. Forensics " _note="[PDF](https://www.cybok.org/media/downloads/Forensics_issue_1.0.pdf)">
+                <outline text="9.1 Definitions and Conceptual Models">
+                    <outline text="9.1.1 Legal Concerns and the Daubert Standard"/>
+                    <outline text="9.1.2 Definitions"/>
+                    <outline text="9.1.3 Conceptual Models">
+                        <outline text="9.1.3.1 Cognitive Task Model"/>
+                        <outline text="9.1.3.2 Bottom-Up Processes"/>
+                        <outline text="9.1.3.3 Top-Down Processes"/>
+                        <outline text="9.1.3.4 The Foraging Loop"/>
+                        <outline text="9.1.3.5 The Sense-Making Loop"/>
+                        <outline text="9.1.3.6 Data Extraction vs. Analysis vs. Legal Interpretation"/>
+                        <outline text="9.1.3.7 Forensic Process"/>
+                    </outline>
+                </outline>
+                <outline text="9.2 Operating System Analysis">
+                    <outline text="9.2.1 Storage Forensics">
+                        <outline text="9.2.1.1 Data Abstraction Layers"/>
+                    </outline>
+                    <outline text="9.2.2 Data Acquisition"/>
+                    <outline text="9.2.3 Filesystem Analysis"/>
+                    <outline text="9.2.4 Block Device Analysis"/>
+                    <outline text="9.2.5 Data Recovery and File Content Carving"/>
+                </outline>
+                <outline text="9.3 Main Memory Forensics"/>
+                <outline text="9.4 Application Forensics">
+                    <outline text="9.4.1 Case Study: the Web Browser"/>
+                </outline>
+                <outline text="9.5 Cloud Forensics">
+                    <outline text="9.5.1 Cloud Basics"/>
+                    <outline text="9.5.2 Forensic Challenges"/>
+                    <outline text="9.5.3 SaaS Forensics"/>
+                </outline>
+                <outline text="9.6 Artifact Analysis">
+                    <outline text="9.6.1 Finding a Known Data Object: Cryptographic Hashing"/>
+                    <outline text="9.6.2 Block-Level Analysis"/>
+                    <outline text="9.6.3 Approximate Matching"/>
+                    <outline text="9.6.4 Cloud-Native Artifacts"/>
+                </outline>
+                <outline text="9.7 Conclusion"/>
+            </outline>
+        </outline>
+        <outline text="III. Systems Security " colorLabel="4">
+            <outline text="10. Cryptography " _note="[PDF](https://www.cybok.org/media/downloads/Cryptography-issue-1.0.pdf)">
+                <outline text="10.1 Mathematics"/>
+                <outline text="10.2 Cryptographic Security Models">
+                    <outline text="10.2.1 Syntax of Basic Schemes"/>
+                    <outline text="10.2.2 Basic Security Definitions"/>
+                    <outline text="10.2.3 Hard Problems"/>
+                    <outline text="10.2.4 Setup Assumptions"/>
+                    <outline text="10.2.5 Simulation and UC Security"/>
+                </outline>
+                <outline text="10.3 Information-theoretically Secure Constructions">
+                    <outline text="10.3.1 One-Time Pad"/>
+                    <outline text="10.3.2 Secret Sharing"/>
+                </outline>
+                <outline text="10.4 Symmetric Primitives">
+                    <outline text="10.4.1 Block Ciphers"/>
+                    <outline text="10.4.2 Stream Ciphers"/>
+                    <outline text="10.4.3 Hash Functions">
+                        <outline text="10.4.3.1 Merkle-Damgård Construction"/>
+                        <outline text="10.4.3.2 Sponge Constructions"/>
+                        <outline text="10.4.3.3 Random Oracle Model"/>
+                    </outline>
+                </outline>
+                <outline text="10.5 Symmetric Encryption and Authentication">
+                    <outline text="10.5.1 Modes of Operation"/>
+                    <outline text="10.5.2 Message Authentication Codes"/>
+                    <outline text="10.5.3 Key Derivation and Extendable Output Functions"/>
+                    <outline text="10.5.4 Merkle-Trees and Blockchains"/>
+                </outline>
+                <outline text="10.6 Public Key Encryption">
+                    <outline text="10.6.1 KEM-DEM Philosophy"/>
+                    <outline text="10.6.2 Constructions based on RSA"/>
+                    <outline text="10.6.3 Constructions based on Elliptic Curves"/>
+                    <outline text="10.6.4 Lattice-based Constructions"/>
+                </outline>
+                <outline text="10.7 Public Key Signatures">
+                    <outline text="10.7.1 RSA-PSS"/>
+                    <outline text="10.7.2 DSA, EC-DSA and Schnorr Signatures"/>
+                </outline>
+                <outline text="10.8 Standard Protocols">
+                    <outline text="10.8.1 Authentication Protocols">
+                        <outline text="10.8.1.1 Encryption-Based Protocols"/>
+                        <outline text="10.8.1.2 Message Authentication-Based Protocols"/>
+                        <outline text="10.8.1.3 Zero-Knowledge-Based"/>
+                    </outline>
+                    <outline text="10.8.2 Key Agreement Protocols">
+                        <outline text="10.8.2.1 Key Transport"/>
+                        <outline text="10.8.2.2 Diffie–Hellman Key Agreement"/>
+                        <outline text="10.8.2.3 Station-to-Station Protocol"/>
+                    </outline>
+                </outline>
+                <outline text="10.9 Advanced Protocols">
+                    <outline text="10.9.1 Oblivious Transfer"/>
+                    <outline text="10.9.2 Private Information Retrieval and ORAM"/>
+                    <outline text="10.9.3 Zero-Knowledge">
+                        <outline text="10.9.3.1 Σ-Protocols"/>
+                    </outline>
+                    <outline text="10.9.4 Secure Multi-Party Computation"/>
+                </outline>
+                <outline text="10.10 Public Key Encryption/Signatures With Special Properties">
+                    <outline text="10.10.1 Group Signatures"/>
+                    <outline text="10.10.2 Ring Signatures"/>
+                    <outline text="10.10.3 Blind Signatures"/>
+                    <outline text="10.10.4 Identity-Based Encryption"/>
+                    <outline text="10.10.5 Linearly Homomorphic Encryption"/>
+                    <outline text="10.10.6 Fully Homomorphic Encryption"/>
+                </outline>
+                <outline text="10.11 Implementation Aspects"/>
+            </outline>
+            <outline text="11. Operating Systems and Virtualisation " _note="[PDF](https://www.cybok.org/media/downloads/Operating_Systems__Virtualisation_Security_issue_1.0_xhesi5S.pdf)">
+                <outline text="11.1 Attacker model"/>
+                <outline text="11.2 The role of operating systems and their design in security"/>
+                <outline text="11.3 Operating System Security Principles and Models">
+                    <outline text="11.3.1 Security principles in operating systems"/>
+                    <outline text="11.3.2 Security models in operating systems"/>
+                </outline>
+                <outline text="11.4 Primitives for Isolation and Mediation">
+                    <outline text="11.4.1 Authentication and identification"/>
+                    <outline text="11.4.2 Access control lists"/>
+                    <outline text="11.4.3 Capabilities"/>
+                    <outline text="11.4.4 Physical access and secure deletion"/>
+                    <outline text="11.4.5 Memory protection and address spaces"/>
+                    <outline text="11.4.6 Modern hardware extensions for memory protection"/>
+                    <outline text="11.4.7 Protection rings"/>
+                    <outline text="11.4.8 One ring to rule them all. And another. And another"/>
+                    <outline text="11.4.9 Low-end devices and the IoT"/>
+                </outline>
+                <outline text="11.5 Operating System Hardening">
+                    <outline text="11.5.1 Information hiding"/>
+                    <outline text="11.5.2 Control-flow restrictions"/>
+                    <outline text="11.5.3 Partitioning."/>
+                    <outline text="11.5.4 Code and data integrity checks"/>
+                    <outline text="11.5.5 Anomaly detection"/>
+                </outline>
+                <outline text="11.6 Operating Systems, Hypervisors—what about related areas?"/>
+                <outline text="11.7 Embracing Security"/>
+            </outline>
+            <outline text="12. Distributed Systems Security  " _note="[PDF](https://www.cybok.org/media/downloads/Distributed_Systems_Security_issue_1.0.pdf)">
+                <outline text="12.1 Classes of Distributed Systems and Vulnerabilities">
+                    <outline text="12.1.1 Classes of Distributed Systems"/>
+                    <outline text="12.1.2 Classes of Vulnerabilities and Threats">
+                        <outline text="12.1.2.1 Access/Admission Control and ID Management"/>
+                        <outline text="12.1.2.2 Data Transportation"/>
+                        <outline text="12.1.2.3 Resource Management and Coordination Services"/>
+                        <outline text="12.1.2.4 Data Security"/>
+                    </outline>
+                </outline>
+                <outline text="12.2 Distributed Systems: Decentralised P2P Models">
+                    <outline text="12.2.1 Unstructured P2P Protocols"/>
+                    <outline text="12.2.2 Structured P2P Protocols"/>
+                    <outline text="12.2.3 Hybrid P2P Protocols"/>
+                    <outline text="12.2.4 Hierarchical P2P Protocols"/>
+                </outline>
+                <outline text="12.3 Distributed Systems: Attacking P2P Systems">
+                    <outline text="12.3.1 Attack Types">
+                        <outline text="12.3.1.1 Summary"/>
+                    </outline>
+                    <outline text="12.3.2 Attacks and their Mitigation"/>
+                </outline>
+                <outline text="12.4 Distributed Systems: Coordinated Resource Clustering">
+                    <outline text="12.4.1 Systems Coordination Styles"/>
+                    <outline text="12.4.2 Reliable and Secure Group Communication"/>
+                    <outline text="12.4.3 Coordination Properties"/>
+                    <outline text="12.4.4 Replication Management and Coordination Schema: The Basis Behind Attack Mitigation"/>
+                </outline>
+                <outline text="12.5 Distributed Systems: Coordination Classes and Attackability">
+                    <outline text="12.5.1 The Resource Coordination Class – Infrastructure View"/>
+                    <outline text="12.5.2 The Services Coordination Class – Applications View"/>
+                </outline>
+            </outline>
+            <outline text="13. Authentication, Authorisation and Accountability (AAA)" _note="[PDF](https://www.cybok.org/media/downloads/AAA_issue_1.0_q3qspzo.pdf)">
+                <outline text="13.1 Introduction"/>
+                <outline text="13.2 Content"/>
+                <outline text="13.3 Authorisation">
+                    <outline text="13.3.1 Access Control">
+                        <outline text="13.3.1.1 Core Concepts"/>
+                        <outline text="13.3.1.2 Security Policies"/>
+                        <outline text="13.3.1.3 Role-based Access Control"/>
+                        <outline text="13.3.1.4 Attribute-based Access Control"/>
+                        <outline text="13.3.1.5 Code-based Access Control"/>
+                        <outline text="13.3.1.6 Mobile Security"/>
+                        <outline text="13.3.1.7 Digital Rights Management"/>
+                        <outline text="13.3.1.8 Usage Control"/>
+                    </outline>
+                    <outline text="13.3.2 Enforcing Access Control">
+                        <outline text="13.3.2.1 Delegation and Revocation"/>
+                        <outline text="13.3.2.2 Reference Monitor"/>
+                        <outline text="13.3.2.3 Types of Reference Monitors"/>
+                    </outline>
+                    <outline text="13.3.3 Theory">
+                        <outline text="13.3.3.1 Security Models"/>
+                        <outline text="13.3.3.2 Enforceable Policies"/>
+                        <outline text="13.3.3.3 Access Control Logics"/>
+                    </outline>
+                </outline>
+                <outline text="13.4 Access Control in Distributed Systems">
+                    <outline text="13.4.1 Core Concepts"/>
+                    <outline text="13.4.2 Origin-based Policies">
+                        <outline text="13.4.2.1 Cross-site Scripting"/>
+                        <outline text="13.4.2.2 Cross-origin Resource Sharing"/>
+                    </outline>
+                    <outline text="13.4.3 Federated Access Control"/>
+                    <outline text="13.4.4 Cryptography and Access Control">
+                        <outline text="13.4.4.1 Attribute-Based Encryption"/>
+                        <outline text="13.4.4.2 Key-centric Access Control"/>
+                    </outline>
+                </outline>
+                <outline text="13.5 Authentication">
+                    <outline text="13.5.1 Identity Management"/>
+                    <outline text="13.5.2 User Authentication">
+                        <outline text="13.5.2.1 Passwords"/>
+                        <outline text="13.5.2.2 Biometrics for Authentication"/>
+                        <outline text="13.5.2.3 Authentication Tokens"/>
+                        <outline text="13.5.2.4 Behavioural Authentication"/>
+                        <outline text="13.5.2.5 Two-factor Authentication 2FA"/>
+                    </outline>
+                    <outline text="13.5.3 Authentication in Distributed Systems">
+                        <outline text="13.5.3.1 Needham-Schroeder Protocol"/>
+                        <outline text="13.5.3.2 Kerberos"/>
+                        <outline text="13.5.3.3 SAML"/>
+                        <outline text="13.5.3.4 OAuth 2 – OpenID Connect"/>
+                    </outline>
+                    <outline text="13.5.4 Facets of Authentication">
+                        <outline text="13.5.4.1 Patterns for Entity Authentication"/>
+                        <outline text="13.5.4.2 Correspondence Properties"/>
+                        <outline text="13.5.4.3 Authentication as Verified Association"/>
+                        <outline text="13.5.4.4 Authentication for Credit or for Responsibility"/>
+                    </outline>
+                </outline>
+                <outline text="13.6 Accountability">
+                    <outline text="13.6.1 Technical Aspects">
+                        <outline text="13.6.1.1 Audit Policies"/>
+                        <outline text="13.6.1.2 Preserving the Evidence"/>
+                        <outline text="13.6.1.3 Analysing the Evidence"/>
+                        <outline text="13.6.1.4 Assessing the Evidence"/>
+                    </outline>
+                    <outline text="13.6.2 Privacy and Accountability"/>
+                    <outline text="13.6.3 Distributed Logs"/>
+                    <outline text="13.6.4 Related Concepts"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="IV. Software Platform Security" colorLabel="5">
+            <outline text="14. Software Security " _note="[PDF](https://www.cybok.org/media/downloads/Software_Security_issue_1.0_1M7Kfk2.pdf)">
+                <outline text="14.1 Categories of Vulnerabilities">
+                    <outline text="14.1.1 Memory Management Vulnerabilities"/>
+                    <outline text="14.1.2 Structured Output Generation Vulnerabilities"/>
+                    <outline text="14.1.3 Race Condition Vulnerabilities"/>
+                    <outline text="14.1.4 API Vulnerabilities"/>
+                    <outline text="14.1.5 Side-channel Vulnerabilities"/>
+                    <outline text="14.1.6 Discussion">
+                        <outline text="14.1.6.1 Better connection with overall security objectives needs more complex specifications"/>
+                        <outline text="14.1.6.2 Side channel vulnerabilities are different"/>
+                        <outline text="14.1.6.3 Vulnerabilities as faults"/>
+                    </outline>
+                </outline>
+                <outline text="14.2 Prevention of Vulnerabilities">
+                    <outline text="14.2.1 Language Design and Type Systems">
+                        <outline text="14.2.1.1 Memory management vulnerabilities"/>
+                        <outline text="14.2.1.2 Structured output generation vulnerabilities"/>
+                        <outline text="14.2.1.3 Race condition vulnerabilities"/>
+                        <outline text="14.2.1.4 Other vulnerabilities"/>
+                    </outline>
+                    <outline text="14.2.2 API Design"/>
+                    <outline text="14.2.3 Coding Practices"/>
+                </outline>
+                <outline text="14.3 Detection of Vulnerabilities">
+                    <outline text="14.3.1 Static Detection">
+                        <outline text="14.3.1.1 Heuristic static detection"/>
+                        <outline text="14.3.1.2 Sound static verification"/>
+                    </outline>
+                    <outline text="14.3.2 Dynamic Detection">
+                        <outline text="14.3.2.1 Monitoring"/>
+                        <outline text="14.3.2.2 Generating relevant executions"/>
+                    </outline>
+                </outline>
+                <outline text="14.4 Mitigating Exploitation of Vulnerabilities">
+                    <outline text="14.4.1 Runtime Detection of Attacks"/>
+                    <outline text="14.4.2 Automated Software Diversity"/>
+                    <outline text="14.4.3 Limiting Privileges"/>
+                    <outline text="14.4.4 Software Integrity Checking"/>
+                </outline>
+            </outline>
+            <outline text="15. Web and Mobile Security " _note="[PDF](https://www.cybok.org/media/downloads/Web__Mobile_Security_issue_1.0_XFpbYNz.pdf)">
+                <outline text="15.1 Introduction"/>
+                <outline text="15.2 Fundamental Concepts and Approaches">
+                    <outline text="15.2.1 Appification"/>
+                    <outline text="15.2.2 Webification">
+                        <outline text="15.2.2.1 Uniform Resource Locators"/>
+                        <outline text="15.2.2.2 Hypertext Transfer Protocol"/>
+                        <outline text="15.2.2.3 Hypertext Markup Language"/>
+                        <outline text="15.2.2.4 Cascading Style Sheets"/>
+                        <outline text="15.2.2.5 JavaScript"/>
+                        <outline text="15.2.2.6 WebAssembly"/>
+                        <outline text="15.2.2.7 WebViews"/>
+                    </outline>
+                    <outline text="15.2.3 Application Stores"/>
+                    <outline text="15.2.4 Sandboxing">
+                        <outline text="15.2.4.1 Application Isolation"/>
+                        <outline text="15.2.4.2 Content Isolation"/>
+                    </outline>
+                    <outline text="15.2.5 Permission Dialog Based Access Control">
+                        <outline text="15.2.5.1 The Security Principals"/>
+                        <outline text="15.2.5.2 The Reference Monitor"/>
+                        <outline text="15.2.5.3 The Security Policy"/>
+                        <outline text="15.2.5.4 Different Permission Approaches"/>
+                    </outline>
+                    <outline text="15.2.6 Web PKI and HTTPS"/>
+                    <outline text="15.2.7 Authentication">
+                        <outline text="15.2.7.1 HTTP Authentication"/>
+                        <outline text="15.2.7.2 Mobile Device Authentication"/>
+                    </outline>
+                    <outline text="15.2.8 Cookies"/>
+                    <outline text="15.2.9 Passwords and Alternatives">
+                        <outline text="15.2.9.1 Password Policies"/>
+                        <outline text="15.2.9.2 Password Strength Meters"/>
+                        <outline text="15.2.9.3 Password Managers"/>
+                        <outline text="15.2.9.4 Multi-Factor Authentication"/>
+                        <outline text="15.2.9.5 WebAuthn"/>
+                        <outline text="15.2.9.6 OAuth"/>
+                    </outline>
+                    <outline text="15.2.10 Frequent Software Updates"/>
+                </outline>
+                <outline text="15.3 Client Side Vulnerabilities and Mitigations">
+                    <outline text="15.3.1 Phishing and Clickjacking">
+                        <outline text="15.3.1.1 Phishing"/>
+                        <outline text="15.3.1.2 Clickjacking"/>
+                    </outline>
+                    <outline text="15.3.2 Client Side Storage">
+                        <outline text="15.3.2.1 Client Side Storage in the Browser"/>
+                        <outline text="15.3.2.2 Client Side Storage in Mobile Applications"/>
+                    </outline>
+                    <outline text="15.3.3 Physical Attacks">
+                        <outline text="15.3.3.1 Smudge attacks"/>
+                        <outline text="15.3.3.2 Shoulder Surfing"/>
+                    </outline>
+                </outline>
+                <outline text="15.4 Server Side Vulnerabilities and Mitigations">
+                    <outline text="15.4.1 Injection Vulnerabilities">
+                        <outline text="15.4.1.1 SQL-Injection"/>
+                        <outline text="15.4.1.2 Command Injections"/>
+                        <outline text="15.4.1.3 User Uploaded Files"/>
+                        <outline text="15.4.1.4 Local File Inclusion"/>
+                        <outline text="15.4.1.5 Cross-Site Scripting (XSS)"/>
+                        <outline text="15.4.1.6 Cross-Site Request Forgery"/>
+                    </outline>
+                    <outline text="15.4.2 Server Side Misconfigurations and Vulnerable Components">
+                        <outline text="15.4.2.1 Firewall"/>
+                        <outline text="15.4.2.2 Load Balancers"/>
+                        <outline text="15.4.2.3 Databases"/>
+                    </outline>
+                </outline>
+                <outline text="15.5 Conclusion"/>
+            </outline>
+            <outline text="16. Secure Software Lifecycle " _note="[PDF](https://www.cybok.org/media/downloads/Secure_Software_Lifecycle_issue_1.0.pdf)">
+                <outline text="16.1 Motivation"/>
+                <outline text="16.2 Prescriptive Secure Software Lifecycle Processes">
+                    <outline text="16.2.1 Secure Software Lifecycle Processes">
+                        <outline text="16.2.1.1 Microsoft Security Development Lifecycle (SDL)"/>
+                        <outline text="16.2.1.2 Touchpoints"/>
+                        <outline text="16.2.1.3 SAFECode"/>
+                    </outline>
+                    <outline text="16.2.2 Comparing the Secure Software Lifecycle Models"/>
+                </outline>
+                <outline text="16.3 Adaptations of the Secure Software Lifecycle">
+                    <outline text="16.3.1 Agile Software Development and DevOps"/>
+                    <outline text="16.3.2 Mobile"/>
+                    <outline text="16.3.3 Cloud Computing"/>
+                    <outline text="16.3.4 Internet of Things (IoT)"/>
+                    <outline text="16.3.5 Road Vehicles"/>
+                    <outline text="16.3.6 ECommerce/Payment Card Industry"/>
+                </outline>
+                <outline text="16.4 Assessing the Secure Software Lifecycle">
+                    <outline text="16.4.1 SAMM"/>
+                    <outline text="16.4.2 BSIMM"/>
+                    <outline text="16.4.3 The Common Criteria"/>
+                </outline>
+                <outline text="16.5 Adopting a Secure Software Lifecycle"/>
+            </outline>
+        </outline>
+        <outline text="V. Infrastructure Security" colorLabel="6">
+            <outline text="17. Network Security " _note="[PDF](https://www.cybok.org/media/downloads/Network_Security_issue_1.0_qsCh0SR.pdf)">
+                <outline text="17.1 Internet Architecture"/>
+                <outline text="17.2 Network Protocols and Vulnerability"/>
+                <outline text="17.3 Application-Layer Security">
+                    <outline text="17.3.1 Public Key Infrastructure"/>
+                    <outline text="17.3.2 DNS Security Extensions"/>
+                    <outline text="17.3.3 Hyper Text Transfer Protocol Secure (HTTPS)"/>
+                    <outline text="17.3.4 Network Time Protocol (NTP) Security"/>
+                </outline>
+                <outline text="17.4 Transport-Layer Security">
+                    <outline text="17.4.1 Handshake"/>
+                    <outline text="17.4.2 Key-Derivation"/>
+                    <outline text="17.4.3 Data-Transfer"/>
+                    <outline text="17.4.4 Quick UDP Internet Connections (QUIC)"/>
+                </outline>
+                <outline text="17.5 Network Layer Security">
+                    <outline text="17.5.1 IP Masquerading"/>
+                    <outline text="17.5.2 IPv6 Security"/>
+                    <outline text="17.5.3 Routing Protocol Security">
+                        <outline text="17.5.3.1 Border Gateway Protocol (BGP) Security"/>
+                    </outline>
+                </outline>
+                <outline text="17.6 Link Layer Security">
+                    <outline text="17.6.1 IEEE 802.1X Port-based Authentication">
+                        <outline text="17.6.1.1 Extensible Authentication Protocol (EAP)"/>
+                    </outline>
+                    <outline text="17.6.2 Attack On Ethernet Switch"/>
+                </outline>
+                <outline text="17.7 Wireless LAN Security">
+                    <outline text="17.7.1 Robust Security Network (RSN)"/>
+                </outline>
+                <outline text="17.8 Network Defence Tools">
+                    <outline text="17.8.1 Packet Filters/Firewalls"/>
+                    <outline text="17.8.2 Application Gateway (AG)"/>
+                    <outline text="17.8.3 Circuit-level Gateway (CG)"/>
+                    <outline text="17.8.4 Intrusion Detection Systems (IDS)"/>
+                    <outline text="17.8.5 An Intrusion Prevention System (IPS)"/>
+                    <outline text="17.8.6 Network Architecture Design"/>
+                </outline>
+                <outline text="17.9 Advanced Network Security Topics">
+                    <outline text="17.9.1 Software Defined Network, Virtualisation"/>
+                    <outline text="17.9.2 Internet of Things (IoT) Security"/>
+                </outline>
+            </outline>
+            <outline text="18. Hardware Security " _note="[PDF](https://www.cybok.org/media/downloads/Hardware_Security_issue_1.0.pdf)">
+                <outline text="18.1 Hardware design cycle and its link to hardware security">
+                    <outline text="18.1.1 Short background on the hardware design process"/>
+                    <outline text="18.1.2 Root of trust"/>
+                    <outline text="18.1.3 Threat model"/>
+                    <outline text="18.1.4 Root of trust, threat model and hardware design abstraction layers"/>
+                </outline>
+                <outline text="18.2 Measuring hardware security">
+                    <outline text="18.2.1 FIPS140-2"/>
+                    <outline text="18.2.2 Common criteria and EMVCo"/>
+                    <outline text="18.2.3 SESIP: Security Evaluation Standard for IoT Platforms"/>
+                </outline>
+                <outline text="18.3 Secure Platforms">
+                    <outline text="18.3.1 HSM Hardware Security Module"/>
+                    <outline text="18.3.2 Secure Element and Smartcard"/>
+                    <outline text="18.3.3 Trusted Platform Module (TPM)"/>
+                </outline>
+                <outline text="18.4 Hardware support for software security at architecture level">
+                    <outline text="18.4.1 Trusted Execution Environment (TEE)"/>
+                    <outline text="18.4.2 IBM 4758 Secure coprocessor"/>
+                    <outline text="18.4.3 ARM Trustzone"/>
+                    <outline text="18.4.4 Protected Module Architectures and HWSW co-design solutions"/>
+                    <outline text="18.4.5 Light-weight and individual solutions"/>
+                </outline>
+                <outline text="18.5 Hardware design for cryptographic algorithms at RTL level">
+                    <outline text="18.5.1 Design process from RTL to ASIC or FPGA"/>
+                    <outline text="18.5.2 Cryptographic algorithms at RTL level"/>
+                </outline>
+                <outline text="18.6 Side-channel attacks, fault attacks and countermeasures">
+                    <outline text="18.6.1 Attacks"/>
+                    <outline text="18.6.2 Countermeasures"/>
+                </outline>
+                <outline text="18.7 Entropy generating building blocks: random numbers, physically unclonable functions">
+                    <outline text="18.7.1 Random number generation"/>
+                    <outline text="18.7.2 Physically Unclonable Functions"/>
+                </outline>
+                <outline text="18.8 Hardware design process">
+                    <outline text="18.8.1 Design and fabrication of silicon integrated circuits"/>
+                    <outline text="18.8.2 Trojan circuits"/>
+                    <outline text="18.8.3 Circuit level techniques"/>
+                    <outline text="18.8.4 Board Level Security"/>
+                    <outline text="18.8.5 Time"/>
+                </outline>
+                <outline text="18.9 Conclusion"/>
+            </outline>
+            <outline text="19. Cyber-Physical Systems Security " _note="[PDF](https://www.cybok.org/media/downloads/Cyber-Physical_Systems_Security_issue_1.0.pdf)">
+                <outline text="19.1 Cyber-Physical Systems and their Security Risks">
+                    <outline text="19.1.1 Characteristics of CPS"/>
+                    <outline text="19.1.2 Protections Against Natural Events and Accidents"/>
+                    <outline text="19.1.3 Security and Privacy Concerns">
+                        <outline text="19.1.3.1 Attacks Against CPSs"/>
+                        <outline text="19.1.3.2 High-Profile, Real-World Attacks Against CPSs"/>
+                    </outline>
+                </outline>
+                <outline text="19.2 Crosscutting Security">
+                    <outline text="19.2.1 Preventing Attacks"/>
+                    <outline text="19.2.2 Detecting Attacks"/>
+                    <outline text="19.2.3 Mitigating Attacks"/>
+                </outline>
+                <outline text="19.3 CPS Domains">
+                    <outline text="19.3.1 Industrial Control Systems"/>
+                    <outline text="19.3.2 Electric Power Grids">
+                        <outline text="19.3.2.1 Smart Grids"/>
+                    </outline>
+                    <outline text="19.3.3 Transportation Systems and Autonomous Vehicles">
+                        <outline text="19.3.3.1 Ground, Air, and Sea Vehicles"/>
+                    </outline>
+                    <outline text="19.3.4 Robotics and Advanced Manufacturing"/>
+                    <outline text="19.3.5 Medical Devices"/>
+                    <outline text="19.3.6 The Internet of Things"/>
+                </outline>
+                <outline text="19.4 Policy and Political Aspects of CPS Security">
+                    <outline text="19.4.1 Incentives and Regulation"/>
+                    <outline text="19.4.2 Cyber-Conflict"/>
+                    <outline text="19.4.3 Industry Practices and Standards"/>
+                </outline>
+            </outline>
+            <outline text="20. Physical Layer Security and Telecommunications " _note="[PDF](https://www.cybok.org/media/downloads/Physical_Layer__Telecommunications_Security_issue_1.0.pdf)">
+                <outline text="20.1 Physical Layer Schemes for Confidentiality, Integrity and Access Control">
+                    <outline text="20.1.1 Key Establishment based on Channel Reciprocity"/>
+                    <outline text="20.1.2 MIMO-supported Approaches: Orthogonal Blinding, Zero-Forcing"/>
+                    <outline text="20.1.3 Secrecy Capacity"/>
+                    <outline text="20.1.4 Friendly Jamming"/>
+                    <outline text="20.1.5 Using Physical Layer to Protect Data Integrity"/>
+                    <outline text="20.1.6 Low Probability of Intercept and Covert Communication"/>
+                </outline>
+                <outline text="20.2 Jamming and Jamming-Resilient Communication">
+                    <outline text="20.2.1 Coordinated Spread Spectrum Techniques"/>
+                    <outline text="20.2.2 Uncoordinated Spread Spectrum Techniques"/>
+                    <outline text="20.2.3 Signal Annihilation and Overshadowing"/>
+                </outline>
+                <outline text="20.3 Physical-Layer Identification">
+                    <outline text="20.3.1 Device under Identification"/>
+                    <outline text="20.3.2 Identification Signals"/>
+                    <outline text="20.3.3 Device Fingerprints"/>
+                    <outline text="20.3.4 Attacks on Physical Layer Identification"/>
+                </outline>
+                <outline text="20.4 Distance Bounding and Secure Positioning">
+                    <outline text="20.4.1 Distance Bounding Protocols"/>
+                    <outline text="20.4.2 Distance Measurement Techniques"/>
+                    <outline text="20.4.3 Physical Layer Attacks on Secure Distance Measurement"/>
+                    <outline text="20.4.4 Secure Positioning"/>
+                </outline>
+                <outline text="20.5 Compromising Emanations and Sensor Spoofing">
+                    <outline text="20.5.1 Compromising Emanations"/>
+                    <outline text="20.5.2 Sensor Compromise"/>
+                </outline>
+                <outline text="20.6 Physical Layer Security of Selected Communication Technologies">
+                    <outline text="20.6.1 Near-field communication (NFC)"/>
+                    <outline text="20.6.2 Air Traffic Communication Networks"/>
+                    <outline text="20.6.3 Cellular Networks"/>
+                    <outline text="20.6.4 GNSS Security and Spoofing Attacks"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

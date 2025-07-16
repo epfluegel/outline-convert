@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node, print_tree, ignore_forest
+from .utils import find_node, print_tree, ignore_forest, print_forest
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -122,6 +122,8 @@ def main():
 
 
     # -- Optional subtree extraction ------------------------------
+    if args.debug:
+        print_forest(forest)
     if args.start:
         f = find_node(forest, args.start)
         forest = f

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Toby's To Dos</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Homework/Hausaufgaben">
+            <outline text="Maths" colorLabel="5"/>
+            <outline text="Spelling" colorLabel="4"/>
+            <outline text="Creative" colorLabel="3"/>
+        </outline>
+        <outline text="Maths Training">
+            <outline text="TTT" _note="http://kunet.kingston.ac.uk/~ku32104/ttt/ttt.html" colorLabel="2"/>
+        </outline>
+        <outline text="Fun"/>
+        <outline text="DONE -- FERTIG!"/>
+        <outline text="Der Tag">
+            <outline text="Ein guter Abend für alle. ">
+                <outline text="Tobi Laptop: 5:00pm - 8:00pm"/>
+                <outline text="Abendessen: 6-6:15h">
+                    <outline text="Hatti decken helfen"/>
+                    <outline text="Tobi abdecken helfen"/>
+                    <outline text="Tobi am Tisch bleiben: ___ Minuten"/>
+                </outline>
+                <outline text="Hatti:">
+                    <outline text="Hausaufgaben"/>
+                    <outline text="Lesen"/>
+                    <outline text="Daddeln"/>
+                    <outline text="Klimpern"/>
+                </outline>
+                <outline text="Tobi:">
+                    <outline text="Bad"/>
+                    <outline text="Snack "/>
+                    <outline text="Zimmerzeit "/>
+                    <outline text="Lesen"/>
+                    <outline text="Training"/>
+                </outline>
+                <outline text="Zeit fuer Tobi, Hatti und Papa:">
+                    <outline text="Gesellschaftsspiele "/>
+                    <outline text="Mami anrufen"/>
+                </outline>
+                <outline text="Papa:">
+                    <outline text="Kochen"/>
+                    <outline text="Kueche machen"/>
+                    <outline text="Arbeitszimmerzeit: 1/2h"/>
+                </outline>
+                <outline text="Bett: ">
+                    <outline text="Hatti - 09:45h"/>
+                    <outline text="Tobi - 10:00h"/>
+                    <outline text="Papa - 10:45h"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

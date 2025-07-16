@@ -159,6 +159,11 @@ def link_parent(parent: Node):
         child.parent = parent
         link_parent(child)
 
+def print_forest(forest: List[Node]):
+    for tree in forest:
+        print_tree(tree)
+        print("#################################################")
+
 def print_tree(node: Node, level: int = 0):
     if node.parent:
         print('  ' * level,"title:",node.title,"|","note:", node.note, "|", "parent:", node.parent.title)

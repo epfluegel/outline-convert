@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Inbox</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Hatti">
+            <outline text="Morgens">
+                <outline text="6:30 Wecker klingelt"/>
+                <outline text="6:45 Elternteil schaut rein"/>
+                <outline text="7:00 Fruehstueck"/>
+                <outline text="7:15 Handy-Zeit"/>
+                <outline text="7:20 Zaehneputzen"/>
+                <outline text="7:30 Toby anwecken"/>
+                <outline text="7:40 Haus verlassen"/>
+            </outline>
+            <outline text="Abends">
+                <outline text="21:30 Im Zimmer sein">
+                    <outline text="Entspannen, Klavier klimpern, Zaehneputzen, Kleider fuer morgen richten"/>
+                </outline>
+                <outline text="21:45 Deutsches Lesen mit Papa"/>
+                <outline text="22:00 Licht aus. Papa-Besprechung oder Geschichte"/>
+                <outline text="22:20 Zzzzz..."/>
+            </outline>
+        </outline>
+        <outline text="EE">
+            <outline text="Module Box " _note="Module Name/Code: `_______________________________________ / _____________`&#xA;&#xA;Module Coordinator: `_________________________________`  Notified: [YES]/[NO] ">
+                <outline text="Assessment">
+                    <outline text="Main Assessment">
+                        <outline text="Item 1: `______________________`">
+                            <outline text="`______________________________________________________`"/>
+                            <outline text="Assessment Samples">
+<outline text="`___________________________________________________`"/>
+                            </outline>
+                        </outline>
+                        <outline text="Item 2: `______________________`">
+                            <outline text="`______________________________________________________`"/>
+                            <outline text="Assessment Samples">
+<outline text="`___________________________________________________`"/>
+                            </outline>
+                        </outline>
+                        <outline text="Item 3: `______________________`">
+                            <outline text="`______________________________________________________`"/>
+                            <outline text="Assessment Samples">
+<outline text="`___________________________________________________`"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Second Attempt">
+                        <outline text="Deferred 1st">
+                            <outline text="`______________________________________________________`"/>
+                        </outline>
+                        <outline text="Second Attempt">
+                            <outline text="`______________________________________________________`"/>
+                        </outline>
+                    </outline>
+                    <outline text="Moderation Form"/>
+                </outline>
+                <outline text="Module Documents">
+                    <outline text="Module Evaluation">
+                        <outline text="`_________________________________________________________`"/>
+                    </outline>
+                </outline>
+                <outline text="FEEDBACK">
+                    <outline text="`____________________________________________________________`"/>
+                    <outline text="`____________________________________________________________`"/>
+                    <outline text="`____________________________________________________________`"/>
+                </outline>
+            </outline>
+            <outline text="Comments">
+                <outline text="Overall, a good range of marks and suitable assessment."/>
+                <outline text="Moderation Forms: Module coordinator could put in an acknowledgement and sign off form, even if no issues are reported."/>
+                <outline text="No assessment samples or module evaluation document provided at time of scrutiny (17/06 @5pm)."/>
+            </outline>
+        </outline>
+    </body>
+</opml>

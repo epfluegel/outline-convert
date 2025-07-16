@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Dates </title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Reminders (Work Calendar, add repeat)">
+            <outline text="Birthdays">
+                <outline text="Family">
+                    <outline text="GEORG">
+                        <outline text="Georg Birthday"/>
+                        <outline text="Linda Birthday !(2019-10-28 | 1y)  (Dyn) v"/>
+                        <outline text="Julian Birthday "/>
+                        <outline text="Marc Birthday "/>
+                    </outline>
+                    <outline text="Christa Birthday !(2020-04-19 | 1y)  (Dyn)"/>
+                    <outline text="Sigrid Birthday !(2020-02-01 | 1y)  (Dyn)"/>
+                    <outline text="Paul Birthday !(2019-12-18 | 1y) (Dyn)"/>
+                </outline>
+                <outline text="Friends">
+                    <outline text="Clemens Birthday !(1968-08-20 | 1y)  (Dyn)"/>
+                </outline>
+                <outline text="Colleagues ">
+                    <outline text="Charlie"/>
+                    <outline text="Gordon Birthday !(2020-01-12 | 1y)  (Dyn)"/>
+                    <outline text="Nigel Birthday !(2019-11-07 | 1y)  (Dyn)"/>
+                </outline>
+                <outline text="Other"/>
+            </outline>
+            <outline text="Deadlines"/>
+        </outline>
+        <outline text="Events (Google Calendar)">
+            <outline text="Schedules">
+                <outline text="Birmingham "/>
+                <outline text="Hatti"/>
+            </outline>
+            <outline text="Logs"/>
+            <outline text="Inbox">
+                <outline text="!(2019-12-24) testerchen"/>
+                <outline text="!(2019-12-24 10:00) Prost "/>
+            </outline>
+            <outline text="Archive">
+                <outline text="!(2019-11-27 14:45) 2:45 - 3:30 @H - Solo"/>
+                <outline text="!(2019-11-29 12:00 pm) @H Lunch Choir  "/>
+                <outline text="!(2019-11-29 15:00 pm) @H After school - Choir "/>
+                <outline text="!(2019-12-01 15:00) @H After school - Choir"/>
+                <outline text="!(2019-12-04 14:45) 2:45 - 3:30 @H - Solo"/>
+                <outline text="!(2019-12-10 12:45) @H  P4 &amp; P5 Rehearsal in school"/>
+                <outline text="!(2019-12-10 15:00) @H After school - Final checks &amp; run throughs. "/>
+            </outline>
+        </outline>
+    </body>
+</opml>

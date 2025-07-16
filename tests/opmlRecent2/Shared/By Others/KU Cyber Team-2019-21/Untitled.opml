@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Untitled</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Useful Research Links"/>
+        <outline text="International Association for Cryptologic Research" _note=" https://iacr.org/&#xA;&#xA;"/>
+        <outline text="A new computer processor architecture: ">
+            <outline text="[https://eandt.theiet.org/content/articles/2019/05/new-chip-can-stop-cyber-attacks-in-their-tracks/?utm_source=Adestra&amp;utm_campaign=New%20EandT%20News%20-%20Automation%20FINAL%20-%20MEMBER&amp;utm_medium=Newsletters%20-%20E%26T%20News&amp;utm_content=E%26T%20News%20-%20Members&amp;utm_term=https%3A%2F%2Feandt.theiet.org%2Fcontent%2Farticles%2F2019%2F05%2Fnew-chip-can-stop-cyber-attacks-in-their-tracks%2F](https://eandt.theiet.org/content/articles/2019/05/new-chip-can-stop-cyber-attacks-in-their-tracks/?utm_source=Adestra&amp;utm_campaign=New%20EandT%20News%20-%20Automation%20FINAL%20-%20MEMBER&amp;utm_medium=Newsletters%20-%20E%26T%20News&amp;utm_content=E%26T%20News%20-%20Members&amp;utm_term=https%3A%2F%2Feandt.theiet.org%2Fcontent%2Farticles%2F2019%2F05%2Fnew-chip-can-stop-cyber-attacks-in-their-tracks%2F)"/>
+        </outline>
+        <outline text="https://www.ncsc.gov.uk/information/check-penetration-testing"/>
+        <outline text="Cyber career path - ">
+            <outline text="https://www.inspiredcareers.org/"/>
+        </outline>
+        <outline text=""/>
+    </body>
+</opml>

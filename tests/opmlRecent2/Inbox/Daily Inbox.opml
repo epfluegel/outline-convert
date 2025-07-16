@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Daily Inbox</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Notations and Definitions #h #todo: to discuss">
+            <outline text="General #slide ">
+                <outline text="$$^T$$ -- transposed matrix or vector"/>
+                <outline text="[$$^{-1} =$$ reciprocal or inverse. EP: pretty much standard so might not need to mention.]"/>
+                <outline text="$$\mathbb{F}_q$$ -- finite field of characteristic $$q$$ where $$q &gt; n$$"/>
+                <outline text="$$\mathcal{A} = \mathbb{F}^{d-k+1}_{q}$$ -- input alphabet"/>
+            </outline>
+            <outline text="Network #slide ">
+                <outline text="$$n$$ -- overall number of nodes/shares"/>
+                <outline text="$$i$$ -- unique node index $$(1 \leq i \leq n)$$"/>
+                <outline text="$$\mathcal{N}(j)$$ -- set of neighbours for any node $$j$$ $$(1 \leq j \leq n)$$"/>
+                <outline text="$$d$$ -- parameter for propagating dealer property"/>
+            </outline>
+            <outline text="Shamir #slide ">
+                <outline text="$$k$$ -- number of different shares required to recover secret"/>
+                <outline text="$$s$$ -- secret"/>
+                <outline text="$$f(x)$$ -- share polynomial function"/>
+                <outline text="$$\psi_{i}^{T} = [1,i,i^2,...,i^{d-1}]$$ -- encoding vector for node $$i$$"/>
+                <outline text="$$\Psi$$ -- Vandermonde matrix of dimension $$n \times d$$ (each row being $$\psi_{i}^{T}$$)"/>
+            </outline>
+            <outline text="Shah et al #h">
+                <outline text="Assumption: propagating dealer property $$d \geq k$$ "/>
+                <outline text="Fact: $$d &gt; k$$: increases communication efficiency "/>
+                <outline text="$$s^T = [s_1, s_2,...,s_{d-k+1}]$$ -- secret vector"/>
+                <outline text="$$M = \begin{bmatrix} s_a &amp; r_a^T &amp; s_b^T \\ r_a &amp; R_b &amp; R_c^T \\ s_b &amp; R_c &amp; 0\end{bmatrix}$$ -- secret matrix">
+                    <outline text="$$s_a = s_{d-k+1}$$"/>
+                    <outline text="$$r_a$$ is a $$((k - 1) \times 1)$$ is a vector of length $$(k - 1)$$."/>
+                    <outline text="$$s_b = [s_1, ... , s_{d-k}]^T$$"/>
+                    <outline text="$$R_b$$ is a $$(k - 1) \times (k - 1)$$ symmetric matrix with its $$\frac{k(k - 1)}{2}$$ entries populated by random values"/>
+                    <outline text="$$R_c$$ is a $$(d - k) \times (k - 1)$$ matrix with its $$(d - k)(k - 1)$$ entries populated by random values"/>
+                </outline>
+                <outline text="$$t_j^T = \psi_j^T\begin{bmatrix}s_a &amp; s_b^T\\r_a &amp; R_c^T \\ s_b &amp; 0\end{bmatrix}$$ -- "/>
+                <outline text="$$\begin{bmatrix}\sigma_1  \\ \vdots \\ \sigma_d\end{bmatrix} = \begin{bmatrix} \psi^T_{j_{1}} \\ \vdots \\ \psi^T_{j_{d}}\end{bmatrix} M\psi_{l} $$ -- "/>
+                <outline text="$$v = \begin{bmatrix}\psi^T_{i_1} \\ \vdots \\ \psi^T_{i_d}\end{bmatrix}^{-1} \begin{bmatrix}\sigma_1 \\ \vdots \\ \sigma_d \end{bmatrix}$$ -- "/>
+            </outline>
+        </outline>
+    </body>
+</opml>
