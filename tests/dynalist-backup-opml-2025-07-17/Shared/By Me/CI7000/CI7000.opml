@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>CI7000</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="ARCHIVE">
+            <outline text="Dissertation Topic Ideas">
+                <outline text="Suitable Security Domains">
+                    <outline text="Ad-hoc Security (MANETs or VANETs)"/>
+                    <outline text="Big Data Security"/>
+                    <outline text="Blockchain/Bitcoin Security"/>
+                    <outline text="Cloud Computing Security"/>
+                    <outline text="Game Theory and Security "/>
+                    <outline text="Image Encryption"/>
+                    <outline text="IoT and IoE Security"/>
+                    <outline text="Mobile Security"/>
+                    <outline text="Secure RAIDs"/>
+                    <outline text="Situational Awareness and its Application to Security"/>
+                    <outline text="Security Management and Assessment"/>
+                    <outline text="Ux &amp; Security"/>
+                    <outline text="Wireless Security"/>
+                    <outline text="Security Education"/>
+                </outline>
+                <outline text="Suitable Artefacts">
+                    <outline text="This list is not necessarily exhaustive and mutually exclusive:">
+                        <outline text="Practical Security Assessment or Ethical Hacking (Pen-Testing, Vulnerability Assessment or Management) Activities"/>
+                        <outline text="Network (Security) Simulation"/>
+                        <outline text="(Security) Architecture (Design, Configuration and Evaluation)"/>
+                        <outline text="(Secure) Application (Design, Implementation and Evaluation)"/>
+                        <outline text="Security Survey or Case Study (Questionnaire Data Collection and Analysis)"/>
+                        <outline text="Systematic Literature Review (Taxonomy, Ontology or Framework)"/>
+                        <outline text="Research Contribution (Novelty)"/>
+                    </outline>
+                </outline>
+                <outline text="More Specific Topics">
+                    <outline text="The CyBOK"/>
+                    <outline text="Latest Trends in Mobile Security">
+                        <outline text="The rapidly emerging field of mobile security is to be explored for this project. A precise definition of the domain, including typical security threats and vulnerabilities, will be developed. The project would be complemented by an implementation or simulation of a basic app that includes some security features."/>
+                    </outline>
+                    <outline text="Design and Analysis of Secure RAIDs"/>
+                    <outline text="Setting up SSL for Security Protocols - A Practical Investigation">
+                        <outline text="A review of basic crypto, public key encryption "/>
+                        <outline text="A more in-depth investigation into PKI, certificates and the SSL protocol"/>
+                        <outline text="A practical configuration of Apache with SSL and description of this process"/>
+                    </outline>
+                    <outline text="Security Management and Assessment Taxonomy">
+                        <outline text="When assessing the security of an organisation, security management and assessment are vital techniques to achieve confidentiality, integrity and availability of key assets. A great number of different frameworks have been suggested in the literature, and in this project you will give an overview and critical analysis and comparison of the individual methodologies. An additional contribution would be the application of a particular method to a real (or fictitious) scenario."/>
+                        <outline text="Taxonomy/ontology of info security assessment terminology "/>
+                        <outline text="The relationship between business continuity planning and security management"/>
+                    </outline>
+                    <outline text="A Systematic Literature Review of Secret Sharing"/>
+                    <outline text="The Common Vulnerability Scoring System (CVSS) "/>
+                    <outline text="Ready for Change: Achieving Improved Security Behaviour">
+                        <outline text="Overview">
+                            <outline text="Computer, network and cyber security are increasingly attracting attention by the popular media, mirroring their growing importance for everyday computer use by both individuals and organisations. Whilst cyber security can be defined as the assessment of, responding to and monitoring of the security of the cyberspace, it is difficult to pin down to one single scientific discipline, but rather relates to a number of domains and fields such as physical security, network security, security assessment frameworks and the human element."/>
+                            <outline text="It is commonly agreed in the literature that sound security technology can only be designed, implemented and used if a healthy security culture is present throughout these different stages. In particular, cyber-awareness of individual users will determine their behaviour and create typical vulnerabilities such as following links sent via email and other channels, e.g. Skype and whatsapp, opening PDFs or  installing software such as executables and browser toolbars that may create software vulnerabilities. Consequently, individuals will be exposed to a great range of cyber security threats, for example 'long cons' as intensive and sustained attempt to achieve a substantial exploit, or 'short cons' such as getting children to click on a link that charges their parents' phone."/>
+                            <outline text="Hence, an important security control this the ensuring of security responsible behaviour through behavioural change frameworks, which are the focus of this dissertation project."/>
+                        </outline>
+                        <outline text="Aims and Objectives">
+                            <outline text="The overarching aim of the project is to find mechanisms, frameworks, tools and applications (in particular, &quot;gamification&quot; using mobile apps) to induce behavioural change towards increased cyber-awareness and more cyber-wise computer use in people. This could be generic users, or perhaps a specific type of user group such as older adults, or employees in an organisation."/>
+                            <outline text="The following objectives are proposed:"/>
+                            <outline text="  - To thoroughly review the literature of proposed behavioural change methods in the context of cyber-awareness. This review will include disciplines such as psychology, behavioural science and HCI."/>
+                            <outline text="  - To create a framework for behavioural change to cyber-wise/cyber awareness, based on the established model (KU)"/>
+                            <outline text="  - To investigate the design and implementation of a prototype mechanism for carrying out such a change"/>
+                            <outline text="  - Potentially to evaluate the solution."/>
+                        </outline>
+                        <outline text="The aims of the project are to first of all investigate mechanisms, frameworks, tools and applications (in particular, &quot;gamification&quot; using mobile apps would be interesting) to induce behavioural change towards increased cyber awareness/more cyber-wise computer use in people (could be generic users, or perhaps a specific type of user groups such as older adults, or else employees in an organisation). Secondly, you could investigate the design and implementation of a prototype mechanism for carrying out such a change, and potentially (thirdly) evaluate your solution."/>
+                    </outline>
+                    <outline text="Virtual Private Social Networks"/>
+                    <outline text="Trust Enhancement for The Web of Trust"/>
+                    <outline text="Cloud Security Using Secret Sharing">
+                        <outline text="For this project, a comprehensive review of the area of cloud security will be given. This will include traditional and novel threats, vulnerabilities and controls. Also, suitable threat modelling techniques could be investigated. In order to achieve a very good mark, a simulation or implementation of a basic private cloud will be carried out."/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Project Registration Form Narrative">
+                <outline text="1. Working Title (can be changed for proposal)"/>
+                <outline text="2. Introduction: Motivation/Context (200-300 words)"/>
+                <outline text="3. Aims and Objectives (50-100 words)">
+                    <outline text="The overarching aim of this dissertation is a contribution to the [domain/field] of DOMAIN, by...."/>
+                    <outline text="The [individual/specific/scientific] objectives of this [work/research/project/thesis] are:">
+                        <outline text="To [conduct/carry out] a [thorough/systematic] literature review of.."/>
+                        <outline text="To design/study.."/>
+                        <outline text="To evaluate/implement/analyse.."/>
+                    </outline>
+                </outline>
+                <outline text="4. References (5-10 items)"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

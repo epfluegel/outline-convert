@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Screen-Time</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Warum?">
+            <outline text="Spass" colorLabel="4"/>
+            <outline text="Entspannung"/>
+            <outline text="Beruhigung"/>
+            <outline text="Ablenkung"/>
+        </outline>
+        <outline text="Was?">
+            <outline text="Granny, Baldi, Slenderman, Slenderina, Garry's mod, Spongebob" colorLabel="1"/>
+            <outline text="iPad-Spiele" colorLabel="4"/>
+            <outline text="Minecraft" colorLabel="4">
+                <outline text="Kommandos">
+                    <outline text="Laptop" colorLabel="4"/>
+                </outline>
+                <outline text="Single-Player">
+                    <outline text="Laptop"/>
+                    <outline text="iPad" colorLabel="4"/>
+                    <outline text="Samsung Galaxy"/>
+                </outline>
+                <outline text="Multi-Player">
+                    <outline text="Public Server" colorLabel="1"/>
+                    <outline text="Wifi (Local) Server">
+                        <outline text="Laptop"/>
+                        <outline text="iPad"/>
+                        <outline text="Samsung Galaxy"/>
+                    </outline>
+                </outline>
+                <outline text="Mods">
+                    <outline text="Laptop" colorLabel="4"/>
+                    <outline text="iPad" colorLabel="1"/>
+                    <outline text="Samsung Galaxy"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Wann?">
+            <outline text="Morgens" colorLabel="1"/>
+            <outline text="Nachmittags" colorLabel="4"/>
+            <outline text="Abends"/>
+        </outline>
+        <outline text="Wie lang?">
+            <outline text="Kurz (1/2h)"/>
+            <outline text="Mittel (max. 2h)" colorLabel="4"/>
+            <outline text="Get-it-out-of-the-system" colorLabel="1"/>
+        </outline>
+    </body>
+</opml>

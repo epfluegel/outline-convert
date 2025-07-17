@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Naomi</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Back to WorkFlowy " _note="Naomi: https://workflowy.com/s/shared/F7SeDfERAvwaBSW8&#xA;EP: [https://workflowy.com/#/1e8a0bee6fec](https://workflowy.com/#/1e8a0bee6fec)"/>
+        <outline text="Projects">
+            <outline text="Practical Exercises">
+                <outline text="Practical 1 - LSB Embedding Steganography Exercise" heading="2">
+                    <outline text="This workshop gives an insight into a basic steganographic cover-modification technique called LSB Embedding (Least Significant Bit Embedding). The primary learning objective is to become familiar with the basic elements of a steganographic system, via the practical task of hiding secret bits within an image file that will serve as a cover-medium. "/>
+                    <outline text="Step 1 - Download and unzip the practical resources" checkbox="true" heading="3" colorLabel="6">
+                        <outline text="a) Locate the file “steganography_practicals.zip” and download it to the root of your H: or USB drive and unzip the file."/>
+                        <outline text="b) Download HxD Hex Editor from https://download.cnet.com/HxD-Hex-Editor/3000-2352_4-10891068.html"/>
+                    </outline>
+                    <outline text="Step 2 - Define the secret data" checkbox="true" heading="3" colorLabel="5">
+                        <outline text="a) Decide on a single word that will represent your secret. Ideally, choose a word of no more than 5 characters."/>
+                    </outline>
+                    <outline text="Step 3 - Determine the ASCII and binary values for each character of secret word" checkbox="true" heading="3" colorLabel="4">
+                        <outline text="Find the ASCII and corresponding binary values for each character of your secret word. This can be found at sites such as http://easycalculation.com/ascii-hex.php  "/>
+                        <outline text="Note the binary equivalent of each individual letter of your word (If your secret word includes letters with different cases, be sure to note that upper and lower case characters have different ASCII values and will therefore have different binary values)"/>
+                        <outline text="E.g.:   ![Example](https://dynalist.io/u/vSeAPlpu_4MRRAhM7nteKATh)  "/>
+                        <outline text="Q: What is the total length of your secret word in bits? "/>
+                        <outline text="Q: How many bytes of data will be required to embed your secret word in the cover-image? "/>
+                    </outline>
+                    <outline text="Step 4 - Defining the cover-image" checkbox="true" heading="3" colorLabel="3">
+                        <outline text="Read and understand the following:"/>
+                        <outline text="The cover-image selected for this practical is a windows bitmap image file. Bitmap files have a data structure that is well suited to illustrating the concepts of LSB embedding. The RGB (Red, Green, Blue) data of bitmap files is uncompressed and is easily accessible with a hex editor. "/>
+                        <outline text="Basic BMP data structure:">
+                            <outline text="The bitmap file structure is comprised of three core sections: BITMAPFILEHEADER, BITMAPINFOHEADER, BITMAPDATA "/>
+                            <outline text="Table 1 details the structure of each section and defines the offset, size, and description of data fields. The columns titled “Hex Value” and “Value” are populated with sample data to indicate typical values. "/>
+                            <outline text="  ![Table 1](https://dynalist.io/u/Jwoy5vYu5bdm0LxecFpGzcn2) "/>
+                        </outline>
+                    </outline>
+                    <outline text="Step 5 - Creating a carrier-image" checkbox="true" heading="3" colorLabel="2">
+                        <outline text="a) Navigate to the steganography_practicals/practical_1/cover_medium folder in your home directory:" checkbox="true">
+                            <outline text="i) Select an image that you will use as a cover-image"/>
+                            <outline text="ii) Duplicate this image and rename this copied file to carrier-image.bmp"/>
+                        </outline>
+                        <outline text="b) Open HxD:">
+                            <outline text="i) Navigate to File, Open, select carrier-image.bmp, Open"/>
+                            <outline text="ii) A hexadecimal view of the file will open in the main window of HxD as illustrated here:                      ![Hexadecimal view](https://dynalist.io/u/Q7dUUt1UQIavqMMmKvxtzFg1) "/>
+                            <outline text="For clarity, the LSB embedding process will start from offset 0x36. Recall from the data structure outlined earlier in this practical that offset 0x36 is where the structure for the RGB pixel data begins. It is in the raw pixel data that the bits of your secret word bits will be embedded."/>
+                            <outline text="iii) Highlight offset 0x36                                                   ![Offset 0x36](https://dynalist.io/u/lgZWb1_m1x7WJ7Svgo_NcuyC)                                                                                      The byte at offset 0x36 will be the first in a sequence that will have its least significant bits modified"/>
+                            <outline text="iv) Refer to the binary equivelant of each letter of your word noted previously and look at the first bit of the first letter, if this matches the least significant bit of offset 0x36, leave it as it is, if it does not, change it to match the first bit of the first letter          ![Least Significant Bit](https://dynalist.io/u/ea9gP-iMp67uM2CxK4tk5qP2) "/>
+                            <outline text="v) Navigate to offset 0x37  and change the least significant bit of offset 0x37 if needed to match the second bit of the first letter                                              ![Offset 0x37](https://dynalist.io/u/QANmpXOS-qZoCqMCCoveg_OW) "/>
+                            <outline text="vi) Repeat this process until you reach the end of the word "/>
+                            <outline text="vii) Save and close HxD"/>
+                        </outline>
+                    </outline>
+                    <outline text="Step 6 - Visually compare the original image and the carrier-image" checkbox="true" heading="3" colorLabel="1">
+                        <outline text="Use Windows Photo Viewer or an alternate application to compare your original cover-image and your carrier-image to see if you can visually detect differences"/>
+                    </outline>
+                </outline>
+                <outline text="Practical 2 - StegJ" heading="2">
+                    <outline text="Background" heading="3">
+                        <outline text="The application was written by Francesca Camagni and is released under a GPL license. The project is hosted at: http://sourceforge.net/projects/stegj/. The project home page located at http://stegj.sourceforge.net."/>
+                    </outline>
+                    <outline text="Objectives" heading="3">
+                        <outline text="The primary learning objective is to contextualise the manual LSB embedding process experienced in Practical 1, against the use of a dedicated steganography application to complete a similar task of hiding secret data within a cover-image."/>
+                    </outline>
+                    <outline text="Part 1" checkbox="true" heading="3" colorLabel="6">
+                        <outline text="Step 1 - Define the secret data">
+                            <outline text="a) Navigate to the steganography_practicals/practical_2/steganography/secret_data_created folder on your H: drive."/>
+                            <outline text="b) Open the file “secret.txt” and write a secret message"/>
+                            <outline text="c) Save the file"/>
+                        </outline>
+                        <outline text="Step 2 - Create a carrier-image">
+                            <outline text="a) Navigate to the steganography_practicals/practical_2/StegJ folder on your H: drive:">
+<outline text="i) Locate and run the file stegj_v0.2beta.jar to start the StegJ application"/>
+<outline text="ii) The application should load and appear as follows:                                                                           ![Figure 1](https://dynalist.io/u/0GAhLPihbplU20OxlQj6cka1)  "/>
+<outline text="iii) Right click the curser in the &quot;Cover Image&quot; field"/>
+<outline text="iv) Navigate to the steganography_practicals/practical_2/steganography/cover_medium folder on your H: drive and select a file to use as a cover-image                ![Figure 2](https://dynalist.io/u/PVOwwDRVOscnJCCQyy0pItp4) "/>
+<outline text="v) Right click the curser on the &quot;File to Embed&quot; field"/>
+<outline text="vi) Navigate to the steganography_practicals/practical_2/steganography/secret_data_created folder on your H: drive and select the file “secret.txt” as the “File to Embed” and click open"/>
+<outline text="vii) Right click the curser on the &quot;Output Image&quot; field "/>
+<outline text="viii) Navigate to the steganography_practicals/practical_2/steganography/stego_medium folder on your H: drive. "/>
+<outline text="ix) In the file name, type &quot;carrier-image&quot;  and click save                                                                       ![Figure 3](https://dynalist.io/u/K8V7K5fULEDzoeAqVqwPLe9w) "/>
+<outline text="x) Click Embed                                                             ![Figure 4](https://dynalist.io/u/X_UY7chVR86HXf7AHf-bsnlj) "/>
+<outline text="xi) A &quot;File Embedded Successfully&quot; message should then appear, click ok (don't close StegJ)                                                   ![Figure 5](https://dynalist.io/u/QNnl-LxfXdrrJ1qadQPWfES9) "/>
+                            </outline>
+                        </outline>
+                        <outline text="Step 3 - Reveal the secret data">
+                            <outline text="a) Click the &quot;Retrive data&quot; tab                                         ![Figure 6](https://dynalist.io/u/cEHWpeewnOycijQcGw0yDLPT) "/>
+                            <outline text="b) Right click the curser in the &quot;image&quot; field:">
+<outline text="i) Navigate to the steganography_practicals/practical_2/steganography/stego_medium folder on your H: drive."/>
+<outline text="ii) Select the file “carrier-image” and click open"/>
+                            </outline>
+                            <outline text="c) Right click the curser in the &quot;Output path&quot; field:">
+<outline text="i) Navigate to the steganography_practicals/practical_2/steganography/secret_data_revealed folder on your H: drive"/>
+<outline text="ii) Click save  ![Figure 7](https://dynalist.io/u/NqQ41aSK1SOjA5VOrKPWVEcg) "/>
+<outline text="iii) Click on the &quot;Retrive Hidden Data&quot; button  ![Figure 8](https://dynalist.io/u/4XsBjPjq8ex78wbeZAMb4QUd) "/>
+<outline text="iv) A notification should appear stating that the secret data has been extracted to the selected folder. Click ok                                                                            ![Figure 9](https://dynalist.io/u/aZTcjO27zcFtPlyt3Tmp5L2g) "/>
+                            </outline>
+                            <outline text="d) Navigate to the steganography_practicals/practical_2/secret_data_revealed folder on your H: drive to view the file"/>
+                            <outline text="e) Experiment with alternative file formats as cover-mediums and secret data as well as selecting other application settings.  "/>
+                            <outline text="Question: What happens if the secret data is too large to be hidden in the cover-medium?"/>
+                        </outline>
+                    </outline>
+                    <outline text="Part 2" checkbox="true" heading="3" colorLabel="5">
+                        <outline text="Share carrier image">
+                            <outline text="a) Create a new carrier-image"/>
+                            <outline text="b) Confirm that the secret data can be successfully retrieved"/>
+                            <outline text="c) Share this carrier-image with another student"/>
+                            <outline text="d) Retrieve the secret data from the carrier-image that you receive"/>
+                        </outline>
+                    </outline>
+                    <outline text="Part 3" checkbox="true" heading="3" colorLabel="4">
+                        <outline text="Rotate image ">
+                            <outline text="a) Create a new carrier-image and call it &quot;original-carrier-image&quot;"/>
+                            <outline text="b) Download GIMP if you don't already have it https://www.gimp.org/downloads/"/>
+                            <outline text="b) Set up and run GIMP"/>
+                            <outline text="c) From the GIMP main menu: File, Open and navigate to your original-carrier-image.ext. Highlight it and click the Open button."/>
+                            <outline text="d) From the GIMP main menu: Image, Transform, Rotate 180o                                                                          ![Rotate](https://dynalist.io/u/gUHKAiijzWqXUm_v_IrrmHEa) "/>
+                            <outline text="e) Save the file as &quot;carrier-image-rotate&quot;"/>
+                            <outline text="f) From the GIMP main menu: File, Close "/>
+                        </outline>
+                        <outline text="Resize image">
+                            <outline text="a) From the GIMP main menu: File, Open and navigate to your original-carrier-image.ext (where (ext) is the file format). Highlight it and click the Open button."/>
+                            <outline text="b) From the GIMP main menu: Image, Scale Image:">
+<outline text="i) In the Width field enter a smaller or larger value"/>
+<outline text="ii) Click the Scale button                                           ![Scale](https://dynalist.io/u/KUvnRcET1nK8ZH8dJ3tNx2Vi) "/>
+                            </outline>
+                            <outline text="c) Save the file as &quot;carrier-image-scale&quot;"/>
+                            <outline text="d) From the GIMP main menu: File, Close "/>
+                        </outline>
+                        <outline text="Crop image">
+                            <outline text="a) From the GIMP main menu: File, Open and navigate to your original-carrier-image.ext. Highlight it and click the Open button."/>
+                            <outline text="b) From the GIMP main menu: Tools, Transform Tools, Crop:">
+<outline text="i) Using the mouse, drag a rectangular crop window that excludes the edges of the image.                                           ![Cropping](https://dynalist.io/u/fzpOEZtx6doA2FkEkyALf0HU) "/>
+<outline text="ii) Click the image to apply the crop. The area within the crop box remains. The area outside of the crop box disappears.                                            ![Cropped](https://dynalist.io/u/fgZndswDsITqEFUMl7ZGB0G4) "/>
+                            </outline>
+                            <outline text="c) Save the file as &quot;carrier-image-crop&quot;"/>
+                            <outline text="d) From the GIMP main menu: File, Close "/>
+                        </outline>
+                        <outline text="Hue and Saturation ">
+                            <outline text="a) From the GIMP main menu: File, Open and navigate to your original-carrier-image.ext. Highlight it and click the Open button."/>
+                            <outline text="b) From the GIMP main menu: Colours, Hue-Saturation:">
+<outline text="i) Adjust the Hue, Lightness and Saturation sliders and click the OK button                               ![Hue-Saturation](https://dynalist.io/u/LjblNt3-YmRpT9C1zTPDYTOo) "/>
+                            </outline>
+                            <outline text="c) Save the file as &quot;carrier-image-hue-saturation&quot;"/>
+                            <outline text="d) From the GIMP main menu: File, Close"/>
+                        </outline>
+                        <outline text="Your own choice of image modification ">
+                            <outline text="a) From the GIMP main menu: File, Open and navigate to your original-carrier-image.ext. Highlight it and click the Open button."/>
+                            <outline text="b) Select an image modification of your own choice"/>
+                            <outline text="c) Save the file as carrier-image-my-modication.ext. (where my-modification reflects the change you have made"/>
+                            <outline text="d) From the GIMP main menu: File, Close "/>
+                        </outline>
+                    </outline>
+                    <outline text="Part 4" checkbox="true" heading="3" colorLabel="3">
+                        <outline text="Carrier image robustness test:">
+                            <outline text="Use StegJ to open each of your modified stego-images that were created in Part 3 of this practical. Determine which of the modifications did not affect the ability to retrieve the secret data. "/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Lectures" _note="#slide #h">
+                <outline text="Networks, Attacks, and Vulnerabilities #h " heading="1">
+                    <outline text="IP Revision #h " heading="2" colorLabel="4">
+                        <outline text="Introduction #slide ">
+                            <outline text="The Internet!">
+<outline text="Network of networks of interconnected computers"/>
+<outline text="Don’t confuse it with the “World Wide Web”"/>
+<outline text="For easy communication between Computers"/>
+<outline text="Not initially created with security in mind at all">
+    <outline text="Everyone connected was either government or military and therefore assumed to be trusted"/>
+    <outline text="Security was added as an afterthought!"/>
+</outline>
+                            </outline>
+                            <outline text="Components of a Network">
+<outline text="Host Computers ">
+    <outline text="Including clients and servers"/>
+</outline>
+<outline text="Intermediate Nodes">
+    <outline text="Routers"/>
+    <outline text="Switches"/>
+</outline>
+<outline text="Links">
+    <outline text="Copper wire"/>
+    <outline text="Fibre Optics"/>
+    <outline text="Wireless">
+        <outline text="Terrestrial"/>
+        <outline text="Satellite"/>
+    </outline>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Types of Network #slide ">
+                            <outline text="Local Area Network (LAN)">
+<outline text="Workgroup scale (e.g. lab or office)"/>
+<outline text="Controlled by local IT team"/>
+<outline text="Several “virtual” LANs (VLANs) may share physical devices"/>
+<outline text="Physically protected"/>
+                            </outline>
+                            <outline text="Backbone Network">
+<outline text="Connects LANs together with routers"/>
+<outline text="Controlled by local IT team"/>
+<outline text="Physically protected"/>
+                            </outline>
+                            <outline text="Wide Area Network (WAN)">
+<outline text="Point-to-point links connecting sites/campuses"/>
+<outline text="Controlled by a third-party “service provider”"/>
+<outline text="Physically exposed"/>
+                            </outline>
+                        </outline>
+                        <outline text="Types of Internetwork #slide ">
+                            <outline text="Small Internetwork">
+<outline text="Connectivity of LANs, WANs and backbones of an organization."/>
+<outline text="Local and third-party control"/>
+<outline text="Physically protected/exposed"/>
+                            </outline>
+                            <outline text="Global Internet">
+<outline text="Enormous (world-spanning)"/>
+<outline text="Heterogeneous (many different technologies)"/>
+<outline text="No single management or control"/>
+<outline text="Physically exposed"/>
+                            </outline>
+                        </outline>
+                        <outline text="Internetwork Example #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Internetwork Example&quot;-" colorLabel="3"/>
+                            <outline text="The Internet is a network “of networks”. These individual networks may use very different technologies (Ethernet, wireless, ATM etc.) but can talk to each other by the common Internet Protocol (IP)"/>
+                        </outline>
+                        <outline text="Protocol Stacks #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Protocol Stacks&quot;-" colorLabel="3"/>
+                            <outline text="Each later provides services to the layer above it, and receives services from the layer below it. It communicates with the corresponding (peer) layers on other devices."/>
+                            <outline text="PDU of each layer is encapsulated in PDU of the layer below. Message (or message fragment) encapsulated in a segment, encapsulated in a packet, encapsulated in a frame)."/>
+                            <outline text="The network access layer is divided into the lower (physical) layer and the upper (link) layer. The link layer in Ethernet is further divided into the MAC layer (lower) and the LLC (upper) layer."/>
+                        </outline>
+                        <outline text="TCP/IP #slide ">
+                            <outline text="“Transmission Control Protocol/Internet Protocol”"/>
+                            <outline text="Based on 4 layers:">
+<outline text="Application: (FTP, HTTP, SMTP)"/>
+<outline text="Transport: Between processes (TCP, UDP)"/>
+<outline text="Internet: Between hosts across internetwork (IP)"/>
+<outline text="Network Access: Within individual networks">
+    <outline text="Ethernet, Wi-Fi, ATM, FDDI etc."/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Addressing Schemes #slide ">
+                            <outline text="TCP/IP Addressing">
+<outline text="Port number: 16-bit integer indicating application on computer"/>
+<outline text="IP address: 32-bits indicating a host (computer or router port)"/>
+<outline text="Example: 100.24.48.6:80 (written in decimal, 80 is port number)"/>
+<outline text="Also textual domain names (e.g. kingston.ac.uk:80)">
+    <outline text="DNS server converts textual names to IP addresses"/>
+</outline>
+                            </outline>
+                            <outline text="MAC (Media Access Control) Ethernet Addressing">
+<outline text="Unique 48 bits indicating a “host” (computer or router port)"/>
+<outline text="Ethernet example: 00-22-4D-50-60-07 (hexadecimal)">
+    <outline text="Mapped to IP addresses by Address Resolution Protocol (ARP)"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Routers and Switches #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Routers and Switches&quot;-" colorLabel="3"/>
+                            <outline text="LAN = Local Area Network"/>
+                            <outline text="WAN = Wide Area Network"/>
+                            <outline text="The frames contain the MAC addresses of the Layer 3 devices they are coming from (source MAC) and destined to (destination MAC). They know nothing of the final destinations of their “passenger” packets."/>
+                        </outline>
+                        <outline text="IP Addresses and Masks #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;IP Addresses and Masks&quot;-" colorLabel="3"/>
+                            <outline text="An example of an IP network address 10.1.0.0/16">
+<outline text="The /16 is the “network mask”">
+    <outline text="Could also be written 255.255.0.0 (1=network bit, 0=host bit)"/>
+    <outline text="First 16 bits (the bytes 10 and 1) are the network address"/>
+    <outline text="The remainder is used for host addresses"/>
+</outline>
+<outline text="Host addresses may be between 10.1.0.1 and 10.1.255.254">
+    <outline text="10.1.0.0 is reserved for the address of the network itself"/>
+    <outline text="10.1.255.255 is reserved for the network broadcast address"/>
+</outline>
+                            </outline>
+                            <outline text="10.1.0.0 has all zeros in the host part of the address. This address is the address of the network itself, and cannot be assigned to a host within the network."/>
+                            <outline text="10.1.255.255 has all 1’s in the host part of the address. This is the “broadcast address”. Any packet sent to this address will go to every host in the network."/>
+                        </outline>
+                        <outline text="Protocol Data Units (PDUs) #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Protocol Data Units (PDUs)-" colorLabel="3"/>
+                            <outline text="Note that all the PDU headers really have more information in them than I have shown here. (Some also have “trailers” added after the payload field.) Also a body of application data (a document, image or web-page) would typically be split between several segments and sent out in different packets. Similarly a large packet might be split at the data link layer and sent out in several frames."/>
+                        </outline>
+                        <outline text="Detailed IP (v.4) Packet Structure #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Detailed IP (v.4) Packet Structure&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Transport Layer Protocol #slide ">
+                            <outline text="TCP/IP has two Layer 4 protocols"/>
+                            <outline text="User Datagram Protocol (UDP)">
+<outline text="“Best effort” service"/>
+<outline text="No reliable delivery"/>
+<outline text="Faster than TCP (good for real-time services)"/>
+                            </outline>
+                            <outline text="Transmission Control Protocol (TCP)">
+<outline text="Guaranteed accurate delivery"/>
+<outline text="Slower than UDP (used when speed is not so vital)"/>
+                            </outline>
+                            <outline text="UDP tends to be used in real-time applications (voice, video) while TCP is used for things like e-mail, web, FTP etc."/>
+                        </outline>
+                        <outline text="UDP Segment Structure #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;UDP Segment Structure&quot;" colorLabel="3"/>
+                        </outline>
+                        <outline text="UDP Operation #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;UDP Operation&quot;-" colorLabel="3"/>
+                            <outline text="Sends the Datagrams out without acknowledgment"/>
+                            <outline text="It is fast but unreliable - data can go missing"/>
+                            <outline text="No attempt to reorder data at receiver"/>
+                            <outline text="Good for “timely” data (video, voice)"/>
+                            <outline text="Poor for “accurate” data (documents, e-mails) "/>
+                        </outline>
+                        <outline text="TCP Segment Structure #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;TCP Segment Structure&quot;" colorLabel="3"/>
+                        </outline>
+                        <outline text="TCP Operation #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;TCP Operation 1&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;TCP Operation 2&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;TCP Operation 3&quot;-" colorLabel="3"/>
+                            <outline text="For when accuracy is needed and you can afford to wait."/>
+                            <outline text="“Connections” are negotiated between end-hosts."/>
+                            <outline text="Starts with a “handshake”."/>
+                            <outline text="The SYN segment specifies the requested service in terms of the destination port number (e.g. 80 for a web-page request). The source port is a large random number."/>
+                            <outline text="The return of a SYN-ACK segment indicates that that service is available (i.e. the requested port is “open”). If no response then the requested port is “closed”."/>
+                        </outline>
+                        <outline text="Security in Networks #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Security in Networks&quot;-" colorLabel="3"/>
+                        </outline>
+                    </outline>
+                    <outline text="The CIA Triad #h" heading="2" colorLabel="5">
+                        <outline text="CIA Triad #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;CIA Triad&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Confidentiality #slide ">
+                            <outline text="Access Control">
+<outline text="Keep unauthorized users out of system"/>
+<outline text="Prevent legitimate users exceeding authorization"/>
+                            </outline>
+                            <outline text="Message Encryption">
+<outline text="Data can only be read by someone with the “key”"/>
+<outline text="Protecting private data exchanged over insecure media"/>
+                            </outline>
+                        </outline>
+                        <outline text="Integrity #slide ">
+                            <outline text="Data only changed via authorized mechanism."/>
+                            <outline text="Violations:">
+<outline text="Unauthorized users altering data."/>
+<outline text="Senders faking messages origin (authentication)"/>
+<outline text="Accidental alterations of data  "/>
+                            </outline>
+                            <outline text="Noise, power surge corruption"/>
+                            <outline text="Cryptographic algorithms protect confidentiality and integrity"/>
+                        </outline>
+                        <outline text="Availability #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Availability&quot;-" colorLabel="3"/>
+                            <outline text="Data is not useful unless available to legitimate users."/>
+                            <outline text="Attacker who blocks users from the data they need is just as successful as one who steals or alters data.">
+<outline text="Example: Denial of Service (DoS) Attack."/>
+<outline text="Worse: Distributed DoS (DDoS) Attack…"/>
+                            </outline>
+                        </outline>
+                        <outline text="DAD Triad #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;DAD Triad&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Disclosure #slide ">
+                            <outline text="Examples:">
+<outline text="An external party gains access to your system and reads confidential data."/>
+<outline text="An insider disseminates confidential data to outsiders (Edward Snowden)."/>
+<outline text="A programming fault allows customers to read other customers’ data."/>
+<outline text="You can probably think of more examples."/>
+                            </outline>
+                        </outline>
+                        <outline text="Alteration #slide ">
+                            <outline text="Examples:">
+<outline text="Clumsy employee accidentally deletes database record"/>
+<outline text="Somebody trips over power cord during a data backup">
+    <outline text="Disks become corrupted and data unusable."/>
+</outline>
+<outline text="Criminal steals a cashpoint card and accesses PIN number database">
+    <outline text="Alters the PIN so he can use the card."/>
+</outline>
+<outline text="Again many other examples"/>
+                            </outline>
+                        </outline>
+                        <outline text="Denial #slide ">
+                            <outline text="Examples:">
+<outline text="Server crashing">
+    <outline text="“Ping of Death”"/>
+</outline>
+<outline text="Various types of DoS (Denial of Service) attacks">
+    <outline text="Flooding a target network with packets">
+        <outline text="“Smurf” attack"/>
+        <outline text="“Botnet” of compromised computers"/>
+    </outline>
+    <outline text="“Bacterium” processes infecting target host">
+        <outline text="Using up CPU resources"/>
+    </outline>
+</outline>
+<outline text="Again, many other examples. "/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Attacks and Vulnerabilities #h" heading="2" colorLabel="6">
+                        <outline text="Types of Attack #slide ">
+                            <outline text="1. Interception">
+<outline text="Packets intercepted in public Internet"/>
+<outline text="CONFIDENTIALITY ISSUE"/>
+                            </outline>
+                            <outline text="2. Modification Spoofing">
+<outline text="Packets intercepted, modified and sent on!"/>
+<outline text="INTEGRITY ISSUE"/>
+                            </outline>
+                            <outline text="3. Masquerade Spoofing">
+<outline text="Third party makes up original message"/>
+<outline text="INTEGRITY (AUTHENTICATION) ISSUE"/>
+                            </outline>
+                            <outline text="4. Interruption">
+<outline text="Denial of Service"/>
+<outline text="AVAILABILITY ISSUE"/>
+                            </outline>
+                        </outline>
+                        <outline text="What makes a Network Vulnerable? #slide ">
+                            <outline text="Anonymity">
+<outline text="Attacker can be geographically distant"/>
+<outline text="Identity can be hidden"/>
+                            </outline>
+                            <outline text="Many points of attack">
+<outline text="Attack can come from any host to any host"/>
+                            </outline>
+                            <outline text="Sharing">
+<outline text="Systems simultaneously accessed by multiple users (e.g. cloud providers)"/>
+                            </outline>
+                            <outline text="System Complexity">
+<outline text="Difficult to look “behind the scenes”"/>
+<outline text="Impossible to predict routes packets will take"/>
+                            </outline>
+                            <outline text="Protocol Flaws">
+<outline text="Attacks not anticipated by designers"/>
+                            </outline>
+                        </outline>
+                        <outline text="Protocol Flaws #slide ">
+                            <outline text="Internet protocols publicly posted for review">
+<outline text="“RFC”s are quasi-official documents from IETF"/>
+<outline text="Helps find problems before protocol becomes standard"/>
+<outline text="Does not guarantee the absence of flaws"/>
+                            </outline>
+                            <outline text="Example:">
+<outline text="HTTP: Easy to intercept or fabricate headers"/>
+<outline text="SMTP: Easy to fake origin"/>
+                            </outline>
+                        </outline>
+                        <outline text="Preparing an attack #slide ">
+                            <outline text="Clever attacker investigates/plans before acting"/>
+                            <outline text="Goal: find out as much as possible about target">
+<outline text="Social Engineering/Reconnaissance"/>
+<outline text="Port Scanning – find out what services the target host provides"/>
+<outline text="Operating System and Application Fingerprinting"/>
+<outline text="Bulletin Boards and Chats"/>
+<outline text="Availability of Documentation"/>
+                            </outline>
+                        </outline>
+                        <outline text="Vulnerability Scanning #slide ">
+                            <outline text="Done by “ethical hackers” as well as real enemies"/>
+                            <outline text="Probes for network security weak spots"/>
+                            <outline text="Most popular technique: port scanning"/>
+                            <outline text="Will highlight security problems of your machine/network, which can then be fixed"/>
+                            <outline text="Hackers have access to these tools as well and can use them against you"/>
+                            <outline text="Many tools, some run on a dedicated machine, others run over the web">
+<outline text="Many very powerful tools can exploit weaknesses as well as detect them. NMAP is a classic example, which will crash UNIX servers."/>
+                            </outline>
+                        </outline>
+                        <outline text="Types of Port Scanning #slide ">
+                            <outline text="TCP Syn (or Syn-Stealth)">
+<outline text="Most common. “Half opens” a connection"/>
+<outline text="Fast and unobtrusive"/>
+                            </outline>
+                            <outline text="TCP Connection">
+<outline text="Opens a complete TCP connection"/>
+<outline text="Slower and more obtrusive"/>
+<outline text="Used when system is protected from Syn probe"/>
+                            </outline>
+                            <outline text="TCP Ack">
+<outline text="Used with systems protected with firewalls"/>
+<outline text="Can be used to map out rule bases"/>
+                            </outline>
+                            <outline text="Plus many others "/>
+                        </outline>
+                        <outline text="Port Scanning (Syn Stealth) #slide " colorLabel="1">
+                            <outline text="Reconnaissance Technique:"/>
+                            <outline text="Can find out what is running on system"/>
+                            <outline text="Hacker scans port 25 (SMTP) on Bob’s PC"/>
+                            <outline text="-See box for image &quot;Port Scanning (Syn Stealth) 1&quot;-" colorLabel="3"/>
+                            <outline text="Bob has a firewall between himself and Harry"/>
+                            <outline text="This firewall filters packets"/>
+                            <outline text="Blocks anything from Harry"/>
+                            <outline text="-See box for image &quot;Port Scanning (Syn Stealth) 2&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Port Scanning (Syn Stealth) 3&quot;-" colorLabel="3"/>
+                            <outline text="•Connection to Alice is still “half open”"/>
+                            <outline text="•Harry must reset connection, or else Alice may become suspicious"/>
+                        </outline>
+                        <outline text="Port Scanning Tools #slide ">
+                            <outline text="There are lots of online tools for port scanning">
+<outline text="[http://www.subnetonline.com/pages/network-tools/online-port-scanner.php](http://www.subnetonline.com/pages/network-tools/online-port-scanner.php)"/>
+<outline text="[http://www.t1shopper.com/tools/port-scan/](http://www.t1shopper.com/tools/port-scan/)"/>
+                            </outline>
+                            <outline text="Also download “nmap” program:">
+<outline text="[http://nmap.org/](http://nmap.org/)"/>
+                            </outline>
+                            <outline text="Also investigate Kali Linux:">
+<outline text="[https://www.kali.org/downloads](https://www.kali.org/downloads/)[/](https://www.kali.org/downloads/)"/>
+<outline text="Includes many tools for penetration testing."/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Spoofing #h " heading="2" colorLabel="1">
+                        <outline text="Masquerade: #slide " colorLabel="1">
+                            <outline text="Host pretends to be another" colorLabel="1">
+<outline text="Example: URL confusion" colorLabel="1">
+    <outline text="citibank.com instead of citybank.com"/>
+    <outline text="Used in a “phishing” attack"/>
+    <outline text="-See box for image &quot;Masquerade&quot;-" colorLabel="3"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Bogus endpoint in a network communication #slide ">
+                            <outline text="Man-in-the-Middle Attack:" colorLabel="1">
+<outline text="Similar to Session Hijacking"/>
+<outline text="Difference: participate from start of the session"/>
+<outline text="Example: symmetric key exchange"/>
+<outline text="-See box for image &quot;Man-in-the-Middle Attack&quot;-" colorLabel="3"/>
+                            </outline>
+                        </outline>
+                        <outline text="Source endpoint typically identified by Source IP address in packet header. #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Source endpoint&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Session Hijacking #slide " colorLabel="1">
+                            <outline text="Intercepting and carrying on a TCP session"/>
+                            <outline text="Example: Telnet session"/>
+                            <outline text="-See box for image &quot;Session Hijacking&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Even quantum key exchange is vulnerable… #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Quantum Key Exchange&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Man-in-the-middle foils an otherwise unbreakable cipher… #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Man-in-the-middle foils&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Replay Attack: #slide " colorLabel="1">
+                            <outline text="Alice and Bob communicate in cipher"/>
+                            <outline text="Harry overhears and records"/>
+                            <outline text="Harry “replays” Bob’s ciphered messages to Alice"/>
+                            <outline text="-See box for image &quot;Replay Attack&quot;-" colorLabel="3"/>
+                            <outline text="The attacker does not know for certain what affect his attack has on Alice and Bob – only that he is interfering with their activities."/>
+                        </outline>
+                    </outline>
+                    <outline text="Denial of Service Attacks #h " heading="2" colorLabel="2">
+                        <outline text="Denial of Service #slide ">
+                            <outline text="So far: attacks on CONFIDENTIALITY or INTEGRITY"/>
+                            <outline text="Denial of Service (DoS) attack targets AVAILABILITY"/>
+                            <outline text="Does not (usually) do permanent damage">
+<outline text="Normality restored when attack stops"/>
+                            </outline>
+                            <outline text="Simplest method: Connection Flooding">
+<outline text="Attacker sends more packets than the target system can handle"/>
+<outline text="Congestion makes system unavailable to its intended users"/>
+                            </outline>
+                            <outline text="More sophisticated methods manipulate protocols:">
+<outline text="“Ping of Death” "/>
+<outline text="Smurf"/>
+<outline text="Syn Flood"/>
+                            </outline>
+                            <outline text="More sophisticated still:">
+<outline text="Distributed DoS attack (DDoS)"/>
+                            </outline>
+                        </outline>
+                        <outline text="&quot;Ping of Death&quot; #slide ">
+                            <outline text="“Ping” packets">
+<outline text="Internet Control Message Protocol (ICMP) messages"/>
+<outline text="Request “echo reply” from another host"/>
+<outline text="Used to check connectivity"/>
+<outline text="Packets normally 84 bytes long"/>
+                            </outline>
+                            <outline text="An IPv4 packet can be as long as 65,535 bytes">
+<outline text="Would be fragmented into many frames on Ethernet"/>
+                            </outline>
+                            <outline text="Attacker sends a ping packet &gt; 65,535 bytes">
+<outline text="Overflows the memory buffer"/>
+<outline text="Overwriting important data"/>
+<outline text="Making system crash."/>
+                            </outline>
+                        </outline>
+                        <outline text="Smurf Attack Illustration #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Smurf Attack Illustration 1&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Smurf Attack Illustration 2&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Smurf Attack Defence #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Smurf Attack Defence&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Syn Flood Illustration #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Syn Flood Illustration 1&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Syn Flood Illustration 2&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Distributed Denial of Service (DDoS) #slide ">
+                            <outline text="Attacker deploys agent software units (zombies) on many remote machines">
+<outline text="This is usually done by means of “Trojans”."/>
+                            </outline>
+                            <outline text="Attacker sends a “trigger” signal to his “zombie botnet”."/>
+                            <outline text="Zombies send attack packets to target system(s)">
+<outline text="DDoS traffic is not noticed by owners of individual infected systems"/>
+<outline text="Aggregate DDoS traffic is devastating for victim system!"/>
+                            </outline>
+                        </outline>
+                        <outline text="DDoS Attack #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;DDoS Attack&quot;-" colorLabel="3"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Apache Web Server #h" complete="true" heading="1">
+                    <outline text="About Apache #slide">
+                        <outline text="Apache http server project"/>
+                        <outline text="http://httpd.apache.org "/>
+                        <outline text="Apache foundation started to support the web server project, but now extends to a multitude of other projects."/>
+                    </outline>
+                    <outline text="No. of Websites #slide " colorLabel="1">
+                        <outline text="-See box for image &quot;No. of Websites&quot;-" colorLabel="3"/>
+                    </outline>
+                    <outline text="Top Server Market share from 1995 - 2018 #slide " colorLabel="1">
+                        <outline text="-See box for image &quot;Top Server Market share from 1995 - 2018&quot;-" colorLabel="3"/>
+                        <outline text="http://news.netcraft.com/archives/category/web-server-survey/ "/>
+                    </outline>
+                    <outline text="Apache Features #slide ">
+                        <outline text="Server Side Programming Language Support">
+                            <outline text="Apache supports some common language interfaces which include Perl, Python, Tcl, and PHP. It also supports a variety of popular authentication modules like mod_auth, mod_access, mod_digest and many others."/>
+                        </outline>
+                        <outline text="IPv6 Support">
+                            <outline text="On systems where IPv6 is supported by the underlying Apache Portable Runtime library, Apache gets IPv6 listening sockets by default. "/>
+                        </outline>
+                        <outline text="Virtual Hosting">
+                            <outline text="Apache will allow one installation instance to serve multiple websites. For instance one Apache installation can serve sse.afnog.org, ws.afnog.org etc"/>
+                        </outline>
+                        <outline text="Simplified configuration"/>
+                        <outline text="Native Windows NT Unicode Support"/>
+                        <outline text="More at: http://httpd.apache.org/docs/2.2/new_features_2_0.html  "/>
+                    </outline>
+                    <outline text="Apache and IPv6 #slide ">
+                        <outline text="Apache supports IPv4 and IPv6 by default"/>
+                        <outline text="Set the listen option to port 80 will listen for both IPv4 and IPv6"/>
+                        <outline text="listen option with IPv4 and IPv6 specific addresses will invoke different sockets for each protocol"/>
+                        <outline text="Listen 196.200.219.xx:80"/>
+                        <outline text="Listen [2001:43f8:0:219:196:200:219:xx]:80"/>
+                    </outline>
+                    <outline text="Virtual Hosting #slide ">
+                        <outline text="Apache Provides multiple options of virtual hosting and scales"/>
+                        <outline text="Name Based virtual hosts "/>
+                        <outline text="IP Based Virtual Hosts"/>
+                        <outline text="Aliases"/>
+                        <outline text="It's recommended to use name based virtual hosting over IP based hosting in virtual hosting configuration"/>
+                    </outline>
+                    <outline text="Installing PHP and MySQL #slide ">
+                        <outline text="PHP and Mysql implementations have increased driven mainly by development requests"/>
+                        <outline text="LAMP and WAMP are the most common implementations "/>
+                        <outline text="Installation via “dkpg” and “apt-get” and relatively straight forward"/>
+                    </outline>
+                    <outline text="Starting Apache #slide ">
+                        <outline text="Startup scripts are located at">
+                            <outline text="`/etc/init.d/`"/>
+                        </outline>
+                        <outline text="Take a look in startup script">
+                            <outline text="`/etc/init.d/apache2`"/>
+                        </outline>
+                        <outline text="Add Apache to startup">
+                            <outline text="`update-rc.d apache2 enable`"/>
+                        </outline>
+                        <outline text="Run">
+                            <outline text="`$ /etc/init.d/apache2 restart`"/>
+                            <outline text="`$ sudo service apache2 start`"/>
+                        </outline>
+                        <outline text="Restart">
+                            <outline text="`$ sudo service apache2 restart`"/>
+                        </outline>
+                    </outline>
+                    <outline text="Start Apache! #slide ">
+                        <outline text="`/etc/init.d/apache2 start`"/>
+                        <outline text="Check that you can access `http://your.ip.add.ress` in your browser"/>
+                        <outline text="Check that you can access `https://your.ip.add.ress` in your browser, and that you get a certificate warning"/>
+                        <outline text="Click on the padlock icon in your browser and check that the certificate details are correct"/>
+                    </outline>
+                    <outline text="Apache SSL #slide ">
+                        <outline text="Secure Socket Layer (SSL) port is 443"/>
+                        <outline text="SSL is important to protect communication between client browser and web-server"/>
+                        <outline text="Requires the creation of SSL certificates and Certificate Signing Requests (CSR)"/>
+                        <outline text="For integrity, SSL certificates are signed by a Certificate Authority’s (CA) such as Verisign"/>
+                        <outline text="Self signed Certificates will also work but your browser will not trust it and will give a warning to users (which most don’t read)"/>
+                    </outline>
+                    <outline text="How SSL Works #slide ">
+                        <outline text="Each SSL certificate has a Public and Private key"/>
+                        <outline text="The Public Key is used to encrypt (digitally sign) the information"/>
+                        <outline text="The Public Key is accessible to everyone"/>
+                        <outline text="The private Key is used to decipher the information"/>
+                        <outline text="The private should be not be disclosed"/>
+                    </outline>
+                    <outline text="Role of Certificate Authority #slide ">
+                        <outline text="There are a number of CA that certify certificates"/>
+                        <outline text="Most browsers have pre-included public Keys from the CA’s"/>
+                        <outline text="A CA certified certificate will have validation information signed by the CA’s private key"/>
+                        <outline text="The browser will decrypt the validation information using the public key and verify that the certificate is certified by the CA"/>
+                        <outline text="If this fails a warning is given"/>
+                    </outline>
+                    <outline text="Apache installation on Debian #slide ">
+                        <outline text="Apache can be installed from APT-GET">
+                            <outline text="`apt-get install apache2`"/>
+                        </outline>
+                        <outline text="Can be installed from dpkg  "/>
+                        <outline text="Or from source if one requires a more recent version than what's on Debian source list"/>
+                    </outline>
+                    <outline text="File System Layout #slide ">
+                        <outline text="Important Apache config files and directories:">
+                            <outline text="`/var/www/index.html` or  `/var/www/html/index.html`"/>
+                        </outline>
+                        <outline text="SSL Configuration:">
+                            <outline text="`/etc/apache2/ssl`"/>
+                            <outline text="`/etc/apache2/sites-enabled/default-ssl.conf`"/>
+                        </outline>
+                    </outline>
+                    <outline text="SSL Configuration #slide ">
+                        <outline text="The Apache SSL configuration file contains the following lines:">
+                            <outline text="`#`"/>
+                            <outline text="`#    Certificate config info`"/>
+                            <outline text="`#`"/>
+                            <outline text="`SSLCertificateFile /etc/apache2/ssl/ca.crt`"/>
+                            <outline text="`SSLCertificateKeyFile /etc/apache2/ssl/ca.key` "/>
+                        </outline>
+                    </outline>
+                    <outline text="Apache Use Cases #slide ">
+                        <outline text="Apache is widely used to serve many content applications"/>
+                        <outline text="Webmail, Blogs, Wiki’s, CMS etc"/>
+                        <outline text="However, thereis somecompetition! (ingx)"/>
+                    </outline>
+                </outline>
+                <outline text="Cryptographic Currency #h" complete="true" heading="1">
+                    <outline text="note: #!slide used for sections that may be too long to fit on a single slide:"/>
+                    <outline text="Origins of Money #h " heading="2" colorLabel="1">
+                        <outline text="What is money? #!slide " colorLabel="1">
+                            <outline text="Hunter-Gatherer tribe:">
+<outline text="A group of hunters kill a mammoth"/>
+<outline text="The mammoth is cut up and meat is taken home to feed the tribe"/>
+<outline text="The tribe &quot;owes&quot; each hunter for his part in killing the mammoth"/>
+<outline text="Debt is settled by share of meat"/>
+<outline text="It is easy to remember who is owed in a small group"/>
+                            </outline>
+                            <outline text="Invention of agriculture:">
+<outline text="Domestication of plants and animals."/>
+<outline text="Hunting declines - people settle - cities founded."/>
+                            </outline>
+                            <outline text="Specialisation of trades:">
+<outline text="Farmers, "/>
+<outline text="Carpenters"/>
+<outline text="Metal smiths…etc."/>
+                            </outline>
+                            <outline text="There are too many people now for informal debts easily to be remembered/enforced."/>
+                            <outline text="Barter systems develop:">
+<outline text="Exchange of eggs for apples."/>
+<outline text="Grain for swords…etc. "/>
+                            </outline>
+                            <outline text="Aristotle (384-322BC) on the origin of money:">
+<outline text="Every commodity has a primary (original) use and a secondary use as an item of barter."/>
+                            </outline>
+                            <outline text="-See box for image &quot;What is money 2&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;What is money 1&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="What makes good money? #slide ">
+                            <outline text="According to Aristotle, the commodity must:">
+<outline text="1. Be durable">
+    <outline text="Must not fade, corrode etc."/>
+</outline>
+<outline text="2. Be portable">
+    <outline text="Must have a high worth relative to its weight   and size"/>
+</outline>
+<outline text="3. Be divisible/fungible">
+    <outline text="May be separated, re-combined,   exchanged, replaced without affecting   value."/>
+</outline>
+<outline text="4. Have intrinsic value">
+    <outline text="The value of money must be independent   of   anything except the money itself."/>
+    <outline text="Usually linked to its scarcity."/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Gold as money #slide " colorLabel="1">
+                            <outline text="1. Durable - YES">
+<outline text="Gold remains gold (though gold coins   can be chipped – original reason why   coins have “milled” edges)."/>
+                            </outline>
+                            <outline text="2. Portable - YES">
+<outline text="Gold is valuable relative to its weight.   Gold coins can be carried"/>
+                            </outline>
+                            <outline text="3. Divisible/fungible - YES">
+<outline text="Different sized coins/ingots can be cast  and recast."/>
+                            </outline>
+                            <outline text="4. Intrinsic value - PARTIALLY">
+<outline text="Valueof gold depends on the amount of gold there is in circulation. (As more gold is mined, value of existing gold falls.)"/>
+                            </outline>
+                            <outline text="Gold used to mint gold coins of standard weight/purity – payees know they are getting the amount of gold they think they are."/>
+                            <outline text="-See box for image &quot;Gold as money&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="YouTube Videos #slide ">
+                            <outline text="Sir Martyn Poliakoff talking about the gold in the Bank of England…">
+<outline text="[https://](https://www.youtube.com/watch?v=CTtf5s2HFkA)[www.youtube.com/watch?v=CTtf5s2HFkA](https://www.youtube.com/watch?v=CTtf5s2HFkA)"/>
+                            </outline>
+                            <outline text="Professor Lawrence White on the “Gold Standard”…">
+<outline text="[https://](https://www.youtube.com/watch?v=LdyHso5iSZI)[www.youtube.com/watch?v=LdyHso5iSZI](https://www.youtube.com/watch?v=LdyHso5iSZI)"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Virtualization of Money #h " heading="2" colorLabel="4">
+                        <outline text="Fiat Money and Virtual Money #slide">
+                            <outline text="Gold replaced by promissory tokens/banknotes issued by governments and banks.">
+<outline text="Under “gold standard” these could be exchanged for gold coin. "/>
+                            </outline>
+                            <outline text="“Fiat” system nowadays more common.">
+<outline text="debt acknowledged, but not actually backed up with gold."/>
+<outline text="Value of notes/base-metal coins depends on authority of issuer, which must be trusted."/>
+<outline text="Can be counterfeited! (Counterfeit £1 coins are becoming a nuisance!)"/>
+                            </outline>
+                            <outline text="Now however…">
+<outline text="most money is “virtual” – it does not exist even as fiat tokens!"/>
+<outline text="Exists as a balance in a bank account – acknowledgment of debt."/>
+<outline text="Most money is now merely information. (As it originally was!)"/>
+                            </outline>
+                        </outline>
+                        <outline text="Money as Information #slide ">
+                            <outline text="We no longer have physical tokens to record debt"/>
+                            <outline text="Their properties must be replicated virtually:">
+<outline text="Integrity">
+    <outline text="Total amount of money must be conserved during every transaction. (Money may not be “double spent”)."/>
+    <outline text="Transaction must be irrevocable; payer may not (unilaterally) reverse transaction afterwards."/>
+</outline>
+<outline text="Scarcity">
+    <outline text="“New” money cannot be created by anyone without appropriate authority."/>
+</outline>
+                            </outline>
+                            <outline text="These features enforced by a trusted financial institution/ authority, which all participants trust."/>
+                        </outline>
+                        <outline text="YouTube Video... #slide ">
+                            <outline text="“Money as Debt” – documentary by Paul Grignon">
+<outline text="–[https://](https://www.youtube.com/watch?v=jqvKjsIxT_8)[www.youtube.com/watch?v=jqvKjsIxT_8](https://www.youtube.com/watch?v=jqvKjsIxT_8)"/>
+                            </outline>
+                        </outline>
+                        <outline text="Centralized Authority #slide ">
+                            <outline text="“Payment” involves an authorized instruction to bank to transfer funds from one account to another.">
+<outline text="Credit/Debit Cards"/>
+<outline text="Cheques/Wire Transfer"/>
+                            </outline>
+                            <outline text="Contrast to paying with coins, banknotes etc.">
+<outline text="These are issued by a central authority, but transferred on a “peer-to-peer” basis."/>
+                            </outline>
+                        </outline>
+                        <outline text="Decentralized Currency #slide ">
+                            <outline text="Peer-to-Peer system – no centralized authority.">
+<outline text="Mimics buying/selling with gold coins (also peer-to-peer)."/>
+<outline text="We need an electronic equivalent to gold coins."/>
+                            </outline>
+                            <outline text="Early attempts: “Hashcash”, “b-money”."/>
+                            <outline text="Bitcoin introduced in 2009 by “Setoshi Nakamoto”">
+<outline text="This is not his real name."/>
+<outline text="Sounds Japanese, but he is believed to be English or Norwegian."/>
+                            </outline>
+                            <outline text="To understand how this works, we must first be sure to understand a few cryptographic concepts."/>
+                        </outline>
+                    </outline>
+                    <outline text="Cryptographic Foundations of Bitcoin #h " heading="2" colorLabel="2">
+                        <outline text="Cryptographic Foundations #slide ">
+                            <outline text="To understand how this works, we must understand three basic cryptographic concepts:">
+<outline text="Hash Functions"/>
+<outline text="Digital Signatures"/>
+<outline text="Proof-of-Work (PoW)"/>
+                            </outline>
+                            <outline text="The first two will be familiar to you from the previous lecture, but I shall recap..."/>
+                        </outline>
+                        <outline text="Hash Functions #slide " colorLabel="1">
+                            <outline text="A deterministic function H, mapping bit string of arbitrary length to fixed length string."/>
+                            <outline text="Output bits are seemingly random."/>
+                            <outline text="Algorithm needs to be:">
+<outline text="Fast - many hashes may be generated in a very short time."/>
+<outline text="“Collision resistant”: chance of 2 inputs producing identical output very very small."/>
+<outline text="“Pre-image resistant”: infeasible to find input given output."/>
+                            </outline>
+                            <outline text="Hash demo:  [http://](http://www.xorbin.com/tools/sha256-hash-calculator)[www.xorbin.com/tools/sha256-hash-calculator](http://www.xorbin.com/tools/sha256-hash-calculator)"/>
+                            <outline text="-See box for image &quot;Hash functions&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Digital Signatures (RSA Type) #!slide " colorLabel="1">
+                            <outline text="Public Key Cryptography: keys are created in pairs:"/>
+                            <outline text="-See box for image &quot;Digital signatures 1&quot;-" colorLabel="3"/>
+                            <outline text="Messages encrypted using KU can only be decrypted using KR."/>
+                            <outline text="Messages encrypted using KR can only be decrypted using KU."/>
+                            <outline text="Neither key can (feasibly) be inferred from the other."/>
+                            <outline text="-See box for image &quot;Digital signatures 2&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Digital signatures 3&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Digital signatures 4&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Proof-of-Work (PoW) Problem #!slide " colorLabel="1">
+                            <outline text="-See box for image &quot;PoW problem 1&quot;-" colorLabel="3"/>
+                            <outline text="Forces the challenged party to “do work” – if x=40, he/she must perform about 2^40=1,000,000,000,000 hashing operations."/>
+                            <outline text="Imposes a “cost” on the challenged party, deterring him/her from over-using/ abusing services (if proof-of-work needed before access given). "/>
+                            <outline text="-See box for image &quot;PoW problem 2&quot;-" colorLabel="3"/>
+                            <outline text="Only one hashing operation is needed to check that this work has been done."/>
+                        </outline>
+                        <outline text="YouTube Video">
+                            <outline text="Khan Academy – explanation of PoW">
+<outline text="[https](https://www.youtube.com/watch?v=9V1bipPkCTU)[://](https://www.youtube.com/watch?v=9V1bipPkCTU)[www.youtube.com/watch?v=9V1bipPkCTU](https://www.youtube.com/watch?v=9V1bipPkCTU)"/>
+<outline text="This video doesn’t really add much to what I’ve said, but you may want an alternative description. "/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Bitcoin Transactions #h " heading="2" colorLabel="5">
+                        <outline text="“Bitcoin” – Two Meanings #slide ">
+                            <outline text="Bitcoin (BTC) is a unit of currency (has an exchange rate with £, $, yen etc.">
+<outline text="Typically 1 bitcoin = $165 (Subject to huge fluctuations)"/>
+<outline text="There are lots of different denominations of units – e.g. thousandths and millions of bitcoins."/>
+                            </outline>
+                            <outline text="Bitcoin is the peer-to-peer protocol for the exchange of bitcoins between parties (players).">
+<outline text="Also facilitates the “mining” of bitcoins."/>
+<outline text="Participants compete to record “blocks” of transactions."/>
+<outline text="Winners rewarded with newly “minted” bitcoins."/>
+<outline text="Like mining gold – introduces a mechanism for devaluation"/>
+                            </outline>
+                        </outline>
+                        <outline text="What is a Bitcoin? #slide ">
+                            <outline text="A virtual “coin” that can be exchanged."/>
+                            <outline text="Exists as a chain of digital signatures representing all the transactions in the coin’s history."/>
+                            <outline text="Validated checked by verifying of these signatures."/>
+                            <outline text="Contains a “bitcoin address” = public key of the coin’s owner.">
+<outline text="–Owner has the corresponding private key."/>
+<outline text="–Only owner can sign an instruction to transfer that bitcoin to a new owner."/>
+                            </outline>
+                        </outline>
+                        <outline text="Bitcoin Transfer #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Bitcoin transfer&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Bitcoin Verification #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Bitcoin verification&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="“Double Spending” #!slide  " colorLabel="1">
+                            <outline text="-See box for image &quot;Double spending 1&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Double spending 2&quot;-" colorLabel="3"/>
+                            <outline text="Both “owners” can also verify all earlier transactions in that bitcoin’s history, and each believe they are its genuine owner. There is no mechanism to detect the previous owner’s fraud."/>
+                        </outline>
+                    </outline>
+                    <outline text="The “Block Chain” and Bitcoin Mining #h " heading="2" colorLabel="3">
+                        <outline text="The Public Ledger #slide ">
+                            <outline text="Record of all bitcoin transactions."/>
+                            <outline text="Must be kept up-to-date and agreed upon by all players. "/>
+                            <outline text="Receiver of a bitcoin must be able to verify from the ledger:">
+<outline text="That the payer genuinely owned the bitcoin with which he/she paid."/>
+<outline text="The payer did not use that same bitcoin to pay someone else."/>
+                            </outline>
+                            <outline text="This “ledger” may be:">
+<outline text="Held/maintained by a centralized authority.">
+    <outline text="Older solution."/>
+</outline>
+<outline text="Maintained collectively by the entire community.">
+    <outline text="Newer solution implemented in Bitcoin algorithm."/>
+</outline>
+<outline text="The Bitcoin “ledger” is called the “Block Chain”.">
+    <outline text="Maintained/updated by “Bitcoin Miners”."/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Bitcoin Mining #!slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Bitcoin mining 1&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Bitcoin mining 2&quot;-" colorLabel="3"/>
+                            <outline text="-See box for image &quot;Bitcoin mining 3&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="The &quot;Block Chain&quot; #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;The block chain&quot;-" colorLabel="3"/>
+                            <outline text="Copy of the Block Chain is stored by all “Players” (participants in the Bitcoin network). Can take ages to download!"/>
+                            <outline text="Each block contains a hash of its predecessor – anyone can verify no preceding block was modified!"/>
+                            <outline text="Links only point backwards – never forward. Forward path may not be unique!"/>
+                            <outline text="Forward path may form a Branching Tree – rival groups of miners attempting to add the next branch. (We’ll talk about how this is resolved later. For the moment, just be aware of this problem.)"/>
+                        </outline>
+                        <outline text="Mining: The PoW Problem #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Mining PoW&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Rival Block-Chain Branches #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Rival block-chain branches&quot;-" colorLabel="3"/>
+                        </outline>
+                        <outline text="Resolving Rival Branches #slide " colorLabel="1">
+                            <outline text="-See box for image &quot;Resolving rival branches&quot;-" colorLabel="3"/>
+                            <outline text="Branch B becomes the longest – everyone accepts it as the “valid” branch."/>
+                            <outline text="Now accepted as next section of blockchain."/>
+                            <outline text="Bitcoins “earned” in losing branch are invalid."/>
+                            <outline text="Miners working on other branches now switch to work on the winning branch."/>
+                            <outline text="Users accept as valid the longest branch they are aware of."/>
+                        </outline>
+                    </outline>
+                    <outline text="Bitcoin Inflation #h " heading="2" colorLabel="6">
+                        <outline text="Creating Scarcity… #slide " colorLabel="1">
+                            <outline text="If bitcoin mining goes on forever…">
+<outline text="…the supply of bitcoins will steadily increase, and…"/>
+<outline text="…the real value of each existing bitcoin will fall!"/>
+<outline text="INFLATION!!">
+    <outline text="This is the usual result of the supply of money increasing faster than the quantity of goods available to be bought."/>
+</outline>
+                            </outline>
+                            <outline text="Solution…">
+<outline text="Implement a “law of diminishing returns”"/>
+<outline text="Number of reward bitcoins programmed to half every time 210,000 bitcoins are mined."/>
+                            </outline>
+                            <outline text="-See box for image &quot;Creating scarcity 1&quot;-" colorLabel="3">
+<outline text="Estimation (Source: “The Ultimate Guide to Bitcoin” by Michael Miller, Que Publishing, 2015.)"/>
+                            </outline>
+                            <outline text="-See box for image &quot;Creating scarcity 2&quot;-" colorLabel="3"/>
+                            <outline text="Maximum number of bitcoins that will ever exist is 210,000,000."/>
+                        </outline>
+                        <outline text="Transaction Fees #slide ">
+                            <outline text="Eventually almost no new bitcoins will be produced.">
+<outline text="As if nearly all the gold in the world were mined"/>
+<outline text="Rewards for mining more do not cover costs."/>
+<outline text="Former “miners” will need a new incentive to continue their work"/>
+                            </outline>
+                            <outline text="From then onwards, incentives will be provided in the form of “transaction fees” payable by users."/>
+                        </outline>
+                        <outline text="YouTube Video… #slide ">
+                            <outline text="US Philosopher Stefan Molyneux on Bitcoin… ">
+<outline text="[https](https://www.youtube.com/watch?v=w4HGVJjqDVk)[://](https://www.youtube.com/watch?v=w4HGVJjqDVk)[www.youtube.com/watch?v=w4HGVJjqDVk](https://www.youtube.com/watch?v=w4HGVJjqDVk) "/>
+                            </outline>
+                            <outline text="Note: I find Molyneaux’s ideas interesting, but I disagree with most of them: please don’t think that by recommending this video I’m advocating Molyneux’s (or anyone else’s) brand of anarcho-capitalism. I’m not!"/>
+                        </outline>
+                        <outline text="Problems to think about… #slide ">
+                            <outline text="What happens if a short block chain branch has a “growth-spurt” and overtakes the longest branch? "/>
+                            <outline text="What happens if a dishonest person gains more than 50% of processing power on the bitcoin network?"/>
+                            <outline text="What about the energy wasted on solving the PoW problem? "/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="TalkMaths">
+                <outline text="$$a+b/\sqrt{x}\epsilon\epsilon\epsilon^4$$"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

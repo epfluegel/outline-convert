@@ -116,8 +116,10 @@ def main():
     try:
         tree = ET.fromstringlist(lines)
         forest = ignore_forest(parse_opml(tree, args=args), args)
+        print("ompl parsed correctly")
+        #print_forest(forest)
 
-    except:
+    except ET.ParseError:
         if args.debug:
             print("ompl not parsed correctly")
         forest = ignore_forest(parse_text(lines, args), args)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Summer Schedule</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Online Touchpoints:">
+            <outline text="Tue July 18, 16:00h" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZGZmMTVjZTEtZjRiNS00YTY3LWFlZjMtYjM2MTgyMmFlOTY2%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Wed July 26, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjFhMTg0YWItNjRlNC00NzVjLTg3M2ItNDJmZGE2ZjhkMGQ4%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Tue August 1, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDI2YWI3YjgtMTBiNy00MWVkLTk3YzEtMjI4OGVkNjk2MzMx%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="++ Eckhard &amp; Martin on Leave ++"/>
+            <outline text="Wed August 16, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGNlOTJjYmQtZmQ4MC00YTBmLTkzZmMtNDA5NzAwMTJhYTFi%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Wed August 23, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWQwOThmNTMtOWZjZC00YTFiLWJkZmMtMjFjZTM2NjhkZjNl%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Wed August 30, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWU0MWIxOTktNDE0MS00ZmIxLWJkZjktOWI1MTc1MDYwMmRj%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Tue September 5, 15:00" _note="[Click here to join the meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_NmM5OTk1MzItMGJmYi00NTc3LWI4NjgtZTQ2MmM4YjhiYjE2%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) " complete="true"/>
+            <outline text="Wed September 13, 13:00" _note="[The meeting is now in PR SB2015, this link is kept as a hybrid meeting option](https://teams.microsoft.com/l/meetup-join/19%3ameeting_Yjk4NGU2NWUtMWFmNC00YzlhLTg5YmMtMzdjN2QzNTA3MGZk%40thread.v2/0?context=%7b%22Tid%22%3a%22c9ef029c-18cf-4016-86d3-93cf8e94ff94%22%2c%22Oid%22%3a%225ce0b801-4e10-4209-9c3e-dae7d856d9d5%22%7d) "/>
+        </outline>
+    </body>
+</opml>
