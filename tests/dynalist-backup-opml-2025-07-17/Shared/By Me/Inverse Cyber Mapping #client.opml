@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Inverse Cyber Mapping #client</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Workshops" _note="#CI7130 #CI7160 #workshop ">
+            <outline text="Analysis and Understanding (Theory)" complete="true">
+                <outline text="[Basic Security Terminology Workshop](https://kingstonuniversity-my.sharepoint.com/:b:/g/personal/ku32104_kingston_ac_uk/EfOCbAlQ6EpIulEWbU2bL9AB-Q-KlsQkH-9oeFmTD3AYGw?e=6bIOvJ) #CI7130:LO5 #workshop" complete="true"/>
+            </outline>
+            <outline text="Security Assessment (Threats, Risks and Vulnerabilities)" complete="true">
+                <outline text="Risk Assessment" complete="true">
+                    <outline text="[OCTAVE Security Assessment Workshop](https://kingstonuniversity-my.sharepoint.com/:b:/g/personal/ku32104_kingston_ac_uk/ERWCMonmuxtFp8iVefc7kQQBLLMOwtVYSjBLparzAUbWWg?e=gbhuaN) #CI7130:LO5 #workshop" complete="true"/>
+                    <outline text="[Critical Review of a Fictitious Risk Analysis Report](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/Eazhoquk541EkxktDTDL1EwBvR3ZiORkxy6JoN8Ew5j6NA?e=1z0QPI) #CI7130:LO5 #workshop" complete="true"/>
+                </outline>
+                <outline text="Vulnerability Assessment or Management " complete="true">
+                    <outline text="[An Introduction to Metasploitable](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/ES4UhTFjkJxOvI1yuL50BQAB6t_gFmQn6IWjjUJOsMfU_w?e=BaumWt) #CI7130:LO4 #workshop"/>
+                    <outline text="[Port Scanning Vulnerability Assessment with nmap](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/ETw7NBcyURtImgZlbE8UwDwB3C_qLBH8ZLAQLlJtuzJZaQ?e=mktGIk) #CI7130:LO4 #workshop"/>
+                    <outline text="[Vulnerability Management Using CVE and CVSS](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/EdNuiNTLX8FBsbTd3hM7F5sB3a_9CSZ66olBZLMLPmFKDw?e=QOCX0O) #CI7130:LO4  #workshop #KA:SS"/>
+                    <outline text="[Mobile Application Vulnerability Assessment with MobFS](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/EYzs050HOlZArGCs9yVKN7MBBrVGmb_nkOd0Q4BC_e8SFw?e=WAdu6j) #CI7130:LO4 #workshop "/>
+                </outline>
+            </outline>
+            <outline text="Environments for Simulation or Demonstration of Security Activities (Attacks and Exploits)">
+                <outline text="[Configuring A Simple Virtual Network](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/Edz8EYEo9tJEiJu0PswphScBVQjQMs1vV-sozXFfiu-otQ?e=9BezmJ) #CI7130:LO4 #workshop"/>
+                <outline text="[Networked Virtual Machine Boot Camp](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/EQ6OSTINBbhKpsysQDuaoscBYGH9jAiv8RuTihlPG2ZDIA?e=7AN1cc) #CI7130:LO4 #workshop         "/>
+                <outline text="[Simulating DoS-Attacks](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/EQ6kOIIyoSJEl61JLVivD80BGBhkE8AxXXhrc8J0g7lxcA?e=OPXcJY) #CI7130:LO4 #workshop "/>
+                <outline text="[Repository of Virtual Machines (Box folder)](https://kingston.box.com/s/fmiqs3bxq760aqrkotx9bchg7wiap4fw) #CI7100  #CI7160 #CI7130 ">
+                    <outline text="Note: not all usernames and passwords are the same, but often it is login: `user`, password: `abc123`. Exceptions: Kali (root - toor) and xp (Administrator - abc123). #CI7100  #CI7160 #CI7130 "/>
+                </outline>
+                <outline text="[Linux Tutorial](https://kingstonuniversity-my.sharepoint.com/:b:/g/personal/ku32104_kingston_ac_uk/EdKi441XKlxKr4c6Nss9QLEByAmKuF13JreJuF0t1scZOA?e=crqJy3) #CI7100 #CI7160 #CI7130 " complete="true"/>
+            </outline>
+            <outline text="Security Solutions (Controls)">
+                <outline text="Analyse" complete="true">
+                    <outline text="Random Secret Sharing (RSS) #CI7160 #workshop " complete="true">
+                        <outline text="Prerequisites." colorLabel="3">
+                            <outline text="An understanding of advanced secret sharing techniques, including the Random Secret Sharing (RSS) protocol. "/>
+                        </outline>
+                        <outline text="Aim." colorLabel="3">
+                            <outline text="To illustrate the Random Secret Sharing (RSS) protocol. "/>
+                        </outline>
+                        <outline text="Covered Learning Outcomes.">
+                            <outline text="CI7160-LO2, CI7160-LO5 #los "/>
+                        </outline>
+                        <outline text="Description." colorLabel="3">
+                            <outline text="Setup." colorLabel="4">
+<outline text="The class is divided into $$n$$ groups, recommended group number $$n$$ is between 3 and 4. Each group requires a unique index $$i$$."/>
+<outline text="Each group receives $$n$$ record cards of same colour."/>
+                            </outline>
+                            <outline text="Instructions." colorLabel="4">
+<outline text="You will simulate the RSS protocol. Revised the slide and familiarise yourself with its content. You will simulate the exchange of messages by physically passing on record cards."/>
+                            </outline>
+                            <outline text="Activity.  " colorLabel="4">
+<outline text="0. Write down your share on a separate piece of paper."/>
+<outline text="1. On each record card, note your group (player) ID at the top, the recipient (other players) ID at the bottom and the corresponding share value in the middle. You may use generic mathematical notation, indicating the evaluation of your share polynomial."/>
+<outline text="2. Send the various shares to their recipients, by passing on record cards."/>
+<outline text="3. Write down the final share, by adding up all the received shares and your own private share."/>
+<outline text="4. Are you now able to justify why everyone as a secret share of a random secret, which is not known to anyone at this stage?"/>
+                            </outline>
+                        </outline>
+                        <outline text="Wrap-Up." colorLabel="3">
+                            <outline text="Can you think of an application of this protocol?"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Configure" complete="true">
+                    <outline text="Securing The Apache Webserver #CI7100 #CI7160 #workshop #todo" complete="true">
+                        <outline text="Scenario.">
+                            <outline text="Alice works for an organisation and is in charge of securely configuring and maintaining the company's web server. Today, she is working on a fresh installation of the system and needs to download Apache if necessary, and use suitable security tools in order to create a self-signed certificate for installation with Apache. #level1 "/>
+                        </outline>
+                        <outline text="Solution.">
+                            <outline text="She is based on a Linux environment, and has decided to proceed along the following six steps:">
+<outline text="Step 1: Enable Apache on the system, if necessary.  ">
+    <outline text="She might not need to install Apache. One can verify the existence or successful installation of Apache using a web browser. "/>
+    <outline text="Type `localhost` into your browser address bar. You need to be able to see a generic test home page. "/>
+</outline>
+<outline text="Step 2: If Apache is not present, she needs to install Apache.  ">
+    <outline text="How to install and start in Ubuntu (Linux):">
+        <outline text="The following steps are required to install the Apache web server: typ `sudo apt-get install apache2` command on the console then press enter."/>
+        <outline text="Type sudo `/etc/init.d/apache2 start` or `sudo service apache2 start` to start apache."/>
+        <outline text="`ps -aux | grep apache` "/>
+        <outline text="After apache installation, it is required to verify if it is installed or not. To verify, type aptitude show apache2 command on the terminal. This displays the details of the apache package stating its status as shown in figure 15 below.">
+            <outline text="Fig. 15: Apache installation details."/>
+        </outline>
+        <outline text="After installation, the next step is to enable ssl. To do this type `sudo a2enmod ssl`. This is shown in figure 16 below.">
+            <outline text="Fig. 16: Enable SSL"/>
+        </outline>
+    </outline>
+    <outline text="How to install and start in CentOS (Linux):">
+        <outline text="sudo yum install httpd #linux "/>
+        <outline text="systemctl start httpd #linux "/>
+    </outline>
+    <outline text="She can now test that Apache is running as in Step 1."/>
+</outline>
+<outline text="Step 3: Enable the Apache ssl module, if necessary.  ">
+    <outline text="To do this, she types `sudo a2enmod ssl` on the command line. Then she can type `sudo service apache2 restart` to restart Apache. "/>
+    <outline text="The ssl module can be disabled using the `sudo a2dismod ssl` command, if not required."/>
+</outline>
+<outline text="Step 4: Create a self-signed certificate, based on using a suitable tool.   ">
+    <outline text="(a) Generate a public/private key pair with the `openssl` tool. ">
+        <outline text="This requires further terminal commands, such as">
+            <outline text="`openssl genrsa -out key.pem 2048`"/>
+        </outline>
+        <outline text="You might have to enter a passphrase for your key and verify. You can use `ls` to show the created key files, and `more` or `less` to show their content."/>
+    </outline>
+    <outline text="(b) Create a CSR (Certificate Signing Request).">
+        <outline text="This requires the terminal command">
+            <outline text="`openssl req -new -key key.pem -sha256 -out server.csr`"/>
+        </outline>
+        <outline text="Enter your chosen passphrase when prompted, and the X.509 attributes of the certificate such as your server's host/website name."/>
+        <outline text="The CSR in the file `server.csr` is generated."/>
+    </outline>
+    <outline text="(c) Generate a self-signed certificate by self-signing the CSR.">
+        <outline text="You will issue the following terminal command:">
+            <outline text="`openssl x509 -req -days 365 -in server.csr -signkey key.pem -out server.crt`"/>
+        </outline>
+        <outline text="Enter your chosen passphrase when prompted. The certificate gets generated in `server.crt`."/>
+    </outline>
+</outline>
+<outline text="Step 5: Configure SSL on Apache accordingly.  ">
+    <outline text="The private key and the certificate need to be copied to two locations on the system file space, referred to as `/path/to/your_private.key` and `/path/to/your_domain_name.crt`. They could be in your home directory, or in `/var/www`. "/>
+    <outline text="Edit the Apache configuration file by typing `sudo nano /etc/apache2/apache.conf` (or by using any other text editor) and then adding references to these locations. This is done by adding these lines to the configuation file:">
+        <outline text="`&lt;VirtualHost *:443&gt;`">
+            <outline text="`ServerName your_server`"/>
+            <outline text="`SSLEngine on`"/>
+            <outline text="`SSLCertificateFile /path/to/your_domain_name.crt`"/>
+            <outline text="`SSLCertificateKeyFile /path/to/your_private.key`"/>
+        </outline>
+        <outline text="`&lt;/VirtualHost&gt;`"/>
+    </outline>
+    <outline text="Then restart Apache, for the changes to take effect. "/>
+</outline>
+<outline text="Step 6: Verify the secure connection.  ">
+    <outline text="Open a web browser on your local machine, then type `https://localhost` into the URL bar. The same page confirming that the Apache webserver was installed should be displayed. There may be a warning about an untrusted certificate."/>
+</outline>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="[Configuring the Uncomplicated Firewall](https://kingstonuniversity-my.sharepoint.com/:w:/g/personal/ku32104_kingston_ac_uk/EebcUCrHGTVEin-FwlvnkcoBPYRRCqkC3XbhWxJioggn5Q?e=BvvAze) #CI7130:LO4 #workshop" complete="true"/>
+                </outline>
+                <outline text="Deploy or Manage">
+                    <outline text="Multichain #workshop #CI7100 #CI7160 #todo ">
+                        <outline text="**Step 1: Download Multichain**">
+                            <outline text="1. Visit the [Multichain website](https://www.multichain.com/download-install/) and navigate to the download section."/>
+                            <outline text="2. Choose the appropriate version for Windows and click on the download link."/>
+                        </outline>
+                        <outline text="**Step 2: Installation**">
+                            <outline text="1. Once the download is complete, locate the downloaded file (usually a .zip file) and extract its contents to a preferred location on your Windows machine."/>
+                            <outline text="2. Open Command Prompt by searching for &quot;cmd&quot; in the Windows search bar and selecting &quot;Command Prompt.&quot;"/>
+                            <outline text="3. Navigate to the directory where Multichain was extracted using the `cd` command in Command Prompt. For instance, if Multichain is in the Downloads folder, type `cd Downloads\Multichain-x.x.x` (replace x.x.x with the specific version number)."/>
+                        </outline>
+                        <outline text="**Step 3: Create a New Blockchain**">
+                            <outline text="1. Use the Command Prompt to initiate a new blockchain. Use the following command:">
+<outline text="```multichain-util create &lt;chain-name&gt;```"/>
+<outline text="Replace `&lt;chain-name&gt;` with your preferred name for the blockchain."/>
+                            </outline>
+                            <outline text="2. Navigate to the newly created directory for your blockchain:">
+<outline text="```cd &lt;chain-name&gt;```"/>
+                            </outline>
+                        </outline>
+                        <outline text="**Step 4: Start the Blockchain**">
+                            <outline text="1. To start the blockchain, use the following command:">
+<outline text="```multichaind &lt;chain-name&gt; -daemon```"/>
+<outline text="This will launch the blockchain in the background (daemon mode)."/>
+                            </outline>
+                        </outline>
+                        <outline text="**Step 5: Interacting with the Blockchain**">
+                            <outline text="1. To interact with your Multichain blockchain, use the Multichain command-line interface (CLI). Access it using the following command:">
+<outline text="```multichain-cli &lt;chain-name&gt;```"/>
+<outline text="This command will open the CLI, allowing you to execute commands for managing your blockchain (e.g., creating assets, issuing permissions, etc.)."/>
+                            </outline>
+                        </outline>
+                        <outline text="**Step 6: Stopping the Blockchain**">
+                            <outline text="1. To stop the Multichain blockchain, use the following command in Command Prompt:">
+<outline text="```multichain-cli &lt;chain-name&gt; stop```"/>
+<outline text="This will gracefully shut down the blockchain."/>
+                            </outline>
+                        </outline>
+                        <outline text="**Notes:**">
+                            <outline text="Always replace `&lt;chain-name&gt;` with your chosen name for the blockchain throughout the tutorial."/>
+                            <outline text="Ensure you follow proper security practices and configurations to protect your blockchain network."/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="TEMP">
+                <outline text="From the Ubuntu console, type the command `sudo nano /etc/apt/sources.list`. This command is used to edit the directory path. The default Ubuntu “Main repository” and the “Update repository” must be edited for apache to be installed. This is necessary because apache installation will be denied. This is shown in figure 14 below.">
+                    <outline text="Fig. 14: Ubuntu repository edit."/>
+                </outline>
+                <outline text="From the above, the line “deb-src http://scratch/ubuntu/ precise main restricted” was updated to “deb-src http://scratch/ubuntu/ precise main” while the lines “deb http://scratch/ubuntu/ precise-updates main restricted” and “deb-src http://scratch/ubuntu/ precise-updates main restricted” was updated to “deb http://scratch/ubuntu/ precise-security main restricted” and “deb-src http://scratch/ubuntu/ precise-security main” respectively."/>
+                <outline text="**Thanks to some system updates, we need to implement a small change in the instructions for the SSL Apache DeterLab experiment. In the &quot;Installing Apache&quot; step, remove the word &quot;restricted&quot; from all lines in the sources.list file. (This is shown in the nano editor in Figure 7 - yours will be slightly different from this, but make no changes to it other than to remove the word &quot;restricted&quot;.)**"/>
+                <outline text="After the update, press `ctrl+x` to go back to the console. The user will be asked to save the change, choose yes by pressing y, then press enter to save it in the same location."/>
+                <outline text="Ubuntu needs to be updated after the repository in the source list has been edited. To ensure this, type `sudo apt-get update` command on the console. This is to update the package index."/>
+                <outline text="On Windows, the best option for her is to download an executable, rather than a source code distribution. ">
+                    <outline text="How to install in Windows:">
+                        <outline text="Download and install XAMPP. #windows">
+                            <outline text="Download link:" _note="https://www.apachefriends.org/index.html&#xA;&#xA;"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="`openssl rsa -in key.pem -outform PEM -pubout -out public.pem`"/>
+            </outline>
+        </outline>
+    </body>
+</opml>

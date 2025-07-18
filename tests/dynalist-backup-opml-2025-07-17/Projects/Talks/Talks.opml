@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Talks</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="YouTube">
+            <outline text="How to Write Your Aims &amp; Objectives">
+                <outline text="Aims versus Objectives " colorLabel="5">
+                    <outline text="Aims are the goals you have when you do your research."/>
+                    <outline text="This tends to be the direct or indirect outcomes, also in the long term."/>
+                    <outline text="We write the our aims in a short and succinct paragraph."/>
+                    <outline text="Objectives are the specific, tangible outcomes  that you are planning to achieve. "/>
+                    <outline text="They will be specified in form of a bulleted list. "/>
+                </outline>
+                <outline text="SMARTness " colorLabel="5">
+                    <outline text="Objectives are most effective, if they have the SMART properties:">
+                        <outline text="**S** -- specific,"/>
+                        <outline text="**M** -- measurable,"/>
+                        <outline text="**A** -- achievable or attainable,"/>
+                        <outline text="**R** -- relevant,"/>
+                        <outline text="**T** -- time-bound."/>
+                    </outline>
+                    <outline text="In the context of an academic thesis, your objectives will be judged against these attributes."/>
+                </outline>
+                <outline text="Examples " colorLabel="5">
+                    <outline text="Aims:">
+                        <outline text="__The aim of this thesis is to improve security in mobile environments, focusing on aspects of user confidentiality and privacy. Ultimately, this work could raise awareness amongst users on how to better protect themselves against cyber attacks, targeting their mobile phones and devices.__"/>
+                    </outline>
+                    <outline text="Objectives:">
+                        <outline text="To thoroughly review the literature on mobile security, with a focus on secure instant messaging protocols."/>
+                        <outline text="To analyse the threats and vulnerabilities of cloud architectures, and to recommend security controls, mitigation these."/>
+                        <outline text="To deploy a Blockchain architecture and to analyse the security features of the system."/>
+                    </outline>
+                </outline>
+                <outline text="Summary " colorLabel="5">
+                    <outline text="It is important and useful to write down your aims and objectives, and different audiences benefit from it in different ways."/>
+                    <outline text="We use different styles, when we present our aims and objectives."/>
+                    <outline text="An essential requirement is that the objectives have the SMART properties."/>
+                </outline>
+            </outline>
+            <outline text="Aims &amp; Objectives &lt;-&gt; Research Questions &lt;-&gt; Research Contributions">
+                <outline text="Spin"/>
+                <outline text="Aims &amp; Objectives &lt;-&gt; Research Contributions" colorLabel="5">
+                    <outline text="Aims are the goals you have when you do your research."/>
+                    <outline text="This tends to be the direct or indirect outcomes, also in the long term."/>
+                    <outline text="We write the our aims in a short and succinct paragraph."/>
+                    <outline text="Objectives are the specific, tangible outcomes  that you are planning to achieve. "/>
+                    <outline text="They will be specified in form of a bulleted list. "/>
+                </outline>
+                <outline text="Target Audience"/>
+                <outline text="Project Planning"/>
+                <outline text="Research Questions &lt;-&gt; Research Contributions" colorLabel="5">
+                    <outline text="Objectives are most effective, if they have the SMART properties:">
+                        <outline text="**S** -- specific,"/>
+                        <outline text="**M** -- measurable,"/>
+                        <outline text="**A** -- achievable or attainable,"/>
+                        <outline text="**R** -- relevant,"/>
+                        <outline text="**T** -- time-bound."/>
+                    </outline>
+                    <outline text="In the context of an academic thesis, your objectives will be judged against these attributes."/>
+                </outline>
+                <outline text="Aims &amp; Objectives &lt;-&gt; Research Questions" colorLabel="5">
+                    <outline text="Aims:">
+                        <outline text="__The aim of this thesis is to improve security in mobile environments, focusing on aspects of user confidentiality and privacy. Ultimately, this work could raise awareness amongst users on how to better protect themselves against cyber attacks, targeting their mobile phones and devices.__"/>
+                    </outline>
+                    <outline text="Objectives:">
+                        <outline text="To thoroughly review the literature on mobile security, with a focus on secure instant messaging protocols."/>
+                        <outline text="To analyse the threats and vulnerabilities of cloud architectures, and to recommend security controls, mitigation these."/>
+                        <outline text="To deploy a Blockchain architecture and to analyse the security features of the system."/>
+                    </outline>
+                </outline>
+                <outline text="Summary " colorLabel="5">
+                    <outline text="It is important and useful to write down your aims and objectives, and different audiences benefit from it in different ways."/>
+                    <outline text="We use different styles, when we present our aims and objectives."/>
+                    <outline text="An essential requirement is that the objectives have the SMART properties."/>
+                </outline>
+            </outline>
+            <outline text="GTD Light">
+                <outline text="Talk">
+                    <outline text="What is GTD?" complete="true"/>
+                    <outline text="Thinking in Projects "/>
+                    <outline text="Stressed? Do a Review!"/>
+                    <outline text="Use the Right Tool" complete="true"/>
+                </outline>
+            </outline>
+            <outline text="Perfect abstract video">
+                <outline text="How to Write the Perfect Abstract">
+                    <outline text="Abstract">
+                        <outline text="Being able to write a great abstract is a prerequisite for creating appealing articles, theses or papers. A good dissertation or research paper can often be recognised by the high quality of its abstract. However, it is notoriously difficult to create such a good abstract. Having a good methodology in place will help tremendously with this task. In this presentation, a methodology based on a specific, recommended structure will be explained."/>
+                    </outline>
+                    <outline text="Motivation" colorLabel="3">
+                        <outline text="A good dissertation or research paper can often be recognised by the __quality of its abstract__." colorLabel="4"/>
+                        <outline text="However, it is __notoriously difficult__ to create a very good abstract." colorLabel="4"/>
+                        <outline text="Having a __good methodology__ in place will help tremendously." colorLabel="4"/>
+                        <outline text="This will be explained in this presentation!" colorLabel="4"/>
+                    </outline>
+                    <outline text="What is an abstract?" colorLabel="3">
+                        <outline text="An abstract is effectively a __condensed summary__ of your entire report or article."/>
+                        <outline text="Different types of academic abstracts exist: ">
+                            <outline text="__Thesis abstract__"/>
+                            <outline text="__Paper abstract__"/>
+                            <outline text="__Extended abstract__"/>
+                        </outline>
+                        <outline text="There is also an __Executive summary__."/>
+                    </outline>
+                    <outline text="Structure matters!" colorLabel="3">
+                        <outline text="It is extremely important to have the __right structure__ in place."/>
+                        <outline text="It helps in ensuring the __high quality__ of the abstract, and also helps with the __writing process__."/>
+                        <outline text="My recommended structure:" colorLabel="4">
+                            <outline text="[MOTIVATION] (1 sentence)"/>
+                            <outline text="CONTEXT/BACKGROUND (2-3 sentences): 1/3 of abstract"/>
+                            <outline text="CONTRIBUTION 2/3 of abstract"/>
+                            <outline text="[CONCLUSION]"/>
+                            <outline text="====="/>
+                            <outline text="TOTAL: 100-150 words"/>
+                        </outline>
+                    </outline>
+                    <outline text="Writing your abstract " colorLabel="3">
+                        <outline text="__When__ should you write the abstract?">
+                            <outline text="Most of the time, at the end. But it can also be written at the beginning or in between."/>
+                        </outline>
+                        <outline text="__How__ should you write the abstract?">
+                            <outline text="You should use plain text and a decent outlining tool such as Dynalist or WorkFlowy."/>
+                        </outline>
+                        <outline text="__How long will it take__ to write the abstract?">
+                            <outline text="As it can take a considerable amount of time to write your abstract, you should work in iterations."/>
+                        </outline>
+                    </outline>
+                    <outline text="Summary" colorLabel="3">
+                        <outline text="Being able to write a great abstract is a prerequisite for creating appealing articles, theses or papers." colorLabel="4"/>
+                        <outline text="Different types of abstracts exist, we have focused on a simple academic abstract type."/>
+                        <outline text="Dear into a well-defined structure is the essential ingredient in getting it right."/>
+                        <outline text="You can write the abstract at different times, using different tools, but the main thing is to work in iterations."/>
+                        <outline text="Homework: write an abstract for this talk! The solution will be given in the next video..."/>
+                    </outline>
+                </outline>
+                <outline text="SCRIPT">
+                    <outline text="Meta-Introduction">
+                        <outline text="Hi all, welcome to this video on how to write the perfect abstract!"/>
+                        <outline text="I promise that this will be a short video, spent too much time on last videos"/>
+                        <outline text="In fact what i've done is I created 2 parts - today, some really good explanations &amp; a home work that prepares for next video"/>
+                        <outline text="Today I will do something very different to the last videos, I will not do life editing but simply give a lecture. I'm going to use Dynalist for this task."/>
+                        <outline text="Overview: I will motivate the importance of writing a good abstract, I will then explain what an abstract actually is, and run through our couple of different definitions of abstract types. The key slide is then my methodology for creating a good abstract structure, I will then reflect on when and how it is best to write the abstract, followed by a summary and some homework for the next video!"/>
+                    </outline>
+                    <outline text="Motivation">
+                        <outline text="Why is it important to have a good abstract?"/>
+                        <outline text="How easy is it to write a very good abstract?"/>
+                        <outline text="What can you do to make the process easier?"/>
+                        <outline text="Why should you continue watching this video?"/>
+                    </outline>
+                    <outline text="What is an abstract?">
+                        <outline text="Do you actually know what an abstract is? How would you define it? Well,…"/>
+                        <outline text="It needs to be short and concise, but it also needs to be complete. And that's exactly the problem."/>
+                        <outline text="You might have come across different types of abstracts, for example:"/>
+                        <outline text="The executive summary is usually written by a technical person for a non-technical audience. We will not focus on this today."/>
+                    </outline>
+                    <outline text="Structure matters!">
+                        <outline text="The main secret how to create a successful and great abstract is to follow a well-defined structure, as you will see now."/>
+                        <outline text="The consequences of having this good structure behind your abstract are:…"/>
+                        <outline text="So now look here at my recommended structure:"/>
+                    </outline>
+                    <outline text="Writing your abstract"/>
+                    <outline text="Summary"/>
+                    <outline text="=="/>
+                    <outline text=""/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Academic">
+            <outline text="MAEVA: A Framework for Security Risk Response Based on Attack-Motivation Analysis">
+                <outline text="Motivation #slide ">
+                    <outline text="Organisations are increasingly facing cyber attacks, targeting their systems and data"/>
+                    <outline text="Security assessment and risk analysis are popular techniques for informing budget spending in relation to security controls"/>
+                    <outline text="They mainly focus on analysing the expected impact of an attack on the organisation's assets"/>
+                    <outline text="However, this is a difficult task and tricky to get accurate estimates."/>
+                    <outline text="Could there be new methodologies, focusing on &quot;the other side&quot;, i.e. the motivation that an external attack might have on launching attacks?"/>
+                </outline>
+                <outline text="Research Contributions #slide ">
+                    <outline text="This paper presents two contributions.">
+                        <outline text="The first contribution is a novel framework for risk assessment of cyber security attacks on an organisation."/>
+                        <outline text="The second contribution is an application of this framework to game-theoretic risk assessment."/>
+                    </outline>
+                    <outline text="The main difference to previous work is:">
+                        <outline text="The novel framework, entitled MAEVA, focuses on the attackers perspective (rather than the defender, i.e. the security assessor)"/>
+                        <outline text="We develop a scheme, entitled the Attack Incentive Matrix (AIM), which can be contrasted with the standard Risk Response Matrix"/>
+                    </outline>
+                    <outline text="Benefits arise when using this framework in combination with traditional approaches, as it might increase accuracy of risk estimates"/>
+                </outline>
+                <outline text="The Challenges of Risk Computation #slide ">
+                    <outline text="Using formal notation, the risk $$R$$ can be expressed as an expected impact $$I$$."/>
+                    <outline text="This can be computed using the following equation:">
+                        <outline text="$$R = p \cdot I. $$$$ #label:RiskEq"/>
+                    </outline>
+                    <outline text="Here $$p$$ is the probability of an attack occurring, often referred to as {\em attack likelihood}."/>
+                    <outline text="From this equation, one can see that the problem now is to quantify and compute $$p$$ and $$I$$ and the difficulty is to perform a realistic estimate of these variables."/>
+                </outline>
+                <outline text="Risk Assessment Based on Risk Response Matrix #slide ">
+                    <outline text="It is now assumed that one is able to determine the attack likelihood $$p$$."/>
+                    <outline text="This leads to a table containing risk response actions, such as defending critical assets, recovering from an attack, planning for defense or choosing not to respond at all."/>
+                    <outline text="An appropriate response action is then determined by indexing the table rows with attack probabilities using qualitative metrics (low, medium or high) and its columns with a measure for the impact (minor, moderate or major) of the attack."/>
+                    <outline text="This table is referred to as {\em Risk Response Matrix} (RRM) in this talk."/>
+                </outline>
+                <outline text="Risk Response Matrix #slide ">
+                    <outline text=" ![Pasted image](https://dynalist.io/u/tCVcb1pC3e_cGA0BlV8lNWTP) "/>
+                    <outline text="\begin{figure}[ht]{"/>
+                    <outline text="\centering"/>
+                    <outline text="\includegraphics[width=0.5 \textwidth]{Figures/RRM}"/>
+                    <outline text="}"/>
+                    <outline text="\caption{Risk Response Matrix (RRM) [NIST]}"/>
+                    <outline text="\label{RiskResponseMatrixDefender}"/>
+                    <outline text="\end{figure}"/>
+                </outline>
+                <outline text="The MAEVA Framework (Explanation) #slide ">
+                    <outline text="\textbf{M}otive: the underlying reason for attacking the victim. This could be for the purposes of financial gains, or personal satisfaction."/>
+                    <outline text="\textbf{A}bility: the capability of the attacker to invest in resources for implementing the attack, as well as her/his technical knowledge"/>
+                    <outline text="\textbf{E}xploitability: the ease by which the system can be penetrated, through exploiting a vulnerability."/>
+                    <outline text="\textbf{V}isibility of target: how prominent is the target -- e.g.~does it have a popular website or brand name, or a large user base?"/>
+                    <outline text="\textbf{A}ttractiveness of target: from the point of view of the attacker, how attractive is the target?"/>
+                </outline>
+                <outline text="The MAEVA Framework -- Attack Incentive Matrix #slide">
+                    <outline text=" ![Pasted image](https://dynalist.io/u/P5zY4iNxRQgamTDyG0X0rylj) "/>
+                    <outline text="\begin{figure}[ht]"/>
+                    <outline text="\centering"/>
+                    <outline text="\includegraphics[width=0.8 \textwidth]{Figures/AIM}"/>
+                    <outline text="\caption{Attack Incentive Matrix (AIM)}"/>
+                    <outline text="\label{AttackIncentiveMatrixAttacker}"/>
+                    <outline text="\end{figure}"/>
+                </outline>
+                <outline text="Game Theory -- Introducing Basic Terminology #slide ">
+                    <outline text="Game theory is &quot;__the study of mathematical models of conflict and cooperation between intelligent rational decision-makers.__&quot; "/>
+                    <outline text=" ![Pasted image](https://dynalist.io/u/7vAmM06TbPR5kvA4MVEhQnAD) "/>
+                    <outline text="Important Aspects:">
+                        <outline text="Game Type"/>
+                        <outline text="Players"/>
+                        <outline text="Utilities (payoffs)"/>
+                        <outline text="Strategies"/>
+                        <outline text="Solving (optimal strategies)"/>
+                        <outline text="Nash Equilibrium"/>
+                    </outline>
+                </outline>
+                <outline text="Application to Game Theoretic Risk Assessment #slide ">
+                    <outline text="Under the assumption of complete information about the strategies available to both players, the use of game theory improves the traditional risk assessment.">
+                        <outline text="Standard RA: the risk response matrix gives a deterministic response action (strategy sd)"/>
+                        <outline text="Game Theory: we are using a mixed equilibrium strategy (probabilistic) which guarantee expected utility u*"/>
+                    </outline>
+                    <outline text="The security game $$\mathcal{G}$$ between the attacker and defender in strategic normal form:"/>
+                    <outline text="\begin{table}[h] \centering\caption{Payoff Matrix for $$\mathcal{G}(\mathcal{D},\mathcal{A})$$ }\label{PayoffMatrix}"/>
+                    <outline text="$$\begin{array}{|c|c|c|}\hline \mathcal{D} \downarrow \mathcal{A} \rightarrow &amp; s_a &amp; s_{-a} \\ \hline s_{d}  &amp; -c_{\mathcal{D}}, -c_{\mathcal{A}} &amp; -c_{\mathcal{D}}, 0      \\ \hline s_{-d} &amp; -I , G- c_{\mathcal{A}} &amp; 0, 0 \\ \hline\end{array} $$"/>
+                    <outline text="\end{table}"/>
+                </outline>
+                <outline text="Using MAEVA to Inform Game Payoff Functions #slide ">
+                    <outline text="Before the game can be solved, it needs to be specified in terms of the precise values for the payoff functions, and Table \ref{PayoffMatrix} reveals that the MAEVA framework can be used to determine (an estimate for) $$G$$."/>
+                    <outline text="The parameter $$c_{\mathcal{D}}$$ is effectively the {\em defense budget} of the organisation and $$c_{\mathcal{A}}$$ can be related to the attacker's effort $$e$$."/>
+                    <outline text="Hence, in a natural way, both the RRM and AIM methodologies provide the input parameters for the game."/>
+                    <outline text="The analysis of the game based on computing the Nash equilibrium will then result in the desired risk value."/>
+                </outline>
+                <outline text="Summary #slide">
+                    <outline text="The MAEVA framework is based on analysing the incentive an adversary may have to attack the organisation when weighing up the potential gain from the attack and the effort it takes to breach the system."/>
+                    <outline text="We argue that this point of view, which is fundamentally different to that taken in traditional risk assessment, can complement and enhance the standard approach based on estimating risk as a function of attack likelihood and impact on the organisation."/>
+                    <outline text="Our framework is very convenient when wishing to inform the design of complete information games, modelling attacker-defender scenarios."/>
+                    <outline text="It is a natural first step an organisation can take to prepare a game-theoretic risk assessment."/>
+                </outline>
+                <outline text="Conclusion #slide ">
+                    <outline text="To our knowledge, our framework constitutes a novel approach and we recommend using it as a practical methodology for any organisation wishing to assess risk, perhaps in combination with other mainstream methods."/>
+                    <outline text="The next step for this research would be an implementation of a real scenario, and a detailed evaluative comparison with existing approaches."/>
+                    <outline text="For example, an organisation could review their information assets, apply both the RRM and AIM, and compare the resulting parameters."/>
+                    <outline text="It would be interesting to relate this to historical information about cyber security incidents that happened in the past at this organisation, or in its sector."/>
+                </outline>
+            </outline>
+            <outline text="CyBOK">
+                <outline text="Background #slide ">
+                    <outline text="The Cyber Security Body of Knowledge (CyBOK) specifies Cyber Security Knowledge relevant in the professional and educational domain. "/>
+                    <outline text="In the UK, the NCSC Certified Degree Scheme is now based on using the CyBOK for universities to demonstrate focus, breadth, and depth of a cyber curriculum. "/>
+                    <outline text="A mapping framework exists to help identify CyBOK Knowledge Areas containing specific keywords and to understand their contextual structure."/>
+                </outline>
+                <outline text="Aims &amp;amp; Objectives #slide ">
+                    <outline text="This project aims to provide a novel mapping framework for the CyBOK based on a web-based searchable representation of CyBOK Knowledge Trees and, to deliver a tool to export mapping information into a range of document formats. "/>
+                    <outline text="In addition to being intuitive and user-friendly, the proposed framework seeks to enrich the mapping tasks with an alternative visualisation, using mind maps.  "/>
+                    <outline text="Three objectives are proposed:">
+                        <outline text="1. To convert the CyBOK Knowledge Trees to a single online hierarchical outline, hosted on the Dynalist website [4]."/>
+                        <outline text="2. To create an export tool, converting mapping-related search queries into a range of standard text-based formats."/>
+                        <outline text="3. To provide a companion website, cross-referencing the online CyBOK and providing additional documentation with alternative visualisations of the CyBOK."/>
+                    </outline>
+                </outline>
+                <outline text="Demo #slide "/>
+                <outline text="Strategic Benefits #slide ">
+                    <outline text="The provision of an alternative way to visualise, search and interact with the CyBOK will reduce the learning curve of understanding its Knowledge Areas, hence encouraging their use. "/>
+                    <outline text="The proposed tool simplifies granular mapping processes through keyword-based search results and includes convenient export functions to multiple formats. "/>
+                    <outline text="Ultimately this may lead to greater adoption of the CyBOK and improved-quality cyber programmes in the UK and internationally."/>
+                </outline>
+                <outline text="References #slide ">
+                    <outline text="[1] Kingston University, Network and Information Security MSc Course Page, Retrieved from [https://www.kingston.ac.uk/postgraduate/courses/network-information-security-msc/](https://www.kingston.ac.uk/postgraduate/courses/network-information-security-msc/), 2020"/>
+                    <outline text="[2] E. Pfluegel, N. Bailey, J. Denholm-Price, Using Zoomable Online Outliners in  STEM Education, 4th Horizons in STEM Conference, Kingston, July 2019"/>
+                    <outline text="[3] E. Pfluegel, Exploration and Visualisation of Security Knowledge for Certified Degrees: Selected Use Cases for Educators and Students, Talk at Inaugural CISSE UK Workshop Meeting, July 2019"/>
+                    <outline text="[4] Dynalist Inc, Dynalist Outliner Homepage, Retrieved from https://dynalist.io/, 2020"/>
+                    <outline text="[5] Experimental CyBOK Online, Public Dynalist Link, Retrieved from [https://dynalist.io/d/_59k8u3Rmm7vIQtPonim1EoQ](https://dynalist.io/d/_59k8u3Rmm7vIQtPonim1EoQ), 2020"/>
+                </outline>
+            </outline>
+            <outline text="IARIA Keynote 2020">
+                <outline text="The first slide of the presentation should include:">
+                    <outline text="Article title"/>
+                    <outline text="Article authors"/>
+                    <outline text="Presenter's name and affiliation"/>
+                    <outline text="Presenter's email address"/>
+                    <outline text="Logos of your institution"/>
+                    <outline text="IARIA Logo (which you can download from [here](https://www.iaria.org/images/_iaria/logo.png))"/>
+                </outline>
+                <outline text="The second slide of the presentation should include">
+                    <outline text="a short resume of the presenter"/>
+                    <outline text="presenter's photo (we realize that not everyone is comfortable with their image being accessible online, so the photo is optional)"/>
+                </outline>
+                <outline text="On a third optional slide, you can describe the topics of research interest of your workgroup and current projects you are working on. This can serve as a way to connect with other teams with similar research interests."/>
+                <outline text="Title Slide #slide ">
+                    <outline text="Game Theory for Security: Past, Present and Future"/>
+                    <outline text="Eckhard Pfluegel"/>
+                    <outline text="School of CSM"/>
+                    <outline text="Faculty of SEC"/>
+                    <outline text="Kingston University London, UK"/>
+                    <outline text="![IARIA-logo.png](https://dynalist.io/u/Q90B-F5PEhSEad10QuDeuxFU)"/>
+                </outline>
+                <outline text="Motivation #h1  #eyo-style:Section ">
+                    <outline text="Case Study 1 #slide ">
+                        <outline text="__According to [omnicoreagency.com](https://www.omnicoreagency.com/youtube-statistics/), there are currently more than 31 million YouTube channels. Every year, thousands of them are compromised or receive unsolicited, misleading or illegal comments. Rather than purely relying on the account owners to spot and report these incidents, YouTube is employing dedicated staff to periodically screen randomly selected channels. Unfortunately, this screening process is time-consuming, staff need to be appropriately trained and might also need counselling. Hence, the question arises whether a strategy could be devised in order to replace the random selection process by a more informed one, taking into account the attacker's motivation.__ #eyo-style:Normal "/>
+                    </outline>
+                    <outline text="Case Study 2 #slide ">
+                        <outline text="Alan is in charge of vulnerability management for the IT systems of his company. The security policy of his organisation only allows for critical patching of one software per day, due to issues with bandwidth and system downtime during the patching process. He has identified two different vulnerabilities that require patching. He downloads their CVSS scores but finds that they are very similar, making it difficult to decide on a priority ranking. He would like to use some information contained in some CVSS subscores in such a way that he follows game-theoretic principles, taking into account both the attacker's capabilities and the impact on the system. This would give him a different view and could potentially lead to a clearer prioritisation."/>
+                    </outline>
+                    <outline text="Case Study 2 #slide  #wfe-ignore-outline ">
+                        <outline text="__An organisation requires employees to report cyber security incidents such as receiving spam emails, phishing attacks or attempts to be socially engineered. Employees are generally cooperative and willing to be involved, but find it difficult to report these incidents due to a high workload of their day-to-day tasks. The company decides to request monthly reports, in order to force the employees to send their security reports. As a consequence, some employees become lazy and do not fully divulge the extend of occurring incidents. Hence, the company would like to find a criterion for whether they can trust a received report or not, by taking into account possible motivations of its sender.__ #eyo-style:Normal "/>
+                    </outline>
+                    <outline text="Approach Using Game Theory #slide ">
+                        <outline text="We would like to use the mathematical concept of game theory in order to address the previous two case studies."/>
+                        <outline text="The usefulness of this approach depends on:">
+                            <outline text="The level of sophistication of the specific game model;"/>
+                            <outline text="The required assumptions that need to be made for the model to be valid;"/>
+                            <outline text="The acceptance of the game theoretic model by the real-world players."/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="GAME THEORY" _note="https://dynalist.io/d/gcskC8EanDTKsGE-U8yP7HPC#z=cdU7FseL1kfr0iYksOXArpN8"/>
+                <outline text="SECURITY GAMES" _note="https://dynalist.io/d/gcskC8EanDTKsGE-U8yP7HPC#z=sxPhzllEsvBXreyV5gANFrmj&amp;q=%23slide%20"/>
+                <outline text="ISSUE"/>
+                <outline text="Conclusion #h ">
+                    <outline text="Summary #slide ">
+                        <outline text="In this talk, we have outlined some recent game-theoretical applications to security scenarios."/>
+                        <outline text="We have explored the use of massive security games for optimal allocation of resources."/>
+                        <outline text="We have also analysed a strategic security game in order to inform vulnerability patching with game theory."/>
+                        <outline text="The usefulness of game theory depends on its acceptance amongst practitioners, including both defender and attacker."/>
+                    </outline>
+                    <outline text="Outlook #slide ">
+                        <outline text="Higher-dimensional matrix models for more realistic dilemma analysis and security scenario modelling need to be mastered:">
+                            <outline text="Focus on order $n=3$ first, then tackle higher orders."/>
+                            <outline text="Building on complete information games, devise incomplete information game models."/>
+                        </outline>
+                        <outline text="The use of game-theoretic models in security standards would be an ultimate achievement:">
+                            <outline text="Security management and assessment (OCTAVE, NIST RMF, ISO-27000),"/>
+                            <outline text="Vulnerability scoring and assessment (CVSS)."/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Qatar Reading Group Talk 3 (July 2020)  " _note="[https://www.overleaf.com/project/59f1d1c45cd281015b4d389a]">
+                <outline text="Paper Proposal: A Game Theoretic Framework for Human-Assisted Machine Sensing and Learning" _note="#slide #h " colorLabel="4">
+                    <outline text="Notations #h #wfe-ignore-outline ">
+                        <outline text="generalised "/>
+                    </outline>
+                    <outline text="Underlying System Model #h ">
+                        <outline text="The System Model #slide  ">
+                            <outline text="![system.png](https://www.dropbox.com/s/y44jozn7suoojs1/system.png?dl=1) #eyo-style:Normal"/>
+                        </outline>
+                        <outline text="Machine Component #slide ">
+                            <outline text="For the ML component denote">
+<outline text="$$c$$ -- running cost"/>
+<outline text="$$R$$ -- reliability (probability of correct classification)"/>
+<outline text="$$b$$ -- benefit (assume proportional to its reliability)"/>
+                            </outline>
+                            <outline text="The component's utility is then $$u = c-b=c-\alpha R$$."/>
+                        </outline>
+                        <outline text="Wizard Component #slide ">
+                            <outline text="Similarly, for this component we have">
+<outline text="$$c_W \gg c $$ -- running cost (typically)"/>
+<outline text="$$R_W \gg R $$ -- reliability (ideally!)"/>
+<outline text="$$b_W$$ -- benefit"/>
+                            </outline>
+                            <outline text="We state $$u_W= c_W-b_W=c_W-\beta R_W$$."/>
+                        </outline>
+                        <outline text="System Utility #slide #wfe-ignore-outline ">
+                            <outline text="The overall system reliability (using the first $$k$$ ML components) is ">
+<outline text="$$R_S = \left\{\begin{array}{ll} 1-\prod_k(1-R_i), &amp;\text{ if Wizard is not used.}\\ R_W, &amp;\text{ otherwise.}\end{array}\right.$$"/>
+                            </outline>
+                            <outline text="The system overall utility can be stated as">
+<outline text="$$U_S= \left\{\begin{array}{ll} \alpha R_S - \sum_k c_i, &amp;\text{ if Wizard is not used.}\\ \alpha R_W- c_W, &amp;\text{ otherwise.}\end{array}\right.$$"/>
+                            </outline>
+                            <outline text="Potential goals: ">
+<outline text="maximise $$R_S$$?"/>
+<outline text="maximise $$U_S$$?"/>
+<outline text="maximise $$U_S$$ and ensure $$R_S \ge t$$ where $$t$$ is a given threshold?"/>
+                            </outline>
+                            <outline text="We seem to need some mathematical optimisation technique here."/>
+                        </outline>
+                    </outline>
+                    <outline text="A One-Shot Bayesian Adversarial Learning Game #h ">
+                        <outline text="Introduction #slide ">
+                            <outline text="Motivation ">
+<outline text="The human component "/>
+<outline text="We are interested in capturing elements of non-cooperation, either deliberately or undeliberately"/>
+                            </outline>
+                            <outline text="Contributions">
+<outline text="A systematic, complete framework of 2x2 bimatrix games capturing elements of non-cooperation between the machine and human. "/>
+<outline text="A formulation and analysis of a Bayesian non-zero sum 2-player game, informed by this framework."/>
+                            </outline>
+                        </outline>
+                        <outline text="Complete Information Adversarial Learning Games #h ">
+                            <outline text="Motivation #slide ">
+<outline text="Classification of 2x2 bimatrix games due to (Moulin, )">
+    <outline text="based on concept of strategic equivalence"/>
+    <outline text="there are three categories of games"/>
+</outline>
+<outline text="In order to demonstrate the use of the generalised eigensystem approach, we exemplify an analysis of the classification of 2x2 non-zero-sum security games."/>
+<outline text="Give unifying framework how to express solutions algebraically from the game matrices "/>
+<outline text="We exclude Type 0 (cooperative, reliable)"/>
+                            </outline>
+                            <outline text="Game $$G_1$$: Malicious Wizard #slide ">
+<outline text="$$\begin{array}{ c | c | c }  S \downarrow W\rightarrow &amp; \text{not cooperate} &amp; \text{cooperate}  \\\hline  \text{not trust} &amp;  \;\cdot\;,\rightarrow  &amp;  \downarrow\; ,\;\cdot\;\\\hline   \text{trust}  &amp;  \uparrow\; ,\;\cdot\;  &amp;  \;\;\cdot\;,\leftarrow \end{array}$$ #eyo-style:Normal "/>
+<outline text="There is no pure NE but one mixed NE."/>
+                            </outline>
+                            <outline text="Game $$G_2$$: Selfish Wizard #slide ">
+<outline text="$$\begin{array}{ c | c | c }  S \downarrow W\rightarrow &amp; \text{low effort} &amp; \text{high effort}  \\\hline  \text{not trust} &amp;  \;\cdot\;, \;\cdot\;\;&amp; \; \downarrow\; ,\;\leftarrow\;\\\hline   \text{trust}  &amp;  \uparrow\; ,\;\rightarrow\;  &amp;  \;\cdot\;, \; \cdot \;\end{array}$$ #eyo-style:Normal "/>
+<outline text="There are two pure NEs: (not trust, low effort) and (trust, high effort)."/>
+<outline text="There is also one mixed NE."/>
+                            </outline>
+                            <outline text="Game $$G_3$$: Impulsive Wizard #slide ">
+<outline text="$$\begin{array}{ c | c | c }  S \downarrow W\rightarrow &amp; \text{quick} &amp; \text{slow}  \\\hline  \text{not trust} &amp;  \;\cdot\;, \;\cdot\;\;&amp; \; \downarrow\; ,\;\leftarrow\;\\\hline   \text{trust}  &amp;  \uparrow\; ,\;\cdot \;  &amp;  \;\cdot\;, \; \leftarrow\;\end{array}$$ #eyo-style:Normal "/>
+<outline text="There is one pure NE (not trust, quick). "/>
+                            </outline>
+                            <outline text="Discussion #h ">
+<outline text="Additional Assumptions #slide ">
+    <outline text=" Selfish Wizard:"/>
+</outline>
+<outline text="Classification of 2x2 Security Games #slide ">
+    <outline text="The game $$G_1$$ is a typical example of a __security game__ (more generally: __search game__). Classical game: __Chicken__.">
+        <outline text="Literature: IDS Game (Alpcan &amp; Bazar, 2011)."/>
+    </outline>
+    <outline text="The game $$G_2$$ is strategically equivalent to __The Battle of the Sexes__. ">
+        <outline text="Can we use mechanism design to achieve a preferred NE in this case?"/>
+    </outline>
+    <outline text="And game $$G_3$$ is strategically equivalent to the famous __Prisoner Dilemma__. "/>
+</outline>
+                            </outline>
+                            <outline text="Conclusion #slide "/>
+                        </outline>
+                        <outline text="Game Analysis #h ">
+                            <outline text="Motivation #slide ">
+<outline text="Main interest: compute closed form solutions for mixed equilibrium. "/>
+                            </outline>
+                            <outline text="Analysis Approach  #slide ">
+<outline text="Degeneracy conditions ( @Moulin): $$a_1\neq a_3$$, $$a_2\neq a_4$$ and $$b_1\neq b_2$$, $$b_3\neq b_4$$."/>
+<outline text="Consequence: together with additional assumptions, might be shown either $$\mu$$ is well-defined, or does not exist."/>
+<outline text="Does it imply $$\det(A-\lambda E)= c_0-c_1\lambda$$ with $$c_0, c_1 \neq 0$$?"/>
+<outline text="Are EVs non-negative?"/>
+<outline text="This will be used in the different cases, to detail the solutions in closed-form expression. "/>
+                            </outline>
+                            <outline text="Equations for Generic Generalised Eigensystem #slide ">
+<outline text="For a generic matrix $$A$$, the components of a generalised eigensystem $$\mathcal{E}_A=\left(\mu, x^t, y\right)$$ are determined as follows:">
+    <outline text="The eigenvalue is the real number $$\mu = {{a_{1}\,a_{4}-a_{2}\,a_{3}}\over{a_{1}+a_{4}-a_{2}-a_{3}}}$$, assuming that the denominator in this expression does not vanish. "/>
+    <outline text="The corresponding left eigenvector  is $$x^t=\left(a_{3}-a_{1}\right)\,\begin{pmatrix}a_{4}-a_{3}&amp;a_{1}-a_{2}\end{pmatrix}$$ and $$y=\left(a_{1}-a_{2}\right)\begin{pmatrix}a_{2}-a_{4}\cr a_{3}-a_{1}\end{pmatrix}$$ is the right eigenvector. "/>
+</outline>
+                            </outline>
+                            <outline text="Aggregated Generalised Eigensystem for Bimatrix Games #slide ">
+<outline text="For a bimatrix game $$G(A,B)$$, the following aggregated generalised eigensystem is of interest: $$\mathcal{E}_{A,B} = \left(\mu_A, y_A,\mu_B, x_B^t\right)$$"/>
+<outline text="We have">
+    <outline text="$$\mu_A = {{a_{1}\,a_{4}-a_{2}\,a_{3}}\over{a_{1}+a_{4}-a_{2}-a_{3}}}$$"/>
+    <outline text="$$y_A=\left(a_{1}-a_{2}\right)\begin{pmatrix}a_{2}-a_{4}\cr a_{3}-a_{1}\end{pmatrix}$$"/>
+    <outline text="$$\mu_B = {{b_{1}\,b_{4}-b_{2}\,b_{3}}\over{b_{1}+b_{4}-b_{2}-b_{3}}}$$"/>
+    <outline text="$$x_B^t=\left(b_{1}-b_{3}\right)\,\begin{pmatrix}b_{3}-b_{4}&amp;b_{2}-b_{1}\end{pmatrix}$$"/>
+</outline>
+                            </outline>
+                            <outline text="Fundamental Theorem #slide ">
+<outline text="Specialising the work of (Thompson et al) to matrix games, we extend their main fundamental theorem to bimatrix games as follows: "/>
+<outline text="Given a square bimatrix game $$G(A,B)$$, assume the matrix pencils $$A-\lambda E$$  and $$B-\lambda E$$ are both regular, each with a real eigenvalue $$\mu_A$$ and $$\mu_B$$ respectively. Let $$x_{\mu_B}$$ be a nonnegative left eigenvector of $$B-\lambda E$$ with respect to $$\mu_B$$ and denote $$y_{\mu_A}$$ a nonnegative right eigenvector of $$A-\lambda E$$ with respect to $$\mu_A$$. Then $$(x^*,y^*) = (x_{\mu_B}$$, $$y_{\mu_A}$$) is a Nash Equilibrium strategy profile of the game $$G$$ and $$(\mu_A, \mu_B)$$ is the corresponding game value pair. #eyo-style:Theorem  #theorem:bimatrix-regular-theorem #novel" _note="https://dynalist.io/d/F6qJJul5x4JWwZ4KTrIffFqu#z=wCoCENOW7xbnwil1r7B1NOr2" colorLabel="3"/>
+                            </outline>
+                            <outline text="A Best Response Lemma #slide ">
+<outline text="The proof of the theorem will be aided by the following lemma. "/>
+<outline text="It exhibits a special case arising where there exists a strategy of one player to which any strategy of the other player is a best response."/>
+<outline text="Following the notations as in the theorem, we have for a nonnegative left generalised eigenvector $$x_{\mu_B}$$ that for all Player 2 strategies $$y$$ it holds $$x^\top_{\mu_B} B y = \mu_B $$. Similarly, a nonnegative right eigenvector $$y_{\mu_A}$$ satisfies $$x^\top A y_{\mu_A} = \mu_A$$ for all Player 1 strategies $$x$$. #eyo-style:Lemma  #lemma:best-response-eigen" _note="https://dynalist.io/d/F6qJJul5x4JWwZ4KTrIffFqu#z=3m3Y6iQlnd3hELxHkQr40trZ" colorLabel="3"/>
+                            </outline>
+                            <outline text="Proof [of lemma] #slide #wfe-ignore-outline ">
+<outline text="#eyo-style:Proof ">
+    <outline text="Assume that $$x^{\top}_{\mu_A}\ge 0$$ is a left eigenvector, associated with the eigenvalue $${\mu_A}$$ of the regular matrix pencil $$A-\lambda E$$. This implies" colorLabel="4"/>
+    <outline text="#equation:left-nullspace-eq" colorLabel="4">
+        <outline text=" $$ x^{\top}_{\mu_A}(A-{\mu_A} E)=0. $$" colorLabel="4"/>
+    </outline>
+    <outline text="Due to the normalisation property $$\sum x_{{\mu_A},i}=1$$ we have $$ x^{\top}_{\mu_A} E = x^{\top}_{\mu_A} ee^{\top}=e^{\top}$$ so that equation #ref:left-nullspace-eq implies " colorLabel="4">
+        <outline text="$$ x^{\top}_{\mu_A} A = {\mu_A} e^{\top}$$.  #displaymaths " colorLabel="4"/>
+    </outline>
+    <outline text="The second property for a right eigenvector $$y_{\mu_B}$$ can be shown similarly. From this, the lemma follows. " colorLabel="4"/>
+</outline>
+                            </outline>
+                            <outline text="Proof [of Theorem #ref:bimatrix-regular-theorem ] #slide #wfe-ignore-outline ">
+<outline text="Let $$y_{\mu_A}$$ be nonnegative right eigenvector of $$A-\lambda E$$ with respect to the eigenvalue $$\mu_A$$. From Lemma #ref:best-response-lemma we deduce that $$y_{\mu_A}$$ is a best response to any Player 1 strategy $$x$$, in particular to  $$x=x_{\mu_B}$$. Likewise,  denote $$x_{\mu_B}$$ a nonnegative left generalised eigenvector of $$B-\lambda E$$. We obtain that  $$x_{\mu_B}$$ is a best response to Player 2 strategy $$y=y_{\mu_A}$$. Hence these strategies are mutual best responses and by definition mixed Nash Equilibrium strategies with payoffs $$\mu_A$$ and $$\mu_B$$ as required. #proof " colorLabel="4"/>
+                            </outline>
+                            <outline text="Case 1 #slide ">
+<outline text="The non-existence of a pure NE leads to the following conditions, up to permution: $$a_1&gt;a_3$$, $$a_4&gt;a_2$$, $$b_2&gt;b_1$$ and $$b_3&gt;b_4$$."/>
+<outline text="We deduce that both eigenvalues $$\mu_A$$ and $$\mu_B$$ are well defined. "/>
+<outline text="The vectors $$x_B^t$$ and $$y_A$$ are non-zero. "/>
+<outline text="Furthermore each vector has entries having the same sign. ">
+    <outline text="Define $$\text{sign}(v)$$ as the sign of #wfe-ignore-item "/>
+</outline>
+<outline text="Apply Theorem #theorem:bimatrix-regular-theorem to obtain the unique mixed NE solution pair. "/>
+                            </outline>
+                            <outline text="Case 2 #slide ">
+<outline text="With two pure NEs one obtains $$a_1&gt;a_3$$, $$a_4&gt;a_2$$, $$b_1&gt;b_2$$ and $$b_4&gt;b_3$$."/>
+<outline text="As in Case 1, both vectors are non-zero and all entries have the same sign. "/>
+<outline text="Same approach to obtain the unique mixed NE solution pair by applying Theorem #theorem:bimatrix-regular-theorem . "/>
+                            </outline>
+                            <outline text="Case 3 #slide ">
+<outline text="In this case, a single pure NE implies either "/>
+<outline text="Case (i): $$a_1&gt;a_3$$, $$a_4&gt;a_2$$, $$b_1&gt;b_2$$ and $$b_3&gt;b_4$$; or"/>
+<outline text="Case (ii): $$a_1&gt;a_3$$, $$a_2&gt;a_4$$, $$b_1&gt;b_2$$ and $$b_3&gt;b_4$$."/>
+<outline text="There is dominance">
+    <outline text="In both case (i) and (ii): column 2 of $$B$$ is dominated by column 1"/>
+    <outline text="In the case of (ii): row 2 of $$A$$ is also dominated by row 1"/>
+</outline>
+<outline text="The game is trivial for at least one of the players."/>
+<outline text="Algebraic property: empty generalised eigensystem."/>
+<outline text="This implies $$\det(A-\lambda E)\equiv c\neq 0$$ or the existence of not nonnegative eigenvectors. "/>
+<outline text="Proof:"/>
+                            </outline>
+                            <outline text="Conclusion #slide ">
+<outline text="Summarising theorem:"/>
+<outline text="This is exhaustive result, completely covering all security game types. "/>
+<outline text="Preparation for Bayesian game analysis. "/>
+                            </outline>
+                        </outline>
+                        <outline text="Bayesian Game #h ">
+                            <outline text="Motivation #slide ">
+<outline text="Focus on first and second game"/>
+<outline text="This avoids third, which is less interesting from GT point of view and also could be avoided through proper vetting "/>
+<outline text="Strategies are effectively: cooperate, not cooperate and trust, not trust"/>
+<outline text="Denoted as $$\{C, \bar{C}\}$$ and  $$\{T, \bar{T}\}$$. "/>
+                            </outline>
+                            <outline text="Wizard Types #slide ">
+<outline text="Type 1: Malicious">
+    <outline text="deliberately wanting to reduce accuracy of system"/>
+    <outline text=" seeking emotional or financial reward"/>
+</outline>
+<outline text="Type 2: Selfish">
+    <outline text="knowingly/deliberately unreliable -- apply minimal effort in contribution to overall system accuracy, if possible "/>
+    <outline text="lazy (give it low priority, too focused on other job aspects)"/>
+</outline>
+<outline text="Type 3: Incompetent">
+    <outline text="unknowingly unreliable"/>
+    <outline text="Impulsive "/>
+</outline>
+                            </outline>
+                            <outline text="A Bayesian Game #slide" _note="https://dynalist.io/d/LEdIn-fQiooRnQn8D-7fFHVC#z=q-OczHy1So2PVCUGMRP7E5Lv">
+<outline text="This will lead to a Bayesian game $$G_B$$ with three Wizard types $$\Theta=\{m, s, i\}$$"/>
+<outline text="Formally, game is a tuple $$(N, A,\Theta, p, u)$$ where:">
+    <outline text="$$N$$ is a set of agents"/>
+    <outline text="$$A = A_1 \times A_2 $$ where $$A_i$$ is the set of actions available to player $$i$$"/>
+    <outline text="$$\Theta$$ is the type space of player $$W$$"/>
+    <outline text="$$p : \Theta \rightarrow [0, 1]$$ is a common prior over types"/>
+    <outline text="$$u = (u_1 , u_2)$$, where $$u_i : A \times \Theta \rightarrow R$$ is the utility function for player $$i$$"/>
+</outline>
+<outline text="Static vs dynamic game"/>
+                            </outline>
+                            <outline text="Game $$G_1(A,B)$$: ">
+<outline text="$$ A=\begin{pmatrix} a_{1} &amp;a_{2}\\a_{3} &amp;a_{4}\end{pmatrix} $$, $$ B=\begin{pmatrix} b_{1} &amp;b_{2}\\b_{3} &amp;b_{4}\end{pmatrix} $$ and $$a_{1}&gt;a_{3};a_{4}&gt;a_{2};$$ $$b_{2}&gt;b_{1 };b_{3}&gt;b_{4};$$"/>
+                            </outline>
+                            <outline text="Game $$G_2(\hat{A},\hat{B})$$: ">
+<outline text="$$ \hat{A}=\begin{pmatrix} \hat{a}_{1} &amp;\hat{a}_{2}\\\hat{a}_{3} &amp;\hat{a}_{4}\end{pmatrix} $$, $$ \hat{B}=\begin{pmatrix} \hat{b}_{1} &amp;\hat{b}_{2}\\\hat{b}_{3} &amp;\hat{b}_{4}\end{pmatrix} $$ and $$\hat{a}_{1}&gt;\hat{a}_{3};\hat{a}_{4}&gt;\hat{a}_{2};$$ $$\hat{b}_{1}&gt;\hat{b}_{2};\hat{b}_{4}&gt;\hat{b}_{3};$$"/>
+                            </outline>
+                        </outline>
+                        <outline text="Game Analysis #h ">
+                            <outline text="Overview #slide ">
+<outline text="Non-Bayesian game: strategy profile is a NE iff every strategy in that profile is a best response to every other strategy"/>
+<outline text="Our game: find Bayesian Nash Equilibria (BNE) "/>
+<outline text="Bayesian Games: Players maximise their expected payoffs"/>
+                            </outline>
+                            <outline text="BNE Types #slide ">
+<outline text="__Pooling Equilibrium__: if the first player's best response remains the same, regardless of his belief in the type of Player 2."/>
+<outline text="__Separating Equilibrium__: if best response is different, depending on the type."/>
+                            </outline>
+                            <outline text="Harsani-Transformation #slide ">
+<outline text="Idea: convert game with uncertainty over strategies (types) into game with payoff uncertainty. "/>
+<outline text="Assume knowledge of probability distribution for types. "/>
+<outline text="Consider 2 types."/>
+                            </outline>
+                            <outline text="The Imperfect Information Game #slide ">
+<outline text="Denote"/>
+<outline text="We have $$\tilde{A}=P_1A+P_2\hat{A}$$ and  $$\tilde{B}=P_1B+P_2\hat{B}$$ where ">
+    <outline text="$$P_1 = \begin{pmatrix}  p&amp;0 \\ p &amp;0 \\ 0 &amp;p  \\ 0 &amp;p \\  \end{pmatrix}$$."/>
+    <outline text="$$P_2 = \begin{pmatrix}  1-p&amp;0 \\ 0 &amp;1-p  \\ 1-p &amp;0  \\ 0 &amp;1 -p \\  \end{pmatrix}$$."/>
+</outline>
+                            </outline>
+                            <outline text="The Imperfect Information Game (cont.) #slide "/>
+                            <outline text="Pure NE Analysis #h ">
+<outline text="Pure NE Result #slide ">
+    <outline text="Let $$\epsilon_1=\frac{b_{1}-\hat{b}_{2}}{b_{2}-\hat{b}_{2}}$$ and $${\epsilon_2}=\frac{b_{4}-\hat{b}_{3}}{b_{3}-\hat{b}_{3}}$$. Then it holds $$0&lt;\epsilon_1&lt;1$$ and $$0&lt;{\epsilon_2}&lt;1$$. Then if $$p&lt;\epsilon_1$$, the game admits a Pooling BNE $$(\bar{T}\bar{T},\bar{C})$$. Furthermore, if $$p&lt;\epsilon_2$$, there is a Pooling BNE $$(TT,C)$$. #eyo-style:Proposition" colorLabel="4"/>
+</outline>
+<outline text="Proof #h ">
+    <outline text="Step 1 #slide ">
+        <outline text="First we show that Player 1's best responses to pure strategies of Player 2 are independent of the value of $$p$$. "/>
+        <outline text="For this, we establish $$\alpha_1&gt;\alpha_5$$ and the chain of unequalities $$\alpha_1&gt;\alpha_3&gt;\alpha_7$$."/>
+        <outline text="Proving $$\alpha_1&gt;\alpha_5$$:"/>
+        <outline text="Proving $$\alpha_1&gt;\alpha_3&gt;\alpha_7$$:"/>
+    </outline>
+    <outline text="Step 2 #slide ">
+        <outline text="If $$\beta_1&gt;\beta_2$$, the game admits a Pooling BNE $$(\bar{T}\bar{T},\bar{C})$$. "/>
+        <outline text="If $$\beta_4&gt;\beta_3$$, there is a Pooling BNE $$(TT,C)$$."/>
+    </outline>
+    <outline text="Step 3 #slide "/>
+</outline>
+                            </outline>
+                            <outline text="Mixed NE Analysis #h ">
+<outline text="Analysing Rectangular Games #slide ">
+    <outline text="We need an extension of theorem #theorem:bimatrix-regular-theorem "/>
+</outline>
+                            </outline>
+                            <outline text="Discussion #slide "/>
+                        </outline>
+                        <outline text="Conclusion #slide "/>
+                    </outline>
+                </outline>
+                <outline text="Project Plan #h ">
+                    <outline text="Actions and Deliverables #slide ">
+                        <outline text="The team will commit to the following actions and deliverables:">
+                            <outline text="Kingston:">
+<outline text="D1 [July 31]: Circulate updated slide deck investigating game analysis via email for feedback"/>
+<outline text="D2 [mid-August]: Draft section on classification of 2x2 bimatrix security games, taking feedback on board"/>
+                            </outline>
+                            <outline text="Qatar:">
+<outline text="D3 [July 31]: Circulate first draft of literature review (Human-Machine Networks, AL, HaaS, Crowdsourcing, Wisdom of the Crowd) for feedback"/>
+<outline text="D4 [mid-August]: Next iteration of draft, taking feedback on board"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="INBOX #wfe-ignore-outline ">
+                    <outline text="Algebraic Analysis #slide">
+                        <outline text="Establish $$\det(A-\lambda E)\not \equiv 0$$ provided one excludes degenerate cases"/>
+                        <outline text="Type 1"/>
+                        <outline text="Type 2"/>
+                        <outline text="Type 3"/>
+                    </outline>
+                    <outline text="Game $$G_B$$: Bayesian Wizard Game #slide "/>
+                </outline>
+                <outline text="Repeated Games #h ">
+                    <outline text="Stochastic Games #slide ">
+                        <outline text="We now look at repeatedly playing these games $$G_1$$ and $$G_2$$. "/>
+                        <outline text="We will define some stopping conditions to prevent an infinite duration. "/>
+                        <outline text="This yields __stochastic games__, as introduced by (Shapley, 1953). "/>
+                        <outline text="Let us focus on repeating $$G_1$$ first. "/>
+                    </outline>
+                    <outline text="The Stochastic Game  $$G^*_1$$ #slide">
+                        <outline text="Consider the stopping matrix $$S=\begin{pmatrix} 1&amp; s\\ s &amp;1  \\  \end{pmatrix}$$ where $$0&lt;s &lt; 1$$. "/>
+                        <outline text="There will be a finite sequence $$i=1,\ldots,N$$ of the __stage-game__ $$G^*_1$$. "/>
+                        <outline text="The players decide on their strategies $$x_i$$ and $$y_i$$"/>
+                        <outline text="The payoffs of each stage are added"/>
+                        <outline text="After a stage, the game stops if:">
+                            <outline text="The system can trust a cooperative Wizard"/>
+                            <outline text="The system detects a non-cooperative Wizard"/>
+                        </outline>
+                        <outline text="Otherwise, it continues with probability $$1-s$$"/>
+                    </outline>
+                    <outline text="Game Analysis -- Questions #slide ">
+                        <outline text="What are the NEs?"/>
+                        <outline text="As a parameter of $$s$$?"/>
+                        <outline text="Good values for $$s$$?"/>
+                        <outline text="How do we interpret mixed strategies?"/>
+                        <outline text="Run simulation -- mixed strategies."/>
+                    </outline>
+                    <outline text="Previous Work #slide ">
+                        <outline text="Shapley has shown that in the case of a matrix game (zero-sum, $$B=-A$$), there is a unique value $$v$$."/>
+                        <outline text="One can obtain this from a rational form $$v := \min_x \max_y \frac{xAy}{xSy}$$."/>
+                        <outline text="(Von Neumann, 1937) and (Loomis, 1946) have first shown the existence and uniqueness of this value."/>
+                        <outline text="(Thompson &amp; al) connect linear algebra concepts to the structure of optimal solutions."/>
+                        <outline text="More recent work? On bimatrix (non-zero sum) case?"/>
+                    </outline>
+                    <outline text="Our Approach #slide ">
+                        <outline text="Following Thompson, we consider the matrix pencil $$P(\lambda)=A-\lambda S$$."/>
+                        <outline text="Concepts: generalised characteristic polynomial, eigenvalues and eigenvectors."/>
+                        <outline text="A fundamental result is due to Thompson et al.">
+                            <outline text="https://dynalist.io/d/LEdIn-fQiooRnQn8D-7fFHVC#z=YSp1OMYk8Zhb6qGinGLbhdKe #wfe-ignore-item"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Applications #h ">
+                    <outline text="Some Terminology #slide ">
+                        <outline text="Machine Learning (ML)"/>
+                        <outline text="Adversarial Learning (AL)"/>
+                        <outline text="Non-cooperative Game Theory (GT)"/>
+                        <outline text="Human-as-a-Sensor (HaaS), Human Sensing"/>
+                        <outline text="Wisdom of the Crowd"/>
+                    </outline>
+                    <outline text="Machine Learning #h "/>
+                    <outline text="System Reliability #h ">
+                        <outline text="ML Component #slide ">
+                            <outline text="For each ML component $$ML_i$$ $$(i=1,\ldots n)$$ denote">
+<outline text="$$c_i$$ -- running cost"/>
+<outline text="$$R_i$$ -- reliability (probability of correct classification)"/>
+<outline text="$$b_i$$ -- benefit (assume proportional to its reliability)"/>
+                            </outline>
+                            <outline text="The component's utility is then $$u_i = c_i-b_i=c_i-\alpha R_i$$."/>
+                        </outline>
+                        <outline text="Wizard Component #slide ">
+                            <outline text="Similarly, for this component we have">
+<outline text="$$c_W \gg c_i \;\forall i$$ -- running cost"/>
+<outline text="$$R_W \gg R_i\;\forall i$$ -- reliability"/>
+<outline text="$$b_W$$ -- benefit"/>
+                            </outline>
+                            <outline text="We state $$u_W= c_W-b_W=c_W-\alpha R_W$$."/>
+                        </outline>
+                    </outline>
+                    <outline text="HaaS #h ">
+                        <outline text="HaaS Concept #slide ">
+                            <outline text="Recent technological advances have made communication more affordable and computation faster."/>
+                            <outline text="The change in norms regarding the use of technology have enabled a range of new applications and systems that collect data from humans."/>
+                            <outline text="The concept of Human-as-a-Sensor (HaaS) formalises a methodology where instead of automated sensors, humans are the primary source of information. "/>
+                            <outline text="We want to..."/>
+                        </outline>
+                        <outline text="HaaS Examples #slide ">
+                            <outline text="Non-cyber applications">
+<outline text="commuters to report suspicious luggage "/>
+<outline text="residents participating in neighbourhood watch schemes"/>
+<outline text="emergency response (report quakes, search and rescue)"/>
+<outline text="participants on the road reporting traffic congestion"/>
+<outline text="proposals for teachers to spot tendency to criminal behaviour of pupils "/>
+                            </outline>
+                            <outline text="Cyber applications">
+<outline text="social media users reporting security threats"/>
+<outline text="employees to report spam or phishing emails"/>
+<outline text="more?? #todo "/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="=== #wfe-ignore-outline ">
+                    <outline text="INBOX">
+                        <outline text="Type 2: cooperative but unknowingly unreliable (inaccurate), ">
+                            <outline text="not cyberwise and socially engineered (externally attacked)"/>
+                            <outline text="misconception of own cyber skills"/>
+                        </outline>
+                        <outline text="Reference Cost Benefit Model -- Sender #slide ">
+                            <outline text="Benefit">
+<outline text="$$b_{rew}$$ -- reward (operational gain), threatened by operational punishment"/>
+<outline text="$$b_{est}$$ -- esteem (reputation), threatened by reputational punishment"/>
+                            </outline>
+                            <outline text="Cost">
+<outline text="$$c_{op}$$ -- operational (data collection, message creation)"/>
+<outline text="$$c_{att}$$ -- Message attack (data modification, deletion or fabrication)"/>
+<outline text="$$c_{comm}$$ -- Message sending (communication cost)"/>
+<outline text="$$c_{pun}$$ -- Punishment: operational and reputational"/>
+                            </outline>
+                        </outline>
+                        <outline text="Reference Cost Benefit Model -- Receiver #slide ">
+                            <outline text="Benefit">
+<outline text="$$b_{sec}$$ -- System security, threatened by direct costs"/>
+<outline text="$$b_{rep}$$ -- Good reputation, threatened by indirect costs"/>
+                            </outline>
+                            <outline text="Cost">
+<outline text="$$c_{def}$$ -- Defence costs: verifying correctness of data"/>
+<outline text="$$c_{dir}$$ -- Direct costs: operational losses due to ">
+    <outline text="false positives/alarm (wrongly mistrust)"/>
+    <outline text="false negatives (missed alarm -- wrongly trust)"/>
+</outline>
+<outline text="$$c_{ind}$$ -- Indirect costs: loss of reputation"/>
+                            </outline>
+                        </outline>
+                        <outline text="Reference Sensor Signalling Game #slide ">
+                            <outline text="**Game** $$\mathcal{G}_{Ref}(S,R,\theta,s,u)$$"/>
+                            <outline text="**Players**: ">
+<outline text="$$S$$: Sender (Sensor)"/>
+<outline text="$$R$$: Receiver (Monitor, IDS) "/>
+                            </outline>
+                            <outline text="**Types**:">
+<outline text="$$\theta=0$$: Malicious Sender (internal attack)"/>
+<outline text="$$\theta=1$$: Honest Sender (externally attacked)"/>
+<outline text="$$\theta=2$$: Honest Sender (not externally attacked)"/>
+                            </outline>
+                            <outline text="**Strategy Space**:">
+<outline text="First Move: $$S$$ sends signal (?)">
+    <outline text="$$S_{\theta=0}$$: attack (send false data), or do not attack (send correct data)."/>
+    <outline text="$$S_{\theta=1}$$: cooperate and send correct data. "/>
+    <outline text="$$S_{\theta=2}$$: with probability $$p$$, send data on secure channel. With probability $$1-p$$, send data on insecure, externally attacked channel. "/>
+</outline>
+<outline text="Second Move: $$R$$ takes action">
+    <outline text="$$s_{T}$$: trust data, $$s_{-T}$$: do not trust data"/>
+</outline>
+                            </outline>
+                            <outline text="**Payoffs**:">
+<outline text="Sender: Benefit - Cost"/>
+<outline text="Receiver: Benefit - Cost"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Next Steps #slide ">
+                        <outline text="Shape New Directions for Literature Review ">
+                            <outline text="GT for AL"/>
+                            <outline text="HaaS (for ML?)"/>
+                            <outline text="GT for HaaS (?) [and ML?]"/>
+                        </outline>
+                        <outline text="Formulate GT Model -- A HaaS ML Game">
+                            <outline text="Design game payoff  functions"/>
+                            <outline text="Solve it!"/>
+                        </outline>
+                    </outline>
+                    <outline text="Conclusion #slide #wfe-ignore-outline "/>
+                    <outline text="References #slide #wfe-ignore-outline "/>
+                </outline>
+                <outline text="INBOX #wfe-ignore-outline ">
+                    <outline text="Notes">
+                        <outline text="Many thanks for the fruitful meeting and thank you again to Eckhard for helping to define our problem further. Today a new concept of a two- (or multi-) stage ML pipeline was discussed. Also the idea of developing an anti-collusion strategy, although we are yet to define what collusion exactly entails and whether it fits into our current model."/>
+                        <outline text="As agreed, for the next session Eckhard will refine his slides based on some the points discussed today, and Dr Ala's team will investigate whether HaaS is essentially just a special case of crowdsourcing. Also to investigate whether there are applications of HaaS in ML, perhaps under a different name. "/>
+                    </outline>
+                    <outline text="Opportunistic Active Learning (aka. Trust but Verify)">
+                        <outline text="Content"/>
+                    </outline>
+                    <outline text="Part I -- Designing The Game  #eyo-style:Section ">
+                        <outline text="The Literature #eyo-style:Subsection "/>
+                        <outline text="Source of Inspiration: The Literature #slide ">
+                            <outline text="Relevant Research Strands: Incomplete information game theoretic approaches for modelling wireless sensor network and client-server architecture scenarios. "/>
+                            <outline text="Paper 1: Shigen Shen et al, Signaling game based strategy of intrusion detection in wireless sensor networks, __Computers &amp; Mathematics with Applications__, Volume 62, Issue 6, 2011, Pages 2404-2416, [cited: 53]"/>
+                            <outline text="Paper 2: M. Estiri and A. Khademzadeh, &quot;A theoretical signaling game model for intrusion detection in wireless sensor networks,&quot; 2010 14th International Telecommunications Network Strategy and Planning Symposium [cited: 15]"/>
+                            <outline text="Paper 3: Mohebbi Moghaddam M., Manshaei M.H., Zhu Q. (2015) To Trust or Not: A Security Signaling Game Between Service Provider and Client. In: Panaousis E. et al ed., Decision and Game Theory for Security. GameSec 2015. [cited: 6]"/>
+                            <outline text="INBOX #wfe-ignore-outline">
+<outline text="[Paper 3: Maryam Mohi, Ali Movaghar, and Pooya Moradian Zadeh. 2009. __A Bayesian Game Approach for Preventing DoS Attacks in Wireless Sensor Networks__. In Proceedings of the 2009 WRI International Conference on Communications and Mobile Computing - Volume 03 (CMC '09), Vol. 3. IEEE Computer Society, Washington, DC, USA, 507-511. DOI: https://doi.org/10.1109/CMC.2009.325 (http://www.sciencedirect.com/science/article/pii/S0898122111005815)]"/>
+                            </outline>
+                        </outline>
+                        <outline text="Paper 1 -- Game Overview #slide " complete="true">
+                            <outline text="![IDS-GAME.png](https://dynalist.io/u/HgjPz1It3c6p1_pkSBUga95r)"/>
+                        </outline>
+                        <outline text="Paper 2 -- Game Overview #slide " complete="true">
+                            <outline text="![ids-signalling-game.jpg](https://dynalist.io/u/wL7rdyiTUdi0-cFY6SFkAzSo)"/>
+                        </outline>
+                        <outline text="Paper 3 -- Aim of the Game #slide " complete="true">
+                            <outline text="A dynamic, incomplete information game for helping a Client (C) to decide whether to trust a Service Provider (SP) or not"/>
+                            <outline text="Nested 3-player game between">
+<outline text="Attacker of SP"/>
+<outline text="SP"/>
+<outline text="Client"/>
+                            </outline>
+                            <outline text="Contains Signalling/Bayesian incomplete information game:">
+<outline text="Client uncertain about the type of SP (safe or compromised)"/>
+<outline text="Decides after receiving signal from SP"/>
+                            </outline>
+                        </outline>
+                        <outline text="Illustration -- Overview #slide " complete="true">
+                            <outline text="![Signalling Game - Moghaddam2015.png](https://dynalist.io/u/ocyDAQboIpYg_6iR6wIhGPnO)"/>
+                        </outline>
+                        <outline text="Illustration -- Safe SP #slide " complete="true">
+                            <outline text="![safe-cloud.png](https://dynalist.io/u/lxWG1VftZwHuqdcWZmojJcK6)"/>
+                        </outline>
+                        <outline text="Illustration -- Compromised SP #slide " complete="true">
+                            <outline text="![compromised-cloud.png](https://dynalist.io/u/N55buJbom68VlznmzVayIz00)"/>
+                        </outline>
+                        <outline text="Nested Game Overview #slide " complete="true">
+                            <outline text="The overarching nested game is of imperfect (?) and incomplete information"/>
+                            <outline text="Move 1:">
+<outline text="Run Game 1: Attacker-Defender (AD) Static Complete Information Game"/>
+<outline text="An attack probability value of $$\theta$$ is obtained from the (unique) mixed NE solution of this Game 1"/>
+                            </outline>
+                            <outline text="Move 2:">
+<outline text="Nature chooses randomly one of the two SP types in Game 2:">
+    <outline text="With probability $$\theta$$: SP is under attack (compromised)"/>
+    <outline text="With probability $$1-\theta$$: SP is safe (but selfish)"/>
+</outline>
+<outline text="Run Game 2: Cloud Service Provider - Client (SPC) Signalling Game"/>
+                            </outline>
+                        </outline>
+                        <outline text="Game 1: Attacker-Defender (AD) “Avoiding Game” #slide " complete="true">
+                            <outline text="Players">
+<outline text="Cloud Service Provider (SP)"/>
+<outline text="External attacker (A)"/>
+                            </outline>
+                            <outline text="Scenario">
+<outline text="A cloud service provider is using resources in order to fulfil the client's request"/>
+<outline text="An attacker attacks resources that are in use."/>
+<outline text="Cost/benefit functions are not explicitly given"/>
+<outline text="Has typical properties of non-zero sum 2-action security game (no pure NE)"/>
+<outline text="Initially there are only two resources in the cloud, but then later there are $$N$$ (Extended AD-Game)."/>
+                            </outline>
+                        </outline>
+                        <outline text="Game 2 (Type 1: Safe but Selfish SP, Move 1 and 2) #slide " complete="true">
+                            <outline text="First move $$SP_1(h, l)$$: cloud Provider can perform required computations on data using">
+<outline text="h: enough precise computational resources "/>
+<outline text="l: low precise computational resources"/>
+                            </outline>
+                            <outline text="Second, chance move: returned result can be">
+<outline text="C: correct result"/>
+<outline text="I: incorrect result"/>
+                            </outline>
+                        </outline>
+                        <outline text="Game 2 (Type 2: Compromised Cloud,  Move 1 and 2) #slide " complete="true">
+                            <outline text="First move $$SP_2(C, I)$$: return correct or incorrect results">
+<outline text="m: alter results"/>
+<outline text="nm: no manipulation"/>
+                            </outline>
+                            <outline text="Attacker eavesdrops and decides whether to alter or ignore the result "/>
+                            <outline text="Attacker knows possibility for generating false result by the service provider"/>
+                            <outline text="Second, chance move: returned result can be">
+<outline text="C: correct result"/>
+<outline text="I: incorrect result"/>
+                            </outline>
+                        </outline>
+                        <outline text="Game 2  (Both Types, Move 3 and 4) #slide " complete="true">
+                            <outline text="Game 2 (dynamic (sequential) Bayesian game (Signalling Game))">
+<outline text="Third move -- SP($$X$$, $$Y$$)">
+    <outline text="The SP sends either signal $$X$$ or $$Y$$"/>
+</outline>
+<outline text="Fourth move -- C($$T$$, $$N$$)">
+    <outline text="The Client decides: $$T$$ -- trust the signal, $$N$$ -- do not trust "/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Critical Analysis -- Questions #slide " complete="true">
+                            <outline text="What are common elements in these papers and games?">
+<outline text="Scenario"/>
+<outline text="Players"/>
+<outline text="Types"/>
+<outline text="Strategies "/>
+                            </outline>
+                            <outline text="Not the solving aspect -- this is deferred for later. "/>
+                        </outline>
+                        <outline text="Reference Sensor Signalling Game #slide " complete="true">
+                            <outline text="**Game** $$\mathcal{G}_{Ref}(S,R,\theta,s,u)$$"/>
+                            <outline text="**Players**: ">
+<outline text="$$S$$: Sender (Sensor)"/>
+<outline text="$$R$$: Receiver (Monitor, IDS) "/>
+                            </outline>
+                            <outline text="**Types**:">
+<outline text="$$\theta=0$$: Malicious Sender (internal attack)"/>
+<outline text="$$\theta=1$$: Honest Sender (externally attacked)"/>
+<outline text="$$\theta=2$$: Honest Sender (not externally attacked)"/>
+                            </outline>
+                            <outline text="**Strategy Space**:">
+<outline text="First Move: $$S$$ sends signal (?)">
+    <outline text="$$S_{\theta=0}$$: attack (send false data), or do not attack (send correct data)."/>
+    <outline text="$$S_{\theta=1}$$: cooperate and send correct data. "/>
+    <outline text="$$S_{\theta=2}$$: with probability $$p$$, send data on secure channel. With probability $$1-p$$, send data on insecure, externally attacked channel. "/>
+</outline>
+<outline text="Second Move: $$R$$ takes action">
+    <outline text="$$s_{T}$$: trust data, $$s_{-T}$$: do not trust data"/>
+</outline>
+                            </outline>
+                            <outline text="**Payoffs**:">
+<outline text="Sender: Benefit - Cost"/>
+<outline text="Receiver: Benefit - Cost"/>
+                            </outline>
+                        </outline>
+                        <outline text="Reference Cost Benefit Model -- Sender #slide " complete="true">
+                            <outline text="Benefit">
+<outline text="$$b_{rew}$$ -- reward (operational gain), threatened by operational punishment"/>
+<outline text="$$b_{est}$$ -- esteem (reputation), threatened by reputational punishment"/>
+                            </outline>
+                            <outline text="Cost">
+<outline text="$$c_{op}$$ -- operational (data collection, message creation)"/>
+<outline text="$$c_{att}$$ -- Message attack (data modification, deletion or fabrication)"/>
+<outline text="$$c_{comm}$$ -- Message sending (communication cost)"/>
+<outline text="$$c_{pun}$$ -- Punishment: operational and reputational"/>
+                            </outline>
+                        </outline>
+                        <outline text="Reference Cost Benefit Model -- Receiver #slide " complete="true">
+                            <outline text="Benefit">
+<outline text="$$b_{sec}$$ -- System security, threatened by direct costs"/>
+<outline text="$$b_{rep}$$ -- Good reputation, threatened by indirect costs"/>
+                            </outline>
+                            <outline text="Cost">
+<outline text="$$c_{def}$$ -- Defence costs: verifying correctness of data"/>
+<outline text="$$c_{dir}$$ -- Direct costs: operational losses due to ">
+    <outline text="false positives/alarm (wrongly mistrust)"/>
+    <outline text="false negatives (missed alarm -- wrongly trust)"/>
+</outline>
+<outline text="$$c_{ind}$$ -- Indirect costs: loss of reputation"/>
+                            </outline>
+                        </outline>
+                        <outline text="A HaaS Game  #eyo-style:Subsection ">
+                            <outline text="Planned Contributions #slide " complete="true">
+<outline text="First GT model of HaaS"/>
+<outline text="Based on expanding previous work on Sensor Games, taking into account a rich motivation profile of human sensor node"/>
+<outline text="Formulation of Reference Game"/>
+                            </outline>
+                            <outline text="HaaS Scenario -- Analysis #slide " complete="true">
+<outline text="Players">
+    <outline text="Human Sensor $$H$$ ($$S$$ in reference game)"/>
+    <outline text="Report Receiving Organisation $$R$$ ($$R$$ in reference game)"/>
+</outline>
+<outline text="We elicit the following motivations for actions that $$H$$ might undertake:">
+    <outline text="malicious or"/>
+    <outline text="honest and">
+        <outline text="reliable (accurate) or"/>
+        <outline text="unreliable (inaccurate), either knowingly (lazy, negligent) or unknowingly (socially engineered)"/>
+    </outline>
+</outline>
+                            </outline>
+                            <outline text="Assumptions #slide " complete="true">
+<outline text="Laziness implies maliciousness"/>
+<outline text="The honest human sensor will always cooperate, so has no choice of actions per se">
+    <outline text="But honesty does not always imply correctness "/>
+    <outline text="We want to model the fact that they could unknowingly create false reports"/>
+    <outline text="The perceived correct report might not be accurate as the human sensor might have a vulnerability (socially engineered, forgetful, negligent)"/>
+</outline>
+<outline text="Lack of information -- Summary">
+    <outline text="The report receiver does not know whether the human sensor is honest or malicious (type)"/>
+    <outline text="An honest human sensor does not know whether she is reliable or not, or socially engineered (stochastic element)"/>
+</outline>
+                            </outline>
+                            <outline text="HaaS Sensor Types #slide " complete="true">
+<outline text="Type 1: uncooperative (internal attacker)">
+    <outline text="malicious -- reduce security of organisation">
+        <outline text="disgruntled (seeking emotional reward), "/>
+        <outline text="greedy (seeking financial reward)"/>
+    </outline>
+    <outline text="knowingly/deliberately unreliable (inaccurate) -- apply minimal effort in contribution to overall security ">
+        <outline text="lazy (give it low priority, too focused on other job aspects)"/>
+        <outline text="negligent (personal weak discipline) ?"/>
+    </outline>
+</outline>
+<outline text="Type 2: cooperative but unknowingly unreliable (inaccurate), ">
+    <outline text="not cyberwise and socially engineered (externally attacked)"/>
+    <outline text="misconception of own cyber skills"/>
+</outline>
+<outline text="Type 3: cooperative and reliable (accurate) -- increase security"/>
+                            </outline>
+                        </outline>
+                        <outline text="INBOX #wfe-ignore-outline ">
+                            <outline text="Strategies #slide " complete="true">
+<outline text="Report receiver $$\mathcal{R}$$ has two pure strategies $$s^\mathcal{R}\in \{t_r,\overline{t}_r\}$$ : ">
+    <outline text="$$t_r$$ -- to trust the received report (and to benefit from its content to improve national security)"/>
+    <outline text="$$\overline{t}_r$$ -- to not trust (to prevent damage, either by recognising the reporting node as malicious or as negligent)"/>
+</outline>
+<outline text="Human sensor $$\mathcal{H}$$ has three pure strategies $$s^\mathcal{H}\in \{c, a, n\}$$:">
+    <outline text="$$c$$ -- cooperate and to send the perceived correct report (and to benefit from increased esteem, or being paid a bounty)"/>
+    <outline text="$$a$$ -- perform an attack by giving misleading reports (in order to get a psychological &quot;kick&quot; or some other financial reward from a cyber criminal)"/>
+    <outline text="$$n$$ -- not sending a report at all (as too lazy and preferring to &quot;get on with the job&quot;)"/>
+</outline>
+                            </outline>
+                            <outline text="Complete Versus Incomplete Information #slide ">
+<outline text="Public information, known to all players">
+    <outline text="Specific game theoretic model, comprising of game type and payoff  functions, including solution algorithm "/>
+</outline>
+<outline text="Private information">
+    <outline text="Report receiver">
+        <outline text="Can use statistics to">
+            <outline text="Estimate reliability of human sensor $$p_{\mathcal{R}}$$"/>
+            <outline text="Compute expected frequency of reportable cyber incidents $$p_{F}$$"/>
+        </outline>
+        <outline text="Unknown information ">
+            <outline text="Types -- whether human sensor is malicious $$p_{M}$$ or honest $$p_{H}$$"/>
+        </outline>
+    </outline>
+    <outline text="Human sensor:">
+        <outline text="Knows whether malicious or not"/>
+        <outline text="Could get feedback to know whether reliable or not (useful for training purposes)"/>
+    </outline>
+    <outline text="Likelihood of attack on reporting channel is not known by anyone "/>
+</outline>
+                            </outline>
+                            <outline text="Reports #slide ">
+<outline text="Notation: $$r$$ -- a report"/>
+<outline text="Could report incident only, or also absence"/>
+<outline text="Could be externally attacked (modified, delayed or fabricated)"/>
+<outline text="Could be synchronous or asynchronous"/>
+<outline text="Examples">
+    <outline text="&quot;Have received a spam email at 8:10h, which was not detected by the spam filter&quot;"/>
+    <outline text="&quot;Have discovered a freeware website that contains links to some malware&quot;"/>
+    <outline text="&quot;Within the last seven days of the reporting period, there were three replies on the company's Twitter feed with external links that appear to expose confidential information&quot;"/>
+</outline>
+                            </outline>
+                            <outline text="Malicious Human Sensor Game #slide ">
+<outline text="The malicious reporter sends a fake report"/>
+<outline text="She can also decide to deceive the recipient, by sending a correct report"/>
+<outline text="Generally, she will try to optimise the rewards from the attack or deception versus potential punishment such as loss of reputation or prosecution"/>
+<outline text="This can be modelled as an IDS game where the defence action of the report receiver is to not trust the report"/>
+                            </outline>
+                            <outline text="Cyber-Untrained Honest Human Sensor Game #slide "/>
+                            <outline text="Cyber-Trained Honest Human Sensor Game #slide "/>
+                            <outline text="Might the cake be ready?"/>
+                        </outline>
+                    </outline>
+                    <outline text="Part II -- Solving It #eyo-style:Section ">
+                        <outline text="INBOX - NE ANALYSIS #wfe-ignore-outline ">
+                            <outline text="Game 1 -- cont. #slide ">
+<outline text="Strategies">
+    <outline text="Strategies:">
+        <outline text="$$S_{SP} = (R_1, R_2, \ldots, R_N)$$"/>
+        <outline text="$$S_A = (R_1, R_2, \ldots, R_N)$$"/>
+    </outline>
+</outline>
+<outline text="Analysis of Game">
+    <outline text="Static complete information parametric normal form game"/>
+    <outline text="There is no pure strategy Nash equilibrium"/>
+    <outline text="They compute the mixed Nash equilibrium for the cases $$N = 2$$ and the general case for the assumption that the attacker only chooses one resource to attack."/>
+</outline>
+                            </outline>
+                            <outline text="Game Analysis #slide ">
+<outline text="Result: conditions under which a pure strategy BNE exists for the signalling game"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="INBOX #wfe-ignore-outline ">
+                    <outline text="Abstract #slide ">
+                        <outline text="The proposed system is made up of a Machine learning algorithm that carries out a classification task [was: decides to either verify or trust $$N$$ users for which they might be adversary or not]."/>
+                        <outline text="The classification process can also be done using a Wizard that might have a higher cost than using the ML algorithm but will classify with high accuracy."/>
+                        <outline text="The goal of this work is to identify a mixed strategy between using the system or the Wizard [was: trusting and verifying the users] which is a best response Nash equilibrium."/>
+                        <outline text="Multiple non critical applications can benefit from such a model including social media human verification systems."/>
+                    </outline>
+                    <outline text="Introduction #h ">
+                        <outline text="Problem statement">
+                            <outline text="problem formulation as Bayesian game"/>
+                            <outline text="example 2-player Bayesian game"/>
+                            <outline text="problem formulation as Bayesian Stackelberg game"/>
+                            <outline text="example 2-player Bayesian Stackelberg game"/>
+                        </outline>
+                        <outline text="Problem statement"/>
+                        <outline text="\includegraphics[scale=0.3]{Drawing1.jpg}"/>
+                        <outline text="Problem formulation"/>
+                        <outline text="Example ">
+                            <outline text="2-player Bayesian game (Pure strategy)"/>
+                            <outline text="The user can either be of type &quot;Regular&quot; or type &quot;Adversary&quot;."/>
+                            <outline text="The Model has only one type."/>
+                            <outline text="The Model does not know the user's type."/>
+                            <outline text="Thus, there is incomplete information (because the user has private information), making it a Bayesian game."/>
+                            <outline text="There is a probability $$p$$ that the user is an adversary, and a probability $$1-p$$ that the user is a normal user"/>
+                        </outline>
+                    </outline>
+                    <outline text="Proposed Methodology #slide ">
+                        <outline text="Aim: increase performance of overall system, taking into account the fact that humans are not perfect"/>
+                        <outline text="Introduce a 2-player stochastic (repeated) game between system $$S$$ and Wizard $$W$$"/>
+                        <outline text="$$W$$ can have several types, leading to a Bayesian game with private info (types):">
+                            <outline text="(i) honest">
+<outline text="(i-a) reliable"/>
+<outline text="(i-b) unreliable"/>
+                            </outline>
+                            <outline text="(ii) malicious"/>
+                        </outline>
+                    </outline>
+                    <outline text="Novelty #slide ">
+                        <outline text="First Haas application for ML [check!]"/>
+                        <outline text="First GT model for HaaS [check!]"/>
+                        <outline text="Novel GT Framework"/>
+                        <outline text="Possible extensions:">
+                            <outline text="Do some AL too. "/>
+                        </outline>
+                    </outline>
+                    <outline text="Planned Contributions #slide ">
+                        <outline text="First GT model of HaaS"/>
+                        <outline text="Based on expanding previous work on Sensor Games, taking into account a rich motivation profile of human sensor node"/>
+                        <outline text="Formulation of Reference Game"/>
+                    </outline>
+                    <outline text="HaaS Scenario -- Analysis #slide ">
+                        <outline text="Players">
+                            <outline text="Human Sensor $$H$$ ($$S$$ in reference game)"/>
+                            <outline text="Report Receiving Organisation $$R$$ ($$R$$ in reference game)"/>
+                        </outline>
+                        <outline text="We elicit the following motivations for actions that $$H$$ might undertake:">
+                            <outline text="malicious or"/>
+                            <outline text="honest and">
+<outline text="reliable (accurate) or"/>
+<outline text="unreliable (inaccurate), either knowingly (lazy, negligent) or unknowingly (socially engineered)"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Assumptions #slide ">
+                        <outline text="Laziness implies maliciousness"/>
+                        <outline text="The honest human sensor will always cooperate, so has no choice of actions per se">
+                            <outline text="But honesty does not always imply correctness "/>
+                            <outline text="We want to model the fact that they could unknowingly create false reports"/>
+                            <outline text="The perceived correct report might not be accurate as the human sensor might have a vulnerability (socially engineered, forgetful, negligent)"/>
+                        </outline>
+                        <outline text="Lack of information -- Summary">
+                            <outline text="The report receiver does not know whether the human sensor is honest or malicious (type)"/>
+                            <outline text="An honest human sensor does not know whether she is reliable or not, or socially engineered (stochastic element)"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Qatar Reading Group Talk 1 (June 2020)" _note="[https://www.overleaf.com/project/59f1d1c45cd281015b4d389a]">
+                <outline text="Paper Proposal: A Game Theoretic Framework for Human-as-a-Sensor-Assisted Machine Learning"/>
+                <outline text="Abstract #slide ">
+                    <outline text="The proposed system is made up of a Machine learning algorithm that carries out a classification task [was: decides to either verify or trust $$N$$ users for which they might be adversary or not]."/>
+                    <outline text="The classification process can also be done using a Wizard that might have a higher cost than using the ML algorithm but will classify with high accuracy."/>
+                    <outline text="The goal of this work is to identify a mixed strategy between using the system or the Wizard [was: trusting and verifying the users] which is a best response Nash equilibrium."/>
+                    <outline text="Multiple non critical applications can benefit from such a model including social media human verification systems."/>
+                </outline>
+                <outline text="The ML System Model #slide  ">
+                    <outline text="![system.png](https://www.dropbox.com/s/efus7p05bpcuuej/system.png?dl=1) #eyo-style:Normal"/>
+                </outline>
+                <outline text="ML Component #slide ">
+                    <outline text="For each ML component $$ML_i$$ $$(i=1,\ldots n)$$ denote">
+                        <outline text="$$c_i$$ -- running cost"/>
+                        <outline text="$$R_i$$ -- reliability (probability of correct classification)"/>
+                        <outline text="$$b_i$$ -- benefit (assume proportional to its reliability)"/>
+                    </outline>
+                    <outline text="The component's utility is then $$u_i = c_i-b_i=c_i-\alpha R_i$$."/>
+                </outline>
+                <outline text="Wizard Component #slide ">
+                    <outline text="Similarly, for this component we have">
+                        <outline text="$$c_W \gg c_i \;\forall i$$ -- running cost"/>
+                        <outline text="$$R_W \gg R_i\;\forall i$$ -- reliability"/>
+                        <outline text="$$b_W$$ -- benefit"/>
+                    </outline>
+                    <outline text="We state $$u_W= c_W-b_W=c_W-\alpha R_W$$."/>
+                </outline>
+                <outline text="System Utility #slide ">
+                    <outline text="The overall system reliability (using the first $$k$$ ML components) is ">
+                        <outline text="$$R_S = \left\{\begin{array}{ll} 1-\prod_k(1-R_i), &amp;\text{ if Wizard is not used.}\\ R_W, &amp;\text{ otherwise.}\end{array}\right.$$"/>
+                    </outline>
+                    <outline text="The system overall utility can be stated as">
+                        <outline text="$$U_S= \left\{\begin{array}{ll} \alpha R_S - \sum_k c_i, &amp;\text{ if Wizard is not used.}\\ \alpha R_W- c_W, &amp;\text{ otherwise.}\end{array}\right.$$"/>
+                    </outline>
+                    <outline text="Potential goals: ">
+                        <outline text="maximise $$R_S$$?"/>
+                        <outline text="maximise $$U_S$$?"/>
+                        <outline text="maximise $$U_S$$ and ensure $$R_S \ge t$$ where $$t$$ is a given threshold?"/>
+                    </outline>
+                    <outline text="We seem to need some mathematical optimisation technique here."/>
+                </outline>
+                <outline text="Some Terminology #slide ">
+                    <outline text="Machine Learning (ML)"/>
+                    <outline text="Adversarial Learning (AL)"/>
+                    <outline text="Non-cooperative Game Theory (GT)"/>
+                    <outline text="Human-as-a-Sensor (HaaS)"/>
+                </outline>
+                <outline text="HaaS Concept #slide ">
+                    <outline text="Recent technological advances have made communication more affordable and computation faster."/>
+                    <outline text="The change in norms regarding the use of technology have enabled a range of new applications and systems that collect data from humans."/>
+                    <outline text="The concept of Human-as-a-Sensor (HaaS) formalises a methodology where instead of automated sensors, humans are the primary source of information. "/>
+                    <outline text="We want to..."/>
+                </outline>
+                <outline text="HaaS Examples #slide ">
+                    <outline text="Non-cyber applications">
+                        <outline text="commuters to report suspicious luggage "/>
+                        <outline text="residents participating in neighbourhood watch schemes"/>
+                        <outline text="emergency response (report quakes, search and rescue)"/>
+                        <outline text="participants on the road reporting traffic congestion"/>
+                        <outline text="proposals for teachers to spot tendency to criminal behaviour of pupils "/>
+                    </outline>
+                    <outline text="Cyber applications">
+                        <outline text="social media users reporting security threats"/>
+                        <outline text="employees to report spam or phishing emails"/>
+                        <outline text="more?? #todo "/>
+                    </outline>
+                </outline>
+                <outline text="Proposed Methodology #slide ">
+                    <outline text="View the Wizard as a HaaS"/>
+                    <outline text="Introduce a 2-player game between system $$S$$ and HaaS $$H$$"/>
+                    <outline text="Aim: increase correctness of overall system, and take into account the fact that humans are not perfect"/>
+                    <outline text="$$H$$ can have several types, leading to a Bayesian game:">
+                        <outline text="honest">
+                            <outline text="reliable"/>
+                            <outline text="unreliable"/>
+                        </outline>
+                        <outline text="malicious"/>
+                    </outline>
+                    <outline text="Novelty:">
+                        <outline text="First Haas application for ML [check!]"/>
+                        <outline text="First GT model for HaaS [check!]"/>
+                        <outline text="Novel GT Framework"/>
+                    </outline>
+                    <outline text="Possible extensions:">
+                        <outline text="Do some AL too. "/>
+                    </outline>
+                </outline>
+                <outline text="Next Steps #slide ">
+                    <outline text="Shape New Directions for Literature Review ">
+                        <outline text="GT for AL"/>
+                        <outline text="HaaS (for ML?)"/>
+                        <outline text="GT for HaaS (?) [and ML?]"/>
+                    </outline>
+                    <outline text="Formulate GT Model -- A HaaS ML Game">
+                        <outline text="Design game payoff  functions"/>
+                        <outline text="Solve it!"/>
+                    </outline>
+                </outline>
+                <outline text="Conclusion #slide #wfe-ignore-outline "/>
+                <outline text="References #slide #wfe-ignore-outline "/>
+            </outline>
+            <outline text="HaaS Talk (June 2019)" _note="[https://www.overleaf.com/project/593f7c9a2e8d87da67cbddfa](https://www.overleaf.com/project/593f7c9a2e8d87da67cbddfa)">
+                <outline text="Background  #slide " complete="true">
+                    <outline text="Recent technological advances have made communication more affordable and computation faster."/>
+                    <outline text="The change in norms regarding the use of technology have enabled a range of new applications and systems that collect data from humans."/>
+                    <outline text="The concept of Human-as-a-Sensor (HaaS) formalises a methodology where instead of automated sensors, humans are the primary source of information. "/>
+                </outline>
+                <outline text="HaaS Examples #slide " complete="true">
+                    <outline text="Non-cyber applications">
+                        <outline text="commuters to report suspicious luggage "/>
+                        <outline text="residents participating in neighbourhood watch schemes"/>
+                        <outline text="emergency response (report quakes, search and rescue)"/>
+                        <outline text="participants on the road reporting traffic congestion"/>
+                        <outline text="proposals for teachers to spot tendency to criminal behaviour of pupils "/>
+                    </outline>
+                    <outline text="Cyber applications">
+                        <outline text="social media users reporting security threats"/>
+                        <outline text="employees to report spam or phishing emails"/>
+                        <outline text="more??"/>
+                    </outline>
+                </outline>
+                <outline text="Part I -- Designing The Game  #eyo-style:Section ">
+                    <outline text="The Literature #eyo-style:Subsection "/>
+                    <outline text="Source of Inspiration: The Literature #slide ">
+                        <outline text="Relevant Research Strands: Incomplete information game theoretic approaches for modelling wireless sensor network and client-server architecture scenarios. "/>
+                        <outline text="Paper 1: Shigen Shen et al, Signaling game based strategy of intrusion detection in wireless sensor networks, __Computers &amp; Mathematics with Applications__, Volume 62, Issue 6, 2011, Pages 2404-2416, [cited: 53]"/>
+                        <outline text="Paper 2: M. Estiri and A. Khademzadeh, &quot;A theoretical signaling game model for intrusion detection in wireless sensor networks,&quot; 2010 14th International Telecommunications Network Strategy and Planning Symposium [cited: 15]"/>
+                        <outline text="Paper 3: Mohebbi Moghaddam M., Manshaei M.H., Zhu Q. (2015) To Trust or Not: A Security Signaling Game Between Service Provider and Client. In: Panaousis E. et al ed., Decision and Game Theory for Security. GameSec 2015. [cited: 6]"/>
+                        <outline text="INBOX #wfe-ignore-outline">
+                            <outline text="[Paper 3: Maryam Mohi, Ali Movaghar, and Pooya Moradian Zadeh. 2009. __A Bayesian Game Approach for Preventing DoS Attacks in Wireless Sensor Networks__. In Proceedings of the 2009 WRI International Conference on Communications and Mobile Computing - Volume 03 (CMC '09), Vol. 3. IEEE Computer Society, Washington, DC, USA, 507-511. DOI: https://doi.org/10.1109/CMC.2009.325 (http://www.sciencedirect.com/science/article/pii/S0898122111005815)]"/>
+                        </outline>
+                    </outline>
+                    <outline text="Paper 1 -- Game Overview #slide " complete="true">
+                        <outline text="![IDS-GAME.png](https://dynalist.io/u/HgjPz1It3c6p1_pkSBUga95r)"/>
+                    </outline>
+                    <outline text="Paper 2 -- Game Overview #slide " complete="true">
+                        <outline text="![ids-signalling-game.jpg](https://dynalist.io/u/wL7rdyiTUdi0-cFY6SFkAzSo)"/>
+                    </outline>
+                    <outline text="Paper 3 -- Aim of the Game #slide " complete="true">
+                        <outline text="A dynamic, incomplete information game for helping a Client (C) to decide whether to trust a Service Provider (SP) or not"/>
+                        <outline text="Nested 3-player game between">
+                            <outline text="Attacker of SP"/>
+                            <outline text="SP"/>
+                            <outline text="Client"/>
+                        </outline>
+                        <outline text="Contains Signalling/Bayesian incomplete information game:">
+                            <outline text="Client uncertain about the type of SP (safe or compromised)"/>
+                            <outline text="Decides after receiving signal from SP"/>
+                        </outline>
+                    </outline>
+                    <outline text="Illustration -- Overview #slide " complete="true">
+                        <outline text="![Signalling Game - Moghaddam2015.png](https://dynalist.io/u/ocyDAQboIpYg_6iR6wIhGPnO)"/>
+                    </outline>
+                    <outline text="Illustration -- Safe SP #slide " complete="true">
+                        <outline text="![safe-cloud.png](https://dynalist.io/u/lxWG1VftZwHuqdcWZmojJcK6)"/>
+                    </outline>
+                    <outline text="Illustration -- Compromised SP #slide " complete="true">
+                        <outline text="![compromised-cloud.png](https://dynalist.io/u/N55buJbom68VlznmzVayIz00)"/>
+                    </outline>
+                    <outline text="Nested Game Overview #slide " complete="true">
+                        <outline text="The overarching nested game is of imperfect (?) and incomplete information"/>
+                        <outline text="Move 1:">
+                            <outline text="Run Game 1: Attacker-Defender (AD) Static Complete Information Game"/>
+                            <outline text="An attack probability value of $$\theta$$ is obtained from the (unique) mixed NE solution of this Game 1"/>
+                        </outline>
+                        <outline text="Move 2:">
+                            <outline text="Nature chooses randomly one of the two SP types in Game 2:">
+<outline text="With probability $$\theta$$: SP is under attack (compromised)"/>
+<outline text="With probability $$1-\theta$$: SP is safe (but selfish)"/>
+                            </outline>
+                            <outline text="Run Game 2: Cloud Service Provider - Client (SPC) Signalling Game"/>
+                        </outline>
+                    </outline>
+                    <outline text="Game 1: Attacker-Defender (AD) “Avoiding Game” #slide " complete="true">
+                        <outline text="Players">
+                            <outline text="Cloud Service Provider (SP)"/>
+                            <outline text="External attacker (A)"/>
+                        </outline>
+                        <outline text="Scenario">
+                            <outline text="A cloud service provider is using resources in order to fulfil the client's request"/>
+                            <outline text="An attacker attacks resources that are in use."/>
+                            <outline text="Cost/benefit functions are not explicitly given"/>
+                            <outline text="Has typical properties of non-zero sum 2-action security game (no pure NE)"/>
+                            <outline text="Initially there are only two resources in the cloud, but then later there are $$N$$ (Extended AD-Game)."/>
+                        </outline>
+                    </outline>
+                    <outline text="Game 2 (Type 1: Safe but Selfish SP, Move 1 and 2) #slide " complete="true">
+                        <outline text="First move $$SP_1(h, l)$$: cloud Provider can perform required computations on data using">
+                            <outline text="h: enough precise computational resources "/>
+                            <outline text="l: low precise computational resources"/>
+                        </outline>
+                        <outline text="Second, chance move: returned result can be">
+                            <outline text="C: correct result"/>
+                            <outline text="I: incorrect result"/>
+                        </outline>
+                    </outline>
+                    <outline text="Game 2 (Type 2: Compromised Cloud,  Move 1 and 2) #slide " complete="true">
+                        <outline text="First move $$SP_2(C, I)$$: return correct or incorrect results">
+                            <outline text="m: alter results"/>
+                            <outline text="nm: no manipulation"/>
+                        </outline>
+                        <outline text="Attacker eavesdrops and decides whether to alter or ignore the result "/>
+                        <outline text="Attacker knows possibility for generating false result by the service provider"/>
+                        <outline text="Second, chance move: returned result can be">
+                            <outline text="C: correct result"/>
+                            <outline text="I: incorrect result"/>
+                        </outline>
+                    </outline>
+                    <outline text="Game 2  (Both Types, Move 3 and 4) #slide " complete="true">
+                        <outline text="Game 2 (dynamic (sequential) Bayesian game (Signalling Game))">
+                            <outline text="Third move -- SP($$X$$, $$Y$$)">
+<outline text="The SP sends either signal $$X$$ or $$Y$$"/>
+                            </outline>
+                            <outline text="Fourth move -- C($$T$$, $$N$$)">
+<outline text="The Client decides: $$T$$ -- trust the signal, $$N$$ -- do not trust "/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Critical Analysis -- Questions #slide " complete="true">
+                        <outline text="What are common elements in these papers and games?">
+                            <outline text="Scenario"/>
+                            <outline text="Players"/>
+                            <outline text="Types"/>
+                            <outline text="Strategies "/>
+                        </outline>
+                        <outline text="Not the solving aspect -- this is deferred for later. "/>
+                    </outline>
+                    <outline text="Reference Sensor Signalling Game #slide " complete="true">
+                        <outline text="**Game** $$\mathcal{G}_{Ref}(S,R,\theta,s,u)$$"/>
+                        <outline text="**Players**: ">
+                            <outline text="$$S$$: Sender (Sensor)"/>
+                            <outline text="$$R$$: Receiver (Monitor, IDS) "/>
+                        </outline>
+                        <outline text="**Types**:">
+                            <outline text="$$\theta=0$$: Malicious Sender (internal attack)"/>
+                            <outline text="$$\theta=1$$: Honest Sender (externally attacked)"/>
+                            <outline text="$$\theta=2$$: Honest Sender (not externally attacked)"/>
+                        </outline>
+                        <outline text="**Strategy Space**:">
+                            <outline text="First Move: $$S$$ sends signal (?)">
+<outline text="$$S_{\theta=0}$$: attack (send false data), or do not attack (send correct data)."/>
+<outline text="$$S_{\theta=1}$$: cooperate and send correct data. "/>
+<outline text="$$S_{\theta=2}$$: with probability $$p$$, send data on secure channel. With probability $$1-p$$, send data on insecure, externally attacked channel. "/>
+                            </outline>
+                            <outline text="Second Move: $$R$$ takes action">
+<outline text="$$s_{T}$$: trust data, $$s_{-T}$$: do not trust data"/>
+                            </outline>
+                        </outline>
+                        <outline text="**Payoffs**:">
+                            <outline text="Sender: Benefit - Cost"/>
+                            <outline text="Receiver: Benefit - Cost"/>
+                        </outline>
+                    </outline>
+                    <outline text="Reference Cost Benefit Model -- Sender #slide " complete="true">
+                        <outline text="Benefit">
+                            <outline text="$$b_{rew}$$ -- reward (operational gain), threatened by operational punishment"/>
+                            <outline text="$$b_{est}$$ -- esteem (reputation), threatened by reputational punishment"/>
+                        </outline>
+                        <outline text="Cost">
+                            <outline text="$$c_{op}$$ -- operational (data collection, message creation)"/>
+                            <outline text="$$c_{att}$$ -- Message attack (data modification, deletion or fabrication)"/>
+                            <outline text="$$c_{comm}$$ -- Message sending (communication cost)"/>
+                            <outline text="$$c_{pun}$$ -- Punishment: operational and reputational"/>
+                        </outline>
+                    </outline>
+                    <outline text="Reference Cost Benefit Model -- Receiver #slide " complete="true">
+                        <outline text="Benefit">
+                            <outline text="$$b_{sec}$$ -- System security, threatened by direct costs"/>
+                            <outline text="$$b_{rep}$$ -- Good reputation, threatened by indirect costs"/>
+                        </outline>
+                        <outline text="Cost">
+                            <outline text="$$c_{def}$$ -- Defence costs: verifying correctness of data"/>
+                            <outline text="$$c_{dir}$$ -- Direct costs: operational losses due to ">
+<outline text="false positives/alarm (wrongly mistrust)"/>
+<outline text="false negatives (missed alarm -- wrongly trust)"/>
+                            </outline>
+                            <outline text="$$c_{ind}$$ -- Indirect costs: loss of reputation"/>
+                        </outline>
+                    </outline>
+                    <outline text="A HaaS Game  #eyo-style:Subsection ">
+                        <outline text="Planned Contributions #slide " complete="true">
+                            <outline text="First GT model of HaaS"/>
+                            <outline text="Based on expanding previous work on Sensor Games, taking into account a rich motivation profile of human sensor node"/>
+                            <outline text="Formulation of Reference Game"/>
+                        </outline>
+                        <outline text="HaaS Scenario -- Analysis #slide " complete="true">
+                            <outline text="Players">
+<outline text="Human Sensor $$H$$ ($$S$$ in reference game)"/>
+<outline text="Report Receiving Organisation $$R$$ ($$R$$ in reference game)"/>
+                            </outline>
+                            <outline text="We elicit the following motivations for actions that $$H$$ might undertake:">
+<outline text="malicious or"/>
+<outline text="honest and">
+    <outline text="reliable (accurate) or"/>
+    <outline text="unreliable (inaccurate), either knowingly (lazy, negligent) or unknowingly (socially engineered)"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Assumptions #slide " complete="true">
+                            <outline text="Laziness implies maliciousness"/>
+                            <outline text="The honest human sensor will always cooperate, so has no choice of actions per se">
+<outline text="But honesty does not always imply correctness "/>
+<outline text="We want to model the fact that they could unknowingly create false reports"/>
+<outline text="The perceived correct report might not be accurate as the human sensor might have a vulnerability (socially engineered, forgetful, negligent)"/>
+                            </outline>
+                            <outline text="Lack of information -- Summary">
+<outline text="The report receiver does not know whether the human sensor is honest or malicious (type)"/>
+<outline text="An honest human sensor does not know whether she is reliable or not, or socially engineered (stochastic element)"/>
+                            </outline>
+                        </outline>
+                        <outline text="HaaS Sensor Types #slide " complete="true">
+                            <outline text="Type 1: uncooperative (internal attacker)">
+<outline text="malicious -- reduce security of organisation">
+    <outline text="disgruntled (seeking emotional reward), "/>
+    <outline text="greedy (seeking financial reward)"/>
+</outline>
+<outline text="knowingly/deliberately unreliable (inaccurate) -- apply minimal effort in contribution to overall security ">
+    <outline text="lazy (give it low priority, too focused on other job aspects)"/>
+    <outline text="negligent (personal weak discipline) ?"/>
+</outline>
+                            </outline>
+                            <outline text="Type 2: cooperative but (unknowingly) unreliable (inaccurate), ">
+<outline text="not cyberwise and socially engineered (externally attacked)"/>
+<outline text="misconception of own cyber skills"/>
+                            </outline>
+                            <outline text="Type 3: cooperative and reliable (accurate) -- increase security"/>
+                        </outline>
+                    </outline>
+                    <outline text="INBOX #wfe-ignore-outline ">
+                        <outline text="Strategies #slide " complete="true">
+                            <outline text="Report receiver $$\mathcal{R}$$ has two pure strategies $$s^\mathcal{R}\in \{t_r,\overline{t}_r\}$$ : ">
+<outline text="$$t_r$$ -- to trust the received report (and to benefit from its content to improve national security)"/>
+<outline text="$$\overline{t}_r$$ -- to not trust (to prevent damage, either by recognising the reporting node as malicious or as negligent)"/>
+                            </outline>
+                            <outline text="Human sensor $$\mathcal{H}$$ has three pure strategies $$s^\mathcal{H}\in \{c, a, n\}$$:">
+<outline text="$$c$$ -- cooperate and to send the perceived correct report (and to benefit from increased esteem, or being paid a bounty)"/>
+<outline text="$$a$$ -- perform an attack by giving misleading reports (in order to get a psychological &quot;kick&quot; or some other financial reward from a cyber criminal)"/>
+<outline text="$$n$$ -- not sending a report at all (as too lazy and preferring to &quot;get on with the job&quot;)"/>
+                            </outline>
+                        </outline>
+                        <outline text="Complete Versus Incomplete Information #slide ">
+                            <outline text="Public information, known to all players">
+<outline text="Specific game theoretic model, comprising of game type and payoff  functions, including solution algorithm "/>
+                            </outline>
+                            <outline text="Private information">
+<outline text="Report receiver">
+    <outline text="Can use statistics to">
+        <outline text="Estimate reliability of human sensor $$p_{\mathcal{R}}$$"/>
+        <outline text="Compute expected frequency of reportable cyber incidents $$p_{F}$$"/>
+    </outline>
+    <outline text="Unknown information ">
+        <outline text="Types -- whether human sensor is malicious $$p_{M}$$ or honest $$p_{H}$$"/>
+    </outline>
+</outline>
+<outline text="Human sensor:">
+    <outline text="Knows whether malicious or not"/>
+    <outline text="Could get feedback to know whether reliable or not (useful for training purposes)"/>
+</outline>
+<outline text="Likelihood of attack on reporting channel is not known by anyone "/>
+                            </outline>
+                        </outline>
+                        <outline text="Reports #slide ">
+                            <outline text="Notation: $$r$$ -- a report"/>
+                            <outline text="Could report incident only, or also absence"/>
+                            <outline text="Could be externally attacked (modified, delayed or fabricated)"/>
+                            <outline text="Could be synchronous or asynchronous"/>
+                            <outline text="Examples">
+<outline text="&quot;Have received a spam email at 8:10h, which was not detected by the spam filter&quot;"/>
+<outline text="&quot;Have discovered a freeware website that contains links to some malware&quot;"/>
+<outline text="&quot;Within the last seven days of the reporting period, there were three replies on the company's Twitter feed with external links that appear to expose confidential information&quot;"/>
+                            </outline>
+                        </outline>
+                        <outline text="Malicious Human Sensor Game #slide ">
+                            <outline text="The malicious reporter sends a fake report"/>
+                            <outline text="She can also decide to deceive the recipient, by sending a correct report"/>
+                            <outline text="Generally, she will try to optimise the rewards from the attack or deception versus potential punishment such as loss of reputation or prosecution"/>
+                            <outline text="This can be modelled as an IDS game where the defence action of the report receiver is to not trust the report"/>
+                        </outline>
+                        <outline text="Cyber-Untrained Honest Human Sensor Game #slide "/>
+                        <outline text="Cyber-Trained Honest Human Sensor Game #slide "/>
+                        <outline text="Might the cake be ready?"/>
+                    </outline>
+                </outline>
+                <outline text="Next Steps #slide ">
+                    <outline text="Continue Literature Review "/>
+                    <outline text="Design game payoff  functions"/>
+                    <outline text="Solve it!"/>
+                </outline>
+                <outline text="Part II -- Solving It #eyo-style:Section ">
+                    <outline text="INBOX - NE ANALYSIS #wfe-ignore-outline ">
+                        <outline text="Game 1 -- cont. #slide ">
+                            <outline text="Strategies">
+<outline text="Strategies:">
+    <outline text="$$S_{SP} = (R_1, R_2, \ldots, R_N)$$"/>
+    <outline text="$$S_A = (R_1, R_2, \ldots, R_N)$$"/>
+</outline>
+                            </outline>
+                            <outline text="Analysis of Game">
+<outline text="Static complete information parametric normal form game"/>
+<outline text="There is no pure strategy Nash equilibrium"/>
+<outline text="They compute the mixed Nash equilibrium for the cases $$N = 2$$ and the general case for the assumption that the attacker only chooses one resource to attack."/>
+                            </outline>
+                        </outline>
+                        <outline text="Game Analysis #slide ">
+                            <outline text="Result: conditions under which a pure strategy BNE exists for the signalling game"/>
+                        </outline>
+                        <outline text="Bayesian Nash Equilibrium (BNE) #slide ">
+                            <outline text="Non-Bayesian game: strategy profile is a NE iff every strategy in that profile is a best response to every other strategy"/>
+                            <outline text="Bayesian Games: Players maximise their expected payoffs">
+<outline text="__Pooling Equilibrium__: if the first player sends the same signal, regardless of his type."/>
+<outline text="__Separating Equilibrium__: if the first player sends different signals, depending on his type."/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Conclusion #slide #wfe-ignore-outline "/>
+            </outline>
+            <outline text="ICITST Talk" _note="#title #h #slide &#xA;[WorkFlowy  Mirror](https://workflowy.com/#/088dff66f431)&#xA;https://www.dropbox.com/s/t4dfv79gb8z6jc0/ICITST%20Talk%20-%20Talks%20-%20Dynalist.pdf?dl=0">
+                <outline text="A Multi-Channel Steganographic Protocol for Secure SMS Mobile Banking #title"/>
+                <outline text="Introduction #h">
+                    <outline text="Background #slide " complete="true">
+                        <outline text="Online banking is a huge success story"/>
+                        <outline text="In 2014, there were 133.5 million digital banking users in the U.S. and this figure was projected to increase to 161.6 million in 2019"/>
+                        <outline text="Mobile banking is increasingly the most preferred online banking approach"/>
+                        <outline text="SMS banking is an attractive solution due to its simplicity and cost-effectiveness "/>
+                        <outline text="However there are concerns about the security "/>
+                    </outline>
+                    <outline text="SMS Banking Security #slide " complete="true">
+                        <outline text="However the following security attacks might take place:">
+                            <outline text="An unauthorised external entity (adversary) performing passive or active attacks:">
+<outline text="Eavesdropping "/>
+<outline text="Man-in-the-middle attack"/>
+<outline text="Replay attack"/>
+                            </outline>
+                            <outline text="The government and/or the mobile service provider eavesdropping on the communication, or modifying message content"/>
+                        </outline>
+                        <outline text="How could we design a secure SMS mobile banking protocol?"/>
+                    </outline>
+                    <outline text="Scenario #slide" complete="true">
+                        <outline text="We consider the following scenario: ">
+                            <outline text="Amara wants to implement secure SMS banking in order to pay money into Ebere's account"/>
+                            <outline text="However, she is in an insecure and poor infrastructure area, were there is no internet connection in peoples' homes, "/>
+                            <outline text="She has a (dual sim) mobile phone which is however a low powered device (not connected to the internet)"/>
+                            <outline text="On the other hand, there are public cybercafes in the neighbourhood town"/>
+                        </outline>
+                    </outline>
+                    <outline text="Security Assumptions #slide" complete="true">
+                        <outline text="The bank can be trusted"/>
+                        <outline text="The cybercafe, government and/or the mobile operator(s) cannot">
+                            <outline text="They could carry out passive or active attacks (evesdropping, man-in-the-middle, steganalysis) "/>
+                            <outline text="Attacks could be done on their own, or by working together (collaborative attack)"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Our Approach: The Protocol #h">
+                    <outline text="Main Idea #slide " complete="true">
+                        <outline text="We want to avoid encryption, as it attracts suspicion due to the socially constrained SMS channel"/>
+                        <outline text="Instead, we use a combination of low-entropy and high-entropy steganography"/>
+                        <outline text="The use of three communication channels further increases attack resistance"/>
+                    </outline>
+                    <outline text="Previous Work #slide" complete="true">
+                        <outline text="Our work was inspired by">
+                            <outline text="Beato, F. (2015). Private Information Sharing in Online Communities."/>
+                            <outline text="Beato, F., \&amp; Rasmussen, K. B. (2014). Undetectable Communication: The Online Social Networks Case. PST 2014"/>
+                        </outline>
+                        <outline text="It is a suitable specialisation and application to novel domain of">
+                            <outline text="Clarke, Charles A and Pfluegel, Eckhard and Tsaptsinos, D. (2015). Multi-channel overlay protocols: Implementing ad-hoc message authentication in social media platforms. CyberSA 2015"/>
+                            <outline text="Clarke, C. A. (2016). Dual Carrier Steganographic Messaging Protocols for Mobile Messaging Applications. PhD Thesis, Kingston University"/>
+                        </outline>
+                    </outline>
+                    <outline text="Notations #slide " complete="true">
+                        <outline text="Let Amara be a sender wanting to transfer money to Ebere's account through her bank"/>
+                        <outline text="Let $$m$$ be the corresponding SMS message"/>
+                        <outline text="We additionally denote $$m_1$$, $$m_2$$ faked, unsuspicious SMS messages "/>
+                        <outline text="Let $$E$$ and $$D$$ be high-entropy steganographic encoding (hiding) and decoding functions"/>
+                        <outline text="Let $$b$$ be a binary value to be hidden in $$m_3$$, a stego object (e.g. image for LSB hiding)"/>
+                        <outline text="Let $$C_1$$ and $$C_2$$ be two separate wireless (2g or 3g) channels"/>
+                        <outline text="Finally, $$C_3$$ denotes an insecure internet channel"/>
+                    </outline>
+                    <outline text="Description #slide " complete="true">
+                        <outline text="Amara creates the SMS banking instruction message $$m$$. "/>
+                        <outline text="She also generates two fake unsuspicious banking instructions $$m_1$$ and $$m_2$$."/>
+                        <outline text="Then, $$m_1$$ and $$m_2$$ are transmitted to the bank over two independent mobile wireless channels $$C_1$$ and $$C_2$$ respectively."/>
+                        <outline text="Amara computes  $$b=m \oplus m_1\oplus m_2$$."/>
+                        <outline text="The binary value $$b$$ is covertly embedded using an LSB hiding map, resulting in $$m_3$$."/>
+                        <outline text="Finally $$m_3$$ is sent to the bank as web form data, using HTTP POST."/>
+                        <outline text="On receiving $$m_3$$ and extracting $$b$$, the bank can recover $$m$$ by computing $$b \oplus m_1\oplus m_2$$."/>
+                    </outline>
+                    <outline text="Architecture #slide " complete="true">
+                        <outline text="![](https://www.dropbox.com/s/5s6fdz7m0ugqe22/Screenshot%202017-12-08%2016.17.24.png?dl=1) #wfe-style-none"/>
+                    </outline>
+                    <outline text="Example #slide" complete="true">
+                        <outline text="Amara's SMS banking instruction: $$m=$$ &quot;Transfer £500 to Ms Ebere&quot;"/>
+                        <outline text="First fake SMS message: $$m_1 = $$ &quot;Transfer £100 to Mr Nmachi&quot;"/>
+                        <outline text="Second fake SMS message: $$m_2 =$$ &quot;Send me my current bank statement&quot;"/>
+                        <outline text="Third message in HTTP POST request: $$m_3=E(b)$$ where">
+                            <outline text="$$b=m \oplus m_1 \oplus m_2$$"/>
+                            <outline text="This is 53656E6420391715716B28756137C2E699E7217225213F0220195239417D61111B"/>
+                        </outline>
+                        <outline text="Bank reconstructs $$m=b \oplus m_1 \oplus m_2$$"/>
+                    </outline>
+                </outline>
+                <outline text="Security Analysis #h">
+                    <outline text="Adversaries #slide " complete="true">
+                        <outline text="External SMS Interceptor"/>
+                        <outline text="Mobile Operators I and II">
+                            <outline text="Malicious Employee"/>
+                            <outline text="Management"/>
+                        </outline>
+                        <outline text="Cybercafé ">
+                            <outline text="Negligent Owner"/>
+                            <outline text="Malicious Cybercafé User"/>
+                        </outline>
+                        <outline text="ISP of Cybercafé "/>
+                        <outline text="Government"/>
+                    </outline>
+                    <outline text="Results #slide "/>
+                </outline>
+                <outline text="Conclusion #h">
+                    <outline text="Conclusion #slide" complete="true">
+                        <outline text="We have designed a secure SMS banking protocol with distinct novel features: ">
+                            <outline text="The protocol employs three channels"/>
+                            <outline text="It is based on a hybrid steganography model"/>
+                            <outline text="It provides security against a range of adversaries, in particular the mobile operators"/>
+                        </outline>
+                        <outline text="We are working towards a robust design and implementation for real-world use"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="INBOX">
+            <outline text="First Attempt: One-Channel?">
+                <outline text="Let us disregard the standard use of &quot;secure&quot; SMS">
+                    <outline text="This is **__not__** end-to-end secure as the mobile operator (who normally acts as a trusted service provider/third party) can easily get hold of the key"/>
+                </outline>
+                <outline text="Symmetric Encryption Approach #slide ">
+                    <outline text="Illustration  \[\begin{array} {c c c c}  \\Alice &amp;amp;  &amp;amp; Bank \\  c=E_K(m) &amp;amp; \xrightarrow[\text{c}]{mobile\,operator} &amp;amp; m=D_K(c) \\  \end{array}\]"/>
+                </outline>
+                <outline text="Security Analysis #slide ">
+                    <outline text="Key needs to be stored securely."/>
+                </outline>
+                <outline text="Problem: The symmetric key needs to be exchanged securely with the bank prior to actually running this protocol"/>
+                <outline text="Alternatives?"/>
+                <outline text="Asymmetric Encryption #slide ">
+                    <outline text="Illustration  \[\begin{array} {c c c c}  \\Alice &amp;amp;  &amp;amp; Bank \\  c=E{_P}{_k}(m) &amp;amp; \xrightarrow[\text{$$Pk$$}|{c}]{\text{$$mobile$$$$\,$$$$operator$$}}&amp;amp; m=D{_P}{_k}(c) \\ \end{array}\]"/>
+                    <outline text="Alice generates two keys $$Pk$$ (public key) and $$Sk$$ (private key)."/>
+                    <outline text="The $$Pk$$ is used to encrypt the SMS cipher text, while the $$Sk$$ will be used to decrypt the message."/>
+                    <outline text="However, this would require a trusted third party such as a key distribution centre to distribute the private keys to any party that wishes to communicate."/>
+                    <outline text="Slower than symmetric key encryption."/>
+                </outline>
+            </outline>
+            <outline text="Second Attempt: Two-Channel Encryption Approach">
+                <outline text="A secure architecture and protocol can be achieved where multiple channels or carriers are utilized.">
+                    <outline text="The concept of a protocol, were a dual sim phone is used as a secure steganographic carrier for SMS banking."/>
+                    <outline text="One sim can be used as a first carrier while the second sim can be used as the second carrier."/>
+                </outline>
+                <outline text="Main idea #slide ">
+                    <outline text="We have a dual sim phone"/>
+                    <outline text="One sim can be used as a first carrier while the second sim can be used as the second carrier."/>
+                    <outline text="As a secure steganographic carrier for SMS banking. "/>
+                    <outline text="Alice wants to pay in money into Bob's account"/>
+                    <outline text="How could we then secure our communication?"/>
+                </outline>
+                <outline text="Symmetric Encryption Approach #slide">
+                    <outline text="Illustration #slide ">
+                        <outline text="\[\begin{array}{c c c c} Alice &amp;amp; &amp;amp; Bank\\  E_K(m)=c &amp;amp; \xrightarrow[\text{SIM 1$$(carrier\,1)$$ $$\, \, \, \,c$$}]{\text{$$mobile$$$$\,$$$$operator\,1\,(channel\,1)$$}} &amp;amp; \\ \\&amp;amp;\xrightarrow[\text{$$SIM$$$$\,$$$$2$$$$\,(carier\,2)$$$$\, \, \, \,K$$}]{\text{$$mobile$$$$\,$$$$operator\,2$$$$\,$$(channel$$\,$$2)$$$$}} &amp;amp; D_k(c)=m \\  \end{array}\]"/>
+                    </outline>
+                </outline>
+                <outline text="Security Analysis #slide ">
+                    <outline text="The two carriers should be considered adversarial to each other. This will potentially prevent information leakage and attacks.  "/>
+                    <outline text="This could be secure against certain attacks"/>
+                    <outline text="Is it possible to eavesdrop and intercept on communication?"/>
+                    <outline text="With advance cryptanalysis systems, this could be broken."/>
+                    <outline text="**How can we secure our communication, if there is a probability that the government and mobile operator could eavesdrop and intercept our transactions?**"/>
+                </outline>
+                <outline text="Asymmetric Encryption Approach #slide ">
+                    <outline text="Illustration ">
+                        <outline text="\[\begin{array}{c c c c} Alice &amp;amp; &amp;amp; Bank\\  c=E{_P}{_k}(m) &amp;amp; \xrightarrow[\text{SIM 1$$(carrier\,1)$$ $$\, \, \, \,{Pk}\parallel c$$}]{\text{$$mobile$$$$\,$$$$operator\,1\,(channel\,1)$$}} &amp;amp; \\ \\&amp;amp;\xrightarrow[\text{$$SIM$$$$\,$$$$2$$$$\,(carier\,2)$$$$\, \, \, \,{Sk}$$}]{\text{$$mobile$$$$\,$$$$operator\,2$$$$\,$$(channel$$\,$$2)$$$$}} &amp;amp; m=D{_S}{_k}(c) \\  \end{array}\]"/>
+                    </outline>
+                </outline>
+                <outline text="Yet Another Idea with 2 channels #slide ">
+                    <outline text="Asymmetric Encryption Approach">
+                        <outline text="Alice has a secret $$s$$ $$\in$$ S and uses a ($$a$$, $$n$$ threshold scheme) to share the secret between her and the bank. The secret $$s$$ could be secret key $$Sk$$ $$\in$$ $$K$$ or a ciphertext $$c$$ $$\in$$ $$C$$"/>
+                        <outline text="Illustration ">
+                            <outline text="\[\begin{array}{c c c c} Alice &amp;amp; &amp;amp; Bank\\  c=E{_P}{_k}(m) &amp;amp; \xrightarrow[\text{SIM 1$$(carrier\,1)$$ $$\, \, \, \,{Pk}\parallel c$$}]{\text{$$mobile$$$$\,$$$$operator\,1\,(channel\,1)$$}} &amp;amp; \\ \\&amp;amp;\xrightarrow[\text{$$SIM$$$$\,$$$$2$$$$\,(carier\,2)$$$$\, \, \, \,{Sk}$$}]{\text{$$mobile$$$$\,$$$$operator\,2$$$$\,$$(channel$$\,$$2)$$$$}} &amp;amp; m=D{_S}{_k}(c) \\  \end{array}\]">
+<outline text="The secret key $${S}{k}$$ $$\in$$ K could be divided into to $$n$$ parts, hashed and shared without a trusted third party.">
+    <outline text="Alice divide the secret key $$Sk$$ into $$n$$ pieces $$Sk_1$$, $$Sk_2$$....., $$Sk_n$$ in a way such that:">
+        <outline text="Knowledge of any $$a$$ or more $$Sk_1$$ pieces makes $$Sk$$ easily computable;"/>
+        <outline text="Knowledge of any $$a$$ $$-$$ $$1$$ or fewer $$Sk_1$$ pieces leaves $$Sk$$ completely undermined."/>
+    </outline>
+    <outline text="With the key divided into the following pieces"/>
+    <outline text=" $$Sk_1$$, $$Sk_2$$....., $$Sk_n$$ $$\longmapsto$$ $$H(k_1)= h_1$$, $$H(k_2)= h_2$$,.......$$H(k_n)= h_n$$."/>
+</outline>
+<outline text="The cipher text $$c$$ $$\in$$ $$C$$ could be divided into to parts, hashed and shared without a trusted third party.">
+    <outline text="$$c_1$$, $$c_2$$, ..........$$c_n$$. $$\longmapsto$$ $$H(c_1)= h_1$$, $$H(c_2)= h_2$$,........$$H(c_n)= h_n$$"/>
+</outline>
+<outline text="However, in this scenario, the secret $$s$$ needs to be shared a trusted authority."/>
+<outline text="We assume that the secret $$s$$ could be recovered, if government corrupts or collaborates with at least $$a+1$$ participants (mobile operator and other trusted authorities)."/>
+<outline text="The secret $$Sk$$ or $$c$$ needs to be shared without a trusted third-party. "/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Related Work/Issues">
+                <outline text="Should we trust trusted third parties [in general]? ">
+                    <outline text="When the infrastructure of a trusted CA is breached the whole chain of trust is broken. E.g. The 2011 incident at CA DigiNotar broke the trust of the Dutch governments PKI."/>
+                    <outline text="As Bruce Schneier has pointed out, after the 2013 mass surveillance disclosures, no third party should in fact ever be trusted. https://www.schneier.com/blog/archives/2013/12/nsa_spying_who.html       https://www.schneier.com/blog/archives/2014/02/who_should_stor.html"/>
+                    <outline text="Problems with Integrity and No repudation"/>
+                </outline>
+                <outline text="Suppose two parties share a secure private key ">
+                    <outline text="What if the mobile operator or government have the capacity to decrypt a strong encryption."/>
+                    <outline text="According to Bruce Schneier the NSA is able to decrypt most of the Internet. They're doing it primarily by cheating, not by mathematics. https://www.schneier.com/blog/archives/2013/09/the_nsa_is_brea.html"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

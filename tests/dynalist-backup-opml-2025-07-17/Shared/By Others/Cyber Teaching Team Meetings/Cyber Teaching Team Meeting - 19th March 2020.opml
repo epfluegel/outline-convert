@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Cyber Teaching Team Meeting - 19th March 2020</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="**OFFICE HOURS:**">
+            <outline text="For next week, we need to maintain office hours:">
+                <outline text="If you plan to be in kingston, fine. "/>
+                <outline text="Otherwise a message will be sent to students via Canvas indicating that they can request a Zoom session. Please enter your preferences:">
+                    <outline text="MD:  Zoom"/>
+                    <outline text="DGc:"/>
+                    <outline text="EP:  Email, Skype"/>
+                    <outline text="MT:"/>
+                    <outline text="CC: Zoom"/>
+                    <outline text="**ACTION:** MD to test the big blue button on Canvas as an alterative to Zoom."/>
+                </outline>
+                <outline text="**ACTION:**  Send message via Canvas for modules.">
+                    <outline text="DGc to send for modules covered"/>
+                    <outline text="CC to send CI5235 and CI6280 Message"/>
+                    <outline text="MD to send CI4315 Message "/>
+                    <outline text="EP to send PG Message"/>
+                    <outline text="MT to send CI6240 Message"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="**UG INDIVIDUAL PROJECTS**">
+            <outline text="Thoughts on keeping UG student project momentum?">
+                <outline text="CC Suggestion: For UG Offer Zoom session next Monday 13:00 - 15:00">
+                    <outline text="For screen sharing via Zoom, consultation, demos, content review e.t.c."/>
+                    <outline text="**ACTION:** Send notification via Canvas and include a booking link"/>
+                </outline>
+                <outline text="PG: Allocation finalised in terms of supervisor and the first marker">
+                    <outline text="Students being met online."/>
+                    <outline text="Three roles:">
+                        <outline text="Supervisor (May or may not be a marker)"/>
+                        <outline text="1st Marker"/>
+                        <outline text="2nd Marker"/>
+                    </outline>
+                    <outline text="**ACTION:** Martin to contact 4 remaining NIS students as feedback to proposals"/>
+                    <outline text=""/>
+                    <outline text="Action: Deepak: 1 -2  and 1 -3"/>
+                    <outline text="January cohort go live end of April re registration forms:"/>
+                    <outline text=""/>
+                    <outline text="**ACTION:** Charles and EP conversation about projects forms."/>
+                    <outline text=""/>
+                    <outline text="Weekly email: "/>
+                </outline>
+            </outline>
+            <outline text="Thoughts on UG FYP vivas?">
+                <outline text="CC Suggestion: Use Zoom for Vivas">
+                    <outline text="Offer a practice and setup session in advance of the Viva, so that students are prepared. Start next Monday 23rd."/>
+                    <outline text="**ACTION:**  CC message all Level 6 Cyber students"/>
+                    <outline text="**ACTION:** MT and DGc message non-cyber project students"/>
+                </outline>
+                <outline text="UG FYP Project Vivas - We need to send out a message to students very soon.">
+                    <outline text="**ACTION:** Draft  a  message for UG project students"/>
+                </outline>
+                <outline text="PG Projects - We need to send out a message to students very soon.">
+                    <outline text="**ACTION:** Draft  a  message for PG project students"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="**NIS PG PROJECTS**">
+            <outline text="Thoughts on keeping NIS PG student project momentum?">
+                <outline text="Zoom/e-mail shots"/>
+            </outline>
+            <outline text="Thoughts on NIS PG Project Vivas?">
+                <outline text="Zoom/Skype for Vivas">
+                    <outline text="Offer a practice and setup session in advance of the Viva, so that students are prepared. "/>
+                    <outline text="**ACTION:**  EP and MT message all NIS Project students"/>
+                </outline>
+                <outline text="We need to send out a message to students very soon.">
+                    <outline text="**ACTION:** Draft  a  message for NIS PG project students"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="MT has teaching for the entire week of 27th April  All but Wednesday">
+            <outline text="Lectures and labs"/>
+            <outline text="Database Management and Governance"/>
+        </outline>
+        <outline text="JDP:">
+            <outline text="Delay as long as possible - ideally June"/>
+            <outline text=""/>
+        </outline>
+        <outline text="Creating Zoom Groups within teams">
+            <outline text=""/>
+        </outline>
+        <outline text="EP: Security Protocols (for Data Communications Module)">
+            <outline text="Monday 30th March whole day"/>
+            <outline text="Postpone or deliver"/>
+        </outline>
+        <outline text="**SEPTEMBER TEACHING**">
+            <outline text="Thoughts about what happens if we need to teach remotely in September?">
+                <outline text="CC Suggestion: ">
+                    <outline text="Create/share knowledge and skills packs. Where a pack centers on a given weekly topic and includes the following resources:">
+                        <outline text="**Topic brief**">
+                            <outline text="Learning outcomes"/>
+                            <outline text="Summary"/>
+                        </outline>
+                        <outline text="**Video lecture**">
+                            <outline text="Narrated slides"/>
+                        </outline>
+                        <outline text="**Practical Lab Activity**">
+                            <outline text="Virtual machines"/>
+                            <outline text="Lab activity"/>
+                        </outline>
+                        <outline text="**Assessment**">
+                            <outline text="Formative"/>
+                            <outline text="Summative"/>
+                        </outline>
+                        <outline text="**PRE-REQUISITES**">
+                            <outline text="Computer with at least 8 GB RAM and 40GB storage"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Completed">
+            <outline text="Invite Darrel to weekly cyber meeting"/>
+            <outline text="Establish a weekly online meeting"/>
+            <outline text="Send out a message that the lab will be closed."/>
+        </outline>
+        <outline text=""/>
+        <outline text="Mastaneh,">
+            <outline text="Big Blue Button Session"/>
+        </outline>
+        <outline text="Mitigating Circumstances">
+            <outline text="7 or 15 Days"/>
+        </outline>
+        <outline text="Test "/>
+        <outline text="Scheduling of Vivas">
+            <outline text="Paul has an in-class test scheduled for the 27th April 2020"/>
+            <outline text="Viva Block">
+                <outline text="28, 29, 30 March"/>
+                <outline text="4, 5, 6 April"/>
+                <outline text="Deadline: Of projects moved to 8th May 2020"/>
+                <outline text=""/>
+            </outline>
+            <outline text="Office hours to:"/>
+        </outline>
+        <outline text=""/>
+        <outline text="Five minutes tech:">
+            <outline text=""/>
+        </outline>
+    </body>
+</opml>

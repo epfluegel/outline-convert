@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Outlines before Coline</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Tags #h ">
+            <outline text="Topic Tags">
+                <outline text="#sg-field"/>
+                <outline text="#GT :: #zero :: #non-zero :: #matrix :: #bimatrix :: #complete :: #bayesian"/>
+                <outline text="#bayes :: #signal "/>
+                <outline text="#tax #security :: #small :: #big :: #cvss ::: #scoring #cloud #GT #basic #bayes #BNE #equilibrium"/>
+            </outline>
+            <outline text="Field Tags">
+                <outline text="#GT-field #sg-field #complete-info-sg-field "/>
+            </outline>
+            <outline text="Louai's Tags">
+                <outline text="#ch2 :: #ch3 :: #ch4 :: #ch5 :: #ch6 :"/>
+                <outline text="#cyber-SA-17 :: "/>
+            </outline>
+            <outline text="Research Semantic Tags">
+                <outline text="#motivation #notation #concept #novel"/>
+            </outline>
+        </outline>
+        <outline text="Game Theory #GT" _note="https://workflowy.com/#/5b960e3137a6">
+            <outline text="Complete (Symmetric) Information Games #h">
+                <outline text="Classical Results on Matrix (Zero-Sum) Games #h " _note="#zero-sum #matrix">
+                    <outline text="#todo clarify payoff &gt; value"/>
+                    <outline text="Definition and Notations #slide">
+                        <outline text="$$A$$ -- square, real matrix of dimension $$n$$"/>
+                        <outline text="$$x, y$$ -- mixed strategies (probability vectors $$x,y \in {\mathbb R}^n$$ with $$0\le x_i\le 1$$, $$\sum_i x_i=1$$ and $$0\le y_i\le 1$$, $$\sum_i y_i=1$$)"/>
+                        <outline text="$$v=v(A)$$ -- value of the game, defined as $$v:=\max_x \min_y xAy = \min_y \max_x xAy $$"/>
+                    </outline>
+                    <outline text="Matrix Games #slide">
+                        <outline text="These are two-person, zero-sum finite games $$G=(X,Y,A)$$ where ">
+                            <outline text="$$X$$ and $$Y$$ are the sets of strategies for the different players "/>
+                            <outline text="$$A:X\times Y \mapsto R$$ is the payoff function. "/>
+                        </outline>
+                        <outline text="Zero-sum game: one player wins what the other player loses"/>
+                        <outline text="We use a matrix to represent the payoff function"/>
+                        <outline text="The first (row) player plays a row action"/>
+                        <outline text="The second (column) player plays a column action"/>
+                        <outline text="Without loss of generality, we can assume that all entries of $$A$$ are positive, as adding #todo "/>
+                    </outline>
+                    <outline text="Best Response #slide">
+                        <outline text="Any player will want to maximise her payoff, which means ">
+                            <outline text="maximising $$xA$$ if $$x$$ is Player 1's strategy,"/>
+                            <outline text="minimising $$Ay$$ if $$y$$ is Player 2's strategy. "/>
+                        </outline>
+                        <outline text="With her best response, a player will want to maximise what she gets out of the other player's move.">
+                            <outline text="The best response for Player 1 is to assume maximum damage caused by the other player, and then to try mitigating this as much as possible: $$ \max_x \min_y xAy =: v^{+}$$. "/>
+                            <outline text="The best response for Player 2 is to assume Player 1 seeks maximum gain, and then to limit this as much as possible: $$\min_y \max_x xAy =: v^{-}$$."/>
+                        </outline>
+                    </outline>
+                    <outline text="Value of Game #slide">
+                        <outline text="$$v^{-}$$: __lower value__"/>
+                        <outline text="$$v^{+}$$: __upper value__"/>
+                        <outline text="Using elementary mathematics, it can be seen that $$v^{-} \le v^{+}$$."/>
+                        <outline text="Min-max Theorem">
+                            <outline text="In the setting of a matrix game, these two values can be seen to be the same: $$v^- = {v^+}$$."/>
+                            <outline text="This is non-trivial: von Neumann's Theorem."/>
+                        </outline>
+                        <outline text="Definition: the __value__ of the game is then $$v(A):=\max_x \min_y xAy = \min_y \max_x xAy $$"/>
+                        <outline text="The value is unique, as identical to best responses"/>
+                        <outline text="Any strategy $$x^*, y^*$$ satisfying $$x^*Ay^* = v$$ is called __optimal__. There may be several such $$x^*, y^*$$."/>
+                    </outline>
+                    <outline text="Nash Equilibrium for Matrix Games #slide">
+                        <outline text="We say that $$(x^*, y^*)$$ is a NE strategy profile iff">
+                            <outline text="$$xAy^* \le v = x^*Ay^* \;\forall x$$"/>
+                            <outline text="$$x^* Ay \ge v = x^*Ay^*\;\forall y$$"/>
+                        </outline>
+                        <outline text="Note that one can show for zero-sum games that any combination of different optimal strategies yields an equilibrium strategy. "/>
+                        <outline text="Often, NE are not mentioned in the context of zero-sum games."/>
+                    </outline>
+                    <outline text="Computation of Value #slide "/>
+                    <outline text="Principle of Indifference #slide "/>
+                    <outline text="Linear Algebra Approach #slide "/>
+                    <outline text="Linear Programming Approach #slide "/>
+                    <outline text="References "/>
+                </outline>
+                <outline text="References #slide "/>
+                <outline text="Non-Zero-Sum (Bimatrix) Games #h #non-zero-sum">
+                    <outline text="Notations #slide ">
+                        <outline text="These are two-person, non-zero-sum finite games $$G=(X,Y,A,B)$$ where ">
+                            <outline text="$$X$$ and $$Y$$ are the sets of strategies for the different players, "/>
+                            <outline text="$$A:X\times Y \mapsto R$$ is the payoff function for Player 1, "/>
+                            <outline text="$$B:X\times Y \mapsto R$$ is the payoff function for Player 2. "/>
+                        </outline>
+                        <outline text="The first (row) player plays a row action"/>
+                        <outline text="The second (column) player plays a column action"/>
+                        <outline text="Without loss of generality, we can assume that all entries of $$A$$ are positive, as adding #todo "/>
+                    </outline>
+                    <outline text="Nash Equilibrium for Matrix Games #slide "/>
+                    <outline text="Solving Non-Zero-Sum Bimatrix Games #slide "/>
+                    <outline text="Non-Linear Programming Approach #slide "/>
+                    <outline text="Strategically Equivalence #slide "/>
+                </outline>
+                <outline text="References #slide "/>
+            </outline>
+            <outline text="Incomplete (Asymmetric) Information Games" colorLabel="6">
+                <outline text="BAYESIAN">
+                    <outline text="https://en.wikipedia.org/wiki/Bayesian_game"/>
+                    <outline text="Motivation">
+                        <outline text="Incomplete information about the strategies and payoffs">
+                            <outline text="In particular, one player has incomplete information about the other player."/>
+                            <outline text="Can be modelled by introducing Nature as a player in the game (Nature is a random value (signal))"/>
+                        </outline>
+                        <outline text="uncertainty?">
+                            <outline text="imperfect information game?"/>
+                            <outline text="What does it mean and how is it related to Nature?"/>
+                            <outline text="Harsanyi invented the trick of converting games of incomplete information to games of imperfect information, by introducing nature as an additional player"/>
+                        </outline>
+                    </outline>
+                    <outline text="Basic Concepts">
+                        <outline text="Bayesian are methods in probability and statistics named after Thomas Bayes. These methods include Bayesian Games which provides a new way for analysing incomplete information games. In such games, there is a certain belief with a known probability distribution"/>
+                        <outline text="John Harsanyi developed a new theory for analysing games: Bayesian Games">
+                            <outline text="&quot;developing the highly innovative analysis of games of incomplete information, so-called Bayesian games&quot;"/>
+                        </outline>
+                        <outline text="Bayesian game consists of:" _note="@book{Osborne1994,&#xA;  title={A course in game theory},&#xA;  author={Osborne, Martin J and Rubinstein, Ariel},&#xA;  year={1994},&#xA;  publisher={MIT press}&#xA;}">
+                            <outline text="finite set N (the set of players)">
+<outline text="each player has his own set of actions"/>
+<outline text="each player has a finite set of signals and a signal function"/>
+<outline text="each player has a prior belief"/>
+<outline text="each player has a preference relation"/>
+                            </outline>
+                            <outline text="finite set set of \Omega (the set of states)"/>
+                        </outline>
+                        <outline text="Bayesian Games (Games of Incomplete information) represents players' uncertainties about the game player" _note="@book{Shoham2009,&#xA;  title={Multiagent systems: Algorithmic, game-theoretic, and logical foundations},&#xA;  author={Shoham, Yoav and Leyton-Brown, Kevin},&#xA;  year={2009},&#xA;  publisher={Cambridge University Press}&#xA;}">
+                            <outline text="Uncertainty is presented within a set using probability distribution of the game played"/>
+                        </outline>
+                    </outline>
+                    <outline text="Notations">
+                        <outline text="$$N$$ -- State of Nature #GT #bayes"/>
+                        <outline text="$$\theta_i \in \Theta$$ -- type of player $$P_i$$ (as a function of $$N$$) #GT #bayes "/>
+                        <outline text="$$A_i \in (A \times T)$$ -- action set of $$P_i$$, specified for specific types #GT #bayes "/>
+                        <outline text="$$a_i \in  (A \times T)$$ -- a specific action of $$P_i$$, specified for specific types #GT #bayes "/>
+                        <outline text="$$p_i$$ -- probability distribution (&quot;beliefs&quot;) over $$N$$, for the specific player $$P_i$$ #GT #bayes "/>
+                    </outline>
+                    <outline text="Bayesian Probability"/>
+                    <outline text="Bayes Nash Equilibrium"/>
+                </outline>
+                <outline text="SIGNALLING">
+                    <outline text="Asymmetric incomplete information games  #r"/>
+                    <outline text="Signalling is a way for an agent to communicate his type under adverse selection @Rasmusen2007"/>
+                    <outline text="A two-player game where one of the players has incomplete information (Asymmetric information game)"/>
+                    <outline text="Extensive game"/>
+                    <outline text="__Nature__ selects a game to be played according to a &lt;u&gt;commonly known distribution&lt;/u&gt;" _note="Probability or likelihood (This is \theta in Moghaddam's GameSec 2015 conference paper)"/>
+                    <outline text="Sequential game">
+                        <outline text="Player 1 is informed on the selected game and chooses an action"/>
+                        <outline text="Then, player 2 chooses an action knowing player 1's action but not knowing the Nature's choice"/>
+                    </outline>
+                    <outline text="2 players --&amp;gt; Sender (S) and Receiver (R)">
+                        <outline text="Player 1 (Cloud)">
+                            <outline text="knows what __Nature__ chooses"/>
+                            <outline text="Then he chooses an action (knows which game is played)"/>
+                            <outline text="will choose his message? action or message?"/>
+                        </outline>
+                        <outline text="Player 2 (Client)">
+                            <outline text="Does not know the Nature's action and chooses an action (incomplete information)"/>
+                            <outline text="His action depends entirely on the game being played and that player 1 will play his **dominant strategy (e.g. in which case we have equilibrium)**"/>
+                        </outline>
+                    </outline>
+                    <outline text="Expected Payoff"/>
+                    <outline text="Questions">
+                        <outline text="Would our game be a screening game because cloud makes decision on behalf of the user and the cloud might not be trusted (depending on trust degree $$T$$)?"/>
+                        <outline text="Which assumptions can we remove in an extended model?"/>
+                        <outline text="Signalling Game">
+                            <outline text="Abstract of paper: &quot;Type of the attacker&quot;"/>
+                            <outline text="In Section 3.1, generic relationships between the utility functions are derived for the AD-game (such as $$D_{21} \ge D_{11}$$) without defining the specific cost and benefit functions. This is possible although the game is a simultaneous (one-shot) game because??"/>
+                            <outline text="What is a Successful attack in Table 2?"/>
+                            <outline text="After the one-shot AD-game, the service provider will know whether he is been attacked or not"/>
+                            <outline text="Signalling game is a communication game"/>
+                            <outline text="What are the different types of attackers?"/>
+                        </outline>
+                        <outline text="What is the timeline of the nested game? (Attacker-Cloud Game and User-Cloud Game)"/>
+                    </outline>
+                </outline>
+                <outline text="Screening Game">
+                    <outline text="1st stage signalling then 2nd Screening?? #review "/>
+                    <outline text="Screening game https://en.wikipedia.org/wiki/Screening_game "/>
+                </outline>
+            </outline>
+            <outline text="Stochastic Games">
+                <outline text="A dynamic game that involves probabilistic transitions through several states of the system"/>
+                <outline text="Has a start state: Players choose actions and receive a payoff that depend on the current state of the game"/>
+                <outline text="Then the game transitions into a new state with a probability based upon players’ actions and the current state"/>
+            </outline>
+            <outline text="Nested Games"/>
+        </outline>
+        <outline text="Applications of Game Theory to Security" _note="https://workflowy.com/#/929e463e968d&#xA;#GT #ch2  #small #big #decision #h #sg-field">
+            <outline text="Introduction #slide ">
+                <outline text="Security games analyse attacker-defender security scenarios using game theory,"/>
+                <outline text="This is highly appropriate under the assumption that both attacker and defender are rational entities. #sg-field #motivation"/>
+            </outline>
+            <outline text="Complete Information Security Games #h #complete-info-sg-field" _note="#GT #security #small #big #cloud #single-target #two-target #ch3">
+                <outline text="Motivation #slide ">
+                    <outline text="Complete information security games assume the mutual knowledge of strategies by both attacker and defender. #complete-info-sg-field #motivation"/>
+                    <outline text="In real-world scenarios, this could correspond to a situation where the attacker, through reconnaissance, might gain some knowledge through insider information or information leakage. #motivation"/>
+                    <outline text="The defender might be aware of potential attackers and their motivation through security assessment and risk analysis. #motivation"/>
+                </outline>
+                <outline text="DECISION-MAKING SECURITY GAMES ($$n$$ PLAYERS) #h #decision ">
+                    <outline text="Economics and Security Games - Basic Equations #slide ">
+                        <outline text="$$p$$ - Exogenous probability of attack"/>
+                        <outline text="Expected utility function of defender under attack with probability $$p$$ is $$u = b - p \cdot c_a - c_d$$ where $$c_a$$ is the cost due to assets under attack and $$c_d$$ is the defense cost."/>
+                        <outline text="More specifically, $$u = b - p (1 - \sigma(\gamma)) L - \kappa(\gamma)$$"/>
+                    </outline>
+                    <outline text="CLOUD PROVIDER DECISION-MAKING SECURITY GAMES #decision"/>
+                </outline>
+            </outline>
+            <outline text="Incomplete Information Games #h ">
+                <outline text="Specific Signalling Game #h ">
+                    <outline text="@Moghaddam2015 #review #GT #cloud #signal">
+                        <outline text="Aim of the paper: #slide ">
+                            <outline text="They design a signalling game for helping a Client (C) to decide whether to trust a Service Provider (SP) or not"/>
+                            <outline text="They obtain the trust level as an output of their game."/>
+                            <outline text="Trust level or whether to trust or not?!"/>
+                        </outline>
+                        <outline text="This signalling game is nested and can be decomposed into two games: #slide ">
+                            <outline text="Attacker-Defender (AD) game &quot;Avoiding Game&quot;">
+<outline text="Scenario">
+    <outline text="A cloud service provider is using resources in order to fulfil the client's request"/>
+    <outline text="An attacker attacks resources that are in use."/>
+    <outline text="Initial scenario: there are only two resources in the cloud, but then later there are $$N$$ (Extended-AD game)."/>
+</outline>
+<outline text="Discussion">
+    <outline text="How will \theta be published? In other word, if the cloud is a black box, would we still know the values in the normal form (utility function)?"/>
+    <outline text="How will \theta be computed and utility function is unknown?"/>
+    <outline text="What does parametric (parametric normal form) mean in this context?"/>
+</outline>
+<outline text="********Game******** ">
+    <outline text="Type">
+        <outline text="Static complete information parametric normal form game"/>
+        <outline text="Not a perfect information game, so the actions are not known to the players"/>
+    </outline>
+    <outline text="Description">
+        <outline text="Service Provider picks a resource for requested service, attacker chooses a resource to compromise"/>
+    </outline>
+    <outline text="Players">
+        <outline text="Cloud Service Provider (SP)"/>
+        <outline text="External attacker"/>
+    </outline>
+    <outline text="Strategies">
+        <outline text="Cost/benefit functions are not explicitly given"/>
+        <outline text="********Strategies:******** ">
+            <outline text="S_{SP} = (R_1, R_2, \ldots, R_N)"/>
+            <outline text="S_A = (R_1, R_2, \ldots, R_N)"/>
+        </outline>
+    </outline>
+</outline>
+<outline text="Analysis of Game">
+    <outline text="Nash Equilibria">
+        <outline text="Results:">
+            <outline text="There is no pure strategy Nash equilibrium"/>
+            <outline text="They compute the mixed Nash equilibrium for the cases $$N = 2$$ and the general case for the assumption that the attacker only chooses one resource to attack."/>
+        </outline>
+        <outline text="\theta is an output of the AD game (The value of \theta determines 2 different possible games for the signalling game)"/>
+        <outline text="A probability \theta is mathcalculated from the mixed NE, indicating the likelihood that the cloud resources are compromised"/>
+    </outline>
+</outline>
+                            </outline>
+                            <outline text="Service Provider-Client Signalling Game">
+<outline text="Service Provider-Client Game">
+    <outline text="Scenario">
+        <outline text="The client might face a compromised cloud or a safe one"/>
+        <outline text="2 dynamic games: one with safe cloud and another with compromised cloud"/>
+    </outline>
+    <outline text="********Games******** ">
+        <outline text="Type">
+            <outline text="Similar to AD-Game, but not static (Dynamic, sequential)"/>
+            <outline text="One for safe cloud and one for compromised cloud"/>
+        </outline>
+        <outline text="Description">
+            <outline text="Client does not know if SP is compromised or not"/>
+        </outline>
+        <outline text="Players">
+            <outline text="Cloud Provider"/>
+            <outline text="User"/>
+        </outline>
+        <outline text="Strategies">
+            <outline text="Safe Cloud: provide actual or guessed results">
+                <outline text="Game for the safe cloud">
+                    <outline text="First move SP_1(h, l): cloud Provider can perform required computations on data using">
+                        <outline text="********h: enough &amp;amp; precise computational resources******** "/>
+                        <outline text="l: low precise computational resources"/>
+                    </outline>
+                    <outline text="Payoff Utility"/>
+                    <outline text="Second move SP_2(C, I): chance move returned result can be">
+                        <outline text="C: correct result"/>
+                        <outline text="I: incorrect result"/>
+                    </outline>
+                    <outline text="Probability $$\theta$$ and $$1 - \theta$$ respectively (outcome of AD game, and input for SPC game)"/>
+                    <outline text="Third move SP(X, Y):"/>
+                    <outline text="Forth move C(T, N): Client receives the signal from the SP and hence decide whether to trust the signal or not">
+                        <outline text="T: Trust the signal"/>
+                        <outline text="N: Does not trust the signal"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Game for compromised game: Return correct or incorrect results">
+                <outline text="First Step:">
+                    <outline text="Attacker eavesdrops and decides whether to alter or ignore the result because this increases the possibility of detecting an attack by the defender">
+                        <outline text="A(m, nm)">
+                            <outline text="m: alter results"/>
+                            <outline text="nm: no manipulation"/>
+                        </outline>
+                        <outline text="Attacker knows possibility for generating false result by the service provider"/>
+                    </outline>
+                    <outline text="********Second, third and fourth steps in safe cloud game are the same for compromised cloud******** "/>
+                </outline>
+                <outline text="Client is the final player?"/>
+            </outline>
+        </outline>
+    </outline>
+</outline>
+<outline text="Service Provider-Client Signalling (SPC) Game">
+    <outline text="Game">
+        <outline text="Type">
+            <outline text="Illustration" _note="![](https://www.dropbox.com/s/t2gofobislrzh4e/Signalling%20Game%20-%20Moghaddam2015.png?dl=1)"/>
+            <outline text="2 player game between Sender and Receiver"/>
+            <outline text="Dynamic Game - Client decides after receiving signal from the SP"/>
+            <outline text="Bayesian - Wikipedia's definition"/>
+            <outline text="Non-cooperative"/>
+            <outline text="Incomplete information, but one player has private information (Service Provider)"/>
+        </outline>
+        <outline text="Steps:">
+            <outline text="Move zero: Nature chooses type of cloud (Nature chooses randomly one of the two games - Ref: Multi-Agent Systems Book?)">
+                <outline text="A: cloud is under attack (Compromised)"/>
+                <outline text="NA: cloud is safe"/>
+                <outline text="Probabilities obtained from __Extended AD-game__:  P(A) = \theta &amp;amp; P(NA) = 1 - \theta">
+                    <outline text="The value of \theta determines 2 different possible games for the signalling game"/>
+                </outline>
+            </outline>
+            <outline text="Second move C(T, N): the user decides whether to trust the signal or not">
+                <outline text="T: trust the signal from SP"/>
+                <outline text="N: does not trust the signal from SP"/>
+            </outline>
+            <outline text="First move SP(X, Y): the selected SP sends either">
+                <outline text="X signal"/>
+                <outline text="Y signal"/>
+            </outline>
+        </outline>
+        <outline text="Description">
+            <outline text="Client uncertain about the type of SP (safe or compromised)"/>
+            <outline text="Signalling game"/>
+        </outline>
+        <outline text="Players:">
+            <outline text="Sender: Service Provider (SP)"/>
+            <outline text="Receiver: Client"/>
+        </outline>
+    </outline>
+    <outline text="Payoffs utility functions"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="Game Analysis #slide ">
+                            <outline text="Definitions of a Bayesian Nash Equilibrium (BNE)">
+<outline text="Non-bayesian game: strategy profile is a NE if every strategy in that profile is a best response to every other strategy"/>
+<outline text="Bayesian Games: Players maximise their expected payoffs">
+    <outline text="Pooling Equilibrium if the first player sends the same signal, regardless of his type (A or NA)"/>
+    <outline text="Separating Equilibrium if the first player sends different signals, depending on his types (A or NA)"/>
+</outline>
+                            </outline>
+                            <outline text="Results: Give conditions under which a pure strategy BNE exists for the signalling game"/>
+                        </outline>
+                        <outline text="Discussion #slide ">
+                            <outline text="Similarity to our work">
+<outline text="Client-based perspective"/>
+                            </outline>
+                            <outline text="Differences to our work">
+<outline text="Service-oriented (SaaS): This might be more complex than our game as we are only interested in protecting an asset (Cloud storage)."/>
+<outline text="They obtain some information on $$T$$ as an outcome of the signalling game analysis"/>
+<outline text="We assume we know the trust level $$T$$."/>
+                            </outline>
+                            <outline text="Possible Extensions">
+<outline text="Use a Repeated game for the AD-game"/>
+<outline text="We could use our scenario with selfish (internal attacker) or trusted cloud (without external attacker) for a simple signalling game (Demonstration for Monday)"/>
+<outline text="Replace AD-game with other static games for different types of cloud deployment models"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="SPECIFIC BAYESIAN SECURITY GAMES #h ">
+                    <outline text="The author in \cite{} design a signalling game for helping a Client (C) to decide whether to trust a Service Provider (SP) or not. They obtain the trust level as an output of their game. This signalling game is nested and can be decomposed into two games: Attacker-Defender (AD) Game (Avoiding Game) and service provider-client signalling-game."/>
+                    <outline text="In the first game, a cloud service provider is using resources in order to fulfil the client's request. Meantime, an attacker attacks resources that are in use. As an initial scenario, there are only two resources in the cloud, but then later there are $$N$$ (Extended-AD game). The game is a 2-player static complete information parametric normal form game with imperfect information -- actions are not known to the players. The players are the cloud SP and the external attacker. In the game, the service provider picks a resource for the user's requested service while the attacker chooses a resource to compromise."/>
+                    <outline text="For each game, there is a utility function that would compute the cost and benefit for each player. However, in this model, the functions are not explicitly given. On the other hand the following are the strategies for the SP and attacker respectively: $$S_{SP} = (R_1, R_2, \ldots, R_N)$$ and $$S_A = (R_1, R_2, \ldots, R_N)$$."/>
+                    <outline text="In the AD-game, there is no pure strategy. However, the mixed Nash equilibrium (NE)  is computed for the cases $$N = 2$$ and the general case for the assumption that the attacker only chooses one resource to attack. A probability $$\theta$$ is then mathcalculated from the mixed NE, indicating the likelihood that the cloud resources are compromised. Hence, $$\theta$$ is an output of the AD-game where the value of $$\theta$$ determines 2 different possible games for the signalling game."/>
+                    <outline text="The service provider-client signalling game can be decomposed into SP-client game and SP-client signalling (SPC) game."/>
+                    <outline text="In the service provider-client signalling game there are two players: the cloud SP and the user. The user might face either a compromised cloud or a safe one. The game consists of two dynamic games: one  for the safe cloud and the other for the compromised cloud. It is similar to the type of AD-game, but it is not a static game. In addition, the client does not know if the SP is compromised or not."/>
+                    <outline text="Discussion">
+                        <outline text="AD-GAME!! How will $$\theta$$ be published? In other word, if the cloud is a black box, would we still know the values in the normal form (utility function)? How will $$\theta$$ be computed and utility function is unknown? What does parametric (parametric normal form) mean in this context?"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="GT Research #h">
+            <outline text="Objectives #slide">
+                <outline text="To create a taxonomy of (small) security games #obj"/>
+                <outline text="To improve the design of GT payoff functions "/>
+                <outline text="To devise a reference/standard design model for vulnerability patching games  #obj"/>
+                <outline text="To improve vulnerability scoring using game theory #obj"/>
+                <outline text="To design an alternative algorithm to the Lemke-Howson algorithm for solving Two-Player Games #obj"/>
+            </outline>
+            <outline text="Taxonomy #h ">
+                <outline text="The taxonomy distinguishes/classifies security games depending on the number of players, the game size (number of actions) and the suitability for use in real-world scenarios. " _note="#big #small #tax #taxonomy-security-games">
+                    <outline text="GENERIC SECURITY GAMES #h">
+                        <outline text="NOTATIONS">
+                            <outline text="**Players**">
+<outline text="**$$D$$ -- defender #GT #security #notation #cyber-SA-17**"/>
+<outline text="**$$A$$ -- attacker #GT #security #notation #cyber-SA-17**"/>
+                            </outline>
+                            <outline text="**Strategy sets/spaces (pure or mixed, these are sets)**">
+<outline text="**$${\mathcal S}_D$$ -- strategy set/space of defender #GT #security #notation #cyber-SA-17**"/>
+<outline text="**$${\mathcal S}_A$$ -- strategy set/space of attacker #GT #security #notation #cyber-SA-17**"/>
+                            </outline>
+                            <outline text="**Strategies**">
+<outline text="**$$s_D \in {\mathcal S}_D$$ -- strategy of defender #GT #security #notation #cyber-SA-17**"/>
+<outline text="**$$s_A \in {\mathcal S}_A$$ -- strategy of attacker #GT #security #notation #cyber-SA-17**"/>
+                            </outline>
+                            <outline text="**Strategy Profile (pure or mixed)**">
+<outline text="**$$s = (s_A, s_D)$$ where $$s_A \in {\mathcal S}_A$$ and $$s_D \in {\mathcal S}_D$$ are strategies chosen from strategy spaces #GT #security #notation #cyber-SA-17**"/>
+                            </outline>
+                            <outline text="**Utility Functions**">
+<outline text="******$$u_D$$ -- defender's utility function #GT #security #notation #cyber-SA-17****** "/>
+<outline text="******$$u_A$$ -- attacker's utility function #GT #security #notation #cyber-SA-17****** "/>
+                            </outline>
+                        </outline>
+                        <outline text="DEFINITIONS">
+                            <outline text="**Utility, cost and benefit functions**">
+<outline text="**$$u_D = b_D - c_D$$  #GT #security #cyber-SA-17**">
+    <outline text="**$$b_D$$ -- operational benefit #GT #security #cyber-SA-17**"/>
+    <outline text="**$$c_D = c_l + c_d$$ -- loss due to attack and cost of defense #GT #security #cyber-SA-17**"/>
+</outline>
+<outline text="**$$u_A = b_A - c_A$$ #GT #security #cyber-SA-17**">
+    <outline text="**$$b_A$$ -- benefit of the attacker #GT #security #cyber-SA-17**"/>
+    <outline text="**$$c_A$$ -- cost of the attacker #GT #security #cyber-SA-17**"/>
+</outline>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="BIG SECURITY GAMES #h #big">
+                        <outline text="**Motivation**">
+                            <outline text="**Motivated by real-world scenarios**"/>
+                            <outline text="**Security games are usually non-zero-sum games**"/>
+                            <outline text="**Typimathcally, they have 2 players but a large number of actions.**"/>
+                            <outline text="**A compact notation helps with efficiently storing and solving the game.**"/>
+                            <outline text="**Constraints in defense budget can be implemented.**"/>
+                        </outline>
+                        <outline text="**Notations**">
+                            <outline text="**$${\mathcal T} = \{t_1,\ldots,t_n\}$$ -- set of targets (assets under attack)  #big**"/>
+                            <outline text="******$${\mathcal R} = \{r_1,\ldots,r_m\}$$ -- set of resources, covering $$m \leq n$$ targets (implementing controls)  #big****** "/>
+                        </outline>
+                        <outline text="**Strategies**">
+                            <outline text="**$${\mathcal S}$$ -- set of schedules, representing the allocation of resoruces to targets as defense mechanisms (strategy space)  #big**"/>
+                            <outline text="**Attacker**">
+<outline text="**Pure strategy space**">
+    <outline text="**$$s_A= {\mathcal T}$$, the set of targets  #big**"/>
+</outline>
+<outline text="**Mixed strategy space**">
+    <outline text="**$$s_A= [q_1,q_2,\ldots q_n ]$$ where $$0 \le q_j \le 1$$ represents the probability of attacking target $$t_i$$  #big**"/>
+</outline>
+                            </outline>
+                            <outline text="**Defender**">
+<outline text="**$$s \in {\mathcal S}$$ -- schedule (strategy), covering multiple targets  #big**">
+    <outline text="******$$s \subset {\mathcal T}$$ ($$|s| = m$$) -- set notation****** "/>
+    <outline text="**$$s = \langle i_1,i_2,\ldots i_n \rangle$$  ($$i_j \in \{0, 1\}$$, $$\sum i_j = m$$) -- coverage vector**"/>
+</outline>
+<outline text="**Mixed strategy:**">
+    <outline text="**$$s_D = [ p_1,p_2,\ldots p_n ]$$ where $$0 \le p_j \le 1$$ (vector notation) are probabilities of covering the individual targets  #big**"/>
+</outline>
+<outline text="**Pure strategy:**">
+    <outline text="**$$s_D$$ -- chosen schedule in set or vector notation  #big**"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="**Utilities**">
+                            <outline text="**Compact notations: utility per use/attack of $$t_i$$**">
+<outline text="**$$u_D^c(t_i)$$ -- defender's utility when target $$t_i$$ is covered by at least one resource  #big**"/>
+<outline text="**$$u_A^u(t_i)$$ -- attacker's utility, when $$t_i$$ is uncovered  #big**"/>
+<outline text="**$$u_D^u(t_i)$$ -- defender's utility for uncovereed target $$t_i$$ #big**"/>
+<outline text="**$$u_A^c(t_i)$$ -- attacker's utility for covered target $$t_i$$  #big**"/>
+                            </outline>
+                            <outline text="**$$u_D^c(t_i) = u_D^u(t_i) = 0$$ if $$t_i$$ is not attacked (?)**"/>
+                        </outline>
+                        <outline text="******Assumptions/Properties****** ">
+                            <outline text="**Applying resources to a target benefits the defender and hurts the attacker:**">
+<outline text="**$$\Delta u_D(t_i) := u_D^c(t_i) - u_D^u(t_i) &amp;gt; 0$$ -- the defender's utility reduction due to loss of coverage on attack  #big**"/>
+<outline text="**$$\Delta u_A(t_i) := u_A^u(t_i) - u_D^c(t_i) &amp;gt; 0$$ -- the attacker's utility gain when attacked target not covered  #big**"/>
+                            </outline>
+                        </outline>
+                        <outline text="**References**">
+                            <outline text="**Korzhyk, D., Yin, Z., Edu, Z., Kiekintveld, C., Conitzer, V., &amp;amp; Tambe, M. (2011). Stackelberg vs. Nash in Security Games: An Extended Investigation of Interchangeability, Equivalence, and Uniqueness. Journal of Artificial Intelligence Research, 41, 297–327. Retrieved from https://www.jair.org/media/3269/live-3269-5686-jair.pdf**"/>
+                            <outline text="**Kiekintveld, C., Jain, M., Tsai, J., Pita, J., Ordóñez, F., &amp;amp; Tambe, M. (2009). Computing Optimal Randomized Resource Allocations for Massive Security Games. Proceedings of The 8th International Conference on Autonomous Agents and Multiagent Systems, 1, 689–696. https://doi.org/http://dl.acm.org/citation.cfm?id=1558108**"/>
+                        </outline>
+                    </outline>
+                    <outline text="SMALL SECURITY GAMES #h" _note="https://www.dropbox.com/s/7hynxfa0xg7very/SMALL%20SECURITY%20GAMES%20%23h%20-%20WorkFlowy.pdf?dl=0">
+                        <outline text="********Small security games are specialisations of the 2-player security game defined and analysed in [].******** "/>
+                        <outline text="They are insightful for theoretimathcal analysis as they can be solved explicitly. #motivation #small"/>
+                        <outline text="They may still be suitable for certain specific real-world scenarios, e.g. useful for risk assessment/matrix, as risk analysis mostly considers 1 asset at a time"/>
+                        <outline text="**Taxonomy #h **#tax-small">
+                            <outline text="********Our taxonomy is based on the number of targets that are under attack.******** "/>
+                            <outline text="We introduce the terminology of *__single-target* __and __*two-target* __small security games."/>
+                            <outline text="**SINGLE-TARGET **($$n=1$$)">
+<outline text="Motivation">
+    <outline text="Focus is on the single asset/target that contains a vulnerability"/>
+    <outline text="********Columns are the attacker's strategies.******** "/>
+    <outline text="Rows corresponds to the strategies available to the defender"/>
+</outline>
+<outline text="ATTACK-DEFENSE GAME #h">
+    <outline text="Notations">
+        <outline text="$$t$$ -- target (an asset $$a$$) #GT #security #small #single-target #cyber-SA-17"/>
+        <outline text="$$\gamma$$ -- control #GT #security #small #single-target #cyber-SA-17 #todo use either cost $$c_\gamma$$ or strength $$l_\gamma$$"/>
+        <outline text="We denote $$\kappa$$ the defense cost, $$L$$ the defender's loss from an attack, $$A$$ the attacker's cost, and $$B$$ is the benefit of the attacker."/>
+        <outline text="Strategies">
+            <outline text="********$$S_D = \{defend, not\ defend\} = \{s^{d}_D, s^{-d}_D\}$$ #cyber-SA-17 #GT #todo******** "/>
+            <outline text="All pure strategy profiles:">
+                <outline text="$$s_{11} = (s^{d}_D, s^{a}_A)$$, #GT #security #small #single-target"/>
+                <outline text="$$s_{22} = (s^{-d}_D, s^{-a}_A)$$, #GT #security #small #single-target"/>
+                <outline text="$$s_{12} = (s^{d}_D, s^{-a}_A)$$, #GT #security #small #single-target"/>
+                <outline text="$$s_{21} = (s^{-d}_D, s^{a}_A)$$, #GT #security #small #single-target"/>
+            </outline>
+            <outline text="********$$S_A = \{attack, not\ attack\} = \{s^{a}_A, s^{-a}_A\}$$ #cyber-SA-17 #GT #todo******** "/>
+        </outline>
+        <outline text="Generic Utility Matrix">
+            <outline text="This gives us eight utility functions, arranged in a utility matrix as follows:** #AD **\[\begin{array}{ |c|c|c|  } \hline &amp;amp; s^{a}_A &amp;amp; s^{-a}_A \\ \hline s^{d}_D &amp;amp; u^{{11}}_D, u^{{11}}_A &amp;amp; u^{{12}}_D, u^{{12}}_A \\ \hline s^{-d}_D &amp;amp; u^{{21}}_D, u^{{21}}_A &amp;amp; u^{{22}}_D, u^{{22}}_A \\ \hline \end{array}\]"/>
+        </outline>
+    </outline>
+    <outline text="Utility Matrix">
+        <outline text="This is:\[\begin{array}{ | c | c | c | } \hline &amp;amp; s^{a}_A &amp;amp; s^{-a}_A \\ \hline s^{d}_D &amp;amp;  - c_d, - c_a &amp;amp;  -c_d,  0 \\ \hline s^{-d}_D &amp;amp;  -c_L,  c_L - c_a &amp;amp;  0,  0 \\ \hline \end{array}\] where"/>
+    </outline>
+    <outline text="NE Analysis">
+        <outline text="Optimal Mixed NE Strategies">
+            <outline text="$$p^{*} = \frac{L-A}{L} = 1 - \frac{A}{L}$$"/>
+            <outline text="$$q^{*} = \frac{\kappa}{L}$$"/>
+        </outline>
+    </outline>
+    <outline text="Optimal Expected Utilities"/>
+</outline>
+<outline text="SECURITY-LEVEL GAME #h">
+    <outline text="Motivation"/>
+    <outline text="Notations">
+        <outline text="Strategies">
+            <outline text="Defend with controls $${\gamma}_1$$ or $${\gamma}_2$$"/>
+            <outline text="Attack or not attack"/>
+            <outline text="Strategy Spaces">
+                <outline text="$${\mathcal S}_D = \{defend, not\ defend\} = \{s^{d}_D, s^{-d}_D\}$$"/>
+                <outline text="$${\mathcal S}_A = \{attack, not\ attack\} = \{s^{a}_A, s^{-a}_A\}$$"/>
+            </outline>
+        </outline>
+    </outline>
+    <outline text="Utilities"/>
+    <outline text="Game Characteristics">
+        <outline text="Assumptions"/>
+        <outline text="Type"/>
+        <outline text="Players"/>
+        <outline text="Discussion"/>
+    </outline>
+</outline>
+<outline text="PARAMETRISED SECURITY LEVEL GAME #h">
+    <outline text="Utility Function Definitions">
+        <outline text="Generic #tt">
+            <outline text="$$u^{{d,a}}_D = (l(\gamma) - 1) L - \kappa(\gamma) &amp;lt; 0$$ #GT"/>
+            <outline text="$$u^{{d,a}}_A = (1 - (l(\gamma)) B - A &amp;lt;0$$ #GT"/>
+            <outline text="$$u^{{12}}_D = -\kappa(\gamma)$$ #GT"/>
+            <outline text="$$u^{{12}}_A = 0$$ #GT"/>
+            <outline text="$$u^{{21}}_D = -L &amp;lt; 0$$. #GT"/>
+            <outline text="********$$u^{{21}}_A = B - A &amp;gt;0$$ -- Attack cost $$A &amp;gt;= 0$$ #GT******** "/>
+            <outline text="$$u^{{22}}_D = 0$$ #GT"/>
+            <outline text="$$u^{{22}}_A = 0$$ #GT"/>
+        </outline>
+        <outline text="Finally, in the case where both the defender and attacker do not perform an action, then neither player gains nor loses: $$u^{{-d,-a}}_D = 0$$ and $$u^{{-d,-a}}_A = 0$$ respectively. #cyber-SA-17 #GT"/>
+        <outline text="The defender's utility $$u^{{d,a}}_D = (l(\gamma) - 1) L - \kappa(\gamma) &amp;lt; 0$$ is a cost function, consisting of the defense of the asset using a control of a certain strength $$l(\gamma)$$, is where $$\kappa$$ is the defense cost using a specific control. #GT #cyber-SA-17"/>
+        <outline text="$$u^{{-d,a}}_A = B - A $$ #cyber-SA-17 #GT"/>
+        <outline text="********In the following attacker's utility: $$u^{{11}}_A = (1 - (l(\gamma)) B - A &amp;lt;0$$, there exist a defense mechanism while an attacker is launching an attack.******** "/>
+        <outline text="When there are no controls for defending an asset, the defender suffers an impact loss affecting the asset: $$u^{{-d,a}}_D = -L &amp;lt; 0$$. #cyber-SA-17 #GT"/>
+        <outline text="The defender has specific controls in place, but there is no attack. Hence,  $$u^{{d,-a}}_D = -\kappa(\gamma)$$ is the cost of defense using a specific control. #GT #cyber-SA-17"/>
+        <outline text="There is no attack, so there is neither a benefit nor a cost for the attacker ($$u^{{d,-a}}_A = 0$$). #GT #cyber-SA-17"/>
+    </outline>
+    <outline text="Utility Matrix">
+        <outline text="\[\begin{array}{ |c|c|c| }\hline&amp;amp; s^{a}_A \quad(\mbox{attack}) &amp;amp; s^{-a}_A \quad(\mbox{not attack}) \\\hline s^{d}_D \quad(\mbox{defend}) &amp;amp; (l - 1)L - c_D, (1 - l)L - c_A &amp;amp; -c_D, 0 \\\hline s^{-d}_D \quad(\mbox{not defend}) &amp;amp; -L, L-c_A &amp;amp; 0, 0 \\ \hline\end{array}\]"/>
+    </outline>
+    <outline text="Equilibrium Analysis"/>
+</outline>
+                            </outline>
+                            <outline text="**TWO-TARGET  **($$n=2$$)">
+<outline text="RESOURCE ALLOCATION (SEARCH) GAME #h">
+    <outline text="Motivation"/>
+    <outline text="********Notations******** ">
+        <outline text="$$t_1, t_2$$ -- targets (asset $$a_1$$ and $$a_2$$) #GT #security #small #two-target"/>
+        <outline text="$$r$$ -- resource, covering either $$t_1$$ or $$t_2$$ #GT #security #small #two-target"/>
+        <outline text="Strategies">
+            <outline text="$$S_D = \{\mbox{defend } t_1, \mbox{defend } t_2\} = \{s^{t_1}_D, s^{t_2}_D\}$$"/>
+            <outline text="$$S_A = \{\mbox{attack } t_1, \mbox{attack } t_2\} = \{s^{t_1}_A, s^{t_2}_A\}$$"/>
+            <outline text="All pure strategy profiles:">
+                <outline text="$$s_{11} = (s^{t_1}_D, s^{t_1}_A)$$, #GT #security #small #two-target"/>
+                <outline text="$$s_{22} = (s^{t_2}_D, s^{t_2}_A)$$, #GT #security #small #two-target"/>
+                <outline text="$$s_{12} = (s^{t_1}_D, s^{t_2}_A)$$, #GT #security #small #two-target"/>
+                <outline text="$$s_{21} = (s^{t_2}_D, s^{t_1}_A)$$, #GT #security #small #two-target"/>
+            </outline>
+        </outline>
+    </outline>
+    <outline text="Utilities"/>
+</outline>
+                            </outline>
+                        </outline>
+                        <outline text="An equilibrium analysis helps with a complete classification of (certain types of) small security games.">
+                            <outline text="https://www.economics.utoronto.ca/osborne/2x3/tutorial/NEIEX.HTM"/>
+                            <outline text="We explain how to derive the existence of a mixed NE strategy in the case of a generic one-target small security game."/>
+                            <outline text="********We consider the following payoff matrix \[\begin{array}{|c|c|c|} \hline &amp;amp; \textbf{Attack} (q) &amp;amp; \textbf{Not Attack} (1 - q) \\\hline \hline \textbf{Defend} (p) &amp;amp; a_1, a_2 &amp;amp; b_1, b_2 \\ \hline \textbf{Not Defend} (1 - p) &amp;amp; c_1, c_2 &amp;amp; d_1, d_2 \\ \hline \end{array}\]where $$a_i$$, $$b_i$$, $$c_i$$ and $$d_i$$ $$(i \in \{1, 2\})$$ are the utility functions of the two players for the different pure strategies.******** "/>
+                            <outline text="********Denote $$p$$ the probability that the defender decides to take the action of defending so that \[ p = P[D \mbox{ defends}] \] and hence, \[ P[D \mbox{ not defend}] = 1 - p. \]******** "/>
+                            <outline text="********Correspondingly, we set \[ q = P[A \mbox{ attacks}] \]as the probability of an attack occurring on the defender. We can now state the utility of the defender for a mixed strategy while being attacked as \[ u^{a}_{D} = p a_1 + (1-p) c_1, \] and that of the attacker not attacking \[ u^{-a}_{D} = p b_1 + (1-p) d_1. \]******** "/>
+                            <outline text="More generally, if we have a completely mixed strategy with probabilities $$p$$ and $$q$$, for the actions of the defender and attacker respectively, we can express the expected utility of the defender as \[\begin{equation} u_{D} = p [q a_1 + (1-q) b_1] + (1-p) [q c_1 + (1-q) d_1] \end{equation}.\]  (@equation1)"/>
+                            <outline text="********On the other hand, we obtain the expected attacker utility \[\begin{equation} u_{A} = q [p a_2 + (1-p) c_2] + (1-q) [p b_2 + (1-p) d_2] \end{equation}. \] (@equation2)******** "/>
+                            <outline text="In order to maximise the utility function, we differentiate equations (@equation1) and (@equation2) with respect to $$p$$ and $$q$$ respectively to obtain \[ \begin{eqnarray}  \frac{d}{dp} u_D&amp;amp;=&amp;amp;q a_1 + (1-q) b_1 + (-1) q c_1 + (-1)(1-q) d_1 \nonumber \\ &amp;amp;=&amp;amp; q(a_1 - c_1 - b_1 + d_1) + b_1 - d_1   \nonumber \end{eqnarray}\] and  \[\begin{eqnarray}  \frac{d}{dq} u_{A}&amp;amp;=&amp;amp;  p a_2 + (1-p) c_2 + (-1)( p b_2 + (1-p) d_2)   \nonumber \\ &amp;amp;=&amp;amp;p a_2 + c_2 - p c_2 - p b_2 - d_2 + p d_2  \nonumber \\ &amp;amp;=&amp;amp; p(a_2 - c_2 - b_2 + d_2) + c_2 - d_2.   \nonumber \end{eqnarray}\]"/>
+                            <outline text="Equating to 0, this yields \[ p^{*} = \frac{d_2 - c_2}{(d_2 - c_2) + (a_2 - b_2)}\] (@p_star) and\[q^{*} = \frac{d_1 - b_1}{(d_1 - b_1) + (a_1 - c_1)}.\] (@q_star)"/>
+                            <outline text="********The expected utilities of this game are $$u_D|_{p=p^{*}}$$ and $$u_A|_{q=q^{*}}$$.******** "/>
+                            <outline text="********The solutions are both best responses to any strategy taken by both players which is equivalent to a Nash optimal strategy.******** "/>
+                        </outline>
+                        <outline text="We can apply this to specific settings, motivated by real-world scenarios."/>
+                        <outline text="Small security games for application scenarios #h ">
+                            <outline text="CVSS GAMES">
+<outline text="Basic CVSS Game [Cyber Science 2017 Paper] #h" _note="https://www.dropbox.com/s/3hupz06gbfht5y6/Our%20Basic%20CVSS%20Game%20%5BCyber%20Science%202017%20Paper%5D%20-%20WorkFlowy.pdf?dl=0">
+    <outline text="******Notations &amp;amp; Definitions ****** ">
+        <outline text="******$$\kappa$$ -- defense cost (direct cost)****** "/>
+        <outline text="******$$\bar{V} = \langle V_C, V_I, V_A \rangle$$ -- asset value vector****** "/>
+        <outline text="******$$\alpha$$ -- relates to attacker's profile (strength)****** "/>
+        <outline text="******$$\bar{\mu}_{Imp} = \langle \mu_{Imp, C}, \mu_{Imp, I}, \mu_{Imp, A}\rangle$$ -- CVSS Impact score in vector representation****** "/>
+        <outline text="******$$\mu_{Exp}$$ -- CVSS Exploitability score****** "/>
+    </outline>
+    <outline text="**Further Work**">
+        <outline text="******#todo Use more  sophisticated defender cost framework (consider indirect costs -- colateral damage?) ****** "/>
+        <outline text="******#todo considerable novelty: expand to incomplete information game, using Bayesian framework, enabling the use of environmental CVSS scores****** "/>
+        <outline text="******#todo include additional CVSS subscores (cf vulnerability factors in [Panaousus GameSec 14]****** "/>
+        <outline text="******#todo Address issue with the ease of attacker acceptance****** "/>
+    </outline>
+    <outline text="**Game Type**">
+        <outline text="******A 2-person static complete-information &quot;security game&quot;****** "/>
+    </outline>
+    <outline text="******Discussion****** ">
+        <outline text="******This is a very simple model, although similar to most of the other game models published in the  context of vulnerability patching  [#todo list other papers]. ****** "/>
+        <outline text="******The idea of an attacker profile is a novelty, extending the idea of a organisational cyber security profile as presented in [Panaousis GameSec 14]. ****** "/>
+        <outline text="******Attacker might not easily accept this model, as his expected utility is zero (note: not many papers talk about this!)****** "/>
+    </outline>
+    <outline text="******Utility Matrix \[\begin{array}{ | c | c | c | } \hline &amp;amp; s^{a}_A &amp;amp; s^{-a}_A \\ \hline s^{d}_D &amp;amp;  - \kappa, - \alpha \cdot {\mu_{Exp}}^{-1} &amp;amp;  -\kappa,  0 \\ \hline s^{-d}_D &amp;amp;  -\bar{\mu}_{Imp} \cdot \bar{V},  \bar{\mu}_{Imp} \cdot \bar{V} - \alpha \cdot {\mu_{Exp}}^{-1}&amp;amp;  0,  0 \\ \hline \end{array}\] ****** "/>
+    <outline text="******Summary****** ">
+        <outline text="******Aim: improve vulnerability scoring through the use of game theory****** "/>
+        <outline text="**Main contributions:**">
+            <outline text="******Design novel utility functions based on using CVSS metrics****** "/>
+            <outline text="******Report on application potential for a cyber tool (CAESAIR)****** "/>
+        </outline>
+    </outline>
+    <outline text="**Nash Equilibrium Analysis**">
+        <outline text="******There exists no pure NE (#todo add justification)****** "/>
+        <outline text="**Optimal Expected Utilities**">
+            <outline text="******$$u_D|_{p=p^{*}}=-\kappa$$  ****** "/>
+            <outline text="******$$u_A|_{q=q^{*}} = 0$$****** "/>
+        </outline>
+        <outline text="**Optimal Mixed NE Strategies**">
+            <outline text="******$$p^{*} =  1 - \frac{\alpha \cdot {\mu_{Exp}}^{-1}}{\bar{\mu}_{Imp} \cdot \bar{V}}$$****** "/>
+            <outline text="******$$q^{*} = \frac{\kappa}{\bar{\mu}_{Imp} \cdot \bar{V}}$$****** "/>
+        </outline>
+    </outline>
+</outline>
+<outline text="CVSS Game with Reward #h">
+    <outline text="Utility Matrix"/>
+    <outline text="$$\begin{array}{ | c | c | c | } \hline &amp; s^{a}_A &amp; s^{-a}_A \\ \hline s^{d}_D &amp; - \kappa, - \alpha \cdot {\mu_{E}}^{-1}+r &amp;  -\kappa,  r \\ \hline s^{-d}_D &amp;  -\bar{\mu}_{Imp} \cdot \bar{V},  B - \alpha \cdot {\mu_{E}}^{-1}&amp; 0,  0 \\ \hline \end{array}$$">
+        <outline text=""/>
+    </outline>
+    <outline text="******Optimal Mixed NE Strategies %****** "/>
+    <outline text="******Optimal Expected Utilities %****** "/>
+</outline>
+                            </outline>
+                            <outline text="CLOUD GAMES">
+<outline text="**Notations**">
+    <outline text="**$$U$$ -- user (defender) #GT #security**"/>
+    <outline text="**$$A$$ -- attacker #GT #security**"/>
+    <outline text="**$$C$$ -- cloud provider #GT #security**"/>
+</outline>
+<outline text="IaaS -- CCRAM, Quanyan14 #small #cloud #GT #h"/>
+<outline text="StaaS -- Maghrabi et al, CyberSA 2015 #small #cloud #GT #h">
+    <outline text="**This is a small two-target resource allocation game #GT #security #small #two-target**"/>
+    <outline text="**Utility Matrix**">
+        <outline text="**This gives us eight utility functions, arranged in a utility matrix as follows:** #AD****">
+            <outline text="**\begin{center}** #AD****">
+                <outline text="**\begin{tabular}{ |c|c|c| }**">
+                    <outline text="**\caption{Generic One-Shot Single-Target Attacker-Defender Game}**"/>
+                    <outline text="**\label{GenericMatrix}**"/>
+                    <outline text="**\hline**"/>
+                    <outline text="**&amp;amp; $$s^{a}_A$$ &amp;amp; $$s^{-a}_A$$ \\**"/>
+                    <outline text="**\hline**"/>
+                    <outline text="**$$s^{d}_U$$ &amp;amp; $$u^{{11}}_U$$, $$u^{{11}}_A$$ &amp;amp; $$u^{{12}}_U$$, $$u^{{12}}_A$$ \\**"/>
+                    <outline text="**\hline**"/>
+                    <outline text="**$$s^{-d}_U$$ &amp;amp; $$u^{{21}}_U$$, $$u^{{21}}_A$$ &amp;amp; $$u^{{22}}_U$$, $$u^{{22}}_A$$ \\**"/>
+                    <outline text="**\hline**"/>
+                </outline>
+                <outline text="**\end{tabular}**"/>
+            </outline>
+            <outline text="**\end{center}**"/>
+        </outline>
+    </outline>
+    <outline text="**$$a$$ -- key critimathcal asset**"/>
+    <outline text="**All pure strategy profiles:**">
+        <outline text="**$$s_{11} = (s^{c}_U, s^{u}_A)$$, #GT #security #small #single-target**"/>
+        <outline text="**$$s_{12} = (s^{c}_U, s^{c}_A)$$, #GT #security #small #single-target**"/>
+        <outline text="**$$s_{21} = (s^{h}_U, s^{u}_A)$$, #GT #security #small #single-target**"/>
+        <outline text="**$$s_{22} = (s^{h}_U, s^{c}_A)$$, #GT #security #small #single-target**"/>
+    </outline>
+    <outline text="**$$a_1$$ -- container asset on user's system #GT #security #small #two-target**"/>
+    <outline text="**Strategy spaces**">
+        <outline text="**$${\mathcal S}_U = \{ \mbox{put asset on cloud ($$t_2$$)}, \mbox{keep asset in-house ($$t_1$$)} \} = \{s^{c}_U, s^{h}_U\}$$**"/>
+        <outline text="**$${\mathcal S}_A = \{ \mbox{attack asset on user system} , \mbox{attack asset on cloud} \} = \{s^{u}_A, s^{c}_A\}$$**"/>
+    </outline>
+    <outline text="**$$a_2$$ -- container asset on cloud #GT #security #small #two-target**"/>
+    <outline text="**$$t_2$$ -- target: the cloud #GT #security #small #two-target**"/>
+    <outline text="**$$t_1$$ -- target: the user's host system #GT #security #small #two-target**"/>
+</outline>
+<outline text="PaaS -- CCRAM #small #cloud #GT #h"/>
+<outline text="SaaS -- CCRAM, Quanyan15, Moving Target paper #small #cloud #GT #h">
+    <outline text="**Can I trust the results that my SaaS cloud provider computes for me? #GT**"/>
+    <outline text="**Research question: how can a cloud provider apply game theory to inform and enhance the use of software vulnerability metrics to better defend his system against external attacks? #security #scoring #GT**"/>
+</outline>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Discussion #slide">
+                        <outline text="Cons of big">
+                            <outline text="Unrealistic to be adopted due to large number of NEs "/>
+                            <outline text="Lack of analytical insight into solution structure"/>
+                            <outline text="Computationally hard"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Small Complete Information Security Games #h ">
+                <outline text="Generic Game #slide ">
+                    <outline text="Focusing on the single software asset that contains a vulnerability, we define a __single-target small security game__ in normal form through the following payoff matrix"/>
+                    <outline text="$$\begin{array}{ | c | c | c | }  \mathcal{D} \downarrow \mathcal{A}\rightarrow &amp; a &amp; \overline{a} \\ d &amp;  - c^{\mathcal{D}}, - c^{\mathcal{A}}&amp;  -c^{\mathcal{D}},  0 \\  \overline{d} &amp;  -l^{\mathcal{D}},  l^{\mathcal{D}}- c^{\mathcal{A}} &amp;  0,  0 \end{array}$$ " colorLabel="3"/>
+                    <outline text="where the rows correspond to the pure strategies available to the defender $$\mathcal{D}$$ and the columns are the attacker's pure strategies. Here  we assume that the attacker's benefit equals the loss of the defender. "/>
+                    <outline text="This game has been studied in the past (see e.g. \cite{@Samarji2015}) and is suitable for our scenario which is based on a single asset vulnerability assessment. It is not the specialisation of a big security game."/>
+                    <outline text="The following assumption seem reasonable in a realistic setup: "/>
+                </outline>
+                <outline text="Game Analysis #slide ">
+                    <outline text="The analysis of this presented security game is not difficult, it can be shown that there are no pure Nash equilibrium strategies as [..] and hence a closed-form expression exists \cite{} for determining the values $$p^{*} = \frac{c^{\mathcal{A}}}{l^{\mathcal{D}}} = 1 - \frac{c^{\mathcal{A}}}{l^{\mathcal{D}}}$$ and $$q^{*} = \frac{c^{\mathcal{D}}}{l^{\mathcal{D}}}$$ forming a mixed Nash equilibrium strategy $$(s_D^{*}, s_A^{*})$$ where $$p^*$$ and $$q^*$$ are the probability of defense and attack respectively. "/>
+                    <outline text="This will be the underlying method to compute our attack likelihood in this scenario, based on $$q^*$$."/>
+                    <outline text="One verifies that the expected utilities in this case are $$ u_D^{*} = -c^{\mathcal{D}} $$ and $$ u_A^{*} = 0 $$."/>
+                    <outline text="[TODO: derive these results by applying the algebraic framework from the previous section]"/>
+                    <outline text="Issues: complete info problematic; attacker needs to know defense cost and loss; defender needs to know attack cost;"/>
+                </outline>
+                <outline text="Move to CVSS #slide ">
+                    <outline text="We  now use CVSS to specify the payoff functions of the single-target security game of the previous section.  To achieve this aim, we will use the CVSS impact and exploitability sub-scores. Our aim is only use this publicly available scoring data, as we are assuming a complete information game."/>
+                    <outline text="The loss for the defenders  is due to the attack impact, which should be modelled using the CVSS impact sub-score as $$l^{\mathcal{D}} ={\mu}_{Imp} $$. Furthermore we assume that the defender applies the principle of adequate protection by investigating the same cost for her defence. the attack cost depends on the CVSS exploitability subscore, taking into account that high score values indicate a vulnerability that is easy to exploit: ">
+                        <outline text="$$c^{\mathcal{A}} = 10- {\mu_{Exp}} $$."/>
+                    </outline>
+                </outline>
+                <outline text="CVSS Game #slide ">
+                    <outline text="We obtain the following game: "/>
+                    <outline text="$$\begin{array}{ | c | c | c | } \mathcal{D} \downarrow \mathcal{A}\rightarrow &amp; a&amp; \overline{a} \\ d &amp; - \mu_{Imp},  {\mu}_{Exp}-10&amp; \mu_{Imp}, 0 \\ \overline{d} &amp; -{\mu}_{Imp}, {\mu}_{Imp}+10- {\mu}_{Exp} &amp; 0, 0 \end{array}$$ " colorLabel="3">
+                        <outline text=""/>
+                    </outline>
+                </outline>
+                <outline text="Application to Single-Target Bayesian CVSS Game">
+                    <outline text="\label{single-target-section}"/>
+                    <outline text="Goal of this section is to apply the algebraic framework developed in the previous section to a bimatrix Bayesian vulnerability patching game. The analysis in order to analyse this game. This will provide the equations needed for the vulnerability scoring functions introduced in the next section. #signpost"/>
+                    <outline text="% NOTATIONS %">
+                        <outline text="In addition to previously introduced notation, we state the following terminology  for the Security Game. ">
+                            <outline text="Throughout this section we assume that there is a software asset $$s$$ with a vulnerability $$v$$. "/>
+                            <outline text="We denote by $$S_{\mathcal{D}}=\{d,\overline{d}\}$$ the strategy set of the Defender, where $$d$$ corresponds to the strategy that the Defender patches $$v$$ and $$\overline{d}$$ corresponds to the strategy that the Defender does not patch $$v$$. Likewise, the strategy set of the Attacker is given by $$S_{\mathcal{A}}=\{a,\overline{a}\}$$, where $$a$$ corresponds to the strategy of the Attacker to exploit $$v$$ and $$\overline{a}$$ that the Attacker does not attempt to exploit $$v$$) respectively, e.g. by running some malware. To patch the vulnerability, we assume that there is an associate cost, $$c^{\mathcal{D}}$$ for the Defender. To exploit vulnerability $$v$$, we assume that there is a cost $$c^{\mathcal{A}}$$ for the Attacker and a benefit $$b^{\mathcal{A}}$$. We assume that this benefit matches a loss $$l^{\mathcal{D}} = b^{\mathcal{A}}$$ for the Attacker. % #gamesec"/>
+                        </outline>
+                        <outline text="We also define some notation on Bayesian Games. ">
+                            <outline text="Let $$N$$ be the state of Nature, $$\theta_i \in \Theta$$ be the type (written as a function of $$N$$) of the Player $$i$$ where $$i \in \{1,2\}$$, with $$p_i$$ acting as the probability distribution representing our `beliefs' about the likelihood of each action for the specified Player."/>
+                            <outline text="%\textcolor{red}{$$A_i \in (A \times T)$$ be the action set  (set of actions?) for Player $$i$$, specified for specific types and "/>
+                            <outline text="$$a_i \in  (A \times T)$$ be a specific action of Player $$i$$, specified for specific types} % #GT"/>
+                            <outline text="Bayesian we must say that the Defender for example knows his type, chosen by the Nature, and he selects his best response; then the Attacker uses a prob dist over Defender’s types plays his best response. "/>
+                        </outline>
+                    </outline>
+                    <outline text="\subsection{Bayesian Game} % #h2 " _note="\label{bayesian-nash-equilibrium-analysis}">
+                        <outline text="The loss $$l^{\mathcal{A}}$$ in the defender's utility function is due to the attack impact, exploiting the vulnerability $$v$$ and affecting the asset's CIA security requirements. "/>
+                        <outline text="This can be modelled as follows, using the CVSS CIA impact subscores and value components of the asset $$a$$:"/>
+                        <outline text="\begin{equation} \label{asset-loss-definition}">
+                            <outline text="$$l^{\mathcal{D}}(a) =\vec{\mu}_{Imp} \cdot \vec{V}(a) = \mu_{Imp, C} \cdot V_C(a) + \mu_{Imp, I} \cdot V_I(a) + \mu_{Imp, A} \cdot V_A(a).$$"/>
+                        </outline>
+                        <outline text="\end{equation}"/>
+                        <outline text="asset and values are know to system admin"/>
+                        <outline text="\subsection{Defender Types} % #h2 ">
+                            <outline text="The goal in this section is to make our previous CVSS game more suitable for real-world scenarios, by introducing information asymmetry. "/>
+                            <outline text="Equation ($$\ref{@equation1}$$) shows that we have to impose the condition \[ 0 \leq 1 - \frac{\alpha}{L \cdot \mu_E} \leq 1 \Longleftrightarrow 0\le \frac{\alpha}{L} \le  \mu_E\] in order to ensure that $$p^*$$ can be used as a probability in the mixed Nash equilibrium strategy."/>
+                        </outline>
+                        <outline text="[TODO: design Bayesian game and compute Optimal Mixed BNE Strategies and Optimal Expected Utilities]"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="\label{linear-algebra-section} #h ">
+                <outline text="Notations #slide " complete="true">
+                    <outline text="We first introduce some notations used in the remainder of the paper." complete="true"/>
+                    <outline text="We define $$A$$ and $$B$$ to be real matrices of dimension $$m\times n$$. A \emph{matrix pencil} is an expression of the form $$A-\lambda B$$ where $$\lambda$$ is an indeterminate.  We say that $$A-\lambda B$$ is a \emph{regular} matrix pencil if the involved matrices are square and $$\det(A-\lambda B)  \neq 0$$ for all but a finite number of values of $$\lambda$$. Otherwise, the pencil is  \emph{singular}.  % #todo Explain eigenvalues and eigenvectors -- all eigenvectors are assumed to be normalised. " complete="true"/>
+                    <outline text="More information about the theory of matrix pencils can be found e.g. in \cite{Gantmacher}. " complete="true"/>
+                    <outline text="We will be interested in matrices of the form $$A-\lambda$$. Our preferred notation for these will be matrix pencil representation of the form $$A-\lambda E$$ where $$E$$ is a square matrix of matching dimension with all entries set to 1.  Furthermore let $$e$$ be a column vector consisting only of entry 1. The dimension of $$e$$ which will be clear from its context. " complete="true"/>
+                    <outline text="Given a bimatrix game $$(A,B)$$ with payoff matrices $$A$$ and $$B$$, a mixed strategy for Player 1 (the row player) is a real vector $$x$$ satisfying $$0\le x_i\le 1$$, with all components summing up to 1. A mixed strategy for Player 2 (the column player) is a real vector $$y$$ satisfying the same properties. " complete="true"/>
+                    <outline text="All vectors will be column vectors and the row vector corresponding to $$x$$ will be written as $$x^\top$$." complete="true"/>
+                    <outline text="A \emph{best response} to $$y$$ is a strategy $$x$$ of Player 1 that maximizes his expected payoff $$x^\top Ay$$. A best response to $$x$$ is a mixed strategy $$y$$ of Player 2 that maximizes her expected payoff $$x^\top By$$. A Nash equilibrium is then a pair of mutual best responses." complete="true"/>
+                    <outline text="Finally, for the particular case of $$B=-A$$, we obtain the matrix (zero-sum) game $$A$$. In this paper, we will denote  $$V=V(A)$$ the value of this game, defined as $$V:=\max_x \min_y xAy = \min_y \max_x xAy $$. % [ #todo Change notation]" complete="true"/>
+                </outline>
+                <outline text="In this section, we develop our algebraic  framework. After briefly reviewing related work in the literature, we present the main contribution of this paper: sufficient algebraic conditions for the direct construction of game solutions. Finally we illustrate our approach using an example. % #signpost" complete="true"/>
+                <outline text="% Algorithms for 2-Player Games%" colorLabel="5">
+                    <outline text="A large body of research investigating the design of algorithms for solving bimatrix games exists. Most methods are based on linear techniques, an overview of such approaches is given e.g. in \cite{@Stengel2002}. [ #todo More recent refs] " complete="true"/>
+                </outline>
+                <outline text="% Security Games % #slide ">
+                    <outline text="For the special case of security games as introduced in \cite{@Kiekintveld2009}, more specialised methods have been developed."/>
+                    <outline text=", exploiting properties specific to these types of games and reducing the bimatrix game to a matrix (zero-sum) game \cite{@Korzhyk2011a}. Other transformation techniques are given in \cite{}. By relaxing the assumption of algebraic independence of  the matrices $$A$$ and $$B$$, algorithmic game analysis is simplified. In \cite{}, the authors show how to compute optimal Nash Equilibria if the game matrices are linked by an affine transformation. [ #todo More recent refs] The notion of strategical equivalence as defined in \cite{@Moulin1978} can also be characterised in terms of algebraic relations however it does not seem applicable to arbitrary security games \cite{@Korzhyk2011a}. "/>
+                </outline>
+                <outline text="% Direct properties % #slide ">
+                    <outline text="In this paper we are interested in linking algebraic properties of two \emp{independent} game matrices $$A$$ and $$B$$ and optimal solutions of the game. Our motivation is the use of such a relationship for explicitly solving security games. It will turn out that they are applicable to the kind of security games we are interested in. "/>
+                    <outline text="There is little stated about such direct relationship in the literature. ">
+                        <outline text="The results of \cite{@Weil1968} and \cite{ShapleySnow1950} [#todo @luluwah Find citation], applicable to matrix games, were the initial inspiration for the work in this Section and Theorem \ref{} is a generalisation. Theorem \ref{} then extends this to bimatrix games. The work in \cite{bimatrix}, although not using the concept of matrix pencils, #todo "/>
+                    </outline>
+                </outline>
+                <outline text="%The Bimatrix Game Case % #h " colorLabel="5">
+                    <outline text="A First Result #slide ">
+                        <outline text="We now extend our results from the previous section to square bimatrix games. "/>
+                        <outline text="**Theorem**. Given a bimatrix game $$G=(A,B)$$, assume the matrix pencils $$A-\lambda E$$  and $$B-\lambda E$$ are both regular, with real eigenvalues $$\mu_A$$ and $$\mu_B$$. Let $$x_{\mu_B}$$ a nonnegative left eigenvector of $$B-\lambda E$$ with respect to $$\mu_B$$ and denote $$y_{\mu_A}$$ a nonnegative right eigenvector of $$A-\lambda E$$ with respect to $$\mu_A$$. Then $$(x^*,y^*) = (x_{\mu_B}$$, $$y_{\mu_A}$$) is a Nash Equilibrium strategy profile of the game $$G$$ and $$(\mu_A, \mu_B)$$ are the corresponding optimal payoffs of both players. #theorem @non-zero-sum-regular-theorem:here" colorLabel="3"/>
+                    </outline>
+                    <outline text="A Lemma #slide ">
+                        <outline text="The proof of the theorem will be aided by the following lemma. It exhibits a special case arising where there exists a strategy of one player to there exists a best response of the other player with maximal support. "/>
+                        <outline text="\begin{lemma}">
+                            <outline text="\label{best-response-lemma}"/>
+                            <outline text="Following the notations as in the theorem, we have for a nonnegative left eigenvector $$x_{\mu_B}$$ that for all Player 2 strategies $$y$$ it holds $$x^\top_{\mu_B} B y = \mu_B $$. Similarly, a nonnegative right eigenvector $$y_{\mu_A}$$ satisfies $$x^\top A y_{\mu_A} = \mu_A$$ for all Player 1 strategies $$x$$." colorLabel="3"/>
+                        </outline>
+                        <outline text="\end{lemma}"/>
+                    </outline>
+                    <outline text="Proof  #slide ">
+                        <outline text="Assume that $$x^{\top}_{\mu_A}\ge 0$$ is a left eigenvector, associated with the eigenvalue $${\mu_A}$$ of the regular matrix pencil $$A-\lambda E$$. This implies" colorLabel="4"/>
+                        <outline text="\begin{equation}\label{left-nullspace-eq}">
+                            <outline text=" $$ x^{\top}_{\mu_A}(A-{\mu_A} E)=0. $$" colorLabel="4"/>
+                        </outline>
+                        <outline text="\end{equation}"/>
+                        <outline text="Due to the normalisation property $$\sum x_{{\mu_A},i}=1$$ we have $$ x^{\top}_{\mu_A} E = x^{\top}_{\mu_A} ee^{\top}=e^{\top}$$ so that equation (\ref{left-nullspace-eq}) implies " colorLabel="4">
+                            <outline text="$$ x^{\top}_{\mu_A} A = {\mu_A} e^{\top}. $$" colorLabel="4"/>
+                        </outline>
+                        <outline text="The second property for a right eigenvector $$y_{\mu_B}$$ can be shown very similarly. From this, the lemma follows. " colorLabel="4"/>
+                    </outline>
+                    <outline text="Proof [of Theorem \ref{non-zero-sum-regular-theorem}] #slide ">
+                        <outline text="Let $$y_{\mu_A}$$ be nonnegative right eigenvector of $$A-\lambda E$$ with respect to the eigenvalue $$\mu_A$$. From Lemma \ref{best-response-lemma} we deduce that $$y_{\mu_A}$$ is a best response to any Player 1 strategy $$x$$, in particular to  $$x=x_{\mu_B}$$. Likewise,  denote $$x_{\mu_B}$$ a nonnegative left eigenvector of $$B-\lambda E$$. We obtain that  $$x_{\mu_B}$$ is a best response to Player 2 strategy $$y=y_{\mu_A}$$. Hence these strategies are mutual best responses and by definition optimal mixed Nash Equilibrium strategies with payoffs $$\mu_A$$ and $$\mu_B$$ as required." colorLabel="4"/>
+                    </outline>
+                </outline>
+                <outline text="%The Matrix Game Case % #h " colorLabel="5">
+                    <outline text="Starting point of our investigation was the observation that there are sufficient condition for the existence of optimal strategies and value of zero-sum games, expressed in terms of algebraic properties of the game matrix $$A$$.  % ">
+                        <outline text="\begin{theorem}[Shapley, 1950] Assume the square matrix $$A$$ is nonsingular and $$e^\top A^{-1}e \neq 0$$. Then the game with matrix $$A$$ has value $$V(A)=V=1/e^\top A^{-1}e$$ and optimal strategies $$x=Ve^\top A^{-1}$$ and $$y=VA^{-1}e$$, provided both $$x$$ and $$y$$ are nonnegative.\end{theorem}"/>
+                        <outline text="The proof of this theorem only requires elementary algebra, and is a special case of our proof of Theorem \ref{}. "/>
+                        <outline text="The benefit of this result is that it computes the game value, provided $$v \neq 0$$ under some assumptions that do not seem too restrictive. % #todo "/>
+                        <outline text="\begin{theorem}">
+                            <outline text="\label{weil-theorem}"/>
+                        </outline>
+                        <outline text="[Weil, 1968] If $$A$$ has the real eigenvalue $$\lambda$$ corresponding to nonnegative eigenvectors $$x$$ and $$y$$, then $$v(A-\lambda I)=0$$ and $$x$$, $$y$$ are optimal for the game $$A-\lambda I$$. " complete="true"/>
+                        <outline text="\end{theorem}"/>
+                        <outline text="Whilst this theorem might be applicable more often than the previous, it does mostly compute the value of a different game. "/>
+                        <outline text="It turns out that a natural setting for properties such as those stated in the last two theorems is that of regular matrix pencils, their associated (generalised) eigenvalues and eigenvectors. "/>
+                        <outline text="expressed as generalised eigenvectors of an associated regular matrix pencil.  "/>
+                        <outline text="A zero-sum matrix game can be directly solved if $$\deg(\det A - \lambda E) &gt; 0$$, i.e. the matrix polynomial vanishes identically in $$\lambda$$. "/>
+                        <outline text="The following theorem generalises Shapley's theorem as it is also valid for $$v=0$$ and at the same time it improves Weil's theorem as it characterises the value of the same game (rather than a different one)."/>
+                        <outline text="\begin{theorem}">
+                            <outline text="\label{zero-sum-regular-theorem}"/>
+                            <outline text="Assume the matrix pencil $$A-\lambda E$$ is regular, with a real eigenvalue $$\mu$$ corresponding to nonnegative left and right eigenvectors $$x_\mu$$ and $$y_\mu$$. Then the value of the game $$G(A)$$ is $$v(A)=\mu$$ and $$(x_\mu$$, $$y_\mu$$) is an optimal strategy profile. " colorLabel="3"/>
+                        </outline>
+                        <outline text="\end{theorem}"/>
+                        <outline text="We will defer the proof of this theorem, as it can be obtained as a special case of our proof for Theorem \ref{}. "/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="ARCHIVE">
+                <outline text="Typically, when maintaining software assets, system administrators will over time encounter the need for vulnerability management. Due to the accumulation of available patches for a potentially large number of assets, they need effective strategies for identifying those patches that are critical. A common practice that is adopted in real system scenarios is based on vulnerability scoring which provides effective means of ranking vulnerabilities by their severity. A common approach for vulnerability scoring is based on a numerical score (or metric) function $$\mu:v \rightarrow {S}$$ that is computed for the individual vulnerability, where $$\mathcal{S}$$denotes the set of valid scores."/>
+                <outline text="[CVSS] The Common Vulnerability Scoring System (CVSS) provides an open framework for such vulnerability scoring, based on metrics capturing the individual, intrinsic characteristics of a software vulnerability. CVSS has been developed by the Forum of Incident Response and Security Teams (FIRST), its current version is v3.0, published in 2015, and it is the de facto vulnerability scoring standard adopted by many organisations, implemented as part of tools and openly available both in terms of documentation and as scoring data linked to the publicly available CVE vulnerability database. " _note=" ">
+                    <outline text="% An alternative representation consists of a vector providing a compressed textual representation, reflecting the values used to derive the score."/>
+                    <outline text="Overall, CVSS v3.0 assesses the severity of software vulnerabilities through three Metric Groups: Base, Temporal and Environmental. The CVSS Base Score $$\mu_{B}$$ represents the intrinsic and fundamental characteristics of $$v$$ that are independent of time and specific user environments. The Base score can then be refined by defining additional scores in order to more accurately reflect the risk posed by the vulnerability to an asset:"/>
+                    <outline text="\begin{itemize}">
+                        <outline text="\item Temporal -- metrics which reflect the characteristics of the vulnerability $v$ that change over time."/>
+                        <outline text="\item Environmental -- representing the characteristics of $v$ that are unique to the user's environment."/>
+                    </outline>
+                    <outline text="\end{itemize}"/>
+                    <outline text="Generally, the Base and Temporal metrics are specified by the organisation, while the environmental metric depends on the end-users." _note=" "/>
+                    <outline text="In the latest version CVSS 3, the scoring of vulnerabilities has improved -- e.g. Heartbleed is now scored higher than before."/>
+                    <outline text="This would make a transition from a vulnerability-focused approach to a risk-based scoring system."/>
+                </outline>
+                <outline text="Starting point of this paper is previous work on enhancing the use of CVSS for vulnerability scoring with the help of game theory and the growing evidence \cite{} that vulnerability scoring has also limitations and needs possible remedies. The main problem with vulnerability scoring is that it is possible for two different vulnerabilities to have the same score, although they both have individual characteristics. Whilst this is impossible to prevent in general, a careful design of the individual scoring functions should at least take this problem into account." _note=" "/>
+                <outline text="Game Theoretic Design of Vulnerability Scoring Functions">
+                    <outline text="% RELATED WORK %">
+                        <outline text="To our knowledge, the use of Game theory for vulnerability scoring has not been addressed in the literature."/>
+                        <outline text="Most work is on likelihood assessment, the process of establishing the probability of an attack occurring (\cite{@Samarji2015},\cite{@Kanoun2009}) which appears, in general, to be a challenging and elusive task \cite{@Tripwire2016}.  % "/>
+                        <outline text="One way of conducting likelihood assessments is to assume that the interaction between potential cyber attackers and system administrators (who act as defenders) can be modelled as a non-cooperative game, where both players act rationally, seeking to optimise their expected payoffs. The game can then be analysed by making some assumptions on the players' strategies, which yield an expected optimal strategy from which system administrators should be able to make a decision regarding \emph{vulnerability patching}. "/>
+                        <outline text=" and, together with vulnerability scoring, might be seen as a way to implement risk scoring which has been suggested to be more effective than vulnerability scoring alone \cite{@Reguly2013}\fmanos{check citation.}. Likelihood assessment "/>
+                        <outline text="In \cite{@Samarji2015}, the authors have a similar methodology, focusing on the attacker's perspective inspired by game theory, using a very similar game, but in addition they capture concurrent and simultaneous attacks and also model return of investment equations. We extend the simplified version of their model by making explicit use of CVSS metrics for the design of a more realistic and practically oriented game.  %"/>
+                        <outline text="In \cite{@Gianini2015} the authors investigate the use of game theory as an alternative to CVSS-only vulnerability patching strategies. The initially studied game is a a two-target security game, also known as a search game in the literature. The game theoretic analysis is used as a filter to narrow down the number of vulnerabilities that need to be considered for patching, e.g. using traditional vulnerability scoring techniques such as CVSS. "/>
+                        <outline text="This is a contrast in our approach where we use CVSS scoring information to improve the accuracy of our game theoretic utility function, hence making our model more accurate and suitable for real world scenarios."/>
+                        <outline text="% #todo [review some more papers, including \cite{@Kanoun2009}, \cite{@Bistarelli2006} and \cite{@Gianini2015}]  %"/>
+                    </outline>
+                    <outline text="% DESIGN %"/>
+                    <outline text="% EVALUATION %">
+                        <outline text="% #signpost"/>
+                        <outline text="In  this section we compare and evaluate the scoring functions as defined by the CVSS v2.0 and v3.0 base score as well as our game theoretical scoring function. "/>
+                        <outline text="\begin{itemize}&#xA;">
+                            <outline text="\item In CVSS v2.0, the equation defining the base score is $$\mu_{CVSSv2} = k_1 \cdot \mu_{Imp} + k_2 \cdot \mu_{Exp} - k_3$$ where $$k_1 = 0.71$$, $$k_2 = 0.47$$ and $$k_3 = 1.76$$ assuming $$\mu_{Imp} \neq 0$$. "/>
+                            <outline text="\item CVSS 3.0 defines the base score as $$\mu_{CVSS.v3} = \lceil \min\{1.08 \cdot (\mu_{Imp} + \mu_{Exp}),10\} \rceil$$"/>
+                            <outline text="\item Our basic GT score is $$\mu_{GT}=\alpha(10-\mu_{Exp})/\mu_{Imp}$$\footnote{We will have to choose $$\alpha$$ such that the range of the final scoring function is between 0 and 10. We will be able to determine this after having calculated the score distribution, see below.}"/>
+                        </outline>
+                        <outline text="\end{itemize}&#xA;"/>
+                        <outline text="While both CVSS equations use linear combinations of impact and exploitability, the game theoretical equation is non-linear. " _note=" "/>
+                        <outline text="A theoretical evaluation of these functions can be done by analysing the score distribution of all valid output metrics. For each scoring function, we create a graph, plotting the number of occurrences of values $$\sigma = \mu(v')$$ with $$\sigma \in [0,10]$$ for which exists a (hypothetical) vulnerability $$v'$$. The range of valid input subscore is determined from the possible values of the subscores included in the impact and exploitability scores as follows: "/>
+                        <outline text="\begin{itemize}">
+                            <outline text="\item the impact score is $$ \mu_{Imp}=6.42\left[ 1-(1-\mu_{Imp,C})(1-\mu_{Imp,I})(1-\mu_{Imp,A})\right]$$ where the confidentiality, integrity and availability impact subscores $$\mu_{Imp,C}$$, $$\mu_{Imp,I}$$ and $$\mu_{Imp,A}$$ have values as in Table 1. "/>
+                            <outline text="\item The exploitability subscore is $$ \mu_{Exp}=8.23\cdot \mu_{AV}\cdot \mu_{AC} \cdot \mu_{PR}\cdot \mu_{UI}$$ with valid metrics as listed in Table 2. "/>
+                        </outline>
+                        <outline text="\end{itemize} "/>
+                        <outline text="%\begin{table}[h!]&#xA;    \centering&#xA;    \begin{tabular}{|c|p{9.75cm}|}&#xA;        \hline&#xA;        Symbol &amp; Description \\ &#xA;        \hline&#xA;        $a$ &amp; probability that …. \\&#xA;    \end{tabular}&#xA;    \caption{List of Symbols}&#xA;    \label{tab:symbols}&#xA;\end{table} "/>
+                        <outline text="$$\begin{array}{ | c | c | } \mu_{Imp,C}, \mu_{Imp,I},\mu_{Imp,A}&amp; \{ 0.56, 0.22, 0\} \end{array}$$"/>
+                        <outline text="$$\begin{array}{ | c | l | }  \mu_{AV} &amp; \{0.85, 0.62, 0.55, 0.2\}\\ \mu_{AC} &amp;   \{0.77, 0.44\} \\ \mu_{PR} &amp; \{0.85, 0.62, 0.27\} \\ \mu_{UI} &amp;  \{0.85, 0.62\}  \end{array}$$ "/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Mobile Cloud Paper &quot;A Lightweight Secret Sharing Combiner-Algorithm for Mobile Cloud Environments&quot; #title #h " _note="https://workflowy.com/#/78fc783cdd93">
+            <outline text="Authors #authors">
+                <outline text="Eckhard Pfluegel"/>
+                <outline text="Mastaneh Davis"/>
+            </outline>
+            <outline text="Abstract #abstract"/>
+            <outline text="Keywords"/>
+            <outline text="Introduction #h1">
+                <outline text="Motivation and Background ">
+                    <outline text="Sharing of information/data matrix A with n device in order to achieve confidentiality, redundancy &amp;amp; …"/>
+                    <outline text="Chose additional parameter X and compute:  X . A = Y"/>
+                    <outline text="Here k is a threshold value, meaning the number of shared items needed to reconstruct A."/>
+                    <outline text="Distribution is implemented by sending each row of X and row of Y, the result of the matrix multiplication."/>
+                </outline>
+                <outline text="Research Contributions">
+                    <outline text="Validate SS Implementations #RC"/>
+                    <outline text="Improve SS Combiner Resource Sharing #RC"/>
+                </outline>
+                <outline text="Paper Organisation "/>
+            </outline>
+            <outline text="Mobile Cloud Security #h1">
+                <outline text="Mobile Cloud Computing">
+                    <outline text="Characteristics:"/>
+                </outline>
+            </outline>
+            <outline text="Secure Data Distribution #h1">
+                <outline text="Notations">
+                    <outline text="$$s&lt;p$$ -- secret, where $$p$$ is a prime number"/>
+                    <outline text="$$s_i$$ -- a share of the secret $$s$$, with (unique) identifier $$i$$"/>
+                </outline>
+                <outline text="Concepts"/>
+                <outline text="Advantages/Disadvantages"/>
+                <outline text="Protocol Stages">
+                    <outline text="Dealing"/>
+                    <outline text="Distribution "/>
+                    <outline text="Combining"/>
+                </outline>
+                <outline text="Basic Techniques in the Literature">
+                    <outline text="Shamir Secret Sharing">
+                        <outline text="Shamir -- Polynomial evaluation and interpolation"/>
+                        <outline text="$$f(x) = s + \sum_{l=1}^{k-1}a_{l}x^{l}$$ where $$a_{l}$$ random elements of $$F_p$$ -- the Shamir polynomial "/>
+                        <outline text="Within the secret sharing protocol follow 3 stages: share creation, share distribution and share combining."/>
+                        <outline text="Share creation. ">
+                            <outline text="Choose $$n$$ distinct values $$x_{1},\ldots, x_{n}$$"/>
+                            <outline text="Compute shares as $$s_i = (x_{i},f(x_{i}))$$"/>
+                        </outline>
+                        <outline text="Distribution/Dealing"/>
+                        <outline text="Share Combining">
+                            <outline text="From any coalition of size $$k$$   $$(x_{i_1},\cdots , x_{i_k})$$ and $$(f\left ( x_{i_1}\right ), \cdots , f\left ( x_{i_k}\right ))$$ we can reconstruct $$f$$ (and hence $$s = f\left ( 0 \right )$$) through interpolation."/>
+                        </outline>
+                    </outline>
+                    <outline text="Ramp">
+                        <outline text="Ramp -- Use all coefficients"/>
+                        <outline text="$$f(x) = \sum_{l=0}^{k-1}s^{(l)}x^{l}$$ where $$s=s^{(0)}||\ldots||s^{(k-1)}$$ are the secret data, seen as elements of $$F_p$$ -- a generalisation of the Shamir polynomial, storing data in all coefficients"/>
+                    </outline>
+                    <outline text="Blakeley -- Intersecting hyperplanes, in fact a specific instance of ramp [Blakley]"/>
+                    <outline text="Rabin' Information Dispersal">
+                        <outline text="Sharing of information/data matrix A with n device in order to achieve confidentiality, redundancy &amp;amp; …"/>
+                        <outline text="Rabin -- IDA, expanding secret vector to a matrix, improving capacity. Shamir could be seen as special case "/>
+                        <outline text="Distribution is implemented by sending each row of  and row of  the result of the matrix multiplication."/>
+                        <outline text="Given the confidential information">
+                            <outline text="$$a = (a_{1},\cdots, a_{t}) , ( a_{t+1},\cdots, a_{2t}) , \cdots , ( a_{N-t+1},\cdots, a_{N}) = a^{(1)}, a^{(2)}, \cdots, a^{(m)} $$"/>
+                        </outline>
+                        <outline text="where">
+                            <outline text=" $$m = \lceil \frac{N}{t} \rceil$$"/>
+                        </outline>
+                        <outline text="and">
+                            <outline text="$$A =\left [ \ ^{t}a^{(1)} \left | \cdots \right |\ ^{t}a^{(m)} \right ]$$"/>
+                        </outline>
+                        <outline text="Construct a matrix $$X$$ such that any submatrix consisting of $$k$$ rows forms an invertible matrix, denoted by $$X^{(k)}$$. "/>
+                        <outline text="Here k is a threshold value, meaning the number of shared items needed to reconstruct A."/>
+                        <outline text="Dispersal stage: ">
+                            <outline text="Compute $$Y$$ as  $$X \cdot A = Y \qquad \left ( \ast \right )$$"/>
+                        </outline>
+                        <outline text="Reconstruction:   ">
+                            <outline text="the shares are then the concated rows of A and Y "/>
+                            <outline text="It follows from $$\left ( \ast \right )$$ that $$X^{(k)} \cdot S = Y^{(k)} $$"/>
+                            <outline text="So $$S= \left [ X^{(k)} \right ]^{(-1)}\cdot Y^{(k)}$$"/>
+                            <outline text="Can write this in matrix / vector notation: $$X \cdot a = y$$ where">
+<outline text="$$X = \begin{pmatrix} x_{1}^{0} &amp; x_{1}^{1} &amp; \ldots &amp; x_{1}^{k-1}\\ x_{2}^{0} &amp; x_{2}^{1} &amp; \ldots &amp; x_{2}^{k-1}\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ x_{n}^{0} &amp; x_{n}^{1} &amp; \ldots &amp; x_{n}^{k-1} \end{pmatrix}$$"/>
+                            </outline>
+                            <outline text="In order to find $$S$$, we need the first entry of the vector $$a = X^{-1}\cdot y$$"/>
+                        </outline>
+                    </outline>
+                    <outline text="Krawcyc -- IDA + Encryption "/>
+                </outline>
+                <outline text="Use of Secret Sharing for Cloud Security">
+                    <outline text="C"/>
+                    <outline text="I"/>
+                    <outline text="A"/>
+                </outline>
+            </outline>
+            <outline text="Mobile Secret Sharing Architectures #h1">
+                <outline text="In this section, we discuss secret sharing architectures in a mobile setting. Depending on which stage of the secret sharing protocol is implemented on the mobile device, we differentiate between mobile dealer, mobile shareholder and mobile combiner, or a combination of these in a hybrid architecture. "/>
+                <outline text="__Mobile Dealer__ -- in this architecture, the sensitive information (the secret) is on the mobile device at the time when the shares are created. Typical examples are mobile users who wish to protect their application data, present on their device. "/>
+                <outline text="__Mobile Shareholders__ -- mobile cloud"/>
+                <outline text="__Mobile Combiner__ -- Threshold operations"/>
+                <outline text="__Hybrid__ -- ">
+                    <outline text="Several Mobile Components"/>
+                </outline>
+            </outline>
+            <outline text="Mobile Combiner Techniques #h1">
+                <outline text="Lagrange"/>
+                <outline text="Barycentric "/>
+            </outline>
+            <outline text="Evaluation #h1">
+                <outline text="The key aim of the evaluation described in this section is a systematic performance study of secret sharing combiner algorithms, based on comparing the computational time for both an implemented desktop application and a mobile testbed."/>
+                <outline text="We compare the combining of shares in the context of Shamir $$(t,n)$$ threshold secret sharing, using standard Lagrange interpolation, improved Lagrange and Barycentric approach."/>
+                <outline text="Implementation #h2 ">
+                    <outline text="All implementation was done in Java 7 as a generic test library for use in both the Desktop and Mobile code."/>
+                    <outline text="The desktop implementation was tested on a Intel Core i7 4790 @ 3.60GHz PC with  16GB memory, and a 1GB allocated memory for the JVM.">
+                        <outline text="[Dual-Channel DDR3 @ 798MHz ]"/>
+                        <outline text="[CPU Haswell 22nm Technology]"/>
+                    </outline>
+                    <outline text="The mobile app was tested on a Samsung Galaxy tab (Tab S2 with a Snapdragon 652 @ 1.8 GHz and 3GB memory with same allocated memory for JVM as the desktop environment.">
+                        <outline text="[DDR3 @ 825MHz]"/>
+                        <outline text="[CPU 28 nm HPm]"/>
+                    </outline>
+                </outline>
+                <outline text="Testing">
+                    <outline text="For random secrets with sizes in the range of 0 to 40,000 bits we measure the execution time for combining a threshold number $$t$$ of secrets."/>
+                    <outline text="Our main result is that the improved Lagrange method brings a significant improvement of 50% for desktop and 60% for mobile. "/>
+                    <outline text="For $$t&lt;10$$ speed is fast so no meaningful comparison:">
+                        <outline text="![](https://www.dropbox.com/s/a4o7q96dzyvs2at/Desktop%20Threshold%20Compare.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/dhlmth9lyahctnm/Mobile%20Threshold%20Compare.png?dl=1)"/>
+                    </outline>
+                    <outline text="We have used $$t\in\{10,20,50\}$$. The following diagram illustrates the improvements made by the different approaches."/>
+                    <outline text="Mobile">
+                        <outline text="![](https://www.dropbox.com/s/88z0yx17hp6ei1b/Mobile%20Compare%20t%2010.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/8awsyqa6iapdokt/Mobile%20Compare%20t%2020.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/40hkjfooze3gh79/Mobile%20Compare%20t%2050.png?dl=1)"/>
+                    </outline>
+                    <outline text="Desktop">
+                        <outline text="![](https://www.dropbox.com/s/knjeo1mfj3artin/Desktop%20Compare%20t%2010.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/dxelc7uuutosz4g/Desktop%20Compare%20t%2020.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/i8cm6axsewidzcj/Desktop%20Compare%20t%2050.png?dl=1)"/>
+                        <outline text="![](https://www.dropbox.com/s/i8cm6axsewidzcj/Desktop%20Compare%20t%2050.png?dl=1)"/>
+                    </outline>
+                </outline>
+                <outline text="Discussion of Results">
+                    <outline text=""/>
+                </outline>
+            </outline>
+            <outline text="Conclusion #h1"/>
+            <outline text="References #h1"/>
+        </outline>
+    </body>
+</opml>

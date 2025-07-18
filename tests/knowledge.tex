@@ -2,9 +2,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usetheme{Goettingen}
+\usepackage{enumitem}
+\newlist{tree}{itemize}{10}
+\setlistdepth{10}
+\setlist[tree]{label=\usebeamercolor[fg]{itemize item}\usebeamertemplate{itemize item}}
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
-\title{Start prefix 'Von Neumann Growth Model \#h Unique' not found}
+\title{Von Neumann Growth Model \#h Unique}
 \date{\today}
 \AtBeginSection[]
 {
@@ -17,4 +21,713 @@
   \titlepage
 \end{frame}
 
+\begin{frame}{INBOX}
+\begin{tree}
+  \item The **von Neumann growth model** is an economic model that describes long-term economic expansion based on productive processes and resource allocation. It connects closely to the general economic terminology we discussed:
+  \item **Economy** – The von Neumann model represents an economy as a system of interdependent industries where production processes determine economic expansion. The model focuses on achieving a balanced growth rate for the entire economy.
+  \begin{tree}
+    \item **Industry** – The model assumes multiple industries that produce different goods using various production techniques. Each industry contributes to overall economic growth through efficient resource utilization.
+    \item **Sector** – Different economic sectors interact in the von Neumann model, with some sectors producing raw materials, others manufacturing capital goods, and others providing consumer products. Their interdependence drives economic expansion.
+    \begin{tree}
+      \item **Goods** – Goods in this model include both consumer and capital goods, which industries produce using available resources. Capital goods (such as machines and tools) are particularly important, as they enable further production.
+      \item **Production** – A key aspect of the von Neumann model is that production relies on inputs (resources and capital) to generate outputs. The model assumes that production functions exhibit constant returns to scale, meaning that output increases proportionally with input.
+      \item **Cost** – The model incorporates the idea of efficiency, where industries must minimize costs by optimizing input use. It assumes that resources flow to the most productive sectors, ensuring maximum economic growth.
+    \end{tree}
+  \end{tree}
+  \item In summary, the von Neumann growth model uses mathematical principles to explain how industries, goods, production, and costs interact to drive long-term economic growth. It highlights the importance of efficient resource allocation and technological progress in sustaining economic expansion.
+\end{tree}
+\end{frame}
+\section{Background and Motivation of the von Neumann Growth Model \#h}
+\begin{frame}{The **von Neumann economic growth model** explains how economies optimize resource allocation and technological progress to achieve sustainable expansion, ensuring efficient use and potential **reuse** of goods in a cyclical economic system. \#slide}
+\end{frame}
+\begin{frame}{Origins \#slide \#teaching \#research}
+\begin{tree}
+    \item Introduced by John von Neumann in 1937 \textbackslash\{\}cite\{\}.
+    \item Initially presented as a mathematical theory of economic growth.
+    \item Published formally in "A Model of General Economic Equilibrium" in 1945-46 \textbackslash\{\}cite\{\}.
+    \item Inspired by early studies on balanced economic expansion and Walrasian general equilibrium theory \textbackslash\{\}cite\{\}.
+\end{tree}
+\end{frame}
+\begin{frame}{Basic Economics Terminology \#slide}
+\begin{tree}
+    \item Societies consume resources and capital to produce, distribute, and reuse goods.
+    \item Here's how they relate to each other:
+    \begin{tree}
+      \item economy,
+      \item sector,
+      \item industry,
+      \item goods,
+      \item production,
+      \item cost,
+      \item resources,
+      \item capital.
+    \end{tree}
+    \item Societies operate within an **economy**, where different **sectors** (such as agriculture, manufacturing, and technology) consist of various **industries** that produce and distribute **goods**.
+    \item These industries rely on **resources** (such as raw materials, labor, and energy) and **capital** (such as machinery, infrastructure, and investments) to drive **production**.
+    \item The **cost** of production, including labor and materials, influences pricing and market dynamics.
+\end{tree}
+\end{frame}
+\begin{frame}{Economy, Sectors and Industries \#slide}
+\begin{tree}
+    \item Economy is the broader system that encompasses all industries, businesses, and activities related to the production, distribution, and consumption of goods and services.
+    \item It includes everything from agriculture and manufacturing to technology and finance.
+    \item Sector refers to a broad division of the economy that groups related industries together, such as the agriculture sector, manufacturing sector, or service sector, each contributing to overall economic activity in different ways.
+    \item Industry refers to a specific sector of the economy that produces goods or services. For example, the automobile industry produces cars, while the textile industry makes clothing.
+\end{tree}
+\end{frame}
+\begin{frame}{Goods, Production and Cost \#slide}
+\begin{tree}
+    \item Goods are physical products that industries produce for consumption or further use. These can range from consumer goods (like clothing and electronics) to capital goods (like machinery used in production).
+    \item Production is the process of creating goods and services. It involves using resources such as labour, raw materials, and technology to transform inputs into finished products. The efficiency and scale of production influence the overall performance of industries and the economy.
+    \item Cost represents the expenses incurred during production, including raw materials, labour, machinery, and overhead. The cost of production affects pricing, profitability, and competitiveness within an industry and the economy as a whole.
+\end{tree}
+\end{frame}
+\begin{frame}{Motivation \#slide \#teaching \#research}
+\begin{tree}
+    \item Goal: to maximise the growth levels of production, while minimising associated costs.
+    \begin{tree}
+      \item Understanding the dynamics of economic growth:
+      \begin{tree}
+        \item How can economies achieve sustained growth under resource constraints?
+      \end{tree}
+      \item Capturing production interdependencies:
+      \begin{tree}
+        \item Focuses on the relationships between sectors and goods in an economy.
+      \end{tree}
+    \end{tree}
+    \item Providing an idealized framework:
+    \begin{tree}
+      \item Assumes perfectly efficient allocation of resources and production.
+      \item Serves as a foundation for more complex, real-world models.
+    \end{tree}
+    \item Applications
+    \begin{tree}
+      \item Economics
+      \item Game Theory
+      \item ECONOMICS
+      \begin{tree}
+        \item iNTEREST RATE
+        \item eXPANSION RATE
+      \end{tree}
+    \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Economy Introductory Example \#slide \#teaching}
+\begin{tree}
+  \item Economy modeled as $n$ sectors and $m$ goods:
+  \begin{tree}
+    \item Sectors: represent industries, production processes or activities.
+    \item Goods: they are outputs of sectors and also used as inputs.
+  \end{tree}
+  \item Input-Output Relationships:
+  \begin{tree}
+    \item Input $m\times n$ matrix $ A $: Specifies how much of each good is consumed by each sector.
+    \item Output $m\times n$ matrix $ B $: Specifies how much of each good is produced by each sector.
+  \end{tree}
+  \item Assumptions:
+  \begin{tree}
+    \item No good can be produced out nothing: $\text{col}_j(A)>0$.
+    \item No activity produces nothing: $\text{row}_i(B)>0$.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Types of Economies \#slide}
+\begin{tree}
+  \item Open: $m > n$
+  \item Closed: $m \le n$
+  \item Circular: $m = n$
+\end{tree}
+\end{frame}
+\begin{frame}{Growth Rate \#slide \#teaching}
+\begin{tree}
+  \item Inequality:
+  \begin{tree}
+    \item $ (1 + g) A x \leq B x$
+    \item where:
+    \begin{tree}
+      \item $ g $: Growth rate of the economy.
+      \item $ x $: Vector of production levels for each sector.
+    \end{tree}
+  \end{tree}
+  \item Interpretation:
+  \begin{tree}
+    \item Sectors produce outputs that must meet or exceed their inputs scaled by growth.
+    \item The goal is to find the maximum $ g $ that satisfies the inequality.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Background \#slide}
+\begin{tree}
+  \item Value and Optimal Solutions of Matrix Games
+  \item NE Equilibrium Solutions of Bimatrix Games
+\end{tree}
+\end{frame}
+\begin{frame}{Motivation \#slide}
+\begin{tree}
+  \item Definition is complex
+  \item Several forms
+  \begin{tree}
+    \item ![Pasted image](https://dynalist.io/u/XUx-YcxqNUgc4E5\_yBkhj1cu)
+  \end{tree}
+  \item This also effects the structure of equilibria
+  \begin{tree}
+    \item ![Pasted image](https://dynalist.io/u/iTJFbZCLzHcBahM6ckl9qqav)
+    \item ![Pasted image](https://dynalist.io/u/pF6fmz3n\_Q5BiwnBynCBffA8)
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Original Economics Definition \#slide \#teaching \#research}
+\begin{tree}
+  \item In the original context of mathematical economics \textbackslash\{\}cite\{Neumann1945-ab\}:
+  \begin{tree}
+    \item Definition of Von Neumann \_\_balanced growth path\_\_: $(\alpha,x)$ such that $\alpha$ is maximal subject to $x^\top(B-\alpha A) \ge 0$.
+    \begin{tree}
+      \item $\alpha$: expansion factor
+      \item $x$: intensity vector
+    \end{tree}
+    \item Definition of Von Neumann \_\_price problem\_\_: $(\beta,p)$ such that $\beta$ is minimal subject to $(B-\alpha A)p \le 0$.
+    \begin{tree}
+      \item $\beta$: interest factor
+      \item $p$: price vector
+    \end{tree}
+  \end{tree}
+  \item One makes the following assumption: $A+B>0$.
+  \item The result is then, that at least one such solution exist, and that it holds $0<\beta\le \alpha$.
+\end{tree}
+\end{frame}
+\begin{frame}{Min-Max Definition \#slide}
+\begin{tree}
+  \item In Game-theoretic context \textbackslash\{\}cite\{\}:
+  \item $(\alpha,x)$ such that $\alpha$ is maximal subject to $(A-\alpha B)x \ge 0$.
+  \item $(\beta,p)$ such that $\beta$ is minimal subject to $p(A-\alpha B) \le 0$.
+  \item Assumption: $A+B>0$.
+  \item Results:
+  \begin{tree}
+    \item Solutions exist.
+    \item It holds $0<\beta\le \alpha$.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Generalised Definition \#slide}
+\begin{tree}
+  \item A triplet $(x, y,\lambda)$, with $x\geqq0$, $y\geqq 0$, $\lambda > 0$, is a \_\_generalised equilibrium solution\_\_ for the von Neumann technology VNM($A, B$) if it satisfies the following system:
+  \begin{tree}
+    \item $x^\top A \geqq \lambda x^\top B$,
+    \item $Ay \leqq \lambda By$.
+  \end{tree}
+  \item So we do not need $x^\top Ay> 0$.
+\end{tree}
+\end{frame}
+\begin{frame}{Active Sub-pencil Definition \#slide}
+\begin{tree}
+  \item Thompson et al \textbackslash\{\}cite\{Thompson1971-or\} show that
+  \item This generalises results by Shapley, see also Karlin's book, for game theory
+\end{tree}
+\end{frame}
+\begin{frame}{Equality Definition \#slide}
+\begin{tree}
+  \item A quadruplet $(x, y, \alpha, \beta)$, $x\geqq 0$, $y \geqq 0$, $\alpha \neq 0$, $\beta \neq 0$ is an \_\_equilibrium solution\_\_ for the von Neumann model VN$(B, A)$ if it satisfies the following system:
+  \begin{tree}
+    \item $ x^\top A \ge \alpha x^\top B$,
+    \item $ x^\top A y= \alpha x^\top By$,
+    \item $ Ay \le \beta By$,
+    \item $ x^\top Ay = x^\top \beta By $,
+    \item $x^\top Ay > 0$.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Pencil Notation \#slide}
+\begin{tree}
+  \item We can re-write the above inequalities using matrix pencil notation:
+  \begin{tree}
+    \item $ x^\top (A - \alpha B)\ge 0$,
+    \item $ x^\top (A - \alpha B)y = 0$,
+    \item $ (A -\beta B)y\le 0 $,
+    \item $ x^\top (A - \beta B)y = 0$,
+    \item $x^\top Ay > 0$.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Simplification \#slide}
+\begin{tree}
+  \item Lemma: If $(\bar{x}, \bar{y}, \bar{\alpha} ,\bar{\beta})$ is an equilibrium solution, then $\bar{\alpha}=\bar{\beta}>0$.
+  \item Proof:
+  \begin{tree}
+    \item $0<\bar{x}^\top A\bar{y}= \alpha\bar{x}^\top B\bar{y}=\beta\bar{x}^\top B\bar{y}$
+    \item ![Pasted image](https://dynalist.io/u/KY41W0xBeMdX3mvJ9H06H-cj)
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Simplified Definition \#slide}
+\begin{tree}
+  \item A triplet $(x, y,\lambda)$, with $x\geqq0$, $y\geqq 0$, $\lambda > 0$, is an equilibrium solution for the von Neumann technology VNM($A, B$) if it satisfies the following system:
+  \begin{tree}
+    \item $x^\top A \geqq \lambda x^\top B$,
+    \item $Ay \leqq \lambda By$,
+    \item $x^\top Ay> 0$.
+  \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Pencil Perturbation Definition \#slide}
+\end{frame}
+\begin{frame}{Assumptions \#slide}
+\begin{tree}
+  \item Von Neumann et al: $A+B>0$
+  \item Thompson et al: $xAy > 0$
+  \item Us: $\det(A-\lambda B) \neq 0$ and $\det(A^{ij}-\lambda B^{ij}) > 0$
+\end{tree}
+\end{frame}
+\begin{frame}{Various Model Assumptions \#slide}
+\end{frame}
+\begin{frame}{Main Theorem \#slide \#teaching}
+\end{frame}
+\begin{frame}{Sufficient Conditions \#slide}
+\begin{tree}
+  \item Background: concept of $F$-transformation (or "$F$-pencil")
+\end{tree}
+\end{frame}
+\begin{frame}{F-Transformation (Drandakis) \#slide}
+\begin{tree}
+  \item Context and Details
+  \item If the input and output transformation of a von Neumann production system is an $F$-transformation, the von Neumann maximal growth factor $\rho$ is the F-eigenvalue, and $z$, $p$ are the (unique) right and left F-eigenvectors of $D-\lambda C$ (\textbackslash\{\}cite\{Drandakis1966-nv\}).
+\end{tree}
+\end{frame}
+\begin{frame}{Basic Estimates \#slide}
+\begin{tree}
+  \item One has
+  \begin{tree}
+    \item $\rho \le (\sum a_{ij})/(\sum b_{ij})=\sum a_{ij}/(\sum b_{ij})\le \sum (a_{ij}/b_{ij})$ (\textbackslash\{\}cite\{\})
+  \end{tree}
+  \item Precise result if we have an F-Transformation:
+\end{tree}
+\end{frame}
+\section{Rank-1 Models \#h}
+\begin{frame}{LP Equivalence Theorem \#slide}
+\begin{tree}
+    \item Consider the model VNM($B,A$) where $B=uv^\top \geqq 0$.
+    \item We refer to this as a rank-1 VN model.
+    \item It is known in the literature \textbackslash\{\}cite\{Bidard2000-jr\}, that such a model is equivalent to a linear program.
+    \item Theorem: the rank-one model VNM($uv^\top,A$) with maximal growth factor $\lambda>0$ is equivalent to the linear program LP($v^\top, A, u$) with optimal value $\lambda^{-1}$. \#theorem
+\end{tree}
+\end{frame}
+\begin{frame}{Proof \#slide}
+\begin{tree}
+    \item $\Longrightarrow$"
+    \begin{tree}
+      \item We start with $\lambda$ maximal such that $\exists x^\top: x^\top(A-\lambda uv^\top)\geqq 0$.
+      \item Define $\tilde{x} := \frac{x^\top}{\lambda x^\top u}$.
+      \item Then $\tilde{x}u=\frac{x^\top u}{\lambda x^\top u}=\lambda^{-1}$ is minimal, such that $\tilde{x}^\top(A-\lambda uv^\top)=\tilde{x}^\top A-v^\top \geqq 0$.
+      \item This means that the linear program LP($u, A, v^\top$) is solved by $\tilde{x}^\top$ with value $\lambda^{-1}$.
+    \end{tree}
+    \item "$\Longleftarrow$"
+    \begin{tree}
+      \item Assume ${x}^\top$ is a solution of the linear program LP($u, A, v^\top$) with value $\mu^{}$.
+      \item This means $\mu := x^\top u$ is minimal such that $x^\top A-v^\top\geqq 0$.
+      \item One has $v^\top=\frac{x^\top u}{x^\top u}v^\top = \frac{1}{x^\top u}x^\top uv^\top = \mu^{-1}x^\top uv^\top \geqq 0$.
+      \item Hence $x^\top(A-\mu^{-1} uv^\top)\geqq 0$ and $\lambda:=\mu^{-1}$ is a maximal growth factor for VNM($uv^\top,A$).
+    \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Equilibrium Solutions \#slide}
+\end{frame}
+\begin{frame}{Weak and Strong Duality \#slide}
+\end{frame}
+\begin{frame}{Example \#slide}
+\begin{tree}
+    \item Consider LP$(A,b,c)$ where
+    \begin{tree}
+      \item $A=\begin{pmatrix} 1 & 3 & -1 \\ 0 & 1 & 1 \\ 3 & 1 & 0 \\ \end{pmatrix},\quad b=\begin{pmatrix} 6 \\ 4 \\ 7 \\ \end{pmatrix},\quad^tc=\begin{pmatrix} 5&2&1 \\ \end{pmatrix}$.
+    \end{tree}
+    \item This example is given in \textbackslash\{\}cite\{Fer\} and its value and primal and dual optimal solutions are
+    \begin{tree}
+      \item $v=\frac{3}{47},\quad {}^tx=\begin{pmatrix} 0&1&5/3 \\ \end{pmatrix},\quad y=\begin{pmatrix} 7/3\\0\\4 \\ \end{pmatrix}$.
+    \end{tree}
+    \item Then $D={}^tc\,b=\begin{pmatrix} 30&12&6 \\ 20&8&4 \\ 35&14&7 \\ \end{pmatrix}$ and we consider the pencil $A-\lambda D$.
+\end{tree}
+\end{frame}
+\begin{frame}{Active Sub-pencil \#slide}
+\begin{tree}
+    \item Deleting the first row and second column, corresponding to the zero components of the optimal solutions, the sub-pencil
+    \begin{tree}
+      \item $\hat{A}-\lambda \hat{D}=\begin{pmatrix} 0 & 1 \\ 3 & 0 \\ \end{pmatrix}-\lambda \begin{pmatrix} 20&4 \\ 35&7 \\ \end{pmatrix} $
+    \end{tree}
+    \item is obtained.
+    \item One verifies that
+    \begin{tree}
+      \item $\mathcal{E}(\hat{A}-\lambda \hat{D})=\left[\hat{v}=\frac{47}{3},\quad {}^t\hat{x}=\begin{pmatrix} 1&5/3 \\ \end{pmatrix},\quad \hat{y}=\begin{pmatrix} 7/3\\4 \\ \end{pmatrix}\right]$
+      \begin{tree}
+        \item 
+      \end{tree}
+    \end{tree}
+    \item is a generalised positive eigensystem.
+\end{tree}
+\end{frame}
+\begin{frame}{Pencil Perturbation \#slide}
+\begin{tree}
+    \item Furthermore, ${}^t\hat{x}()=$
+    \item The pencil perturbation
+    \begin{tree}
+      \item 
+    \end{tree}
+    \item yields the pencil
+    \begin{tree}
+      \item 
+    \end{tree}
+    \item The generalised eigensystem of the perturbed pencil is
+    \begin{tree}
+      \item 
+    \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Algorithm \#slide}
+\begin{tree}
+    \item **algorithm** Von\_Neumann\_rank\_one\_solve\_incomplete$(A)$
+    \begin{tree}
+      \item **if** $({e^T{\rm adj}( A)e}\neq 0)$ **then**
+      \begin{tree}
+        \item $v := \frac{\det(A)} {e^T{\rm adj}( A)e}$;
+        \item **if** $\neg (e^T{\rm adj}( A)= 0 \wedge {{\rm adj}( A)e}=0)$ **then**
+        \begin{tree}
+          \item $x:=\frac{e^T{\rm adj}(A)} {e^T{\rm adj}( A)e}$
+          \item $y:=\frac{{\rm adj}(A)e} {e^T{\rm adj}( A)e}$
+          \item **if** $x\ge 0$ **and** $y\ge 0$ **then** **return**($v$, $x$, $y$);
+        \end{tree}
+        \item **fi**;
+      \end{tree}
+      \item **fi**;
+      \item **return**(FAIL);
+    \end{tree}
+    \item **end**;
+\end{tree}
+\end{frame}
+\begin{frame}{Novel Results \#slide}
+\begin{tree}
+  \item Rank-$k$ VN Models
+  \item 2x2 Strategic VN Models
+\end{tree}
+\end{frame}
+\section{Algorithmic Treatment \#h}
+\begin{frame}{Overview \#slide}
+\begin{tree}
+    \item Thompson and Weil show that equilibrium solutions correspond to generalised eigensystems of submatrices of the matrix pencil
+    \item Leads to exhaustive search algorithm
+    \item Another approach is based on evaluations of the pencil at various points
+    \item This is basis for iterative algorithms
+\end{tree}
+\end{frame}
+\subsection{Exhaustive Search Approach \#h}
+\begin{frame}{Algorithm (I) \#slide}
+\begin{tree}
+      \item **algorithm** Von\_Neumann\_submatrix\_solve($A$)
+      \begin{tree}
+        \item sols $:= \emptyset$;
+        \item **for all** square pencil submatrices $\bar{A}-\lambda\bar{B}$ of $A-\lambda B$ **do**
+        \begin{tree}
+          \item temp $:=$ max\_gen\_eigen\_system$(\bar{A},\bar{B})$;
+          \item **if** temp $\neq \emptyset$ **then**
+          \begin{tree}
+            \item $(\bar{x},\bar{y},\bar{v}) := $ temp;
+            \item **if** is\_equilibrium\_solution$(\bar{v},{x},{y},A,B)$ **then** sols $:=$ sols $\cup$ temp;
+          \end{tree}
+        \end{tree}
+        \item **return** sols;
+      \end{tree}
+      \item **end**;
+\end{tree}
+\end{frame}
+\begin{frame}{Algorithm (II) \#slide}
+\begin{tree}
+      \item max\_gen\_eigen\_system$(\bar{A},\bar{B})$
+      \item **algorithm** is\_equilibrium\_solution$(\bar{v},\bar{x},\bar{y},A,B)$
+      \begin{tree}
+        \item **if** $\bar{x}\ge 0\wedge\bar{x}(A-\bar{v}B)\ge 0\wedge \bar{y}\ge 0\wedge(A-\bar{v}B)\bar{y}\ge 0$ **then**
+        \begin{tree}
+          \item **return** \_\_true\_\_
+        \end{tree}
+        \item else
+        \begin{tree}
+          \item **return** \_\_false\_\_;
+        \end{tree}
+      \end{tree}
+      \item **end**;
+\end{tree}
+\end{frame}
+\begin{frame}{Iterative Solving of Game \#slide}
+\begin{tree}
+    \item Thompson and Hamburger
+    \item Bose
+\end{tree}
+\end{frame}
+\begin{frame}{Numerically stable algorithms \#slide}
+\end{frame}
+  \item Novel Algorithms
+\section{Novel Digital Knowledge Work Productivity Model \#h \#novel}
+\subsection{Suitability for Model: Digital Productivity as a Circular Economy \#h}
+\begin{frame}{Introduction \#slide}
+\begin{tree}
+      \item Circular economy:
+      \begin{tree}
+        \item Focuses on minimizing waste and maximizing resource reuse within a closed-loop system.
+      \end{tree}
+      \item Digital productivity:
+      \begin{tree}
+        \item Refers to the effective use of digital tools, platforms, and processes to create value.
+      \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Digital productivity exhibits traits of a circular economy \#slide}
+\begin{tree}
+      \item Reuse of digital resources:
+      \begin{tree}
+        \item Digital tools, software, and platforms can be reused indefinitely without degradation.
+        \item Example: Open-source software reused and adapted across industries.
+      \end{tree}
+      \item Knowledge as a renewable resource:
+      \begin{tree}
+        \item Knowledge work outputs (e.g., reports, analyses) can be reused as inputs for future projects.
+        \item Example: Insights from one project informing strategic decisions for others.
+      \end{tree}
+      \item Low marginal cost of replication:
+      \begin{tree}
+        \item Digital goods (e.g., software, data, reports) can be duplicated at almost zero cost.
+      \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Conclusion \#slide}
+\begin{tree}
+      \item Digital productivity can be partially seen as a circular economy:
+      \begin{tree}
+        \item Strengths:
+        \begin{tree}
+          \item The reuse and low-cost replication of digital resources align with circular principles.
+        \end{tree}
+        \item Limitations:
+        \begin{tree}
+          \item Energy use and hardware waste are significant barriers to full circularity.
+        \end{tree}
+        \item Future direction:
+        \begin{tree}
+          \item Emphasizing green computing and sustainable digital practices can help bridge the gap.
+        \end{tree}
+      \end{tree}
+      \item Challenges in achieving circularity
+      \begin{tree}
+        \item Digital waste:
+        \begin{tree}
+          \item Obsolete hardware, e-waste, and outdated systems contribute to resource inefficiency.
+        \end{tree}
+        \item Energy consumption:
+        \begin{tree}
+          \item Data centers and cloud computing require significant energy, impacting sustainability.
+        \end{tree}
+        \item Security and obsolescence:
+        \begin{tree}
+          \item Older digital systems may become vulnerable, limiting their long-term reusability.
+        \end{tree}
+      \end{tree}
+\end{tree}
+\end{frame}
+\subsection{Von Neumann Growth Model for Knowledge Work Scenario \#h}
+\begin{frame}{Goal \#slide}
+\begin{tree}
+      \item To apply the VNM to a digital productivity scenario where knowledge workers are assigned to projects, working on tasks.
+      \item The goal is to maximise productivity output based on a suitable assignment of intensities, while minimising the required salaries.
+\end{tree}
+\end{frame}
+\begin{frame}{Model Definition \#slide}
+\begin{tree}
+      \item Input matrix: represents the amount of each task required to produce a unit of project output
+      \begin{tree}
+        \item Each row accumulates the extent to which a specific task is required for the various projects
+        \item Each column specifies the involved tasks for a specific project
+      \end{tree}
+      \item Output matrix: represents the goods (tasks) produced by each project:
+      \item Intensity and Price Levels: Worker Allocations and Costs
+      \begin{tree}
+        \item $w=(w_1,w_2)$ where $w_1, w_2$ are the time and effort (productivity or depth level) allocated to the projects 1 and 2.
+      \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Equilibrium Solutions \#slide}
+\end{frame}
+\begin{frame}{Benefits \#slide}
+\end{frame}
+\subsubsection{Example \#h}
+\begin{frame}{Model Setup -- Technological Production \#slide}
+\begin{tree}
+        \item Sectors: knowledge work projects (matrix columns)
+        \begin{tree}
+          \item Project 1: Focuses on strategic planning.
+          \item Project 2 (matrix rows): Focuses on operational research.
+        \end{tree}
+        \item Goods: knowledge work tasks
+        \begin{tree}
+          \item Task 1: Report Writing (e.g., creating strategic or operational reports).
+          \item Task 2: Data Analysis (e.g., processing data for decision-making).
+        \end{tree}
+        \item Intensity vector: allocated efforts/workers
+        \begin{tree}
+          \item This is $w=(w_1,w_2)$ where $w_1, w_2$ are the time and effort (productivity or depth level) allocated to the projects 1 and 2.
+        \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Input Matrix \#slide}
+\begin{tree}
+        \item Consider the following matrix:
+        \begin{tree}
+          \item $A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix}.$
+        \end{tree}
+        \item Project 1 requires 2 units of Report Writing and 1 unit of Data Analysis.
+        \item Project 2 requires 1 unit of Report Writing and 3 units of Data Analysis.
+\end{tree}
+\end{frame}
+\begin{frame}{Output Matrix \#slide}
+\begin{tree}
+        \item Consider the following matrix:
+        \begin{tree}
+          \item $B = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}.$
+        \end{tree}
+        \item Project 1 produces 4 units of Report Writing and 2 units of Data Analysis.
+        \item Project 2 produces 1 unit of Report Writing and 3 units of Data Analysis.
+\end{tree}
+\end{frame}
+\begin{frame}{Growth Condition \#slide}
+\begin{tree}
+        \item The growth inequality
+        \begin{tree}
+          \item $(1 + g) x^\top A \leq x^\top B$
+        \end{tree}
+        \item where $g>0$ and $ x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} $ represents the production levels of Project 1 and Project 2.
+\end{tree}
+\end{frame}
+\begin{frame}{Solve for Growth Rate \#slide}
+\begin{tree}
+        \item Expand the growth inequality into two conditions:
+        \item 1. For Project 1:
+        \begin{tree}
+          \item $ (1 + g)(2x_1 + x_2) \leq 3x_1 + x_2.$
+        \end{tree}
+        \item 2. For Project 2:
+        \begin{tree}
+          \item $ (1 + g)(x_1 + 2x_2) \leq x_1 + 3x_2.$
+        \end{tree}
+        \item Solving these yields:
+        \item $ g^* = 0.5 \quad \text{(50\% maximum growth rate)}.$
+\end{tree}
+\end{frame}
+\begin{frame}{Equilibrium Production Levels \#slide}
+\begin{tree}
+        \item At the maximum growth rate $ g^* $, equilibrium production levels satisfy:
+        \item $ x_1 = 2 \quad \text{(output from Project 1)}, \quad x_2 = 1 \quad \text{(output from Project 2)}.$
+\end{tree}
+\end{frame}
+\begin{frame}{Model Setup -- Economical Pricing \#slide}
+\begin{tree}
+        \item Dual price vector:
+        \begin{tree}
+          \item $ p = \begin{bmatrix} p_1 \\ p_2 \end{bmatrix},$
+          \item where $ p_1 $ is the value per unit of Report Writing and $ p_2 $ is the value per unit of Data Analysis.
+        \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Interpretation \#slide}
+\begin{tree}
+        \item Inputs ($ A $): Project 1 relies more on Report Writing, while Project 2 relies more on Data Analysis.
+        \item Outputs ($ B $):Project 1 emphasizes producing reports; Project 2 emphasizes producing data insights.
+        \item Maximum Growth Rate ($ g^* $):
+        \begin{tree}
+          \item The tasks can grow at a maximum rate of 50\textbackslash\{\}\%, given the balance of inputs and outputs.
+        \end{tree}
+        \item Equilibrium Values:
+        \begin{tree}
+          \item Project Outputs: Project 1 should produce twice as much as Project 2.
+          \item Task Values: Report Writing is valued twice as much as Data Analysis.
+        \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Discussion \#slide}
+\end{frame}
+\section{Novel AI-Enhanced Digital Knowledge Work Productivity Model \#h \#novel}
+\begin{frame}{Goal: to enhance the digital productivity scenario with AI tools. \#slide}
+\end{frame}
+\begin{frame}{ECONOMICS \#hh}
+\end{frame}
+\begin{frame}{Stochastic}
+\end{frame}
+\section{Security Economics: Definition of Multi-Asset Multi-ROI \#h \#novel}
+\begin{frame}{Goal: to extend the definition of return of security investment to a multiple asset multiple investment scenario. \#slide}
+\end{frame}
+\section{Application to Network Security \#h}
+\begin{frame}{Setting \#slide \#teaching}
+\begin{tree}
+    \item A fascinating adaptation of the von Neumann growth model!
+    \item Goal:
+    \begin{tree}
+      \item to apply the model for investing in security measures for a system with interdependent assets and multiple security controls.
+      \item This should maximise the cost-benefit utility for the organisation running the system while minimising the financial damage inflicted by an attacker.
+    \end{tree}
+    \item Let's map the network security scenario to the model's framework:
+    \begin{tree}
+      \item Considering two sectors = LAN and DMZ
+      \item Networked appliances as goods
+      \item Security benefits minus deployment costs minus loss of asset value as the utility.
+    \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Example: A 2x2 Highly Interconnected System \#slide \#teaching}
+\begin{tree}
+    \item Model Parameters:
+    \begin{tree}
+      \item Input matrix $ A $: Represents resources required for production.
+      \item Output matrix $ B $: Represents resources produced by production.
+      \item Let
+      \begin{tree}
+        \item $ A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}, \quad B = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}.$
+      \end{tree}
+    \end{tree}
+    \item Interpretation:
+    \begin{tree}
+      \item Input Matrix $ A $:
+      \begin{tree}
+        \item Every unit of output from any sector requires 1 unit of every input.
+      \end{tree}
+      \item Output Matrix $ B $:
+      \begin{tree}
+        \item Sector 1 produces 2 units of Good 1 and 1 unit of Good 2.
+        \item Sector 2 produces 1 unit of Good 1 and 2 units of Good 2.
+      \end{tree}
+    \end{tree}
+\end{tree}
+\end{frame}
+\begin{frame}{Example: Independent System \#slide \#teaching}
+\begin{tree}
+    \item A matrix AA with all entries equal to 1 reflects a system of **uniform interdependence and balanced resource usage**,
+    \item which has strong symmetry but also potential vulnerabilities if outputs fail to exceed inputs.
+\end{tree}
+\end{frame}
+\begin{frame}{Production Model \#slide \#teaching}
+\end{frame}
+\begin{frame}{WATER RESOURCE MANAGEMENT \#hh}
+\end{frame}
+\begin{frame}{CA}
+\end{frame}
+\begin{frame}{Markov+Bilinear+Security}
+\begin{tree}
+\begin{frame}{State Transitions \#slide}
+\begin{tree}
+    \item ![Pasted image](https://dynalist.io/u/L7qeIgCxFCJEAsajwBc3QSsf)
+\end{tree}
+\end{frame}
+\begin{frame}{Transition Matrices \#slide}
+\begin{tree}
+    \item These are
+    \begin{tree}
+      \item $D=\begin{pmatrix} d_{11}&d_{12} \\ d_{21} &d_{22} \\ \end{pmatrix}$
+      \item $A=\begin{pmatrix} a_{11}&a_{12} \\ a_{21} &a_{22} \\ \end{pmatrix}$
+    \end{tree}
+    \item Written as linear matrix pencil: $D-\lambda A$.
+\end{tree}
+\end{frame}
+\end{tree}
+\end{frame}
 \end{document}

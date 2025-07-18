@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Game-Theoretic Adaptive Hybrid Steganography (Omego) #h </title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="Motivation #slide ">
+            <outline text="We aim to provide a generic definition that applies to both high- and low-entropy stego-systems, thus, we start by defining the general notation for a stego-system."/>
+        </outline>
+        <outline text="Notations #slide "/>
+        <outline text="High-Entropy (Traditional) Steganography #h ">
+            <outline text="Definition #slide "/>
+            <outline text="Security #slide ">
+                <outline text="Nicholas Hopper"/>
+                <outline text="von Ahn"/>
+                <outline text="Katzenbeisser">
+                    <outline text=" ![Pasted image](https://dynalist.io/u/YKfLqloPuI56wdeY686EoVq9) "/>
+                </outline>
+            </outline>
+            <outline text="INBOX">
+                <outline text="Researchers such as \cite{@Christian1998}, \cite{@Zollner1998} and \cite{@Thomas1999} have focused on theoretical definitions of steganography. The study \cite{@Christian1998} proposed steganographic definitions and adversarial games for steganography. The security of the stego-system presented includes the relative entropy between the stego-text and the cover-text distribution. The work in \cite{@Thomas1999} described a model which includes characterisation and definitions of two critical components of a steganographic system, the encoding process and the adversaries attack the stego-object. The definition of the two components is based on a requirement in the maximum distortion between cover-object, stego-object and the modified stego-object. In the study in \cite{@Zollner1998}, a model which enables evaluation of a stego-system's security against a known plain-text is presented. "/>
+                <outline text="Studies in \cite{@katzenbeisser2002} and \cite{@Hopper2002} presented a formal definition and theoretical structures based on cipher based computational indistinguishability. The study in \cite{@katzenbeisser2002} provided definitions that reply on a probabilistic game, where an adversary is faced with a steganographic decision problem. In contrast, research \cite{@Hopper2002} uses cryptographic and complexity-theory proof methods to describe conditions necessary for a secure stego-system. "/>
+                <outline text="Researchers have made efforts by proposing several steganographic methods using images as stego-covers, many of which utilise the Least Significant Bit (LSB) to reduce significant changes in the stego-cover to prevent suspicion. Methods proposed in studies such as \cite{@Franz1999} and \cite{@Roque2009} use the LSB technique to conceal secret messages. The F5 steganographic algorithm proposed in \cite{@Westfeld2001} follows the orthodox steganographic approach. The study in \cite{@Westfeld2000} shows that the F5 algorithm is resilient to statistical and visual attacks. A subsequent study in \cite{@Roque2009} proposed a new image-based steganographic algorithm, Selected Least Significant Bit (LSB), by improving the spatial domain of LSB hiding. "/>
+                <outline text="The paper in \cite{@Mathkour2008} proposed a steganographic technique that uses a specific method that prevents image downgrading; this approach makes the stego-object secure against all possible statistical and visual attacks. However, the security of this approach is achieved by using an encryption algorithm. An unconventional research in \cite{@Changescyclic2012} uses X-Box mapping and LSB to conceal secrets in an image. However, the security of this approach is achieved by using an encryption algorithm."/>
+                <outline text="Intuitively, the security of a steganographic communication between two principals lies in the inability of an eavesdropper to distinguish cover objects from stego-objects, that is, objects which contain secret messages. A system should be already considered insecure if an eavesdropper can suspect the presence of secret communication. Several definitions of steganographic security were proposed in the literature. However, they all consider only entirely secure steganographic systems, where even a computationally unbounded observer cannot detect the presence of a secret message exchange. Secondly, it might be challenging to construct secure schemes usable in practice following these definitions. Thirdly, they all require the knowledge of the probability distribution of typical covers; However, it might be possible in some instances to compute this probability; it will, in general, be impossible to obtain. "/>
+            </outline>
+        </outline>
+        <outline text="Low-Entropy Steganography #h ">
+            <outline text="Definition #slide "/>
+            <outline text="Security #slide ">
+                <outline text="Beato"/>
+            </outline>
+        </outline>
+        <outline text="Hybrid Steganographic System #h ">
+            <outline text="Definition #slide ">
+                <outline text="A steganographic system $$\mathbb S$$ is either a high-entropy steganographic system $$S_h$$ or a low-entropy steganographic system $$S_l$$. "/>
+                <outline text="Notation:">
+                    <outline text="$$k$$ -- stego key?"/>
+                    <outline text="$$c$$ -- cover?"/>
+                    <outline text="Let $$o(m)$$ denote a cover object that simply encodes the message $$m$$. "/>
+                </outline>
+                <outline text="Then:">
+                    <outline text="In a high-entropy steganographic system $$o(m) =\mathsf{Enc}(k, c,m)$$, "/>
+                    <outline text="In a low-entropy steganographic-system we have $$(o(m),m')$$ = $$\mathsf{Enc}(k, c,m)) .$$"/>
+                </outline>
+                <outline text="Todo: definition of hybrid, which combines both hi &amp; lo"/>
+            </outline>
+            <outline text="Security #h ">
+                <outline text="Before presenting the notion of a secure steganographic system $$\mathbb S$$, we require the introduction of Game 1, "/>
+                <outline text="Introduction #slide ">
+                    <outline text="We now formalize the notion of steganographic security. "/>
+                    <outline text="This is based on the outcomes of a 3-stage sequential game played between an adversary $$\mathsf {A}$$ and a challenger $$\mathsf {Ch}$$."/>
+                </outline>
+                <outline text="Stego Game #slide ">
+                    <outline text="An adversary $$\mathsf{Adv}$$ is given limited access to a probabilistic oracle $$\mathsf O$$ "/>
+                    <outline text="This returns elements of a set $$\mathcal{C} = \mathcal{C}_h \cup \mathcal{C}_l$$ of steganographic cover objects."/>
+                    <outline text="These cover objects are taken from the set suitable for the type of steganographic system:">
+                        <outline text="$$\mathcal{C} = \mathcal{C_h}$$ for a high-entropy steganographic system "/>
+                        <outline text="$$\mathcal{C} = \mathcal C_l$$ for a low-entropy steganographic system."/>
+                    </outline>
+                </outline>
+                <outline text="Indistinguishability-Stego-Game #slide ">
+                    <outline text="Informally, the game proceeds as follows:"/>
+                    <outline text="$$\mathsf{IND\_STEGO}(\mathsf{Adv},\mathsf{Ch},\mathbb{ S},\kappa)$$">
+                        <outline text="Step 1: The adversary $$\mathsf {Adv}$$ outputs a message $$m$$."/>
+                        <outline text="Step 2: The challenger $$\mathsf {Ch}$$ returns either $$o' = \mathsf {Enc}(c, m)$$ or a pseudorandom stego-object $$o'$$ with probability $$\dfrac{1}{2}$$."/>
+                        <outline text="Step 3: ">
+                            <outline text="$$\mathsf{Adv}$$ performs some calculation that is polynomial in $$\kappa$$. "/>
+                            <outline text="Then, $$\mathsf{Adv}$$ selects and outputs a bit $$b \in \{0,1\}$$, where $$b = 1$$ if $$\mathsf {Adv}$$ believes that $$o' = \mathsf{Enc}(c, m)$$, and $$b = 0$$ otherwise."/>
+                        </outline>
+                    </outline>
+                    <outline text="The game finishes"/>
+                </outline>
+                <outline text="Winning The Game #slide ">
+                    <outline text="Suppose $$\mathsf {A}$$ could successfully guess the type of object returned by $$\mathsf {Ch}$$, then the game outputs $$1$$ if the condition holds:$$(o' = \mathsf {Enc}(c, m) ∧ b = 1) ∨ (o' \neq \mathsf {Enc}(c, m) ∧ b = 0),$$. "/>
+                </outline>
+                <outline text="Defining Security #slide ">
+                    <outline text="We now define $$\mathsf{IND-STEGO}$$ security using Game 1 above: ">
+                        <outline text="Definition 4a">
+                            <outline text="A stego-system $$\mathbb S$$ is IND-STEGO-secure if there exists a negligible function $$\mathsf {negl}$$ such that, for any probabilistic polynomial time adversary $$\mathsf {Adv}$$, it holds that:"/>
+                            <outline text="$$\mathsf{Pr}\big(\mathsf {IND-STEGO}_{\mathsf {Adv},\mathsf {Ch},\mathbb{S}}(κ) = 1\big) ≤ \dfrac{1}{2} +\mathsf {negl}(κ)$$"/>
+                        </outline>
+                        <outline text="Definition 4b [@ref]">
+                            <outline text="A steganographic system $$\mathbb S \mapsto \prod=(\mathsf {Gen}, \mathsf{Enc}, \mathsf {Dec})$$ is indistinguishable under a chosen covert-text attack if, an adversary $$\sf A$$ is bounded within a probabilistic polynomial time algorithm and an arbitrary message $$m$$, it should hold that $$\mathsf {Prob} \Big ( \sf {A} \big(\mathbb S, \mathsf {Enc}(m) \big)=1 \Big ) \leq \dfrac{1}{2} + \epsilon(n)$$where $$\epsilon$$ is a negligible function."/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="High-Entropy Steganographic Security #h "/>
+            </outline>
+            <outline text="Adaptive Security #h "/>
+        </outline>
+        <outline text="Game-Theoretic Adaptive Steganography #h "/>
+        <outline text="Key References"/>
+    </body>
+</opml>
