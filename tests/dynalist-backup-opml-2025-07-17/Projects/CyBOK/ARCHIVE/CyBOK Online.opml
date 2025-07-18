@@ -1,0 +1,2675 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>CyBOK Online</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="CyBOK Introduction" colorLabel="3">
+            <outline text="Foundational Concepts">
+                <outline text="Objectives of Cyber Security">
+                    <outline text="Mitigate Against Failures and Incidents"/>
+                    <outline text="Risk Management"/>
+                </outline>
+                <outline text="Definition of Cyber Security">
+                    <outline text="Protection of Information Systems"/>
+                    <outline text="Protection of Data"/>
+                    <outline text="Protection of Service"/>
+                    <outline text="Unauthorised Access, Harm or Misuse"/>
+                </outline>
+                <outline text="Failures and Incidents">
+                    <outline text="Security Failures">
+                        <outline text="Damage of Information"/>
+                    </outline>
+                    <outline text="Security Operations &amp; Incident">
+                        <outline text="Failure of Device"/>
+                        <outline text="Failure of Service"/>
+                        <outline text="Failure of Network"/>
+                    </outline>
+                </outline>
+                <outline text="Risk Management">
+                    <outline text="The Presence of Vulnerabilities"/>
+                    <outline text="Nature of Threat"/>
+                    <outline text="Effectiveness of Security Processes"/>
+                </outline>
+            </outline>
+            <outline text="Principles">
+                <outline text="Saltzer and Schroeder Principles">
+                    <outline text="Fail-safe Defaults"/>
+                    <outline text="Complete Mediation"/>
+                    <outline text="Open Design"/>
+                    <outline text="Separation of Privilege"/>
+                    <outline text="Least Privilege"/>
+                    <outline text="Least Common Mechanism"/>
+                    <outline text="Work Factor"/>
+                    <outline text="Compromise Recording"/>
+                    <outline text="Economy of Mechanism"/>
+                </outline>
+                <outline text="NIST Principles">
+                    <outline text="Clear Abstraction"/>
+                    <outline text="Modularity and Layering"/>
+                    <outline text="Partially Ordered"/>
+                    <outline text="Secure Evolvability"/>
+                </outline>
+                <outline text="Latent Design Conditions">
+                    <outline text="Safety- Critical Systems Domain"/>
+                    <outline text="Past Decisions about a System"/>
+                    <outline text="Swiss Cheese Model"/>
+                </outline>
+                <outline text="The Precautionary Principle">
+                    <outline text="Harmful Effect of Design Choices"/>
+                    <outline text="Large-Scale Connected Systems"/>
+                    <outline text="Function Creep"/>
+                </outline>
+            </outline>
+            <outline text="Crosscutting Themes">
+                <outline text="Security Economics">
+                    <outline text="Attacker Economics"/>
+                    <outline text="Microeconomic Theory"/>
+                    <outline text="Economics of Deviant Security"/>
+                </outline>
+                <outline text="Security Architecture and Lifecycle">
+                    <outline text="Systems Lifecycle"/>
+                    <outline text="Secure Software Lifecycle"/>
+                    <outline text="Security throughout the Lifecycle"/>
+                </outline>
+            </outline>
+            <outline text="Verification and Formal Methods">
+                <outline text="Computational and Symbolic"/>
+                <outline text="Theorem Proving Approach"/>
+                <outline text="Computational Modelling Approaches"/>
+            </outline>
+        </outline>
+        <outline text="Formal Methods for Security" colorLabel="3">
+            <outline text="Modelling and Abstraction">
+                <outline text="Security Models">
+                    <outline text="Access Control"/>
+                    <outline text="Inormation Flow"/>
+                    <outline text="Security Protocols"/>
+                    <outline text="Program Correctness"/>
+                </outline>
+                <outline text="Security Properties">
+                    <outline text="Authentication"/>
+                    <outline text="Confdentiality"/>
+                    <outline text="Integrity"/>
+                    <outline text="Anonymity"/>
+                </outline>
+                <outline text="Attacker Models"/>
+            </outline>
+            <outline text="Analysis and Verifcation">
+                <outline text="Semantics-based"/>
+                <outline text="Game-based"/>
+                <outline text="Simulation-based"/>
+                <outline text="Equivalence-based"/>
+                <outline text="Refnement-based"/>
+            </outline>
+            <outline text="Tools">
+                <outline text="Theorem Proving Tools">
+                    <outline text="Isabelle/HOL"/>
+                    <outline text="Coq"/>
+                    <outline text="CryptoVeri"/>
+                    <outline text="EasyCrypt"/>
+                    <outline text="Other theorem-proving tools"/>
+                </outline>
+                <outline text="Model Checking Tools">
+                    <outline text="ProVerif"/>
+                    <outline text="PRISM"/>
+                    <outline text="Tamarin"/>
+                    <outline text="Other model-checking tools"/>
+                </outline>
+            </outline>
+            <outline text="Real-world examples">
+                <outline text="seL4"/>
+                <outline text="FREAK SSL/TLS vulnerability"/>
+                <outline text="Other real-world examples"/>
+            </outline>
+        </outline>
+        <outline text="Risk Management and Governance" colorLabel="3">
+            <outline text="Risk Definition">
+                <outline text="Risk Assessment"/>
+                <outline text="Risk Management"/>
+                <outline text="Levels Of Perceived Risk"/>
+                <outline text="Governance Models">
+                    <outline text="Technocratic"/>
+                    <outline text="Decisionistic"/>
+                    <outline text="Transparent"/>
+                </outline>
+            </outline>
+            <outline text="Risk Governance">
+                <outline text="Risk Perception Factors"/>
+                <outline text="Human Factors And Risk Communication">
+                    <outline text="Education"/>
+                    <outline text="Training And Inducement Of Behaviour Change"/>
+                    <outline text="Creation Of Condence"/>
+                    <outline text="Involvement"/>
+                </outline>
+                <outline text="Security Culture">
+                    <outline text="Awareness ">
+                        <outline text="Awareness Metrics"/>
+                    </outline>
+                    <outline text="Just Culture"/>
+                </outline>
+                <outline text="Enacting Security Policy">
+                    <outline text="Just Culture"/>
+                    <outline text="Presentation Of Risk Assessment Information"/>
+                    <outline text="Risk Communication Principles"/>
+                </outline>
+            </outline>
+            <outline text="Risk Assessment And Management Principles">
+                <outline text="Component Vs Systems Prespectives"/>
+                <outline text="Elements Of Risk">
+                    <outline text="Vulnerability"/>
+                    <outline text="Threat"/>
+                    <outline text="Likelihood"/>
+                    <outline text="Impact"/>
+                </outline>
+                <outline text="Risk Assessment And Management Methods">
+                    <outline text="NIST Guidelines">
+                        <outline text="Prepare"/>
+                        <outline text="Conduct"/>
+                        <outline text="Communicate"/>
+                        <outline text="Maintain"/>
+                    </outline>
+                    <outline text="ISO/IEC 27005"/>
+                    <outline text="FAIR"/>
+                    <outline text="Octave Allegro"/>
+                    <outline text="STRIDE"/>
+                    <outline text="Attack Trees"/>
+                    <outline text="STAMP"/>
+                    <outline text="TOGAF"/>
+                    <outline text="Dependency Modelling"/>
+                    <outline text="SABSA"/>
+                </outline>
+                <outline text="Risk Assessment And Management In Cyber-physical Systems">
+                    <outline text="OT"/>
+                    <outline text="ICS And CNI"/>
+                    <outline text="SCADA"/>
+                    <outline text="NIS"/>
+                </outline>
+                <outline text="Security Metrics">
+                    <outline text="Characteristics Of Good Metrics"/>
+                    <outline text="Regulatory Compliance"/>
+                    <outline text="Actor-oriented Approaches"/>
+                    <outline text="Quantitative Vs Qualitative Approaches"/>
+                </outline>
+            </outline>
+            <outline text="Business Continuity: Incident Response And Recovery Planning">
+                <outline text="ISO/IEC 27034">
+                    <outline text="Plan And Prepare"/>
+                    <outline text="Detection And Reporting"/>
+                    <outline text="Assessment And Decision"/>
+                    <outline text="Response"/>
+                    <outline text="Learning"/>
+                </outline>
+                <outline text="NCSC Guidance">
+                    <outline text="Establish Incident Response Capability"/>
+                    <outline text="Training"/>
+                    <outline text="Roles"/>
+                    <outline text="Recovery"/>
+                    <outline text="Test"/>
+                    <outline text="Report"/>
+                    <outline text="Gather Evidence"/>
+                    <outline text="Develop"/>
+                    <outline text="Report"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Law and Regulation " colorLabel="3">
+            <outline text="Introductory Principles Of Legal Research">
+                <outline text="Nature Of Law And Legal Analysis">
+                    <outline text="Legal Terminology"/>
+                </outline>
+                <outline text="Applying Law To Cyberspace And Information Technologies"/>
+                <outline text="Criminal Law"/>
+                <outline text="Civil Law"/>
+                <outline text="Liability And Courts"/>
+                <outline text="Evidence And Proof"/>
+                <outline text="Holistic Approaches To Legal Risk Analysis"/>
+            </outline>
+            <outline text="Jurisdiction">
+                <outline text="Prescriptive Jurisdiction">
+                    <outline text="Prescriptive Jurisdiction Over Online Content"/>
+                    <outline text="Prescriptive Jurisdiction Over Computer Crime"/>
+                    <outline text="Prescriptive Jurisdiction And Data Protection">
+                        <outline text="GDPR"/>
+                    </outline>
+                </outline>
+                <outline text="Enforcement Jurisdiction">
+                    <outline text="Asset Seizure And Forfeiture">
+                        <outline text="Seizure And Forfeiture Of Servers Domain Names And Registries"/>
+                    </outline>
+                    <outline text="Territorial Location Of The Right To Demand Repayment Of Bank Deposits"/>
+                    <outline text="Foreing Recognition And Enforcement Of Civil Judgments"/>
+                    <outline text="Arrest Of Natural Persons In State Territory"/>
+                    <outline text="Extradition Of Natural Persons"/>
+                    <outline text="Technological Content Filtering"/>
+                    <outline text="Orders To In-state Persons Directing Production Of Data Under Their Control Whether Held On Domestic Or Foreign IT Systems"/>
+                    <outline text="International Legal Assistance"/>
+                </outline>
+                <outline text="Data Sovereignty"/>
+            </outline>
+            <outline text="Privacy Laws In General And Electronic Interception">
+                <outline text="International Norms">
+                    <outline text="Metadata"/>
+                    <outline text="Human Rights"/>
+                </outline>
+                <outline text="Interception By A State"/>
+                <outline text="Interception By Persons Other Than States"/>
+                <outline text="Enforcement Of Privacy Laws"/>
+            </outline>
+            <outline text="Data Protection">
+                <outline text="Subject Matter And Regulatory Focus">
+                    <outline text="Data Subject, Personal Data (and PII)">
+                        <outline text="Definitions"/>
+                        <outline text="De-anonymisation"/>
+                    </outline>
+                    <outline text="Processing"/>
+                    <outline text="Controller And Processor"/>
+                </outline>
+                <outline text="Core Regulatory Principles"/>
+                <outline text="Investigation And Prevention Of Crime">
+                    <outline text="Transfers Pursuant To International Mutual Legal Assistance Treaty"/>
+                    <outline text="Derogations Allowing Transfers"/>
+                </outline>
+                <outline text="Personal Data Breach Notification"/>
+                <outline text="Enforcement And Penalties"/>
+            </outline>
+            <outline text="Computer Crime">
+                <outline text="Crimes Against Information Systems">
+                    <outline text="Improper Access To A System"/>
+                    <outline text="Improper Interference With Data"/>
+                    <outline text="Improper Interference With Systems"/>
+                    <outline text="Improper Interception Of Communication"/>
+                </outline>
+                <outline text="De Minimis Exceptions To Crimes Against Information Systems"/>
+                <outline text="The Enforcement Of And Penalties For Crimes Against Information Systems"/>
+                <outline text="Warranted State Activity"/>
+                <outline text="Research And Development Activities Conducted By Non-state Persons"/>
+                <outline text="Self-help Disfavoured: Software Locks And Hack-back">
+                    <outline text="Undisclosed Software Locks"/>
+                    <outline text="Hack-back"/>
+                </outline>
+            </outline>
+            <outline text="Contract">
+                <outline text="Online Contracts">
+                    <outline text="Time Of Contract And Receipt Of Contractual Communication"/>
+                </outline>
+                <outline text="Encouraging Security Standards Via Contract">
+                    <outline text="Supply Chain"/>
+                    <outline text="Closed Trading And Payment Systems"/>
+                    <outline text="Freedom Of Contract And Its Limitations"/>
+                </outline>
+                <outline text="Wanarties And Their Exclusion"/>
+                <outline text="Limitations Of Liability And Exclusions Of Liability"/>
+                <outline text="Breach Of Contract And Remedies"/>
+                <outline text="Effects Of Contract On Non-contracting Parties"/>
+                <outline text="Conflict Of Law -- Contracts"/>
+            </outline>
+            <outline text="Intellectual Property">
+                <outline text="Understanding Intellectual Property"/>
+                <outline text="Catalogue Of Intellectual Property Rights">
+                    <outline text="Copyright"/>
+                    <outline text="Patents"/>
+                    <outline text="Trademarks"/>
+                    <outline text="Trade Secrets"/>
+                </outline>
+                <outline text="Enforcement -- Remedies">
+                    <outline text="Criminal Liability"/>
+                    <outline text="Civil Liability"/>
+                </outline>
+                <outline text="Reverse Engineering">
+                    <outline text="Circumventing Copyright Technological Protection Measures"/>
+                    <outline text="Testing A Proprietary Cryptographic Algorithm"/>
+                </outline>
+                <outline text="International Treatment And Conflict Of Law"/>
+            </outline>
+            <outline text="Internet Intermediaries">
+                <outline text="Shields From Liability "/>
+                <outline text="Take-down Procedures"/>
+            </outline>
+            <outline text="Dematerialisation Of Documents And Electronic Trust Services">
+                <outline text="Admission Into Evidence Of Electronic Documents"/>
+                <outline text="Requirements Of Form And The Threat Of Unenforceability"/>
+                <outline text="Electronic Signatures And Indentity Trust Services"/>
+                <outline text="Conflict Of Law -- Electronic Signatures And Trust Services"/>
+            </outline>
+            <outline text="Other Regulatory Matters">
+                <outline text="Industry-specific Regulations">
+                    <outline text="NIS Directive"/>
+                </outline>
+                <outline text="Restrictions On Exporting Security Technologies"/>
+                <outline text="Matters Classified As Secret By A State"/>
+            </outline>
+            <outline text="Public International Law">
+                <outline text="Attributing Action To A State Under International Law"/>
+                <outline text="State Cyber Operations In General"/>
+                <outline text="Cyber Espionage In Peacetime"/>
+                <outline text="Cross-border Criminal Investigation"/>
+                <outline text="The Law Of Armed Conflict"/>
+            </outline>
+            <outline text="Ethics">
+                <outline text="Obligations Owed To A Client"/>
+                <outline text="Codes Of Conduct"/>
+                <outline text="Vulnerability Testing">
+                    <outline text="Vulnerability Disclosure"/>
+                    <outline text="Facilitating And Acting On Vulnerability Disclosure"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Human Factors" colorLabel="3">
+            <outline text="Usable Security">
+                <outline text="Assessment Criteria">
+                    <outline text="Effectiveness"/>
+                    <outline text="Efficiency"/>
+                    <outline text="Satsifaction"/>
+                </outline>
+            </outline>
+            <outline text="Fitting The Task To The Human">
+                <outline text="Human Capabilities And Limitations">
+                    <outline text="Alarm Fatigue"/>
+                </outline>
+                <outline text="Short Term Memory">
+                    <outline text="One-time Passwords"/>
+                    <outline text="Improving Memory"/>
+                </outline>
+                <outline text="Long Term Memory">
+                    <outline text="Improving Memory"/>
+                    <outline text="Passwords"/>
+                </outline>
+                <outline text="Human Biases"/>
+                <outline text="Needs Of Specific Groups">
+                    <outline text="Children">
+                        <outline text="CAPTCHAs"/>
+                    </outline>
+                    <outline text="Older Citizens">
+                        <outline text="CAPTCHAs"/>
+                    </outline>
+                    <outline text="Cultural Needs">
+                        <outline text="CAPTCHAs"/>
+                    </outline>
+                    <outline text="Disability">
+                        <outline text="CAPTCHAs"/>
+                    </outline>
+                </outline>
+                <outline text="Goals And Tasks">
+                    <outline text="Production And Enabling Tasks"/>
+                    <outline text="Workarounds To Security Mechanisms"/>
+                    <outline text="Workload">
+                        <outline text="Workload Measurement"/>
+                    </outline>
+                    <outline text="Compliance Budget">
+                        <outline text="Security Fatigue"/>
+                    </outline>
+                    <outline text="Compliance Fatigue"/>
+                </outline>
+                <outline text="Interaction Context">
+                    <outline text="Contextual Inquiry"/>
+                    <outline text="Physical Characteristics">
+                        <outline text="Light"/>
+                        <outline text="Noise"/>
+                        <outline text="Temperature"/>
+                        <outline text="Pollution"/>
+                    </outline>
+                    <outline text="Social Context"/>
+                </outline>
+                <outline text="Device Capabilities And Limitations"/>
+            </outline>
+            <outline text="Human Error">
+                <outline text="Latent Usability Failures In Systems-of-systems"/>
+                <outline text="Thinking, Fast And Slow">
+                    <outline text="Mixed-mode Thinking"/>
+                </outline>
+                <outline text="Shadow Security"/>
+                <outline text="Security Hygiene"/>
+            </outline>
+            <outline text="Awareness And Education">
+                <outline text="Terms">
+                    <outline text="Awareness">
+                        <outline text="Only The First Step"/>
+                    </outline>
+                    <outline text="Education"/>
+                    <outline text="Training"/>
+                </outline>
+                <outline text="New Approaches">
+                    <outline text="Security Awareness Games"/>
+                </outline>
+                <outline text="Mental Models Of Cyber Risks And Defences"/>
+            </outline>
+            <outline text="Positive Security">
+                <outline text="Fear Uncertainty And Doubt"/>
+                <outline text="People Are Not The Weakest Link"/>
+            </outline>
+            <outline text="Stakeholder Engagement">
+                <outline text="Employees">
+                    <outline text="Projective Techniques"/>
+                    <outline text="Creative Security Engagements"/>
+                    <outline text="Physical Models"/>
+                </outline>
+                <outline text="Software Developers">
+                    <outline text="Developers And Password Security"/>
+                    <outline text="App Development And Vulnerabilities"/>
+                    <outline text="StackOverflow"/>
+                    <outline text="API Usabaility"/>
+                    <outline text="Disconnects Between Developers And Users"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Privacy and Online Rights" colorLabel="3">
+            <outline text="Confidentiality">
+                <outline text="Data Confidentiality">
+                    <outline text="Cryptography-based Access Control">
+                        <outline text="Protecting Data In Transit">
+                            <outline text="E2EE"/>
+                            <outline text="OTR"/>
+                        </outline>
+                        <outline text="Protecting Data During Processing">
+                            <outline text="Outsourcing"/>
+                            <outline text="Private Information Retrieval"/>
+                            <outline text="Oblivious Transfer"/>
+                            <outline text="Homomorphic Encryption"/>
+                            <outline text="Efficiency Concerns"/>
+                            <outline text="Collaborative Computation"/>
+                        </outline>
+                        <outline text="Verification In The Encrypted Domain">
+                            <outline text="Private Computation - Input Verification">
+<outline text="Zero-knowledge Proofs">
+    <outline text="ZK-SNARK"/>
+</outline>
+                            </outline>
+                            <outline text="Private Authentication">
+<outline text="Attribute Based Credentials"/>
+                            </outline>
+                            <outline text="Private Payments">
+<outline text="Blind Signatures"/>
+<outline text="ZK-SNARK"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                    <outline text="Obfuscation-based Inference Control">
+                        <outline text="Anonymisation">
+                            <outline text="K-anonymity"/>
+                            <outline text="L-diversity"/>
+                        </outline>
+                        <outline text="Generalisation"/>
+                        <outline text="Suppression"/>
+                        <outline text="Dummy Addition"/>
+                        <outline text="Perturbation">
+                            <outline text="Differential Privacy"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Metadata Confidentiality">
+                    <outline text="Traffic Metadata">
+                        <outline text="Anonymous Communications Networks ">
+                            <outline text="Tor">
+<outline text="Mix Networks"/>
+                            </outline>
+                            <outline text="VPNs"/>
+                        </outline>
+                    </outline>
+                    <outline text="Device Metadata">
+                        <outline text="Attacks"/>
+                        <outline text="Dificulty Of Defence"/>
+                        <outline text="Cookie-based Techniques"/>
+                    </outline>
+                    <outline text="Location Metadata">
+                        <outline text="Clustering Techniques "/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Control">
+                <outline text="Privacy Settings Configuration">
+                    <outline text="Machine Learning Based Techniques"/>
+                </outline>
+                <outline text="Privacy Policy Negotiation">
+                    <outline text="P3P"/>
+                    <outline text="Purpose-based Access Control"/>
+                    <outline text="Sticky Policies"/>
+                </outline>
+                <outline text="Privacy Policy Interpretability"/>
+            </outline>
+            <outline text="Transparency">
+                <outline text="Feedback-based Transparency">
+                    <outline text="Privacy Mirrors"/>
+                    <outline text="Privacy Nudges"/>
+                </outline>
+                <outline text="Audit-based Transparency">
+                    <outline text="Auditing Specifications">
+                        <outline text="Formal Methods-based Approaches"/>
+                    </outline>
+                    <outline text="Distributed Ledgers"/>
+                </outline>
+            </outline>
+            <outline text="Privacy Technologies And Democratic Values">
+                <outline text="Privacy Technologies As Support Fo Democratic Political Systems">
+                    <outline text="Electronic Voting">
+                        <outline text="Property Of Electronic Voting Systems">
+                            <outline text="Ballot Secrecy"/>
+                            <outline text="Universal Verifiability"/>
+                            <outline text="Eligibility Verifiability"/>
+                        </outline>
+                        <outline text="Voting Mix Networks">
+                            <outline text="Verifiable Shuffles"/>
+                        </outline>
+                        <outline text="Blind-signature-based Schemes"/>
+                        <outline text="Homomorphic Encryption-based Schemes"/>
+                    </outline>
+                    <outline text="Anonymous Petitions"/>
+                </outline>
+                <outline text="Censorship Resistance And Freedom Of Speech">
+                    <outline text="Data Publishing Censorship Resistance">
+                        <outline text="Eternity Service"/>
+                        <outline text="Freenet"/>
+                        <outline text="Tangler"/>
+                    </outline>
+                    <outline text="Data Access Censorship Resistance">
+                        <outline text="Mimicking"/>
+                        <outline text="Tunneling"/>
+                        <outline text="Bridging"/>
+                        <outline text="Refraction Networking"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Privacy Engineering">
+                <outline text="Goals">
+                    <outline text="Minimize Trust"/>
+                    <outline text="Minimize Risk"/>
+                </outline>
+                <outline text="Strategies">
+                    <outline text="Minimise Collection"/>
+                    <outline text="Minimise Disclosure"/>
+                    <outline text="Minimise Replication"/>
+                    <outline text="Minimise Centralization"/>
+                    <outline text="Minimise Linkability"/>
+                </outline>
+                <outline text="Privacy Evaluation"/>
+            </outline>
+        </outline>
+        <outline text="Malware and Attack Technologies" colorLabel="3">
+            <outline text="Malware Taxonomy">
+                <outline text="Dimensions">
+                    <outline text="Standalone Or Host-program"/>
+                    <outline text="Persistent Or Transient"/>
+                    <outline text="Layers Of System Stack"/>
+                    <outline text="Auto-spreading"/>
+                    <outline text="Dynamically Updatable"/>
+                    <outline text="Coordinated"/>
+                </outline>
+                <outline text="Kinds">
+                    <outline text="Viruses"/>
+                    <outline text="Malicious Browser Extensions"/>
+                    <outline text="Botnet Malware"/>
+                    <outline text="Memory-resident Malware"/>
+                    <outline text="Advanced Persistent Threats"/>
+                </outline>
+                <outline text="Potentially Unwanted Programs"/>
+            </outline>
+            <outline text="Malicious Activities By Malware">
+                <outline text="Attacks On">
+                    <outline text="Confidentiality"/>
+                    <outline text="Integrity"/>
+                    <outline text="Availability"/>
+                </outline>
+                <outline text="Cyber Kill Chain">
+                    <outline text="Reconnaissance"/>
+                    <outline text="Weaponisation"/>
+                    <outline text="Delivery"/>
+                    <outline text="Exploitation"/>
+                    <outline text="Installation"/>
+                    <outline text="Command And Control"/>
+                    <outline text="Actions On Objectives"/>
+                </outline>
+                <outline text="Underground Eco-system"/>
+            </outline>
+            <outline text="Malware Analysis">
+                <outline text="Analysis Techniques">
+                    <outline text="Static Analysis"/>
+                    <outline text="Dynamic Analysis"/>
+                    <outline text="Fuzzing"/>
+                    <outline text="Symbolic Execution"/>
+                    <outline text="Concolic Execution">
+                        <outline text="Offline Concolic Execution"/>
+                        <outline text="Online Concolic Execution"/>
+                        <outline text="Hybrid Execution"/>
+                        <outline text="Path Exploration"/>
+                    </outline>
+                </outline>
+                <outline text="Analysis Environments">
+                    <outline text="Environments">
+                        <outline text="Machine Emulator"/>
+                        <outline text="Type 2 Hypervisor"/>
+                        <outline text="Type 1 Hypervisor"/>
+                        <outline text="Bare-metal Machine"/>
+                    </outline>
+                    <outline text="Safety And Live-environment Requirements"/>
+                    <outline text="Virtualised Network Environments"/>
+                </outline>
+                <outline text="Anti-analysis And Evasion Techniques">
+                    <outline text="Obfuscation">
+                        <outline text="Packing"/>
+                        <outline text="Code Emulation"/>
+                    </outline>
+                    <outline text="Basic Blocks"/>
+                    <outline text="Tracing"/>
+                    <outline text="Fingerprinting"/>
+                    <outline text="Multi-path Analysis"/>
+                </outline>
+                <outline text="Indentifying The Analysis Environment">
+                    <outline text="Red Pill Techniques"/>
+                    <outline text="Mitigations"/>
+                </outline>
+            </outline>
+            <outline text="Malware Detection">
+                <outline text="Identifying The Presence Of Malware">
+                    <outline text="Malware Distribution Methods"/>
+                    <outline text="Malware Infection Sites"/>
+                    <outline text="Runtime Detection"/>
+                </outline>
+                <outline text="Evasion And Countermeasures">
+                    <outline text="Heuristics"/>
+                    <outline text="Polymorphism"/>
+                    <outline text="Update Routines"/>
+                </outline>
+                <outline text="Attack Detection">
+                    <outline text="Network Monitoring">
+                        <outline text="Host-based"/>
+                        <outline text="Network-based"/>
+                        <outline text="Spam Detection"/>
+                        <outline text="DDoS Detection"/>
+                        <outline text="Ransomware Detection"/>
+                        <outline text="Botnet Detection"/>
+                    </outline>
+                    <outline text="Machine Learning-based Security Analytics"/>
+                    <outline text="Limitations">
+                        <outline text="Machine Learning Countermeasures"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Malware Response">
+                <outline text="Disrupting Malware Operations">
+                    <outline text="DNS Fast-flux"/>
+                    <outline text="Domain-name Generation Algorithms"/>
+                    <outline text="Command And Control Takedown"/>
+                    <outline text="P2P Takedown"/>
+                </outline>
+                <outline text="Attribution">
+                    <outline text="Historical Signatures"/>
+                    <outline text="WHOIS"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Adversarial Behaviours" colorLabel="3">
+            <outline text="Characterisation Of Adversaries">
+                <outline text="Cyber-enabled Crime Vs Cyber-dependent Crime"/>
+                <outline text="Interpersonal Crimes">
+                    <outline text="Cyberbullying"/>
+                    <outline text="Doxing"/>
+                    <outline text="Cyberstalking"/>
+                    <outline text="Sextortion"/>
+                    <outline text="Child Predation"/>
+                </outline>
+                <outline text="Cyber-enabled Organized Crime">
+                    <outline text="Advance Fee Fraud"/>
+                    <outline text="Drug Dealing"/>
+                </outline>
+                <outline text="Cyber-dependent Organized Crime">
+                    <outline text="Email Spam">
+                        <outline text="Email Regulation">
+                            <outline text="Directive On Privacy And Electronic Communications"/>
+                            <outline text="Privacy And Electronic Communications Regulations"/>
+                            <outline text="CAN-SPAM"/>
+                        </outline>
+                        <outline text="Mitigations"/>
+                    </outline>
+                    <outline text="Phishing"/>
+                    <outline text="Financial Malware">
+                        <outline text="Botnet As A Service"/>
+                        <outline text="Underground Forums">
+                            <outline text="Dumpz"/>
+                            <outline text="Fullz"/>
+                        </outline>
+                        <outline text="Card Skimming"/>
+                        <outline text="Insider Threats"/>
+                    </outline>
+                    <outline text="Click Fraud"/>
+                    <outline text="Unauthorized Cryptocurrency Mining">
+                        <outline text="Click Fraud Botnets"/>
+                        <outline text="Montization Rates"/>
+                        <outline text="Cryptojacking"/>
+                    </outline>
+                    <outline text="Ransomware"/>
+                    <outline text="Denial Of Service"/>
+                </outline>
+                <outline text="Hacktivists">
+                    <outline text="Denial of Service">
+                        <outline text="Low Orbit Ion Cannon"/>
+                    </outline>
+                    <outline text="Low Orbit Ion Cannon"/>
+                    <outline text="Data Leaks"/>
+                    <outline text="Web Defacements"/>
+                </outline>
+                <outline text="State Actors">
+                    <outline text="Differences From Financially Motivated Attacks"/>
+                    <outline text="Sabotage"/>
+                    <outline text="Espionage"/>
+                    <outline text="Disinformation"/>
+                </outline>
+            </outline>
+            <outline text="Elements Of A Malicious Operations">
+                <outline text="Affiliate Programmes"/>
+                <outline text="Infection Vectors">
+                    <outline text="Malicious Attachments"/>
+                    <outline text="Black Hat Search Engine Optimisation"/>
+                    <outline text="Drive-by Download Attacks"/>
+                    <outline text="Compromising Interent-connected Devices"/>
+                </outline>
+                <outline text="Infrastructure">
+                    <outline text="Bulletproof Hosting"/>
+                    <outline text="Command And Control Infrastructure ">
+                        <outline text="Takedown Resilient Architectures">
+                            <outline text="Multi-tier Botnets"/>
+                            <outline text="Fast Flux"/>
+                            <outline text="Domain Flux"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Specialised Services">
+                    <outline text="Exploit Kits "/>
+                    <outline text="Pay-per-install Services"/>
+                </outline>
+                <outline text="Human Services">
+                    <outline text="CAPTCHA Solving Services"/>
+                    <outline text="Fake Accounts"/>
+                    <outline text="Content Generation"/>
+                    <outline text="Money Mules ">
+                        <outline text="Reshipping Mules"/>
+                    </outline>
+                </outline>
+                <outline text="Payment Methods">
+                    <outline text="Credit Card Processors"/>
+                    <outline text="Paypal"/>
+                    <outline text="Western Union And Untraceable Payments"/>
+                    <outline text="Cryptocurrencies"/>
+                </outline>
+            </outline>
+            <outline text="Models">
+                <outline text="Attack Trees">
+                    <outline text="Attack Graphs"/>
+                </outline>
+                <outline text="Kill Chains">
+                    <outline text="Reconnaissance"/>
+                    <outline text="Weaponisation"/>
+                    <outline text="Delivery"/>
+                    <outline text="Exploitation"/>
+                    <outline text="Installation"/>
+                    <outline text="Command And Control"/>
+                    <outline text="Actions On Objectives"/>
+                    <outline text="Other Models"/>
+                </outline>
+                <outline text="Environmental Criminology">
+                    <outline text="Routine Activity Theory"/>
+                    <outline text="Rational Choice Theory"/>
+                    <outline text="Pattern Theory Of Crime"/>
+                    <outline text="Sitiuational Crime Prevention">
+                        <outline text="Hot Spots"/>
+                        <outline text="Hot Products"/>
+                        <outline text="Repeat Victims"/>
+                        <outline text="Mitigations">
+                            <outline text="Adaptation"/>
+                            <outline text="Displacement"/>
+                        </outline>
+                    </outline>
+                    <outline text="Crime Scripting"/>
+                </outline>
+                <outline text="Flow Of Capital"/>
+                <outline text="Attribution"/>
+            </outline>
+            <outline text=""/>
+        </outline>
+        <outline text="Security Operations and Incident Management" colorLabel="3">
+            <outline text="Fundamental Concepts">
+                <outline text="Workflows And Vocabulary">
+                    <outline text="Intrusion Detection"/>
+                    <outline text="Security Information And Event Management (SIEM)"/>
+                    <outline text="Security Orchestration Analytics And Reporting (SOAR)"/>
+                    <outline text="MAPE-K"/>
+                </outline>
+                <outline text="Architectural Principles">
+                    <outline text="Demilitarised Zone (DMZ)"/>
+                    <outline text="Intrusion Prevention Systems"/>
+                    <outline text="CISOs And Analysts"/>
+                    <outline text="Cyber-threat Intelligence (CTI)"/>
+                    <outline text="Information Sharing And Analysis Center (ISAC)"/>
+                </outline>
+            </outline>
+            <outline text="Monitor: Data Sources">
+                <outline text="Network Traffic">
+                    <outline text="Pcap">
+                        <outline text="Volume"/>
+                        <outline text="Packet Size"/>
+                        <outline text="Segmentation And Fragmentation"/>
+                        <outline text="Timestamps"/>
+                        <outline text="MAC Layer Interpretation"/>
+                        <outline text="Application Layer Interpretation"/>
+                        <outline text="Encryption"/>
+                    </outline>
+                    <outline text="New Protocols">
+                        <outline text="IoT"/>
+                        <outline text="LoRa"/>
+                        <outline text="Profinet IRT"/>
+                    </outline>
+                </outline>
+                <outline text="Network Aggregates: Netflow">
+                    <outline text="Netflow / IPFix"/>
+                </outline>
+                <outline text="Network Infrastructure Information">
+                    <outline text="Naming">
+                        <outline text="DNS"/>
+                        <outline text="DNSSEC"/>
+                        <outline text="DNS As DDoS Amplifier"/>
+                        <outline text="Detecting Botnets By DNS"/>
+                    </outline>
+                    <outline text="Routing">
+                        <outline text="BGP Hijacks"/>
+                    </outline>
+                </outline>
+                <outline text="Application Logs: Web Server Logs And Files">
+                    <outline text="Web Server Logs ">
+                        <outline text="Common Log Format"/>
+                        <outline text="Extended Common Log Format"/>
+                    </outline>
+                    <outline text="Files And Documents"/>
+                </outline>
+                <outline text="System And Kernel Logs">
+                    <outline text="Audit Trails"/>
+                    <outline text="Orange Book"/>
+                    <outline text="STIDE"/>
+                    <outline text="eXpert-BSM"/>
+                </outline>
+                <outline text="Syslog">
+                    <outline text="Format"/>
+                    <outline text="Protocol"/>
+                </outline>
+            </outline>
+            <outline text="Analyse: Analysis Methods">
+                <outline text="Misuse Detection">
+                    <outline text="CVE"/>
+                    <outline text="Antivirus Engines"/>
+                    <outline text="Haystack And NIDES"/>
+                    <outline text="Snort"/>
+                    <outline text="YARA"/>
+                </outline>
+                <outline text="Anomaly Detection">
+                    <outline text="Models">
+                        <outline text="Unsupervised Techniques">
+                            <outline text="Support Vector Machines"/>
+                            <outline text="C4.5"/>
+                        </outline>
+                        <outline text="Graph-based Models"/>
+                        <outline text="Anomaly Models"/>
+                    </outline>
+                    <outline text="Specification Vs Learning"/>
+                    <outline text="Adherence To Use Cases"/>
+                    <outline text="Blended Misuse And Anomaly Detection"/>
+                </outline>
+                <outline text="Machine Learning">
+                    <outline text="Datasets"/>
+                    <outline text="Machine Learning For Malware Detection"/>
+                </outline>
+                <outline text="Testing And Validating Intrusion Detection System"/>
+                <outline text="The Base-rate Falacy"/>
+                <outline text="Contribution Of SIEM To Analysis And Detection"/>
+            </outline>
+            <outline text="Plan: Security Information And Event Management">
+                <outline text="Data Collection">
+                    <outline text="Alert Message Layers">
+                        <outline text="Schema"/>
+                        <outline text="Encoding"/>
+                        <outline text="Transport Protocol"/>
+                    </outline>
+                    <outline text="Schemas">
+                        <outline text="Syslog"/>
+                        <outline text="CEF"/>
+                        <outline text="LEEF"/>
+                        <outline text="CIM"/>
+                        <outline text="XDAS[CADF"/>
+                        <outline text="CEE"/>
+                        <outline text="IDMEF"/>
+                    </outline>
+                </outline>
+                <outline text="Alert Correlation">
+                    <outline text="Correlation Between Alerts"/>
+                    <outline text="Correlation Between Alerts And The Environment"/>
+                    <outline text="Correlation Between Alerts And External Services"/>
+                    <outline text="Incident And Information Exchange"/>
+                </outline>
+                <outline text="Security Operations And Benchmarking"/>
+            </outline>
+            <outline text="Execute: Mitigation And Countermeasures">
+                <outline text="Intrusion Prevention Systems">
+                    <outline text="Specialised Examples">
+                        <outline text="Session Border Controllers"/>
+                        <outline text="Web Application Firewalls"/>
+                    </outline>
+                    <outline text="Denial Of Service">
+                        <outline text="Software Defined Networking (SDN)"/>
+                    </outline>
+                </outline>
+                <outline text="SIEM Platforms And Countermeasures"/>
+                <outline text="SOAR: Impact And Risk Assessment">
+                    <outline text="Cyber Insurance Models "/>
+                </outline>
+                <outline text="Site Reliability Engineering"/>
+            </outline>
+            <outline text="Knowledge: Intelligence And Analytics">
+                <outline text="Cyber Security Knowledge Management">
+                    <outline text="CVE"/>
+                    <outline text="CVSS"/>
+                    <outline text="CWE"/>
+                    <outline text="CAPEC"/>
+                </outline>
+                <outline text="Honeypots And Honeynets"/>
+                <outline text="Cyber-threat Intelligence">
+                    <outline text="Indicators Of Compromise"/>
+                    <outline text="Signatures"/>
+                    <outline text="Information Sharing And Analysis Centres"/>
+                </outline>
+                <outline text="Situational Awareness"/>
+            </outline>
+            <outline text="Human Factors: Incident Management">
+                <outline text="Prepare: Incident Management Planning">
+                    <outline text="TF-CSIRT"/>
+                    <outline text="FIRST"/>
+                    <outline text="ENISA"/>
+                </outline>
+                <outline text="Handle: Actual Incident Response">
+                    <outline text="Mitigation"/>
+                    <outline text="Gathering Evidence"/>
+                </outline>
+                <outline text="Follow Up: Post Incident Activities">
+                    <outline text="Performance Metrics"/>
+                    <outline text="Communication"/>
+                    <outline text="Attack Attribution"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Forensics" colorLabel="3">
+            <outline text="Definitions And Conceptual Models">
+                <outline text="Forensic Science"/>
+                <outline text="Cyber Domain"/>
+                <outline text="Digital (forensic) Trace"/>
+                <outline text="Legal Concerns And The Daubert Standard">
+                    <outline text="Computer Misuse Act"/>
+                    <outline text="Cyber Crime"/>
+                    <outline text="Standards For The Presentation Of Scientific Evidence In Legal Proceedings"/>
+                    <outline text="ACPO Good Practice Guide For Digital Evidence"/>
+                    <outline text="BS EN ISO/IEC 17020:2012"/>
+                    <outline text="BS EN ISO/IEC 17025:2005"/>
+                </outline>
+                <outline text="Definitions">
+                    <outline text="Digital Forensics">
+                        <outline text="DFRWS"/>
+                        <outline text="NIST"/>
+                        <outline text="Working"/>
+                    </outline>
+                    <outline text="Relevence"/>
+                </outline>
+                <outline text="Conceptual Models">
+                    <outline text="State-centric"/>
+                    <outline text="History-centric"/>
+                    <outline text="Cognitive Task Model">
+                        <outline text="Differential Analysis"/>
+                        <outline text="External Data Sources"/>
+                        <outline text="Schema"/>
+                        <outline text="Sense-making Loop"/>
+                    </outline>
+                    <outline text="Bottom-up Processes">
+                        <outline text="Search And Filter"/>
+                        <outline text="Read And Extract"/>
+                        <outline text="Schematize"/>
+                        <outline text="Build Case"/>
+                        <outline text="Tell Story"/>
+                    </outline>
+                    <outline text="Top-down Processes">
+                        <outline text="Re-evaluate"/>
+                        <outline text="Search For Suport"/>
+                        <outline text="Search For Evidence"/>
+                        <outline text="Search For Relations"/>
+                        <outline text="Search For Information"/>
+                    </outline>
+                    <outline text="The Foraging Loop">
+                        <outline text="Explore"/>
+                        <outline text="Enrich"/>
+                        <outline text="Exploit"/>
+                    </outline>
+                    <outline text="The Sense Making Loop"/>
+                </outline>
+            </outline>
+            <outline text="Operating System Analysis">
+                <outline text="Storage Forensics">
+                    <outline text="Data Abstraction Layers">
+                        <outline text="Physical Media"/>
+                        <outline text="Block Device"/>
+                        <outline text="File System"/>
+                        <outline text="Application Artifacts"/>
+                    </outline>
+                    <outline text="Benefits Of Independent Forensic Reconstruction"/>
+                </outline>
+                <outline text="Data Acquisition">
+                    <outline text="Physical Data Acquisition">
+                        <outline text="Mobile Phone Data Acquisition"/>
+                        <outline text="Chip-off Techniques"/>
+                        <outline text="RAID Data Recovery"/>
+                    </outline>
+                    <outline text="Logical Data Acquisition">
+                        <outline text="Approaches To API Based Recovery"/>
+                        <outline text="Block-level Acquisition"/>
+                        <outline text="Cryptographic Hashes"/>
+                    </outline>
+                    <outline text="Encryption Concerns">
+                        <outline text="Technical Challenges"/>
+                        <outline text="Legal Challenges"/>
+                    </outline>
+                </outline>
+                <outline text="Filesystem Analysis">
+                    <outline text="Blocks"/>
+                    <outline text="Files"/>
+                    <outline text="File Systems"/>
+                </outline>
+                <outline text="Block Device Analysis">
+                    <outline text="Partitions"/>
+                    <outline text="Logical Volumes"/>
+                </outline>
+                <outline text="Data Recovery &amp; File Content Carving">
+                    <outline text="Carving Techniques"/>
+                    <outline text="Fragmentation"/>
+                    <outline text="Slack Space"/>
+                </outline>
+            </outline>
+            <outline text="Main Memory Forensics">
+                <outline text="Process Information"/>
+                <outline text="File Information"/>
+                <outline text="Network Connections"/>
+                <outline text="Artifacts And Fragments"/>
+                <outline text="Challenges Of Live Forensics"/>
+            </outline>
+            <outline text="Application Forensics">
+                <outline text="Web Browsers">
+                    <outline text="URL History"/>
+                    <outline text="Form Data"/>
+                    <outline text="Temporary Files"/>
+                    <outline text="Downloaded Files"/>
+                    <outline text="HTML5 Local Storage"/>
+                    <outline text="Cookies"/>
+                </outline>
+            </outline>
+            <outline text="Cloud Forensics">
+                <outline text="Services">
+                    <outline text="SaaS"/>
+                    <outline text="PaaS"/>
+                    <outline text="IaaS"/>
+                </outline>
+                <outline text="Forensic Challenges"/>
+                <outline text="SaaS Forensics">
+                    <outline text="Partial Replication"/>
+                    <outline text="Revision Acquisition"/>
+                    <outline text="Cload-native Artifacts"/>
+                </outline>
+            </outline>
+            <outline text="Artifact Analysis">
+                <outline text="Cryptographic Hashing Cloud-native Artifacts"/>
+                <outline text="Block-level Analysis"/>
+                <outline text="Approximate Analysis">
+                    <outline text="Bytewise Matching"/>
+                    <outline text="Syntactic Matching"/>
+                    <outline text="Semantic Matching"/>
+                    <outline text="Bytewise Approximate Matching"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Cryptography" colorLabel="3">
+            <outline text="Schemes">
+                <outline text="AES"/>
+                <outline text="RSA"/>
+                <outline text="DES"/>
+                <outline text="PKCS"/>
+                <outline text="DSA"/>
+                <outline text="Kerberos"/>
+                <outline text="TLS"/>
+            </outline>
+            <outline text="Symmetric Cryptography">
+                <outline text="Symmetric Primitives">
+                    <outline text="Block Ciphers">
+                        <outline text="Feistel Networks"/>
+                    </outline>
+                    <outline text="Stream Ciphers"/>
+                    <outline text="Hash Functions">
+                        <outline text="Merkel-Damgård Construction"/>
+                        <outline text="Sponge Constructions"/>
+                    </outline>
+                </outline>
+                <outline text="Symmetric Encryption And Authentication">
+                    <outline text="Modes Of Operation">
+                        <outline text="ECB"/>
+                        <outline text="CBC"/>
+                        <outline text="OFB"/>
+                        <outline text="CFB"/>
+                        <outline text="CTR"/>
+                        <outline text="AEAD"/>
+                    </outline>
+                    <outline text="Message Authentication Codes"/>
+                    <outline text="Extendable Output Function"/>
+                    <outline text="Key Derivation Functions"/>
+                </outline>
+            </outline>
+            <outline text="Public Key Cryptography">
+                <outline text="Public Key Encryption">
+                    <outline text="Key Encapsulation Mechanisms"/>
+                    <outline text="Constructions Based On RSA">
+                        <outline text="RSA-OAEP"/>
+                        <outline text="RSA-KEM"/>
+                    </outline>
+                    <outline text="Data Encryption Mechanisms"/>
+                    <outline text="Constructions Based On Elliptic Curves">
+                        <outline text="ECIES"/>
+                    </outline>
+                    <outline text="Lattice-based Constructions"/>
+                </outline>
+                <outline text="Public Key Signatures">
+                    <outline text="Full Domain Hash"/>
+                    <outline text="Probabilistic Signature Schemes"/>
+                    <outline text="Schnorr Signatures"/>
+                </outline>
+            </outline>
+            <outline text="Cryptographic Security Models">
+                <outline text="Basic Security Definitions">
+                    <outline text="Security Games">
+                        <outline text="Random Oracle Model"/>
+                    </outline>
+                    <outline text="One-way"/>
+                    <outline text="Passive Attack"/>
+                    <outline text="Indistinguishability"/>
+                    <outline text="Chosen Plaintext Attacks"/>
+                    <outline text="Chosen Ciphertext Attack"/>
+                    <outline text="Universal Forgery"/>
+                    <outline text="Chosen Message Attack"/>
+                </outline>
+                <outline text="Hard Problems">
+                    <outline text="Pseudo-random Functions"/>
+                    <outline text="Pseudo-random Permutations"/>
+                    <outline text="Discrete Logarithm Problem"/>
+                    <outline text="Diffie-Hellman Problem"/>
+                    <outline text="Shortest Vector Problem">
+                        <outline text="Post-quantum Cryptography"/>
+                    </outline>
+                    <outline text="Closest Vector Problem">
+                        <outline text="Post-quantum Cryptography"/>
+                    </outline>
+                </outline>
+                <outline text="Setup Assumptions">
+                    <outline text="PKI"/>
+                    <outline text="Common Reference Strings"/>
+                    <outline text="Good Random Number Generation"/>
+                </outline>
+                <outline text="Simulation Of Cryptographic Operations"/>
+                <outline text="Universal Composability"/>
+            </outline>
+            <outline text="Information-theoretically Secure Constructions">
+                <outline text="One-time Pad"/>
+                <outline text="Secret Sharing"/>
+            </outline>
+            <outline text="Standard Protocols">
+                <outline text="Authentication Protocols">
+                    <outline text="Encryption-based Protocols"/>
+                    <outline text="Message Authentication-based Protocols"/>
+                    <outline text="Zero-knowledge-based Protocols"/>
+                </outline>
+                <outline text="Key Agreement Protocols">
+                    <outline text="Key Confirmation"/>
+                    <outline text="Forward Secrecy"/>
+                    <outline text="Unknown Key Share Security"/>
+                    <outline text="Key Transport"/>
+                    <outline text="Diffie-Hellman Key Agreement"/>
+                    <outline text="Station-to-station Protocol"/>
+                </outline>
+            </outline>
+            <outline text="Advanced Protocols">
+                <outline text="Oblivious Transfer"/>
+                <outline text="Zero-knowledge"/>
+                <outline text="Σ-protocols"/>
+                <outline text="Secure Multi-party Computation"/>
+            </outline>
+            <outline text="Public-key Schemes With Special Properties">
+                <outline text="Group Signatures"/>
+                <outline text="Ring Signatures"/>
+                <outline text="Blind Signatures"/>
+                <outline text="Identity-based Encryption"/>
+                <outline text="Linearly Homomorphic Encryption"/>
+                <outline text="Fully Homomorphic Encryption"/>
+            </outline>
+        </outline>
+        <outline text="Operating Systems and Virtualisation" colorLabel="3">
+            <outline text="Attacker Model">
+                <outline text="Threats To Security For Modern OSs">
+                    <outline text="Side Channels (software)"/>
+                    <outline text="Resource Depletion (DoS)"/>
+                    <outline text="Deadlocks (DoS)"/>
+                    <outline text="Malicious Extensions"/>
+                    <outline text="Bootkit"/>
+                    <outline text="Memory Errors (software)"/>
+                    <outline text="Memory Corruption (hardware)"/>
+                    <outline text="Uninitialised Data Leakage"/>
+                    <outline text="Concurrency Bugs And Double Fetch"/>
+                    <outline text="Side Channels (hardware)"/>
+                    <outline text="Side Channels (speculative)"/>
+                </outline>
+                <outline text="Attack Surface"/>
+            </outline>
+            <outline text="Role Of Operating Systems">
+                <outline text="Mediation"/>
+                <outline text="Isolation"/>
+                <outline text="Design Choices">
+                    <outline text="Unikernel"/>
+                    <outline text="Single Domain"/>
+                    <outline text="Monolithic OS"/>
+                    <outline text="Microkernel Based Multi-server"/>
+                </outline>
+                <outline text="Virtual Machines">
+                    <outline text="Hypervisors"/>
+                    <outline text="QubesOS"/>
+                    <outline text="Drawbacks"/>
+                    <outline text="Containers"/>
+                </outline>
+                <outline text="IoT"/>
+                <outline text="Security Domains"/>
+            </outline>
+            <outline text="OS Security Principles">
+                <outline text="Security Models">
+                    <outline text="Biba Model"/>
+                    <outline text="Bell-LaPadula Model"/>
+                </outline>
+                <outline text="Newer Principles">
+                    <outline text="Principle Of Intentional Use"/>
+                    <outline text="Principle Of Minimizing The Trusted Computing Base"/>
+                </outline>
+                <outline text="Saltzer And Schroeder's Principles">
+                    <outline text="Principle Of Psychological Acceptability"/>
+                    <outline text="Principle Of Economy Of Mechanism"/>
+                    <outline text="Principle Of Fail-safe Defaults"/>
+                    <outline text="Principle Of Complete Mediation"/>
+                    <outline text="Principle Of Open Design"/>
+                    <outline text="Principle Of Separation Of Privilege"/>
+                    <outline text="Principle Of Least Authority"/>
+                    <outline text="Principle Of Least Commmon Mechanism"/>
+                </outline>
+            </outline>
+            <outline text="Primitives For Isolation And Mediation">
+                <outline text="Protection Rings">
+                    <outline text="Ring -3 / Intel ME"/>
+                    <outline text="Ring 0"/>
+                    <outline text="Ring -1"/>
+                    <outline text="Ring -2"/>
+                </outline>
+                <outline text="Low-end Devices And IoT"/>
+                <outline text="Multics">
+                    <outline text="Virtual Memory"/>
+                    <outline text="Hierarchical Filesystems"/>
+                    <outline text="Mandatory Access Controls"/>
+                    <outline text="Discretionary Access Controls"/>
+                    <outline text="Rings"/>
+                    <outline text="Segment-based Protection">
+                        <outline text="Segmentation"/>
+                    </outline>
+                </outline>
+                <outline text="Trusted Computer System Evaluation Criteria"/>
+                <outline text="Memory Protection And Address Spaces">
+                    <outline text="Segmentation"/>
+                    <outline text="Paging"/>
+                </outline>
+                <outline text="Capabilities"/>
+                <outline text="Physical Access And Secure Deletion"/>
+                <outline text="Authentication And Identification">
+                    <outline text="Access Control Lists ">
+                        <outline text="SELinux"/>
+                    </outline>
+                </outline>
+                <outline text="Modern Hardware Extensions For Memory Protection">
+                    <outline text="ARM TrustZone"/>
+                    <outline text="DMA"/>
+                    <outline text="Intel MPX"/>
+                    <outline text="Intel MPK"/>
+                    <outline text="Memory Tagging Extensions"/>
+                    <outline text="Memory Protection Unit"/>
+                    <outline text="Intel SGX"/>
+                </outline>
+            </outline>
+            <outline text="Operating System Hardening">
+                <outline text="Information Hiding">
+                    <outline text="Fine-grained Randomisation"/>
+                    <outline text="ASLR">
+                        <outline text="KASLR"/>
+                    </outline>
+                </outline>
+                <outline text="Control-flow Restrictions">
+                    <outline text="Shadow Stacks"/>
+                    <outline text="Indirect Branch Tracking"/>
+                    <outline text="Pointer Authentication"/>
+                    <outline text="Data-flow Integrity"/>
+                    <outline text="Control-flow Integrity"/>
+                </outline>
+                <outline text="Partitioning">
+                    <outline text="Write Xor Execute"/>
+                    <outline text="SMEP And SMAP"/>
+                    <outline text="Speculative Execution">
+                        <outline text="Meltdown"/>
+                        <outline text="Spectre"/>
+                        <outline text="RIDL"/>
+                        <outline text="Partitioning Micro-architectural States"/>
+                        <outline text="Page Colouring"/>
+                    </outline>
+                </outline>
+                <outline text="Code And Data Integrity Checks">
+                    <outline text="Boot Checks"/>
+                    <outline text="UEFI"/>
+                    <outline text="TPMs">
+                        <outline text="PCRs"/>
+                    </outline>
+                    <outline text="Hypervisor Supported Introspection"/>
+                    <outline text="Driver Signing"/>
+                </outline>
+                <outline text="Anomaly Detection"/>
+                <outline text="Formal Verification"/>
+            </outline>
+            <outline text="Related Areas">
+                <outline text="Databases ">
+                    <outline text="Querying Encrypted Databases"/>
+                    <outline text="Homomorphic Encryption"/>
+                    <outline text="Outsourced Databases">
+                        <outline text=" Merkle Hash Trees"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Embracing Security">
+                <outline text="PaX Team"/>
+                <outline text="GRSecurity"/>
+            </outline>
+        </outline>
+        <outline text="Distributed Systems Security" colorLabel="3">
+            <outline text=""/>
+            <outline text="Classes Of Distributed Systems">
+                <outline text="Decentralised Point-to-point Interactions Across Distributed Entities Without A Centralised Coordination Service">
+                    <outline text="P2P"/>
+                    <outline text="Kademlia"/>
+                    <outline text="Napster"/>
+                    <outline text="Gnutella"/>
+                    <outline text="Wireless Sensor Networks"/>
+                    <outline text="Online Gaming Systems"/>
+                </outline>
+                <outline text="Coordinated Clustering Across Distributed Resources And Services">
+                    <outline text="Coordination Of Resources Vs Coordination Of Resources"/>
+                    <outline text="Client-server Models"/>
+                    <outline text="N-tier Multi Tenancy Models"/>
+                    <outline text="Clouds">
+                        <outline text="Public"/>
+                        <outline text="Private"/>
+                        <outline text="Hybrid"/>
+                        <outline text="Multi-cloud"/>
+                        <outline text="Big Data Services"/>
+                        <outline text="High Performance Computing"/>
+                    </outline>
+                    <outline text="Databases"/>
+                    <outline text="Ledgers"/>
+                    <outline text="Storage Systems"/>
+                </outline>
+            </outline>
+            <outline text="Classes Of Vulnerabilities &amp; Threats">
+                <outline text="Access/admission Control &amp; ID Management "/>
+                <outline text="Data Transportation"/>
+                <outline text="Resource Management And Coordination Services"/>
+                <outline text="Data Security">
+                    <outline text="Confidentiality Integrity And Availability"/>
+                    <outline text="Side Channel Attacks"/>
+                    <outline text="Data Consistency"/>
+                </outline>
+            </outline>
+            <outline text="Decentralised P2P Models">
+                <outline text="Principles">
+                    <outline text="Symmetry Of Interfaces"/>
+                    <outline text="Resilience To Perturbations"/>
+                    <outline text="Survivability Through Replication"/>
+                    <outline text="Peer Resources At The Network's Edge"/>
+                    <outline text="Address Variance"/>
+                </outline>
+                <outline text="Unstructured P2P Protocols">
+                    <outline text="Message Passing"/>
+                </outline>
+                <outline text="Structured P2P Protocols">
+                    <outline text="Distributed Hash Table"/>
+                </outline>
+                <outline text="Hybrid P2P Protocols"/>
+                <outline text="Hierarchical P2P Protocols"/>
+                <outline text="Attacking P2P Systems">
+                    <outline text="Functional Elements">
+                        <outline text="P2P Operations">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="P2P Data Structures">
+                            <outline text="Mitigations"/>
+                        </outline>
+                    </outline>
+                    <outline text="Attack Types">
+                        <outline text="Denial Of Service (DoS)">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="Collusion Attacks">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="Pollution Attacks">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="White Washing">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="Routing Attacks">
+                            <outline text="Routing Table Poisoning"/>
+                        </outline>
+                        <outline text="Buffer Map Cheating Attacks">
+                            <outline text="Mitigations"/>
+                        </outline>
+                        <outline text="Sybil Attacks"/>
+                        <outline text="Eclipse Attacks">
+                            <outline text="Localised Eclipse Attacks">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Topology Aware Localised Eclipse Attacks">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Outgoing Eclipse Attacks">
+<outline text="Mitigations"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Coordinated Resources Clustering">
+                <outline text="Systems Coordination Styles">
+                    <outline text="Synchronous"/>
+                    <outline text="Asynchronous"/>
+                    <outline text="Partially Synchronous"/>
+                </outline>
+                <outline text="Reliable And Secure Group Communication"/>
+                <outline text="Coordination Principles">
+                    <outline text="Consensus">
+                        <outline text="Agreement"/>
+                        <outline text="Validity"/>
+                        <outline text="Termination"/>
+                    </outline>
+                    <outline text="Group Membership And Consistency">
+                        <outline text="Strong Consistency Models">
+                            <outline text="Strict Consistency"/>
+                            <outline text="Linearisability"/>
+                        </outline>
+                        <outline text="Weak Consistency Models">
+                            <outline text="Sequential Consistency"/>
+                            <outline text="Causal Consistency"/>
+                            <outline text="Eventual Consistency"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Replication Management And Coordination Schema">
+                    <outline text="CAP">
+                        <outline text="Consistency"/>
+                        <outline text="Availability"/>
+                        <outline text="Partition"/>
+                    </outline>
+                    <outline text="Replication And Coordination"/>
+                    <outline text="Paxos"/>
+                    <outline text="Byzantine Fault Tolerance"/>
+                    <outline text="Commit Protocols"/>
+                </outline>
+            </outline>
+            <outline text="Coordination Classes And Attackability">
+                <outline text="Classes Of Disruptions">
+                    <outline text="Timing Based"/>
+                    <outline text="Value Based"/>
+                </outline>
+                <outline text="Resource Coordination Class">
+                    <outline text="Characteristics"/>
+                    <outline text="Cloud Model">
+                        <outline text="IaaS"/>
+                        <outline text="PaaS"/>
+                        <outline text="Operational Attributes"/>
+                        <outline text="Client-server Model"/>
+                        <outline text="Attackability Implications">
+                            <outline text="Compromise Of Resources">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise Of Access/admission Control">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise Of VM">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise Of Scheduler">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise Of Broker">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise Of Communication">
+<outline text="Mitigations"/>
+                            </outline>
+                            <outline text="Compromise On Monitoring And Accounting">
+<outline text="Mitigations"/>
+                            </outline>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Services Coordination Class">
+                    <outline text="Characteristic Examples">
+                        <outline text="Web Services"/>
+                        <outline text="Key Distribution"/>
+                        <outline text="Storage"/>
+                        <outline text="Transactional Services, Databases"/>
+                        <outline text="Blockchains/cryptocurrencies ">
+                            <outline text="Properties"/>
+                            <outline text="Proof Of Work "/>
+                        </outline>
+                    </outline>
+                    <outline text="Attackability Implications">
+                        <outline text="Short Transactions"/>
+                        <outline text="Large Transactions"/>
+                        <outline text="Mixed Transactions">
+                            <outline text="E-commerce Supporting Transactions"/>
+                            <outline text="Informational Systems"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Authentication, Authorisation and Accountability " colorLabel="3">
+            <outline text="Authorisation">
+                <outline text="Access Control">
+                    <outline text="Core Concepts">
+                        <outline text="Principal"/>
+                        <outline text="Subject"/>
+                        <outline text="Object"/>
+                        <outline text="Identity Based Access Control"/>
+                        <outline text="Attribute Based Access Control"/>
+                        <outline text="Access Rights"/>
+                    </outline>
+                    <outline text="Security Policies">
+                        <outline text="Access Control Matrix"/>
+                        <outline text="Access Control List"/>
+                        <outline text="Discretionary Access Controls (DAC)"/>
+                    </outline>
+                    <outline text="Mandatory Access Controls (MAC)">
+                        <outline text="Lattices"/>
+                        <outline text="SELinux"/>
+                        <outline text="Multi-level Security Policies"/>
+                    </outline>
+                    <outline text="Role-based Access Control (RBAC)">
+                        <outline text="Flat RBAC"/>
+                        <outline text="Hierarchical RBAC"/>
+                        <outline text="Constrained RBAC"/>
+                        <outline text="Symmetric RBAC"/>
+                    </outline>
+                    <outline text="Attribute-based Access Control (ABAC)"/>
+                    <outline text="Code-based Access Cotrol">
+                        <outline text="Java Security Model"/>
+                        <outline text=".NET Architecture"/>
+                    </outline>
+                    <outline text="Mobile Security">
+                        <outline text="Permissions"/>
+                    </outline>
+                    <outline text="Digital Rights Management (DRM)">
+                        <outline text="Tamper Resistance"/>
+                        <outline text="Attestation"/>
+                        <outline text="Superdistribution"/>
+                        <outline text="FIDO UAF"/>
+                    </outline>
+                    <outline text="Usage Control">
+                        <outline text="XACML 3.0"/>
+                    </outline>
+                </outline>
+                <outline text="Enforcing Access Control">
+                    <outline text="Points">
+                        <outline text="Policy Administration Points"/>
+                        <outline text="Policy Decision Points"/>
+                        <outline text="Policy Information Points"/>
+                        <outline text="Policy Enforcement Points"/>
+                    </outline>
+                    <outline text="Delegation And Revocation">
+                        <outline text="Online Certificate Status Protocol (OCSP)"/>
+                    </outline>
+                    <outline text="Reference Monitor">
+                        <outline text="Trusted Computing Base (TCB)"/>
+                        <outline text="Authorisation"/>
+                        <outline text="Decision Algorithms">
+                            <outline text="Rule Combining Algorithms"/>
+                        </outline>
+                        <outline text="Execution Monitors"/>
+                        <outline text="In-line Reference Monitors"/>
+                    </outline>
+                </outline>
+                <outline text="Theory">
+                    <outline text="Bell-LaPadula (BLP)">
+                        <outline text="*-property"/>
+                        <outline text="Polyinstantiation"/>
+                    </outline>
+                    <outline text="Biba"/>
+                    <outline text="Clark-Wilson"/>
+                    <outline text="Harrison, Ruzo And Ullman Model"/>
+                    <outline text="Enforceable Policies"/>
+                    <outline text="Access Control Logics"/>
+                </outline>
+            </outline>
+            <outline text="Access Control In Distributed Systems">
+                <outline text="Core Concepts">
+                    <outline text="Certificate"/>
+                    <outline text="Credential"/>
+                    <outline text="Token"/>
+                </outline>
+                <outline text="Origin-based Policies">
+                    <outline text="Sender Policy Framework (SPF)"/>
+                    <outline text="Cross-site Scripting"/>
+                    <outline text="Cross-site Resource Sharing"/>
+                </outline>
+                <outline text="Federated Access Control"/>
+                <outline text="Cryptography And Access Control">
+                    <outline text="Attribute-based Encryption">
+                        <outline text="Key-policy Attribute-based Encryption"/>
+                        <outline text="Ciphertext-policy Attribute-based Encryption"/>
+                    </outline>
+                    <outline text="Key-centric Access Control">
+                        <outline text="SPKI/SDSI"/>
+                        <outline text="Constrained Delegation"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Authentication">
+                <outline text="Identity Management">
+                    <outline text="Privacy By Design"/>
+                </outline>
+                <outline text="User Authentication">
+                    <outline text="Risk-based Authentication"/>
+                    <outline text="Passwords"/>
+                    <outline text="Biometrics">
+                        <outline text="Recommendations"/>
+                        <outline text="Liveness Detection"/>
+                        <outline text="Verification">
+                            <outline text="Failure To Capture"/>
+                            <outline text="False Rejects"/>
+                            <outline text="False Accepts"/>
+                            <outline text="Spoofing"/>
+                        </outline>
+                        <outline text="Border Control Gates"/>
+                    </outline>
+                    <outline text="Authentication Tokens"/>
+                    <outline text="Behavioural Authentication"/>
+                    <outline text="Two-factor Authentication (2FA)"/>
+                </outline>
+                <outline text="Authentication In Distributed Systems">
+                    <outline text="Needhame-Schroeder Protocol"/>
+                    <outline text="Kerberos">
+                        <outline text="Ticket Granting Server"/>
+                    </outline>
+                    <outline text="SAML"/>
+                    <outline text="OAuth 2"/>
+                </outline>
+                <outline text="Facets Of Authentication">
+                    <outline text="Patterns For Entity Authentication"/>
+                    <outline text="Correspondence Properties">
+                        <outline text="Aliveness"/>
+                        <outline text="Weak Agreement"/>
+                        <outline text="Non-injective Agreement"/>
+                        <outline text="Agreement"/>
+                    </outline>
+                    <outline text="Authentication Vs Verified Association"/>
+                    <outline text="Authentication For Credit Or Responsibility"/>
+                </outline>
+            </outline>
+            <outline text="Accountability">
+                <outline text="Technical Aspects">
+                    <outline text="Audit Policies"/>
+                    <outline text="Preserving The Evidence">
+                        <outline text="Tamper Resistance">
+                            <outline text="Write-once, Read-many"/>
+                            <outline text="Hash-chain"/>
+                        </outline>
+                        <outline text="Audit Policies"/>
+                    </outline>
+                    <outline text="Analysing The Evidence"/>
+                    <outline text="Assessing The Evidence"/>
+                </outline>
+                <outline text="Privacy And Accountability">
+                    <outline text="Certificate Transparency"/>
+                    <outline text="Private Subdomains"/>
+                </outline>
+                <outline text="Distributed Logs">
+                    <outline text="Consensus ">
+                        <outline text="Blockchains"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Software Security" colorLabel="3">
+            <outline text="Categories Of Vulnerabilities">
+                <outline text="CVEs And CWEs"/>
+                <outline text="Memory Management Vulnerabilities">
+                    <outline text="Attacks">
+                        <outline text="Code Corruption Attacks"/>
+                        <outline text="Control-flow Hijack Attacks"/>
+                        <outline text="Information Leak Attack"/>
+                        <outline text="Data-only-attacks"/>
+                    </outline>
+                    <outline text="Safe Languages"/>
+                    <outline text="Spatial Vulnerabilities"/>
+                    <outline text="Temporal Vulnerabilities"/>
+                </outline>
+                <outline text="Structured Output Generation Vulnerabilities">
+                    <outline text="SQL Injection"/>
+                    <outline text="Command Injection Vulnerabilitiies"/>
+                    <outline text="Script Injection Vulnerabilities (XSS)"/>
+                    <outline text="Stored Injection Vulnerabiliites"/>
+                    <outline text="Higher-order Injection Vulnerabilities"/>
+                </outline>
+                <outline text="Race Condition Vulnerabilities">
+                    <outline text="Concurrency Bugs"/>
+                    <outline text="Time-of-check To Time-of-use"/>
+                </outline>
+                <outline text="API Vulnerabilities">
+                    <outline text="Correct Use"/>
+                    <outline text="Correct Implementation"/>
+                </outline>
+                <outline text="Side-channel Vulnerabilities">
+                    <outline text="Software-based Side-channels"/>
+                    <outline text="Covert Channels"/>
+                    <outline text="Micro-architectual Effects"/>
+                    <outline text="Fault-injection Attacks">
+                        <outline text="Physical Fault-injection"/>
+                        <outline text="Software Fault-injection">
+                            <outline text="Rowhammer"/>
+                        </outline>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Prevention Of Vulnerabilities">
+                <outline text="API Design">
+                    <outline text="Defensive Programming"/>
+                    <outline text="Sandboxing"/>
+                    <outline text="Principle Of Least Privilege"/>
+                    <outline text="Assertions"/>
+                    <outline text="Contracts"/>
+                </outline>
+                <outline text="Coding Practices">
+                    <outline text="Coding Guidelines">
+                        <outline text="MISRA"/>
+                    </outline>
+                    <outline text="Dangerous Functions"/>
+                    <outline text="Programming Idioms"/>
+                    <outline text="Resource Acquisition Is Initialisation"/>
+                    <outline text="Move Semantics"/>
+                    <outline text="Smart Pointers"/>
+                    <outline text="Checking Compliance"/>
+                </outline>
+                <outline text="Erroneous Execution">
+                    <outline text="Trapped Errors"/>
+                    <outline text="Untrapped Errors"/>
+                </outline>
+                <outline text="Language Design And Type Systems">
+                    <outline text="Memory Management Mitigations"/>
+                    <outline text="Immutable State"/>
+                    <outline text="Dynamic Checks"/>
+                    <outline text="Static Checks"/>
+                </outline>
+                <outline text="Structured Output Generations Mitigations">
+                    <outline text="Type Systems"/>
+                    <outline text="Query Generation"/>
+                </outline>
+                <outline text="Race Condition Mitigations">
+                    <outline text="Ownership"/>
+                    <outline text="Aliasing"/>
+                </outline>
+                <outline text="Information Flow"/>
+            </outline>
+            <outline text="Mitigating Exploitation">
+                <outline text="Runtime Detection Of Attacks">
+                    <outline text="Stack Canaries"/>
+                    <outline text="Non-executable Memory"/>
+                    <outline text="Control Flow Integrity"/>
+                </outline>
+                <outline text="Automated Software Diversity">
+                    <outline text="ASLR"/>
+                </outline>
+                <outline text="Limiting Privileges">
+                    <outline text="Sandboxing">
+                        <outline text="Monitors"/>
+                        <outline text="Jails"/>
+                    </outline>
+                    <outline text="Compartmentalisation"/>
+                    <outline text="Object-capability Systems"/>
+                </outline>
+            </outline>
+            <outline text="Detection Of Vulnerabilities">
+                <outline text="Static Detection">
+                    <outline text="Heurisitic Static Detection">
+                        <outline text="Taint Analysis"/>
+                        <outline text="Information Flow Analysis"/>
+                    </outline>
+                    <outline text="Sound Static Verification">
+                        <outline text="Program Verification"/>
+                        <outline text="Abstract Interpretation"/>
+                        <outline text="Model Checking"/>
+                        <outline text="Soundiness"/>
+                    </outline>
+                </outline>
+                <outline text="Dynamic Detection">
+                    <outline text="Generating Relevant Executions">
+                        <outline text="Black-box Fuzzing"/>
+                        <outline text="White-box Fuzzing"/>
+                        <outline text="Dynamic Symbolic Execution"/>
+                    </outline>
+                    <outline text="Monitoring">
+                        <outline text="Pre/post-conditions"/>
+                        <outline text="Design By Contract"/>
+                    </outline>
+                </outline>
+                <outline text="Soundness"/>
+                <outline text="Completeness"/>
+            </outline>
+        </outline>
+        <outline text="Web and Mobile Security" colorLabel="3">
+            <outline text="Fundamental Concepts And Approaches">
+                <outline text="Appification"/>
+                <outline text="Webification">
+                    <outline text="Uniform Resource Locators (URLs)"/>
+                    <outline text="Hypertext Transfer Protocol (HTTP)">
+                        <outline text="Protocol Format"/>
+                        <outline text="Cookies"/>
+                    </outline>
+                    <outline text="Hypertext Markup Language (HTML)"/>
+                    <outline text="Cascading Style Sheets (CSS)"/>
+                    <outline text="JavaScript">
+                        <outline text="Script Processing"/>
+                    </outline>
+                    <outline text="WebAssembly (Wasm)"/>
+                    <outline text="WebViews"/>
+                </outline>
+                <outline text="Application Stores">
+                    <outline text="Side-loading"/>
+                    <outline text="Vetting Procedure"/>
+                    <outline text="Signing"/>
+                    <outline text="Impact Of User Ratings And Reviews On Application Security"/>
+                </outline>
+                <outline text="Sandboxing">
+                    <outline text="Application Isolation"/>
+                    <outline text="Content Isolation">
+                        <outline text="Same Origin Policy (SOP)"/>
+                        <outline text="Content Security Policy (CSP)"/>
+                    </outline>
+                </outline>
+                <outline text="Permission Dialog Based Access Control">
+                    <outline text="Security Principles"/>
+                    <outline text="Reference Monitor"/>
+                    <outline text="Security Policy">
+                        <outline text="System Applications"/>
+                        <outline text="Third-party Applications"/>
+                    </outline>
+                    <outline text="Different Permission Approaches"/>
+                </outline>
+                <outline text="Web PKI And HTTPS">
+                    <outline text="Warning Messages"/>
+                    <outline text="Adoption"/>
+                    <outline text="Rogues Certificate Authorities And Certificate Transparency"/>
+                </outline>
+                <outline text="Authentication">
+                    <outline text="HTTP Authentication">
+                        <outline text="Form-based Authentication"/>
+                    </outline>
+                    <outline text="Mobile Device Authentication">
+                        <outline text="Biometrics"/>
+                        <outline text="Graphical Passwords"/>
+                        <outline text="Unlock Patterns"/>
+                    </outline>
+                </outline>
+                <outline text="Cookies"/>
+                <outline text="Passwords And Alternatives">
+                    <outline text="Password Policies"/>
+                    <outline text="Password Strength Meters"/>
+                    <outline text="Password Managers"/>
+                    <outline text="Multi-factor Authentication">
+                        <outline text="European Payment Services Directive 2"/>
+                    </outline>
+                    <outline text="WebAuthn"/>
+                    <outline text="OAuth"/>
+                </outline>
+                <outline text="Frequent Software Updates">
+                    <outline text="Automatic Updates In Browsers"/>
+                    <outline text="Automatic Updates In Apps"/>
+                    <outline text="Outdated Third Party Libraries"/>
+                </outline>
+            </outline>
+            <outline text="Client Side Vulnerabilities And Mitigations">
+                <outline text="Phishing">
+                    <outline text="Address Bar Manipulation Attacks"/>
+                    <outline text="Internationalised Domain Name Homographs Attacks"/>
+                    <outline text="Anti-phishing Training"/>
+                    <outline text="Drive-by-download Attacks"/>
+                </outline>
+                <outline text="Clickjacking">
+                    <outline text="Confused Deputy Attacks"/>
+                </outline>
+                <outline text="Client Side Storage">
+                    <outline text="Cookies"/>
+                    <outline text="HTML5-based Storage"/>
+                    <outline text="Storage In Mobile Applications">
+                        <outline text="Information Leakis In Android Applications"/>
+                    </outline>
+                </outline>
+                <outline text="Physical Attacks">
+                    <outline text="Smudge Attacks"/>
+                    <outline text="Shoulder Surfing"/>
+                </outline>
+            </outline>
+            <outline text="Server Side Vulnerabilities And Mitigations">
+                <outline text="Injection Vulnerabilities">
+                    <outline text="Input Sanitisation"/>
+                    <outline text="SQL-injection">
+                        <outline text="Blind Attacks"/>
+                        <outline text="Second Order Attacks"/>
+                        <outline text="Prepared Statements"/>
+                    </outline>
+                    <outline text="Command Injection">
+                        <outline text="Restrictive Development Frameworks"/>
+                    </outline>
+                    <outline text="User Uploaded Files">
+                        <outline text="Metadada Filtering"/>
+                        <outline text="Same-origin Policies"/>
+                    </outline>
+                    <outline text="Local File Inclusion">
+                        <outline text="Path Sanitisation"/>
+                    </outline>
+                    <outline text="Cross-site Scripting (XSS)">
+                        <outline text="Stored XSS Attacks"/>
+                        <outline text="Reflected XSS Attacks"/>
+                    </outline>
+                    <outline text="Cross-site Request Forgery (CSRF)"/>
+                </outline>
+                <outline text="Server Side Misconfigurations &amp; Vulnerable Components">
+                    <outline text="HeartBleed "/>
+                    <outline text="Firewalls"/>
+                    <outline text="Load Balancers">
+                        <outline text="HTTPS Misconfigurations"/>
+                    </outline>
+                    <outline text="Databases">
+                        <outline text="Password Leaks"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Secure Software Lifecycle" colorLabel="3">
+            <outline text="Motivations For Secure Software Lifecycle">
+                <outline text="Breaches Are Costly"/>
+                <outline text="Vulnerablities Can Be Exploited Without Being Noticed"/>
+                <outline text="Patching Can Introduce Vulnerabilities"/>
+                <outline text="Customers Don't Apply Patches"/>
+                <outline text="Trusted Computing"/>
+            </outline>
+            <outline text="Prescriptive Processes">
+                <outline text="SAFECode">
+                    <outline text="Application Security Control Definition">
+                        <outline text="Secure Design Principles"/>
+                        <outline text="Secure Coding Practices"/>
+                        <outline text="Legal And Industry Requirements"/>
+                        <outline text="Internal Policies And Standards"/>
+                        <outline text="Incidents And Feedback"/>
+                        <outline text="Threats And Risk"/>
+                        <outline text="Common Criteria"/>
+                        <outline text="CVSS"/>
+                    </outline>
+                    <outline text="Design"/>
+                    <outline text="Secure Coding Practices"/>
+                    <outline text="Manage Security Findings"/>
+                    <outline text="Vulnerability Response And Disclosure"/>
+                    <outline text="Planning The Implementation And Deploment Of Secure Development"/>
+                    <outline text="Manage The Security Risk Of Using Third-party Components"/>
+                    <outline text="Perfrom Static Analysis Security Testing"/>
+                    <outline text="Perform Dynamic Analysis Security Testing"/>
+                    <outline text="Perform Penetration Testing"/>
+                </outline>
+                <outline text="Microsoft SDL">
+                    <outline text="Manage The Security Risk Of Using Third-party Components"/>
+                    <outline text="Perfrom Static Analysis Security Testing"/>
+                    <outline text="Perform Dynamic Analysis Security Testing"/>
+                    <outline text="Perform Penetration Testing"/>
+                    <outline text="Define Security Requirements">
+                        <outline text="SQUARE"/>
+                        <outline text="KAOS"/>
+                    </outline>
+                    <outline text="Design And Use Cryptography Standards"/>
+                    <outline text="Use Approved Tools"/>
+                    <outline text="Establish A Standard Incident Response Process"/>
+                    <outline text="Provide Training"/>
+                    <outline text="Define Metrics And Compliance Reporting">
+                        <outline text="KPIs"/>
+                        <outline text="PCI DSS"/>
+                        <outline text="GDPR"/>
+                    </outline>
+                    <outline text="Establish Design Requirements">
+                        <outline text="Saltzer Schroeder Principles"/>
+                        <outline text="IEEE Center For Secure Design Principles"/>
+                    </outline>
+                    <outline text="Perform Threat Modelling">
+                        <outline text="STRIDE"/>
+                        <outline text="Games For Threat Modelling"/>
+                        <outline text="Architectural Risk Analysis">
+                            <outline text="Attack Resistance Analysis"/>
+                            <outline text="Ambiguity Analysis"/>
+                            <outline text="Weakness Analysis"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Touchpoints">
+                    <outline text="Code Review (tools)"/>
+                    <outline text="Architectural Risk Analysis">
+                        <outline text="Attack Resistance Analysis"/>
+                        <outline text="Ambiguity Analysis"/>
+                        <outline text="Weakness Analysis"/>
+                    </outline>
+                    <outline text="Penetration Testing"/>
+                    <outline text="Abuse Cases">
+                        <outline text="Human Error"/>
+                    </outline>
+                    <outline text="Risk-based Security Testing">
+                        <outline text="OWASP ASVS"/>
+                    </outline>
+                    <outline text="Security Requirements"/>
+                    <outline text="Security Operations"/>
+                </outline>
+            </outline>
+            <outline text="Adaptations Of Secure Software Lifecycle">
+                <outline text="Agile And DevOps">
+                    <outline text="Provide Training"/>
+                    <outline text="Define Metrics and Compliance Reporting">
+                        <outline text="KPIs"/>
+                        <outline text="PCI DSS"/>
+                        <outline text="GDPR"/>
+                    </outline>
+                    <outline text="Establish Design Requirements">
+                        <outline text="Saltzer Schroeder Principles"/>
+                        <outline text="IEEE Center for Secure Design Principles"/>
+                    </outline>
+                    <outline text="Perform Threat Modelling">
+                        <outline text="STRIDE"/>
+                        <outline text="Games For Threat Modelling"/>
+                        <outline text="Architectural Risk Analysis">
+                            <outline text="Attack Resistance Analysis"/>
+                            <outline text="Ambiguity Analysis"/>
+                            <outline text="Weakness Analysis"/>
+                        </outline>
+                    </outline>
+                    <outline text="Use Software Composition Analysis And Governance"/>
+                    <outline text="Use Tools And Automation"/>
+                    <outline text="Keep Credentials Safe"/>
+                    <outline text="Use Continuous Learning And Monitoring"/>
+                </outline>
+                <outline text="Mobile">
+                    <outline text="OWASP Mobile Application Security Verification Standard"/>
+                    <outline text="Mobile Security Testing Guide"/>
+                    <outline text="Mobile App Security Checklist"/>
+                    <outline text="Moblie Threat Model">
+                        <outline text="Mobile Application Architecture"/>
+                        <outline text="Mobile Data"/>
+                        <outline text="Threat Agent Identification"/>
+                        <outline text="Methods Of Attack"/>
+                        <outline text="Controls"/>
+                    </outline>
+                </outline>
+                <outline text="Cloud Computing">
+                    <outline text="Multitenancy"/>
+                    <outline text="Tokenisation Of Sensitive Data"/>
+                    <outline text="Trusted Compute Pools">
+                        <outline text="TPM"/>
+                    </outline>
+                    <outline text="Data Encryption And Key Management"/>
+                    <outline text="Authentication And Identity Manangement">
+                        <outline text="SSO"/>
+                    </outline>
+                    <outline text="Shared-domain Issues"/>
+                </outline>
+                <outline text="IoT">
+                    <outline text="Use Of RFID Tags"/>
+                    <outline text="Default Passwords And Credentials"/>
+                    <outline text="Use The Manufacturer Usage Description"/>
+                    <outline text="Develop A Secure Upgrade Process"/>
+                </outline>
+                <outline text="Road Vehicles">
+                    <outline text="US National Highway Traffic Safety Administration"/>
+                    <outline text="IS21434"/>
+                    <outline text="US SPY Car Act"/>
+                    <outline text="Intelligent And Connected Vehicles Initiative"/>
+                </outline>
+                <outline text="Ecommerce">
+                    <outline text="PCI DSS"/>
+                </outline>
+            </outline>
+            <outline text="Assess The Secure Software Lifecycle">
+                <outline text="SAMM"/>
+                <outline text="BSIMM"/>
+                <outline text="Common Criteria">
+                    <outline text="Structural Testing"/>
+                    <outline text="Methodical Testing"/>
+                    <outline text="Methodical Design"/>
+                    <outline text="Semi-formal Design"/>
+                    <outline text="Semi-formal Verified Design"/>
+                    <outline text="Formally Verified Design"/>
+                    <outline text="ssl101"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Network Security" colorLabel="3">
+            <outline text="Internet Architecture">
+                <outline text="Application-layer Security">
+                    <outline text="Application-layer Protocols"/>
+                    <outline text="Public Key Infrastructure">
+                        <outline text="Certificate Authorities"/>
+                    </outline>
+                    <outline text="DNSSEC"/>
+                    <outline text="HTTPS"/>
+                    <outline text="NTP"/>
+                    <outline text="DNS Security Extensions">
+                        <outline text="DNS Attacks"/>
+                        <outline text="DNS Hijacking"/>
+                        <outline text="DNS Spoofing"/>
+                    </outline>
+                </outline>
+                <outline text="Transport-layer Security">
+                    <outline text="Handshaking"/>
+                    <outline text="Key-derivation"/>
+                    <outline text="Data-transfer"/>
+                    <outline text="TLS Attacks">
+                        <outline text="SYN Flooding"/>
+                        <outline text="SSL Stripping"/>
+                        <outline text="BEAST"/>
+                        <outline text="Lucky Thirteen"/>
+                    </outline>
+                    <outline text="QUIC"/>
+                </outline>
+                <outline text="Network Layer Security">
+                    <outline text="IPsec">
+                        <outline text="Encapsulation Security Payload"/>
+                        <outline text="Authentication Headers"/>
+                        <outline text="Security Association"/>
+                        <outline text="Internet Key Exchange Protocol"/>
+                    </outline>
+                    <outline text="IP Masquerading"/>
+                    <outline text="Routing Protocol Security"/>
+                    <outline text="Border Gateway Protocol">
+                        <outline text="BGP Route Hijacking"/>
+                        <outline text="BGP Denial-of-service"/>
+                        <outline text="BGPSec"/>
+                    </outline>
+                    <outline text="Ns39"/>
+                </outline>
+                <outline text="Link Layer Security">
+                    <outline text="Attacks On Ethernet Switches">
+                        <outline text="MAC Spoofing"/>
+                        <outline text="ARP Spoofing"/>
+                        <outline text="VLAN Hopping"/>
+                        <outline text="Switch Poisoning Attack"/>
+                    </outline>
+                    <outline text="IEEE 802.1X">
+                        <outline text="Extensible Authentication Protocol"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Network Defence Tools">
+                <outline text="Packet Filters"/>
+                <outline text="Intrusion Detection Systems">
+                    <outline text="Signature-based IDS"/>
+                    <outline text="Anomaly-based IDS"/>
+                    <outline text="Host Intrusion Detection System"/>
+                </outline>
+                <outline text="Intrusion Prevention System"/>
+                <outline text="Network Architecture Design">
+                    <outline text="Network Perimeter Protection"/>
+                </outline>
+                <outline text="Application Gateway"/>
+                <outline text="Circuit-level Gateway"/>
+            </outline>
+            <outline text="Wireless LAN Security">
+                <outline text="WPA"/>
+                <outline text="WPA2"/>
+                <outline text="WEP"/>
+                <outline text="WPA3"/>
+                <outline text="RSN"/>
+            </outline>
+            <outline text="Advanced Network Security Topics">
+                <outline text="Software Defined Networking">
+                    <outline text="DDOS Defences"/>
+                    <outline text="Timing Side-channels"/>
+                    <outline text="Network Function Virtualisation"/>
+                </outline>
+                <outline text="Internet Of Things Security">
+                    <outline text="Mirai Malware"/>
+                    <outline text="Limited Capacity Security Protocols"/>
+                </outline>
+            </outline>
+            <outline text="Network Protocols And Vulnerability">
+                <outline text="Dolev-Yao Adversarial Model"/>
+                <outline text="Common Network Attacks">
+                    <outline text="Packet Sniffing"/>
+                    <outline text="Man-in-the-middle"/>
+                    <outline text="Denial Of Service"/>
+                    <outline text="IP Spoofing"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Hardware Security" colorLabel="3">
+            <outline text="Hardware Design Cycle">
+                <outline text="Hardware Design Process">
+                    <outline text="Behavioural Domain">
+                        <outline text="Systems"/>
+                        <outline text="Current, Voltage"/>
+                        <outline text="Logic"/>
+                        <outline text="Register Transfers"/>
+                        <outline text="Algorithms"/>
+                    </outline>
+                    <outline text="Structural Domain">
+                        <outline text="Transistors"/>
+                        <outline text="Gates, Flip-flops, Etc"/>
+                        <outline text="ALUs, RAM, Etc"/>
+                        <outline text="Processor"/>
+                    </outline>
+                    <outline text="Physical Domain">
+                        <outline text="Physical Partitions"/>
+                        <outline text="Transistor Layout"/>
+                        <outline text="Cell Layout"/>
+                        <outline text="Module Layout"/>
+                        <outline text="Floorplans"/>
+                    </outline>
+                </outline>
+                <outline text="Root Of Trust">
+                    <outline text="SIMs"/>
+                    <outline text="TPMs"/>
+                </outline>
+                <outline text="Threat Model"/>
+            </outline>
+            <outline text="Measuring Hardware Security">
+                <outline text="FIPS 140-2">
+                    <outline text="Approved Cryptographic Algorithms"/>
+                    <outline text="Tamper Evidence"/>
+                    <outline text="Tamper Resistance"/>
+                </outline>
+                <outline text="Common Criteria And EMVCo"/>
+                <outline text="SESIP"/>
+            </outline>
+            <outline text="Secure Platforms">
+                <outline text="Hardware Security Module (HSM)"/>
+                <outline text="Secure Element And Smartcard"/>
+                <outline text="Trusted Platform Module (TPM)">
+                    <outline text="Root Of Trust For Measurement"/>
+                    <outline text="Root Of Trust For Storage"/>
+                    <outline text="Root Of Trust For Reporting"/>
+                </outline>
+            </outline>
+            <outline text="Hardware Support For Software Security">
+                <outline text="IBM 4758 Secure Coprocessor"/>
+                <outline text="ARM Trustzone"/>
+                <outline text="Protected Module Architectures">
+                    <outline text="Small TCB Implementations"/>
+                    <outline text="Zero TCB Implementations"/>
+                    <outline text="Intel Software Guard Extension (SGX)"/>
+                </outline>
+                <outline text="Light-weight Solutions">
+                    <outline text="Qarma"/>
+                    <outline text="SMART"/>
+                    <outline text="Hardware Shadow Stacks"/>
+                    <outline text="Pointer Authentication"/>
+                </outline>
+                <outline text="Objectives">
+                    <outline text="Isolation"/>
+                    <outline text="Attestation"/>
+                    <outline text="Sealed Storage"/>
+                    <outline text="Memory Protection"/>
+                    <outline text="Control Flow Integrity"/>
+                    <outline text="Information Flow Analysis"/>
+                    <outline text="Protection"/>
+                </outline>
+                <outline text="Virtual Machines"/>
+                <outline text="Trusted Execution Environment"/>
+            </outline>
+            <outline text="Hardware Design For Cryptographic Algorithms">
+                <outline text="Cryptographic Algorithms At RTL Level">
+                    <outline text="Hash Algorithms">
+                        <outline text="Cryptocurrency Mining"/>
+                    </outline>
+                    <outline text="Public Key Algorithms"/>
+                    <outline text="Quantum Resistant Algorithms"/>
+                    <outline text="Homomorphic Encryption Schemes"/>
+                    <outline text="Secret Key Algorithms"/>
+                    <outline text="Secret Key Light-weight Algorithms"/>
+                </outline>
+                <outline text="Design Process">
+                    <outline text="Electronic Design Automation (EDA)"/>
+                    <outline text="Register Transfer Level (RTL)"/>
+                    <outline text="Application Specific Integrated Circuit (ASIC)"/>
+                    <outline text="Field Programmable Gata Array (FPGA)"/>
+                    <outline text="Power Consumption"/>
+                </outline>
+            </outline>
+            <outline text="Side-channel Attacks And Fault Attacks">
+                <outline text="Attacks">
+                    <outline text="Active Fault Attacks">
+                        <outline text="Optical-fault Attacks">
+                            <outline text="Sensors"/>
+                        </outline>
+                    </outline>
+                    <outline text="Micro-architectural Side-channels">
+                        <outline text="RowHammer"/>
+                        <outline text="Meltdown"/>
+                        <outline text="Foreshadow"/>
+                        <outline text="Spectre"/>
+                    </outline>
+                    <outline text="Passive Side Channel Attacks">
+                        <outline text="Differential Power Analysis"/>
+                        <outline text="Electro-magnetic Radiation Attacks"/>
+                        <outline text="Template Attacks"/>
+                        <outline text="Simple Power Analysis"/>
+                        <outline text="Timing Attacks">
+                            <outline text="Constant Time Execution"/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="Countermeasures">
+                    <outline text="Sensors"/>
+                    <outline text="Constant Time Execution"/>
+                    <outline text="Redundancy"/>
+                    <outline text="Randomisation"/>
+                    <outline text="Masking"/>
+                    <outline text="Hiding"/>
+                    <outline text="Micro-code Updates"/>
+                </outline>
+            </outline>
+            <outline text="Entropy Generating Building Blocks">
+                <outline text="Physically Unclonable Functions (PUFs)">
+                    <outline text="Machine Learning Attacks"/>
+                    <outline text="Weak PUFs"/>
+                    <outline text="Strong PUFs"/>
+                </outline>
+                <outline text="Random Number Generation">
+                    <outline text="True Random Number Generation (TRNG)"/>
+                    <outline text="Pseudo Random Number Generation (PRNG)"/>
+                </outline>
+            </outline>
+            <outline text="Hardware Design Process">
+                <outline text="Time"/>
+                <outline text="Design And Fabrication Of Silicon Integrated Circuits"/>
+                <outline text="Trojan Circuits"/>
+                <outline text="Cicuit Level Techniques"/>
+                <outline text="Board Level Security"/>
+            </outline>
+        </outline>
+        <outline text="Cyber-Physical Systems" colorLabel="3">
+            <outline text="Cyber-physical Systems">
+                <outline text="Characteristics">
+                    <outline text="Embedded Systems"/>
+                    <outline text="Real-time Systems"/>
+                    <outline text="Network Protocols"/>
+                    <outline text="Wireless">
+                        <outline text="Sensor Networks"/>
+                    </outline>
+                    <outline text="Control">
+                        <outline text="Discrete-time Control"/>
+                        <outline text="Networked-controlled Systems"/>
+                        <outline text="Hybrid Systems"/>
+                    </outline>
+                </outline>
+                <outline text="Protections Against Natural Events And Accidents">
+                    <outline text="Safety"/>
+                    <outline text="Protection">
+                        <outline text="Protection Of Generators"/>
+                        <outline text="Under Frequency Load Shedding (UFLS)"/>
+                        <outline text="Overcurrent Protection"/>
+                        <outline text="Ove/under Voltage"/>
+                    </outline>
+                    <outline text="Reliability"/>
+                    <outline text="Fault Tolerance"/>
+                    <outline text="Robust Control"/>
+                    <outline text="Safety Vs Security"/>
+                </outline>
+                <outline text="Security And Privacy Concerns">
+                    <outline text="Attacks Agains CPSs">
+                        <outline text="Architectural Threats"/>
+                        <outline text="High-profile Real-world Attacks"/>
+                    </outline>
+                </outline>
+            </outline>
+            <outline text="Crosscutting Security">
+                <outline text="Preventing Attacks">
+                    <outline text="Securing Legacy Systems">
+                        <outline text="Bumb-in-the-wire"/>
+                        <outline text="Wireless Shield"/>
+                    </outline>
+                    <outline text="Lightweight Security"/>
+                    <outline text="Secure Microkernels"/>
+                    <outline text="Preventing Transduction Attacks"/>
+                </outline>
+                <outline text="Detecting Attacks">
+                    <outline text="Remote Attestation"/>
+                    <outline text="Network Intrusion Detection"/>
+                    <outline text="Physics-based Attack Detection"/>
+                    <outline text="Historical Anomalies"/>
+                    <outline text="Physical-law Anomalies"/>
+                    <outline text="Out-of-band Detection"/>
+                    <outline text="Active Detection"/>
+                </outline>
+                <outline text="Mitigating Attacks">
+                    <outline text="Resilient Control Systems"/>
+                    <outline text="Conservative Control"/>
+                    <outline text="Resilient Estimation"/>
+                    <outline text="Sensor Fusion"/>
+                    <outline text="Virtual Sensors"/>
+                    <outline text="Constraining Actuation"/>
+                    <outline text="Inertial Resets"/>
+                    <outline text="Reactive Control Compensation"/>
+                    <outline text="Safe Control Actions"/>
+                </outline>
+            </outline>
+            <outline text="CPS Domains">
+                <outline text="Industrial Control Systems">
+                    <outline text="PLCs"/>
+                    <outline text="RTUs"/>
+                    <outline text="Corporate Networks"/>
+                    <outline text="SCADA"/>
+                    <outline text="Regulatory Control"/>
+                    <outline text="OT Networks"/>
+                    <outline text="Intrusion Detection"/>
+                </outline>
+                <outline text="Electric Power Grids">
+                    <outline text="Bulk Power System"/>
+                    <outline text="Smart Grids">
+                        <outline text="Efficiency"/>
+                        <outline text="Reliability"/>
+                        <outline text="Consumer Choice"/>
+                        <outline text="Load-altering Attacks"/>
+                    </outline>
+                </outline>
+                <outline text="Transportation Systems And Autonomous Vehicles">
+                    <outline text="Traffic Flow Control"/>
+                    <outline text="Demand Management"/>
+                    <outline text="Incident Management"/>
+                    <outline text="Vulnerabilities"/>
+                    <outline text="Ground, Air, And See Vehicles">
+                        <outline text="Privacy Concerns Of Drones"/>
+                        <outline text="Transduction Attacks On Sensors"/>
+                    </outline>
+                </outline>
+                <outline text="Robotics And Advanced Manufacturing">
+                    <outline text="Attacks On Quality"/>
+                    <outline text="Safety Problems"/>
+                </outline>
+                <outline text="Medical Devices">
+                    <outline text="Implantable Medical Devices">
+                        <outline text="Attacks"/>
+                        <outline text="Touch-to-access Principle"/>
+                    </outline>
+                </outline>
+                <outline text="IoT">
+                    <outline text="DDoS Attacks"/>
+                    <outline text="Botnets"/>
+                    <outline text="Privacy Invasions"/>
+                    <outline text="Attacks On Digital Assistants"/>
+                    <outline text="Security Hubs"/>
+                </outline>
+            </outline>
+            <outline text="Policy And Political Aspects">
+                <outline text="Incentives And Regulation">
+                    <outline text="Regulation"/>
+                    <outline text="Incentives"/>
+                </outline>
+                <outline text="Cyber-conflict">
+                    <outline text="Cybercriminals"/>
+                    <outline text="Disgruntled Employees"/>
+                    <outline text="Terrorists And Activists"/>
+                    <outline text="Nation States">
+                        <outline text="Tallinn Manual"/>
+                        <outline text="Koh Speech"/>
+                        <outline text="Acts Of War"/>
+                    </outline>
+                </outline>
+                <outline text="Industry Practices And Standards">
+                    <outline text="ISA 99/IEC 62443 "/>
+                    <outline text="NIST SP 800-53"/>
+                    <outline text="NIST-IR 762"/>
+                    <outline text="NERC Standards"/>
+                    <outline text="IEC 104"/>
+                    <outline text="PROFINET"/>
+                    <outline text="IEC 62351"/>
+                    <outline text="ETSI TS 103 645"/>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="Physical Layer Security and Telecommunications" colorLabel="3">
+            <outline text="Schemes For Confidentiality, Integrity And Access Control">
+                <outline text="Key Establishment Based On Channel Reciprocity">
+                    <outline text="Establishment Processes">
+                        <outline text="Quantisation"/>
+                        <outline text="Information Reconciliation"/>
+                        <outline text="Key Verification"/>
+                    </outline>
+                </outline>
+                <outline text="MIMO-supported Approaches">
+                    <outline text="Orthogonal Blinding "/>
+                    <outline text="Zero-forcing"/>
+                </outline>
+                <outline text="Secrecy Capacity"/>
+                <outline text="Friendly Jamming"/>
+                <outline text="Protecting Data Integrity">
+                    <outline text="Integrity Codes"/>
+                </outline>
+                <outline text="LPI And Covert Communication">
+                    <outline text="Frequency Hopping"/>
+                    <outline text="Direct Sequency Spread Spectrum"/>
+                    <outline text="Chirping"/>
+                </outline>
+            </outline>
+            <outline text="Jamming And Jamming-resilient Communication">
+                <outline text="Classifications Of Jammers">
+                    <outline text="Constant"/>
+                    <outline text="Reactive"/>
+                </outline>
+                <outline text="Countermeasures"/>
+                <outline text="Coordinated Spread Spectrum Techniques"/>
+                <outline text="Uncoordinated Spread Spectrum Techniques"/>
+                <outline text="Signal Anihilation And Overshadowing"/>
+            </outline>
+            <outline text="Identification">
+                <outline text="Device Under Identification"/>
+                <outline text="Identification Signals">
+                    <outline text="Features">
+                        <outline text="In-specificaiton">
+                            <outline text="Modulation Errors"/>
+                            <outline text="Time-related Parameters"/>
+                        </outline>
+                        <outline text="Out-specification">
+                            <outline text="Clock Skew"/>
+                            <outline text="Turn-on Transient Duration"/>
+                        </outline>
+                    </outline>
+                    <outline text="Inferred Characteristics"/>
+                </outline>
+                <outline text="Device Fingerprints">
+                    <outline text="Properties">
+                        <outline text="Universality"/>
+                        <outline text="Uniqueness"/>
+                        <outline text="Collectability"/>
+                        <outline text="Permenance"/>
+                        <outline text="Robustness"/>
+                        <outline text="Data-dependency"/>
+                    </outline>
+                </outline>
+                <outline text="Attacks On Physical Layer Identification">
+                    <outline text="Signal Re(p)lay"/>
+                    <outline text="Feature Replay"/>
+                </outline>
+            </outline>
+            <outline text="Distance Bounding And Secure Positioning">
+                <outline text="Distance Bounding Protocols">
+                    <outline text="Attacks">
+                        <outline text="Distance Fraud"/>
+                        <outline text="Mafia Fraud"/>
+                        <outline text="Terrorist Fraud"/>
+                        <outline text="Distance Hijacking"/>
+                    </outline>
+                </outline>
+                <outline text="Distance Measurement Techniques"/>
+                <outline text="Physical Layer Attacks On Secure Distance Measurement">
+                    <outline text="RSSI-based Distance Estimation Attacks"/>
+                    <outline text="Time Of Flight Based Ranging Attacks"/>
+                </outline>
+                <outline text="Secure Positioning">
+                    <outline text="Spoofing Attacks"/>
+                    <outline text="Verifiable Multilateration"/>
+                    <outline text="Secure Positioning Based On Hidden Stations"/>
+                </outline>
+            </outline>
+            <outline text="Physical Layer Security Of Selected Communication Technologies">
+                <outline text="NFC">
+                    <outline text="Wormhole Attacks"/>
+                    <outline text="Shielding"/>
+                    <outline text="Multi-factor Authentication"/>
+                    <outline text="Protocol Augmentation"/>
+                    <outline text="Timing Restrictions"/>
+                    <outline text="Distance Bounding"/>
+                </outline>
+                <outline text="Air Traffic Communication Networks">
+                    <outline text="ADS-B"/>
+                    <outline text="Multilateration"/>
+                </outline>
+                <outline text="Cellular Networks">
+                    <outline text="GSM"/>
+                    <outline text="3G"/>
+                    <outline text="GPRS"/>
+                    <outline text="4G (LTE)"/>
+                    <outline text="Authentication Protocols"/>
+                    <outline text="5G"/>
+                </outline>
+                <outline text="GNSS Security And Spoofing Attacks">
+                    <outline text="Galileo"/>
+                    <outline text="Signal Spoofing Attacks"/>
+                    <outline text="Non-coherent And Modified Message Contents"/>
+                    <outline text="Non-coherent But Unmodified Message Contents"/>
+                    <outline text="Coherent But Modified Message Contents"/>
+                    <outline text="Coherent And Unmodified Message Contents"/>
+                    <outline text="Seeamless Takeover Attack"/>
+                    <outline text="Countermeasures"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

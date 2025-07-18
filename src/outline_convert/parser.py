@@ -4,7 +4,7 @@ from typing import List, Optional
 from .models import Node
 import xml.etree.ElementTree as ET
 import re
-from .utils import detect_indent, compute_level, link_parent, print_tree
+from .utils import detect_indent, compute_level, link_parent, print_tree, parse_opml_children
 
 IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
 IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
@@ -79,38 +79,32 @@ def parse_text_tree(lines: List[str], args: argparse.Namespace) -> Node:
     return root
 
 def parse_opml(root_elem: ET.Element, args: argparse.Namespace) -> List[Node]:
+    roots: List[Node] = []
     head = root_elem.find('head')
-    title = 'Untitled'
-    if head is not None:
-        root_title = head.find('title')
-        title = root_title.text
-    root = Node(title)
+    title_elem = head.find('title') if head is not None else None
+
     body = root_elem.find('body')
     if body is None:
-        return Node('Empty OPML')
-    
-    first_outline = body.find('outline')
-    if first_outline is None:
-        return Node('Empty OPML')
+        return [Node('Empty OPML')]
 
-    note = first_outline.get('_note')
-    if note:
-        root.note = note
-    
+    if title_elem is not None and title_elem.text:
+        root = Node(title_elem.text.strip())
+        for outline in body.findall('outline'):
+            first_node = Node(outline.get('text', 'Untitled').strip())
+            note = outline.get('_note')
+            if note:
+                root.note = note
+            root.children.append(first_node)
+            parse_opml_children(outline, root)
+        roots.append(root)
+        return roots
 
-
-    recurse(body, root)
-
-    return [root]
-
-def recurse(elem: ET.Element, parent: Node):
-    for child_elem in elem.findall('outline'):
-        title = child_elem.get('text', '')
-        node = Node(title)
-        note = child_elem.get('_note')
-        if note:
+    for outline in body.findall('outline'):
+        node = Node(outline.get('text', 'Untitled').strip())
+        if (note := outline.get('_note')):
             node.note = note
+        parse_opml_children(outline, node)
+        roots.append(node)
 
-        parent.children.append(node)
-        node.parent = parent
-        recurse(child_elem, node)
+    return roots
+

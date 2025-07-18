@@ -41,6 +41,18 @@ def find_node_tree(node: Node, prefix: str) -> Optional[Node]:
             return result
 
     return None
+
+def parse_opml_children(elem: ET.Element, parent: Node):
+    for child_elem in elem.findall('outline'):
+        title = child_elem.get('text', '')
+        node = Node(title)
+        note = child_elem.get('_note')
+        if note:
+            node.note = note
+
+        parent.children.append(node)
+        node.parent = parent
+        parse_opml_children(child_elem, node)
     
 # -- PRETTY INDENT ----------------------------------------------------------
 def indent(elem: ET.Element, level: int = 0):
@@ -150,6 +162,7 @@ def ignore_tree(node: Node, args: argparse.Namespace):
 
 
 def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
+    print("In ignore forest")
     for tree in forest:
         ignore_tree(tree, args)
     return forest

@@ -42,6 +42,8 @@ def main():
                    help='Choose the selected file in the most recent zip backup')
     p.add_argument('--expert-mode', action='store_true',
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
+    p.add_argument('-p', '--parse-markdown', action='store_true',
+                   help='Parse markdown syntax for links and images')
 
     # Output formatting arguments
     p.add_argument('--strip-tags', action='store_true', default=False, help='Strip tags from input')
@@ -114,8 +116,10 @@ def main():
     try:
         tree = ET.fromstringlist(lines)
         forest = ignore_forest(parse_opml(tree, args=args), args)
+        print("ompl parsed correctly")
+        #print_forest(forest)
 
-    except:
+    except ET.ParseError:
         if args.debug:
             print("ompl not parsed correctly")
         forest = ignore_forest(parse_text(lines, args), args)

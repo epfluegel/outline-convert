@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>AP</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="ACHIEVEMENTS">
+            <outline text="BY CS (FULL NARRATIVES)">
+                <outline text="CS1">
+                    <outline text="Successfully informing a TEF-underpinned, inclusive networking, cyber and information security curriculum for Kingston University and teaching by research scholarship and REF research outputs.  "/>
+                    <outline text="Design, implementation and leadership of the new Network and Information Security (NIS) MSc course at the School, offering long-standing excellent and inclusive up-to-date postgraduate education with outstanding student feedback.  "/>
+                    <outline text="Successful leadership of a team in the restructuring, modernisation and revalidation of an undergraduate cyber security BSc Programme in the role of School Cyber Champion for the University's Strategic Plan 2020.  "/>
+                    <outline text="Substantial growth in recruitment for the Network and Information Security MSc between 2008 and 2019, expanding student numbers from 13 in 2018 to 89 in 2020, achieving an increase of 584%.  "/>
+                    <outline text="Development of asynchronous teaching resources including an educational public YouTube channel in order to adapt teaching practice well to a blended-learning approach, in the context of the Covid-19 pandemic.  "/>
+                    <outline text="The author has served as external examiner for University of Portsmouth for a Foundation Degree in Network Security since 2018 and the contract was extended in 2020 to a Computing BSc.  "/>
+                </outline>
+                <outline text="CS2">
+                    <outline text="The author is actively contributing to the Kingston Academic Practice Standards (KAPS) framework after having reached professional recognition as Senior Fellow of the Higher Education Academy (SFHEA) in 2019.  "/>
+                    <outline text="A Student Consultancy Project was commissioned resulting in funding to improve the existing assistive technology provision at the University, thereby reducing inequalities.   "/>
+                    <outline text="Excellent, supportive and effective research supervision has taken place of six PhD teams and seven individual PhD students as first supervisor.     "/>
+                    <outline text="Internal funding of a total of £9500 was secured for pedagogical research in the area of mindful teaching, followed by public dissemination of results.    "/>
+                    <outline text="New and innovative research has led to mindful learning methodology proven to be preferred by 65% of students in a study spanning 3 academic years.      "/>
+                    <outline text="A total of three educational software tools in areas of speech recognition and hierarchical outlines have been developed and made publicly available, based on leading European Erasmus/Erasmus+ internship projects.    "/>
+                </outline>
+                <outline text="CS3">
+                    <outline text="Building a core and wider postgraduate course team of academics with NCSC recognised cyber security expertise.    "/>
+                    <outline text="Leading a teaching team to design and validate the Network and Information Security (NIS) MSc Cyber Pathway, satisfying the NCSC certification requirements.    "/>
+                    <outline text="Establishing a network of external high-profile professionals, available for regular guest lecturing and knowledge exchange in cyber security postgraduate modules.    "/>
+                    <outline text="Leadership of the Network and Information Security (NIS) MSc Cyber Pathway to the successful award of the Provisional NCSC Certification in September 2016.   "/>
+                    <outline text="Leadership of the Network and Information Security (NIS) MSc Cyber Pathway to the successful award of the Full NCSC Certification in January 2020.  "/>
+                    <outline text="Taking advantage of additional opportunities arising from the NCSC certification status to secure funding from the Department of Digital, Culture, Media and Sports (DCMS) studentships and obtaining access to paid summer internship programs for NIS students.  "/>
+                </outline>
+                <outline text="CS4">
+                    <outline text="The author has assessed applications from other UK institutions for three certification cycles since 2018 as a member of the UK National Cyber Security Centre (NCSC) Certified Degrees Assessment Panel.  "/>
+                    <outline text="Regular workshop presentations were given as contributions to the national Fostering Excellence in Teaching: Cyber Security for Computer Science Community of Practice (CSCoP) network since its inception in 2017.    "/>
+                    <outline text="Creation of publicly available resources and submission of a recent funding bid, actively supporting the national Cyber Security Body of Knowledge (CyBOK) educational project, as a member of the Colloquium for Information Systems Security Education (CISSE UK).    "/>
+                    <outline text="Delivery of public lectures, keynote talks and the creation of an active Twitter feed by the author, disseminating information and research knowledge, and enhancing the external profile of the School's cyber security field.    "/>
+                </outline>
+            </outline>
+            <outline text="BY TIMELINE">
+                <outline text="**Teaching**.">
+                    <outline text="Successfully informing a TEF-underpinned, inclusive networking, cyber and information security curriculum for Kingston University and teaching by research scholarship and REF research outputs.  ">
+                        <outline text="Design, implementation and leadership of the new Network and Information Security (NIS) MSc course at the School, offering long-standing excellent and inclusive up-to-date postgraduate education with outstanding student feedback.  ">
+                            <outline text="Successful leadership of a team in the restructuring, modernisation and revalidation of an undergraduate cyber security BSc Programme in the role of School Cyber Champion for the University's Strategic Plan 2020.  "/>
+                            <outline text="Establishing a network of external high-profile professionals, available for regular guest lecturing and knowledge exchange in cyber security postgraduate modules.    "/>
+                            <outline text="Building a core and wider postgraduate course team of academics with NCSC recognised cyber security expertise.    ">
+<outline text="Leading a teaching team to design and validate the Network and Information Security (NIS) MSc Cyber Pathway, satisfying the NCSC certification requirements.    "/>
+<outline text="Leadership of the Network and Information Security (NIS) MSc Cyber Pathway to the successful award of the Provisional NCSC Certification in September 2016.   ">
+    <outline text="Leadership of the Network and Information Security (NIS) MSc Cyber Pathway to the successful award of the Full NCSC Certification in January 2020.  ">
+        <outline text="Taking advantage of additional opportunities arising from the NCSC certification status to secure funding from the Department of Digital, Culture, Media and Sports (DCMS) studentships and obtaining access to paid summer internship programs for NIS students.  "/>
+    </outline>
+</outline>
+                            </outline>
+                            <outline text="Substantial growth in recruitment for the Network and Information Security MSc between 2008 and 2019, expanding student numbers from 13 in 2018 to 89 in 2020, achieving an increase of 584%.  ">
+<outline text="Development of asynchronous teaching resources including an educational public YouTube channel in order to adapt teaching practice well to a blended-learning approach, in the context of the Covid-19 pandemic.  "/>
+                            </outline>
+                        </outline>
+                        <outline text="**External Examiner**. The author has served as external examiner for University of Portsmouth for a Foundation Degree in Network Security since 2018 and the contract was extended in 2020 to a Computing BSc.  "/>
+                        <outline text="The author is actively contributing to the Kingston Academic Practice Standards (KAPS) framework after having reached professional recognition as Senior Fellow of the Higher Education Academy (SFHEA) in 2019.  ">
+                            <outline text="A Student Consultancy Project was commissioned resulting in funding to improve the existing assistive technology provision at the University, thereby reducing inequalities.   "/>
+                        </outline>
+                    </outline>
+                </outline>
+                <outline text="**Research**. ">
+                    <outline text="Excellent, supportive and effective research supervision has taken place of six PhD teams and seven individual PhD students as first supervisor.     "/>
+                    <outline text="Internal funding of a total of £9500 was secured for pedagogical research in the area of mindful teaching, followed by public dissemination of results.    ">
+                        <outline text="New and innovative research has led to mindful learning methodology proven to be preferred by 65% of students in a study spanning 3 academic years.      "/>
+                    </outline>
+                    <outline text="A total of three educational software tools in areas of speech recognition and hierarchical outlines have been developed and made publicly available, based on leading European Erasmus/Erasmus+ internship projects.    "/>
+                </outline>
+                <outline text="CS3"/>
+                <outline text="CS4">
+                    <outline text="The author has assessed applications from other UK institutions for three certification cycles since 2018 as a member of the UK National Cyber Security Centre (NCSC) Certified Degrees Assessment Panel.  "/>
+                    <outline text="Regular workshop presentations were given as contributions to the national Fostering Excellence in Teaching: Cyber Security for Computer Science Community of Practice (CSCoP) network since its inception in 2017.    "/>
+                    <outline text="Creation of publicly available resources and submission of a recent funding bid, actively supporting the national Cyber Security Body of Knowledge (CyBOK) educational project, as a member of the Colloquium for Information Systems Security Education (CISSE UK).    "/>
+                    <outline text="Delivery of public lectures, keynote talks and the creation of an active Twitter feed by the author, disseminating information and research knowledge, and enhancing the external profile of the School's cyber security field.    "/>
+                </outline>
+            </outline>
+            <outline text="ACHIEVEMENTS (SHORT)">
+                <outline text="CS1">
+                    <outline text="TEF-underpinned research-informed inclusive teaching"/>
+                    <outline text="NIS Msc design, implementation and leadership"/>
+                    <outline text="Cyber champion &amp; BSc Programme for Plan 2020"/>
+                    <outline text="Substantial recruitment growth"/>
+                    <outline text="YouTube channel"/>
+                    <outline text="External examiner"/>
+                </outline>
+                <outline text="CS2">
+                    <outline text="SFHEA and KAPS Panel"/>
+                    <outline text="NEC Panel and Student Consultancy Project"/>
+                    <outline text="Excellent PhD student supervision (7/6)"/>
+                    <outline text="Mindful teaching internal funding"/>
+                    <outline text="Mindful teaching results"/>
+                    <outline text="Creation of educational software tools"/>
+                </outline>
+                <outline text="CS3">
+                    <outline text="Built NCSC-recognised course team"/>
+                    <outline text="NIS MSc validation lead"/>
+                    <outline text="Network of guest lecturers"/>
+                    <outline text="Achieved provisional NCSC certification (2016) "/>
+                    <outline text="Achieved full NCSC certification (2020) "/>
+                    <outline text="Embrace additional opportunities (DCMS studentships, NCSC summer internships)"/>
+                </outline>
+                <outline text="CS4">
+                    <outline text="Member of NCSC Certified Degree Panel "/>
+                    <outline text="CSCoP membership"/>
+                    <outline text="CyBOK Project"/>
+                    <outline text="Active Twitter feed"/>
+                </outline>
+            </outline>
+            <outline text="ACHIEVEMENTS ">
+                <outline text="CS1: Cyber">
+                    <outline text="INCLUSIVE TEACHING">
+                        <outline text="TEF-underpinned research-informed inclusive teaching"/>
+                    </outline>
+                    <outline text="CURRICULUM DESIGN AND COURSE LEADERSHIP">
+                        <outline text="NIS Msc design, implementation and leadership"/>
+                        <outline text="Cyber champion &amp; BSc Programme for Plan 2020"/>
+                        <outline text="Substantial recruitment growth"/>
+                    </outline>
+                    <outline text="EXTERNALITY">
+                        <outline text="YouTube channel"/>
+                        <outline text="External examiner"/>
+                    </outline>
+                </outline>
+                <outline text="CS2: Mind">
+                    <outline text="TEACHING QUALIFICATIONS AND RECOGNITIONS ">
+                        <outline text="SFHEA/KAPS">
+                            <outline text="SFHEA and KAPS Panel"/>
+                        </outline>
+                    </outline>
+                    <outline text="PEDAGOGICAL RESEARCH">
+                        <outline text="Excellent PhD student supervision (7/6)"/>
+                        <outline text="Mindful teaching internal funding"/>
+                        <outline text="Mindful teaching results"/>
+                        <outline text="Creation of educational software tools"/>
+                    </outline>
+                    <outline text="PASTORAL CARE ">
+                        <outline text="NEC Panel and Student Consultancy Project"/>
+                    </outline>
+                </outline>
+                <outline text="CS3: NCSC">
+                    <outline text="PRE-NCSC">
+                        <outline text="Built NCSC-recognised course team"/>
+                        <outline text="Network of guest lecturers"/>
+                    </outline>
+                    <outline text="NCSC">
+                        <outline text="NIS MSc validation lead"/>
+                        <outline text="Achieved provisional NCSC certification (2016) "/>
+                        <outline text="Achieved full NCSC certification (2020) "/>
+                    </outline>
+                    <outline text="POST-NCSC">
+                        <outline text="Embrace additional opportunities (DCMS studentships, NCSC summer internships)"/>
+                    </outline>
+                </outline>
+                <outline text="CS4: Knowledge">
+                    <outline text="COMMUNITY OF PRACTICE"/>
+                    <outline text="NCSC PANEL"/>
+                    <outline text="CYBOK"/>
+                    <outline text="TWITTER"/>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

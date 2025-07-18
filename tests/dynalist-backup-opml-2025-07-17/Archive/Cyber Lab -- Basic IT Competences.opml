@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<opml version="2.0">
+    <head>
+        <title>Cyber Lab -- Basic IT Competences</title>
+        <flavor>dynalist</flavor>
+        <source>https://dynalist.io</source>
+        <ownerName>Eckhard</ownerName>
+        <ownerEmail>e.pfluegel@gmail.com</ownerEmail>
+    </head>
+    <body>
+        <outline text="How to Log in to Linux">
+            <outline text="At the CentOS login prompt, you can always login with the following credentials: ">
+                <outline text="Name: `windows`"/>
+                <outline text="Password: `test`"/>
+            </outline>
+            <outline text="You might also have received an email sending you a separate Cyberlab password. You can then log on using your k-number and cyber lab password. Please note that this is different to your regular password. "/>
+            <outline text="If you cannot find the email, it may be in your junk folder. If you have not yet received a cyber lab password, please inform your instructor."/>
+        </outline>
+        <outline text="How to Launch a Terminal Window">
+            <outline text="This can be done by going to `System Tools &gt; MATE Terminal` (via green icon to the left in top system panel). Alternatively, you can also click on the terminal icon on the system panel."/>
+            <outline text="Within an existing terminal window, a second window can be opened by pressing `Shift+Ctrl+N`."/>
+        </outline>
+        <outline text="How to Launch VirtualBox">
+            <outline text="This can be done in several ways: " listStyle="arabic">
+                <outline text="Double-Click on any `.ova` icon that is visible on your desktop. "/>
+                <outline text="In a terminal, type `virtualbox`. "/>
+                <outline text="Using the menu in system top panel , choose `Applications &gt; System Tools &gt; Oracle VM VirtualBox`. "/>
+            </outline>
+        </outline>
+        <outline text="How to Deploy a Virtual Machine">
+            <outline text="Open a Terminal window."/>
+            <outline text="Type the command `create_vm.sh` to execute the required shell script."/>
+            <outline text="Select the VM of your choice, using the left and right arrow keys (e.g. `Xubuntu Work`)."/>
+            <outline text="Create a name (this is case sensitive, don't use spaces)."/>
+            <outline text="Confirm creation by pressing `y`."/>
+            <outline text="It is recommended to delete your VM once you do not require it anymore."/>
+            <outline text="SETUP THE KALI VIRTUAL MACHINE">
+                <outline text="1. On your cyber Lab workstation, open a terminal and type"/>
+                <outline text="The following screen should be displayed:"/>
+                <outline text="2. Use the arrow keys on the keyboard to select the virtual machine that you want to install"/>
+                <outline text="(e.g. kali-Linux-2018.4-vbox-amd64.ovf or xp.ovf ) and press the ENTER key and you should be prompted to enter a name for the virtual machine that you want to create, as shown in the example below:"/>
+                <outline text="3. Enter a name for your VM and press the ENTER key. You should the following prompt:"/>
+                <outline text="4. Type the letter y and press the ENTER key. The installation process for this virtual machine should begin. It is a short process and once complete your terminal display should be similar to the example shown below:"/>
+                <outline text="5. Start Oracle VirtualBox where you should now see the newly created virtual machine."/>
+            </outline>
+        </outline>
+        <outline text="How to Free Up Space in the Home Directory">
+            <outline text="Delete Created Virtual Machines">
+                <outline text="It is recommended to delete any of your created VMs once you do not require it anymore."/>
+                <outline text="To do this, open VirtualBox and select the VM. Right-click and proceed by clicking the `Delete all files` button."/>
+            </outline>
+        </outline>
+        <outline text="How to Reboot Linux"/>
+        <outline text="How to Shut down Linux">
+            <outline text="From the system menu, choose `System &gt; Shut Down`."/>
+        </outline>
+        <outline text="==="/>
+        <outline text="How to Access your H-Drive">
+            <outline text="The H-drive enables you to save documents, pictures etc. in the Cyber Lab and to access them from another lab using Windows. It also works the other way around. "/>
+            <outline text="To access the H-drive, collapse all tabs and/or programs and click on the folder on the left side of the screen labelled as `H`. It is also possible to click on the folder with the home sign on it and labelled with `your k-number + Home`. After the window opened, select `H` listed on the left side located under the headline `Computer`. "/>
+        </outline>
+        <outline text="How to Access Canvas">
+            <outline text="You can browse the web, using the Firefox web browser on Linux."/>
+            <outline text="You can open your module homepage in Canvas just as normally, by pointing Firefox to `canvas.kingston.ac.uk` and logging in."/>
+        </outline>
+        <outline text="How to Read Email">
+            <outline text="You cannot start the Outlook client program in the Cyberlab, due to the security sandbox environment. Instead this can be done using the following web interface: [Outlook.office356.com/owa](Outlook.office356.com/owa). "/>
+        </outline>
+        <outline text="How to Preserve Privacy when Using Firefox on CentOS Windows Test Account">
+            <outline text="It is __strongly__ recommended to clear the browser history before and after your session due to others being able to access it otherwise. This can be done by clicking on the &quot;hamburger&quot; triple-hyphen menu item, followed by `History &gt; Clear Recent History` or alternatively pressing the `Control+Shift+Delete` hotkey combination."/>
+        </outline>
+        <outline text="How to Get Back Control of Mouse in VM ">
+            <outline text="Use the right `Ctrl`-key."/>
+        </outline>
+        <outline text="==="/>
+        <outline text="Reference List of VMs Available in the Cyberlab">
+            <outline text="This is the list of currently available virtual machines with login information for the mostly used ones (*).">
+                <outline text="bitnami-wordpress.ovf             "/>
+                <outline text="CentOS 7 Nagios Server.ovf        "/>
+                <outline text="DEFT Forensics.ovf                "/>
+                <outline text="Kali-Linux-2018.4-vbox-amd64.ovf  (*)">
+                    <outline text="Kali VM">
+                        <outline text="Login: `root` "/>
+                        <outline text="Password: `toor`"/>
+                    </outline>
+                </outline>
+                <outline text="Linux Mint.ovf                    "/>
+                <outline text="Metasploitable 2.ovf (*)        ">
+                    <outline text="Metasploitable 2">
+                        <outline text="Binary File: `Metasploitable_2-Linux.ova`"/>
+                        <outline text="Login: `msfadmin`"/>
+                        <outline text="Password: `msfadmin`"/>
+                        <outline text="Networking:"/>
+                    </outline>
+                </outline>
+                <outline text="Mint_Python_Labs.ovf              "/>
+                <outline text="Mint_Python_VM.ovf                "/>
+                <outline text="OSSIM.ovf                         "/>
+                <outline text="REMnuxV6.ovf                      "/>
+                <outline text="Santoku.ovf                       "/>
+                <outline text="sift-update.ovf                   "/>
+                <outline text="ubuntu_apache_webserver.ovf (*)">
+                    <outline text="Username: `webadm`"/>
+                    <outline text="Password: `abc123`"/>
+                </outline>
+                <outline text="Win7Base_1.ovf                    "/>
+                <outline text="xp.ovf                            "/>
+                <outline text="Xubuntu Workstation.ovf (*)">
+                    <outline text="Xubuntu Work">
+                        <outline text="Binary: `Xubuntu_Workstation.ova` "/>
+                        <outline text="Login: `user`"/>
+                        <outline text="Password: `abc123`"/>
+                    </outline>
+                </outline>
+            </outline>
+        </outline>
+    </body>
+</opml>

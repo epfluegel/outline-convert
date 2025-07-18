@@ -1,15 +1,23 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <opml version="2.0">
   <head>
-    <ownerEmail>
-      timeo.savary@ecole.ensicaen.fr
-    </ownerEmail>
+    <title>TITRE GLOBAL</title>
+    <flavor>dynalist</flavor>
+    <source>https://dynalist.io</source>
+    <ownerName>S</ownerName>
+    <ownerEmail>t</ownerEmail>
   </head>
   <body>
-    <outline text="Title">
-      <outline text="a" />
+    <outline text="Tree1">
+      <outline text="a"/>
       <outline text="b">
-        <outline text="c" />
+        <outline text="c"/>
+      </outline>
+    </outline>
+    <outline text="Tree2">
+      <outline text="A"/>
+      <outline text="B">
+        <outline text="C"/>
       </outline>
     </outline>
   </body>
