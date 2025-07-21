@@ -32,7 +32,7 @@ def main():
     # Metadata arguments
     p.add_argument('-e', '--email', help='Author email information')
     p.add_argument('-a', '--author', help='Author information')
-    p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf'], default='txt',
+    p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf', 'docx'], default='txt',
                    help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
     p.add_argument('-s', '--start', help='Start item for conversion')
 
@@ -164,6 +164,8 @@ def main():
         print("Copied to clipboard")
 
     elif not args.output:  # Output to stdout
+        print("Output to stdout")
+        print(out_lines)
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines) + '\n')
         else:
