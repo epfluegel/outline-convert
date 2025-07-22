@@ -7,21 +7,41 @@ from .models import Node
 from .utils import escape_latex, clean_text, link_replacer
 
 
-def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[str]:
+def render_latex(forest: List[Node], args: argparse.Namespace) -> List[str]:
+    lines: List[str] = []
+    lines.extend([
+        r"\documentclass{article}",
+        r"\usepackage{enumitem}",
+        r"\usepackage[T1]{fontenc}",
+        r"\begin{document}",
+        r"\newlist{tree}{itemize}{10}",
+        r"\setlistdepth{10}",
+        r"\setlist[tree]{label=\textbullet}",
+    ])
+    lines.append(r"\begin{tree}")
+    for tree in forest:
+        lines.extend(render_latex_tree(tree, args))
+
+    lines.append(r"\end{tree}")
+    lines.append(r"\end{document}")
+
+    return lines
+
+
+def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> List[str]:
     lines: List[str] = []
     if level == 0:
-        lines.extend([
-            r"\documentclass{article}",
-            r"\usepackage{enumitem}",
-            r"\usepackage[T1]{fontenc}",
-            r"\begin{document}",
-            r"\newlist{tree}{itemize}{10}",
-            r"\setlistdepth{10}",
-            r"\setlist[tree]{label=\usebeamercolor[fg]{itemize item}\usebeamertemplate{itemize item}}",
-            r"\begin{tree}"
-        ])
-    for child in node.children:
+        title = node.title.strip()
+        if args.strip_tags:
+            title = ' '.join(part for part in title.split() if not part.startswith('#'))
+        title = escape_latex(title)
+        lines.append(fr"% titre")
+        lines.append(fr"\item {title}")
 
+    has_children = node.children
+    if has_children:
+        lines.append(fr"\begin{{tree}}")
+    for child in node.children:
         title = child.title.strip()
         if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
@@ -34,74 +54,16 @@ def render_latex(node: Node, args: argparse.Namespace, level: int = 0) -> List[s
             lines.append(fr"{indent}{child.note}")
             lines.append(fr"{indent}\end{{quote}}")
         if child.children:
-            lines.append(fr"{indent}\begin{{tree}}")
-            lines.extend(render_latex(child, args = args))
-            lines.append(fr"{indent}\end{{tree}}")
-    if level == 0:
-        lines.append(r"\end{tree}")
-        lines.append(r"\end{document}")
-    return lines
-
-
-    def process_children(children: List[Node], level: int) -> List[str]:
-        sublines: List[str] = []
-        indent = '  ' * level
-        for child in children:
-            title = child.title.strip()
-            if args.strip_tags:
-                title = ' '.join(part for part in title.split() if not part.startswith('#'))
-            title = escape_latex(title)
-
-            sublines.append(fr"{indent}\item {title}")
-            if child.note:
-                sublines.append(fr"{indent}\begin{{quote}}")
-                sublines.append(fr"{indent}{escape_latex(child.note)}")
-                sublines.append(fr"{indent}\end{{quote}}")
-            if child.children:
-                sublines.append(fr"{indent}\begin{{tree}}")
-                sublines.extend(process_children(child.children, level + 1))
-                sublines.append(fr"{indent}\end{{tree}}")
-        return sublines
-
-    if level == 0:
-
-        document_title = escape_latex(node.children[0].title.strip()) if node.children else "Untitled"
-        lines.extend([
-            r"\documentclass{beamer}",
-            r"\usepackage[T1]{fontenc}",
-            r"%\setbeamertemplate{frametitle continuation}{}",
-            r"\usetheme{Goettingen}",
-            r"\definecolor{links}{HTML}{2A1B81}",
-            r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
-            fr"\title{{{document_title}}}",
-            r"\date{\today}",
-            r"\AtBeginSection[]",
-            r"{",
-            r"  \begin{frame} <beamer> {Outline}",
-            r"    \tableofcontents[currentsection, currentsubsection]",
-            r"  \end{frame}",
-            r"}",
-            r"\begin{document}",
-            r"\begin{frame}",
-            r"  \titlepage",
-            r"\end{frame}"
-        ])
-
-        for child in node.children:
-            frame_title = escape_latex(child.title.strip())
-            lines.append(fr"\begin{{frame}}{{{frame_title}}}")
-            lines.append(r"\begin{tree}")
-            lines.extend(process_children(child.children, level=1))
-            lines.append(r"\end{tree}")
-            lines.append(r"\end{frame}")
-
-        lines.append(r"\end{document}")
+            lines.extend(render_latex_tree(child, args=args, level=level+1))
+    if has_children:
+        lines.append(fr"\end{{tree}}")
 
     return lines
 
 
 IMAGE_RE = re.compile(r'!\[([^\]]+)\]\(([^\)]+)\)')
 LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+
 
 def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[str]:
     lines: List[str] = []
@@ -130,16 +92,26 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             r"\begin{frame}",
             r"  \titlepage",
             r"\end{frame}",
-            ""
         ])
 
+    i = 0
     for tree in forest:
+        if i!=0:
+            doc_title = clean_text(tree.title, strip_tags=args.strip_tags)
+            lines.extend([
+            fr"\title{{{doc_title}}}",
+            r"\begin{frame}",
+            r"  \titlepage",
+            r"\end{frame}",
+            ])
         lines.extend(render_latex_beamer_tree(tree, args))
+        i+=1
 
     if not args.fragment:
         lines.append(r"\end{document}")
 
     return lines
+
 
 def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 0, header_level: int = 0) -> List[str]:
     lines: List[str] = []
@@ -152,23 +124,26 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 clean_title = clean_text(title, args.strip_tags)
                 if header_level == 0:
                     lines.append(fr"\section{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level + 1))
+                    lines.extend(
+                        render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level + 1))
 
                 elif header_level == 1:
                     lines.append(fr"\subsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1,header_level=header_level + 1))
+                    lines.extend(
+                        render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level + 1))
                 else:
                     lines.append(fr"\subsubsection{{{clean_title}}}")
-                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level + 1))
+                    lines.extend(
+                        render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level + 1))
 
-# There should not be any #h inside a slide node
+            # There should not be any #h inside a slide node
 
-            elif "#slide" in tags or level == 0 :
+            elif "#slide" in tags or level == 0:
                 clean_title = clean_text(title, args.strip_tags)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{tree}")
-                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level))
                     lines.append(r"\end{tree}")
                 lines.append(r"\end{frame}")
 
@@ -201,7 +176,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                         lines.append(fr"{indent}\end{{quote}}")
                 if child.children:
                     lines.append(fr"{indent}\begin{{tree}}")
-                    lines.extend(render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
+                    lines.extend(render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level))
                     lines.append(fr"{indent}\end{{tree}}")
         else:
             if level == 0:
@@ -210,7 +185,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 if child.children:
                     lines.append(r"\begin{tree}")
                     lines.extend(
-                        render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
+                        render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level))
                     lines.append(r"\end{tree}")
                 lines.append(r"\end{frame}")
             else:
@@ -242,23 +217,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 if child.children:
                     lines.append(fr"{indent}\begin{{tree}}")
                     lines.extend(
-                        render_latex_beamer_tree(child, args=args, level=level+1, header_level=header_level))
+                        render_latex_beamer_tree(child, args=args, level=level + 1, header_level=header_level))
                     lines.append(fr"{indent}\end{{tree}}")
 
     return lines
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,14 @@
+A
+B #ignore-item
+    c
+    d
+E #ignore-outline
+    f
+        g
+            h #ignore-item
+I #ignore-item
+J
+    a
+    b #ignore-outline
+        c
+    d
