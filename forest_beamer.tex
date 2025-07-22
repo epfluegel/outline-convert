@@ -1,0 +1,51 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usetheme{Goettingen}
+\usepackage{enumitem}
+\newlist{tree}{itemize}{10}
+\setlistdepth{10}
+\setlist[tree]{label=\usebeamercolor[fg]{itemize item}\usebeamertemplate{itemize item}}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\title{A}
+\date{\today}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+      \tableofcontents[currentsection, currentsubsection]
+  \end{frame}
+}
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\title{B}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{c}
+\end{frame}
+\begin{frame}{d}
+\end{frame}
+\title{E}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{f}
+\begin{tree}
+  \item g
+  \begin{tree}
+    \item h
+  \end{tree}
+\end{tree}
+\end{frame}
+\title{I}
+\begin{frame}
+  \titlepage
+\end{frame}
+\title{J}
+\begin{frame}
+  \titlepage
+\end{frame}
+\end{document}
