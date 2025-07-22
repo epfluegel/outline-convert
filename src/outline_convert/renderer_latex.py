@@ -92,11 +92,20 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             r"\begin{frame}",
             r"  \titlepage",
             r"\end{frame}",
-            ""
         ])
 
+    i = 0
     for tree in forest:
+        if i!=0:
+            doc_title = clean_text(tree.title, strip_tags=args.strip_tags)
+            lines.extend([
+            fr"\title{{{doc_title}}}",
+            r"\begin{frame}",
+            r"  \titlepage",
+            r"\end{frame}",
+            ])
         lines.extend(render_latex_beamer_tree(tree, args))
+        i+=1
 
     if not args.fragment:
         lines.append(r"\end{document}")

@@ -1,10 +1,14 @@
 A
-B
+B #ignore-item
     c
     d
-E
+E #ignore-outline
     f
         g
-            h
-I
+            h #ignore-item
+I #ignore-item
 J
+    a
+    b #ignore-outline
+        c
+    d
