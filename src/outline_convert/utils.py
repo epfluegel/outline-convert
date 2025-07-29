@@ -2,7 +2,7 @@ import argparse
 from math import gcd
 from typing import List, Optional
 
-from .models import Node
+from .models import Node, TextSegment
 import xml.etree.ElementTree as ET
 import re
 
@@ -106,11 +106,36 @@ def escape_latex(s: str) -> str:
 
     return ''.join(escaped_parts)
 
-def clean_text(title: str, strip_tags: bool) -> str:
+def escape_markdown(s: str) -> str:
+    s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf\{\1\}', s, flags=re.DOTALL)
+    s = re.sub(r'\*(.*?)\*', r'\\textit\{\1\}', s, flags=re.DOTALL)
+    return s
+
+def clean_text(title: str, args: argparse.Namespace) -> str:
+    # Step 1: Split into words and filter tags
     parts = title.strip().split()
-    if strip_tags:
+    if args.strip_tags:
         parts = [p for p in parts if not p.startswith('#')]
-    return escape_latex(' '.join(parts))
+
+    # Step 2: Build segments
+    segments: List[TextSegment] = [TextSegment(part, 'plain') for part in parts]
+
+    # Step 3: Markdown parsing
+    if args.parse_markdown:
+        for segment in segments:
+            s = escape_markdown(segment.text)
+            if s != segment.text:
+                segment.text = s
+                segment.type = 'markdown_parsed'
+
+    # Step 4: LaTeX escaping
+    if args.format in ['latex', 'beamer']:
+        for segment in segments:
+            if segment.type == 'plain':
+                segment.text = escape_latex(segment.text)
+
+    # Step 5: Join back with spaces
+    return ' '.join(segment.text for segment in segments)
 
 
 def link_replacer(match):
@@ -161,45 +186,6 @@ def ignore_tree(node: Node, args: argparse.Namespace):
     if has_children:
         for child in children_copy:
             ignore_tree(child, args)
-
-
-
-
-def ignore_tree2(node: Node, args: argparse.Namespace):
-    is_complete = node.title.startswith('[COMPLETE]')
-    has_children = bool(node.children)
-    children_copy = list(node.children) if has_children else []
-    ignore_item = (args.hide_completed and is_complete) or \
-        (args.completed_only and not is_complete) or \
-        (args.expert_mode and any(tag in node.title for tag in IGNORE_ITEM_TAGS))
-
-    if ignore_item:
-        print("Ignoring item:", node.title)
-        if node.parent:
-            parent = node.parent
-            index = parent.children.index(node)
-            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-            print(node.title, has_children)
-            if has_children:
-                print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
-                parent.children[index:index + 1] = children_copy
-                print("Replacing children of parent with children of item")
-                print_children(parent)
-                for child in node.children:
-                    child.parent = parent
-            for child in children_copy:
-                ignore_tree(child, args)
-            return
-
-    if args.expert_mode and any(tag in node.title for tag in IGNORE_OUTLINE_TAGS):
-        if node.parent:
-            node.parent.children.remove(node)
-            return
-
-    if has_children:
-        for child in children_copy:
-            ignore_tree(child, args)
-
 
 def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
     result = []

@@ -9,6 +9,9 @@ E #ignore-outline
 I #ignore-item
 J
     a
-    b #ignore-outline
-        c
+    b
+        this is a formula $$a+b$$
+        now we have s%me char
+        now **bold** now *ita*
+        now inside a w**or**d
     d
