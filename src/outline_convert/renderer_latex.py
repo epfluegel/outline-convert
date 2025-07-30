@@ -35,7 +35,6 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
         if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
         title = clean_text(title, args)
-        lines.append(fr"% titre")
         lines.append(fr"\item {title}")
 
     has_children = node.children

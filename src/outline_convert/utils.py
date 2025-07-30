@@ -39,8 +39,40 @@ def find_node_tree(node: Node, prefix: str) -> Optional[Node]:
         result = find_node_tree(child, prefix)
         if result is not None:
             return result
-
     return None
+#find all the nodes with this substring
+def find_sub_string(node: Node, substring: str) -> List[Node]:
+    res = []
+    if substring in node.title:
+        res.append(node)
+    for child in node.children:
+        res.extend(find_sub_string(child, substring))
+    return res
+
+#returns the path to the node including its subtree
+def get_path(node: Node) -> List[Node]:
+    res = []
+    if node:
+        current = node
+        while node.parent is not None:
+            #here is the line that keeps the subTree
+            #use current = node.title if we only want to keep the title
+            parent = Node(node.parent.title)
+            parent.children.append(current)
+            current = parent
+            node = node.parent
+        res.append(current)
+    return res
+
+#returns all the paths of all occurencies of the filtered node
+def filter(forest: List[Node], substring: str) -> List[Node]:
+    res = []
+    for tree in forest:
+        filtered_trees = find_sub_string(tree, substring)
+        for node in filtered_trees:
+            res.extend(get_path(node))
+    return res
+
 
 def parse_opml_children(elem: ET.Element, parent: Node):
     for child_elem in elem.findall('outline'):
@@ -190,7 +222,6 @@ def ignore_tree(node: Node, args: argparse.Namespace):
 def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
     result = []
     for node in forest:
-        print("Node:", node.title)
         is_complete = node.title.startswith('[COMPLETE]')
         ignore_item = (args.hide_completed and is_complete) or \
                       (args.completed_only and not is_complete) or \

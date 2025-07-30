@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node, print_tree, ignore_forest, print_forest
+from .utils import find_node, print_tree, ignore_forest, print_forest, filter
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -44,6 +44,8 @@ def main():
                    help='Enter expert mode to interpret nodes tagged with specific labels, see readme')
     p.add_argument('-p', '--parse-markdown', action='store_true',
                    help='Parse markdown syntax for links and images')
+    p.add_argument('--filter',
+                   help='Filter a specific string and return the path to it')
 
     # Output formatting arguments
     p.add_argument('--strip-tags', action='store_true', default=False, help='Strip tags from input')
@@ -117,7 +119,6 @@ def main():
         tree = ET.fromstringlist(lines)
         forest = ignore_forest(parse_opml(tree, args=args), args)
         print("ompl parsed correctly")
-        #print_forest(forest)
 
     except ET.ParseError:
         if args.debug:
@@ -134,7 +135,11 @@ def main():
         if not forest:
             forest = [Node(f"Start prefix '{args.start}' not found")]
 
-
+    if args.filter:
+        forest = filter(forest, args.filter)
+        if not forest:
+            forest = [Node(f"Filter prefix '{args.filter}' not found")]
+    # filter function can return filter not found if the start prefix was not found
     # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
