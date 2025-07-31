@@ -23,5 +23,5 @@ filter 1
         chap 1
         chap 2 #CI7000
         lecture 2.1 #CI7000
-            chap 3
+            chap 3 #CI7000
             chap 4

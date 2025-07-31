@@ -1,36 +1,63 @@
-\documentclass{article}
-\usepackage{enumitem}
+\documentclass{beamer}
 \usepackage[T1]{fontenc}
-\begin{document}
+\usepackage{graphicx}
+\usetheme{Goettingen}
+\usepackage{enumitem}
 \newlist{tree}{itemize}{10}
 \setlistdepth{10}
-\setlist[tree]{label=\textbullet}
-\begin{tree}
-\item filter 1
-\begin{tree}
-\item lecture 1 \#CI7000
+\setlist[tree]{label=\usebeamercolor[fg]{itemize item}\usebeamertemplate{itemize item}}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\title{filter 1}
+\date{\today}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+      \tableofcontents[currentsection, currentsubsection]
+  \end{frame}
+}
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{lecture 1 \#CI7000}
 \begin{tree}
   \item chapter 1
   \item chapter 2
 \end{tree}
-\end{tree}
-\item filter 1
-\begin{tree}
-\item lecture 2
+\end{frame}
+\title{filter 1}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{lecture 2}
 \begin{tree}
   \item chap 2 \#CI7000
 \end{tree}
-\end{tree}
-\item filter 1
-\begin{tree}
-\item lecture 2
+\end{frame}
+\title{filter 1}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{lecture 2}
 \begin{tree}
   \item lecture 2.1 \#CI7000
-\begin{tree}
-    \item chap 3
+  \begin{tree}
+    \item chap 3 \#CI7000
     \item chap 4
+  \end{tree}
 \end{tree}
+\end{frame}
+\title{filter 1}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{lecture 2}
+\begin{tree}
+  \item lecture 2.1 \#CI7000
+  \begin{tree}
+    \item chap 3 \#CI7000
+  \end{tree}
 \end{tree}
-\end{tree}
-\end{tree}
+\end{frame}
 \end{document}
