@@ -10,12 +10,12 @@ I #ignore-item
 J
     a
     b
-        this is a formula $$a+b$$
+        [COMPLETE]this is a formula $$a+b$$
         now we have s%me char
         now **bold** now *ita*
         now inside a w**or**d
     d
-filter 1
+[COMPLETE]filter 1
     lecture 1 #CI7000
         chapter 1
         chapter 2

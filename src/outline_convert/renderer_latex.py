@@ -35,6 +35,8 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
         if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
         title = clean_text(title, args)
+        #if title.startswith('[COMPLETE]'):
+        #    lines.append(r"\color{lightgray}")
         lines.append(fr"\item {title}")
 
     has_children = node.children
@@ -164,7 +166,11 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                         continue
 
                 indent = '  ' * level
+                print(title)
                 clean_title = clean_text(title, args)
+                #if clean_title.startswith('[COMPLETE]'):
+                #    print("complete item", clean_title)
+                #    lines.append(r"\color{lightgray}")
                 lines.append(fr"{indent}\item {clean_title}")
                 if args.include_notes:
                     if child.note:
