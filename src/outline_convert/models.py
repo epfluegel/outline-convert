@@ -1,4 +1,5 @@
 from typing import List, Optional
+from dataclasses import dataclass
 
 
 class Node:
@@ -7,3 +8,9 @@ class Node:
         self.children: List[Node] = []
         self.parent: Optional[Node] = None
         self.note: Optional[str] = None
+
+
+@dataclass
+class TextSegment:
+    text: str
+    type: str # 'plain', 'markdown', 'latex', etc.
