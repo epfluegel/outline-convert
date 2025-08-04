@@ -10,7 +10,7 @@ I #ignore-item
 J
     a
     b
-        [COMPLETE]this is a formula $$a+b$$
+        [COMPLETE]this is a formula $$**a+b**$$
         now we have s%me char
         now **bold** now *ita*
         now inside a w**or**d
@@ -25,3 +25,4 @@ J
         lecture 2.1 #CI7000
             chap 3 #CI7000
             chap 4
+

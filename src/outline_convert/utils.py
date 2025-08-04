@@ -139,8 +139,8 @@ def escape_latex(s: str) -> str:
     return ''.join(escaped_parts)
 
 def escape_markdown(s: str) -> str:
-    s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf\{\1\}', s, flags=re.DOTALL)
-    s = re.sub(r'\*(.*?)\*', r'\\textit\{\1\}', s, flags=re.DOTALL)
+    s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL)
+    s = re.sub(r'\*(.*?)\*', r'\\textit{\1}', s, flags=re.DOTALL)
     return s
 
 def clean_text(title: str, args: argparse.Namespace) -> str:
