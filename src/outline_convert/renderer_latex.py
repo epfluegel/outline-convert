@@ -166,7 +166,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                         continue
 
                 indent = '  ' * level
-                print(title)
+                #print(title)
                 clean_title = clean_text(title, args)
                 #if clean_title.startswith('[COMPLETE]'):
                 #    print("complete item", clean_title)
