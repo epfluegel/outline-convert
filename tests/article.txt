@@ -10,7 +10,8 @@ I #ignore-item
 J
     a
     b
-        [COMPLETE]this is a formula $$**a+b**$$
+        this is a formula $$**a+b**$$
+        other formula $$a \le b$$
         now we have s%me char
         now **bold** now *ita*
         now inside a w**or**d

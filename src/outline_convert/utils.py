@@ -107,36 +107,42 @@ def sanitize_filename(s: str) -> str:
 
 import re
 
-def escape_latex(s: str) -> str:
-    # Normalize $$...$$ to $...$
+
+def escape_latex(text: str) -> str:
+    return text.replace('\\', r'\textbackslash{}') \
+        .replace('&', r'\&') \
+        .replace('%', r'\%') \
+        .replace('$', r'\$') \
+        .replace('#', r'\#') \
+        .replace('_', r'\_') \
+        .replace('{', r'\{') \
+        .replace('}', r'\}') \
+        .replace('~', r'\textasciitilde{}') \
+        .replace('^', r'\textasciicircum{}')
+
+#Became useless since the math separated logic is now in clean text directly
+
+def former(s: str) -> str:
+    print("escaping", s)
+    # 1) Normalize $$...$$ to $...$
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', s, flags=re.DOTALL)
+    print(s)
 
-    # Pattern to match inline math segments ($...$)
-    math_pattern = re.compile(r'(\$.*?\$)')
+    # 2) Split on single-$ math segments, keeping the delimiters
+    split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
+    parts = split_pattern.split(s)
 
-    def escape_outside_math(text: str) -> str:
-        return text.replace('\\', r'\textbackslash{}')\
-                   .replace('&', r'\&')\
-                   .replace('%', r'\%')\
-                   .replace('$', r'\$')\
-                   .replace('#', r'\#')\
-                   .replace('_', r'\_')\
-                   .replace('{', r'\{')\
-                   .replace('}', r'\}')\
-                   .replace('~', r'\textasciitilde{}')\
-                   .replace('^', r'\textasciicircum{}')\
+    # 3) Build segments, marking math vs plain
+    segments: List[TextSegment] = []
+    for part in parts:
+        if split_pattern.fullmatch(part):
+            print(part)
+            segments.append(TextSegment(part, 'math'))
+        else:
+            segments.append(TextSegment(escape_outside_math(part), 'plain'))
 
-    # Split string into math and non-math parts
-    parts = math_pattern.split(s)
-
-    # Escape only non-math parts
-    escaped_parts = [
-        part if math_pattern.fullmatch(part)
-        else escape_outside_math(part)
-        for part in parts
-    ]
-
-    return ''.join(escaped_parts)
+    # 4) Reassemble
+    return ''.join(seg.text for seg in segments)
 
 def escape_markdown(s: str) -> str:
     s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL)
@@ -144,13 +150,20 @@ def escape_markdown(s: str) -> str:
     return s
 
 def clean_text(title: str, args: argparse.Namespace) -> str:
+    s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
+    split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
+    parts = split_pattern.split(s)
     # Step 1: Split into words and filter tags
-    parts = title.strip().split()
     if args.strip_tags:
         parts = [p for p in parts if not p.startswith('#')]
 
     # Step 2: Build segments
-    segments: List[TextSegment] = [TextSegment(part, 'plain') for part in parts]
+    segments: List[TextSegment] = []
+    for part in parts:
+        if split_pattern.fullmatch(part):
+            segments.append(TextSegment(part, 'math'))
+        else:
+            segments.append(TextSegment(part, 'plain'))
 
     # Step 3: Markdown parsing
     if args.parse_markdown:
@@ -160,7 +173,7 @@ def clean_text(title: str, args: argparse.Namespace) -> str:
                 segment.text = s
                 segment.type = 'markdown_parsed'
 
-    # Step 4: LaTeX escaping
+    # Step 4: Non math LaTeX escaping
     if args.format in ['latex', 'beamer']:
         for segment in segments:
             if segment.type == 'plain':
