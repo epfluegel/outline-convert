@@ -1,44 +1,69 @@
-\documentclass{article}
-\usepackage{enumitem}
+\documentclass{beamer}
 \usepackage[T1]{fontenc}
-\begin{document}
+\usepackage{graphicx}
+\usetheme{Goettingen}
+\usepackage{enumitem}
 \newlist{tree}{itemize}{10}
 \setlistdepth{10}
-\setlist[tree]{label=\textbullet}
+\setlist[tree]{label=\usebeamercolor[fg]{itemize item}\usebeamertemplate{itemize item}}
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\title{A}
+\date{\today}
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+      \tableofcontents[currentsection, currentsubsection]
+  \end{frame}
+}
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\title{c}
+\begin{frame}
+  \titlepage
+\end{frame}
+\title{d}
+\begin{frame}
+  \titlepage
+\end{frame}
+\title{J}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{a}
+\end{frame}
+\begin{frame}{b}
 \begin{tree}
-\item A
-\item c
-\item d
-\item J
-\begin{tree}
-\item a
-\item b
-\begin{tree}
-  \item this is a formula $**a+b**$
-  \item other formula $$a \textbackslash\{\}le b$$
+  \item this is a formula $\textbf{a+b}$
+  \item other formula $a \le b$
   \item now we have s\%me char
-  \item now **bold** now *ita*
-  \item now inside a w**or**d
+  \item now \textbf{bold} now \textit{ita}
+  \item now inside a w\textbf{or}d
 \end{tree}
-\item d
-\end{tree}
-\item [COMPLETE]filter 1
-\begin{tree}
-\item lecture 1 \#CI7000
+\end{frame}
+\begin{frame}{d}
+\end{frame}
+\title{[COMPLETE]filter 1}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{lecture 1}
 \begin{tree}
   \item chapter 1
   \item chapter 2
 \end{tree}
-\item lecture 2
+\end{frame}
+\begin{frame}{lecture 2}
 \begin{tree}
   \item chap 1
-  \item chap 2 \#CI7000
-  \item lecture 2.1 \#CI7000
-\begin{tree}
-    \item chap 3 \#CI7000
+  \item chap 2
+  \item lecture 2.1
+  \begin{tree}
+    \item chap 3
     \item chap 4
+  \end{tree}
 \end{tree}
-\end{tree}
-\end{tree}
-\end{tree}
+\end{frame}
 \end{document}
