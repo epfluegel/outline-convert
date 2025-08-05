@@ -7,9 +7,9 @@ E #ignore-outline
         g
             h #ignore-item
 I #ignore-item
-J
-    a
-    b
+J #h
+    a #slides
+    b #a #b
         this is a formula $$**a+b**$$
         other formula $$a \le b$$
         now we have s%me char
@@ -18,7 +18,7 @@ J
     d
 [COMPLETE]filter 1
     lecture 1 #CI7000
-        chapter 1
+        chapter 1 #c
         chapter 2
     lecture 2
         chap 1

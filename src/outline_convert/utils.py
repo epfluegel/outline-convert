@@ -120,30 +120,6 @@ def escape_latex(text: str) -> str:
         .replace('~', r'\textasciitilde{}') \
         .replace('^', r'\textasciicircum{}')
 
-#Became useless since the math separated logic is now in clean text directly
-
-def former(s: str) -> str:
-    print("escaping", s)
-    # 1) Normalize $$...$$ to $...$
-    s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', s, flags=re.DOTALL)
-    print(s)
-
-    # 2) Split on single-$ math segments, keeping the delimiters
-    split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
-    parts = split_pattern.split(s)
-
-    # 3) Build segments, marking math vs plain
-    segments: List[TextSegment] = []
-    for part in parts:
-        if split_pattern.fullmatch(part):
-            print(part)
-            segments.append(TextSegment(part, 'math'))
-        else:
-            segments.append(TextSegment(escape_outside_math(part), 'plain'))
-
-    # 4) Reassemble
-    return ''.join(seg.text for seg in segments)
-
 def escape_markdown(s: str) -> str:
     s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL)
     s = re.sub(r'\*(.*?)\*', r'\\textit{\1}', s, flags=re.DOTALL)
@@ -153,19 +129,20 @@ def clean_text(title: str, args: argparse.Namespace) -> str:
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
     split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
     parts = split_pattern.split(s)
-    # Step 1: Split into words and filter tags
-    if args.strip_tags:
-        parts = [p for p in parts if not p.startswith('#')]
 
-    # Step 2: Build segments
+    # Step 1: Build segments
     segments: List[TextSegment] = []
     for part in parts:
         if split_pattern.fullmatch(part):
             segments.append(TextSegment(part, 'math'))
         else:
-            segments.append(TextSegment(part, 'plain'))
+            words = part.strip().split()
+            for word in words:
+                if args.strip_tags and word.startswith('#'):
+                    continue
+                segments.append(TextSegment(word, 'plain'))
 
-    # Step 3: Markdown parsing
+    # Step 2: Markdown parsing
     if args.parse_markdown:
         for segment in segments:
             s = escape_markdown(segment.text)
@@ -173,13 +150,13 @@ def clean_text(title: str, args: argparse.Namespace) -> str:
                 segment.text = s
                 segment.type = 'markdown_parsed'
 
-    # Step 4: Non math LaTeX escaping
+    # Step 3: Non math LaTeX escaping
     if args.format in ['latex', 'beamer']:
         for segment in segments:
             if segment.type == 'plain':
                 segment.text = escape_latex(segment.text)
 
-    # Step 5: Join back with spaces
+    # Step 4: Join back with spaces
     return ' '.join(segment.text for segment in segments)
 
 
