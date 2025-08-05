@@ -64,8 +64,45 @@ def get_path(node: Node) -> List[Node]:
         res.append(current)
     return res
 
-#returns all the paths of all occurencies of the filtered node
+
+def copy_subtree(node: Node) -> Node:
+    new_node = Node(node.title)
+    for child in node.children:
+        copied_child = copy_subtree(child)
+        copied_child.parent = new_node
+        new_node.children.append(copied_child)
+    return new_node
+
+def filter_tree(node: Node, substring: str) -> Optional[Node]:
+    if substring in node.title:
+        return copy_subtree(node)
+
+    kept_children: List[Node] = []
+    for child in node.children:
+        filtered_child = filter_tree(child, substring)
+        if filtered_child:
+            #filtered_child.parent = None
+            kept_children.append(filtered_child)
+
+    if kept_children:
+        new_node = Node(node.title)
+        for c in kept_children:
+            c.parent = new_node
+            new_node.children.append(c)
+        return new_node
+
+    return None
+
 def filter(forest: List[Node], substring: str) -> List[Node]:
+    result: List[Node] = []
+    for tree in forest:
+        filtered = filter_tree(tree, substring)
+        if filtered:
+            result.append(filtered)
+    return result
+
+#returns all the paths of all occurencies of the filtered node
+def filter2(forest: List[Node], substring: str) -> List[Node]:
     res = []
     for tree in forest:
         filtered_trees = find_sub_string(tree, substring)
