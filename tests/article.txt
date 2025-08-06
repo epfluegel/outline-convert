@@ -10,7 +10,7 @@ I #ignore-item
 J #CI7000
     a #slides
     b #a #b
-        this is a formula $$**a+b**$$
+        this is a __formula__ $$**a+b**$$ other one $$ b+c $$
         other formula $$a \le b$$
         now we have s%me char #CI7000
         now **bold** now *ita*

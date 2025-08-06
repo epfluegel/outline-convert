@@ -4,7 +4,7 @@ from typing import List
 import re
 
 from .models import Node
-from .utils import clean_text, link_replacer, escape_markdown
+from .utils import parse_item_text, link_replacer, convert_markdown_to_latex
 
 
 def render_latex(forest: List[Node], args: argparse.Namespace) -> List[str]:
@@ -34,7 +34,7 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
         title = node.title.strip()
         if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        title = clean_text(title, args)
+        title = parse_item_text(title, args)
         #if title.startswith('[COMPLETE]'):
         #    lines.append(r"\color{lightgray}")
         lines.append(fr"\item {title}")
@@ -46,7 +46,7 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
         title = child.title.strip()
         if args.strip_tags:
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
-        title = clean_text(title, args)
+        title = parse_item_text(title, args)
         indent = '  ' * level
         lines.append(fr"{indent}\item {title}")
         if child.note:
@@ -68,7 +68,7 @@ LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[str]:
     lines: List[str] = []
     if not args.fragment:
-        doc_title = clean_text(forest[0].title, args)
+        doc_title = parse_item_text(forest[0].title, args)
         lines.extend([
             r"\documentclass{beamer}",
             r"\usepackage[T1]{fontenc}",
@@ -97,7 +97,7 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
     i = 0
     for tree in forest:
         if i!=0:
-            doc_title = clean_text(tree.title, args)
+            doc_title = parse_item_text(tree.title, args)
             lines.extend([
             fr"\title{{{doc_title}}}",
             r"\begin{frame}",
@@ -121,7 +121,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
         tags = [part for part in title.split() if part.startswith('#')]
         if args.expert_mode:
             if "#h" in tags:
-                clean_title = clean_text(title, args)
+                clean_title = parse_item_text(title, args)
                 if header_level == 0:
                     lines.append(fr"\section{{{clean_title}}}")
                     lines.extend(
@@ -139,7 +139,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
             # There should not be any #h inside a slide node
 
             elif "#slide" in tags or level == 0:
-                clean_title = clean_text(title, args)
+                clean_title = parse_item_text(title, args)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{tree}")
@@ -167,14 +167,14 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
 
                 indent = '  ' * level
                 #print(title)
-                clean_title = clean_text(title, args)
+                clean_title = parse_item_text(title, args)
                 #if clean_title.startswith('[COMPLETE]'):
                 #    print("complete item", clean_title)
                 #    lines.append(r"\color{lightgray}")
                 lines.append(fr"{indent}\item {clean_title}")
                 if args.include_notes:
                     if child.note:
-                        note = clean_text(child.note, args)
+                        note = parse_item_text(child.note, args)
                         lines.append(fr"{indent}\begin{{quote}}")
                         lines.append(fr"{indent}{note}")
                         lines.append(fr"{indent}\end{{quote}}")
@@ -184,7 +184,7 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                     lines.append(fr"{indent}\end{{tree}}")
         else:
             if level == 0:
-                clean_title = clean_text(title, args)
+                clean_title = parse_item_text(title, args)
                 lines.append(fr"\begin{{frame}}{{{clean_title}}}")
                 if child.children:
                     lines.append(r"\begin{tree}")
@@ -210,11 +210,11 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                     continue
 
                 indent = '  ' * level
-                clean_title = clean_text(title, args)
+                clean_title = parse_item_text(title, args)
                 lines.append(fr"{indent}\item {clean_title}")
                 if args.include_notes:
                     if child.note:
-                        note = clean_text(child.note, args)
+                        note = parse_item_text(child.note, args)
                         lines.append(fr"{indent}\begin{{quote}}")
                         lines.append(fr"{indent}{note}")
                         lines.append(fr"{indent}\end{{quote}}")
