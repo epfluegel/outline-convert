@@ -157,17 +157,19 @@ def escape_latex(text: str) -> str:
         .replace('~', r'\textasciitilde{}') \
         .replace('^', r'\textasciicircum{}')
 
-def escape_markdown(s: str) -> str:
-    s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL)
-    s = re.sub(r'\*(.*?)\*', r'\\textit{\1}', s, flags=re.DOTALL)
+def convert_markdown_to_latex(s: str) -> str:
+    s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL) # markdown: **bold text**
+    s = re.sub(r'\*(.*?)\*', r'\\textit{\1}', s, flags=re.DOTALL) # markdown: *italic text*
+    s = re.sub(r'\_\_(.*?)\_\_', r'\\textit{\1}', s, flags=re.DOTALL) # markdown: __italic text__
+
     return s
 
-def clean_text(title: str, args: argparse.Namespace) -> str:
+def parse_item_text(title: str, args: argparse.Namespace) -> str:
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
     split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
     parts = split_pattern.split(s)
 
-    # Step 1: Build segments
+    # Step 1: Build segments depending on latex maths or not
     segments: List[TextSegment] = []
     for part in parts:
         if split_pattern.fullmatch(part):
@@ -182,10 +184,10 @@ def clean_text(title: str, args: argparse.Namespace) -> str:
     # Step 2: Markdown parsing
     if args.parse_markdown:
         for segment in segments:
-            s = escape_markdown(segment.text)
+            s = convert_markdown_to_latex(segment.text)
             if s != segment.text:
                 segment.text = s
-                segment.type = 'markdown_parsed'
+                segment.type = 'markdown_parsed' # flag that there is no need to escape the converted markdown
 
     # Step 3: Non math LaTeX escaping
     if args.format in ['latex', 'beamer']:

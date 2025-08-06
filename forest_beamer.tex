@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\begin{document}
+\newlist{tree}{itemize}{10}
+\setlistdepth{10}
+\setlist[tree]{label=\textbullet}
+\begin{tree}
+\item A
+\item c
+\item d
+\item J \#CI7000
+\begin{tree}
+\item a \#slides
+\item b \#a \#b
+\begin{tree}
+  \item this is a \textit{formula} $\textbf{a+b}$ other one $ b+c $
+  \item other formula $a \le b$
+  \item now we have s\%me char \#CI7000
+  \item now \textbf{bold} now \textit{ita}
+  \item now inside a w\textbf{or}d
+\end{tree}
+\item d
+\end{tree}
+\item filter 1
+\begin{tree}
+\item lecture 1 \#CI7000
+\begin{tree}
+  \item chapter 1 \#c
+  \item chapter 2
+\end{tree}
+\item lecture 2 \#CI7000
+\begin{tree}
+  \item chap 1
+  \item chap 2
+  \item lecture 2.1
+\begin{tree}
+    \item chap 3 \#CI7000
+    \item chap 4
+\end{tree}
+\end{tree}
+\end{tree}
+\end{tree}
+\end{document}
