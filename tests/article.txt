@@ -7,23 +7,23 @@ E #ignore-outline
         g
             h #ignore-item
 I #ignore-item
-J #h
+J #CI7000
     a #slides
     b #a #b
         this is a formula $$**a+b**$$
         other formula $$a \le b$$
-        now we have s%me char
+        now we have s%me char #CI7000
         now **bold** now *ita*
         now inside a w**or**d
     d
-[COMPLETE]filter 1
+filter 1
     lecture 1 #CI7000
         chapter 1 #c
         chapter 2
-    lecture 2
+    lecture 2 #CI7000
         chap 1
-        chap 2 #CI7000
-        lecture 2.1 #CI7000
+        chap 2
+        lecture 2.1
             chap 3 #CI7000
             chap 4
 
