@@ -160,7 +160,7 @@ def escape_latex(text: str) -> str:
 def convert_markdown_to_latex(s: str) -> str:
     s = re.sub(r'\*\*(.*?)\*\*', r'\\textbf{\1}', s, flags=re.DOTALL) # markdown: **bold text**
     s = re.sub(r'\*(.*?)\*', r'\\textit{\1}', s, flags=re.DOTALL) # markdown: *italic text*
-    s = re.sub(r'\_\_(.*?)\_\_', r'\\textit{\1}', s, flags=re.DOTALL) # markdown: __italic text__
+    s = re.sub(r'__(.*?)__', r'\\textit{\1}', s, flags=re.DOTALL) # markdown: __italic text__
 
     return s
 
