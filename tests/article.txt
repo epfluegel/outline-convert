@@ -12,8 +12,8 @@ J #CI7000
     b #a #b
         this is a __formula__ $$**a+b**$$ other one $$ b+c $$
         other __formula__ $$a \le b$$
-        now we have s%me char #CI7000
-        now **bold** now *ita*
+        now we \cite{citation of something} have s%me char #CI7000
+        now **bold and bold** now *ita and ita*
         now inside a w**or**d
     d
 filter 1
