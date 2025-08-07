@@ -15,6 +15,7 @@ J #CI7000
         now we \cite{citation of something} have s%me char #CI7000 and_under_score
         now **bold and bold** now *ita and ita*
         now inside a w**or**d
+        **algorithm** Von_Neumann_submatrix_solve( $$A$$ )
     d
 filter 1
     lecture 1 #CI7000

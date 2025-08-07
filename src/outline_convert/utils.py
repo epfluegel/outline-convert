@@ -183,20 +183,21 @@ def split_segments(segments: List[TextSegment], pattern: re.Pattern, new_type: s
 def parse_item_text(title: str, args: argparse.Namespace) -> str:
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
     latex_patterns = [('math', re.compile(r'(\$.*?\$)', flags=re.DOTALL)),
-                ('citation', re.compile(r'(\\cite{(.*?)})', flags=re.DOTALL))]
+                ('citation', re.compile(r'(\\cite{(.*?)})', flags=re.DOTALL)),
+                ('md_bold', re.compile(r'\*\*(.*?)\*\*', flags=re.DOTALL)),
+                ('md_italic', re.compile(r'\*(.*?)\*', flags=re.DOTALL)),
+                ('md_italic', re.compile(r'__(.*?)__', flags=re.DOTALL))]
 
     segments = [TextSegment(s, 'plain')]
 
     # Step 1: Splitting between laTeX and non LaTeX
     for (type, pattern) in latex_patterns:
         segments = split_segments(segments, pattern, type)
-    print(segments)
     # Step 2: Markdown parsing
     if args.parse_markdown:
         for segment in segments:
-            s = convert_markdown_to_latex(segment.text)
-            if s != segment.text:
-                segment.text = s
+            if segment.type.startswith('md_'):
+                segment.text = convert_markdown_to_latex(segment.text)
                 segment.type = 'markdown_parsed' # flag that there is no need to escape the converted markdown
 
     # Step 3: Flatten plain segments to words and remove #tags
