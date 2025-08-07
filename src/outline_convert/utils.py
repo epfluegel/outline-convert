@@ -164,23 +164,33 @@ def convert_markdown_to_latex(s: str) -> str:
 
     return s
 
+def split_segments(segments: List[TextSegment], pattern: re.Pattern, new_type: str) -> List[TextSegment]:
+    res: List[TextSegment] = []
+    for segment in segments:
+        if segment.type != 'plain':
+            res.append(segment)
+            continue
+
+        parts = pattern.split(segment.text)
+        for part in parts:
+            if pattern.fullmatch(part):
+                res.append(TextSegment(part, new_type))
+            else:
+                res.append(TextSegment(part, 'plain'))
+    return res
+
+
 def parse_item_text(title: str, args: argparse.Namespace) -> str:
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
-    split_pattern = re.compile(r'(\$.*?\$)', flags=re.DOTALL)
-    parts = split_pattern.split(s)
+    latex_patterns = [('math', re.compile(r'(\$.*?\$)', flags=re.DOTALL)),
+                ('citation', re.compile(r'(\\cite{(.*?)})', flags=re.DOTALL))]
 
-    # Step 1: Build segments depending on latex maths or not
-    segments: List[TextSegment] = []
-    for part in parts:
-        if split_pattern.fullmatch(part):
-            segments.append(TextSegment(part, 'math'))
-        else:
-            words = part.strip().split()
-            for word in words:
-                if args.strip_tags and word.startswith('#'):
-                    continue
-                segments.append(TextSegment(word, 'plain'))
+    segments = [TextSegment(s, 'plain')]
 
+    # Step 2: Splitting between laTeX and non LaTeX
+    for (type, pattern) in latex_patterns:
+        segments = split_segments(segments, pattern, type)
+    print(segments)
     # Step 2: Markdown parsing
     if args.parse_markdown:
         for segment in segments:
@@ -189,7 +199,7 @@ def parse_item_text(title: str, args: argparse.Namespace) -> str:
                 segment.text = s
                 segment.type = 'markdown_parsed' # flag that there is no need to escape the converted markdown
 
-    # Step 3: Non math LaTeX escaping
+    # Step 3: Non LaTeX escaping
     if args.format in ['latex', 'beamer']:
         for segment in segments:
             if segment.type == 'plain':
