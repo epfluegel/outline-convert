@@ -187,7 +187,7 @@ def parse_item_text(title: str, args: argparse.Namespace) -> str:
 
     segments = [TextSegment(s, 'plain')]
 
-    # Step 2: Splitting between laTeX and non LaTeX
+    # Step 1: Splitting between laTeX and non LaTeX
     for (type, pattern) in latex_patterns:
         segments = split_segments(segments, pattern, type)
     print(segments)
@@ -199,13 +199,25 @@ def parse_item_text(title: str, args: argparse.Namespace) -> str:
                 segment.text = s
                 segment.type = 'markdown_parsed' # flag that there is no need to escape the converted markdown
 
-    # Step 3: Non LaTeX escaping
+    # Step 3: Flatten plain segments to words and remove #tags
+    flattened: List[TextSegment] = []
+    for seg in segments:
+        if seg.type == 'plain':
+            for word in seg.text.split():
+                if args.strip_tags and word.startswith('#'):
+                    continue
+                flattened.append(TextSegment(word, 'plain'))
+        else:
+            flattened.append(seg)
+    segments = flattened
+
+    # Step 4: Non LaTeX escaping
     if args.format in ['latex', 'beamer']:
         for segment in segments:
             if segment.type == 'plain':
                 segment.text = escape_latex(segment.text)
 
-    # Step 4: Join back with spaces
+    # Step 5: Join back with spaces
     return ' '.join(segment.text for segment in segments)
 
 
