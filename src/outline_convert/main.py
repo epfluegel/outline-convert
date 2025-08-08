@@ -19,7 +19,6 @@ from .renderer_rtf import render_rtf
 
 # -- MAIN PROGRAM -----------------------------------------------------
 def main():
-    print("Entering the main")
     # -- Argument parser configuration -------------------------------
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
 
@@ -74,7 +73,8 @@ def main():
         if not candidates:
             sys.exit(f"No files found in '{date_dir}'.")
         chosen = max(candidates, key=lambda p: os.path.getmtime(p))
-        print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
+        if args.debug:
+            print(f"Using latest file: {os.path.basename(chosen)}", file=sys.stderr)
         args.input = chosen
 
     if args.z:
@@ -96,9 +96,8 @@ def main():
 
         if not chosen:
             sys.exit(f"No correct zip files found in '{zip_dir}'.")
-
-        print(f"Using latest zip file: {os.path.basename(chosen)}", file=sys.stderr)
-        print(file)
+        if args.debug:
+            print(f"Using latest zip file: {os.path.basename(chosen)}", file=sys.stderr)
         with zipfile.ZipFile(chosen, 'r') as zip_ref:
             with zip_ref.open(file) as f:
                 lines = f.read().decode('utf-8').splitlines()
@@ -183,7 +182,8 @@ def main():
                 f.write('\n'.join(out_lines))
         else:
             out_tree.write(path, encoding='utf-8', xml_declaration=True)
-        print(f"Wrote {path}")
+        if args.debug:
+            print(f"Wrote {path}")
 
     # -- Handle final wait --------------------------------------
     if args.wait:
