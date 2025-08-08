@@ -101,15 +101,6 @@ def filter(forest: List[Node], substring: str) -> List[Node]:
             result.append(filtered)
     return result
 
-#returns all the paths of all occurencies of the filtered node
-def filter2(forest: List[Node], substring: str) -> List[Node]:
-    res = []
-    for tree in forest:
-        filtered_trees = find_sub_string(tree, substring)
-        for node in filtered_trees:
-            res.extend(get_path(node))
-    return res
-
 
 def parse_opml_children(elem: ET.Element, parent: Node):
     for child_elem in elem.findall('outline'):
@@ -182,6 +173,7 @@ def split_segments(segments: List[TextSegment], pattern: re.Pattern, new_type: s
 
 def parse_item_text(title: str, args: argparse.Namespace) -> str:
     s = re.sub(r'\$\$(.*?)\$\$', r'$\1$', title, flags=re.DOTALL)
+    # List of new types and RegExp
     patterns = [
         ('math', re.compile(r'(\$.*?\$)', flags=re.DOTALL)),
         ('citation', re.compile(r'(\\cite{.*?})', flags=re.DOTALL)),
