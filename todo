@@ -1,0 +1,13 @@
+Here are somme suggestions:
+
+- Move the logic of image and links (markdown) in the markdown function
+
+- Remove "[COMPLETE]" because the "[COMPLETE]" at the beginning of an item is seen as an optionnal argument of \item.
+
+- Use subtitle on frame for title notes
+
+The next steps:
+
+- Implement --add-new-line
+
+- Implement those output formats: 'rtf', 'docx'
