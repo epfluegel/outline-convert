@@ -53,3 +53,5 @@ outline-convert [input] [options]
 | `-b SYMBOL`, `--bullet-symbol SYMBOL`                 | Bullet symbol to use (for plain text)                      |
 | `--hide-completed`                                    | Exclude completed items                                    |
 | `--completed-only`                                    | Include only completed items                               |
+
+[![Latest release](https://img.shields.io/github/v/release/OWNER/REPO?include_prereleases&sort=semver)](https://github.com/epfluegel/outline-convert/releases)
