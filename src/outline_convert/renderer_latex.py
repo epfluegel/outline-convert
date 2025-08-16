@@ -1,4 +1,5 @@
 import argparse
+from datetime import datetime
 from inspect import cleandoc
 from typing import List
 import re
@@ -69,6 +70,10 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
     lines: List[str] = []
     if not args.fragment:
         doc_title = parse_item_text(forest[0].title, args)
+        doc_author = ""
+        if args.author:
+            doc_author = args.author
+        today_str = datetime.now().strftime("%B %d, %Y")  # Example: August 15, 2025
         lines.extend([
             r"\documentclass{beamer}",
             r"\usepackage[T1]{fontenc}",
@@ -81,8 +86,15 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             r"\definecolor{links}{HTML}{2A1B81}",
             r"\hypersetup{colorlinks,linkcolor=,urlcolor=links}",
             fr"\title{{{doc_title}}}",
-            r"\date{\today}",
+            fr"\author{{{doc_author}}}",
+            fr"\date{{{today_str}}}",
             r"\AtBeginSection[]",
+            r"{",
+            r"  \begin{frame}<beamer>{Outline}",
+            r"      \tableofcontents[currentsection, currentsubsection]",
+            r"  \end{frame}",
+            r"}",
+            r"\AtBeginSubsection[]",
             r"{",
             r"  \begin{frame}<beamer>{Outline}",
             r"      \tableofcontents[currentsection, currentsubsection]",

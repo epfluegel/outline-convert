@@ -29,8 +29,8 @@ def main():
     p.add_argument('-d', '--dir', default='.', help='Output directory')
 
     # Metadata arguments
-    p.add_argument('-e', '--email', help='Author email information')
-    p.add_argument('-a', '--author', help='Author information')
+    p.add_argument('-e', '--email', help='Author email')
+    p.add_argument('-a', '--author', help='Author name')
     p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf', 'docx'], default='txt',
                    help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
     p.add_argument('-s', '--start', help='Start item for conversion')
