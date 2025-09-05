@@ -13,7 +13,7 @@ from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node, print_tree, ignore_forest, print_forest, filter
+from .utils import find_node, print_tree, ignore_forest, print_forest, filter, handle_ai_prompt, handle_ai_prompts
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -45,12 +45,18 @@ def main():
                    help='Parse markdown syntax for links and images')
     p.add_argument('--filter',
                    help='Filter a specific string and return the path to it')
+    #p.add_argument('--biblio', nargs=1, metavar=('BIBTEX_FILE'),
+    p.add_argument('--biblio',
+                   help='Specify a fully qualified bibTex file name')
+
 
     # Output formatting arguments
     p.add_argument('--strip-tags', action='store_true', default=False, help='Strip tags from input')
     p.add_argument('--fragment', action='store_true', default=False, help='Only keep body of document for latex beamer and opml')
     p.add_argument('-w','--wait', action='store_true', default=False, help='Wait for key press after execution')
     p.add_argument('--debug', action='store_true', default=False, help='Gives debug information')
+    p.add_argument('--test', action='store_true', default=False, help='Just testing')
+    p.add_argument('--parse-only', action='store_true', default=False, help='Create parse tree only')
     p.add_argument('--add-new-line', action='store_true', default=False, help='Insert additional new line between items in output')
     p.add_argument('-t', '--indent-string', default="    ", help='Identation indent string used in output')
     p.add_argument('-n', '--include-notes', action='store_true', default=False, help='Include notes in ouput')
@@ -139,6 +145,13 @@ def main():
         if not forest:
             forest = [Node(f"Filter prefix '{args.filter}' not found")]
     # filter function can return filter not found if the start prefix was not found
+    
+
+
+    # deal with any AI prompt tags
+    forest = handle_ai_prompts(forest, args)
+
+    
     # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None

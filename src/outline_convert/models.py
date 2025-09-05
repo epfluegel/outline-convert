@@ -8,6 +8,7 @@ class Node:
         self.children: List[Node] = []
         self.parent: Optional[Node] = None
         self.note: Optional[str] = None
+        self.style: str = 'item' # moomin 
 
 
 @dataclass

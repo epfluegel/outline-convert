@@ -75,7 +75,19 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             doc_author = args.author
         today_str = datetime.now().strftime("%B %d, %Y")  # Example: August 15, 2025
         lines.extend([
-            r"\documentclass{beamer}",
+            r"\documentclass{beamer}"])
+        
+        # deal with bibliography is specified
+        if args.biblio:
+            doc_biblio = args.biblio
+            lines.extend([
+                r"\usepackage[backend=bibtex]{biblatex}",
+                fr"\addbibresource{{{doc_biblio}}}",
+                r"\renewcommand*{\bibfont}{\footnotesize}"
+            ])
+
+
+        lines.extend([
             r"\usepackage[T1]{fontenc}",
             r"\usepackage{graphicx}",
             r"\usetheme{Goettingen}",
@@ -120,6 +132,15 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
         i+=1
 
     if not args.fragment:
+        # deal with bibliography is specified
+        if args.biblio:
+            lines.extend([
+                r"\begin{frame}{References}",
+                r"\begin{minipage}{1\linewidth}",
+                r"{\tiny \printbibliography}",
+                r"\end{minipage}",
+                r"\end{frame}"
+            ])
         lines.append(r"\end{document}")
 
     return lines

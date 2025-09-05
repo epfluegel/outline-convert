@@ -1,3 +1,6 @@
+from openai import OpenAI
+import time
+import os
 import argparse
 from math import gcd
 from typing import List, Optional
@@ -213,7 +216,7 @@ def parse_item_text(title: str, args: argparse.Namespace) -> str:
             if segment.type == 'plain':
                 segment.text = escape_latex(segment.text)
 
-    # Step 5: Join back with spaces
+    # Step 5: Join back with spaces MOOMIN
     return ' '.join(segment.text for segment in segments)
 
 
@@ -312,3 +315,38 @@ def print_children(node:Node) -> str:
     for child in node.children:
         res += f"{child.title}/"
     return res
+    
+    
+    
+
+def send_prompt(message, args:argparse.Namespace) -> str:
+    # Initialize the client (make sure you set your OPENAI_API_KEY in environment variables)
+
+    apiKey = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(api_key=apiKey)
+
+
+    print("using 40-mini")
+    # Send a prompt to the GPT model
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",  # or "gpt-4o-mini" if you prefer a lighter model
+        # model="gpt-5",  # or "gpt-4o-mini" if you prefer a lighter model
+        messages=[
+            # {"role": "system", "content": "You are a helpful assistant that helps me with my math homework!"},
+            {"role": "user", "content": message}
+        ],
+        temperature = 0, # no randomness
+        top_p=1,         # disable nucleus sampling
+        seed=42          # ensures same output across calls
+    )
+
+    # Extract and return the assistant’s reply
+    return(response.choices[0].message.content)
+
+def handle_ai_prompts(forest: List[Node], args: argparse.Namespace):
+    return(forest)
+    
+    
+def handle_ai_prompt(node: Node, args: argparse.Namespace):
+    return(node)
+    
