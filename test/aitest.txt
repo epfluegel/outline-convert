@@ -1,0 +1,21 @@
+This is an AI prompting test
+	can you summarise the feedback given for the different sections below, in one sentence? #ChatGPT-prompt
+		introduction
+			Please create some student feedback from my notes below #ChatGPT-prompt
+				well motivated
+				aims need clarification
+				good attempt
+		main contribution
+			Please create some student feedback from my notes below #ChatGPT-prompt
+				needs to be about hyraxes
+				very good contribution
+				how does it relate to other animals?
+		conclusion
+			Please create some student feedback from my notes below #ChatGPT-prompt
+				please add a concise summary
+				further work section could be more specific
+		presentation
+			Please create some student feedback from my notes below #ChatGPT-prompt
+				please use the template as advised in the instructions
+				it would be lovely to read your thoughts in your own voice
+

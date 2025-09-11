@@ -182,7 +182,7 @@ def main():
 
     elif not args.output:  # Output to stdout
         print("Output to stdout")
-        print(out_lines)
+        #print(out_lines) so that we don't get confusing output
         if out_lines is not None:
             sys.stdout.write('\n'.join(out_lines) + '\n')
         else:

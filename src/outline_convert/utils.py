@@ -4,6 +4,7 @@ import os
 import argparse
 from math import gcd
 from typing import List, Optional
+from .renderer_text import render_text
 
 from .models import Node, TextSegment
 import xml.etree.ElementTree as ET
@@ -325,12 +326,14 @@ def send_prompt(message, args:argparse.Namespace) -> str:
     apiKey = os.getenv("OPENAI_API_KEY")
     client = OpenAI(api_key=apiKey)
 
-
-    print("using 40-mini")
+    # model="gpt-5",  # or "gpt-4o-mini" if you prefer a lighter model
+    aiModel = "gpt-4o-mini"
+    #if "AI" in args.debug:
+    print("using ", aiModel)
+        
     # Send a prompt to the GPT model
     response = client.chat.completions.create(
-        model="gpt-4o-mini",  # or "gpt-4o-mini" if you prefer a lighter model
-        # model="gpt-5",  # or "gpt-4o-mini" if you prefer a lighter model
+        model=aiModel,  
         messages=[
             # {"role": "system", "content": "You are a helpful assistant that helps me with my math homework!"},
             {"role": "user", "content": message}
@@ -344,9 +347,22 @@ def send_prompt(message, args:argparse.Namespace) -> str:
     return(response.choices[0].message.content)
 
 def handle_ai_prompts(forest: List[Node], args: argparse.Namespace):
-    return(forest)
+    retval = []
+    for oneTree in forest:
+        retval.append(handle_ai_prompt(oneTree, args))
+    return(retval)
     
     
 def handle_ai_prompt(node: Node, args: argparse.Namespace):
-    return(node)
+    if "#ChatGPT-prompt" in node.title:
+        theForest = handle_ai_prompts(node.children, args)
+        thePrompt = render_text(theForest, args) # TODO make args optional
+        returnNode = Node(send_prompt(node.title + thePrompt, args))
+        returnNode.children = []
+    else:
+        # return the tree with the same root but children handled recursively
+        returnNode = Node(node.title)
+        returnNode.children = handle_ai_prompts(node.children, args)
+        
+    return(returnNode)
     
