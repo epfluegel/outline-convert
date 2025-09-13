@@ -5,3 +5,5 @@
 src/outline_convert/__pycache__/
 build/
 bin/
+testopenAI.py
+testopenAISafe.py

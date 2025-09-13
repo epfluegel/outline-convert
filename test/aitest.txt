@@ -1,5 +1,5 @@
 This is an AI prompting test
-	can you summarise the feedback given for the different sections below, in one sentence? #ChatGPT-prompt
+	You are an instructor, providing feedback on a student's assignment.  Can you summarise the feedback given for the different sections below, in one paragraph? #ChatGPT-prompt
 		introduction
 			Please create some student feedback from my notes below #ChatGPT-prompt
 				well motivated

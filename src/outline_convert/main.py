@@ -9,15 +9,73 @@ from typing import Optional, List
 
 import pyperclip
 
+from openai import OpenAI
+
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
-from .utils import find_node, print_tree, ignore_forest, print_forest, filter, handle_ai_prompt, handle_ai_prompts
+#from .utils import find_node, print_tree, ignore_forest, print_forest, filter, handle_ai_prompt, handle_ai_prompts
+from .utils import find_node, print_tree, ignore_forest, print_forest, filter
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
 # -- MAIN PROGRAM -----------------------------------------------------
+
+
+def send_prompt(message, args:argparse.Namespace) -> str:
+    # Initialize the client (make sure you set your OPENAI_API_KEY in environment variables)
+
+    apiKey = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(api_key=apiKey)
+
+    # model="gpt-5",  # or "gpt-4o-mini" if you prefer a lighter model
+    aiModel = "gpt-4o-mini"
+    #if "AI" in args.debug:
+    print("using ", aiModel)
+        
+    # Send a prompt to the GPT model
+    response = client.chat.completions.create(
+        model=aiModel,  
+        messages=[
+            # {"role": "system", "content": "You are a helpful assistant that helps me with my math homework!"},
+            {"role": "user", "content": message}
+        ],
+        temperature = 0, # no randomness
+        top_p=1,         # disable nucleus sampling
+        seed=42          # ensures same output across calls
+    )
+
+    # Extract and return the assistant’s reply
+    return(response.choices[0].message.content)
+
+
+def handle_ai_prompts(forest: List[Node], args: argparse.Namespace):
+    retval = []
+    for oneTree in forest:
+        retval.append(handle_ai_prompt(oneTree, args))
+    return(retval)
+    
+    
+def handle_ai_prompt(node: Node, args: argparse.Namespace):
+    if "#ai-prompt" in node.title:
+        theForest = handle_ai_prompts(node.children, args)
+        thePrompt = render_text(theForest, args) # TODO make args optional
+        promptTxt = "\n".join(thePrompt)
+        # print("thePrompt=", promptTxt)
+        returnNode = Node(send_prompt(node.title + promptTxt, args))
+        returnNode.children = []
+    else:
+        # return the tree with the same root but children handled recursively
+        returnNode = Node(node.title)
+        returnNode.children = handle_ai_prompts(node.children, args)
+        
+    return(returnNode)
+
+
+
+
+
 def main():
     # -- Argument parser configuration -------------------------------
     p = argparse.ArgumentParser(description='Convert between text outline, OPML, and LaTeX')
@@ -201,6 +259,9 @@ def main():
     # -- Handle final wait --------------------------------------
     if args.wait:
         input("Press any Enter to exit\n")
+
+
+
 
 if __name__ == '__main__':
     main()
