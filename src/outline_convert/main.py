@@ -89,6 +89,7 @@ def main():
     # Metadata arguments
     p.add_argument('-e', '--email', help='Author email')
     p.add_argument('-a', '--author', help='Author name')
+    p.add_argument('-g', '--graphicspath', help='Path to graphics')
     p.add_argument('-f', '--format', choices=['txt', 'opml', 'latex', 'beamer', 'ppt', 'rtf', 'docx'], default='txt',
                    help='Output format: plain text, OPML, LaTeX Article, LaTeX Beamer, PowerPoint, Rich Text')
     p.add_argument('-s', '--start', help='Start item for conversion')
@@ -113,7 +114,7 @@ def main():
     p.add_argument('--fragment', action='store_true', default=False, help='Only keep body of document for latex beamer and opml')
     p.add_argument('-w','--wait', action='store_true', default=False, help='Wait for key press after execution')
     p.add_argument('--debug', action='store_true', default=False, help='Gives debug information')
-    p.add_argument('--test', action='store_true', default=False, help='Just testing')
+    p.add_argument('--test', action='store_true', default=False, help='Testing only, no output created')
     p.add_argument('--parse-only', action='store_true', default=False, help='Create parse tree only')
     p.add_argument('--add-new-line', action='store_true', default=False, help='Insert additional new line between items in output')
     p.add_argument('-t', '--indent-string', default="    ", help='Identation indent string used in output')
@@ -190,14 +191,16 @@ def main():
 
 
     # -- Optional subtree extraction ------------------------------
-    if args.debug:
-        print_forest(forest)
+
     if args.start:
         f = find_node(forest, args.start)
         forest = f
         if not forest:
             forest = [Node(f"Start prefix '{args.start}' not found")]
-
+        elif args.debug:
+            print(f"Start prefix '{args.start}' found")
+            
+        #print_forest(forest)
     if args.filter:
         forest = filter(forest, args.filter)
         if not forest:

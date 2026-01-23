@@ -73,6 +73,10 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
         doc_author = ""
         if args.author:
             doc_author = args.author
+        graphicspath = ""
+        if args.graphicspath:
+            graphicspath = args.graphicspath
+        
         today_str = datetime.now().strftime("%B %d, %Y")  # Example: August 15, 2025
         lines.extend([
             r"\documentclass{beamer}"])
@@ -112,6 +116,7 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             r"      \tableofcontents[currentsection, currentsubsection]",
             r"  \end{frame}",
             r"}",
+            fr"\graphicspath{{{graphicspath}}}",
             r"\begin{document}",
             r"\begin{frame}",
             r"  \titlepage",

@@ -8,3 +8,4 @@ bin/
 testopenAI.py
 testopenAISafe.py
 test/
+output.txt
