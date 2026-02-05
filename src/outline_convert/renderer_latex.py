@@ -145,7 +145,12 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
             r"  \titlepage",
             r"\end{frame}",
             ])
-        lines.extend(render_latex_beamer_tree(tree, args))
+        # Workaround: render_latex_beamer_tree doesn't process tags on the
+        # root node itself, only on its children. Wrap the tree in a dummy
+        # parent to ensure the actual root gets processed.
+        dummy_parent = Node("")
+        dummy_parent.children.append(tree)
+        lines.extend(render_latex_beamer_tree(dummy_parent, args))
         i+=1
 
     if not args.fragment:
