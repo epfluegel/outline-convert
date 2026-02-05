@@ -217,7 +217,7 @@ def parse_item_text(title: str, args: argparse.Namespace) -> str:
             if segment.type == 'plain':
                 segment.text = escape_latex(segment.text)
 
-    # Step 5: Join back with spaces MOOMIN
+    # Step 5: Join back with spaces 
     return ' '.join(segment.text for segment in segments)
 
 
@@ -240,7 +240,12 @@ IGNORE_OUTLINE_TAGS = {"#wfe-ignore-outline", "#ignore-outline"}
 IGNORE_ITEM_TAGS = {"#wfe-ignore-item", "#ignore-item", "#hh"}
 
 
-
+'''
+I could be wrong, but the purpose of ignore_tree seems to be to process a tree in such a way that
+any node not to be translated gets removed from the tree.
+I suppose that's why it's called ignore_tree.
+You could also think of it as pruning.
+'''
 def ignore_tree(node: Node, args: argparse.Namespace):
     is_complete = node.title.startswith('[COMPLETE]')
     has_children = bool(node.children)
@@ -249,6 +254,7 @@ def ignore_tree(node: Node, args: argparse.Namespace):
         (args.completed_only and not is_complete) or \
         (args.expert_mode and any(tag in node.title for tag in IGNORE_ITEM_TAGS))
 
+    # if this line to be ignored, then just process the children and return
     if ignore_item:
         if node.parent:
             parent = node.parent
@@ -261,15 +267,23 @@ def ignore_tree(node: Node, args: argparse.Namespace):
                 ignore_tree(child, args)
             return
 
+    # if this whole subtree to be ignored then remove it and return
     if args.expert_mode and any(tag in node.title for tag in IGNORE_OUTLINE_TAGS):
         if node.parent:
             node.parent.children.remove(node)
             return
 
+    # recurse
     if has_children:
         for child in children_copy:
             ignore_tree(child, args)
 
+'''
+ignore_forest is called once per separate tree, where the source contains more than one tree.  The 
+collection of trees is not the same as children of a node: it refers to output from editors such as 
+Dynalist, which uses documents rather than large subtrees.  
+(So for example, a collection of documents corresponds to a forest.)
+'''
 def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
     result = []
     for node in forest:
@@ -284,6 +298,12 @@ def ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
 
         if args.expert_mode and any(tag in node.title for tag in IGNORE_OUTLINE_TAGS):
             continue
+
+        # issue #65: deal with style to suppress item in beamer (more expected to come)
+        # note, this only applies to the very top of a document tree -- 
+        #   style setting for all sub-nodes is done else where: in preprocess_tree for now
+        if args.expert_mode and any(tag in node.title for tag in ['#style:normal']):
+            node.style = "normal"
 
         result.append(node)
 
@@ -321,4 +341,35 @@ def print_children(node:Node) -> str:
     
 
 
+# Issue 65 (enhancement): set styles to normal when required
+'''
+Walk the tree specified by node iteratively, doing preprocessing as needed.
+One day this might include the 'ignore' stuff.
+'''
+def preprocess_tree(node: Node, args: argparse.Namespace):
+    nodeStack = [node]
+
+    while nodeStack:
+        currentNode = nodeStack.pop()
+        
+        if args.expert_mode and any(tag in currentNode.title for tag in ['#style:normal']):
+            currentNode.style = "normal"
+
+        for child in reversed(currentNode.children):
+            nodeStack.append(child)
     
+    return
+
+# Issue 65 (enhancement): allow set style in trees to normal when required
+'''
+Preprocess all the trees in the forest
+'''
+def preprocess_forest(forest: List[Node], args: argparse.Namespace):
+    retval = []
+    for oneTree in forest:
+        preprocess_tree(oneTree, args)
+        retval.append(oneTree)
+
+    return retval
+
+

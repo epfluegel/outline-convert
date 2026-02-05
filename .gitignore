@@ -9,3 +9,7 @@ testopenAI.py
 testopenAISafe.py
 test/
 output.txt
+harness.py
+test.sh
+.DS_Store
+.swp

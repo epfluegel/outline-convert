@@ -38,7 +38,12 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
         title = parse_item_text(title, args)
         #if title.startswith('[COMPLETE]'):
         #    lines.append(r"\color{lightgray}")
-        lines.append(fr"\item {title}")
+        # issue 65 (enhancement)
+        if (node.style == "normal"):
+            sep = '[]'
+        else:
+            sep = ''
+        lines.append(fr"\item{sep} {title}")
 
     has_children = node.children
     if has_children:
@@ -49,7 +54,13 @@ def render_latex_tree(node: Node, args: argparse.Namespace, level: int = 0) -> L
             title = ' '.join(part for part in title.split() if not part.startswith('#'))
         title = parse_item_text(title, args)
         indent = '  ' * level
-        lines.append(fr"{indent}\item {title}")
+        # issue 65 (enhancement)
+        if (child.style == "normal"):
+            sep = '[]'
+        else:
+            sep = ''
+
+        lines.append(fr"{indent}\item{sep} {title}")
         if child.note:
             lines.append(fr"{indent}\begin{{quote}}")
             lines.append(fr"{indent}{child.note}")
@@ -68,6 +79,7 @@ LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
 
 def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[str]:
     lines: List[str] = []
+        
     if not args.fragment:
         doc_title = parse_item_text(forest[0].title, args)
         doc_author = ""
@@ -154,6 +166,8 @@ def render_latex_beamer(forest: List[Node], args: argparse.Namespace) -> List[st
 def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 0, header_level: int = 0) -> List[str]:
     lines: List[str] = []
 
+
+
     for child in node.children:
         title = child.title.strip()
         tags = [part for part in title.split() if part.startswith('#')]
@@ -200,7 +214,13 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
 
                     res = LINK_RE.sub(link_replacer, title)
                     if res != title:
-                        lines.append(fr'\item {res}')
+                        # issue 65 (enhancement)
+                        if (child.style == "normal"):
+                            sep = '[]'
+                        else:
+                            sep = ''
+
+                        lines.append(fr'\item{sep} {res}')
                         continue
 
                 indent = '  ' * level
@@ -209,7 +229,13 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
                 #if clean_title.startswith('[COMPLETE]'):
                 #    print("complete item", clean_title)
                 #    lines.append(r"\color{lightgray}")
-                lines.append(fr"{indent}\item {clean_title}")
+                # issue 65 (enhancement)
+                if (child.style == "normal"):
+                    sep = '[]'
+                else:
+                    sep = ''
+
+                lines.append(fr"{indent}\item{sep} {clean_title}")
                 if args.include_notes:
                     if child.note:
                         note = parse_item_text(child.note, args)
@@ -244,12 +270,24 @@ def render_latex_beamer_tree(node: Node, args: argparse.Namespace, level: int = 
 
                 res = LINK_RE.sub(link_replacer, title)
                 if res != title:
-                    lines.append(fr'\item {res}')
+                    # issue 65 (enhancement)
+                    if (child.style == "normal"):
+                        sep = '[]'
+                    else:
+                        sep = ''
+            
+                    lines.append(fr'\item{sep} {res}')
                     continue
 
                 indent = '  ' * level
                 clean_title = parse_item_text(title, args)
-                lines.append(fr"{indent}\item {clean_title}")
+                # issue 65 (enhancement)
+                if (child.style == "normal"):
+                    sep = '[]'
+                else:
+                    sep = ''
+
+                lines.append(fr"{indent}\item{sep} {clean_title}")
                 if args.include_notes:
                     if child.note:
                         note = parse_item_text(child.note, args)

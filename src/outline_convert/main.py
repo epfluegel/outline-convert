@@ -11,12 +11,14 @@ import pyperclip
 
 from openai import OpenAI
 
+
 from .models import Node
 from .parser import parse_text, parse_opml
 from .renderer_latex import render_latex_beamer, render_latex
 from .renderer_text import render_text, render_opml
 #from .utils import find_node, print_tree, ignore_forest, print_forest, filter, handle_ai_prompt, handle_ai_prompts
-from .utils import find_node, print_tree, ignore_forest, print_forest, filter
+# issue 65 (enhancement): preprocess_forest sets node style to normal when required
+from .utils import find_node, print_tree, ignore_forest, print_forest, filter, preprocess_forest
 from .renderer_ppt import render_ppt
 from .renderer_rtf import render_rtf
 
@@ -50,7 +52,7 @@ def send_prompt(message, args:argparse.Namespace) -> str:
     return(response.choices[0].message.content)
 
 
-def handle_ai_prompts(forest: List[Node], args: argparse.Namespace):
+def handle_ai_prompts(forest: List[Node], args: argparse.Namespace): 
     retval = []
     for oneTree in forest:
         retval.append(handle_ai_prompt(oneTree, args))
@@ -64,14 +66,17 @@ def handle_ai_prompt(node: Node, args: argparse.Namespace):
         promptTxt = "\n".join(thePrompt)
         # print("thePrompt=", promptTxt)
         returnNode = Node(send_prompt(node.title + promptTxt, args))
+        # restore style
+        returnNode.set_style(node.style)
         returnNode.children = []
     else:
         # return the tree with the same root but children handled recursively
         returnNode = Node(node.title)
+        # restore style
+        returnNode.set_style(node.style)
         returnNode.children = handle_ai_prompts(node.children, args)
         
     return(returnNode)
-
 
 
 
@@ -189,6 +194,34 @@ def main():
             print("ompl not parsed correctly")
         forest = ignore_forest(parse_text(lines, args), args)
 
+    '''
+    MJI:
+    issue 65 (enhancement)
+    OK, let's think of ignore_xxx() as the pruning stage of preprocessing.
+    The preprocessing we need to do for issue #65 is to set style.
+    I'm going to create a thing that does the preprocessing.
+    Questions for now:
+    1) What class of object is returned by parse_opml and parse_text?
+        A:  Hint for parse_opml() is a list of Node objects.  Good.
+            parse_text() effectively does the same.  Also good.
+    2) What class is returned by ignore_xxx?
+        A:  ignore_forest(forest: List[Node], args: argparse.Namespace) -> List[Node]:
+            => it processes that forest
+            ignore_tree(node: Node, args: argparse.Namespace)
+            => no return value specified, but it clearly works on node, so we're golden
+    So, ignore_forest() (which is the only thing we care about here) takes a list of Nodes
+    and returns a list of Nodes.
+    ignore_forest() prunes the trees (for that is what each node is), as preprocessing.
+    I've got some other preprocessing to do, which I'll implement now.  If it works, 
+    I'd like to see the pruning functionality moved to my own preprocessing routine,
+    so the trees only have to be walked once.
+    See preprocess_forest(), which I'm putting in utils.py
+    (I know, I'm filling utils with even more stuff, but why not -- everything else is in there...)
+    '''
+    forest = preprocess_forest(forest, args)
+    
+
+
 
     # -- Optional subtree extraction ------------------------------
 
@@ -208,11 +241,12 @@ def main():
     # filter function can return filter not found if the start prefix was not found
     
 
-
     # deal with any AI prompt tags
     forest = handle_ai_prompts(forest, args)
 
     
+
+
     # -- Render based on chosen format ---------------------------
     out_lines: Optional[List[str]] = None
     out_tree: Optional[ET.ElementTree] = None
